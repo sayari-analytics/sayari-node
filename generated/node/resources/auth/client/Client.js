@@ -61,6 +61,7 @@ class Auth {
                 method: "POST",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -78,7 +79,12 @@ class Auth {
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
                     case 401:
-                        throw new SayariAnalyticsApi.Unauthorized();
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedError.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     default:
                         throw new errors.SayariAnalyticsApiError({
                             statusCode: _response.error.statusCode,

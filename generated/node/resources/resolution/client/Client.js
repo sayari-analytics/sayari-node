@@ -52,7 +52,9 @@ class Resolution {
     }
     /**
      * The resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the search endpoint, except it's tuned to only return the best match so the client doesn't need to do as much or any post-processing work to filter down results.
-     * @throws {@link SayariAnalyticsApi.NotFoundError}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     resolution(request = {}, requestOptions) {
         var _a;
@@ -134,6 +136,7 @@ class Resolution {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -151,7 +154,26 @@ class Resolution {
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
                     case 404:
-                        throw new SayariAnalyticsApi.NotFoundError();
+                        throw new SayariAnalyticsApi.NotFound(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 429:
+                        throw new SayariAnalyticsApi.RatLimitExceeded(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedError.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     default:
                         throw new errors.SayariAnalyticsApiError({
                             statusCode: _response.error.statusCode,

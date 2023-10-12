@@ -52,7 +52,9 @@ class Entity {
     }
     /**
      * Retrieve an entity from the database based on the ID
-     * @throws {@link SayariAnalyticsApi.NotFoundError}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     getEntity(id, request = {}, requestOptions) {
         var _a;
@@ -166,6 +168,7 @@ class Entity {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -183,7 +186,26 @@ class Entity {
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
                     case 404:
-                        throw new SayariAnalyticsApi.NotFoundError();
+                        throw new SayariAnalyticsApi.NotFound(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 429:
+                        throw new SayariAnalyticsApi.RatLimitExceeded(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedError.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     default:
                         throw new errors.SayariAnalyticsApiError({
                             statusCode: _response.error.statusCode,
@@ -208,7 +230,9 @@ class Entity {
     }
     /**
      * The Entity Summary endpoint returns a smaller entity payload
-     * @throws {@link SayariAnalyticsApi.NotFoundError}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     entitySummary(id, requestOptions) {
         var _a;
@@ -218,6 +242,7 @@ class Entity {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -234,7 +259,26 @@ class Entity {
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
                     case 404:
-                        throw new SayariAnalyticsApi.NotFoundError();
+                        throw new SayariAnalyticsApi.NotFound(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 429:
+                        throw new SayariAnalyticsApi.RatLimitExceeded(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedError.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     default:
                         throw new errors.SayariAnalyticsApiError({
                             statusCode: _response.error.statusCode,

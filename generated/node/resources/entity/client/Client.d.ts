@@ -8,6 +8,7 @@ export declare namespace Entity {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
+        client: core.Supplier<string>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;
@@ -18,12 +19,16 @@ export declare class Entity {
     constructor(_options: Entity.Options);
     /**
      * Retrieve an entity from the database based on the ID
-     * @throws {@link SayariAnalyticsApi.NotFoundError}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     getEntity(id: SayariAnalyticsApi.EntityId, request?: SayariAnalyticsApi.GetEntity, requestOptions?: Entity.RequestOptions): Promise<SayariAnalyticsApi.EntityDetails>;
     /**
      * The Entity Summary endpoint returns a smaller entity payload
-     * @throws {@link SayariAnalyticsApi.NotFoundError}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     entitySummary(id: SayariAnalyticsApi.EntityId, requestOptions?: Entity.RequestOptions): Promise<SayariAnalyticsApi.EntityDetails>;
     protected _getAuthorizationHeader(): Promise<string | undefined>;

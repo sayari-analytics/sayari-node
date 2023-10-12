@@ -8,6 +8,7 @@ export declare namespace Resolution {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
+        client: core.Supplier<string>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;
@@ -18,7 +19,9 @@ export declare class Resolution {
     constructor(_options: Resolution.Options);
     /**
      * The resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the search endpoint, except it's tuned to only return the best match so the client doesn't need to do as much or any post-processing work to filter down results.
-     * @throws {@link SayariAnalyticsApi.NotFoundError}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     resolution(request?: SayariAnalyticsApi.Resolution, requestOptions?: Resolution.RequestOptions): Promise<SayariAnalyticsApi.ResolutionResponse>;
     protected _getAuthorizationHeader(): Promise<string | undefined>;

@@ -41,6 +41,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Traversal = void 0;
 const environments = __importStar(require("../../../../environments"));
 const core = __importStar(require("../../../../core"));
+const SayariAnalyticsApi = __importStar(require("../../.."));
 const url_search_params_1 = __importDefault(require("@ungap/url-search-params"));
 const serializers = __importStar(require("../../../../serialization"));
 const url_join_1 = __importDefault(require("url-join"));
@@ -51,6 +52,9 @@ class Traversal {
     }
     /**
      * The Traversal endpoint returns paths from a single target entity to up to 50 directly or indirectly-related entities. Each path includes information on the 0 to 10 intermediary entities, as well as their connecting relationships. The response's explored_count field indicates the size of the graph subset the application searched. Running a traversal on a highly connected entity with a restrictive set of argument filters and a high max depth will require the application to explore a higher number of traversal paths, which may affect performance.
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     traversal(id, request = {}, requestOptions) {
         var _a;
@@ -164,6 +168,7 @@ class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -179,10 +184,34 @@ class Traversal {
                 });
             }
             if (_response.error.reason === "status-code") {
-                throw new errors.SayariAnalyticsApiError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.body,
-                });
+                switch (_response.error.statusCode) {
+                    case 404:
+                        throw new SayariAnalyticsApi.NotFound(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 429:
+                        throw new SayariAnalyticsApi.RatLimitExceeded(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedError.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.SayariAnalyticsApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
             }
             switch (_response.error.reason) {
                 case "non-json":
@@ -201,6 +230,9 @@ class Traversal {
     }
     /**
      * The UBO endpoint returns paths from a single target entity to up to 50 beneficial owners. The endpoint is a shorthand for the equivalent traversal query.
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     ubo(id, requestOptions) {
         var _a;
@@ -210,6 +242,7 @@ class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -224,10 +257,34 @@ class Traversal {
                 });
             }
             if (_response.error.reason === "status-code") {
-                throw new errors.SayariAnalyticsApiError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.body,
-                });
+                switch (_response.error.statusCode) {
+                    case 404:
+                        throw new SayariAnalyticsApi.NotFound(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 429:
+                        throw new SayariAnalyticsApi.RatLimitExceeded(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedError.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.SayariAnalyticsApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
             }
             switch (_response.error.reason) {
                 case "non-json":
@@ -246,6 +303,9 @@ class Traversal {
     }
     /**
      * The Ownership endpoint returns paths from a single target entity to up to 50 entities directly or indirectly owned by that entity. The endpoint is a shorthand for the equivalent traversal query.
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     ownership(id, requestOptions) {
         var _a;
@@ -255,6 +315,7 @@ class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -269,10 +330,34 @@ class Traversal {
                 });
             }
             if (_response.error.reason === "status-code") {
-                throw new errors.SayariAnalyticsApiError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.body,
-                });
+                switch (_response.error.statusCode) {
+                    case 404:
+                        throw new SayariAnalyticsApi.NotFound(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 429:
+                        throw new SayariAnalyticsApi.RatLimitExceeded(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedError.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.SayariAnalyticsApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
             }
             switch (_response.error.reason) {
                 case "non-json":
@@ -291,6 +376,9 @@ class Traversal {
     }
     /**
      * The Watchlist endpoint returns paths from a single target entity to up to 50 other entities that appear on a watchlist or are peps. The endpoint is a shorthand for the equivalent traversal query.
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     watchlist(id, requestOptions) {
         var _a;
@@ -300,6 +388,7 @@ class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -314,10 +403,34 @@ class Traversal {
                 });
             }
             if (_response.error.reason === "status-code") {
-                throw new errors.SayariAnalyticsApiError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.body,
-                });
+                switch (_response.error.statusCode) {
+                    case 404:
+                        throw new SayariAnalyticsApi.NotFound(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 429:
+                        throw new SayariAnalyticsApi.RatLimitExceeded(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedError.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.SayariAnalyticsApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
             }
             switch (_response.error.reason) {
                 case "non-json":
@@ -336,6 +449,9 @@ class Traversal {
     }
     /**
      * The Shortest Path endpoint returns a response identifying the shortest traversal path connecting each pair of entities.
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     shortestPath(request, requestOptions) {
         var _a;
@@ -355,6 +471,7 @@ class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -370,10 +487,34 @@ class Traversal {
                 });
             }
             if (_response.error.reason === "status-code") {
-                throw new errors.SayariAnalyticsApiError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.body,
-                });
+                switch (_response.error.statusCode) {
+                    case 404:
+                        throw new SayariAnalyticsApi.NotFound(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 429:
+                        throw new SayariAnalyticsApi.RatLimitExceeded(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedError.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.SayariAnalyticsApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
             }
             switch (_response.error.reason) {
                 case "non-json":

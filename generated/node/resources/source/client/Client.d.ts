@@ -8,6 +8,7 @@ export declare namespace Source {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
+        client: core.Supplier<string>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;
@@ -18,10 +19,16 @@ export declare class Source {
     constructor(_options: Source.Options);
     /**
      * Returns metadata for all sources that Sayari collects data from
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     listSources(request?: SayariAnalyticsApi.ListSources, requestOptions?: Source.RequestOptions): Promise<SayariAnalyticsApi.SourceList>;
     /**
      * Returns metadata for a source that Sayari collects data from
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     getSource(id: SayariAnalyticsApi.SourceId, requestOptions?: Source.RequestOptions): Promise<SayariAnalyticsApi.Source>;
     protected _getAuthorizationHeader(): Promise<string | undefined>;

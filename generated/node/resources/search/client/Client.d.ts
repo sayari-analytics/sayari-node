@@ -8,6 +8,7 @@ export declare namespace Search {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
+        client: core.Supplier<string>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;
@@ -18,10 +19,16 @@ export declare class Search {
     constructor(_options: Search.Options);
     /**
      * Search for an entity
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     searchEntity(request: SayariAnalyticsApi.SearchEntity, requestOptions?: Search.RequestOptions): Promise<SayariAnalyticsApi.EntitySearchResults>;
     /**
      * Search for a record
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.RatLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
      */
     searchRecord(request: SayariAnalyticsApi.SearchRecord, requestOptions?: Search.RequestOptions): Promise<SayariAnalyticsApi.RecordSearchResults>;
     protected _getAuthorizationHeader(): Promise<string | undefined>;
