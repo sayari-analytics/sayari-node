@@ -15,6 +15,9 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -23,12 +26,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SayariAnalyticsApiTimeoutError = exports.SayariAnalyticsApiError = exports.SayariAnalyticsApiEnvironment = exports.SayariAnalyticsApiClient = exports.SayariAnalyticsApi = void 0;
-exports.SayariAnalyticsApi = __importStar(require("./api"));
-var Client_1 = require("./Client");
-Object.defineProperty(exports, "SayariAnalyticsApiClient", { enumerable: true, get: function () { return Client_1.SayariAnalyticsApiClient; } });
-var environments_1 = require("./environments");
-Object.defineProperty(exports, "SayariAnalyticsApiEnvironment", { enumerable: true, get: function () { return environments_1.SayariAnalyticsApiEnvironment; } });
-var errors_1 = require("./errors");
-Object.defineProperty(exports, "SayariAnalyticsApiError", { enumerable: true, get: function () { return errors_1.SayariAnalyticsApiError; } });
-Object.defineProperty(exports, "SayariAnalyticsApiTimeoutError", { enumerable: true, get: function () { return errors_1.SayariAnalyticsApiTimeoutError; } });
+exports.serialization = void 0;
+__exportStar(require("./fetcher"), exports);
+__exportStar(require("./auth"), exports);
+exports.serialization = __importStar(require("./schemas"));
