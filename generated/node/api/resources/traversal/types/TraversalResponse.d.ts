@@ -5,7 +5,7 @@ import * as SayariAnalyticsApi from "../../..";
 export interface TraversalResponse {
     minDepth: number;
     maxDepth: number;
-    relationships: SayariAnalyticsApi.RelationshipType[];
+    relationships: SayariAnalyticsApi.Relationships[];
     countries: SayariAnalyticsApi.Country[];
     types: string[];
     psa: boolean;

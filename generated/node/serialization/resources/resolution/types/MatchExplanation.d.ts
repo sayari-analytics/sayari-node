@@ -7,7 +7,7 @@ import * as core from "../../../../core";
 export declare const MatchExplanation: core.serialization.ObjectSchema<serializers.MatchExplanation.Raw, SayariAnalyticsApi.MatchExplanation>;
 export declare namespace MatchExplanation {
     interface Raw {
-        matched: string;
-        uploaded: string;
+        matched?: string | null;
+        uploaded?: string | null;
     }
 }

@@ -29,16 +29,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Entities = void 0;
 const core = __importStar(require("../../../../core"));
 exports.Entities = core.serialization.enum_([
-    "vessel",
-    "tradename",
-    "intellectual_property",
-    "person",
+    "legal_matter",
+    "company",
     "shipment",
     "generic",
+    "vessel",
     "property",
-    "company",
-    "aircraft",
-    "legal_matter",
+    "intellectual_property",
+    "person",
     "security",
+    "tradename",
     "unknown",
+    "aircraft",
 ]);

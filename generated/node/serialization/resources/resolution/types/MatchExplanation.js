@@ -29,6 +29,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MatchExplanation = void 0;
 const core = __importStar(require("../../../../core"));
 exports.MatchExplanation = core.serialization.object({
-    matched: core.serialization.string(),
-    uploaded: core.serialization.string(),
+    matched: core.serialization.string().optional(),
+    uploaded: core.serialization.string().optional(),
 });

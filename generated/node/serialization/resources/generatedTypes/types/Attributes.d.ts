@@ -6,5 +6,5 @@ import * as SayariAnalyticsApi from "../../../../api";
 import * as core from "../../../../core";
 export declare const Attributes: core.serialization.Schema<serializers.Attributes.Raw, SayariAnalyticsApi.Attributes>;
 export declare namespace Attributes {
-    type Raw = "country" | "company_type" | "status" | "person_status" | "name" | "date_of_birth" | "additional_information" | "business_purpose" | "position" | "contact" | "measurement" | "financials" | "finances" | "generic" | "risk_intelligence" | "address" | "shares" | "gender" | "weak_identifier" | "translated_name" | "identifier" | "monetary_value";
+    type Raw = "risk_intelligence" | "country" | "weak_identifier" | "generic" | "status" | "shares" | "name" | "contact" | "person_status" | "financials" | "additional_information" | "finances" | "address" | "monetary_value" | "company_type" | "gender" | "translated_name" | "date_of_birth" | "measurement" | "identifier" | "position" | "business_purpose";
 }

@@ -122,8 +122,10 @@ exports.WeakIdentifierType = core.serialization.enum_([
     "usa_former_fein",
     "usa_cbp_wro_id",
     "ccs_ship_class_number",
+    "tur_partial_mersis_number",
     "tur_office_registration_number",
     "partial_ven_cedula",
     "rus_cbr_id",
     "geo_state_registration_number",
+    "bih_mbs_number",
 ]);

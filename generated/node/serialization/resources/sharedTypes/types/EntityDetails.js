@@ -46,11 +46,11 @@ exports.EntityDetails = core.serialization
     shipmentDeparture: core.serialization.property("shipment_departure", core.serialization.string().optional()),
     companyType: core.serialization.property("company_type", core.serialization.string().optional()),
     latestStatus: core.serialization.property("latest_status", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).Status; })).optional()),
-    risk: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).Risk; })),
-    attributes: core.serialization
-        .record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).Attributes; })), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).AttributeDetails; })).optional())
+    risk: core.serialization.record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).Risk; })), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).RiskData; })).optional()),
+    attributes: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).AttributeDetails; })).optional(),
+    relationships: core.serialization
+        .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).EntityRelationships; }))
         .optional(),
-    relationships: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).Relationships; })).optional(),
     possiblySameAs: core.serialization.property("possibly_same_as", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).PossiblySameAs; })).optional()),
     referencedBy: core.serialization.property("referenced_by", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).ReferencedBy; })).optional()),
     matches: core.serialization

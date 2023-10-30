@@ -98,8 +98,10 @@ exports.WeakIdentifierType = {
     UsaFormerFein: "usa_former_fein",
     UsaCbpWroId: "usa_cbp_wro_id",
     CcsShipClassNumber: "ccs_ship_class_number",
+    TurPartialMersisNumber: "tur_partial_mersis_number",
     TurOfficeRegistrationNumber: "tur_office_registration_number",
     PartialVenCedula: "partial_ven_cedula",
     RusCbrId: "rus_cbr_id",
     GeoStateRegistrationNumber: "geo_state_registration_number",
+    BihMbsNumber: "bih_mbs_number",
 };

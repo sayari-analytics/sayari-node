@@ -53,5 +53,5 @@ exports.EmbeddedEntity = core.serialization.object({
     sourceCount: core.serialization.property("source_count", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).SourceCount; }))),
     addresses: core.serialization.list(core.serialization.string()),
     dateOfBirth: core.serialization.property("date_of_birth", core.serialization.string().optional()),
-    relationshipCount: core.serialization.property("relationship_count", core.serialization.record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).RelationshipType; })), core.serialization.number().optional())),
+    relationshipCount: core.serialization.property("relationship_count", core.serialization.record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).Relationships; })), core.serialization.number().optional())),
 });

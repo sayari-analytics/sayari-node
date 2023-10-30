@@ -6,5 +6,5 @@ import * as SayariAnalyticsApi from "../../../../api";
 import * as core from "../../../../core";
 export declare const AddressType: core.serialization.Schema<serializers.AddressType.Raw, SayariAnalyticsApi.AddressType>;
 export declare namespace AddressType {
-    type Raw = "arrival" | "departure" | "mailing" | "physical" | "registered";
+    type Raw = "arrival" | "departure" | "mailing" | "physical" | "registered" | "business";
 }

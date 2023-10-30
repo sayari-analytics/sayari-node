@@ -10,4 +10,5 @@ exports.AddressType = {
     Mailing: "mailing",
     Physical: "physical",
     Registered: "registered",
+    Business: "business",
 };

@@ -22,6 +22,6 @@ export declare namespace EmbeddedEntity {
         source_count: serializers.SourceCount.Raw;
         addresses: string[];
         date_of_birth?: string | null;
-        relationship_count: Record<serializers.RelationshipType.Raw, number | null | undefined>;
+        relationship_count: Record<serializers.Relationships.Raw, number | null | undefined>;
     }
 }

@@ -5,16 +5,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Entities = void 0;
 exports.Entities = {
-    Vessel: "vessel",
-    Tradename: "tradename",
-    IntellectualProperty: "intellectual_property",
-    Person: "person",
+    LegalMatter: "legal_matter",
+    Company: "company",
     Shipment: "shipment",
     Generic: "generic",
+    Vessel: "vessel",
     Property: "property",
-    Company: "company",
-    Aircraft: "aircraft",
-    LegalMatter: "legal_matter",
+    IntellectualProperty: "intellectual_property",
+    Person: "person",
     Security: "security",
+    Tradename: "tradename",
     Unknown: "unknown",
+    Aircraft: "aircraft",
 };

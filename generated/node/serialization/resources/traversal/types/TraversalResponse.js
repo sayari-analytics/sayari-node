@@ -40,7 +40,7 @@ const core = __importStar(require("../../../../core"));
 exports.TraversalResponse = core.serialization.object({
     minDepth: core.serialization.property("min_depth", core.serialization.number()),
     maxDepth: core.serialization.property("max_depth", core.serialization.number()),
-    relationships: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).RelationshipType; }))),
+    relationships: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).Relationships; }))),
     countries: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).Country; }))),
     types: core.serialization.list(core.serialization.string()),
     psa: core.serialization.boolean(),

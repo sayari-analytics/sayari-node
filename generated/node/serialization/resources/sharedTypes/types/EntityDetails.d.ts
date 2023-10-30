@@ -14,9 +14,9 @@ export declare namespace EntityDetails {
         shipment_departure?: string | null;
         company_type?: string | null;
         latest_status?: serializers.Status.Raw | null;
-        risk: serializers.Risk.Raw;
-        attributes?: Record<serializers.Attributes.Raw, serializers.AttributeDetails.Raw | null | undefined> | null;
-        relationships?: serializers.Relationships.Raw | null;
+        risk: Record<serializers.Risk.Raw, serializers.RiskData.Raw | null | undefined>;
+        attributes?: serializers.AttributeDetails.Raw | null;
+        relationships?: serializers.EntityRelationships.Raw | null;
         possibly_same_as?: serializers.PossiblySameAs.Raw | null;
         referenced_by?: serializers.ReferencedBy.Raw | null;
         matches?: Record<string, string[]> | null;

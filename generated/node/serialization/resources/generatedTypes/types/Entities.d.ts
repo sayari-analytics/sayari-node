@@ -6,5 +6,5 @@ import * as SayariAnalyticsApi from "../../../../api";
 import * as core from "../../../../core";
 export declare const Entities: core.serialization.Schema<serializers.Entities.Raw, SayariAnalyticsApi.Entities>;
 export declare namespace Entities {
-    type Raw = "vessel" | "tradename" | "intellectual_property" | "person" | "shipment" | "generic" | "property" | "company" | "aircraft" | "legal_matter" | "security" | "unknown";
+    type Raw = "legal_matter" | "company" | "shipment" | "generic" | "vessel" | "property" | "intellectual_property" | "person" | "security" | "tradename" | "unknown" | "aircraft";
 }

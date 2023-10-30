@@ -9,7 +9,7 @@ export declare namespace TraversalResponse {
     interface Raw {
         min_depth: number;
         max_depth: number;
-        relationships: serializers.RelationshipType.Raw[];
+        relationships: serializers.Relationships.Raw[];
         countries: serializers.Country.Raw[];
         types: string[];
         psa: boolean;

@@ -6,5 +6,5 @@ import * as SayariAnalyticsApi from "../../../../api";
 import * as core from "../../../../core";
 export declare const RelationshipTypes: core.serialization.Schema<serializers.RelationshipTypes.Raw, SayariAnalyticsApi.RelationshipTypes>;
 export declare namespace RelationshipTypes {
-    type Raw = Record<serializers.RelationshipType.Raw, serializers.RelationshipInfo.Raw[] | null | undefined>;
+    type Raw = Record<serializers.Relationships.Raw, serializers.RelationshipInfo.Raw[] | null | undefined>;
 }

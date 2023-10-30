@@ -10,7 +10,8 @@ const Client_3 = require("./api/resources/record/client/Client");
 const Client_4 = require("./api/resources/resolution/client/Client");
 const Client_5 = require("./api/resources/search/client/Client");
 const Client_6 = require("./api/resources/source/client/Client");
-const Client_7 = require("./api/resources/traversal/client/Client");
+const Client_7 = require("./api/resources/trade/client/Client");
+const Client_8 = require("./api/resources/traversal/client/Client");
 class SayariAnalyticsApiClient {
     constructor(_options) {
         this._options = _options;
@@ -39,9 +40,13 @@ class SayariAnalyticsApiClient {
         var _a;
         return ((_a = this._source) !== null && _a !== void 0 ? _a : (this._source = new Client_6.Source(this._options)));
     }
+    get trade() {
+        var _a;
+        return ((_a = this._trade) !== null && _a !== void 0 ? _a : (this._trade = new Client_7.Trade(this._options)));
+    }
     get traversal() {
         var _a;
-        return ((_a = this._traversal) !== null && _a !== void 0 ? _a : (this._traversal = new Client_7.Traversal(this._options)));
+        return ((_a = this._traversal) !== null && _a !== void 0 ? _a : (this._traversal = new Client_8.Traversal(this._options)));
     }
 }
 exports.SayariAnalyticsApiClient = SayariAnalyticsApiClient;

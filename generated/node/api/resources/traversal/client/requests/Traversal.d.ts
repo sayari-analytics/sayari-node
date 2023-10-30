@@ -22,7 +22,7 @@ export interface Traversal {
     /**
      * Set relationship type(s) to follow when traversing related entities. Defaults to following all relationship types.
      */
-    relationships?: SayariAnalyticsApi.RelationshipType | SayariAnalyticsApi.RelationshipType[];
+    relationships?: SayariAnalyticsApi.Relationships | SayariAnalyticsApi.Relationships[];
     /**
      * Also traverse relationships from entities that are possibly the same as any entity that appears in the path. Defaults to not traversing possibly same as relationships.
      */

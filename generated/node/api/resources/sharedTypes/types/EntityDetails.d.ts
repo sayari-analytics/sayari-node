@@ -10,9 +10,9 @@ export interface EntityDetails extends SayariAnalyticsApi.EmbeddedEntity {
     shipmentDeparture?: string;
     companyType?: string;
     latestStatus?: SayariAnalyticsApi.Status;
-    risk: SayariAnalyticsApi.Risk;
-    attributes?: Record<SayariAnalyticsApi.Attributes, SayariAnalyticsApi.AttributeDetails | undefined>;
-    relationships?: SayariAnalyticsApi.Relationships;
+    risk: Record<SayariAnalyticsApi.Risk, SayariAnalyticsApi.RiskData | undefined>;
+    attributes?: SayariAnalyticsApi.AttributeDetails;
+    relationships?: SayariAnalyticsApi.EntityRelationships;
     possiblySameAs?: SayariAnalyticsApi.PossiblySameAs;
     referencedBy?: SayariAnalyticsApi.ReferencedBy;
     matches?: Record<string, string[]>;

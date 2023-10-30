@@ -18,5 +18,5 @@ export interface EmbeddedEntity {
     sourceCount: SayariAnalyticsApi.SourceCount;
     addresses: string[];
     dateOfBirth?: string;
-    relationshipCount: Record<SayariAnalyticsApi.RelationshipType, number | undefined>;
+    relationshipCount: Record<SayariAnalyticsApi.Relationships, number | undefined>;
 }

@@ -28,4 +28,4 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AddressType = void 0;
 const core = __importStar(require("../../../../core"));
-exports.AddressType = core.serialization.enum_(["arrival", "departure", "mailing", "physical", "registered"]);
+exports.AddressType = core.serialization.enum_(["arrival", "departure", "mailing", "physical", "registered", "business"]);

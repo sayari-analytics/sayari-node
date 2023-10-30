@@ -9,6 +9,7 @@ import { Record_ } from "./api/resources/record/client/Client";
 import { Resolution } from "./api/resources/resolution/client/Client";
 import { Search } from "./api/resources/search/client/Client";
 import { Source } from "./api/resources/source/client/Client";
+import { Trade } from "./api/resources/trade/client/Client";
 import { Traversal } from "./api/resources/traversal/client/Client";
 export declare namespace SayariAnalyticsApiClient {
     interface Options {
@@ -35,6 +36,8 @@ export declare class SayariAnalyticsApiClient {
     get search(): Search;
     protected _source: Source | undefined;
     get source(): Source;
+    protected _trade: Trade | undefined;
+    get trade(): Trade;
     protected _traversal: Traversal | undefined;
     get traversal(): Traversal;
 }
