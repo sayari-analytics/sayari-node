@@ -52,9 +52,14 @@ class Traversal {
     }
     /**
      * The Traversal endpoint returns paths from a single target entity to up to 50 directly or indirectly-related entities. Each path includes information on the 0 to 10 intermediary entities, as well as their connecting relationships. The response's explored_count field indicates the size of the graph subset the application searched. Running a traversal on a highly connected entity with a restrictive set of argument filters and a high max depth will require the application to explore a higher number of traversal paths, which may affect performance.
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link SayariAnalyticsApi.BadGateway}
+     * @throws {@link SayariAnalyticsApi.ConnectionError}
      */
     traversal(id, request = {}, requestOptions) {
         var _a;
@@ -185,6 +190,20 @@ class Traversal {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 400:
+                        throw new SayariAnalyticsApi.BadRequest(yield serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 404:
                         throw new SayariAnalyticsApi.NotFound(yield serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
@@ -192,10 +211,36 @@ class Traversal {
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
                         }));
+                    case 405:
+                        throw new SayariAnalyticsApi.MethodNotAllowed(yield serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 429:
-                        throw new SayariAnalyticsApi.RateLimitExceeded();
-                    case 401:
-                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        throw new SayariAnalyticsApi.RateLimitExceeded(yield serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 500:
+                        throw new SayariAnalyticsApi.InternalServerError(yield serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 502:
+                        throw new SayariAnalyticsApi.BadGateway(yield serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 520:
+                        throw new SayariAnalyticsApi.ConnectionError(yield serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -225,9 +270,14 @@ class Traversal {
     }
     /**
      * The UBO endpoint returns paths from a single target entity to up to 50 beneficial owners. The endpoint is a shorthand for the equivalent traversal query.
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link SayariAnalyticsApi.BadGateway}
+     * @throws {@link SayariAnalyticsApi.ConnectionError}
      */
     ubo(id, requestOptions) {
         var _a;
@@ -253,6 +303,20 @@ class Traversal {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 400:
+                        throw new SayariAnalyticsApi.BadRequest(yield serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 404:
                         throw new SayariAnalyticsApi.NotFound(yield serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
@@ -260,10 +324,36 @@ class Traversal {
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
                         }));
+                    case 405:
+                        throw new SayariAnalyticsApi.MethodNotAllowed(yield serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 429:
-                        throw new SayariAnalyticsApi.RateLimitExceeded();
-                    case 401:
-                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        throw new SayariAnalyticsApi.RateLimitExceeded(yield serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 500:
+                        throw new SayariAnalyticsApi.InternalServerError(yield serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 502:
+                        throw new SayariAnalyticsApi.BadGateway(yield serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 520:
+                        throw new SayariAnalyticsApi.ConnectionError(yield serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -293,9 +383,14 @@ class Traversal {
     }
     /**
      * The Ownership endpoint returns paths from a single target entity to up to 50 entities directly or indirectly owned by that entity. The endpoint is a shorthand for the equivalent traversal query.
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link SayariAnalyticsApi.BadGateway}
+     * @throws {@link SayariAnalyticsApi.ConnectionError}
      */
     ownership(id, requestOptions) {
         var _a;
@@ -321,6 +416,20 @@ class Traversal {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 400:
+                        throw new SayariAnalyticsApi.BadRequest(yield serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 404:
                         throw new SayariAnalyticsApi.NotFound(yield serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
@@ -328,10 +437,36 @@ class Traversal {
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
                         }));
+                    case 405:
+                        throw new SayariAnalyticsApi.MethodNotAllowed(yield serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 429:
-                        throw new SayariAnalyticsApi.RateLimitExceeded();
-                    case 401:
-                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        throw new SayariAnalyticsApi.RateLimitExceeded(yield serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 500:
+                        throw new SayariAnalyticsApi.InternalServerError(yield serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 502:
+                        throw new SayariAnalyticsApi.BadGateway(yield serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 520:
+                        throw new SayariAnalyticsApi.ConnectionError(yield serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -361,9 +496,14 @@ class Traversal {
     }
     /**
      * The Watchlist endpoint returns paths from a single target entity to up to 50 other entities that appear on a watchlist or are peps. The endpoint is a shorthand for the equivalent traversal query.
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link SayariAnalyticsApi.BadGateway}
+     * @throws {@link SayariAnalyticsApi.ConnectionError}
      */
     watchlist(id, requestOptions) {
         var _a;
@@ -389,6 +529,20 @@ class Traversal {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 400:
+                        throw new SayariAnalyticsApi.BadRequest(yield serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 404:
                         throw new SayariAnalyticsApi.NotFound(yield serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
@@ -396,10 +550,36 @@ class Traversal {
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
                         }));
+                    case 405:
+                        throw new SayariAnalyticsApi.MethodNotAllowed(yield serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 429:
-                        throw new SayariAnalyticsApi.RateLimitExceeded();
-                    case 401:
-                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        throw new SayariAnalyticsApi.RateLimitExceeded(yield serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 500:
+                        throw new SayariAnalyticsApi.InternalServerError(yield serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 502:
+                        throw new SayariAnalyticsApi.BadGateway(yield serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 520:
+                        throw new SayariAnalyticsApi.ConnectionError(yield serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -429,9 +609,14 @@ class Traversal {
     }
     /**
      * The Shortest Path endpoint returns a response identifying the shortest traversal path connecting each pair of entities.
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link SayariAnalyticsApi.BadGateway}
+     * @throws {@link SayariAnalyticsApi.ConnectionError}
      */
     shortestPath(request, requestOptions) {
         var _a;
@@ -468,6 +653,20 @@ class Traversal {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 400:
+                        throw new SayariAnalyticsApi.BadRequest(yield serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 404:
                         throw new SayariAnalyticsApi.NotFound(yield serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
@@ -475,10 +674,36 @@ class Traversal {
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
                         }));
+                    case 405:
+                        throw new SayariAnalyticsApi.MethodNotAllowed(yield serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 429:
-                        throw new SayariAnalyticsApi.RateLimitExceeded();
-                    case 401:
-                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        throw new SayariAnalyticsApi.RateLimitExceeded(yield serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 500:
+                        throw new SayariAnalyticsApi.InternalServerError(yield serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 502:
+                        throw new SayariAnalyticsApi.BadGateway(yield serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 520:
+                        throw new SayariAnalyticsApi.ConnectionError(yield serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

@@ -51,7 +51,9 @@ class Auth {
     }
     /**
      * Hit the auth endpoint to get a bearer token
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     getToken(request, requestOptions) {
         var _a;
@@ -78,8 +80,22 @@ class Auth {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 400:
+                        throw new SayariAnalyticsApi.BadRequest(yield serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 401:
                         throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 500:
+                        throw new SayariAnalyticsApi.InternalServerError(yield serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

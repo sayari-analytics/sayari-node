@@ -4,5 +4,5 @@
 import * as errors from "../../../../errors";
 import * as SayariAnalyticsApi from "../../..";
 export declare class Unauthorized extends errors.SayariAnalyticsApiError {
-    constructor(body: SayariAnalyticsApi.UnauthorizedResponse);
+    constructor(body?: SayariAnalyticsApi.UnauthorizedResponse);
 }

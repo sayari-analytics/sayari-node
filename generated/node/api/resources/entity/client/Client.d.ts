@@ -19,16 +19,22 @@ export declare class Entity {
     constructor(_options: Entity.Options);
     /**
      * Retrieve an entity from the database based on the ID
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     getEntity(id: SayariAnalyticsApi.EntityId, request?: SayariAnalyticsApi.GetEntity, requestOptions?: Entity.RequestOptions): Promise<SayariAnalyticsApi.EntityDetails>;
     /**
      * The Entity Summary endpoint returns a smaller entity payload
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     entitySummary(id: SayariAnalyticsApi.EntityId, requestOptions?: Entity.RequestOptions): Promise<SayariAnalyticsApi.EntityDetails>;
     protected _getAuthorizationHeader(): Promise<string | undefined>;

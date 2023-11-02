@@ -19,16 +19,22 @@ export declare class Search {
     constructor(_options: Search.Options);
     /**
      * Search for an entity
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.NotAcceptable}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     searchEntity(request: SayariAnalyticsApi.SearchEntity, requestOptions?: Search.RequestOptions): Promise<SayariAnalyticsApi.EntitySearchResults>;
     /**
      * Search for a record
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.NotAcceptable}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     searchRecord(request: SayariAnalyticsApi.SearchRecord, requestOptions?: Search.RequestOptions): Promise<SayariAnalyticsApi.RecordSearchResults>;
     protected _getAuthorizationHeader(): Promise<string | undefined>;

@@ -19,23 +19,29 @@ export declare class Trade {
     constructor(_options: Trade.Options);
     /**
      * Search for a shipment
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     searchShipments(request: SayariAnalyticsApi.SearchShipments, requestOptions?: Trade.RequestOptions): Promise<SayariAnalyticsApi.ShipmentSearchResults>;
     /**
      * Search for a supplier
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     searchSuppliers(request: SayariAnalyticsApi.SearchSuppliers, requestOptions?: Trade.RequestOptions): Promise<SayariAnalyticsApi.SupplierSearchResults>;
     /**
      * Search for a buyer
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     searchBuyers(request: SayariAnalyticsApi.SearchBuyers, requestOptions?: Trade.RequestOptions): Promise<SayariAnalyticsApi.BuyerSearchResults>;
     protected _getAuthorizationHeader(): Promise<string | undefined>;

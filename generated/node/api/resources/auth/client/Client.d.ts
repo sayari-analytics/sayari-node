@@ -19,7 +19,9 @@ export declare class Auth {
     constructor(_options: Auth.Options);
     /**
      * Hit the auth endpoint to get a bearer token
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     getToken(request: SayariAnalyticsApi.GetToken, requestOptions?: Auth.RequestOptions): Promise<SayariAnalyticsApi.AuthResponse>;
     protected _getAuthorizationHeader(): Promise<string | undefined>;

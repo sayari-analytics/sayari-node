@@ -29,9 +29,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RateLimitExceeded = void 0;
 const errors = __importStar(require("../../../../errors"));
 class RateLimitExceeded extends errors.SayariAnalyticsApiError {
-    constructor() {
+    constructor(body) {
         super({
             statusCode: 429,
+            body: body,
         });
         Object.setPrototypeOf(this, RateLimitExceeded.prototype);
     }

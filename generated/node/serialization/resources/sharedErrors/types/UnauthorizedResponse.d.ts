@@ -4,10 +4,7 @@
 import * as serializers from "../../..";
 import * as SayariAnalyticsApi from "../../../../api";
 import * as core from "../../../../core";
-export declare const UnauthorizedResponse: core.serialization.ObjectSchema<serializers.UnauthorizedResponse.Raw, SayariAnalyticsApi.UnauthorizedResponse>;
+export declare const UnauthorizedResponse: core.serialization.Schema<serializers.UnauthorizedResponse.Raw, SayariAnalyticsApi.UnauthorizedResponse>;
 export declare namespace UnauthorizedResponse {
-    interface Raw {
-        error: string;
-        error_description: string;
-    }
+    type Raw = unknown;
 }

@@ -19,9 +19,12 @@ export declare class Record_ {
     constructor(_options: Record_.Options);
     /**
      * Retrieve a record from the database based on the ID
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     getRecord(id: SayariAnalyticsApi.RecordId, request?: SayariAnalyticsApi.GetRecord, requestOptions?: Record_.RequestOptions): Promise<SayariAnalyticsApi.RecordDetails>;
     protected _getAuthorizationHeader(): Promise<string | undefined>;

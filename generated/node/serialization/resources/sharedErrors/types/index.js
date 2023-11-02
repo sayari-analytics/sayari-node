@@ -14,5 +14,12 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./NotFoundResponse"), exports);
+__exportStar(require("./BadRequestResponse"), exports);
 __exportStar(require("./UnauthorizedResponse"), exports);
+__exportStar(require("./MethodNotAllowedResponse"), exports);
+__exportStar(require("./NotFoundResponse"), exports);
+__exportStar(require("./NotAcceptableResponse"), exports);
+__exportStar(require("./RateLimitResponse"), exports);
+__exportStar(require("./InternalServerErrorResponse"), exports);
+__exportStar(require("./BadGatewayResponse"), exports);
+__exportStar(require("./ConnectionErrorResponse"), exports);

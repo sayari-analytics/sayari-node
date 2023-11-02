@@ -52,9 +52,12 @@ class Record_ {
     }
     /**
      * Retrieve a record from the database based on the ID
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
      */
     getRecord(id, request = {}, requestOptions) {
         var _a;
@@ -89,6 +92,20 @@ class Record_ {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 400:
+                        throw new SayariAnalyticsApi.BadRequest(yield serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 401:
+                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 404:
                         throw new SayariAnalyticsApi.NotFound(yield serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
@@ -96,10 +113,22 @@ class Record_ {
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
                         }));
+                    case 405:
+                        throw new SayariAnalyticsApi.MethodNotAllowed(yield serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 429:
-                        throw new SayariAnalyticsApi.RateLimitExceeded();
-                    case 401:
-                        throw new SayariAnalyticsApi.Unauthorized(yield serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        throw new SayariAnalyticsApi.RateLimitExceeded(yield serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 500:
+                        throw new SayariAnalyticsApi.InternalServerError(yield serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

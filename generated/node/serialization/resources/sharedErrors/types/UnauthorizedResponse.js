@@ -28,7 +28,4 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UnauthorizedResponse = void 0;
 const core = __importStar(require("../../../../core"));
-exports.UnauthorizedResponse = core.serialization.object({
-    error: core.serialization.string(),
-    errorDescription: core.serialization.property("error_description", core.serialization.string()),
-});
+exports.UnauthorizedResponse = core.serialization.unknown();
