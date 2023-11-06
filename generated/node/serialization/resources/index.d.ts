@@ -4,6 +4,8 @@ export * as baseTypes from "./baseTypes";
 export * from "./baseTypes/types";
 export * as generatedTypes from "./generatedTypes";
 export * from "./generatedTypes/types";
+export * as info from "./info";
+export * from "./info/types";
 export * as resolution from "./resolution";
 export * from "./resolution/types";
 export * as search from "./search";
