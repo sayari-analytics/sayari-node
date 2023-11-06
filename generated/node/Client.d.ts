@@ -5,6 +5,7 @@ import * as environments from "./environments";
 import * as core from "./core";
 import { Auth } from "./api/resources/auth/client/Client";
 import { Entity } from "./api/resources/entity/client/Client";
+import { Info } from "./api/resources/info/client/Client";
 import { Record_ } from "./api/resources/record/client/Client";
 import { Resolution } from "./api/resources/resolution/client/Client";
 import { Search } from "./api/resources/search/client/Client";
@@ -28,6 +29,8 @@ export declare class SayariAnalyticsApiClient {
     get auth(): Auth;
     protected _entity: Entity | undefined;
     get entity(): Entity;
+    protected _info: Info | undefined;
+    get info(): Info;
     protected _record: Record_ | undefined;
     get record(): Record_;
     protected _resolution: Resolution | undefined;
