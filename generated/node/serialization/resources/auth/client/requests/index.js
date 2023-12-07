@@ -1,1 +1,0 @@
-export { GetToken } from "./GetToken";
