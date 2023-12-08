@@ -1,2 +1,2 @@
-export { discriminant } from "./discriminant.js";
-export { union } from "./union.js";
+export { discriminant } from "./discriminant";
+export { union } from "./union";

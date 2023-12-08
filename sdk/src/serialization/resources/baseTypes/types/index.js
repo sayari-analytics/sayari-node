@@ -1,2 +1,2 @@
-export * from "./PaginatedResponse.js";
-export * from "./SizeInfo.js";
+export * from "./PaginatedResponse";
+export * from "./SizeInfo";

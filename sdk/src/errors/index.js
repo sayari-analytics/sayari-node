@@ -1,2 +1,2 @@
-export { SayariAnalyticsApiError } from "./SayariAnalyticsApiError.js";
-export { SayariAnalyticsApiTimeoutError } from "./SayariAnalyticsApiTimeoutError.js";
+export { SayariAnalyticsApiError } from "./SayariAnalyticsApiError";
+export { SayariAnalyticsApiTimeoutError } from "./SayariAnalyticsApiTimeoutError";

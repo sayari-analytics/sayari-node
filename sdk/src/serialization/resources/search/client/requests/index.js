@@ -1,2 +1,2 @@
-export { SearchEntity } from "./SearchEntity.js";
-export { SearchRecord } from "./SearchRecord.js";
+export { SearchEntity } from "./SearchEntity";
+export { SearchRecord } from "./SearchRecord";

@@ -7,11 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { SchemaType } from "../../Schema.js";
-import { getErrorMessageForIncorrectType } from "../../utils/getErrorMessageForIncorrectType.js";
-import { maybeSkipValidation } from "../../utils/maybeSkipValidation.js";
-import { list } from "../list/index.js";
-import { getSchemaUtils } from "../schema-utils/index.js";
+import { SchemaType } from "../../Schema";
+import { getErrorMessageForIncorrectType } from "../../utils/getErrorMessageForIncorrectType";
+import { maybeSkipValidation } from "../../utils/maybeSkipValidation";
+import { list } from "../list";
+import { getSchemaUtils } from "../schema-utils";
 export function set(schema) {
     const listSchema = list(schema);
     const baseSchema = {

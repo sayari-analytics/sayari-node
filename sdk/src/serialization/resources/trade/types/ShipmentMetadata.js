@@ -10,14 +10,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const ShipmentMetadata = core.serialization.object({
-    arrivalCountry: core.serialization.property("arrival_country", core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Country; })))),
-    jurisdiction: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Country; }))),
+    arrivalCountry: core.serialization.property("arrival_country", core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; })))),
+    jurisdiction: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; }))),
     referenceId: core.serialization.property("reference_id", core.serialization.string()),
-    entityId: core.serialization.property("entity_id", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).EntityId; }))),
-    departureAddress: core.serialization.property("departure_address", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).AddressProperties; })).optional()),
+    entityId: core.serialization.property("entity_id", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityId; }))),
+    departureAddress: core.serialization.property("departure_address", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).AddressProperties; })).optional()),
     type: core.serialization.string(),
     sources: core.serialization.list(core.serialization.string()),
-    departureCountry: core.serialization.property("departure_country", core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Country; })))),
+    departureCountry: core.serialization.property("departure_country", core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; })))),
 });

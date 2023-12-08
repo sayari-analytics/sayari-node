@@ -1,3 +1,3 @@
-export * from "./FilterList.js";
-export * from "./EntitySearchResults.js";
-export * from "./RecordSearchResults.js";
+export * from "./FilterList";
+export * from "./EntitySearchResults";
+export * from "./RecordSearchResults";

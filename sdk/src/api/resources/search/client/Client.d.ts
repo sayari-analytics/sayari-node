@@ -3,12 +3,12 @@
  */
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../../index";
+import * as SayariAnalyticsApi from "../../..";
 export declare namespace Search {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        client: core.Supplier<string>;
+        clientName: core.Supplier<string>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;
@@ -18,7 +18,7 @@ export declare class Search {
     protected readonly _options: Search.Options;
     constructor(_options: Search.Options);
     /**
-     * Search for an entity
+     * Search for an entity. Please note, searches are limited to a maximum of 10,000 results.
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -28,7 +28,7 @@ export declare class Search {
      */
     searchEntity(request: SayariAnalyticsApi.SearchEntity, requestOptions?: Search.RequestOptions): Promise<SayariAnalyticsApi.EntitySearchResults>;
     /**
-     * Search for a record
+     * Search for a record. Please note, searches are limited to a maximum of 10,000 results.
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}

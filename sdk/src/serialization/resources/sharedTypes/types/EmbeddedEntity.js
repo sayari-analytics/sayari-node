@@ -10,22 +10,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const EmbeddedEntity = core.serialization.object({
-    id: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).EntityId; })),
-    label: core.serialization.string(),
-    degree: core.serialization.number(),
-    closed: core.serialization.boolean(),
-    entityUrl: core.serialization.property("entity_url", core.serialization.string()),
-    pep: core.serialization.boolean(),
-    psaCount: core.serialization.property("psa_count", core.serialization.number()),
-    sanctioned: core.serialization.boolean(),
-    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Entities; })),
-    identifiers: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Identifier; }))),
-    countries: core.serialization.list(core.serialization.string()),
-    psaSanctioned: core.serialization.property("psa_sanctioned", core.serialization.string().optional()),
-    sourceCount: core.serialization.property("source_count", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).SourceCount; }))),
-    addresses: core.serialization.list(core.serialization.string()),
-    dateOfBirth: core.serialization.property("date_of_birth", core.serialization.string().optional()),
-    relationshipCount: core.serialization.property("relationship_count", core.serialization.record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Relationships; })), core.serialization.number().optional())),
+    id: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityId; })),
+    label: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityLabel; })),
+    degree: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityDegree; })),
+    closed: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityClosed; })),
+    entityUrl: core.serialization.property("entity_url", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityUrl; }))),
+    pep: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityPep; })),
+    psaCount: core.serialization.property("psa_count", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityPsaCount; }))),
+    sanctioned: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntitySanctioned; })),
+    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Entities; })),
+    identifiers: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Identifier; }))),
+    countries: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; }))),
+    sourceCount: core.serialization.property("source_count", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).SourceCount; }))),
+    addresses: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityAddresses; }))),
+    dateOfBirth: core.serialization.property("date_of_birth", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityDob; })).optional()),
+    relationshipCount: core.serialization.property("relationship_count", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityRelationshipCount; }))),
 });

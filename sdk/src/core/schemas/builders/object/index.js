@@ -1,2 +1,2 @@
-export { getObjectUtils, object } from "./object.js";
-export { isProperty, property } from "./property.js";
+export { getObjectUtils, object } from "./object";
+export { isProperty, property } from "./property";

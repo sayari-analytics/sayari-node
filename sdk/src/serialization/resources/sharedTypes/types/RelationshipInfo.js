@@ -10,11 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const RelationshipInfo = core.serialization.object({
     record: core.serialization.string(),
-    attributes: core.serialization.record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Attributes; })), core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).RelationshipAttributeValue; })))
+    attributes: core.serialization.record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Attributes; })), core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).RelationshipAttributeValue; })))
         .optional()),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     acquisitionDate: core.serialization.property("acquisition_date", core.serialization.string()),

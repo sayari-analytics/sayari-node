@@ -10,13 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as environments from "../../../../environments.js";
-import * as core from "../../../../core/index.js";
-import * as SayariAnalyticsApi from "../../../index.js";
+import * as environments from "../../../../environments";
+import * as core from "../../../../core";
+import * as SayariAnalyticsApi from "../../..";
 import { default as URLSearchParams } from "@ungap/url-search-params";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization/index.js";
-import * as errors from "../../../../errors/index.js";
+import * as serializers from "../../../../serialization";
+import * as errors from "../../../../errors";
 export class Resolution {
     constructor(_options) {
         this._options = _options;
@@ -110,7 +110,7 @@ export class Resolution {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    client: yield core.Supplier.get(this._options.client),
+                    "client-name": yield core.Supplier.get(this._options.clientName),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",

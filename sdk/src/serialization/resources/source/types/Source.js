@@ -10,12 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const Source = core.serialization.object({
     id: core.serialization.string(),
     label: core.serialization.string(),
     description: core.serialization.string(),
-    country: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Country; })),
+    country: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; })),
     region: core.serialization.string(),
     dateAdded: core.serialization.property("date_added", core.serialization.string()),
     sourceType: core.serialization.property("source_type", core.serialization.string()),

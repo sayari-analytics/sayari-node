@@ -10,13 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as environments from "../../../../environments.js";
-import * as core from "../../../../core/index.js";
-import * as SayariAnalyticsApi from "../../../index.js";
+import * as environments from "../../../../environments";
+import * as core from "../../../../core";
+import * as SayariAnalyticsApi from "../../..";
 import { default as URLSearchParams } from "@ungap/url-search-params";
-import * as serializers from "../../../../serialization/index.js";
+import * as serializers from "../../../../serialization";
 import urlJoin from "url-join";
-import * as errors from "../../../../errors/index.js";
+import * as errors from "../../../../errors";
 export class Entity {
     constructor(_options) {
         this._options = _options;
@@ -33,7 +33,7 @@ export class Entity {
     getEntity(id, request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
-            const { attributesNameNext, attributesNamePrev, attributesNameLimit, attributesAddressNext, attributesAddressPrev, attributesAddressLimit, attributesCountryNext, attributesCountryPrev, attributesCountryLimit, relationshipsNext, relationshipsPrev, relationshipsLimit, relationshipsType, relationshipsSort, relationshipsStartDate, relationshipsEndDate, relationshipsMinShares, relationshipsCountry, relationshipsArrivalCountry, relationshipsDepartureCountry, relationshipsHsCode, possiblySameAsNext, possiblySameAsPrev, possiblySameAsLimit, referencedByNext, referencedByPrev, referencedByLimit, } = request;
+            const { attributesNameNext, attributesNamePrev, attributesNameLimit, attributesAddressNext, attributesAddressPrev, attributesAddressLimit, attributesCountryNext, attributesCountryPrev, attributesCountryLimit, relationshipsNext, relationshipsPrev, relationshipsLimit, relationshipsType, relationshipsSort, relationshipsStartDate, relationshipsEndDate, relationshipsMinShares, relationshipsCountry, relationshipsArrivalCountry, relationshipsArrivalState, relationshipsArrivalCity, relationshipsDepartureCountry, relationshipsDepartureState, relationshipsDepartureCity, relationshipsPartnerName, relationshipsPartnerRisk, relationshipsHsCode, possiblySameAsNext, possiblySameAsPrev, possiblySameAsLimit, referencedByNext, referencedByPrev, referencedByLimit, } = request;
             const _queryParams = new URLSearchParams();
             if (attributesNameNext != null) {
                 _queryParams.append("attributes.name.next", attributesNameNext);
@@ -106,6 +106,12 @@ export class Entity {
                     _queryParams.append("relationships.arrivalCountry", relationshipsArrivalCountry);
                 }
             }
+            if (relationshipsArrivalState != null) {
+                _queryParams.append("relationships.arrivalState", relationshipsArrivalState);
+            }
+            if (relationshipsArrivalCity != null) {
+                _queryParams.append("relationships.arrivalCity", relationshipsArrivalCity);
+            }
             if (relationshipsDepartureCountry != null) {
                 if (Array.isArray(relationshipsDepartureCountry)) {
                     for (const _item of relationshipsDepartureCountry) {
@@ -114,6 +120,25 @@ export class Entity {
                 }
                 else {
                     _queryParams.append("relationships.departureCountry", relationshipsDepartureCountry);
+                }
+            }
+            if (relationshipsDepartureState != null) {
+                _queryParams.append("relationships.departureState", relationshipsDepartureState);
+            }
+            if (relationshipsDepartureCity != null) {
+                _queryParams.append("relationships.departureCity", relationshipsDepartureCity);
+            }
+            if (relationshipsPartnerName != null) {
+                _queryParams.append("relationships.partnerName", relationshipsPartnerName);
+            }
+            if (relationshipsPartnerRisk != null) {
+                if (Array.isArray(relationshipsPartnerRisk)) {
+                    for (const _item of relationshipsPartnerRisk) {
+                        _queryParams.append("relationships.partnerRisk", _item);
+                    }
+                }
+                else {
+                    _queryParams.append("relationships.partnerRisk", relationshipsPartnerRisk);
                 }
             }
             if (relationshipsHsCode != null) {
@@ -142,7 +167,7 @@ export class Entity {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    client: yield core.Supplier.get(this._options.client),
+                    "client-name": yield core.Supplier.get(this._options.clientName),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -240,7 +265,7 @@ export class Entity {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    client: yield core.Supplier.get(this._options.client),
+                    "client-name": yield core.Supplier.get(this._options.clientName),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",

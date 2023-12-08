@@ -7,10 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { filterObject } from "../../utils/filterObject.js";
-import { getErrorMessageForIncorrectType } from "../../utils/getErrorMessageForIncorrectType.js";
-import { isPlainObject } from "../../utils/isPlainObject.js";
-import { getSchemaUtils } from "../schema-utils/index.js";
+import { filterObject } from "../../utils/filterObject";
+import { getErrorMessageForIncorrectType } from "../../utils/getErrorMessageForIncorrectType";
+import { isPlainObject } from "../../utils/isPlainObject";
+import { getSchemaUtils } from "../schema-utils";
 export function getObjectLikeUtils(schema) {
     return {
         withParsedProperties: (properties) => withParsedProperties(schema, properties),
