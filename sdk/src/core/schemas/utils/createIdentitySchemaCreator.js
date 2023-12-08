@@ -1,5 +1,5 @@
-import { getSchemaUtils } from "../builders/schema-utils/index.js";
-import { maybeSkipValidation } from "./maybeSkipValidation.js";
+import { getSchemaUtils } from "../builders/schema-utils";
+import { maybeSkipValidation } from "./maybeSkipValidation";
 export function createIdentitySchemaCreator(schemaType, validate) {
     return () => {
         const baseSchema = {

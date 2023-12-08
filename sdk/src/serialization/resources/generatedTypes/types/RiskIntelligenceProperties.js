@@ -10,11 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const RiskIntelligenceProperties = core.serialization.object({
     authority: core.serialization.string().optional(),
     list: core.serialization.string().optional(),
     program: core.serialization.string().optional(),
     reason: core.serialization.string().optional(),
-    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Tag; })),
+    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Tag; })),
 });

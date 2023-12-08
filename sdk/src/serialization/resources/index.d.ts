@@ -22,3 +22,4 @@ export * as traversal from "./traversal";
 export * from "./traversal/types";
 export * from "./auth/client/requests";
 export * from "./search/client/requests";
+export * from "./trade/client/requests";

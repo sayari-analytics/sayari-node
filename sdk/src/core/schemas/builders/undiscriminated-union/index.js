@@ -1,1 +1,1 @@
-export { undiscriminatedUnion } from "./undiscriminatedUnion.js";
+export { undiscriminatedUnion } from "./undiscriminatedUnion";

@@ -1,1 +1,1 @@
-export { stringLiteral } from "./stringLiteral.js";
+export { stringLiteral } from "./stringLiteral";

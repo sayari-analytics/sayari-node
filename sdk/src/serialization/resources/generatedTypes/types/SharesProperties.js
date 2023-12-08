@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const SharesProperties = core.serialization.object({
-    currency: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Currency; })).optional(),
+    currency: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Currency; })).optional(),
     monetaryValue: core.serialization.property("monetary_value", core.serialization.number().optional()),
     numShares: core.serialization.property("num_shares", core.serialization.number().optional()),
     percentage: core.serialization.number().optional(),

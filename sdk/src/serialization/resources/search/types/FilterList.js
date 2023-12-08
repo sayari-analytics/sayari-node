@@ -10,17 +10,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const FilterList = core.serialization.object({
     source: core.serialization
-        .list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).SourceId; })))
+        .list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).SourceId; })))
         .optional(),
     country: core.serialization
-        .list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Country; })))
+        .list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; })))
         .optional(),
     state: core.serialization.list(core.serialization.string()).optional(),
     city: core.serialization.list(core.serialization.string()).optional(),
-    entityType: core.serialization.property("entity_type", core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Entities; }))).optional()),
+    entityType: core.serialization.property("entity_type", core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Entities; }))).optional()),
     bounds: core.serialization.list(core.serialization.string()).optional(),
-    risk: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Tag; }))).optional(),
+    risk: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Tag; }))).optional(),
 });

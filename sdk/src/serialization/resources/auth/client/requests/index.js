@@ -1,1 +1,1 @@
-export { GetToken } from "./GetToken.js";
+export { GetToken } from "./GetToken";

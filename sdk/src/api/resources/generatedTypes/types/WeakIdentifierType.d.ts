@@ -271,7 +271,10 @@ export declare type WeakIdentifierType =
  | "geo_state_registration_number"
 /**
  * Bosnia and Herzegovenia business register registration number */
- | "bih_mbs_number";
+ | "bih_mbs_number"
+/**
+ * A temporary malformed type */
+ | "malformed mmr_prior_reg_no";
 export declare const WeakIdentifierType: {
     readonly Unknown: "unknown";
     readonly MxPartialRfcPerson: "mx_partial_rfc_person";
@@ -372,4 +375,5 @@ export declare const WeakIdentifierType: {
     readonly RusCbrId: "rus_cbr_id";
     readonly GeoStateRegistrationNumber: "geo_state_registration_number";
     readonly BihMbsNumber: "bih_mbs_number";
+    readonly MalformedMmrPriorRegNo: "malformed mmr_prior_reg_no";
 };

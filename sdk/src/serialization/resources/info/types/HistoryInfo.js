@@ -10,11 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const HistoryInfo = core.serialization.object({
     user: core.serialization.string(),
     environment: core.serialization.string(),
     event: core.serialization.string(),
-    data: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).EventInfo; })),
+    data: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EventInfo; })),
     timestamp: core.serialization.string(),
 });

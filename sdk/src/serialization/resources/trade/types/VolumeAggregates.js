@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const VolumeAggregates = core.serialization.object({
     key: core.serialization.string(),
     docCount: core.serialization.property("doc_count", core.serialization.number()),
-    latestShipmentDate: core.serialization.property("latest_shipment_date", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).LatestShipmentDate; }))),
+    latestShipmentDate: core.serialization.property("latest_shipment_date", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).LatestShipmentDate; }))),
 });

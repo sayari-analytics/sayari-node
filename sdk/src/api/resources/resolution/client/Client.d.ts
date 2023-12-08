@@ -3,12 +3,12 @@
  */
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../../index";
+import * as SayariAnalyticsApi from "../../..";
 export declare namespace Resolution {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        client: core.Supplier<string>;
+        clientName: core.Supplier<string>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;

@@ -1,3 +1,4 @@
+export * from "./TradeFilterList";
 export * from "./ShipmentSearchResults";
 export * from "./ShipmentHits";
 export * from "./Shipment";

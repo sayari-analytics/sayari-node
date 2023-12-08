@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const AddressProperties = core.serialization.object({
     building: core.serialization.string().optional(),
     category: core.serialization.string().optional(),
@@ -22,7 +22,7 @@ export const AddressProperties = core.serialization.object({
     house: core.serialization.string().optional(),
     houseNumber: core.serialization.property("house_number", core.serialization.string().optional()),
     island: core.serialization.string().optional(),
-    language: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Language; })).optional(),
+    language: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Language; })).optional(),
     level: core.serialization.string().optional(),
     metroStation: core.serialization.property("metro_station", core.serialization.string().optional()),
     near: core.serialization.string().optional(),
@@ -36,7 +36,7 @@ export const AddressProperties = core.serialization.object({
     suburb: core.serialization.string().optional(),
     translated: core.serialization.string().optional(),
     transliterated: core.serialization.string().optional(),
-    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).AddressType; })).optional(),
+    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).AddressType; })).optional(),
     unit: core.serialization.string().optional(),
     value: core.serialization.string().optional(),
     worldRegion: core.serialization.property("world_region", core.serialization.string().optional()),

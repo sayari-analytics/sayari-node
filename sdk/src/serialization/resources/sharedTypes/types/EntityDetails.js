@@ -10,25 +10,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core/index.js";
+import * as core from "../../../../core";
 export const EntityDetails = core.serialization
     .object({
-    registrationDate: core.serialization.property("registration_date", core.serialization.string().optional()),
-    translatedLabel: core.serialization.property("translated_label", core.serialization.string().optional()),
-    hsCode: core.serialization.property("hs_code", core.serialization.string().optional()),
-    shipmentArrival: core.serialization.property("shipment_arrival", core.serialization.string().optional()),
-    shipmentDeparture: core.serialization.property("shipment_departure", core.serialization.string().optional()),
-    companyType: core.serialization.property("company_type", core.serialization.string().optional()),
-    latestStatus: core.serialization.property("latest_status", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Status; })).optional()),
-    risk: core.serialization.record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Risk; })), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).RiskData; })).optional()),
-    attributes: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).AttributeDetails; })).optional(),
+    registrationDate: core.serialization.property("registration_date", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityRegistrationDate; })).optional()),
+    translatedLabel: core.serialization.property("translated_label", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityTranslatedLabel; })).optional()),
+    hsCode: core.serialization.property("hs_code", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityHsCode; })).optional()),
+    shipmentArrival: core.serialization.property("shipment_arrival", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).ShipmentArrival; })).optional()),
+    shipmentDeparture: core.serialization.property("shipment_departure", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).ShipmentDepartue; })).optional()),
+    companyType: core.serialization.property("company_type", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).CompanyType; })).optional()),
+    latestStatus: core.serialization.property("latest_status", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Status; })).optional()),
+    risk: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityRisk; })),
+    attributes: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).AttributeDetails; })).optional(),
     relationships: core.serialization
-        .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).EntityRelationships; }))
+        .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityRelationships; }))
         .optional(),
-    possiblySameAs: core.serialization.property("possibly_same_as", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).PossiblySameAs; })).optional()),
-    referencedBy: core.serialization.property("referenced_by", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).ReferencedBy; })).optional()),
-    matches: core.serialization
-        .record(core.serialization.string(), core.serialization.list(core.serialization.string()))
-        .optional(),
+    possiblySameAs: core.serialization.property("possibly_same_as", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).PossiblySameAs; })).optional()),
+    referencedBy: core.serialization.property("referenced_by", core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).ReferencedBy; })).optional()),
+    matches: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityMatches; })).optional(),
 })
-    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).EmbeddedEntity; })));
+    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EmbeddedEntity; })));
