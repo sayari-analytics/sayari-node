@@ -10,10 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const FinancialsProperties = core.serialization.object({
     assets: core.serialization.number().optional(),
-    currency: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Currency; })).optional(),
+    currency: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Currency; })).optional(),
     employees: core.serialization.number().optional(),
     liabilities: core.serialization.number().optional(),
     netIncome: core.serialization.property("net_income", core.serialization.number().optional()),

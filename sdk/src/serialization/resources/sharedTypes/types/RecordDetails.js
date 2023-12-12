@@ -10,11 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const RecordDetails = core.serialization.object({
-    id: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).RecordId; })),
+    id: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).RecordId; })),
     label: core.serialization.string(),
-    source: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).SourceId; })),
+    source: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).SourceId; })),
     publicationDate: core.serialization.property("publication_date", core.serialization.string().optional()),
     acquisitionDate: core.serialization.property("acquisition_date", core.serialization.string()),
     referencesCount: core.serialization.property("references_count", core.serialization.number()),

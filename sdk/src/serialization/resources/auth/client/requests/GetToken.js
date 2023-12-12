@@ -10,10 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../../core";
+import * as core from "../../../../../core/index.js";
 export const GetToken = core.serialization.object({
-    clientId: core.serialization.property("client_id", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../..")).ClientId; }))),
-    clientSecret: core.serialization.property("client_secret", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../..")).ClientSecret; }))),
-    audience: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../..")).Audience; })),
-    grantType: core.serialization.property("grant_type", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../..")).GrantType; }))),
+    clientId: core.serialization.property("client_id", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../../index.js")).ClientId; }))),
+    clientSecret: core.serialization.property("client_secret", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../../index.js")).ClientSecret; }))),
+    audience: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../../index.js")).Audience; })),
+    grantType: core.serialization.property("grant_type", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../../index.js")).GrantType; }))),
 });

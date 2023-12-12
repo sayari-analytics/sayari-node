@@ -7,12 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { SchemaType } from "../../Schema";
-import { entries } from "../../utils/entries";
-import { getErrorMessageForIncorrectType } from "../../utils/getErrorMessageForIncorrectType";
-import { isPlainObject } from "../../utils/isPlainObject";
-import { maybeSkipValidation } from "../../utils/maybeSkipValidation";
-import { getSchemaUtils } from "../schema-utils";
+import { SchemaType } from "../../Schema.js";
+import { entries } from "../../utils/entries.js";
+import { getErrorMessageForIncorrectType } from "../../utils/getErrorMessageForIncorrectType.js";
+import { isPlainObject } from "../../utils/isPlainObject.js";
+import { maybeSkipValidation } from "../../utils/maybeSkipValidation.js";
+import { getSchemaUtils } from "../schema-utils/index.js";
 export function record(keySchema, valueSchema) {
     const baseSchema = {
         parse: (raw, opts) => __awaiter(this, void 0, void 0, function* () {

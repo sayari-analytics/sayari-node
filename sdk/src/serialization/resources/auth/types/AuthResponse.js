@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const AuthResponse = core.serialization.object({
-    accessToken: core.serialization.property("access_token", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).AccessToken; }))),
-    expiresIn: core.serialization.property("expires_in", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).ExpiresIn; }))),
-    tokenType: core.serialization.property("token_type", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).TokenType; }))),
+    accessToken: core.serialization.property("access_token", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).AccessToken; }))),
+    expiresIn: core.serialization.property("expires_in", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).ExpiresIn; }))),
+    tokenType: core.serialization.property("token_type", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).TokenType; }))),
 });

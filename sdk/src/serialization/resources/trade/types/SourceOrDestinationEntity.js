@@ -10,12 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const SourceOrDestinationEntity = core.serialization.object({
-    riskFactors: core.serialization.property("risk_factors", core.serialization.record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Risk; })), core.serialization.unknown())),
+    riskFactors: core.serialization.property("risk_factors", core.serialization.record(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Risk; })), core.serialization.unknown())),
     name: core.serialization.list(core.serialization.string()),
-    businessPurpose: core.serialization.property("business_purpose", core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).BusinessPurpose; })))),
-    country: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; }))),
-    entityId: core.serialization.property("entity_id", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EntityId; }))),
-    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Relationships; })),
+    businessPurpose: core.serialization.property("business_purpose", core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).BusinessPurpose; })))),
+    country: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Country; }))),
+    entityId: core.serialization.property("entity_id", core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).EntityId; }))),
+    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Relationships; })),
 });

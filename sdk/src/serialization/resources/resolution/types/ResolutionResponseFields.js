@@ -10,15 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const ResolutionResponseFields = core.serialization.object({
     name: core.serialization.list(core.serialization.string()).optional(),
     identifier: core.serialization.list(core.serialization.string()).optional(),
     country: core.serialization
-        .list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; })))
+        .list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Country; })))
         .optional(),
     address: core.serialization.list(core.serialization.string()).optional(),
     dateOfBirth: core.serialization.property("date_of_birth", core.serialization.list(core.serialization.string()).optional()),
     contact: core.serialization.list(core.serialization.string()).optional(),
-    type: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Entities; }))).optional(),
+    type: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Entities; }))).optional(),
 });

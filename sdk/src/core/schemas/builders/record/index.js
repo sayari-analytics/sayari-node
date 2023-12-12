@@ -1,1 +1,1 @@
-export { record } from "./record";
+export { record } from "./record.js";

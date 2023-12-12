@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const LatestShipmentDate = core.serialization.object({
     docCountErrorUpperBound: core.serialization.property("doc_count_error_upper_bound", core.serialization.number()),
     sumOtherDocCount: core.serialization.property("sum_other_doc_count", core.serialization.number()),
-    buckets: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Bucket; }))),
+    buckets: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Bucket; }))),
 });

@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const BusinessPurposeProperties = core.serialization.object({
     code: core.serialization.string().optional(),
-    standard: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).BusinessPurposeStandard; })).optional(),
+    standard: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).BusinessPurposeStandard; })).optional(),
     value: core.serialization.string().optional(),
 });

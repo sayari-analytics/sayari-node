@@ -10,13 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../../core";
+import * as core from "../../../../../core/index.js";
 export const SearchEntity = core.serialization.object({
     q: core.serialization.string(),
+    filter: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../../index.js")).FilterList; })).optional(),
     fields: core.serialization
-        .list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../..")).SearchField; })))
+        .list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../../index.js")).SearchField; })))
         .optional(),
-    filter: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../..")).FilterList; })).optional(),
     facets: core.serialization.boolean().optional(),
     geoFacets: core.serialization.property("geo_facets", core.serialization.boolean().optional()),
     advanced: core.serialization.boolean().optional(),
