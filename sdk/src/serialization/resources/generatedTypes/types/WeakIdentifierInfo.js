@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const WeakIdentifierInfo = core.serialization
     .object({
-    data: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).WeakIdentifierData; }))),
+    data: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).WeakIdentifierData; }))),
 })
-    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).PaginatedResponse; })));
+    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).PaginatedResponse; })));

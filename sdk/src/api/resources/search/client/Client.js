@@ -21,19 +21,19 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import * as environments from "../../../../environments";
-import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
+import * as environments from "../../../../environments.js";
+import * as core from "../../../../core/index.js";
+import * as SayariAnalyticsApi from "../../../index.js";
 import { default as URLSearchParams } from "@ungap/url-search-params";
-import * as serializers from "../../../../serialization";
+import * as serializers from "../../../../serialization/index.js";
 import urlJoin from "url-join";
-import * as errors from "../../../../errors";
+import * as errors from "../../../../errors/index.js";
 export class Search {
     constructor(_options) {
         this._options = _options;
     }
     /**
-     * Search for an entity. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for an entity
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -57,7 +57,7 @@ export class Search {
                 method: "POST",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -140,7 +140,7 @@ export class Search {
         });
     }
     /**
-     * Search for a record. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a record
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -164,7 +164,7 @@ export class Search {
                 method: "POST",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",

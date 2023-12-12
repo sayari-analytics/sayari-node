@@ -10,12 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const RelationshipData = core.serialization.object({
-    target: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).EmbeddedEntity; })),
-    types: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).RelationshipTypes; })),
+    target: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).EmbeddedEntity; })),
+    types: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).RelationshipTypes; })),
     dates: core.serialization.list(core.serialization.string()),
-    firstObserved: core.serialization.property("first_observed", core.serialization.string().optional()),
-    lastObserved: core.serialization.property("last_observed", core.serialization.string().optional()),
+    firstObserved: core.serialization.property("first_observed", core.serialization.string()),
+    lastObserved: core.serialization.property("last_observed", core.serialization.string()),
     startDate: core.serialization.property("start_date", core.serialization.string().optional()),
 });

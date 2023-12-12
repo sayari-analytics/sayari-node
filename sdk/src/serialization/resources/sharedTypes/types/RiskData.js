@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const RiskData = core.serialization.object({
     value: core.serialization.unknown(),
     metadata: core.serialization.record(core.serialization.string(), core.serialization.unknown()),
-    level: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).RiskLevel; })),
+    level: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).RiskLevel; })),
 });

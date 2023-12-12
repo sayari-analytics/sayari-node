@@ -16,7 +16,7 @@ export declare namespace SayariAnalyticsApiClient {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
+        client: core.Supplier<string>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;

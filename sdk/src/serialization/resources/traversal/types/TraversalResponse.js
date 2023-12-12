@@ -10,17 +10,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const TraversalResponse = core.serialization.object({
     minDepth: core.serialization.property("min_depth", core.serialization.number()),
     maxDepth: core.serialization.property("max_depth", core.serialization.number()),
-    relationships: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Relationships; }))),
-    countries: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; }))),
+    relationships: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Relationships; }))),
+    countries: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Country; }))),
     types: core.serialization.list(core.serialization.string()),
     psa: core.serialization.boolean(),
     offset: core.serialization.number(),
     limit: core.serialization.number(),
     next: core.serialization.boolean(),
-    data: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).TraversalData; }))),
+    data: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).TraversalData; }))),
     exploredCount: core.serialization.property("explored_count", core.serialization.number()),
 });

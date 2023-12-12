@@ -1,1 +1,1 @@
-export { getObjectLikeUtils, withParsedProperties } from "./getObjectLikeUtils";
+export { getObjectLikeUtils, withParsedProperties } from "./getObjectLikeUtils.js";

@@ -10,13 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as environments from "../../../../environments";
-import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
+import * as environments from "../../../../environments.js";
+import * as core from "../../../../core/index.js";
+import * as SayariAnalyticsApi from "../../../index.js";
 import { default as URLSearchParams } from "@ungap/url-search-params";
-import * as serializers from "../../../../serialization";
+import * as serializers from "../../../../serialization/index.js";
 import urlJoin from "url-join";
-import * as errors from "../../../../errors";
+import * as errors from "../../../../errors/index.js";
 export class Traversal {
     constructor(_options) {
         this._options = _options;
@@ -144,7 +144,7 @@ export class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -258,7 +258,7 @@ export class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -371,7 +371,7 @@ export class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -484,7 +484,7 @@ export class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
@@ -607,7 +607,7 @@ export class Traversal {
                 method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",

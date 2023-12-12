@@ -3,12 +3,12 @@
  */
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
+import * as SayariAnalyticsApi from "../../../index";
 export declare namespace Trade {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
+        client: core.Supplier<string>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;
@@ -18,7 +18,7 @@ export declare class Trade {
     protected readonly _options: Trade.Options;
     constructor(_options: Trade.Options);
     /**
-     * Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a shipment
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -27,7 +27,7 @@ export declare class Trade {
      */
     searchShipments(request: SayariAnalyticsApi.SearchShipments, requestOptions?: Trade.RequestOptions): Promise<SayariAnalyticsApi.ShipmentSearchResults>;
     /**
-     * Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a supplier
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -36,7 +36,7 @@ export declare class Trade {
      */
     searchSuppliers(request: SayariAnalyticsApi.SearchSuppliers, requestOptions?: Trade.RequestOptions): Promise<SayariAnalyticsApi.SupplierSearchResults>;
     /**
-     * Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a buyer
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}

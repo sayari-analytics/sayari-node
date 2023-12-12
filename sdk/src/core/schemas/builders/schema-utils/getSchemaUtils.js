@@ -7,9 +7,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { SchemaType } from "../../Schema";
-import { JsonError } from "./JsonError";
-import { ParseError } from "./ParseError";
+import { SchemaType } from "../../Schema.js";
+import { JsonError } from "./JsonError.js";
+import { ParseError } from "./ParseError.js";
 export function getSchemaUtils(schema) {
     return {
         optional: () => optional(schema),

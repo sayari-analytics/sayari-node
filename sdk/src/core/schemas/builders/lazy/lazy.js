@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { getSchemaUtils } from "../schema-utils";
+import { getSchemaUtils } from "../schema-utils/index.js";
 export function lazy(getter) {
     const baseSchema = constructLazyBaseSchema(getter);
     return Object.assign(Object.assign({}, baseSchema), getSchemaUtils(baseSchema));

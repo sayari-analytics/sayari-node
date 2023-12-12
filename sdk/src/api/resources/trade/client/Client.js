@@ -10,30 +10,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-import * as environments from "../../../../environments";
-import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
+import * as environments from "../../../../environments.js";
+import * as core from "../../../../core/index.js";
+import * as SayariAnalyticsApi from "../../../index.js";
 import { default as URLSearchParams } from "@ungap/url-search-params";
-import * as serializers from "../../../../serialization";
 import urlJoin from "url-join";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index.js";
+import * as errors from "../../../../errors/index.js";
 export class Trade {
     constructor(_options) {
         this._options = _options;
     }
     /**
-     * Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a shipment
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -43,7 +32,7 @@ export class Trade {
     searchShipments(request, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
-            const { limit, offset } = request, _body = __rest(request, ["limit", "offset"]);
+            const { limit, offset, q, filter, fields, facets, geoFacets, advanced } = request;
             const _queryParams = new URLSearchParams();
             if (limit != null) {
                 _queryParams.append("limit", limit.toString());
@@ -51,17 +40,39 @@ export class Trade {
             if (offset != null) {
                 _queryParams.append("offset", offset.toString());
             }
+            _queryParams.append("q", q);
+            if (filter != null) {
+                _queryParams.append("filter", filter);
+            }
+            if (fields != null) {
+                if (Array.isArray(fields)) {
+                    for (const _item of fields) {
+                        _queryParams.append("fields", _item);
+                    }
+                }
+                else {
+                    _queryParams.append("fields", fields);
+                }
+            }
+            if (facets != null) {
+                _queryParams.append("facets", facets.toString());
+            }
+            if (geoFacets != null) {
+                _queryParams.append("geo_facets", geoFacets.toString());
+            }
+            if (advanced != null) {
+                _queryParams.append("advanced", advanced.toString());
+            }
             const _response = yield core.fetcher({
                 url: urlJoin((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.SayariAnalyticsApiEnvironment.Production, "/v1/trade/search/shipments"),
-                method: "POST",
+                method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
                 queryParameters: _queryParams,
-                body: yield serializers.SearchShipments.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
                 timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             });
             if (_response.ok) {
@@ -132,7 +143,7 @@ export class Trade {
         });
     }
     /**
-     * Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a supplier
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -142,7 +153,7 @@ export class Trade {
     searchSuppliers(request, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
-            const { limit, offset } = request, _body = __rest(request, ["limit", "offset"]);
+            const { limit, offset, q, filter, fields, facets, geoFacets, advanced } = request;
             const _queryParams = new URLSearchParams();
             if (limit != null) {
                 _queryParams.append("limit", limit.toString());
@@ -150,17 +161,39 @@ export class Trade {
             if (offset != null) {
                 _queryParams.append("offset", offset.toString());
             }
+            _queryParams.append("q", q);
+            if (filter != null) {
+                _queryParams.append("filter", filter);
+            }
+            if (fields != null) {
+                if (Array.isArray(fields)) {
+                    for (const _item of fields) {
+                        _queryParams.append("fields", _item);
+                    }
+                }
+                else {
+                    _queryParams.append("fields", fields);
+                }
+            }
+            if (facets != null) {
+                _queryParams.append("facets", facets.toString());
+            }
+            if (geoFacets != null) {
+                _queryParams.append("geo_facets", geoFacets.toString());
+            }
+            if (advanced != null) {
+                _queryParams.append("advanced", advanced.toString());
+            }
             const _response = yield core.fetcher({
                 url: urlJoin((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.SayariAnalyticsApiEnvironment.Production, "/v1/trade/search/suppliers"),
-                method: "POST",
+                method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
                 queryParameters: _queryParams,
-                body: yield serializers.SearchSuppliers.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
                 timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             });
             if (_response.ok) {
@@ -231,7 +264,7 @@ export class Trade {
         });
     }
     /**
-     * Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a buyer
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -241,7 +274,7 @@ export class Trade {
     searchBuyers(request, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
-            const { limit, offset } = request, _body = __rest(request, ["limit", "offset"]);
+            const { limit, offset, q, filter, fields, facets, geoFacets, advanced } = request;
             const _queryParams = new URLSearchParams();
             if (limit != null) {
                 _queryParams.append("limit", limit.toString());
@@ -249,17 +282,39 @@ export class Trade {
             if (offset != null) {
                 _queryParams.append("offset", offset.toString());
             }
+            _queryParams.append("q", q);
+            if (filter != null) {
+                _queryParams.append("filter", filter);
+            }
+            if (fields != null) {
+                if (Array.isArray(fields)) {
+                    for (const _item of fields) {
+                        _queryParams.append("fields", _item);
+                    }
+                }
+                else {
+                    _queryParams.append("fields", fields);
+                }
+            }
+            if (facets != null) {
+                _queryParams.append("facets", facets.toString());
+            }
+            if (geoFacets != null) {
+                _queryParams.append("geo_facets", geoFacets.toString());
+            }
+            if (advanced != null) {
+                _queryParams.append("advanced", advanced.toString());
+            }
             const _response = yield core.fetcher({
                 url: urlJoin((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.SayariAnalyticsApiEnvironment.Production, "/v1/trade/search/buyers"),
-                method: "POST",
+                method: "GET",
                 headers: {
                     Authorization: yield this._getAuthorizationHeader(),
-                    "client-name": yield core.Supplier.get(this._options.clientName),
+                    client: yield core.Supplier.get(this._options.client),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
                 queryParameters: _queryParams,
-                body: yield serializers.SearchBuyers.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
                 timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             });
             if (_response.ok) {

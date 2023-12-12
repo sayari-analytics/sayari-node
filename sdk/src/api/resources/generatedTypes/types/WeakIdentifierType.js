@@ -101,5 +101,4 @@ export const WeakIdentifierType = {
     RusCbrId: "rus_cbr_id",
     GeoStateRegistrationNumber: "geo_state_registration_number",
     BihMbsNumber: "bih_mbs_number",
-    MalformedMmrPriorRegNo: "malformed mmr_prior_reg_no",
 };

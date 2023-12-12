@@ -10,18 +10,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as core from "../../../../core";
+import * as core from "../../../../core/index.js";
 export const ResolutionResult = core.serialization.object({
     score: core.serialization.number(),
     entityId: core.serialization.property("entity_id", core.serialization.string()),
     label: core.serialization.string(),
-    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Entities; })),
-    identifiers: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Identifier; }))),
+    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Entities; })),
+    identifiers: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Identifier; }))),
     psaId: core.serialization.property("psa_id", core.serialization.number().optional()),
     addresses: core.serialization.list(core.serialization.string()),
-    countries: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).Country; }))),
+    countries: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).Country; }))),
     sources: core.serialization.list(core.serialization.string()),
     matchedQueries: core.serialization.property("matched_queries", core.serialization.list(core.serialization.string())),
     highlight: core.serialization.record(core.serialization.string(), core.serialization.list(core.serialization.string())),
-    explanation: core.serialization.record(core.serialization.string(), core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../..")).MatchExplanation; })))),
+    explanation: core.serialization.record(core.serialization.string(), core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("../../../index.js")).MatchExplanation; })))),
 });

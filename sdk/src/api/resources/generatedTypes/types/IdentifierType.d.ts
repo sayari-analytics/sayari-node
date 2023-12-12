@@ -57,7 +57,7 @@ export declare type IdentifierType =
  * The pattern was sourced from the snapshot file documentation provided to us. When the first two characters are not digits, they have a special meaning */
  | "uk_company_number"
 /**
- * Unique UK ID number. Assigned to every firm in the FCA financial services registry. */
+ * A six or a seven-digit Firm Reference Number used to uniquely identify firms by the Prudential Regulation Authority (PRA) and Financial Conduct Authority (FCA). */
  | "uk_firm_reference_number"
 /**
  * Seems to be internal use, and is not perfectly applied */
@@ -222,7 +222,7 @@ export declare type IdentifierType =
  * Greek VAT number */
  | "grc_vat_number"
 /**
- * Unique Canada ID number. Assigned to federal legal entities registered with Corporations Canada. */
+ * Canada corporation number; See "Business Number" https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/popMsg.html */
  | "can_corporation_number"
 /**
  * Canadian Revenue Agency program account number; See https://www.thebalancesmb.com/what-is-the-canada-revenue-agency-cra-business-number-2947322 */
@@ -582,7 +582,7 @@ export declare type IdentifierType =
  * WY internal filing ID (primary key) */
  | "usa_wy_internal_filing_id"
 /**
- * Unique USA state ID number. Assigned to every legal entity registered with Wyoming Secretary of State. */
+ * Wyoming Secretary of State Filing Number */
  | "usa_wy_filing_num"
 /**
  * Oregon corporate registry registration number */
@@ -957,7 +957,7 @@ export declare type IdentifierType =
  * Hong Kong Stock Exchange Code */
  | "hkg_stock_code"
 /**
- * Unique Canada province ID number. Assigned to every legal entity in the British Columbia Corporate Registry. */
+ * British Columbia Company Registration ID */
  | "can_bc_company_registration_id"
 /**
  * British Columbia Extraprovincial Company Registration ID */
@@ -1197,7 +1197,7 @@ export declare type IdentifierType =
  * https://en.wikipedia.org/wiki/ISO_8000 */
  | "alei"
 /**
- * Unique Canada province ID number. Assigned to every entity in the Nova Scotia Corporate Registry. */
+ * Company number for Canada NS Corporate Registry */
  | "can_ns_corporate_registry"
 /**
  * Somalian UBI Number */
@@ -1482,19 +1482,19 @@ export declare type IdentifierType =
  * Stock Market Ticker */
  | "stock_ticker"
 /**
- * Unique Canada province ID number. Assigned to every legal entity registered with the Manitoba Companies Office. */
+ * Canada Manitoba Registry Number */
  | "can_mb_registry"
 /**
- * Unique Canada province ID number. Assigned to every legal entity in the Quebec Enterprise Register. */
+ * Quebec Enterprise Number */
  | "quebec_enterprise_number"
 /**
- * Unique Canada province ID number. Assigned to every legal entity in the Ontario Business Registry. */
+ * Ontario Corporation Number */
  | "ontario_corporation_number"
 /**
- * Unique Canada province ID number. Assigned to every legal entity in the Saskatchewan Corporate Registry. */
+ * Saskatchewan Registry Number */
  | "saskatchewan_registry_number"
 /**
- * Unique Canada province ID number. Assigned to every legal entity in the Alberta Corporate Registry. */
+ * Alberta Corporation Number */
  | "alberta_corporation_number"
 /**
  * Brazil Shipment Number */
@@ -1515,22 +1515,22 @@ export declare type IdentifierType =
  * Zcash address */
  | "zcash_address"
 /**
- * Unique USA ID number. Assigned to every trademark application. */
+ * Serial Number assigned to a Trademark application by USPTO */
  | "usa_uspto_serial_number"
 /**
- * Unique USA ID number. Assigned to every registered trademark. */
+ * USPTO Registration Number */
  | "usa_uspto_reg_no"
 /**
- * Unique USA ID number. Assigned to every foreign trademark application. */
+ * USPTO Foreign Application Number */
  | "usa_uspto_foreign_application_no"
 /**
- * Unique USA ID number. Assigned to every registered foreign trademark. */
+ * USPTO Foreign Registration Number */
  | "usa_uspto_foreign_reg_no"
 /**
- * Unique USA ID number. Assigned to every registered foreign trademark. */
+ * International registration number assigned by the International Bureau of WIPO. */
  | "wipo_intl_reg_no"
 /**
- * Unique USA ID number. Assigned to every foreign trademark application. */
+ * International reference number assigned by the International Bureau of WIPO. */
  | "wipo_intl_ref_no";
 export declare const IdentifierType: {
     readonly CnTianyanchaCompanyId: "cn_tianyancha_company_id";
