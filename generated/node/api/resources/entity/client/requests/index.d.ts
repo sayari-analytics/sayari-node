@@ -1,1 +1,0 @@
-export { GetEntity } from "./GetEntity";
