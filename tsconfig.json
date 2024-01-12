@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "extendedDiagnostics": true,
+    "strict": true,
+    "target": "ES6",
+    "module": "commonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "sourceMap": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": "./src"
+  },
+  "include": [
+    "./src"
+  ],
+  "exclude": []
+}
