@@ -24,8 +24,8 @@ export class Conn extends Auth {
     // might be able to move into constructor.
     public async connect(): Promise<AuthResponse> {
         try {
-            let authResp = await this.setToken()
-            this.startTokenWorker(authResp.expiresIn)
+            let authResp = await this._setToken()
+            this._startTokenWorker(authResp.expiresIn)
             return authResp
         } catch (err) {
             if (err instanceof(SayariAnalyticsApiError)){
@@ -35,7 +35,7 @@ export class Conn extends Auth {
         }
     }
 
-    protected async setToken(): Promise<AuthResponse> {
+    protected async _setToken(): Promise<AuthResponse> {
         try {
             const resp = await this.getToken(this._options.credentials);
             this._options.token = resp.accessToken;
@@ -45,7 +45,7 @@ export class Conn extends Auth {
         }
     }
 
-    protected startTokenWorker(expiresIn: number): void {
+    protected _startTokenWorker(expiresIn: number): void {
         const tokenWorker = new Worker(
             join(__dirname,'tokenWorker.js'),
             { workerData: expiresIn}
@@ -63,10 +63,12 @@ export class Conn extends Auth {
         })
     }
 
-    refreshToken(expiresIn: number): void{
-        let refreshIn: number = 2000 /*(expiresIn - 3600) < 3600 ? 0 : (expiresIn - 3600)*/
-        console.log(expiresIn)
-        this.setToken().then(resp => resp).catch(err => {throw err})
+    // TODO: figure out a way this can be private.
+    //  currently called from instance in worker... can worker be member of class somehow????
+    //  or is there another way??
+    public refreshToken(expiresIn: number): void{
+        let refreshIn: number = (expiresIn - 3600) < 3600 ? 0 : (expiresIn - 3600)
+        this._setToken().then(resp => resp).catch(err => {throw err})
         setTimeout(() =>{this.refreshToken(expiresIn)}, refreshIn)
     }
 }
