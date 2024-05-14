@@ -70,6 +70,7 @@ export * from "./PositionData";
 export * from "./PositionInfo";
 export * from "./PositionProperties";
 export * from "./Relationships";
+export * from "./Risk";
 export * from "./RiskIntelligenceData";
 export * from "./RiskIntelligenceInfo";
 export * from "./RiskIntelligenceProperties";

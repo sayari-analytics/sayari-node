@@ -3,9 +3,18 @@
  */
 
 /**
- * Unit of measurement (i.e. SI base units)
+ * These enums describe the unit of measurement (i.e., using SI base units) for some dimension of an entity.
  */
-export type Unit = "metre" | "kilogram" | "unit";
+export type Unit =
+    /**
+     * Indicates meters (m) */
+    | "metre"
+    /**
+     * Indicates kilograms (kg) */
+    | "kilogram"
+    /**
+     * Used to show the number of units of a product */
+    | "unit";
 
 export const Unit = {
     Metre: "metre",

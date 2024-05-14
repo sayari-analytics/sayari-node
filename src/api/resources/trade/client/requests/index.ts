@@ -1,3 +1,3 @@
-export { SearchShipments } from "./SearchShipments";
-export { SearchSuppliers } from "./SearchSuppliers";
-export { SearchBuyers } from "./SearchBuyers";
+export { type SearchShipments } from "./SearchShipments";
+export { type SearchSuppliers } from "./SearchSuppliers";
+export { type SearchBuyers } from "./SearchBuyers";

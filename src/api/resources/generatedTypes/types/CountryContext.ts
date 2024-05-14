@@ -10,7 +10,7 @@ export type CountryContext =
      * The reported citizenship of a person */
     | "citizenship"
     /**
-     * Rarely used. Converted to 'domicile.' */
+     * Rarely used. Converted to "domicile". */
     | "incorporation"
     /**
      * The reported country of residence of a person */
@@ -25,7 +25,7 @@ export type CountryContext =
      * The flag state of a vessel. Often changes over time. */
     | "vessel_flag"
     /**
-     * e.g. 'Country of incorporation,' 'Jurisdiction of formation,' 'Organized under the laws of.' A company can operate in multiple countries, but can only have one domicile at a time. */
+     * e.g., "Country of incorporation", "Jurisdiction of formation", "Organized under the laws of". A company can operate in multiple countries, but can only have one domicile at a time. */
     | "domicile"
     /**
      * The country a shipment starts in */
@@ -37,10 +37,10 @@ export type CountryContext =
      * Any country a shipment moves through between its departure and arrival */
     | "shipment_transit"
     /**
-     * Indicates entity is principal entity in record in source from this country */
+     * The entity is the principal entity in a record originating from this country */
     | "activity_in"
     /**
-     * Indicates entity is mentioned in record in source from this country */
+     * The entity is mentioned in a record originating from this country */
     | "mentioned_in";
 
 export const CountryContext = {

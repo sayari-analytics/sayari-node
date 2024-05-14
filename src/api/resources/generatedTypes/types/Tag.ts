@@ -3,7 +3,7 @@
  */
 
 /**
- * Risk tags
+ * Risk tags describe risk associated with an entity.
  */
 export type Tag =
     | "pep"
@@ -24,7 +24,8 @@ export type Tag =
     | "forced_labor_xinjiang_contractors"
     | "wro_entity"
     | "uflpa_entity"
-    | "sheffield_hallam_university_forced_labor_entity";
+    | "sheffield_hallam_university_forced_labor_entity"
+    | "aspi_uyghur_forced_labor_report_entity";
 
 export const Tag = {
     Pep: "pep",
@@ -46,4 +47,5 @@ export const Tag = {
     WroEntity: "wro_entity",
     UflpaEntity: "uflpa_entity",
     SheffieldHallamUniversityForcedLaborEntity: "sheffield_hallam_university_forced_labor_entity",
+    AspiUyghurForcedLaborReportEntity: "aspi_uyghur_forced_labor_report_entity",
 } as const;

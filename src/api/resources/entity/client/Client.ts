@@ -4,16 +4,15 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
-import * as serializers from "../../../../serialization";
+import * as SayariAnalyticsApi from "../../../index";
 import urlJoin from "url-join";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Entity {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -23,10 +22,15 @@ export declare namespace Entity {
 }
 
 export class Entity {
-    constructor(protected readonly _options: Entity.Options) {}
+    constructor(protected readonly _options: Entity.Options = {}) {}
 
     /**
      * Retrieve an entity from the database based on the ID
+     *
+     * @param {string} id - Unique identifier of the entity
+     * @param {SayariAnalyticsApi.GetEntity} request
+     * @param {Entity.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.NotFound}
@@ -35,23 +39,50 @@ export class Entity {
      * @throws {@link SayariAnalyticsApi.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.entity.getEntity("mGq1lpuqKssNWTjIokuPeA", {})
+     *     await sayariAnalyticsApi.entity.getEntity("mGq1lpuqKssNWTjIokuPeA", {
+     *         attributesNameLimit: 1,
+     *         attributesAddressLimit: 1,
+     *         attributesCountryLimit: 1,
+     *         attributesAdditionalInformationLimit: 1,
+     *         attributesBusinessPurposeLimit: 1,
+     *         attributesCompanyTypeLimit: 1,
+     *         attributesIdentifierLimit: 1,
+     *         attributesStatusLimit: 1,
+     *         relationshipsLimit: 1,
+     *         possiblySameAsLimit: 1,
+     *         referencedByLimit: 1
+     *     })
      */
     public async getEntity(
-        id: SayariAnalyticsApi.EntityId,
+        id: string,
         request: SayariAnalyticsApi.GetEntity = {},
         requestOptions?: Entity.RequestOptions
     ): Promise<SayariAnalyticsApi.GetEntityResponse> {
         const {
-            attributesNameNext,
-            attributesNamePrev,
-            attributesNameLimit,
+            attributesAdditionalInformationNext,
+            attributesAdditionalInformationPrev,
+            attributesAdditionalInformationLimit,
             attributesAddressNext,
             attributesAddressPrev,
             attributesAddressLimit,
+            attributesBusinessPurposeNext,
+            attributesBusinessPurposePrev,
+            attributesBusinessPurposeLimit,
+            attributesCompanyTypeNext,
+            attributesCompanyTypePrev,
+            attributesCompanyTypeLimit,
             attributesCountryNext,
             attributesCountryPrev,
             attributesCountryLimit,
+            attributesIdentifierNext,
+            attributesIdentifierPrev,
+            attributesIdentifierLimit,
+            attributesNameNext,
+            attributesNamePrev,
+            attributesNameLimit,
+            attributesStatusNext,
+            attributesStatusPrev,
+            attributesStatusLimit,
             relationshipsNext,
             relationshipsPrev,
             relationshipsLimit,
@@ -77,17 +108,17 @@ export class Entity {
             referencedByPrev,
             referencedByLimit,
         } = request;
-        const _queryParams: Record<string, string | string[]> = {};
-        if (attributesNameNext != null) {
-            _queryParams["attributes.name.next"] = attributesNameNext;
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        if (attributesAdditionalInformationNext != null) {
+            _queryParams["attributes.additional_information.next"] = attributesAdditionalInformationNext;
         }
 
-        if (attributesNamePrev != null) {
-            _queryParams["attributes.name.prev"] = attributesNamePrev;
+        if (attributesAdditionalInformationPrev != null) {
+            _queryParams["attributes.additional_information.prev"] = attributesAdditionalInformationPrev;
         }
 
-        if (attributesNameLimit != null) {
-            _queryParams["attributes.name.limit"] = attributesNameLimit.toString();
+        if (attributesAdditionalInformationLimit != null) {
+            _queryParams["attributes.additional_information.limit"] = attributesAdditionalInformationLimit.toString();
         }
 
         if (attributesAddressNext != null) {
@@ -102,6 +133,30 @@ export class Entity {
             _queryParams["attributes.address.limit"] = attributesAddressLimit.toString();
         }
 
+        if (attributesBusinessPurposeNext != null) {
+            _queryParams["attributes.business_purpose.next"] = attributesBusinessPurposeNext;
+        }
+
+        if (attributesBusinessPurposePrev != null) {
+            _queryParams["attributes.business_purpose.prev"] = attributesBusinessPurposePrev;
+        }
+
+        if (attributesBusinessPurposeLimit != null) {
+            _queryParams["attributes.business_purpose.limit"] = attributesBusinessPurposeLimit.toString();
+        }
+
+        if (attributesCompanyTypeNext != null) {
+            _queryParams["attributes.company_type.next"] = attributesCompanyTypeNext;
+        }
+
+        if (attributesCompanyTypePrev != null) {
+            _queryParams["attributes.company_type.prev"] = attributesCompanyTypePrev;
+        }
+
+        if (attributesCompanyTypeLimit != null) {
+            _queryParams["attributes.company_type.limit"] = attributesCompanyTypeLimit.toString();
+        }
+
         if (attributesCountryNext != null) {
             _queryParams["attributes.country.next"] = attributesCountryNext;
         }
@@ -112,6 +167,42 @@ export class Entity {
 
         if (attributesCountryLimit != null) {
             _queryParams["attributes.country.limit"] = attributesCountryLimit.toString();
+        }
+
+        if (attributesIdentifierNext != null) {
+            _queryParams["attributes.identifier.next"] = attributesIdentifierNext;
+        }
+
+        if (attributesIdentifierPrev != null) {
+            _queryParams["attributes.identifier.prev"] = attributesIdentifierPrev;
+        }
+
+        if (attributesIdentifierLimit != null) {
+            _queryParams["attributes.identifier.limit"] = attributesIdentifierLimit.toString();
+        }
+
+        if (attributesNameNext != null) {
+            _queryParams["attributes.name.next"] = attributesNameNext;
+        }
+
+        if (attributesNamePrev != null) {
+            _queryParams["attributes.name.prev"] = attributesNamePrev;
+        }
+
+        if (attributesNameLimit != null) {
+            _queryParams["attributes.name.limit"] = attributesNameLimit.toString();
+        }
+
+        if (attributesStatusNext != null) {
+            _queryParams["attributes.status.next"] = attributesStatusNext;
+        }
+
+        if (attributesStatusPrev != null) {
+            _queryParams["attributes.status.prev"] = attributesStatusPrev;
+        }
+
+        if (attributesStatusLimit != null) {
+            _queryParams["attributes.status.limit"] = attributesStatusLimit.toString();
         }
 
         if (relationshipsNext != null) {
@@ -230,13 +321,16 @@ export class Entity {
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ??
                     environments.SayariAnalyticsApiEnvironment.Production,
-                `/v1/entity/${await serializers.EntityId.jsonOrThrow(id)}`
+                `/v1/entity/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -333,6 +427,10 @@ export class Entity {
 
     /**
      * The Entity Summary endpoint returns a smaller entity payload
+     *
+     * @param {string} id - Unique identifier of the entity
+     * @param {Entity.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.NotFound}
@@ -344,20 +442,23 @@ export class Entity {
      *     await sayariAnalyticsApi.entity.entitySummary("mGq1lpuqKssNWTjIokuPeA")
      */
     public async entitySummary(
-        id: SayariAnalyticsApi.EntityId,
+        id: string,
         requestOptions?: Entity.RequestOptions
     ): Promise<SayariAnalyticsApi.EntitySummaryResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ??
                     environments.SayariAnalyticsApiEnvironment.Production,
-                `/v1/entity_summary/${await serializers.EntityId.jsonOrThrow(id)}`
+                `/v1/entity_summary/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
@@ -451,12 +552,7 @@ export class Entity {
         }
     }
 
-    protected async _getAuthorizationHeader() {
-        const bearer = await core.Supplier.get(this._options.token);
-        if (bearer != null) {
-            return `Bearer ${bearer}`;
-        }
-
-        return undefined;
+    protected async _getAuthorizationHeader(): Promise<string | undefined> {
+        return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

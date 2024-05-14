@@ -1,1 +1,1 @@
-export { GetRecord } from "./GetRecord";
+export { type GetRecord } from "./GetRecord";

@@ -3,6 +3,12 @@
  */
 
 export interface PositionProperties {
+    /** as-of date */
+    date?: string;
+    /** start date */
+    fromDate?: string;
+    /** end date */
+    toDate?: string;
     /** The position as text */
     value: string;
 }

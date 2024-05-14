@@ -4,16 +4,15 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
-import * as serializers from "../../../../serialization";
+import * as SayariAnalyticsApi from "../../../index";
+import * as serializers from "../../../../serialization/index";
 import urlJoin from "url-join";
-import * as errors from "../../../../errors";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Trade {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -23,10 +22,14 @@ export declare namespace Trade {
 }
 
 export class Trade {
-    constructor(protected readonly _options: Trade.Options) {}
+    constructor(protected readonly _options: Trade.Options = {}) {}
 
     /**
-     * Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
+     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
+     *
+     * @param {SayariAnalyticsApi.SearchShipments} request
+     * @param {Trade.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -35,7 +38,7 @@ export class Trade {
      *
      * @example
      *     await sayariAnalyticsApi.trade.searchShipments({
-     *         limit: 2,
+     *         limit: 1,
      *         q: "rum"
      *     })
      */
@@ -44,7 +47,7 @@ export class Trade {
         requestOptions?: Trade.RequestOptions
     ): Promise<SayariAnalyticsApi.ShipmentSearchResponse> {
         const { limit, offset, ..._body } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -62,8 +65,11 @@ export class Trade {
             method: "POST",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -151,7 +157,11 @@ export class Trade {
     }
 
     /**
-     * Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
+     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
+     *
+     * @param {SayariAnalyticsApi.SearchSuppliers} request
+     * @param {Trade.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -160,7 +170,7 @@ export class Trade {
      *
      * @example
      *     await sayariAnalyticsApi.trade.searchSuppliers({
-     *         limit: 2,
+     *         limit: 1,
      *         q: "rum"
      *     })
      */
@@ -169,7 +179,7 @@ export class Trade {
         requestOptions?: Trade.RequestOptions
     ): Promise<SayariAnalyticsApi.SupplierSearchResponse> {
         const { limit, offset, ..._body } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -187,8 +197,11 @@ export class Trade {
             method: "POST",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -276,7 +289,11 @@ export class Trade {
     }
 
     /**
-     * Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
+     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
+     *
+     * @param {SayariAnalyticsApi.SearchBuyers} request
+     * @param {Trade.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -285,7 +302,7 @@ export class Trade {
      *
      * @example
      *     await sayariAnalyticsApi.trade.searchBuyers({
-     *         limit: 2,
+     *         limit: 1,
      *         q: "rum"
      *     })
      */
@@ -294,7 +311,7 @@ export class Trade {
         requestOptions?: Trade.RequestOptions
     ): Promise<SayariAnalyticsApi.BuyerSearchResponse> {
         const { limit, offset, ..._body } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -312,8 +329,11 @@ export class Trade {
             method: "POST",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -400,12 +420,7 @@ export class Trade {
         }
     }
 
-    protected async _getAuthorizationHeader() {
-        const bearer = await core.Supplier.get(this._options.token);
-        if (bearer != null) {
-            return `Bearer ${bearer}`;
-        }
-
-        return undefined;
+    protected async _getAuthorizationHeader(): Promise<string | undefined> {
+        return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

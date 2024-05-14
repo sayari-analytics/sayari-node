@@ -4,6 +4,9 @@
 
 export const SayariAnalyticsApiEnvironment = {
     Production: "https://api.sayari.com",
+    Dev: "https://api.internal.sayari.com",
 } as const;
 
-export type SayariAnalyticsApiEnvironment = typeof SayariAnalyticsApiEnvironment.Production;
+export type SayariAnalyticsApiEnvironment =
+    | typeof SayariAnalyticsApiEnvironment.Production
+    | typeof SayariAnalyticsApiEnvironment.Dev;

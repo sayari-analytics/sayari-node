@@ -1,1 +1,1 @@
-export { GetToken } from "./GetToken";
+export { type GetToken } from "./GetToken";

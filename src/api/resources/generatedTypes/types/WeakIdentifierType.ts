@@ -3,17 +3,23 @@
  */
 
 /**
- * All weak (non-unique) identifiers in Sayari's database
+ * This includes all weak (non-unique) identifiers in Sayari's database.
  */
 export type WeakIdentifierType =
     /**
      * A string that is thought to be an ID number, but whose type is unknown */
     | "unknown"
+    /**
+     * Partial Mexican RFC */
     | "mx_partial_rfc_person"
+    /**
+     * Russia OKTMO (Russian Classification of Territories of Municipal Formations) */
     | "ru_oktmo"
+    /**
+     * Russian KPP, or tax registration event code */
     | "ru_kpp"
     /**
-     * A unique identifier that is reissued when a company dissolves */
+     * A unique identifier that is reissued when a company dissolves. Applies to Russian companies. */
     | "ru_okpo"
     /**
      * A passport number whose country of origin is not known */
@@ -22,15 +28,19 @@ export type WeakIdentifierType =
      * An identifier from the Kosovo company registry */
     | "rks_kta_number"
     /**
-     * Individual taxpayer registry identification (https://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas) */
+     * Individual taxpayer registry identification in Brazil. Learn more [here](https://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas) */
     | "bra_partial_cpf"
     /**
      * Identification number for Venezuelan comisarios */
     | "ven_colegiado_number"
+    /**
+     * Panama Folio No. */
     | "pan_folio"
     /**
-     * A unique identifier that is reissued when a company dissolves */
+     * A unique identifier that is reissued when a company dissolves. Applies to Kyrgyz companies. */
     | "kgz_okpo"
+    /**
+     * Kyrgyzstan INN */
     | "kgz_inn"
     | "lbn_registration_number"
     /**
@@ -55,10 +65,10 @@ export type WeakIdentifierType =
      * Mexican FME */
     | "mx_fme"
     /**
-     * See https://www.wikidata.org/wiki/Property:P3125 */
+     * Learn more [here](https://www.wikidata.org/wiki/Property:P3125) */
     | "ukr_edrpou"
     /**
-     * Label for various license numbers extracted from EGRUL documents */
+     * Label for various license numbers extracted from EGRUL (Russia Federal Tax Registry) documents */
     | "ru_license_number"
     /**
      * Unique call sign for vessels */
@@ -73,11 +83,13 @@ export type WeakIdentifierType =
      * Foreign entity accreditation number */
     | "ru_nza"
     /**
-     * Unique company id from Inspección General de Justicia in Argentina */
+     * Unique company ID from Inspección General de Justicia in Argentina */
     | "arg_igj_number"
     /**
-     * Brazilian Lawyer Identification number */
+     * Brazil Litigation Case No. */
     | "unknown_bra_case_number"
+    /**
+     * Iraq Provision Card No. */
     | "irq_provision_card"
     /**
      * Mobile Home Serial Number */
@@ -95,22 +107,22 @@ export type WeakIdentifierType =
      * The company number given to each company listed in Handelsregister, the German Commercial Register. It is not unique unless combined with the district court XJustiz ID, which this weak identifier does not contain because in some cases it is not provided. */
     | "deu_registernummer"
     /**
-     * A National ID Number whose country of origin is not known */
+     * A national ID number whose country of origin is not known */
     | "unknown_national_id_num"
     /**
-     * A Civil Reg Number whose country of origin is not known */
+     * A civil registration number whose country of origin is not known */
     | "unknown_civil_reg_num"
     /**
-     * A Residency Number whose country of origin is not known */
+     * A residency number whose country of origin is not known */
     | "unknown_residency_num"
     /**
-     * A Folio ID Number whose country of origin is not known */
+     * A folio ID Number whose country of origin is not known */
     | "unknown_folio_id_num"
     /**
      * A commercial registration number of unknown origin */
     | "unknown_commercial_register_id"
     /**
-     * A chamber of commerce number of unknwon origin */
+     * A chamber of commerce number of unknown origin */
     | "unknown_chamber_of_commerce_id"
     /**
      * A license number of unknown origin */
@@ -119,7 +131,7 @@ export type WeakIdentifierType =
      * An industrial license number of unknown origin */
     | "unknown_industrial_license_num"
     /**
-     * Czechia file number from Moj registry */
+     * Czechia file number from MOJ registry */
     | "cze_file_number"
     /**
      * Mexican trademark application number */
@@ -131,25 +143,25 @@ export type WeakIdentifierType =
      * Company number from Jordan corporate registry */
     | "jordan_company_no"
     /**
-     * Part of a qichacha URL, used to uniquely identify people within the site */
+     * Part of a Qichacha URL, used to uniquely identify people within the site */
     | "cn_qcc_internal_id"
     /**
      * Weak identifier found in sole proprietor source */
     | "jor_sol_prop_institution_number"
     /**
-     * North Carolina SoS corporation number */
+     * USA North Carolina SOS corporation number */
     | "usa_nc_corp_no"
     /**
-     * New Mexico Secretary of State License Id */
+     * USA New Mexico Secretary of State License ID */
     | "usa_nm_license_id"
     /**
      * Cambodia tax identification number */
     | "khm_tin_number"
     /**
-     * Entity ID from Missouri Corporate Registry */
+     * Entity ID from USA Missouri Corporate Registry */
     | "usa_mo_entity_id"
     /**
-     * Corporation Number from Missouri Corporate Registry - used on SoS search */
+     * Corporation Number from USA Missouri Corporate Registry. Used on SOS search. */
     | "usa_mo_corp_number"
     /**
      * Case number for legal matters from Macao Tribunais da RAEM Judgments */
@@ -160,7 +172,11 @@ export type WeakIdentifierType =
     /**
      * Lebanese family number */
     | "lbn_family_number"
+    /**
+     * Bexar Appraisal District GEO ID */
     | "tx_bexar_property_geo_id"
+    /**
+     * Pakistan CNIC family number */
     | "pak_cnic_family_no"
     /**
      * Romanian Commercial Register ID (concatenated from jud_com, nr_com, and an_com from ROU/taxpayers) */
@@ -169,10 +185,10 @@ export type WeakIdentifierType =
      * Partial South African ID number for individuals */
     | "south_africa_partial_id_number"
     /**
-     * Internal ID used to link companies between PRK/CN exports and trade dict sources. Downgraded to weak id. */
+     * North Korea-China trade internal ID number */
     | "prk_internal_trade_id"
     /**
-     * Chinese custums registration code. Downgraded to weak identifier. */
+     * Chinese customs registration code. Downgraded to weak identifier. */
     | "chn_customs_registration_code"
     /**
      * Austrian Company Register Number (no longer used) */
@@ -189,21 +205,23 @@ export type WeakIdentifierType =
     /**
      * Internal identifier for legal persons from CHN cninfo data */
     | "chn_cninfo_legal_person_id"
+    /**
+     * Kosovo Business No. */
     | "rks_business_number"
     /**
      * A fiscal number from the Kosovo company registry */
     | "rks_fiscal_number"
     /**
-     * A tax identifier number in Madagascar. */
+     * A tax identifier number (NIF) in Madagascar. */
     | "mdg_nif_number"
     /**
-     * A tax identifier number in Madagascar. */
+     * A tax identifier number (RCS) in Madagascar. */
     | "mdg_rcs_number"
     /**
-     * See https://en.wikipedia.org/wiki/VAT_identification_number */
+     * Value-added tax ID number */
     | "vat"
     /**
-     * Site number of business registered in Chicago, IL business license registry (unique to account number) */
+     * Site number of business registered in Chicago, Illinois, business license registry (unique to account number) */
     | "usa_il_chicago_site_number"
     /**
      * Ticker symbol for securities without exchange information */
@@ -221,7 +239,7 @@ export type WeakIdentifierType =
      * Colombian SECOP internal ID */
     | "col_secop_no"
     /**
-     * The register REGON fulfils the function of the national official Register of National Economy Entities */
+     * The register REGON serves as the national official Register of National Economy Entities. */
     | "pol_regon_number"
     /**
      * Tax identification number from Poland */
@@ -236,7 +254,7 @@ export type WeakIdentifierType =
      * Old Pakistan company code */
     | "pak_old_company_code"
     /**
-     * Japan ministry of land, infrastructure, transportation and tourism permit number */
+     * Japan Ministry of Land, Infrastructure, Transport and Tourism permit number */
     | "jpn_permit_no"
     /**
      * Dominica Business Registry Entity Number */
@@ -251,10 +269,10 @@ export type WeakIdentifierType =
      * Manifiesto number for Venezuelan shipments */
     | "ven_manifiesto_number"
     /**
-     * Matricula mercantil number which is non unique across different chambers of commerce */
+     * Matricula mercantil number, which is non-unique across different chambers of commerce */
     | "col_matricula_mercantil"
     /**
-     * Maritime Mobile Service Identity Number (https://en.wikipedia.org/wiki/Maritime_Mobile_Service_Identity) */
+     * Maritime Mobile Service Identity number. Learn more [here](https://en.wikipedia.org/wiki/Maritime_Mobile_Service_Identity) */
     | "maritime_mobile_service_identity"
     /**
      * Former USA/IRS FEI/EIN Number */
@@ -266,13 +284,13 @@ export type WeakIdentifierType =
      * China Classification Society Ship Class Number */
     | "ccs_ship_class_number"
     /**
-     * Partial Turkish Central Registry Number System MERSIS number */
+     * Partial Turkish Central Registry Number System (MERSIS) number */
     | "tur_partial_mersis_number"
     /**
      * Turkey municipal trade registry ID number. Assigned by municipal chambers of commerce in Turkey. */
     | "tur_office_registration_number"
     /**
-     * A Identification Card or Passport Document for people in Venezuela */
+     * An identification card or passport document for people in Venezuela */
     | "partial_ven_cedula"
     /**
      * Russia Central Bank ID */
@@ -281,8 +299,26 @@ export type WeakIdentifierType =
      * Georgian state registration number */
     | "geo_state_registration_number"
     /**
-     * Bosnia and Herzegovenia business register registration number */
+     * Bosnia and Herzegovina business register registration number */
     | "bih_mbs_number"
+    /**
+     * UK entity ID number assigned to entities registered in the UK Government Grants Information System */
+    | "gbr_grant_info_number"
+    /**
+     * Paraguay Shipment Number */
+    | "pry_shipment_number"
+    /**
+     * Unique identifier for Argentinian imports and exports */
+    | "arg_import_export_id"
+    /**
+     * Internal ID for Costa Rica comexport data (shipping operation number) */
+    | "cri_op_no"
+    /**
+     * Weak AUS state registration number. Registration number assigned when legal entity is originally registered by the Australian State. */
+    | "aus_state_reg_number"
+    /**
+     * Internal ID for Hungarian companies by Opten Ltd */
+    | "hun_opten_id"
     /**
      * A temporary malformed type */
     | "malformed mmr_prior_reg_no";
@@ -387,5 +423,11 @@ export const WeakIdentifierType = {
     RusCbrId: "rus_cbr_id",
     GeoStateRegistrationNumber: "geo_state_registration_number",
     BihMbsNumber: "bih_mbs_number",
+    GbrGrantInfoNumber: "gbr_grant_info_number",
+    PryShipmentNumber: "pry_shipment_number",
+    ArgImportExportId: "arg_import_export_id",
+    CriOpNo: "cri_op_no",
+    AusStateRegNumber: "aus_state_reg_number",
+    HunOptenId: "hun_opten_id",
     MalformedMmrPriorRegNo: "malformed mmr_prior_reg_no",
 } as const;

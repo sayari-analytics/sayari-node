@@ -3,7 +3,7 @@
  */
 
 /**
- * Currency enums are normalized representations of currencies
+ * Currency enums are normalized representations of currencies. [Source](https://en.wikipedia.org/wiki/ISO_4217).
  */
 export type Currency =
     /**
@@ -529,7 +529,7 @@ export type Currency =
      * Codes specifically reserved for testing purposes/963/N.A. */
     | "XTS"
     /**
-     * The codes assigned for transactions where no currency is involved/999/N.A. */
+     * The code assigned to transactions where no currency is involved/999/N.A. */
     | "XXX"
     /**
      * Gold/959/N.A. */
@@ -544,7 +544,7 @@ export type Currency =
      * Silver/961/N.A. */
     | "XAG"
     /**
-     * Latvian Lat; See https://en.wikipedia.org/wiki/Latvian_lats */
+     * Latvian Lat; Learn more [here](https://en.wikipedia.org/wiki/Latvian_lats) */
     | "LVL"
     /**
      * Slovak Koruna */
@@ -553,10 +553,10 @@ export type Currency =
      * Italian Lira */
     | "ITL"
     /**
-     * Dutch guilder */
+     * Dutch Guilder */
     | "NLG"
     /**
-     * Belgian franc */
+     * Belgian Franc */
     | "BEF"
     /**
      * Mauritanian Ouguiya */

@@ -3,7 +3,7 @@
  */
 
 /**
- * Translation context enums describe different types of translations
+ * Translation context enums describe different types of translations.
  */
 export type TranslationContext =
     /**

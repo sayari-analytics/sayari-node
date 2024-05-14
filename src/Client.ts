@@ -5,20 +5,25 @@
 import * as environments from "./environments";
 import * as core from "./core";
 import { Auth } from "./api/resources/auth/client/Client";
+import { Attributes } from "./api/resources/attributes/client/Client";
 import { Entity } from "./api/resources/entity/client/Client";
 import { Info } from "./api/resources/info/client/Client";
+import { Notifications } from "./api/resources/notifications/client/Client";
+import { Project } from "./api/resources/project/client/Client";
 import { Record_ } from "./api/resources/record/client/Client";
 import { Resolution } from "./api/resources/resolution/client/Client";
+import { Resource } from "./api/resources/resource/client/Client";
 import { Search } from "./api/resources/search/client/Client";
 import { Source } from "./api/resources/source/client/Client";
+import { SupplyChain } from "./api/resources/supplyChain/client/Client";
 import { Trade } from "./api/resources/trade/client/Client";
 import { Traversal } from "./api/resources/traversal/client/Client";
 
 export declare namespace SayariAnalyticsApiClient {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
-        token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
+        clientId: core.Supplier<string>;
+        clientSecret: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -28,59 +33,141 @@ export declare namespace SayariAnalyticsApiClient {
 }
 
 export class SayariAnalyticsApiClient {
-    constructor(protected readonly _options: SayariAnalyticsApiClient.Options) {}
+    private readonly _oauthTokenProvider: core.OAuthTokenProvider;
+
+    constructor(protected readonly _options: SayariAnalyticsApiClient.Options) {
+        this._oauthTokenProvider = new core.OAuthTokenProvider({
+            clientId: this._options.clientId,
+            clientSecret: this._options.clientSecret,
+            authClient: new Auth({
+                environment: this._options.environment,
+            }),
+        });
+    }
+
+    protected _attributes: Attributes | undefined;
+
+    public get attributes(): Attributes {
+        return (this._attributes ??= new Attributes({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
 
     protected _auth: Auth | undefined;
 
     public get auth(): Auth {
-        return (this._auth ??= new Auth(this._options));
+        return (this._auth ??= new Auth({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
     }
 
     protected _entity: Entity | undefined;
 
     public get entity(): Entity {
-        return (this._entity ??= new Entity(this._options));
+        return (this._entity ??= new Entity({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
     }
 
     protected _info: Info | undefined;
 
     public get info(): Info {
-        return (this._info ??= new Info(this._options));
+        return (this._info ??= new Info({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    protected _notifications: Notifications | undefined;
+
+    public get notifications(): Notifications {
+        return (this._notifications ??= new Notifications({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    protected _project: Project | undefined;
+
+    public get project(): Project {
+        return (this._project ??= new Project({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
     }
 
     protected _record: Record_ | undefined;
 
     public get record(): Record_ {
-        return (this._record ??= new Record_(this._options));
+        return (this._record ??= new Record_({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
     }
 
     protected _resolution: Resolution | undefined;
 
     public get resolution(): Resolution {
-        return (this._resolution ??= new Resolution(this._options));
+        return (this._resolution ??= new Resolution({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    protected _resource: Resource | undefined;
+
+    public get resource(): Resource {
+        return (this._resource ??= new Resource({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
     }
 
     protected _search: Search | undefined;
 
     public get search(): Search {
-        return (this._search ??= new Search(this._options));
+        return (this._search ??= new Search({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
     }
 
     protected _source: Source | undefined;
 
     public get source(): Source {
-        return (this._source ??= new Source(this._options));
+        return (this._source ??= new Source({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    protected _supplyChain: SupplyChain | undefined;
+
+    public get supplyChain(): SupplyChain {
+        return (this._supplyChain ??= new SupplyChain({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
     }
 
     protected _trade: Trade | undefined;
 
     public get trade(): Trade {
-        return (this._trade ??= new Trade(this._options));
+        return (this._trade ??= new Trade({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
     }
 
     protected _traversal: Traversal | undefined;
 
     public get traversal(): Traversal {
-        return (this._traversal ??= new Traversal(this._options));
+        return (this._traversal ??= new Traversal({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
     }
 }

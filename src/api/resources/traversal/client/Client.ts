@@ -4,16 +4,15 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
-import * as serializers from "../../../../serialization";
+import * as SayariAnalyticsApi from "../../../index";
 import urlJoin from "url-join";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Traversal {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -23,10 +22,15 @@ export declare namespace Traversal {
 }
 
 export class Traversal {
-    constructor(protected readonly _options: Traversal.Options) {}
+    constructor(protected readonly _options: Traversal.Options = {}) {}
 
     /**
-     * The Traversal endpoint returns paths from a single target entity to up to 50 directly or indirectly-related entities. Each path includes information on the 0 to 10 intermediary entities, as well as their connecting relationships. The response's explored_count field indicates the size of the graph subset the application searched. Running a traversal on a highly connected entity with a restrictive set of argument filters and a high max depth will require the application to explore a higher number of traversal paths, which may affect performance.
+     * The Traversal endpoint returns paths from a single target entity to up to 50 directly or indirectly-related entities. Each path includes information on the 0 to 10 intermediary entities, as well as their connecting relationships. The response's explored_count field indicates the size of the graph subset the application searched. Running a traversal on a highly connected entity with a restrictive set of argument filters and a high max depth will require the application to explore a higher number of traversal paths, which may affect performance. In cases where a traversal searches over a very large, highly-connected subgraph, a partial result set may be returned containing only the most relevant results. This will be indicated in the response by the partial_results field.
+     *
+     * @param {string} id - Unique identifier of the entity
+     * @param {SayariAnalyticsApi.Traversal} request
+     * @param {Traversal.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.NotFound}
@@ -42,7 +46,7 @@ export class Traversal {
      *     })
      */
     public async traversal(
-        id: SayariAnalyticsApi.EntityId,
+        id: string,
         request: SayariAnalyticsApi.Traversal = {},
         requestOptions?: Traversal.RequestOptions
     ): Promise<SayariAnalyticsApi.TraversalResponse> {
@@ -75,7 +79,7 @@ export class Traversal {
             lawEnforcementAction,
             xinjiangGeospatial,
         } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -200,13 +204,16 @@ export class Traversal {
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ??
                     environments.SayariAnalyticsApiEnvironment.Production,
-                `/v1/traversal/${await serializers.EntityId.jsonOrThrow(id)}`
+                `/v1/traversal/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -321,6 +328,11 @@ export class Traversal {
 
     /**
      * The UBO endpoint returns paths from a single target entity to up to 50 beneficial owners. The endpoint is a shorthand for the equivalent traversal query.
+     *
+     * @param {string} id - Unique identifier of the entity
+     * @param {SayariAnalyticsApi.Ubo} request
+     * @param {Traversal.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.NotFound}
@@ -336,578 +348,8 @@ export class Traversal {
      *     })
      */
     public async ubo(
-        id: SayariAnalyticsApi.EntityId,
+        id: string,
         request: SayariAnalyticsApi.Ubo = {},
-        requestOptions?: Traversal.RequestOptions
-    ): Promise<SayariAnalyticsApi.TraversalResponse> {
-        const {
-            limit,
-            offset,
-            minDepth,
-            maxDepth,
-            psa,
-            countries,
-            types,
-            sanctioned,
-            pep,
-            minShares,
-            includeUnknownShares,
-            excludeFormerRelationships,
-            excludeClosedEntities,
-            euHighRiskThird,
-            reputationalRiskModernSlavery,
-            stateOwned,
-            formerlySanctioned,
-            reputationalRiskTerrorism,
-            reputationalRiskOrganizedCrime,
-            reputationalRiskFinancialCrime,
-            reputationalRiskBriberyAndCorruption,
-            reputationalRiskOther,
-            reputationalRiskCybercrime,
-            regulatoryAction,
-            lawEnforcementAction,
-            xinjiangGeospatial,
-        } = request;
-        const _queryParams: Record<string, string | string[]> = {};
-        if (limit != null) {
-            _queryParams["limit"] = limit.toString();
-        }
-
-        if (offset != null) {
-            _queryParams["offset"] = offset.toString();
-        }
-
-        if (minDepth != null) {
-            _queryParams["min_depth"] = minDepth.toString();
-        }
-
-        if (maxDepth != null) {
-            _queryParams["max_depth"] = maxDepth.toString();
-        }
-
-        if (psa != null) {
-            _queryParams["psa"] = psa.toString();
-        }
-
-        if (countries != null) {
-            if (Array.isArray(countries)) {
-                _queryParams["countries"] = countries.map((item) => item);
-            } else {
-                _queryParams["countries"] = countries;
-            }
-        }
-
-        if (types != null) {
-            if (Array.isArray(types)) {
-                _queryParams["types"] = types.map((item) => item);
-            } else {
-                _queryParams["types"] = types;
-            }
-        }
-
-        if (sanctioned != null) {
-            _queryParams["sanctioned"] = sanctioned.toString();
-        }
-
-        if (pep != null) {
-            _queryParams["pep"] = pep.toString();
-        }
-
-        if (minShares != null) {
-            _queryParams["min_shares"] = minShares.toString();
-        }
-
-        if (includeUnknownShares != null) {
-            _queryParams["include_unknown_shares"] = includeUnknownShares.toString();
-        }
-
-        if (excludeFormerRelationships != null) {
-            _queryParams["exclude_former_relationships"] = excludeFormerRelationships.toString();
-        }
-
-        if (excludeClosedEntities != null) {
-            _queryParams["exclude_closed_entities"] = excludeClosedEntities.toString();
-        }
-
-        if (euHighRiskThird != null) {
-            _queryParams["eu_high_risk_third"] = euHighRiskThird.toString();
-        }
-
-        if (reputationalRiskModernSlavery != null) {
-            _queryParams["reputational_risk_modern_slavery"] = reputationalRiskModernSlavery.toString();
-        }
-
-        if (stateOwned != null) {
-            _queryParams["state_owned"] = stateOwned.toString();
-        }
-
-        if (formerlySanctioned != null) {
-            _queryParams["formerly_sanctioned"] = formerlySanctioned.toString();
-        }
-
-        if (reputationalRiskTerrorism != null) {
-            _queryParams["reputational_risk_terrorism"] = reputationalRiskTerrorism.toString();
-        }
-
-        if (reputationalRiskOrganizedCrime != null) {
-            _queryParams["reputational_risk_organized_crime"] = reputationalRiskOrganizedCrime.toString();
-        }
-
-        if (reputationalRiskFinancialCrime != null) {
-            _queryParams["reputational_risk_financial_crime"] = reputationalRiskFinancialCrime.toString();
-        }
-
-        if (reputationalRiskBriberyAndCorruption != null) {
-            _queryParams["reputational_risk_bribery_and_corruption"] = reputationalRiskBriberyAndCorruption.toString();
-        }
-
-        if (reputationalRiskOther != null) {
-            _queryParams["reputational_risk_other"] = reputationalRiskOther.toString();
-        }
-
-        if (reputationalRiskCybercrime != null) {
-            _queryParams["reputational_risk_cybercrime"] = reputationalRiskCybercrime.toString();
-        }
-
-        if (regulatoryAction != null) {
-            _queryParams["regulatory_action"] = regulatoryAction.toString();
-        }
-
-        if (lawEnforcementAction != null) {
-            _queryParams["law_enforcement_action"] = lawEnforcementAction.toString();
-        }
-
-        if (xinjiangGeospatial != null) {
-            _queryParams["xinjiang_geospatial"] = xinjiangGeospatial.toString();
-        }
-
-        const _response = await core.fetcher({
-            url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
-                `/v1/ubo/${await serializers.EntityId.jsonOrThrow(id)}`
-            ),
-            method: "GET",
-            headers: {
-                Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
-                "X-Fern-Language": "JavaScript",
-            },
-            contentType: "application/json",
-            queryParameters: _queryParams,
-            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
-            maxRetries: requestOptions?.maxRetries,
-        });
-        if (_response.ok) {
-            return await serializers.TraversalResponse.parseOrThrow(_response.body, {
-                unrecognizedObjectKeys: "passthrough",
-                allowUnrecognizedUnionMembers: true,
-                allowUnrecognizedEnumValues: true,
-                breadcrumbsPrefix: ["response"],
-            });
-        }
-
-        if (_response.error.reason === "status-code") {
-            switch (_response.error.statusCode) {
-                case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 404:
-                    throw new SayariAnalyticsApi.NotFound(
-                        await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
-                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
-                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 502:
-                    throw new SayariAnalyticsApi.BadGateway(
-                        await serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 520:
-                    throw new SayariAnalyticsApi.ConnectionError(
-                        await serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                default:
-                    throw new errors.SayariAnalyticsApiError({
-                        statusCode: _response.error.statusCode,
-                        body: _response.error.body,
-                    });
-            }
-        }
-
-        switch (_response.error.reason) {
-            case "non-json":
-                throw new errors.SayariAnalyticsApiError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.rawBody,
-                });
-            case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
-            case "unknown":
-                throw new errors.SayariAnalyticsApiError({
-                    message: _response.error.errorMessage,
-                });
-        }
-    }
-
-    /**
-     * The Ownership endpoint returns paths from a single target entity to up to 50 entities directly or indirectly owned by that entity. The endpoint is a shorthand for the equivalent traversal query.
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
-     * @throws {@link SayariAnalyticsApi.BadGateway}
-     * @throws {@link SayariAnalyticsApi.ConnectionError}
-     *
-     * @example
-     *     await sayariAnalyticsApi.traversal.ownership("mGq1lpuqKssNWTjIokuPeA", {
-     *         limit: 1
-     *     })
-     */
-    public async ownership(
-        id: SayariAnalyticsApi.EntityId,
-        request: SayariAnalyticsApi.Ownership = {},
-        requestOptions?: Traversal.RequestOptions
-    ): Promise<SayariAnalyticsApi.TraversalResponse> {
-        const {
-            limit,
-            offset,
-            minDepth,
-            maxDepth,
-            psa,
-            countries,
-            types,
-            sanctioned,
-            pep,
-            minShares,
-            includeUnknownShares,
-            excludeFormerRelationships,
-            excludeClosedEntities,
-            euHighRiskThird,
-            reputationalRiskModernSlavery,
-            stateOwned,
-            formerlySanctioned,
-            reputationalRiskTerrorism,
-            reputationalRiskOrganizedCrime,
-            reputationalRiskFinancialCrime,
-            reputationalRiskBriberyAndCorruption,
-            reputationalRiskOther,
-            reputationalRiskCybercrime,
-            regulatoryAction,
-            lawEnforcementAction,
-            xinjiangGeospatial,
-        } = request;
-        const _queryParams: Record<string, string | string[]> = {};
-        if (limit != null) {
-            _queryParams["limit"] = limit.toString();
-        }
-
-        if (offset != null) {
-            _queryParams["offset"] = offset.toString();
-        }
-
-        if (minDepth != null) {
-            _queryParams["min_depth"] = minDepth.toString();
-        }
-
-        if (maxDepth != null) {
-            _queryParams["max_depth"] = maxDepth.toString();
-        }
-
-        if (psa != null) {
-            _queryParams["psa"] = psa.toString();
-        }
-
-        if (countries != null) {
-            if (Array.isArray(countries)) {
-                _queryParams["countries"] = countries.map((item) => item);
-            } else {
-                _queryParams["countries"] = countries;
-            }
-        }
-
-        if (types != null) {
-            if (Array.isArray(types)) {
-                _queryParams["types"] = types.map((item) => item);
-            } else {
-                _queryParams["types"] = types;
-            }
-        }
-
-        if (sanctioned != null) {
-            _queryParams["sanctioned"] = sanctioned.toString();
-        }
-
-        if (pep != null) {
-            _queryParams["pep"] = pep.toString();
-        }
-
-        if (minShares != null) {
-            _queryParams["min_shares"] = minShares.toString();
-        }
-
-        if (includeUnknownShares != null) {
-            _queryParams["include_unknown_shares"] = includeUnknownShares.toString();
-        }
-
-        if (excludeFormerRelationships != null) {
-            _queryParams["exclude_former_relationships"] = excludeFormerRelationships.toString();
-        }
-
-        if (excludeClosedEntities != null) {
-            _queryParams["exclude_closed_entities"] = excludeClosedEntities.toString();
-        }
-
-        if (euHighRiskThird != null) {
-            _queryParams["eu_high_risk_third"] = euHighRiskThird.toString();
-        }
-
-        if (reputationalRiskModernSlavery != null) {
-            _queryParams["reputational_risk_modern_slavery"] = reputationalRiskModernSlavery.toString();
-        }
-
-        if (stateOwned != null) {
-            _queryParams["state_owned"] = stateOwned.toString();
-        }
-
-        if (formerlySanctioned != null) {
-            _queryParams["formerly_sanctioned"] = formerlySanctioned.toString();
-        }
-
-        if (reputationalRiskTerrorism != null) {
-            _queryParams["reputational_risk_terrorism"] = reputationalRiskTerrorism.toString();
-        }
-
-        if (reputationalRiskOrganizedCrime != null) {
-            _queryParams["reputational_risk_organized_crime"] = reputationalRiskOrganizedCrime.toString();
-        }
-
-        if (reputationalRiskFinancialCrime != null) {
-            _queryParams["reputational_risk_financial_crime"] = reputationalRiskFinancialCrime.toString();
-        }
-
-        if (reputationalRiskBriberyAndCorruption != null) {
-            _queryParams["reputational_risk_bribery_and_corruption"] = reputationalRiskBriberyAndCorruption.toString();
-        }
-
-        if (reputationalRiskOther != null) {
-            _queryParams["reputational_risk_other"] = reputationalRiskOther.toString();
-        }
-
-        if (reputationalRiskCybercrime != null) {
-            _queryParams["reputational_risk_cybercrime"] = reputationalRiskCybercrime.toString();
-        }
-
-        if (regulatoryAction != null) {
-            _queryParams["regulatory_action"] = regulatoryAction.toString();
-        }
-
-        if (lawEnforcementAction != null) {
-            _queryParams["law_enforcement_action"] = lawEnforcementAction.toString();
-        }
-
-        if (xinjiangGeospatial != null) {
-            _queryParams["xinjiang_geospatial"] = xinjiangGeospatial.toString();
-        }
-
-        const _response = await core.fetcher({
-            url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
-                `/v1/downstream/${await serializers.EntityId.jsonOrThrow(id)}`
-            ),
-            method: "GET",
-            headers: {
-                Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
-                "X-Fern-Language": "JavaScript",
-            },
-            contentType: "application/json",
-            queryParameters: _queryParams,
-            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
-            maxRetries: requestOptions?.maxRetries,
-        });
-        if (_response.ok) {
-            return await serializers.TraversalResponse.parseOrThrow(_response.body, {
-                unrecognizedObjectKeys: "passthrough",
-                allowUnrecognizedUnionMembers: true,
-                allowUnrecognizedEnumValues: true,
-                breadcrumbsPrefix: ["response"],
-            });
-        }
-
-        if (_response.error.reason === "status-code") {
-            switch (_response.error.statusCode) {
-                case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 404:
-                    throw new SayariAnalyticsApi.NotFound(
-                        await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
-                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
-                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 502:
-                    throw new SayariAnalyticsApi.BadGateway(
-                        await serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 520:
-                    throw new SayariAnalyticsApi.ConnectionError(
-                        await serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                default:
-                    throw new errors.SayariAnalyticsApiError({
-                        statusCode: _response.error.statusCode,
-                        body: _response.error.body,
-                    });
-            }
-        }
-
-        switch (_response.error.reason) {
-            case "non-json":
-                throw new errors.SayariAnalyticsApiError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.rawBody,
-                });
-            case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
-            case "unknown":
-                throw new errors.SayariAnalyticsApiError({
-                    message: _response.error.errorMessage,
-                });
-        }
-    }
-
-    /**
-     * The Watchlist endpoint returns paths from a single target entity to up to 50 other entities that appear on a watchlist or are peps. The endpoint is a shorthand for the equivalent traversal query.
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
-     * @throws {@link SayariAnalyticsApi.BadGateway}
-     * @throws {@link SayariAnalyticsApi.ConnectionError}
-     *
-     * @example
-     *     await sayariAnalyticsApi.traversal.watchlist("mGq1lpuqKssNWTjIokuPeA", {
-     *         limit: 1
-     *     })
-     */
-    public async watchlist(
-        id: SayariAnalyticsApi.EntityId,
-        request: SayariAnalyticsApi.Watchlist = {},
         requestOptions?: Traversal.RequestOptions
     ): Promise<SayariAnalyticsApi.TraversalResponse> {
         const {
@@ -939,7 +381,7 @@ export class Traversal {
             lawEnforcementAction,
             xinjiangGeospatial,
         } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -1064,13 +506,620 @@ export class Traversal {
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ??
                     environments.SayariAnalyticsApiEnvironment.Production,
-                `/v1/watchlist/${await serializers.EntityId.jsonOrThrow(id)}`
+                `/v1/ubo/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
+            },
+            contentType: "application/json",
+            queryParameters: _queryParams,
+            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+            maxRetries: requestOptions?.maxRetries,
+        });
+        if (_response.ok) {
+            return await serializers.TraversalResponse.parseOrThrow(_response.body, {
+                unrecognizedObjectKeys: "passthrough",
+                allowUnrecognizedUnionMembers: true,
+                allowUnrecognizedEnumValues: true,
+                breadcrumbsPrefix: ["response"],
+            });
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 400:
+                    throw new SayariAnalyticsApi.BadRequest(
+                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 401:
+                    throw new SayariAnalyticsApi.Unauthorized(
+                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 404:
+                    throw new SayariAnalyticsApi.NotFound(
+                        await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 405:
+                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 429:
+                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 500:
+                    throw new SayariAnalyticsApi.InternalServerError(
+                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 502:
+                    throw new SayariAnalyticsApi.BadGateway(
+                        await serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 520:
+                    throw new SayariAnalyticsApi.ConnectionError(
+                        await serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                default:
+                    throw new errors.SayariAnalyticsApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                    });
+            }
+        }
+
+        switch (_response.error.reason) {
+            case "non-json":
+                throw new errors.SayariAnalyticsApiError({
+                    statusCode: _response.error.statusCode,
+                    body: _response.error.rawBody,
+                });
+            case "timeout":
+                throw new errors.SayariAnalyticsApiTimeoutError();
+            case "unknown":
+                throw new errors.SayariAnalyticsApiError({
+                    message: _response.error.errorMessage,
+                });
+        }
+    }
+
+    /**
+     * The Ownership endpoint returns paths from a single target entity to up to 50 entities directly or indirectly owned by that entity. The endpoint is a shorthand for the equivalent traversal query.
+     *
+     * @param {string} id - Unique identifier of the entity
+     * @param {SayariAnalyticsApi.Ownership} request
+     * @param {Traversal.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link SayariAnalyticsApi.BadRequest}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link SayariAnalyticsApi.BadGateway}
+     * @throws {@link SayariAnalyticsApi.ConnectionError}
+     *
+     * @example
+     *     await sayariAnalyticsApi.traversal.ownership("mGq1lpuqKssNWTjIokuPeA", {
+     *         limit: 1
+     *     })
+     */
+    public async ownership(
+        id: string,
+        request: SayariAnalyticsApi.Ownership = {},
+        requestOptions?: Traversal.RequestOptions
+    ): Promise<SayariAnalyticsApi.TraversalResponse> {
+        const {
+            limit,
+            offset,
+            minDepth,
+            maxDepth,
+            relationships,
+            psa,
+            countries,
+            types,
+            sanctioned,
+            pep,
+            minShares,
+            includeUnknownShares,
+            excludeFormerRelationships,
+            excludeClosedEntities,
+            euHighRiskThird,
+            reputationalRiskModernSlavery,
+            stateOwned,
+            formerlySanctioned,
+            reputationalRiskTerrorism,
+            reputationalRiskOrganizedCrime,
+            reputationalRiskFinancialCrime,
+            reputationalRiskBriberyAndCorruption,
+            reputationalRiskOther,
+            reputationalRiskCybercrime,
+            regulatoryAction,
+            lawEnforcementAction,
+            xinjiangGeospatial,
+        } = request;
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        if (limit != null) {
+            _queryParams["limit"] = limit.toString();
+        }
+
+        if (offset != null) {
+            _queryParams["offset"] = offset.toString();
+        }
+
+        if (minDepth != null) {
+            _queryParams["min_depth"] = minDepth.toString();
+        }
+
+        if (maxDepth != null) {
+            _queryParams["max_depth"] = maxDepth.toString();
+        }
+
+        if (relationships != null) {
+            if (Array.isArray(relationships)) {
+                _queryParams["relationships"] = relationships.map((item) => item);
+            } else {
+                _queryParams["relationships"] = relationships;
+            }
+        }
+
+        if (psa != null) {
+            _queryParams["psa"] = psa.toString();
+        }
+
+        if (countries != null) {
+            if (Array.isArray(countries)) {
+                _queryParams["countries"] = countries.map((item) => item);
+            } else {
+                _queryParams["countries"] = countries;
+            }
+        }
+
+        if (types != null) {
+            if (Array.isArray(types)) {
+                _queryParams["types"] = types.map((item) => item);
+            } else {
+                _queryParams["types"] = types;
+            }
+        }
+
+        if (sanctioned != null) {
+            _queryParams["sanctioned"] = sanctioned.toString();
+        }
+
+        if (pep != null) {
+            _queryParams["pep"] = pep.toString();
+        }
+
+        if (minShares != null) {
+            _queryParams["min_shares"] = minShares.toString();
+        }
+
+        if (includeUnknownShares != null) {
+            _queryParams["include_unknown_shares"] = includeUnknownShares.toString();
+        }
+
+        if (excludeFormerRelationships != null) {
+            _queryParams["exclude_former_relationships"] = excludeFormerRelationships.toString();
+        }
+
+        if (excludeClosedEntities != null) {
+            _queryParams["exclude_closed_entities"] = excludeClosedEntities.toString();
+        }
+
+        if (euHighRiskThird != null) {
+            _queryParams["eu_high_risk_third"] = euHighRiskThird.toString();
+        }
+
+        if (reputationalRiskModernSlavery != null) {
+            _queryParams["reputational_risk_modern_slavery"] = reputationalRiskModernSlavery.toString();
+        }
+
+        if (stateOwned != null) {
+            _queryParams["state_owned"] = stateOwned.toString();
+        }
+
+        if (formerlySanctioned != null) {
+            _queryParams["formerly_sanctioned"] = formerlySanctioned.toString();
+        }
+
+        if (reputationalRiskTerrorism != null) {
+            _queryParams["reputational_risk_terrorism"] = reputationalRiskTerrorism.toString();
+        }
+
+        if (reputationalRiskOrganizedCrime != null) {
+            _queryParams["reputational_risk_organized_crime"] = reputationalRiskOrganizedCrime.toString();
+        }
+
+        if (reputationalRiskFinancialCrime != null) {
+            _queryParams["reputational_risk_financial_crime"] = reputationalRiskFinancialCrime.toString();
+        }
+
+        if (reputationalRiskBriberyAndCorruption != null) {
+            _queryParams["reputational_risk_bribery_and_corruption"] = reputationalRiskBriberyAndCorruption.toString();
+        }
+
+        if (reputationalRiskOther != null) {
+            _queryParams["reputational_risk_other"] = reputationalRiskOther.toString();
+        }
+
+        if (reputationalRiskCybercrime != null) {
+            _queryParams["reputational_risk_cybercrime"] = reputationalRiskCybercrime.toString();
+        }
+
+        if (regulatoryAction != null) {
+            _queryParams["regulatory_action"] = regulatoryAction.toString();
+        }
+
+        if (lawEnforcementAction != null) {
+            _queryParams["law_enforcement_action"] = lawEnforcementAction.toString();
+        }
+
+        if (xinjiangGeospatial != null) {
+            _queryParams["xinjiang_geospatial"] = xinjiangGeospatial.toString();
+        }
+
+        const _response = await core.fetcher({
+            url: urlJoin(
+                (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariAnalyticsApiEnvironment.Production,
+                `/v1/downstream/${encodeURIComponent(id)}`
+            ),
+            method: "GET",
+            headers: {
+                Authorization: await this._getAuthorizationHeader(),
+                "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
+            },
+            contentType: "application/json",
+            queryParameters: _queryParams,
+            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+            maxRetries: requestOptions?.maxRetries,
+        });
+        if (_response.ok) {
+            return await serializers.TraversalResponse.parseOrThrow(_response.body, {
+                unrecognizedObjectKeys: "passthrough",
+                allowUnrecognizedUnionMembers: true,
+                allowUnrecognizedEnumValues: true,
+                breadcrumbsPrefix: ["response"],
+            });
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 400:
+                    throw new SayariAnalyticsApi.BadRequest(
+                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 401:
+                    throw new SayariAnalyticsApi.Unauthorized(
+                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 404:
+                    throw new SayariAnalyticsApi.NotFound(
+                        await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 405:
+                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 429:
+                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 500:
+                    throw new SayariAnalyticsApi.InternalServerError(
+                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 502:
+                    throw new SayariAnalyticsApi.BadGateway(
+                        await serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 520:
+                    throw new SayariAnalyticsApi.ConnectionError(
+                        await serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                default:
+                    throw new errors.SayariAnalyticsApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                    });
+            }
+        }
+
+        switch (_response.error.reason) {
+            case "non-json":
+                throw new errors.SayariAnalyticsApiError({
+                    statusCode: _response.error.statusCode,
+                    body: _response.error.rawBody,
+                });
+            case "timeout":
+                throw new errors.SayariAnalyticsApiTimeoutError();
+            case "unknown":
+                throw new errors.SayariAnalyticsApiError({
+                    message: _response.error.errorMessage,
+                });
+        }
+    }
+
+    /**
+     * The Watchlist endpoint returns paths from a single target entity to up to 50 other entities that appear on a watchlist. The endpoint is a shorthand for the equivalent traversal query.
+     *
+     * @param {string} id - Unique identifier of the entity
+     * @param {SayariAnalyticsApi.Watchlist} request
+     * @param {Traversal.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link SayariAnalyticsApi.BadRequest}
+     * @throws {@link SayariAnalyticsApi.Unauthorized}
+     * @throws {@link SayariAnalyticsApi.NotFound}
+     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
+     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
+     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link SayariAnalyticsApi.BadGateway}
+     * @throws {@link SayariAnalyticsApi.ConnectionError}
+     *
+     * @example
+     *     await sayariAnalyticsApi.traversal.watchlist("mGq1lpuqKssNWTjIokuPeA", {
+     *         limit: 1
+     *     })
+     */
+    public async watchlist(
+        id: string,
+        request: SayariAnalyticsApi.Watchlist = {},
+        requestOptions?: Traversal.RequestOptions
+    ): Promise<SayariAnalyticsApi.TraversalResponse> {
+        const {
+            limit,
+            offset,
+            minDepth,
+            maxDepth,
+            relationships,
+            psa,
+            countries,
+            types,
+            sanctioned,
+            pep,
+            minShares,
+            includeUnknownShares,
+            excludeFormerRelationships,
+            excludeClosedEntities,
+            euHighRiskThird,
+            reputationalRiskModernSlavery,
+            stateOwned,
+            formerlySanctioned,
+            reputationalRiskTerrorism,
+            reputationalRiskOrganizedCrime,
+            reputationalRiskFinancialCrime,
+            reputationalRiskBriberyAndCorruption,
+            reputationalRiskOther,
+            reputationalRiskCybercrime,
+            regulatoryAction,
+            lawEnforcementAction,
+            xinjiangGeospatial,
+        } = request;
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        if (limit != null) {
+            _queryParams["limit"] = limit.toString();
+        }
+
+        if (offset != null) {
+            _queryParams["offset"] = offset.toString();
+        }
+
+        if (minDepth != null) {
+            _queryParams["min_depth"] = minDepth.toString();
+        }
+
+        if (maxDepth != null) {
+            _queryParams["max_depth"] = maxDepth.toString();
+        }
+
+        if (relationships != null) {
+            if (Array.isArray(relationships)) {
+                _queryParams["relationships"] = relationships.map((item) => item);
+            } else {
+                _queryParams["relationships"] = relationships;
+            }
+        }
+
+        if (psa != null) {
+            _queryParams["psa"] = psa.toString();
+        }
+
+        if (countries != null) {
+            if (Array.isArray(countries)) {
+                _queryParams["countries"] = countries.map((item) => item);
+            } else {
+                _queryParams["countries"] = countries;
+            }
+        }
+
+        if (types != null) {
+            if (Array.isArray(types)) {
+                _queryParams["types"] = types.map((item) => item);
+            } else {
+                _queryParams["types"] = types;
+            }
+        }
+
+        if (sanctioned != null) {
+            _queryParams["sanctioned"] = sanctioned.toString();
+        }
+
+        if (pep != null) {
+            _queryParams["pep"] = pep.toString();
+        }
+
+        if (minShares != null) {
+            _queryParams["min_shares"] = minShares.toString();
+        }
+
+        if (includeUnknownShares != null) {
+            _queryParams["include_unknown_shares"] = includeUnknownShares.toString();
+        }
+
+        if (excludeFormerRelationships != null) {
+            _queryParams["exclude_former_relationships"] = excludeFormerRelationships.toString();
+        }
+
+        if (excludeClosedEntities != null) {
+            _queryParams["exclude_closed_entities"] = excludeClosedEntities.toString();
+        }
+
+        if (euHighRiskThird != null) {
+            _queryParams["eu_high_risk_third"] = euHighRiskThird.toString();
+        }
+
+        if (reputationalRiskModernSlavery != null) {
+            _queryParams["reputational_risk_modern_slavery"] = reputationalRiskModernSlavery.toString();
+        }
+
+        if (stateOwned != null) {
+            _queryParams["state_owned"] = stateOwned.toString();
+        }
+
+        if (formerlySanctioned != null) {
+            _queryParams["formerly_sanctioned"] = formerlySanctioned.toString();
+        }
+
+        if (reputationalRiskTerrorism != null) {
+            _queryParams["reputational_risk_terrorism"] = reputationalRiskTerrorism.toString();
+        }
+
+        if (reputationalRiskOrganizedCrime != null) {
+            _queryParams["reputational_risk_organized_crime"] = reputationalRiskOrganizedCrime.toString();
+        }
+
+        if (reputationalRiskFinancialCrime != null) {
+            _queryParams["reputational_risk_financial_crime"] = reputationalRiskFinancialCrime.toString();
+        }
+
+        if (reputationalRiskBriberyAndCorruption != null) {
+            _queryParams["reputational_risk_bribery_and_corruption"] = reputationalRiskBriberyAndCorruption.toString();
+        }
+
+        if (reputationalRiskOther != null) {
+            _queryParams["reputational_risk_other"] = reputationalRiskOther.toString();
+        }
+
+        if (reputationalRiskCybercrime != null) {
+            _queryParams["reputational_risk_cybercrime"] = reputationalRiskCybercrime.toString();
+        }
+
+        if (regulatoryAction != null) {
+            _queryParams["regulatory_action"] = regulatoryAction.toString();
+        }
+
+        if (lawEnforcementAction != null) {
+            _queryParams["law_enforcement_action"] = lawEnforcementAction.toString();
+        }
+
+        if (xinjiangGeospatial != null) {
+            _queryParams["xinjiang_geospatial"] = xinjiangGeospatial.toString();
+        }
+
+        const _response = await core.fetcher({
+            url: urlJoin(
+                (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariAnalyticsApiEnvironment.Production,
+                `/v1/watchlist/${encodeURIComponent(id)}`
+            ),
+            method: "GET",
+            headers: {
+                Authorization: await this._getAuthorizationHeader(),
+                "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -1185,6 +1234,10 @@ export class Traversal {
 
     /**
      * The Shortest Path endpoint returns a response identifying the shortest traversal path connecting each pair of entities.
+     *
+     * @param {SayariAnalyticsApi.ShortestPath} request
+     * @param {Traversal.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.NotFound}
@@ -1193,13 +1246,18 @@ export class Traversal {
      * @throws {@link SayariAnalyticsApi.InternalServerError}
      * @throws {@link SayariAnalyticsApi.BadGateway}
      * @throws {@link SayariAnalyticsApi.ConnectionError}
+     *
+     * @example
+     *     await sayariAnalyticsApi.traversal.shortestPath({
+     *         entities: "string"
+     *     })
      */
     public async shortestPath(
         request: SayariAnalyticsApi.ShortestPath,
         requestOptions?: Traversal.RequestOptions
     ): Promise<SayariAnalyticsApi.ShortestPathResponse> {
         const { entities } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (Array.isArray(entities)) {
             _queryParams["entities"] = entities.map((item) => item);
         } else {
@@ -1215,8 +1273,11 @@ export class Traversal {
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -1329,12 +1390,7 @@ export class Traversal {
         }
     }
 
-    protected async _getAuthorizationHeader() {
-        const bearer = await core.Supplier.get(this._options.token);
-        if (bearer != null) {
-            return `Bearer ${bearer}`;
-        }
-
-        return undefined;
+    protected async _getAuthorizationHeader(): Promise<string | undefined> {
+        return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }
