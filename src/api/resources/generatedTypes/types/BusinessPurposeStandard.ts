@@ -3,7 +3,7 @@
  */
 
 /**
- * Business purpose standard enums describe the type of code listed in a business purpose attribute, which may or may not allow for Pyisic conversions/lookups.
+ * Business purpose standard enums describe the type of code listed in a business purpose attribute, which may or may not allow for [Pyisic](https://github.com/sayari-analytics/pyisic) conversions/lookups.
  */
 export type BusinessPurposeStandard =
     /**
@@ -80,7 +80,16 @@ export type BusinessPurposeStandard =
     | "SSIC2020"
     /**
      * Polska Klasyfikacja Działalności (PKD) - Polish Classification of Activities, Rev. 2007 */
-    | "PKD2007";
+    | "PKD2007"
+    /**
+     * European System of Accounts */
+    | "ESA2010"
+    /**
+     * San Marino Codici ATECO */
+    | "ATECO"
+    /**
+     * Code d'activité économique Quebec */
+    | "CAE";
 
 export const BusinessPurposeStandard = {
     Cnae2: "CNAE2",
@@ -108,4 +117,7 @@ export const BusinessPurposeStandard = {
     Sic: "SIC",
     Ssic2020: "SSIC2020",
     Pkd2007: "PKD2007",
+    Esa2010: "ESA2010",
+    Ateco: "ATECO",
+    Cae: "CAE",
 } as const;

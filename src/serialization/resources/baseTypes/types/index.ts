@@ -1,2 +1,3 @@
 export * from "./PaginatedResponse";
-export * from "./SizeInfo";
+export * from "./QualifiedCount";
+export * from "./CountQualifier";

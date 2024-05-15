@@ -3,7 +3,14 @@
  */
 
 export interface GenericProperties {
-    /** We would probably group by type in a GUI */
+    /** as-of date */
+    date?: string;
+    /** start date */
+    fromDate?: string;
+    /** end date */
+    toDate?: string;
+    /** A text description of the attribute (e.g., "name of pet") */
     type?: string;
+    /** The value of the attribute as text (e.g., "Max") */
     value?: string;
 }

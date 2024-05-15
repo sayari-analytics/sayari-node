@@ -1,0 +1,5 @@
+# Specify files that shouldn't be modified by Fern
+src/wrapper
+src/index.ts
+.gitignore
+examples/

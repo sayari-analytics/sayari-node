@@ -3,26 +3,26 @@
  */
 
 /**
- * indicates what location an address is referring to
+ * This enumerated type indicates the kind of location an address is referring to.
  */
 export type AddressType =
     /**
-     * the port to which a shipment is sent */
+     * The port to which a shipment is sent */
     | "arrival"
     /**
-     * the port from which a shipment leaves */
+     * The port from which a shipment leaves */
     | "departure"
     /**
-     * an address at which an entity receives mail */
+     * An address at which an entity receives mail */
     | "mailing"
     /**
-     * an address at which an entity has a physical presence */
+     * An address at which an entity has a physical presence */
     | "physical"
     /**
-     * an address an entity has listed for its registration */
+     * An address an entity has listed for its registration */
     | "registered"
     /**
-     * an address at which an entity conducts its operations */
+     * An address at which an entity conducts its operations */
     | "business";
 
 export const AddressType = {

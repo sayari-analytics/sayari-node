@@ -3,7 +3,7 @@
  */
 
 /**
- * The most recent satus of an entity and when that status was observed.
+ * The most recent status of an entity and when that status was observed.
  */
 export interface Status {
     status: string;

@@ -3,9 +3,18 @@
  */
 
 /**
- * Person status enums describe different life events
+ * Person status enums describe different life events.
  */
-export type PersonStatus = "born" | "died" | "married";
+export type PersonStatus =
+    /**
+     * Indicates a person was born */
+    | "born"
+    /**
+     * Indicates a person died */
+    | "died"
+    /**
+     * Indicates a marriage */
+    | "married";
 
 export const PersonStatus = {
     Born: "born",

@@ -8,7 +8,16 @@
 export type ContactType =
     /**
      * Any kind of phone number */
-    "phone_number" | "fax" | "email" | "url";
+    | "phone_number"
+    /**
+     * A fax number */
+    | "fax"
+    /**
+     * An email address */
+    | "email"
+    /**
+     * A URL */
+    | "url";
 
 export const ContactType = {
     PhoneNumber: "phone_number",

@@ -3,50 +3,50 @@
  */
 
 export type Attributes =
-    | "address"
-    | "measurement"
-    | "weak_identifier"
-    | "country"
-    | "gender"
-    | "generic"
-    | "shares"
-    | "identifier"
     | "status"
-    | "date_of_birth"
+    | "company_type"
+    | "name"
+    | "weak_identifier"
+    | "address"
     | "finances"
-    | "additional_information"
-    | "position"
-    | "contact"
+    | "monetary_value"
     | "business_purpose"
+    | "identifier"
+    | "financials"
+    | "measurement"
+    | "country"
     | "risk_intelligence"
     | "translated_name"
-    | "name"
+    | "shares"
+    | "gender"
+    | "additional_information"
+    | "contact"
+    | "position"
+    | "date_of_birth"
     | "person_status"
-    | "monetary_value"
-    | "company_type"
-    | "financials";
+    | "generic";
 
 export const Attributes = {
-    Address: "address",
-    Measurement: "measurement",
-    WeakIdentifier: "weak_identifier",
-    Country: "country",
-    Gender: "gender",
-    Generic: "generic",
-    Shares: "shares",
-    Identifier: "identifier",
     Status: "status",
-    DateOfBirth: "date_of_birth",
+    CompanyType: "company_type",
+    Name: "name",
+    WeakIdentifier: "weak_identifier",
+    Address: "address",
     Finances: "finances",
-    AdditionalInformation: "additional_information",
-    Position: "position",
-    Contact: "contact",
+    MonetaryValue: "monetary_value",
     BusinessPurpose: "business_purpose",
+    Identifier: "identifier",
+    Financials: "financials",
+    Measurement: "measurement",
+    Country: "country",
     RiskIntelligence: "risk_intelligence",
     TranslatedName: "translated_name",
-    Name: "name",
+    Shares: "shares",
+    Gender: "gender",
+    AdditionalInformation: "additional_information",
+    Contact: "contact",
+    Position: "position",
+    DateOfBirth: "date_of_birth",
     PersonStatus: "person_status",
-    MonetaryValue: "monetary_value",
-    CompanyType: "company_type",
-    Financials: "financials",
+    Generic: "generic",
 } as const;

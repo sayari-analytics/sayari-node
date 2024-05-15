@@ -1,1 +1,1 @@
-export { GetEntity } from "./GetEntity";
+export { type GetEntity } from "./GetEntity";

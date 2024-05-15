@@ -4,16 +4,15 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
+import * as SayariAnalyticsApi from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Source {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -23,10 +22,14 @@ export declare namespace Source {
 }
 
 export class Source {
-    constructor(protected readonly _options: Source.Options) {}
+    constructor(protected readonly _options: Source.Options = {}) {}
 
     /**
      * Returns metadata for all sources that Sayari collects data from
+     *
+     * @param {SayariAnalyticsApi.ListSources} request
+     * @param {Source.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
@@ -43,7 +46,7 @@ export class Source {
         requestOptions?: Source.RequestOptions
     ): Promise<SayariAnalyticsApi.ListSourcesResponse> {
         const { limit, offset } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -61,8 +64,11 @@ export class Source {
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -150,6 +156,10 @@ export class Source {
 
     /**
      * Returns metadata for a source that Sayari collects data from
+     *
+     * @param {string} id - The unique identifier for a source in the database
+     * @param {Source.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.NotFound}
@@ -161,20 +171,23 @@ export class Source {
      *     await sayariAnalyticsApi.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9")
      */
     public async getSource(
-        id: SayariAnalyticsApi.SourceId,
+        id: string,
         requestOptions?: Source.RequestOptions
     ): Promise<SayariAnalyticsApi.GetSourceResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ??
                     environments.SayariAnalyticsApiEnvironment.Production,
-                `/v1/source/${await serializers.SourceId.jsonOrThrow(id)}`
+                `/v1/source/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
@@ -268,12 +281,7 @@ export class Source {
         }
     }
 
-    protected async _getAuthorizationHeader() {
-        const bearer = await core.Supplier.get(this._options.token);
-        if (bearer != null) {
-            return `Bearer ${bearer}`;
-        }
-
-        return undefined;
+    protected async _getAuthorizationHeader(): Promise<string | undefined> {
+        return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

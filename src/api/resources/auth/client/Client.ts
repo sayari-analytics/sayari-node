@@ -4,16 +4,15 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
-import * as serializers from "../../../../serialization";
+import * as SayariAnalyticsApi from "../../../index";
+import * as serializers from "../../../../serialization/index";
 import urlJoin from "url-join";
-import * as errors from "../../../../errors";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Auth {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -23,10 +22,14 @@ export declare namespace Auth {
 }
 
 export class Auth {
-    constructor(protected readonly _options: Auth.Options) {}
+    constructor(protected readonly _options: Auth.Options = {}) {}
 
     /**
      * Hit the auth endpoint to get a bearer token
+     *
+     * @param {SayariAnalyticsApi.GetToken} request
+     * @param {Auth.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.InternalServerError}
@@ -35,8 +38,8 @@ export class Auth {
      *     await sayariAnalyticsApi.auth.getToken({
      *         clientId: "your client_id here",
      *         clientSecret: "your client_secret here",
-     *         audience: SayariAnalyticsApi.Audience.Sayari,
-     *         grantType: SayariAnalyticsApi.GrantType.ClientCredentials
+     *         audience: "sayari.com",
+     *         grantType: "client_credentials"
      *     })
      */
     public async getToken(
@@ -52,11 +55,18 @@ export class Auth {
             method: "POST",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
-            body: await serializers.GetToken.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            body: {
+                ...(await serializers.GetToken.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" })),
+                audience: "sayari.com",
+                grant_type: "client_credentials",
+            },
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
         });
@@ -121,12 +131,7 @@ export class Auth {
         }
     }
 
-    protected async _getAuthorizationHeader() {
-        const bearer = await core.Supplier.get(this._options.token);
-        if (bearer != null) {
-            return `Bearer ${bearer}`;
-        }
-
-        return undefined;
+    protected async _getAuthorizationHeader(): Promise<string | undefined> {
+        return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

@@ -3,7 +3,7 @@
  */
 
 /**
- * All strong (unique) identifiers in Sayari's database
+ * Describes the real-world type of an identifier value that uniquely (strongly) identifies an entity. These are often associated with a governmental organization within a certain jurisdiction. Some of these types are deprecated, meaning they are no longer used.
  */
 export type IdentifierType =
     /**
@@ -22,7 +22,7 @@ export type IdentifierType =
      * A Chinese company organization code */
     | "cn_organization_code"
     /**
-     * Part of a qichacha URL, used to uniquely identify people within the site */
+     * Part of a Qichacha URL, used to uniquely identify people within the site */
     | "cn_qichacha_internal_id"
     /**
      * A Hong Kong CR Number */
@@ -31,19 +31,19 @@ export type IdentifierType =
      * A Hong Kong document filing number used by ICRIS */
     | "cn_hk_filing_number"
     /**
-     * A Bahraini CRNumber */
+     * A Bahraini CR Number */
     | "bh_cr_number"
     /**
-     * A Bahraini CRNumber combined with a Bahraini branch number */
+     * A Bahraini CR Number combined with a Bahraini branch number */
     | "bh_cr_number_and_branch"
     /**
-     * Deprecated use jo_national_institution_number */
+     * Deprecated; use jo_national_institution_number */
     | "jo_internal_id"
     /**
      * A Jordanian National Institution Number */
     | "jo_national_institution_number"
     /**
-     * Deprecated use weak id jor_sol_prop_institution_number */
+     * Deprecated; use weak ID jor_sol_prop_institution_number */
     | "jo_institution_number"
     /**
      * A Malta company number */
@@ -55,76 +55,82 @@ export type IdentifierType =
      * Seems to be tied to accounting/auditing firms */
     | "malta_accountancy_registration_id"
     /**
-     * The pattern was sourced from the snapshot file documentation provided to us. When the first two characters are not digits, they have a special meaning */
+     * A UK company registration number. The pattern was sourced from the snapshot file documentation provided to us. When the first two characters are not digits, they have a special meaning. */
     | "uk_company_number"
     /**
      * Unique UK ID number. Assigned to every firm in the FCA financial services registry. */
     | "uk_firm_reference_number"
     /**
-     * Seems to be internal use, and is not perfectly applied */
+     * Internal person ID */
     | "uk_person_number"
     /**
-     * A tax ID */
+     * A tax ID issued by the Mexican Tax Administration Service */
     | "mx_rfc_person"
+    /**
+     * A unique identity code for citizens and residents of Mexico */
     | "mx_curp"
     | "mx_rfc_company"
     | "mx_office_fme"
     /**
-     * A Russian tax ID. Individuals get a 12 digit number, companies get 10 digits */
+     * A Russian tax ID. Individuals get a 12-digit number; companies get 10 digits. */
     | "ru_inn"
     /**
-     * A Russian company ID. 12 digits */
+     * A Russian company registration number with 12 digits */
     | "ru_ogrn"
     /**
-     * internal company ID */
+     * Internal company ID */
     | "ven_saren_internal_employer_number"
     /**
      * Brazilian corporate ID number */
     | "bra_cnpj"
     /**
-     * Venezuelan tax register information number -- for companies, and sometimes people */
+     * Venezuelan tax ID for companies and individuals */
     | "ven_rif"
+    /**
+     * A Venezuelan national ID number for individuals */
     | "ven_cedula_number"
     /**
-     * Maldivian corporate registration number. */
+     * Maldives corporate registration number */
     | "mdv_registration_number"
     /**
-     * DIN Number or Director Identification Number is a unique 8 digit number that is required for any existing or proposed Director of a Company */
+     * A unique eight-digit identification number that is required for any existing or proposed director of a company in India */
     | "ind_director_id_number"
     /**
-     * A permanent account number (PAN) is a ten-digit alphanumeric number, issued in the form of a laminated card, by the Indian Income Tax Department, to any "person" who applies for it or to whom the department allots the number without an application. */
+     * A permanent account number (PAN) is a 10-digit alphanumeric tax ID issued by the Indian Income Tax Department. */
     | "ind_permanent_account_number"
     /**
-     * A unique identification number assigned by Registrar of Companies (ROC) functioning in various states under Ministry of Corporate Affairs (MCA), Govt. of India */
+     * A unique identification number assigned by the Registrar of Companies (ROC) in various states under the Indian Ministry of Corporate Affairs (MCA) */
     | "ind_corporate_id_number"
     /**
-     * A tax ID number */
+     * A Kazakh tax ID number */
     | "kaz_tin"
     /**
-     * A business identification number */
+     * A 12-digit Kazakh business identification number */
     | "kaz_bin"
     | "kaz_state_reg_num"
     | "kaz_okpo_num"
     /**
-     * This is a poorly understood identifer that appears to be unique. */
+     * A nine-digit Kazakh identifier */
     | "kaz_identifier"
     /**
      * Kosovo registration number */
     | "rks_registration_number"
     /**
-     * General Electronic Commercial Registry (G.E.MI.) number for all legal forms of businesses in Greece' */
+     * General Electronic Commercial Registry (G.E.MI.) number for all legal forms of businesses in Greece */
     | "grc_gemi_number"
     /**
      * A certificate number for the National Registry of Contractors in Venezuela */
     | "ven_rnc_number"
+    /**
+     * A Virginia State Corporation Commission entity number */
     | "usa_va_reg_id"
     | "usa_ny_reg_id"
     /**
-     * Number assigned by the IRS to businesses in the US for identification, also known as EIN */
+     * USA IRS employer ID number */
     | "usa_fei_number"
     | "ukr_moj_id"
     /**
-     * Mauritius Business Registration No. */
+     * Mauritius business registration number */
     | "mus_reg_id"
     /**
      * Title number for a property in the UK */
@@ -136,473 +142,496 @@ export type IdentifierType =
      * Registration number from the Montenegro corporate registry */
     | "mne_reg_number"
     /**
-     * Kyrgyzstan registration number */
+     * Kyrgyzstan company registration number */
     | "kgz_reg_number"
     /**
-     * A code required by Chinese customs for imports and exports. It can be many different things, inclduing the USCC or OC for Chinese companies or the SSN or EIN for US companies. */
+     * China customs code for import and export. May include China USCC; China OC; U.S. SSN; or U.S. EIN. */
     | "cn_importexport_code"
     /**
-     * A code used in the North Korea - China trade data. */
+     * North Korea-China trade data ID code */
     | "prk_entity_id"
     | "prk_registration_id"
     /**
-     * A unique id number assigned to every citizen of former Yugoslav republics. */
+     * Former Yugoslav republic natural person ID number */
     | "yugoslav_master_citizen_num"
     /**
-     * Some kind of ID for burkin fasa */
+     * Burkina Faso tax ID number */
     | "bfa_entity_id"
     /**
-     * A unique id number assigned to all individuals, companies and organizations that operate in Afghanistan. */
+     * Afghanistan tax ID number */
     | "afghan_tin_number"
     /**
-     * A unique id number assigned to all individuals, companies and organizations that operate in Afghanistan. */
+     * Afghanistan natural and legal person business license ID code */
     | "afg_business_license"
     /**
-     * A tax identifier number in Madagascar. */
+     * Madagascar tax ID number */
     | "mdg_nif_number"
     | "mdg_stat_number"
     /**
-     * A tax identifier number in Madagascar. */
+     * Madagascar corporate registry ID number */
     | "mdg_rcs_number"
     /**
-     * See https://en.wikipedia.org/wiki/National_identification_number#Latvia */
+     * Latvia natural person ID number */
     | "lva_personal_code"
     /**
-     * See https://en.wikipedia.org/wiki/International_Bank_Account_Number */
+     * Unique ID number. Assigned to individual bank accounts for use in cross-border financial transactions. */
     | "iban"
     /**
-     * Latvian corporate registration number */
+     * Latvia corporate registry ID number */
     | "lva_reg_number"
     /**
-     * A business identifier number in Taiwan */
+     * Taiwan tax ID number */
     | "twn_unified_number"
     /**
-     * An identifier from the Trade and Companies Register (RCS) in Luxembourg */
+     * Luxembourg corporate registry ID number */
     | "lux_rcs_number"
     /**
-     * A unique identifier for Macedonian companies called Edinstven maticen broj na subjektot (EMBS) */
+     * North Macedonia corporate registry ID number */
     | "mkd_embs_number"
     /**
-     * A unique identifier for branches of Macedonian companies. It begins with the MKD EMBS number, then a '/', then a number for the branch */
+     * North Macedonia corporate registry ID number */
     | "mkd_embs_branch_number"
     /**
-     * A unique state identifier in Moldova assigned to legal entities that also serves as a fiscal code */
+     * Moldova legal person ID number */
     | "mda_idno_number"
     /**
-     * The Single Register of Taxpayers id for customers of the Tax Administration */
+     * Uruguay tax ID number */
     | "ury_ruc_number"
     /**
-     * Standardized unique business id number for all companies in Switzerland */
+     * Switzerland business registry ID number */
     | "che_uid_number"
     /**
-     * Registration number for people and companies from the El Salvador commercial register */
+     * El Salvador commercial registry ID number */
     | "slv_commercial_reg_number"
     /**
-     * Documento Unico de Identidad number from El Salvador */
+     * El Salvador natural person ID number */
     | "slv_uid_number"
     | "mato_grosso_legal_id"
     /**
-     * See https://www.leiroc.org/lei.htm */
+     * Unique global ID code. Assigned to legal entities participating in financial transactions. */
     | "lei"
     /**
-     * See https://en.wikipedia.org/wiki/VAT_identification_number */
+     * Value-added tax ID number */
     | "vat"
     /**
-     * See https://en.wikipedia.org/wiki/Italian_fiscal_code_card */
+     * Italy tax ID code */
     | "ita_fiscal_code"
+    /**
+     * Italy VAT number */
+    | "ita_vat_number"
     | "rio_de_janeiro_legal_id"
     /**
-     * Iceland tax id no. See https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Iceland-TIN.pdf */
+     * Iceland natural and legal person ID number */
     | "isl_tin_number"
     /**
-     * Laos corporate regisry enterprise number */
+     * Laos corporate registry ID number */
     | "lao_enterprise_number"
     /**
-     * Company id number for businesses registered in the Slovak Republic */
+     * Slovakia legal person ID number */
     | "svk_ico_number"
     /**
-     * Cambodia tax identification number */
+     * Cambodia tax ID number */
     | "khm_tin_number"
     /**
-     * Czech Republic id number (business register code) of an economic subject */
+     * Czechia legal person ID number */
     | "cze_ico_number"
     /**
-     * Iranian national identifier number */
+     * Iran natural and legal person ID number */
     | "irn_national_id"
     /**
-     * Ecuadorian unique taxpayers registry number */
+     * Ecuador tax ID number */
     | "ecu_ruc_number"
     /**
-     * Greek VAT number */
+     * Greece tax ID number */
     | "grc_vat_number"
     /**
-     * Unique Canada ID number. Assigned to federal legal entities registered with Corporations Canada. */
+     * Canada federal corporate registry ID number */
     | "can_corporation_number"
     /**
-     * Canadian Revenue Agency program account number; See https://www.thebalancesmb.com/what-is-the-canada-revenue-agency-cra-business-number-2947322 */
+     * Canada tax reporting ID code */
     | "can_cra_program_account_number"
     /**
-     * Tax identification number in Montenegro */
+     * Montenegro tax ID number */
     | "mne_pib"
     /**
-     * National Identification Number - RUN (Rol Único Nacional) or RUT (Rol Único Tributario) in Chile */
+     * Chile tax ID Number */
     | "chl_cedula_number"
     /**
-     * Case number for Brazilian legal matters, this is a first pass and is pretty generic. May need modification later. */
+     * Brazil litigation case ID number */
     | "bra_case_number"
     /**
-     * Limited Liability Partnership Identification Number. See https://www.corporate-cases.com/2012/01/Corporate-Identity-Number.html */
+     * India limited liability partnership ID number */
     | "ind_llpin"
     /**
-     * Foreign Company Registration Number. See https://www.corporate-cases.com/2012/01/Corporate-Identity-Number.html */
+     * India foreign company registration number */
     | "ind_fcrn"
     /**
-     * Bermuda registration number */
+     * Bermuda corporate registry ID number */
     | "bmu_registration_number"
     /**
-     * Individual tax number in Brazil */
+     * Brazil natural person tax ID number */
     | "bra_cpf_number"
     /**
-     * Deprecated use irn_national_id */
+     * Iran natural person ID number */
     | "irn_national_number"
     /**
-     * Chinese custums registration code. Downgraded to weak identifier. */
+     * China customs import and export registration code */
     | "chn_customs_registration_code"
     /**
-     * Liechtenstein Public Register number */
+     * Liechtenstein corporate registry ID number */
     | "lie_public_reg_no"
     /**
-     * Chinese tax identification number */
+     * China tax ID number */
     | "cn_tax_identification_number"
     /**
-     * Macau business registration number */
+     * Macao corporate registry ID number */
     | "mac_registration_no"
     /**
-     * Internal Siger id comprised of office id_fme_data-rk */
+     * Mexico corporate registry internal ID number */
     | "siger_internal_id"
     /**
-     * Lebanese national ID number. Last digit */
+     * Lebanon natural person ID number */
     | "lbn_national_id"
     /**
-     * The International Maritime Organization (IMO) number is a unique reference for ships, registered ship owners and management companies */
+     * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
     | "int_maritime_org_id"
     /**
-     * ID number for the Russian Maritime Register of Shipping (RS) */
+     * Russia vessel registry ID number */
     | "ru_ship_register_id"
     /**
-     * A UUID used to merge entities internally */
+     * UID used to merge entities internally */
     | "sayari_internal_identifier"
     /**
-     * Also known as KvK number. */
+     * Aruba chamber of commerce ID code */
     | "aruba_chamber_of_commerce_id"
     /**
-     * International Maritime Organization number */
+     * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
     | "imo_no"
     /**
-     * British Virgin Islands company number. */
+     * British Virgin Islands corporate registry ID number */
     | "vgb_company_number"
     /**
-     * Yemeni chamber of commerce registration number */
+     * Yemen chamber of commerce ID number */
     | "yem_coc_registration_number"
     /**
-     * National Registration Identification Card Number NRIC for Malaysia */
+     * Malaysia natural person ID number */
     | "mys_id_card_no"
     /**
-     * Malaysia Business Registration Number */
+     * Malaysia corporate registry ID number */
     | "mys_company_reg_no"
     /**
-     * Paraguay RUC number for companies and people */
+     * Paraguay tax ID number */
     | "pry_ruc_number"
     /**
-     * Paraguay cedula number for people */
+     * Paraguay natural person ID number */
     | "pry_cedula_number"
     /**
-     * Paraguay previous RUC number format */
+     * Paraguay tax ID number */
     | "pry_old_ruc_number"
     /**
-     * Register of Commerce and Personal Propery Transactions Number (West Africa) */
+     * OHADA corporate registry ID number */
     | "rccm_no"
     /**
-     * National id number for people in Brazil */
+     * Brazil natural person ID number */
     | "bra_rg_number"
     /**
-     * National identification number for enterprises and associations (Senegal) */
+     * Senegal tax ID number */
     | "ninea_no"
+    /**
+     * Albania tax ID number */
     | "alb_tax_id"
     | "alb_registration_number"
     /**
-     * Unique company id from Inspección General de Justicia in Argentina */
+     * Argentina corporate registry ID number */
     | "arg_igj_number"
     /**
-     * A nationally issued identification number for people in Argentina */
+     * Argentina natural person ID number */
     | "arg_dni_number"
     /**
-     * Single tax identification code in Argentina for any individual that initiates an economic activity */
+     * Argentina tax ID number */
     | "arg_cuit_number"
     /**
-     * Unified Labor Identification Code in Argentina that is required for Social Security benefits */
+     * Argentina social security ID number */
     | "arg_cuil_number"
     /**
-     * Unique id issued to individuals in Argentina by the AFIP who don't require a CUIT or CUIL */
+     * Argentina natural person ID number */
     | "arg_cdi_number"
     /**
-     * Bosnia and Herzegovenia business register registration number */
+     * Bosnia and Herzegovina corporate registry ID number */
     | "bih_mbs_number"
+    /**
+     * Bosnia and Herzegovina legal person ID number */
     | "bih_jib_number"
     | "bih_customs_number"
+    /**
+     * USA Puerto Rico corporate registry ID number */
     | "usa_puerto_rico_register_number"
+    /**
+     * Djibouti corporate registry ID number */
     | "dji_rcs_number"
+    /**
+     * Costa Rica natural person ID number */
     | "cri_cedula_number"
     /**
-     * Number of National ID card for Mozambique */
+     * Mozambique natural person ID number */
     | "moz_id_number"
     /**
-     * Mozambique Taxpayer Single Identification Number for a person */
+     * Mozambique natural person tax ID number */
     | "moz_nuit_person"
     /**
-     * Mozambique Taxpayer Single Identification Number for a company */
+     * Mozambique legal person tax ID number */
     | "moz_nuit_co"
     /**
-     * Mozambique Passport Number */
+     * Mozambique passport number */
     | "moz_passport"
     /**
-     * Mozambique foreign residence permit number */
+     * Mozambique foreign resident ID number */
     | "moz_dire_no"
     /**
-     * Mozambique voter number */
+     * Mozambique voter ID number */
     | "moz_voter_no"
     /**
-     * Mozambique company registration number */
+     * Mozambique corporate registry ID number */
     | "moz_nuel_no"
+    /**
+     * Iraq voter ID number */
     | "irq_voter_id"
     /**
-     * Jordan voter card number */
+     * Jordan voter ID number */
     | "jor_voter_card_no"
     /**
-     * Deprecated use jo_national_institution_number */
+     * Deprecated; use jo_national_institution_number */
     | "jor_id_no"
     /**
-     * Peru unique taxpayer registration number */
+     * Peru tax ID number */
     | "per_ruc_no"
+    /**
+     * Ecuador corporate registry ID number */
     | "ecu_company_id"
+    /**
+     * USA New York corporate registry ID number */
     | "usa_ny_dos_id"
+    /**
+     * OHADA corporate registry ID number */
     | "bfa_rccm_number"
     /**
-     * Florida broward county property folio number */
+     * USA Florida Broward County parcel ID number */
     | "fl_prop_folio"
+    /**
+     * Qatar corporate registry ID number */
     | "qat_qfc_number"
     /**
-     * Greek AFM number */
+     * Greece tax ID number */
     | "grc_afm_number"
     /**
-     * Vietnam enterprise code */
+     * Vietnam tax ID number */
     | "vnm_enterprise_code"
     /**
-     * Thai registration number */
+     * Thailand corporate registry ID number */
     | "tha_registration_no"
     /**
-     * https://vi.wikipedia.org/wiki/C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_(Vi%E1%BB%87t_Nam) */
+     * Vietnam natural person ID number */
     | "vnm_citizenship_no"
     /**
-     * https://vi.wikipedia.org/wiki/Ch%E1%BB%A9ng_minh_nh%C3%A2n_d%C3%A2n */
+     * Vietnam natural person ID number */
     | "vnm_person_id_no"
     /**
-     * ID number for Argentinian women before the DNI number */
+     * Argentina female natural person ID number */
     | "arg_lib_civica_number"
     /**
-     * ID number for Argentinian men before the DNI number */
+     * Argentina male natural person ID number */
     | "arg_lib_enrolamiento_number"
     /**
-     * New Zealand Business Number */
+     * New Zealand business registry ID number */
     | "nzl_nzbn"
     /**
-     * New Zealand company number */
+     * New Zealand corporate registry ID number */
     | "nzl_co_no"
     /**
-     * OFAC Unique Identification Number */
+     * USA Treasury sanctions list ID number */
     | "usa_ofac_sdn_number"
     /**
-     * International bank code */
+     * Unique global ID code. Assigned to financial and non-financial institutions for use addressing messages, routing business transactions, and identifying business parties. */
     | "swift_bic_code"
     /**
-     * DNB unique ID */
+     * Unique global ID code. Assigned by Dun & Bradstreet. */
     | "duns_number"
     /**
-     * Bitcoin bitcoin address */
+     * Unique digital currency address */
     | "bitcoin_address"
     /**
-     * Litecoin address */
+     * Unique digital currency address */
     | "litecoin_address"
     /**
-     * Russia Moscow Stock exchange code */
+     * Russia securities ID code */
     | "rus_micex_code"
     /**
-     * Texas Property ID */
+     * USA Texas Bexar County property ID number */
     | "tx_prop_id"
     /**
-     * Texas PACS Internal ID */
+     * USA Texas Bexar County property owner ID number */
     | "tx_pacs_id"
     /**
-     * Texas Land Segment ID */
+     * USA Texas land segment ID number */
     | "tx_land_id"
     /**
-     * Registration number from Papua New Guinea Investment Promotion Authority */
+     * Papua New Guinea business registry ID number */
     | "png_ipa_reg_id"
     /**
-     * Guatemala tax identification number */
+     * Guatemala tax ID number */
     | "gtm_nit_number"
     /**
-     * Guatemala unique identification code for people */
+     * Guatemala natural person ID number */
     | "gtm_cui_number"
     /**
-     * A Dominican business tax ID. https://www.jpmorgan.com/tss/General/Dominican_Republic/1424621856282 */
+     * Dominican Republic tax ID number */
     | "dom_rnc"
     /**
-     * Company register number in Qatar */
+     * Qatar corporate registry ID number */
     | "qat_cr_number"
     /**
-     * An International Securities Identification Number (ISIN) uniquely identifies a security. First two digits are ISO country code */
+     * Unique global ID code. Assigned to every security issuance for use facilitating the trading, clearing, and settlement of securities transactions. */
     | "isin"
     /**
-     * Unique company identifier for the Florida corporate registry */
+     * USA Florida corporate registry ID code */
     | "usa_fl_document_no"
     /**
-     * Unique identifier for fictitious name registrations in Florida */
+     * USA Florida corporate registry ID code */
     | "usa_fl_fic_name_reg_no"
     /**
-     * Brazilian Federal Executive PEP identification number */
+     * Brazil federal public servant internal ID number */
     | "bra_servidor_portal"
     /**
-     * Brazilian Federal Executive PEP organizational unit code */
+     * Brazil federal public servant agency unit ID code */
     | "bra_codigo_da_unidade_organizacional"
     /**
-     * The Central Index Key (CIK) is used on the SEC's computer systems to identify corporations and individual people who have filed disclosure with the SEC. It's 10 digits with 0 fill in front. */
+     * USA SEC disclosure filer ID number */
     | "usa_sec_cik_number"
     /**
-     * Croatian Court Business Register */
+     * Croatia corporate registry ID number */
     | "hr_mbs"
     /**
-     * Croatian Personal & Company Identification Number */
+     * Croatia natural and legal person ID number */
     | "hr_oib"
     /**
-     * The Salvadorian Número de Identificación Tributaria, used on SLV commercial register */
+     * El Salvador tax ID number */
     | "slv_numero_identificacion_tributaria"
     /**
-     * The Salvadorian Matrícula Consular (MCAS/CID), used on SLV commercial register */
+     * El Salvador corporate registry ID number */
     | "slv_mcas"
     /**
-     * Every company in Australia is issued with a unique, nine-digit number when registered. This is an Australian Company Number (ACN) and must be displayed on all company documents. */
+     * Australia corporate registry ID number */
     | "aus_company_number"
     /**
-     * The Australian business number (ABN) is a unique 11-digit identifier that makes it easier for businesses and all levels of government to interact. */
+     * Australia business registry ID number */
     | "aus_business_number"
     /**
-     * A unique ID created from a combination of the Handelsregisternummer, the company number given to each company listed in the Handelsregister, and the district court XJustiz ID. This is done because the Handelsregisternummer is not unique on its own. */
+     * Germany commercial registry ID number concatenated with registry district court XJustiz ID code */
     | "deu_registernummer"
     /**
-     * The Internal Revenue Service Employer Identification Number */
+     * USA IRS employer ID number */
     | "usa_irs_ein"
     /**
-     * Number used to identify a Hong Kong judicial case */
+     * Hong Kong case ID number */
     | "hong_kong_case_number"
     /**
-     * Internal ID that can be used to link related companies within source */
+     * Iran Tehran chamber of commerce internal ID number */
     | "irn_coc_internal_id"
     /**
-     * Unique identifier for entities in the Panamanian public registry. */
+     * Panama corporate registry ID number */
     | "pan_folio_ficha_id"
     /**
-     * Panamanian cedula number */
+     * Panama natural person ID number */
     | "pan_cedula_number"
     /**
-     * Cedar Rose UID */
+     * Cedar Rose entity internal ID number */
     | "xxx_cedar_rose_uid"
     /**
-     * West African Register of Commerce and Personal Property Transactions, originally found in BEN */
+     * OHADA corporate registry ID number */
     | "xxx_rccm"
     /**
-     * Internal identifier to dichvuthongtin corporate register */
+     * Vietnam business registry internal ID number */
     | "vnm_dichvuthongtin_internal_id"
     /**
-     * Internal identifier for Sayari Intel entities */
+     * Sayari Intel entity internal ID number */
     | "xxx_intel_internal_id"
     /**
-     * The State of Washington Business License Service defines a UBI number as “a 9-digit number that registers you with several state agencies and allows you to do business in Washington State. */
+     * USA Washington business registry ID number */
     | "usa_washington_state_ubi"
     /**
-     * Nigerian corporate registration number */
+     * Nigeria corporate registry ID code */
     | "nga_registration_number"
     /**
-     * ng-check.com internal id */
+     * NG-Check entity internal ID number */
     | "ng_check_internal_id"
     /**
-     * New York City City Borough Block and Lot or Property ID */
+     * USA New York City real property parcel ID number */
     | "nyc_bbl"
     /**
-     * New York City City Register File Number */
+     * USA New York New York City real property registry ID number */
     | "nyc_crfn"
     /**
-     * Texas Corporate Registry Filing Number */
+     * USA Texas corporate registry ID number */
     | "tx_corp_file_num"
     /**
-     * Texas Comptroller's Taxpayer Number */
+     * USA Texas tax ID number */
     | "tx_tax_id"
     /**
-     * Georgia state business identification number */
+     * USA Georgia business registry internal ID number */
     | "usa_ga_business_id"
     /**
-     * Philippines stock exchange company ID */
+     * Philippines securities issuer internal ID number */
     | "phl_pse_id"
     /**
-     * Philippines Securities and Exchange Commission ID */
+     * Philippines business registry ID number */
     | "phl_sec_id"
     /**
-     * Philippines Tax ID http://www.ntrc.gov.ph/images/journal/j20141112a.pdf Optional last three digits is branch code */
+     * Philippines tax ID number */
     | "phl_tin"
     /**
-     * Afghan passport number */
+     * Afghanistan passport number */
     | "afg_passport"
     /**
-     * Iranian passport number */
+     * Iran passport number */
     | "irn_passport"
     /**
-     * Kuwaiti passport number */
+     * Kuwait passport number */
     | "kwt_passport"
     /**
-     * Libyan passport number */
+     * Libya passport number */
     | "lby_passport"
     /**
-     * Pakistani passport number */
+     * Pakistan passport number */
     | "pak_passport"
     /**
-     * Russian passport number */
+     * Russia passport number */
     | "rus_passport"
     /**
-     * Tunisian passport number */
+     * Tunisia passport number */
     | "tun_passport"
     /**
-     * Yemeni passport number */
+     * Yemen passport number */
     | "yem_passport"
     /**
-     * UN Security Council sanction list permanent reference number https://www.un.org/securitycouncil/content/un-sc-consolidated-list#identifiers%20and%20acronyms */
+     * UN Security Council sanctions list ID code */
     | "un_sanction_prn"
     /**
-     * EU sanction reference number */
+     * EU European Commission sanctions list ID number */
     | "eu_sanction_rn"
     /**
-     * California LP/LLC file number */
+     * USA California business registry ID number */
     | "ca_lp_file_num"
     /**
-     * Texas Corporate Registry entity filing number */
+     * USA Texas corporate registry ID number */
     | "tx_entity_filing_num"
     /**
-     * United States of America social security number (SSN) */
+     * USA social security ID number */
     | "usa_social_security_number"
     /**
-     * WY internal party ID */
+     * USA Wyoming business registry ID number */
     | "usa_wy_party_id"
     /**
-     * WY internal filing ID (primary key) */
+     * USA Wyoming business registry ID number */
     | "usa_wy_filing_id"
     /**
      * WY internal filing ID (primary key) */
@@ -611,76 +640,82 @@ export type IdentifierType =
      * Unique USA state ID number. Assigned to every legal entity registered with Wyoming Secretary of State. */
     | "usa_wy_filing_num"
     /**
-     * Oregon corporate registry registration number */
+     * USA Oregon business registry ID number */
     | "usa_or_regno"
     /**
-     * Nevada Corporation Number */
+     * USA Nevada corporate registry ID code */
     | "usa_nv_corpno"
     /**
-     * Nevada Business ID */
+     * USA Nevada business registry ID code */
     | "usa_nv_bizid"
     /**
-     * Internal ID used to link companies between PRK/CN exports and trade dict sources. Downgraded to weak id. */
+     * North Korea-China trade internal ID number */
     | "prk_internal_trade_id"
     /**
-     * Identifier number from the Lesotho corporate registry */
+     * Lesotho corporate registry ID number */
     | "lso_corpreg_id"
     /**
-     * Tin number used in Uzbekistan for companies and people */
+     * Uzbekistan tax ID number */
     | "uzb_tin_number"
     /**
-     * California corporate identification number */
+     * USA California business registry ID number */
     | "ca_corporate_id_num"
     /**
-     * ID for entities in HM Treasury Sanctions list */
+     * UK HM Treasury OFSI sanctions list ID number */
     | "gbr_hm_treasury_sanction_group_id"
     /**
      * Unique UK ID number. Assigned to every registered trademark. */
     | "gbr_ipo_trademark_reg_no"
     /**
-     * USA state of Georgia control number assigned to companies */
+     * USA Georgia business registry ID number */
     | "usa_ga_control_no"
     /**
-     * Company registration number for Honduran companies */
+     * Honduras Cortes commercial registry ID number */
     | "hnd_coc_company_registration_number"
     /**
-     * UID used for properties in Montenegro land registry */
+     * Montenegro real property registry internal ID number */
     | "mne_property_uid"
     /**
-     * Philippines Certificate No. / Bnn */
+     * Philippines business registry ID number */
     | "phl_bnn"
     /**
-     * Romanian unique registration code for companies */
+     * Romania tax ID number */
     | "rou_company_registration_code"
     /**
-     * Romanian identity card for citizens */
+     * Romania natural person ID number */
     | "rou_identity_card"
     /**
-     * Romanian personal id number */
+     * Romania natural person ID number */
     | "rou_personal_id_number"
     /**
-     * Cubiaian company id */
+     * Cuba corporate registry ID number */
     | "cub_cod"
     /**
-     * Florida dade county property folio number */
+     * USA Florida Miami-Dade County real property parcel ID number */
     | "fl_prop_folio_dade"
     /**
-     * Peruvian national identity document number */
+     * Peru natural person ID number */
     | "per_dni_no"
     /**
-     * Peruvian foreign resident ID */
+     * Peru foreign resident ID number */
     | "per_carne_de_extranjeria"
     /**
-     * Identifier for French companies */
+     * France business directory ID number */
     | "fra_siren"
     /**
-     * Identifier for branches of French companies. The first 9 digits are the Siren of the principal company. */
+     * France legal person establishment ID number */
     | "fra_siret"
     /**
-     * Czechia file number from Moj registry, this has been changed to a weak identifier */
+     * Unique France ID number. Assigned to every legal entity registered with National Registry of Associations. */
+    | "fra_rna"
+    /**
+     * Skráseting Føroya Registration Number. Assigned to legal entities registered with the Company Registry of the Faroe Islands. */
+    | "fro_reg_num"
+    /**
+     * Czechia commercial registry ID number */
     | "cze_file_number"
     /**
-     * Value taken from Datos registrales section used to identify companies in Borme. Not an official identifier. */
+     * Value taken from datos registrales section used to identify companies in the Borme. Not an official identifier. */
     | "esp_borme_reg_id"
     /**
      * Mexican trademark number */
@@ -692,10 +727,10 @@ export type IdentifierType =
      * Colombian tax identification number */
     | "col_nit_no"
     /**
-     * Japanese corporate number (https://en.wikipedia.org/wiki/Corporate_Number). */
+     * Japanese corporate number. Learn more [here](https://en.wikipedia.org/wiki/Corporate_Number). */
     | "jpn_corporate_no"
     /**
-     * Common Government-wide Accounting Classification (CGAC) agency code assigned by the Treasury */
+     * Common Government-wide Accounting Classification (CGAC) agency code assigned by the US Treasury */
     | "usa_cgac_agency_code"
     /**
      * Identifier for a US government agency */
@@ -710,22 +745,22 @@ export type IdentifierType =
      * Colombian SECOP internal ID */
     | "col_secop_no"
     /**
-     * Deprecated use weak identifier jordan_company_no */
+     * Deprecated; use weak identifier jordan_company_no */
     | "jordan_company_no"
     /**
-     * Denmark business registration number https://erhvervsstyrelsen.dk/cvr-numre-p-numre-og-se-numre */
+     * Denmark business registration number; learn more [here](https://erhvervsstyrelsen.dk/cvr-numre-p-numre-og-se-numre) */
     | "dnk_cvr"
     /**
-     * Denmark business branch number https://skat.dk/skat.aspx?oid=2045880 */
+     * Denmark business branch number */
     | "dnk_production_unit_no"
     /**
-     * Internal ID for Denmark virk */
+     * Internal ID for Denmark Virk */
     | "dnk_entity"
     /**
      * Norway Organisasjonsnummer */
     | "nor_org_no"
     /**
-     * Sweden Organisationsnummer, may have - separating last 3 digits */
+     * Sweden Organisationsnummer. May have "-" separating last three digits. */
     | "swe_org_no"
     /**
      * USA Colorado Secretary of State registration number */
@@ -734,7 +769,7 @@ export type IdentifierType =
      * USA Iowa Secretary of State corporation number */
     | "usa_ia_corp_no"
     /**
-     * UEN is the standard identification number of an entity. UEN shall be for registered entities as NRIC is for Singapore citizens. The UEN uniquely identifies the entity. */
+     * The UEN is a standard, unique identification number for a registered entity in Singapore. It is comparable to the NRIC number, which is an ID number for Singapore citizens. */
     | "sgp_unqiue_entity_number"
     /**
      * USA Alaskan Secretary of State entity number */
@@ -743,57 +778,57 @@ export type IdentifierType =
      * USA Ohio business charter number */
     | "usa_oh_charter_num"
     /**
-     * Istanbul chamber of commerce registration number */
+     * Istanbul Chamber of Commerce registration number */
     | "tur_istanbul_coc_reg_no"
     /**
-     * Turkish Central Registry Number System MERSIS number */
+     * Turkish Central Registry Number System (MERSIS) number */
     | "tur_mersis_number"
     | "che_ch_id_number"
     /**
-     * ARE Dubai Intl Financial Center registration number */
+     * Dubai International Financial Centre registration number */
     | "are_difc_reg_no"
     /**
-     * IDN tax id a.k.a. NPWP Number https://wiki.scn.sap.com/wiki/display/CRM/Indonesia */
+     * Indonesian tax ID aka NPWP Number; learn more [here](https://wiki.scn.sap.com/wiki/display/CRM/Indonesia) */
     | "idn_tax_id"
     /**
      * USA Vermont Business ID */
     | "usa_vt_biz_id"
     /**
-     * USA WV Corporate Registry ID */
+     * USA West Virginia Corporate Registry ID */
     | "usa_wv_reg_id"
     /**
-     * USA MS Business ID */
+     * USA Mississippi Business ID */
     | "usa_ms_biz_id"
     /**
-     * USA id Business Control Number */
+     * USA Idaho Business Control Number */
     | "usa_id_control_no"
     /**
-     * USA id Registered Agent ID */
+     * USA Idaho Registered Agent ID */
     | "usa_id_party_id"
     | "irn_coc_internal_id_cardno"
     /**
      * USA Arizona Corporate Registry Entity Number */
     | "usa_az_corp_reg_entity_num"
     /**
-     * USA ok Business Filing Number */
+     * USA Oklahoma Business Filing Number */
     | "usa_ok_filing_no"
     /**
-     * USA tn Business Control Number */
+     * USA Tennessee Business Control Number */
     | "usa_tn_control_no"
     /**
-     * USA tn Registered Agent ID */
+     * USA Tennessee Registered Agent ID */
     | "usa_tn_party_id"
     /**
-     * USA tn Business ID */
+     * USA Kansas Business ID */
     | "usa_ks_biz_id"
     /**
-     * Identifier made from File Number and File Suffix in HI corporate registry */
+     * Identifier made from File Number and File Suffix in Hawaii, USA, corporate registry */
     | "usa_hi_corporate_registry_id"
     /**
-     * Identifier for officers in HI corporate regisry */
+     * Identifier for officers in Hawaii, USA, corporate registry */
     | "usa_hi_corporate_registry_person_id"
     /**
-     * The National Court Register (KRS standing for Krajowy Rejestr Sądowy) number */
+     * The National Court Register, or Krajowy Rejestr Sądowy (KRS), number in Poland */
     | "pol_krs_number"
     /**
      * The register REGON fulfils the function of the national official Register of National Economy Entities */
@@ -805,7 +840,7 @@ export type IdentifierType =
      * Person identifier from Poland Rejestr data */
     | "pol_rejestr_person_id"
     /**
-     * Armenian VAT id number */
+     * Armenian VAT ID number */
     | "arm_vat_no"
     /**
      * Armenian enterprise code */
@@ -814,51 +849,51 @@ export type IdentifierType =
      * Armenian regsitration number */
     | "arm_registration_no"
     /**
-     * Maine corporate ID */
+     * USA Maine corporate ID */
     | "usa_me_corp_id"
     /**
      * Cypriot corporate registration number. Prefix corresponds to company type code. */
     | "cyp_reg_no"
     /**
-     * North Dakota Secretary of State control id. */
+     * USA North Dakota Secretary of State control ID */
     | "usa_nd_control_id"
     /**
-     * Michigan corporate id. */
+     * USA Michigan corporate ID */
     | "usa_mi_corp_id"
     /**
-     * Michigan corporate id (old format). */
+     * USA Michigan corporate ID (old format) */
     | "usa_mi_corp_id_old"
     /**
-     * Certificate Number */
+     * USA Hawaii Certificate Number */
     | "usa_hi_trade_name_cert"
     /**
-     * DC corponline entity number. */
+     * USA Washington, D.C. CorpOnline entity number */
     | "usa_dc_entity_no"
     | "usa_va_old_reg_id"
     | "usa_consolidated_screening_list_synthetic_id"
     /**
-     * Arkansas Secretary of State Filing No. */
+     * USA Arkansas Secretary of State Filing No. */
     | "usa_ar_filing_no"
     /**
-     * North Carolina SoS corporations UID */
+     * USA North Carolina SOS corporations UID */
     | "usa_nc_internal_id"
     /**
-     * Nebraska corporate registry account number */
+     * USA Nebraska corporate registry account number */
     | "usa_ne_acct_no"
     /**
-     * Nebraska registered agent id number */
+     * USA Nebraska registered agent ID number */
     | "usa_ne_agent_id"
     /**
-     * New Mexico Secretary of State Business No. */
+     * USA New Mexico Secretary of State business number */
     | "usa_nm_business_no"
     /**
-     * New Mexico Secretary of State License Id */
+     * USA New Mexico Secretary of State License ID */
     | "usa_nm_license_id"
     /**
-     * DC corporate registry file number */
+     * USA Washington, D.C. corporate registry file number */
     | "usa_dc_file_no"
     /**
-     * Rhode Island filing entity identification number */
+     * USA Rhode Island filing entity identification number */
     | "usa_ri_fei_no"
     /**
      * Hex digest of data that should be used for resolution (e.g., name=Sayari&registration_date=2000-01-01) */
@@ -867,7 +902,7 @@ export type IdentifierType =
      * Autoincrement corporation ID from the Missouri Corporate Registry */
     | "usa_mo_corp_id"
     /**
-     * Wisconsin Department of Financial Institutions ID */
+     * USA Wisconsin Department of Financial Institutions ID */
     | "usa_wi_dfi_id"
     /**
      * Identification code from Georgian MyGov companies */
@@ -885,28 +920,28 @@ export type IdentifierType =
      * Romanian tax identification number for companies */
     | "rou_company_tin"
     /**
-     * Maryland Dpt. of Tax Business ID with prefix */
+     * USA Maryland Department of Assessments and Taxation Business ID with prefix */
     | "usa_md_dpt_tax"
     /**
-     * South Dakota Corporate ID */
+     * USA South Dakota Corporate ID */
     | "usa_sd_corp_id"
     /**
      * Honduras Tegucigalpa Matricula */
     | "hnd_tegucigalpa_matricula"
     /**
-     * Identifier for Florida property parcels. It's a concetenation of county code and parcel id */
+     * Identifier for Florida, USA, property parcels. A concatenation of county code and parcel ID. */
     | "usa_fl_property_id"
     /**
-     * Code unique to every parcel within the real property file */
+     * Code unique to every parcel within the real property file. Used in Florida, USA. */
     | "usa_fl_property_mp_id"
     /**
-     * Code the Department assigns to each parcel based on a statewide parcel coding system. */
+     * Code assigned to each parcel based on a statewide parcel coding system. Used in Florida, USA. */
     | "usa_fl_property_state_par_id"
     /**
      * Unique Registration Code in the Federal Register of Civil Society Organizations */
     | "mex_cluni"
     /**
-     * Pennsylvania Department of State Business Entity ID Number */
+     * USA Pennsylvania Department of State Business Entity ID Number */
     | "usa_pa_corporate_registry_id"
     /**
      * Unique Pakistan National Taxpayer Number for Individuals (equivalent to Computerized National Identity Card number) */
@@ -915,7 +950,7 @@ export type IdentifierType =
      * Unique Pakistan National Taxpayer Number for Companies and Associations of Persons */
     | "pak_co_ntn"
     /**
-     * Simple 1-up identifier from the Registro Nacional de Inversiones Extranjeras. */
+     * Simple 1-up identifier from the Registro Nacional de Inversiones Extranjeras */
     | "mex_rnie"
     /**
      * Pakistan NGO Registration Number */
@@ -942,7 +977,7 @@ export type IdentifierType =
      * Dutch Chamber of Commerce Branch/Location Number */
     | "nld_kvk_branch_number"
     /**
-     * Company/Person identifier from FINRA data */
+     * Central Registration Depository (CRD) number from the Financial Industry Regulatory Authority (FINRA) in the USA. The CRD number is a company/person identifier. */
     | "usa_central_registration_depository_number"
     /**
      * One format variation of the SEC file number associated with bdSECNumber in USA/finra_barred_relats */
@@ -978,10 +1013,10 @@ export type IdentifierType =
      * Company SEC code from Shenzen stock exchange */
     | "chn_shenzen_sec_code"
     /**
-     * CT business ID */
+     * USA Connecticut Business ID */
     | "usa_ct_business_id"
     /**
-     * Ecuador cedula https://www.jybaro.com/blog/cedula-de-identidad-ecuatoriana/#:~:text=El%20Estado%20Ecuatoriano%2C%20a%20trav%C3%A9s,d%C3%ADgitos%20con%20la%20siguiente%20estructura%3A&text=En%20caso%20de%20extranjeros%2C%20el%20n%C3%BAmero%20es%2030 */
+     * [Ecuador cedula](https://www.jybaro.com/blog/cedula-de-identidad-ecuatoriana/) */
     | "ecu_cedula_number"
     /**
      * Hong Kong Stock Exchange Code */
@@ -992,6 +1027,9 @@ export type IdentifierType =
     /**
      * British Columbia Extraprovincial Company Registration ID */
     | "can_bc_extraprovincial_registration_id"
+    /**
+     * Unique Canada ID number. Assigned to every trademark application. */
+    | "can_ipo_trademark_application_no"
     /**
      * Lithuanian Company Registration Code */
     | "ltu_company_registration_code"
@@ -1012,7 +1050,7 @@ export type IdentifierType =
      * Estonian Business Registry Code */
     | "est_business_reg_code"
     /**
-     * Committee on Uniform Securities Identification Procedures - identifies a North American financial security */
+     * Committee on Uniform Securities Identification Procedures (CUSIP) number. Identifies a North American financial security. */
     | "usa_cusip_number"
     /**
      * Slovenian Company Registry ID Number */
@@ -1040,13 +1078,13 @@ export type IdentifierType =
      * Australian financial services authorized representative number */
     | "aus_afs_rep_number"
     /**
-     * Australian identifying number allocated to a Financial Adviser. */
+     * Australian identifying number allocated to a financial adviser */
     | "aus_adv_number"
     /**
-     * Australian credit licensee number. */
+     * Australian credit licensee number */
     | "aus_credit_licence_number"
     /**
-     * Australian identifying number allocated to a credit representative. */
+     * Australian identifying number allocated to a credit representative */
     | "aus_credit_rep_number"
     /**
      * Korean DART Central Identity Key */
@@ -1067,7 +1105,7 @@ export type IdentifierType =
      * Belize International Corporate Affairs Registry (BICAR) registration number */
     | "bze_bicar_reg_no"
     /**
-     * Account number for businesses on Chicago, IL business license registry */
+     * Account number for businesses on the Chicago, Illinois, business license registry */
     | "usa_il_chicago_account_number"
     /**
      * Company number from Cayman Islands Gazette */
@@ -1157,7 +1195,7 @@ export type IdentifierType =
      * Belarus Registration Number */
     | "blr_registration_number"
     /**
-     * Primary license number of Free Zone establishment in Dubai */
+     * Primary license number of free zone establishment in Dubai */
     | "aer_free_zone_license"
     /**
      * Registration number for Dubai free zone */
@@ -1175,7 +1213,7 @@ export type IdentifierType =
      * CorpWatch Database ID */
     | "usa_corpwatch_id"
     /**
-     * Delaware File Number */
+     * USA Delaware File Number */
     | "usa_de_file_number"
     /**
      * Isle of Man Company Number */
@@ -1190,7 +1228,7 @@ export type IdentifierType =
      * Pakistan EGM ID */
     | "pak_egm_id"
     /**
-     * Delaware Registered Agent ID */
+     * USA Delaware Registered Agent ID */
     | "usa_de_registered_agent_id"
     /**
      * ICIJ Offshore Database Internal ID */
@@ -1223,10 +1261,10 @@ export type IdentifierType =
      * San Marino Economic Operator Code */
     | "smr_economic_operator_code"
     /**
-     * CT Internal ID */
+     * USA Connecticut Internal ID */
     | "usa_ct_internal_id"
     /**
-     * https://en.wikipedia.org/wiki/ISO_8000 */
+     * Authoritative legal entity identifier (ALEI), a government-issued registration number that is standardized according to [ISO 8000](https://en.wikipedia.org/wiki/ISO_8000) */
     | "alei"
     /**
      * Unique Canada province ID number. Assigned to every entity in the Nova Scotia Corporate Registry. */
@@ -1273,13 +1311,17 @@ export type IdentifierType =
     | "cri_cedula_juridica"
     | "cri_cedula_citizen_person"
     | "cri_cedula_foreign_person"
+    /**
+     * Bolivia Matricula Number */
     | "bol_matricula"
+    /**
+     * Bolivia Matricula Number (old format) */
     | "bol_old_matricula"
     /**
      * Nigerian Corporate Registry Internal ID */
     | "nga_crp_reg_internal_id"
     /**
-     * Nigerian Corporate Registry Registration Serial No */
+     * Nigerian Corporate Registry Registration Serial No. */
     | "nga_registration_sn"
     /**
      * Nigerian National Identification Number */
@@ -1294,10 +1336,10 @@ export type IdentifierType =
      * Dominica Business Registry Internal ID */
     | "dma_business_registry_internal_id"
     /**
-     * The Commercial And Government Entity (CAGE) Code is a five-character ID number used extensively within the federal government, assigned by the Department of Defense's Defense Logistics Agency (DLA). The CAGE code provides a standardized method of identifying a given facility at a specific location. CAGE codes for entities located outside the United States are called NATO Commercial and Government Entity (NCAGE) codes. NCAGE codes are assigned internationally as part of the NATO Codification System (NCS). https://fawiki.fws.gov/display/SAM/Commercial+And+Government+Entity+%28CAGE%29+Code+Information */
+     * The Commercial and Government Entity (CAGE) code is a five-character ID assigned by the US Department of Defense's Defense Logistics Agency (DLA) to refer to a facility at a specific location (includes government suppliers, agencies, and other organizations). CAGE codes for entities outside the USA are called NATO Commercial and Government Entity (NCAGE) codes and are part of the NATO Codification System (NCS). Learn more [here](https://fawiki.fws.gov/display/SAM/Commercial+And+Government+Entity+%28CAGE%29+Code+Information). */
     | "cage"
     /**
-     * Antigua & Barbuda Business Registry Internal ID */
+     * Antigua and Barbuda Business Registry Internal ID */
     | "atg_business_registry_internal_id"
     /**
      * St. Lucia Business Registry Internal ID */
@@ -1336,7 +1378,7 @@ export type IdentifierType =
      * Trinbagonian Business Number */
     | "tto_biz_number"
     /**
-     * Turkey Tax Identifier */
+     * Turkish Tax Identifier */
     | "tur_tax_id"
     /**
      * Bermuda Registrar of Companies Number */
@@ -1345,7 +1387,7 @@ export type IdentifierType =
      * Democratic Republic of the Congo RCCM Number */
     | "cod_rccm_number"
     /**
-     * Democratic Republic of the Congo RCCM OHAD Number */
+     * Democratic Republic of the Congo RCCM OHADA Number */
     | "cod_rccm_ohada_number"
     /**
      * Abu Dhabi Registration Authority Number */
@@ -1375,7 +1417,7 @@ export type IdentifierType =
      * Unique identifier for imports and exports in Chile */
     | "chl_import_export_control_id"
     /**
-     * Unique identifier Chilean imports */
+     * Unique identifier for Chilean imports */
     | "chl_import_manifest_number"
     /**
      * Unique identifier for Chilean importers and exporters */
@@ -1396,13 +1438,13 @@ export type IdentifierType =
      * Mexico Shipment Number */
     | "mex_shipment_number"
     /**
-     * Internal ID for Costa Rica comexport data */
+     * Internal ID for Costa Rica comexport data (exporter number) */
     | "cri_exp"
     /**
-     * Internal ID for Costa Rica comexport data */
+     * Internal ID for Costa Rica comexport data (importer number) */
     | "cri_imp"
     /**
-     * Internal ID for Costa Rica comexport data */
+     * Internal ID for Costa Rica comexport data (shipping operation number) */
     | "cri_op_no"
     /**
      * Colombia Número Único de Registro */
@@ -1412,26 +1454,28 @@ export type IdentifierType =
     | "npl_co_reg_no"
     | "usa_sam_exclusions_number"
     /**
-     * National Provider Identifier (NPI) is a unique number for health care providers in the United States */
+     * The National Provider Identifier (NPI) is a unique number for health care providers in the United States. */
     | "usa_npi_number"
     /**
-     * Unique Physician Identification Number (UPIN) is a unique six-character alpha-numeric identifier for health care providers in the United States discontinued in June 2007 */
+     * A Unique Physician Identification Number (UPIN) is a unique six-character alphanumeric identifier for health care providers in the United States that was discontinued in June 2007. */
     | "usa_upin_number"
+    /**
+     * British Columbia Registration Number */
     | "can_bc_registration_number"
     /**
-     * See https://www.liveabout.com/what-is-the-canada-revenue-agency-cra-business-number-2947322 */
+     * The Canada Revenue Agency (CRA) business number is a nine-digit tax ID assigned to organizations to help them engage with federal and provincial government programs. Learn more [here](https://www.liveabout.com/what-is-the-canada-revenue-agency-cra-business-number-2947322). */
     | "can_business_number"
     /**
      * China Securities Regulatory Commission Code / 证券代码 */
     | "chn_csrc_no"
     /**
-     * Minnesota Secretary of State Unique ID */
+     * USA Minnesota Secretary of State Unique ID */
     | "usa_mn_master_id"
     /**
-     * Minnesota Secretary of State Filing Number */
+     * USA Minnesota Secretary of State Filing Number */
     | "usa_mn_filing_number"
     /**
-     * Business ID from Indianan Corporate Registry */
+     * Business ID from Indiana, USA, corporate registry */
     | "usa_in_biz_no"
     /**
      * Vessel ID from Lloyd's Maritime Data */
@@ -1449,31 +1493,31 @@ export type IdentifierType =
      * Montana Secretary of State Business Entity Number */
     | "montana_sos_internal_entity_id"
     /**
-     * Massachusetts Secretary of State Company ID */
+     * USA Massachusetts Secretary of State Company ID */
     | "usa_mass_sos_company_id"
     /**
      * China Resident Identity Number */
     | "chn_resident_id_number"
     /**
-     * New Jersey Department of Treasury Business ID */
+     * USA New Jersey Department of Treasury Business ID */
     | "usa_nj_business_id"
     /**
      * Utah Secretary of State Business Entity Number */
     | "utah_corporate_registry_internal_entity_number"
     /**
-     * Louisiana Secretary of State Business Entity Number */
+     * USA Louisiana Secretary of State Business Entity Number */
     | "usa_la_sos_id"
     /**
-     * Alabama Secretary of State Business Entity ID */
+     * USA Alabama Secretary of State Business Entity ID */
     | "usa_al_sos_id"
     /**
-     * South Carolina Secretary of State Corporation ID */
+     * USA South Carolina Secretary of State Corporation ID */
     | "usa_sc_corp_id"
     /**
      * USA state of Kentucky organization number assigned to businesses */
     | "usa_ky_org_no"
     /**
-     * Illinois Secretary of State File Number */
+     * USA Illinois Secretary of State File Number */
     | "usa_il_file_number"
     /**
      * Unique identifier used for companies in Indonesia UBO data */
@@ -1482,7 +1526,7 @@ export type IdentifierType =
      * Unique identifier used for owners in Indonesia UBO data */
     | "idn_ubo_owner_id"
     /**
-     * Swedish Organisationnummer with 2 digit prefix */
+     * Swedish Organisationnummer with two-digit prefix */
     | "swe_tax_number"
     /**
      * Panadata Internal SID */
@@ -1518,7 +1562,7 @@ export type IdentifierType =
      * USA OTI Organization Number */
     | "usa_oti_id"
     /**
-     * Stock Market Ticker */
+     * Stock market ticker */
     | "stock_ticker"
     /**
      * Unique Canada province ID number. Assigned to every legal entity registered with the Manitoba Companies Office. */
@@ -1539,10 +1583,10 @@ export type IdentifierType =
      * Brazil Shipment Number */
     | "bra_shipment_number"
     /**
-     * Ukraine NAZK sanctions company Internal ID */
+     * Ukraine NAZK sanctions company internal ID */
     | "ukr_sanctions_nazk_company_internal_id"
     /**
-     * Ukraine NAZK sanctions person Internal ID */
+     * Ukraine NAZK sanctions person internal ID */
     | "ukr_sanctions_nazk_person_internal_id"
     /**
      * Ethereum address */
@@ -1570,7 +1614,85 @@ export type IdentifierType =
     | "wipo_intl_reg_no"
     /**
      * Unique USA ID number. Assigned to every foreign trademark application. */
-    | "wipo_intl_ref_no";
+    | "wipo_intl_ref_no"
+    /**
+     * Unique UK charity ID number. Assigned to every charity registered with the Charity Commission for England and Wales. */
+    | "gbr_charity_no"
+    /**
+     * Unique UK internal ID number. Assigned to every trustee registered with the Charity Commission for England and Wales. */
+    | "gbr_trustee_id"
+    /**
+     * Unique UK government organization ID number. Assigned to government organizations in the UK. */
+    | "gbr_go_no"
+    /**
+     * Unique Ireland ID number. Assigned to every legal entity registered with Ireland Companies Registration Office. */
+    | "irl_registration_no"
+    /**
+     * Belize Companies & Corporate Affairs Registry (BCCAR) registration number */
+    | "blz_bccar_reg_no"
+    /**
+     * Unique customs registration number. Assigned to all entities registered with China General Administration of Customs. */
+    | "chn_customs_registration_no"
+    /**
+     * Iceland VAT identification number. Assigned to legal entities registered with Tax Administration. */
+    | "isl_vat_num"
+    /**
+     * Unique Canada ID number. Assigned to every registered trademark. */
+    | "can_tm_registration_no"
+    /**
+     * Azerbaijan TIN. Unique number assigned to taxpayers registered with Azerbaijan State Tax Service. */
+    | "aze_tin_number"
+    /**
+     * Tajikistan TIN. Unique number assigned to taxpayers registered with Tajikistan Tax Authorities. */
+    | "tjk_tin_number"
+    /**
+     * Tajikistan EIN (RYIAM) number. Unique number assigned to taxpayers in Tajikistan. */
+    | "tjk_ein_number"
+    /**
+     * Monaco RCI Trade Register Number. Unique number assigned to entities with activities in Monaco registered with the Directory of Trade and Industry Directory. */
+    | "mco_rci_number"
+    /**
+     * Monaco Statistical Identification Number. Unique identifier assigned by the Institute of Statistics and Economic Studies (Monaco Statistics) for entities with economic activity in Monaco. */
+    | "mco_nis"
+    /**
+     * Unique Canada provincial ID number. Assigned to every business registered with Ontario Ministry of Consumer and Business Services. */
+    | "on_business_id_number"
+    /**
+     * Unique Syria ID number. Assigned to every legal entity registered with the Syria Ministry of Economy and Foreign Trade. */
+    | "syria_commercial_register_number"
+    /**
+     * Unique internal company ID number. Assigned to every company in China Xinjiang Department of Housing and Urban-Rural Development Company Database */
+    | "cn_hurd_internal_company_id"
+    /**
+     * Unique Hungary Tax ID. Issued to companies registered in Hungary. */
+    | "hun_tax_number"
+    /**
+     * Unique HUN registration number. Assigned to every legal entity registered with the Ministry of Justice of Hungary. */
+    | "hun_company_register_number"
+    /**
+     * Unique TIN. Issued for individuals by Hungarian Tax Authorities. */
+    | "hun_person_tax_id"
+    /**
+     * Malawi Tax Payer Identification Number. Unique number assigned to taxpayers in Malawi and issued by the Malawi Revenue Authority. */
+    | "mw_tpin_tax_reg_num"
+    /**
+     * Liberia Tax Identification Number. Unique number assigned to taxpayers in Liberia and issued by the Liberia Revenue Authority. */
+    | "lr_tin"
+    /**
+     * Cameroon Tax Registration Number. Unique number assigned to taxpayers in Cameroon and issued by the Directorate General of Tax. */
+    | "cm_nui_tax_reg_num"
+    /**
+     * Unique EU Financial Sanctions Database ID number. Assigned to every entity in the EU Financial Sanctions Database. */
+    | "eu_fsd_id"
+    /**
+     * Unique Hong Kong tax ID number. Assigned to every company registered with the Hong Kong Business Registration Office. */
+    | "cn_hk_br_number"
+    /**
+     * Unique Canada ID number. Assigned to every entity registered with Canadian Securities Administrators National Registration Database. */
+    | "can_nrd"
+    /**
+     * Global Intermediary Identification Number (GIIN). Unique Identifier issued by the IRS to financial institutions, branches, direct reporting non-financial foreign entities, and sponsored entities. */
+    | "usa_irs_giin";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -1649,6 +1771,7 @@ export const IdentifierType = {
     Lei: "lei",
     Vat: "vat",
     ItaFiscalCode: "ita_fiscal_code",
+    ItaVatNumber: "ita_vat_number",
     RioDeJaneiroLegalId: "rio_de_janeiro_legal_id",
     IslTinNumber: "isl_tin_number",
     LaoEnterpriseNumber: "lao_enterprise_number",
@@ -1813,6 +1936,8 @@ export const IdentifierType = {
     PerCarneDeExtranjeria: "per_carne_de_extranjeria",
     FraSiren: "fra_siren",
     FraSiret: "fra_siret",
+    FraRna: "fra_rna",
+    FroRegNum: "fro_reg_num",
     CzeFileNumber: "cze_file_number",
     EspBormeRegId: "esp_borme_reg_id",
     MexTmNo: "mex_tm_no",
@@ -1921,6 +2046,7 @@ export const IdentifierType = {
     HkgStockCode: "hkg_stock_code",
     CanBcCompanyRegistrationId: "can_bc_company_registration_id",
     CanBcExtraprovincialRegistrationId: "can_bc_extraprovincial_registration_id",
+    CanIpoTrademarkApplicationNo: "can_ipo_trademark_application_no",
     LtuCompanyRegistrationCode: "ltu_company_registration_code",
     UsaSecPrivateFund: "usa_sec_private_fund",
     LvaInsolvencyProceedingId: "lva_insolvency_proceeding_id",
@@ -2120,4 +2246,30 @@ export const IdentifierType = {
     UsaUsptoForeignRegNo: "usa_uspto_foreign_reg_no",
     WipoIntlRegNo: "wipo_intl_reg_no",
     WipoIntlRefNo: "wipo_intl_ref_no",
+    GbrCharityNo: "gbr_charity_no",
+    GbrTrusteeId: "gbr_trustee_id",
+    GbrGoNo: "gbr_go_no",
+    IrlRegistrationNo: "irl_registration_no",
+    BlzBccarRegNo: "blz_bccar_reg_no",
+    ChnCustomsRegistrationNo: "chn_customs_registration_no",
+    IslVatNum: "isl_vat_num",
+    CanTmRegistrationNo: "can_tm_registration_no",
+    AzeTinNumber: "aze_tin_number",
+    TjkTinNumber: "tjk_tin_number",
+    TjkEinNumber: "tjk_ein_number",
+    McoRciNumber: "mco_rci_number",
+    McoNis: "mco_nis",
+    OnBusinessIdNumber: "on_business_id_number",
+    SyriaCommercialRegisterNumber: "syria_commercial_register_number",
+    CnHurdInternalCompanyId: "cn_hurd_internal_company_id",
+    HunTaxNumber: "hun_tax_number",
+    HunCompanyRegisterNumber: "hun_company_register_number",
+    HunPersonTaxId: "hun_person_tax_id",
+    MwTpinTaxRegNum: "mw_tpin_tax_reg_num",
+    LrTin: "lr_tin",
+    CmNuiTaxRegNum: "cm_nui_tax_reg_num",
+    EuFsdId: "eu_fsd_id",
+    CnHkBrNumber: "cn_hk_br_number",
+    CanNrd: "can_nrd",
+    UsaIrsGiin: "usa_irs_giin",
 } as const;

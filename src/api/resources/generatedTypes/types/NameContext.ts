@@ -3,17 +3,17 @@
  */
 
 /**
- * Name context enums describe different ways in which a name can belong to an entity
+ * Name context enums describe different ways in which a name can belong to an entity.
  */
 export type NameContext =
     /**
      * The main name, full name, or "best name" for an entity */
     | "primary"
     /**
-     * A given name (i.e. first name, middle name) */
+     * A given name (i.e., first name, middle name) */
     | "given"
     /**
-     * A family name (i.e. last name) */
+     * A family name (i.e., last name) */
     | "family"
     /**
      * An alternative, former, or otherwise non-primary name */
@@ -22,7 +22,7 @@ export type NameContext =
      * A machine translation of a name */
     | "machine_translation"
     /**
-     * A machine transliteration of a name using a specific system (e.g. Pinyin, ISO, UNGEGN) */
+     * A machine transliteration of a name using a specific system (e.g., Pinyin, ISO, UNGEGN) */
     | "transliteration";
 
 export const NameContext = {

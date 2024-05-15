@@ -3,9 +3,15 @@
  */
 
 /**
- * Monetary value context enums describe the types of financial values an asset can have
+ * Monetary value context enums describe the types of financial values an asset can have.
  */
-export type MonetaryValueContext = "cost_insurance_and_freight" | "free_on_board";
+export type MonetaryValueContext =
+    /**
+     * Indicates cost, insurance, and freight (CIF) arrangement */
+    | "cost_insurance_and_freight"
+    /**
+     * Indicates free on board (FOB) arrangement */
+    | "free_on_board";
 
 export const MonetaryValueContext = {
     CostInsuranceAndFreight: "cost_insurance_and_freight",

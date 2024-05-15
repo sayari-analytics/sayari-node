@@ -1,0 +1,1 @@
+export { ResolutionPost } from "./ResolutionPost";

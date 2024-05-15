@@ -1,2 +1,2 @@
-export { GetUsage } from "./GetUsage";
-export { GetHistory } from "./GetHistory";
+export { type GetUsage } from "./GetUsage";
+export { type GetHistory } from "./GetHistory";

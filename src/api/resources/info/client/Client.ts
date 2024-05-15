@@ -4,16 +4,15 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
+import * as SayariAnalyticsApi from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Info {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -23,22 +22,32 @@ export declare namespace Info {
 }
 
 export class Info {
-    constructor(protected readonly _options: Info.Options) {}
+    constructor(protected readonly _options: Info.Options = {}) {}
 
     /**
      * The usage endpoint provides a simple interface to retrieve information on usage made by your API account. This includes both views per API path and credits consumed. The time period for the usage query is also specified in the response and whether or not this includes total usage.
+     *
+     * @param {SayariAnalyticsApi.GetUsage} request
+     * @param {Info.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.NotFound}
      * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
      * @throws {@link SayariAnalyticsApi.InternalServerError}
+     *
+     * @example
+     *     await sayariAnalyticsApi.info.getUsage({
+     *         from: "2023-01-15",
+     *         to: "2023-01-15"
+     *     })
      */
     public async getUsage(
         request: SayariAnalyticsApi.GetUsage = {},
         requestOptions?: Info.RequestOptions
     ): Promise<SayariAnalyticsApi.UsageResponse> {
         const { from: from_, to } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (from_ != null) {
             _queryParams["from"] = from_;
         }
@@ -56,8 +65,11 @@ export class Info {
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -145,18 +157,31 @@ export class Info {
 
     /**
      * The history endpoint return a user's event history.
+     *
+     * @param {SayariAnalyticsApi.GetHistory} request
+     * @param {Info.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.NotFound}
      * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
      * @throws {@link SayariAnalyticsApi.InternalServerError}
+     *
+     * @example
+     *     await sayariAnalyticsApi.info.getHistory({
+     *         events: "string",
+     *         from: "2023-01-15",
+     *         to: "2023-01-15",
+     *         size: 1,
+     *         token: "string"
+     *     })
      */
     public async getHistory(
         request: SayariAnalyticsApi.GetHistory = {},
         requestOptions?: Info.RequestOptions
     ): Promise<SayariAnalyticsApi.HistoryResponse> {
         const { events, from: from_, to, size, token } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (events != null) {
             if (Array.isArray(events)) {
                 _queryParams["events"] = events.map((item) => item);
@@ -190,8 +215,11 @@ export class Info {
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -277,12 +305,7 @@ export class Info {
         }
     }
 
-    protected async _getAuthorizationHeader() {
-        const bearer = await core.Supplier.get(this._options.token);
-        if (bearer != null) {
-            return `Bearer ${bearer}`;
-        }
-
-        return undefined;
+    protected async _getAuthorizationHeader(): Promise<string | undefined> {
+        return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

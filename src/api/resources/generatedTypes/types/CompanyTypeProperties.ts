@@ -3,5 +3,11 @@
  */
 
 export interface CompanyTypeProperties {
+    /** as-of date */
+    date?: string;
+    /** start date */
+    fromDate?: string;
+    /** end date */
+    toDate?: string;
     value?: string;
 }

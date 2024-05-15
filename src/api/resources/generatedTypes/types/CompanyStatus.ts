@@ -12,34 +12,34 @@ export type CompanyStatus =
     | "opening"
     | "dissolved"
     /**
-     * e.g. 'Active', 'Operating,' 'In good standing' */
+     * e.g., "Active", "Operating," "In good standing" */
     | "active"
     /**
-     * e.g. 'Inactive,' 'Administratively dissolved.' Used when the company still exists but is not operating normally. */
+     * e.g., "Inactive", "Administratively dissolved". Used when the company still exists but is not operating normally. */
     | "inactive"
     /**
-     * e.g. 'Closed,' 'Struck from the register,' 'Registration canceled.' Used when the company no longer legally exists. */
+     * e.g., "Closed", "Struck from the register", "Registration canceled". Used when the company no longer legally exists. */
     | "closed"
     /**
-     * e.g. 'In liquidation', 'Dissolved.' Used when the company is on track to close. */
+     * e.g., "In liquidation", "Dissolved". Used when the company is on track to close. */
     | "closing"
     /**
-     * e.g. 'Registration date' */
+     * e.g., "Registration date" */
     | "registered"
     /**
-     * e.g. 'Date of incorporation' */
+     * e.g., "Date of incorporation" */
     | "incorporated"
     /**
-     * e.g. 'In receivership,' 'Bankruptcy trustee appointed,' 'Seized.' Used when an exernal party is granted legal/operational control over the company, typically to steer it through a bankruptcy or winding-up process. */
+     * e.g., "In receivership", "Bankruptcy trustee appointed", "Seized". Used when an exernal party is granted legal/operational control over the company, typically to steer it through a bankruptcy or winding-up process. */
     | "under_external_control"
     /**
-     * e.g. 'Expired,' 'Inactive.' Used when the business license is no longer active and up-to-date. */
+     * e.g., "Expired", "Inactive". Used when the business license is no longer active and up to date. */
     | "expired"
     /**
-     * e.g. 'Expanded,' 'Barred.' Used when a broker has been involved in one or more disclosure events involving certain final criminal matters, regulatory actions, civil judgment proceedings, or arbitrations or civil litigations. */
+     * e.g., "Expanded", "Barred". Used when a broker has been involved in one or more disclosure events involving certain final criminal matters, regulatory actions, civil judgment proceedings, or arbitrations or civil litigations. */
     | "expanded"
     /**
-     * e.g. 'Terminated', 'Closed.' Used when the licensing organization terminates a business license, barring the individual and/or company from performing business activities with the association of the organization. */
+     * e.g., "Terminated", "Closed". Used when the licensing organization terminates a business license, barring the individual and/or company from performing business activities with the association of the organization. */
     | "terminated";
 
 export const CompanyStatus = {

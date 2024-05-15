@@ -3,7 +3,14 @@
  */
 
 export interface AdditionalInformationProperties {
-    /** We would probably group by type in a GUI */
+    /** as-of date */
+    date?: string;
+    /** start date */
+    fromDate?: string;
+    /** end date */
+    toDate?: string;
+    /** The type of additional information being conveyed */
     type?: string;
+    /** The additional information itself */
     value?: string;
 }

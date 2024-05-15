@@ -3,7 +3,7 @@
  */
 
 /**
- * Finance type enums describe financial information about an entity; typically used to describe the cumulative monetary value of share capital issued by a company or held by an individual shareholder
+ * Finance type enums describe financial information about an entity. They're typically used to describe the cumulative monetary value of share capital issued by a company or held by an individual shareholder.
  */
 export type FinanceType =
     /**

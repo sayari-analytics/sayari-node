@@ -1,5 +1,5 @@
-export { Traversal } from "./Traversal";
-export { Ubo } from "./Ubo";
-export { Ownership } from "./Ownership";
-export { Watchlist } from "./Watchlist";
-export { ShortestPath } from "./ShortestPath";
+export { type Traversal } from "./Traversal";
+export { type Ubo } from "./Ubo";
+export { type Ownership } from "./Ownership";
+export { type Watchlist } from "./Watchlist";
+export { type ShortestPath } from "./ShortestPath";

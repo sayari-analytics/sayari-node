@@ -3,7 +3,7 @@
  */
 
 /**
- * The type of measurement, e.g. net weight
+ * Measurement type enums refer to the type of measurement applied to the entity, e.g., net weight.
  */
 export type MeasurementType =
     /**

@@ -4,16 +4,15 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../..";
-import * as serializers from "../../../../serialization";
+import * as SayariAnalyticsApi from "../../../index";
 import urlJoin from "url-join";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Record_ {
     interface Options {
         environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
-        clientName: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -23,10 +22,15 @@ export declare namespace Record_ {
 }
 
 export class Record_ {
-    constructor(protected readonly _options: Record_.Options) {}
+    constructor(protected readonly _options: Record_.Options = {}) {}
 
     /**
      * Retrieve a record from the database based on the ID
+     *
+     * @param {string} id - The unique identifier for a record in the database
+     * @param {SayariAnalyticsApi.GetRecord} request
+     * @param {Record_.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link SayariAnalyticsApi.BadRequest}
      * @throws {@link SayariAnalyticsApi.Unauthorized}
      * @throws {@link SayariAnalyticsApi.NotFound}
@@ -35,15 +39,15 @@ export class Record_ {
      * @throws {@link SayariAnalyticsApi.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F1682970471254", {})
+     *     await sayariAnalyticsApi.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F1682970471254")
      */
     public async getRecord(
-        id: SayariAnalyticsApi.RecordId,
+        id: string,
         request: SayariAnalyticsApi.GetRecord = {},
         requestOptions?: Record_.RequestOptions
     ): Promise<SayariAnalyticsApi.GetRecordResponse> {
         const { referencesLimit, referencesOffset } = request;
-        const _queryParams: Record<string, string | string[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (referencesLimit != null) {
             _queryParams["references.limit"] = referencesLimit.toString();
         }
@@ -56,13 +60,16 @@ export class Record_ {
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ??
                     environments.SayariAnalyticsApiEnvironment.Production,
-                `/v1/record/${await serializers.RecordId.jsonOrThrow(id)}`
+                `/v1/record/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
-                "client-name": await core.Supplier.get(this._options.clientName),
                 "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "",
+                "X-Fern-SDK-Version": "0.0.198",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -157,12 +164,7 @@ export class Record_ {
         }
     }
 
-    protected async _getAuthorizationHeader() {
-        const bearer = await core.Supplier.get(this._options.token);
-        if (bearer != null) {
-            return `Bearer ${bearer}`;
-        }
-
-        return undefined;
+    protected async _getAuthorizationHeader(): Promise<string | undefined> {
+        return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }
