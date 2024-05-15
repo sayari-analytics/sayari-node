@@ -3,7 +3,7 @@ import { SayariAnalyticsApiClient as FernClient } from "../Client"; // alias the
 export class SayariClient extends FernClient { // extend the Fern generated client
 
   public myHelper(): void {
-    return console.log("Hello world!");
+    return console.log("Hello world! This is being printed from the client wrapper.");
   }
 
 }

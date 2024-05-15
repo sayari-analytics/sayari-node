@@ -11,8 +11,13 @@ dotenv.config();
 var clientID = process.env.CLIENT_ID;
 var clientSecret = process.env.CLIENT_SECRET;
 
+// Create an authenticated sayari client
 const sayari = new SayariClient({ clientId: clientID, clientSecret: clientSecret })
 
+// Call the hello world helper function to make sure the wrapper is working
+sayari.myHelper()
+
+// Attempt to get an entity summary
 const resp = await sayari.entity.entitySummary("mGq1lpuqKssNWTjIokuPeA")
     .then(resp => {
         return resp})
