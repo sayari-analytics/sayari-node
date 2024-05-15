@@ -1,8 +1,8 @@
-import { SayariAnalyticsApiClient } from "../src/Client";
+import { SayariClient } from "../src/index";
 
-const client = new SayariAnalyticsApiClient({
-    clientId: String(process.env.SAYARI_CLIENT_ID),
-    clientSecret: String(process.env.SAYARI_CLIENT_SECRET)
+const client = new SayariClient({
+    clientId: process.env.SAYARI_CLIENT_ID,
+    clientSecret: process.env.SAYARI_CLIENT_SECRET
 });
 
 describe("OAuth", () => {
