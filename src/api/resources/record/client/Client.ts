@@ -65,8 +65,8 @@ export class Record_ {
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
-                "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.210",
+                "X-Fern-SDK-Name": "@sayari/sdk",
+                "X-Fern-SDK-Version": "0.0.222",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

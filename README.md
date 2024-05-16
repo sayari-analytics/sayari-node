@@ -12,15 +12,15 @@ API reference documentation is available [here](https://documentation.sayari.com
 ## Installation
 
 ```bash
-npm install --save sayari
+npm install --save @sayari/sdk
 # or
-yarn add sayari
+yarn add @sayari/sdk
 ```
 
 ## Usage
 
 ```typescript
-import { SayariClient, Sayari } from 'sayari';
+import { SayariClient, Sayari } from '@sayari/sdk';
 
 const sayari = new SayariClient({
   clientId: "YOUR_CLIENT_ID",
@@ -39,7 +39,7 @@ The SDK exports all request and response types as TypeScript interfaces. Simply
 import them under the `Sayari` namespace: 
 
 ```ts
-import { Sayari } from "sayari"; 
+import { Sayari } from "@sayari/sdk"; 
 
 const dataSource: Sayari.DataSource = {
   id: "...",
@@ -53,7 +53,7 @@ When the API returns a non-success status code (4xx or 5xx response),
 a subclass of [SayariError](./src/errors/SayariError.ts) will be thrown:
 
 ```ts
-import { SayariError } from 'sayari';
+import { SayariError } from '@sayari/sdk';
 
 try {
   await sayari.project.getProjects(...);
