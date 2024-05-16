@@ -67,7 +67,7 @@ export class Record_ {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.199",
+                "X-Fern-SDK-Version": "0.0.201",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -165,6 +165,11 @@ export class Record_ {
     }
 
     protected async _getAuthorizationHeader(): Promise<string | undefined> {
-        return `Bearer ${await core.Supplier.get(this._options.token)}`;
+        const bearer = await core.Supplier.get(this._options.token);
+        if (bearer != null) {
+            return `Bearer ${bearer}`;
+        }
+
+        return undefined;
     }
 }
