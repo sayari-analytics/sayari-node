@@ -1,4 +1,4 @@
-import { SayariAnalyticsApiClient as FernClient } from "../Client"; // alias the Fern generated client
+import { SayariClient as FernClient } from "../Client"; // alias the Fern generated client
 
 export class SayariClient extends FernClient { // extend the Fern generated client
 
