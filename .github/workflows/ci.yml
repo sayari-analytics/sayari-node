@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running smoke test"
-          python examples/smoke-test.py
+          node examples/smoke-test.py
 
 #  publish:
 #    needs: [ compile, test ]
