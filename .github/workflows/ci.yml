@@ -45,10 +45,10 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running smoke test"
           ls
-          node smoke-test.mjs
+          node --experimental-specifier-resolution=node smoke-test.mjs
 
 #  publish:
-#    needs: [ compile, test ]
+#    needs: [ compile, test, run-examples ]
 #    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
 #    runs-on: ubuntu-latest
 #    steps:
