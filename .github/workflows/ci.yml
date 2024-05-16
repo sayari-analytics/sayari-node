@@ -41,11 +41,11 @@ jobs:
         run: yarn && yarn build
       - name: test examples
         run: |
+          cd examples
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running smoke test"
-          pwd
           ls
-          node ../examples/smoke-test.mjs
+          node smoke-test.mjs
 
 #  publish:
 #    needs: [ compile, test ]
