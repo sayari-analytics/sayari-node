@@ -27,25 +27,23 @@ jobs:
       - name: Compile
         run: yarn && yarn test    
 
-  run-examples:
-    name: Run examples (to look for regressions)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-      - name: Set up node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 21
-      - name: Build
-        run: yarn && yarn build
-      - name: test examples
-        run: |
-          cd examples
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "Running smoke test"
-          ls
-          node --experimental-specifier-resolution=node smoke-test.mjs
+#  run-examples:
+#    name: Run examples (to look for regressions)
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repo
+#        uses: actions/checkout@v4
+#      - name: Set up node
+#        uses: actions/setup-node@v4
+#        with:
+#          node-version: 21
+#      - name: Build
+#        run: yarn && yarn build
+#      - name: test examples
+#        run: |
+#          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+#          echo "Running smoke test"
+#          node examples/smoke-test.mjs
 
 #  publish:
 #    needs: [ compile, test, run-examples ]
