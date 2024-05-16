@@ -2,12 +2,20 @@ import { SayariClient } from "../src/index";
 
 var clientID = String(process.env.CLIENT_ID);
 var clientSecret = String(process.env.CLIENT_SECRET);
+var baseURL = String(process.env.BASE_URL);
+
+// use prod if no alternative URL is provided
+if (!baseURL) {
+    baseURL = 'https://api.sayari.com'
+}
 
 expect(clientID).not.toBe('');
+expect(baseURL).not.toBe('');
 
 const client = new SayariClient({
     clientId: clientID,
-    clientSecret: clientSecret
+    clientSecret: clientSecret,
+    environment: baseURL
 });
 
 describe("OAuth", () => {
