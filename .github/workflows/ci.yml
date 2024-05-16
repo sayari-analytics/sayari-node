@@ -1,66 +1,55 @@
 name: ci
 
-env:
-  CLIENT_ID: ${{ secrets.CLIENT_ID }}
-  CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-
 on: [push]
 
 jobs:
   compile:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
+
       - name: Set up node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
+
       - name: Compile
         run: yarn && yarn build
 
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
+
       - name: Set up node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
+
       - name: Compile
         run: yarn && yarn test    
 
-#  run-examples:
-#    name: Run examples (to look for regressions)
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout repo
-#        uses: actions/checkout@v4
-#      - name: Set up node
-#        uses: actions/setup-node@v4
-#        with:
-#          node-version: 21
-#      - name: Build
-#        run: yarn && yarn build
-#      - name: test examples
-#        run: |
-#          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-#          echo "Running smoke test"
-#          node examples/smoke-test.mjs
+  publish:
+    needs: [ compile, test ]
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
 
-#  publish:
-#    needs: [ compile, test, run-examples ]
-#    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout repo
-#        uses: actions/checkout@v4
-#      - name: Set up node
-#        uses: actions/setup-node@v3
-#      - name: Install dependencies
-#        run: yarn install
-#      - name: Build
-#        run: yarn build
-#      - name: Publish to npm
-#        run: |
-#          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-#          npm publish --access public
-#        env:
-#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Publish to npm
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+          npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
