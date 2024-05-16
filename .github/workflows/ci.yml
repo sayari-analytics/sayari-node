@@ -43,9 +43,9 @@ jobs:
         run: |
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running smoke test"
-          node examples/smoke-test.mjs
           pwd
           ls
+          node ../examples/smoke-test.mjs
 
 #  publish:
 #    needs: [ compile, test ]
