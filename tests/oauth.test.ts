@@ -1,8 +1,13 @@
 import { SayariClient } from "../src/index";
 
+var clientID = String(process.env.CLIENT_ID);
+var clientSecret = String(process.env.CLIENT_SECRET);
+
+expect(clientID).not.toBe('');
+
 const client = new SayariClient({
-    clientId: process.env.SAYARI_CLIENT_ID,
-    clientSecret: process.env.SAYARI_CLIENT_SECRET
+    clientId: clientID,
+    clientSecret: clientSecret
 });
 
 describe("OAuth", () => {
