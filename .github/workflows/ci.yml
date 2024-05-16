@@ -41,7 +41,7 @@ jobs:
         run: yarn && yarn build
       - name: test examples
         run: |
-          yarn add .
+          yarn add file:./../sayari-node
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running hello world"
           node examples/hello-world.mjs
