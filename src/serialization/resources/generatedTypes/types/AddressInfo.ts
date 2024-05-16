@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { AddressData } from "./AddressData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
-export const AddressInfo: core.serialization.ObjectSchema<serializers.AddressInfo.Raw, SayariAnalyticsApi.AddressInfo> =
+export const AddressInfo: core.serialization.ObjectSchema<serializers.AddressInfo.Raw, Sayari.AddressInfo> =
     core.serialization
         .object({
             data: core.serialization.list(AddressData),

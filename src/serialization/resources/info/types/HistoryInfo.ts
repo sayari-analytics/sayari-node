@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { EventInfo } from "./EventInfo";
 
-export const HistoryInfo: core.serialization.ObjectSchema<serializers.HistoryInfo.Raw, SayariAnalyticsApi.HistoryInfo> =
+export const HistoryInfo: core.serialization.ObjectSchema<serializers.HistoryInfo.Raw, Sayari.HistoryInfo> =
     core.serialization.object({
         user: core.serialization.string(),
         environment: core.serialization.string(),

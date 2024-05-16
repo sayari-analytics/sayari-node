@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { SourceOrDestinationEntity } from "./SourceOrDestinationEntity";
 import { ShipmentAddress } from "./ShipmentAddress";
@@ -13,7 +13,7 @@ import { ShipmentIdentifier } from "./ShipmentIdentifier";
 import { DataSource } from "./DataSource";
 import { HsCodeInfo } from "./HsCodeInfo";
 
-export const Shipment: core.serialization.ObjectSchema<serializers.Shipment.Raw, SayariAnalyticsApi.Shipment> =
+export const Shipment: core.serialization.ObjectSchema<serializers.Shipment.Raw, Sayari.Shipment> =
     core.serialization.object({
         id: core.serialization.string(),
         type: core.serialization.string(),

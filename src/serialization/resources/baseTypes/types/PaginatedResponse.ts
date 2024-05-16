@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { QualifiedCount } from "./QualifiedCount";
 
 export const PaginatedResponse: core.serialization.ObjectSchema<
     serializers.PaginatedResponse.Raw,
-    SayariAnalyticsApi.PaginatedResponse
+    Sayari.PaginatedResponse
 > = core.serialization.object({
     limit: core.serialization.number(),
     size: QualifiedCount,

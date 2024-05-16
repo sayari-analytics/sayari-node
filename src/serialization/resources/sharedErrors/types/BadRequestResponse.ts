@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const BadRequestResponse: core.serialization.Schema<
     serializers.BadRequestResponse.Raw,
-    SayariAnalyticsApi.BadRequestResponse
+    Sayari.BadRequestResponse
 > = core.serialization.unknown();
 
 export declare namespace BadRequestResponse {

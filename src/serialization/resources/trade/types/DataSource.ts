@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const DataSource: core.serialization.ObjectSchema<serializers.DataSource.Raw, SayariAnalyticsApi.DataSource> =
+export const DataSource: core.serialization.ObjectSchema<serializers.DataSource.Raw, Sayari.DataSource> =
     core.serialization.object({
         id: core.serialization.string(),
         label: core.serialization.string(),

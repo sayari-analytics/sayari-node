@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const DocCount: core.serialization.ObjectSchema<serializers.DocCount.Raw, SayariAnalyticsApi.DocCount> =
+export const DocCount: core.serialization.ObjectSchema<serializers.DocCount.Raw, Sayari.DocCount> =
     core.serialization.object({
         docCount: core.serialization.property("doc_count", core.serialization.number()),
     });

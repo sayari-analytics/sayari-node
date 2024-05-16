@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { EntityId } from "./EntityId";
 import { TradeTraversalEntity } from "./TradeTraversalEntity";
@@ -11,7 +11,7 @@ import { TradeTraversalPathOrSegment } from "./TradeTraversalPathOrSegment";
 
 export const UpstreamTradeTraversalResponse: core.serialization.ObjectSchema<
     serializers.UpstreamTradeTraversalResponse.Raw,
-    SayariAnalyticsApi.UpstreamTradeTraversalResponse
+    Sayari.UpstreamTradeTraversalResponse
 > = core.serialization.object({
     status: core.serialization.number().optional(),
     success: core.serialization.boolean().optional(),

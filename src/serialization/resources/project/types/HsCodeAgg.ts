@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { HsCodeAggTerms } from "./HsCodeAggTerms";
 
-export const HsCodeAgg: core.serialization.ObjectSchema<serializers.HsCodeAgg.Raw, SayariAnalyticsApi.HsCodeAgg> =
+export const HsCodeAgg: core.serialization.ObjectSchema<serializers.HsCodeAgg.Raw, Sayari.HsCodeAgg> =
     core.serialization.object({
         docCount: core.serialization.property("doc_count", core.serialization.number()),
         hsCodeTerms: core.serialization.property("hs_code_terms", HsCodeAggTerms),

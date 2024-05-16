@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { RoleMember } from "./RoleMember";
 import { Project } from "./Project";
 
 export const ProjectWithMembers: core.serialization.ObjectSchema<
     serializers.ProjectWithMembers.Raw,
-    SayariAnalyticsApi.ProjectWithMembers
+    Sayari.ProjectWithMembers
 > = core.serialization
     .object({
         members: core.serialization.list(RoleMember),

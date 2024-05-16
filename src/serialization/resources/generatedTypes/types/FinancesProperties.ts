@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { FinanceType } from "./FinanceType";
 import { Currency } from "./Currency";
 
 export const FinancesProperties: core.serialization.ObjectSchema<
     serializers.FinancesProperties.Raw,
-    SayariAnalyticsApi.FinancesProperties
+    Sayari.FinancesProperties
 > = core.serialization.object({
     context: FinanceType.optional(),
     currency: Currency.optional(),

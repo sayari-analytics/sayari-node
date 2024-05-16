@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { GenericData } from "./GenericData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
-export const GenericInfo: core.serialization.ObjectSchema<serializers.GenericInfo.Raw, SayariAnalyticsApi.GenericInfo> =
+export const GenericInfo: core.serialization.ObjectSchema<serializers.GenericInfo.Raw, Sayari.GenericInfo> =
     core.serialization
         .object({
             data: core.serialization.list(GenericData),

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../../index";
-import * as SayariAnalyticsApi from "../../../../../api/index";
+import * as Sayari from "../../../../../api/index";
 import * as core from "../../../../../core";
 import { SearchField } from "../../../sharedTypes/types/SearchField";
 import { FilterList } from "../../types/FilterList";
 
 export const SearchEntity: core.serialization.Schema<
     serializers.SearchEntity.Raw,
-    Omit<SayariAnalyticsApi.SearchEntity, "limit" | "offset">
+    Omit<Sayari.SearchEntity, "limit" | "offset">
 > = core.serialization.object({
     q: core.serialization.string(),
     fields: core.serialization.list(SearchField).optional(),

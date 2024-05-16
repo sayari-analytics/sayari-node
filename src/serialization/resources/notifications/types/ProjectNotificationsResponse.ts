@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ProjectNotificationData } from "./ProjectNotificationData";
 
 export const ProjectNotificationsResponse: core.serialization.ObjectSchema<
     serializers.ProjectNotificationsResponse.Raw,
-    SayariAnalyticsApi.ProjectNotificationsResponse
+    Sayari.ProjectNotificationsResponse
 > = core.serialization.object({
     offset: core.serialization.number(),
     limit: core.serialization.number(),

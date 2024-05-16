@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const SearchField: core.serialization.Schema<serializers.SearchField.Raw, SayariAnalyticsApi.SearchField> =
+export const SearchField: core.serialization.Schema<serializers.SearchField.Raw, Sayari.SearchField> =
     core.serialization.enum_(["name", "identifier", "address", "business_purpose", "date_of_birth", "contact"]);
 
 export declare namespace SearchField {

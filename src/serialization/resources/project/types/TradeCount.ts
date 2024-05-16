@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const TradeCount: core.serialization.ObjectSchema<serializers.TradeCount.Raw, SayariAnalyticsApi.TradeCount> =
+export const TradeCount: core.serialization.ObjectSchema<serializers.TradeCount.Raw, Sayari.TradeCount> =
     core.serialization.object({
         receiverOf: core.serialization.property("receiver_of", core.serialization.number()),
         shipperOf: core.serialization.property("shipper_of", core.serialization.number()),

@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { HsCode } from "./HsCode";
 
 export const SupplierMetadata: core.serialization.ObjectSchema<
     serializers.SupplierMetadata.Raw,
-    SayariAnalyticsApi.SupplierMetadata
+    Sayari.SupplierMetadata
 > = core.serialization.object({
     latestShipmentDate: core.serialization.string().optional(),
     shipments: core.serialization.number(),

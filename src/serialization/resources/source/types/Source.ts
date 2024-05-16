@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Country } from "../../generatedTypes/types/Country";
 
-export const Source: core.serialization.ObjectSchema<serializers.Source.Raw, SayariAnalyticsApi.Source> =
-    core.serialization.object({
+export const Source: core.serialization.ObjectSchema<serializers.Source.Raw, Sayari.Source> = core.serialization.object(
+    {
         id: core.serialization.string(),
         label: core.serialization.string(),
         description: core.serialization.string(),
@@ -21,7 +21,8 @@ export const Source: core.serialization.ObjectSchema<serializers.Source.Raw, Say
         sourceUrl: core.serialization.property("source_url", core.serialization.string().optional()),
         pep: core.serialization.boolean(),
         watchlist: core.serialization.boolean(),
-    });
+    }
+);
 
 export declare namespace Source {
     interface Raw {

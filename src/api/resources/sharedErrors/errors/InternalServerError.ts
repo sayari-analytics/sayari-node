@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../../../errors/index";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 
-export class InternalServerError extends errors.SayariAnalyticsApiError {
-    constructor(body?: SayariAnalyticsApi.InternalServerErrorResponse) {
+export class InternalServerError extends errors.SayariError {
+    constructor(body?: Sayari.InternalServerErrorResponse) {
         super({
             message: "InternalServerError",
             statusCode: 500,

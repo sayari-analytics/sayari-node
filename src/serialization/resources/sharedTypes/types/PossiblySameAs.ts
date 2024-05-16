@@ -3,21 +3,19 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { PossiblySameAsData } from "./PossiblySameAsData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
-export const PossiblySameAs: core.serialization.ObjectSchema<
-    serializers.PossiblySameAs.Raw,
-    SayariAnalyticsApi.PossiblySameAs
-> = core.serialization
-    .object({
-        offset: core.serialization.number().optional(),
-        next: core.serialization.unknown().optional(),
-        data: core.serialization.list(PossiblySameAsData),
-    })
-    .extend(PaginatedResponse);
+export const PossiblySameAs: core.serialization.ObjectSchema<serializers.PossiblySameAs.Raw, Sayari.PossiblySameAs> =
+    core.serialization
+        .object({
+            offset: core.serialization.number().optional(),
+            next: core.serialization.unknown().optional(),
+            data: core.serialization.list(PossiblySameAsData),
+        })
+        .extend(PaginatedResponse);
 
 export declare namespace PossiblySameAs {
     interface Raw extends PaginatedResponse.Raw {

@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Relationships } from "../../generatedTypes/types/Relationships";
 import { Country } from "../../generatedTypes/types/Country";
@@ -11,7 +11,7 @@ import { TraversalData } from "./TraversalData";
 
 export const TraversalResponse: core.serialization.ObjectSchema<
     serializers.TraversalResponse.Raw,
-    SayariAnalyticsApi.TraversalResponse
+    Sayari.TraversalResponse
 > = core.serialization.object({
     minDepth: core.serialization.property("min_depth", core.serialization.number()),
     maxDepth: core.serialization.property("max_depth", core.serialization.number()),

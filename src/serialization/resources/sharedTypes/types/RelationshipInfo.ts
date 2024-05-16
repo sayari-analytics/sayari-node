@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Attributes } from "../../generatedTypes/types/Attributes";
 
 export const RelationshipInfo: core.serialization.ObjectSchema<
     serializers.RelationshipInfo.Raw,
-    SayariAnalyticsApi.RelationshipInfo
+    Sayari.RelationshipInfo
 > = core.serialization.object({
     editable: core.serialization.boolean().optional(),
     record: core.serialization.string(),

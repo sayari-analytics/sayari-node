@@ -3,13 +3,11 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const MeasurementType: core.serialization.Schema<
-    serializers.MeasurementType.Raw,
-    SayariAnalyticsApi.MeasurementType
-> = core.serialization.enum_(["gross_weight", "net_weight", "quantity"]);
+export const MeasurementType: core.serialization.Schema<serializers.MeasurementType.Raw, Sayari.MeasurementType> =
+    core.serialization.enum_(["gross_weight", "net_weight", "quantity"]);
 
 export declare namespace MeasurementType {
     type Raw = "gross_weight" | "net_weight" | "quantity";

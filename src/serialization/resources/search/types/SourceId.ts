@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const SourceId: core.serialization.Schema<serializers.SourceId.Raw, SayariAnalyticsApi.SourceId> =
+export const SourceId: core.serialization.Schema<serializers.SourceId.Raw, Sayari.SourceId> =
     core.serialization.string();
 
 export declare namespace SourceId {

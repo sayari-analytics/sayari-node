@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { RiskData } from "./RiskData";
 import { Risk } from "../../generatedTypes/types/Risk";
 
-export const EntityRisk: core.serialization.Schema<serializers.EntityRisk.Raw, SayariAnalyticsApi.EntityRisk> =
+export const EntityRisk: core.serialization.Schema<serializers.EntityRisk.Raw, Sayari.EntityRisk> =
     core.serialization.record(Risk, RiskData.optional());
 
 export declare namespace EntityRisk {

@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const Tag: core.serialization.Schema<serializers.Tag.Raw, SayariAnalyticsApi.Tag> = core.serialization.enum_([
+export const Tag: core.serialization.Schema<serializers.Tag.Raw, Sayari.Tag> = core.serialization.enum_([
     "pep",
     "state_owned",
     "former_soe",

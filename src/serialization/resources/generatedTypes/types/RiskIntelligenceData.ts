@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { RiskIntelligenceProperties } from "./RiskIntelligenceProperties";
 import { AttributeData } from "./AttributeData";
 
 export const RiskIntelligenceData: core.serialization.ObjectSchema<
     serializers.RiskIntelligenceData.Raw,
-    SayariAnalyticsApi.RiskIntelligenceData
+    Sayari.RiskIntelligenceData
 > = core.serialization
     .object({
         properties: RiskIntelligenceProperties,

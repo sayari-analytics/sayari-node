@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../../index";
-import * as SayariAnalyticsApi from "../../../../../api/index";
+import * as Sayari from "../../../../../api/index";
 import * as core from "../../../../../core";
 import { BothIdentifierTypes } from "../../../generatedTypes/types/BothIdentifierTypes";
 import { Country } from "../../../generatedTypes/types/Country";
@@ -11,7 +11,7 @@ import { Entities } from "../../../generatedTypes/types/Entities";
 
 export const ResolutionPost: core.serialization.Schema<
     serializers.ResolutionPost.Raw,
-    Omit<SayariAnalyticsApi.ResolutionPost, "limit" | "offset">
+    Omit<Sayari.ResolutionPost, "limit" | "offset">
 > = core.serialization.object({
     name: core.serialization.list(core.serialization.string()).optional(),
     identifier: core.serialization.list(BothIdentifierTypes).optional(),

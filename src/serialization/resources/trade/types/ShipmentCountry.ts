@@ -3,16 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Country } from "../../generatedTypes/types/Country";
 
-export const ShipmentCountry: core.serialization.ObjectSchema<
-    serializers.ShipmentCountry.Raw,
-    SayariAnalyticsApi.ShipmentCountry
-> = core.serialization.object({
-    value: Country,
-});
+export const ShipmentCountry: core.serialization.ObjectSchema<serializers.ShipmentCountry.Raw, Sayari.ShipmentCountry> =
+    core.serialization.object({
+        value: Country,
+    });
 
 export declare namespace ShipmentCountry {
     interface Raw {

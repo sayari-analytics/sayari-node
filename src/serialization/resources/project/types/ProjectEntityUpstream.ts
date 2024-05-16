@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Risk } from "../../generatedTypes/types/Risk";
 import { Country } from "../../generatedTypes/types/Country";
 
 export const ProjectEntityUpstream: core.serialization.ObjectSchema<
     serializers.ProjectEntityUpstream.Raw,
-    SayariAnalyticsApi.ProjectEntityUpstream
+    Sayari.ProjectEntityUpstream
 > = core.serialization.object({
     risk: core.serialization.list(Risk),
     countries: core.serialization.list(Country),

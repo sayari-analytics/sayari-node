@@ -3,13 +3,11 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const RateLimitResponse: core.serialization.Schema<
-    serializers.RateLimitResponse.Raw,
-    SayariAnalyticsApi.RateLimitResponse
-> = core.serialization.unknown();
+export const RateLimitResponse: core.serialization.Schema<serializers.RateLimitResponse.Raw, Sayari.RateLimitResponse> =
+    core.serialization.unknown();
 
 export declare namespace RateLimitResponse {
     type Raw = unknown;

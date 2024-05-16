@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../../../errors/index";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 
-export class ConnectionError extends errors.SayariAnalyticsApiError {
-    constructor(body?: SayariAnalyticsApi.ConnectionErrorResponse) {
+export class ConnectionError extends errors.SayariError {
+    constructor(body?: Sayari.ConnectionErrorResponse) {
         super({
             message: "ConnectionError",
             statusCode: 520,

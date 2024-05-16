@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ContactType } from "./ContactType";
 
 export const ContactProperties: core.serialization.ObjectSchema<
     serializers.ContactProperties.Raw,
-    SayariAnalyticsApi.ContactProperties
+    Sayari.ContactProperties
 > = core.serialization.object({
     date: core.serialization.string().optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),

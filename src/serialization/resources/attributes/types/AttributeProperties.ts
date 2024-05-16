@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const AttributeProperties: core.serialization.ObjectSchema<
     serializers.AttributeProperties.Raw,
-    SayariAnalyticsApi.AttributeProperties
+    Sayari.AttributeProperties
 > = core.serialization.object({
     editable: core.serialization.boolean(),
     recordCount: core.serialization.property("record_count", core.serialization.number()),

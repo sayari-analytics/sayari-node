@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { BusinessPurposeData } from "./BusinessPurposeData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
 export const BusinessPurposeInfo: core.serialization.ObjectSchema<
     serializers.BusinessPurposeInfo.Raw,
-    SayariAnalyticsApi.BusinessPurposeInfo
+    Sayari.BusinessPurposeInfo
 > = core.serialization
     .object({
         data: core.serialization.list(BusinessPurposeData),

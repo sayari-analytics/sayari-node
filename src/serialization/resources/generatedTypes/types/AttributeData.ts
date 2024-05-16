@@ -3,17 +3,15 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const AttributeData: core.serialization.ObjectSchema<
-    serializers.AttributeData.Raw,
-    SayariAnalyticsApi.AttributeData
-> = core.serialization.object({
-    editable: core.serialization.boolean().optional(),
-    record: core.serialization.list(core.serialization.string()),
-    recordCount: core.serialization.property("record_count", core.serialization.number()),
-});
+export const AttributeData: core.serialization.ObjectSchema<serializers.AttributeData.Raw, Sayari.AttributeData> =
+    core.serialization.object({
+        editable: core.serialization.boolean().optional(),
+        record: core.serialization.list(core.serialization.string()),
+        recordCount: core.serialization.property("record_count", core.serialization.number()),
+    });
 
 export declare namespace AttributeData {
     interface Raw {

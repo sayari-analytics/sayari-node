@@ -3,13 +3,11 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const ShipmentDeparture: core.serialization.Schema<
-    serializers.ShipmentDeparture.Raw,
-    SayariAnalyticsApi.ShipmentDeparture
-> = core.serialization.string();
+export const ShipmentDeparture: core.serialization.Schema<serializers.ShipmentDeparture.Raw, Sayari.ShipmentDeparture> =
+    core.serialization.string();
 
 export declare namespace ShipmentDeparture {
     type Raw = string;

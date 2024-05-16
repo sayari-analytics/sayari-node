@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const EntityRegistrationDate: core.serialization.Schema<
     serializers.EntityRegistrationDate.Raw,
-    SayariAnalyticsApi.EntityRegistrationDate
+    Sayari.EntityRegistrationDate
 > = core.serialization.string();
 
 export declare namespace EntityRegistrationDate {

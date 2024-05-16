@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const PersonStatus: core.serialization.Schema<serializers.PersonStatus.Raw, SayariAnalyticsApi.PersonStatus> =
+export const PersonStatus: core.serialization.Schema<serializers.PersonStatus.Raw, Sayari.PersonStatus> =
     core.serialization.enum_(["born", "died", "married"]);
 
 export declare namespace PersonStatus {

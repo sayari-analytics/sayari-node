@@ -3,17 +3,15 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { CountQualifier } from "./CountQualifier";
 
-export const QualifiedCount: core.serialization.ObjectSchema<
-    serializers.QualifiedCount.Raw,
-    SayariAnalyticsApi.QualifiedCount
-> = core.serialization.object({
-    count: core.serialization.number(),
-    qualifier: CountQualifier,
-});
+export const QualifiedCount: core.serialization.ObjectSchema<serializers.QualifiedCount.Raw, Sayari.QualifiedCount> =
+    core.serialization.object({
+        count: core.serialization.number(),
+        qualifier: CountQualifier,
+    });
 
 export declare namespace QualifiedCount {
     interface Raw {

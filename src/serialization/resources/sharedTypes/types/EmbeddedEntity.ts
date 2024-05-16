@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Entities } from "../../generatedTypes/types/Entities";
 import { Identifier } from "./Identifier";
@@ -13,47 +13,48 @@ import { RelationshipCount } from "./RelationshipCount";
 import { Attributes } from "../../generatedTypes/types/Attributes";
 import { Relationships } from "../../generatedTypes/types/Relationships";
 
-export const EmbeddedEntity: core.serialization.ObjectSchema<
-    serializers.EmbeddedEntity.Raw,
-    SayariAnalyticsApi.EmbeddedEntity
-> = core.serialization.object({
-    id: core.serialization.string(),
-    label: core.serialization.string(),
-    degree: core.serialization.number(),
-    closed: core.serialization.boolean(),
-    entityUrl: core.serialization.property("entity_url", core.serialization.string()),
-    pep: core.serialization.boolean(),
-    psaId: core.serialization.property("psa_id", core.serialization.string().optional()),
-    psaCount: core.serialization.property("psa_count", core.serialization.number()),
-    sanctioned: core.serialization.boolean(),
-    type: Entities,
-    identifiers: core.serialization.list(Identifier),
-    countries: core.serialization.list(Country),
-    sourceCount: core.serialization.property(
-        "source_count",
-        core.serialization.record(core.serialization.string(), SourceCountInfo)
-    ),
-    addresses: core.serialization.list(core.serialization.string()),
-    tradeCount: core.serialization.property(
-        "trade_count",
-        core.serialization.record(core.serialization.string(), core.serialization.number())
-    ),
-    dateOfBirth: core.serialization.property("date_of_birth", core.serialization.string().optional()),
-    relationshipCount: core.serialization.property("relationship_count", RelationshipCount),
-    userRelationshipCount: core.serialization.property("user_relationship_count", RelationshipCount),
-    attributeCount: core.serialization.property(
-        "attribute_count",
-        core.serialization.record(Attributes, core.serialization.number().optional())
-    ),
-    userAttributeCount: core.serialization.property(
-        "user_attribute_count",
-        core.serialization.record(Attributes, core.serialization.number().optional())
-    ),
-    relatedEntitiesCount: core.serialization.property("related_entities_count", core.serialization.number()),
-    userRelatedEntitiesCount: core.serialization.property("user_related_entities_count", core.serialization.number()),
-    userRecordCount: core.serialization.property("user_record_count", core.serialization.number()),
-    referenceId: core.serialization.property("reference_id", core.serialization.string().optional()),
-});
+export const EmbeddedEntity: core.serialization.ObjectSchema<serializers.EmbeddedEntity.Raw, Sayari.EmbeddedEntity> =
+    core.serialization.object({
+        id: core.serialization.string(),
+        label: core.serialization.string(),
+        degree: core.serialization.number(),
+        closed: core.serialization.boolean(),
+        entityUrl: core.serialization.property("entity_url", core.serialization.string()),
+        pep: core.serialization.boolean(),
+        psaId: core.serialization.property("psa_id", core.serialization.string().optional()),
+        psaCount: core.serialization.property("psa_count", core.serialization.number()),
+        sanctioned: core.serialization.boolean(),
+        type: Entities,
+        identifiers: core.serialization.list(Identifier),
+        countries: core.serialization.list(Country),
+        sourceCount: core.serialization.property(
+            "source_count",
+            core.serialization.record(core.serialization.string(), SourceCountInfo)
+        ),
+        addresses: core.serialization.list(core.serialization.string()),
+        tradeCount: core.serialization.property(
+            "trade_count",
+            core.serialization.record(core.serialization.string(), core.serialization.number())
+        ),
+        dateOfBirth: core.serialization.property("date_of_birth", core.serialization.string().optional()),
+        relationshipCount: core.serialization.property("relationship_count", RelationshipCount),
+        userRelationshipCount: core.serialization.property("user_relationship_count", RelationshipCount),
+        attributeCount: core.serialization.property(
+            "attribute_count",
+            core.serialization.record(Attributes, core.serialization.number().optional())
+        ),
+        userAttributeCount: core.serialization.property(
+            "user_attribute_count",
+            core.serialization.record(Attributes, core.serialization.number().optional())
+        ),
+        relatedEntitiesCount: core.serialization.property("related_entities_count", core.serialization.number()),
+        userRelatedEntitiesCount: core.serialization.property(
+            "user_related_entities_count",
+            core.serialization.number()
+        ),
+        userRecordCount: core.serialization.property("user_record_count", core.serialization.number()),
+        referenceId: core.serialization.property("reference_id", core.serialization.string().optional()),
+    });
 
 export declare namespace EmbeddedEntity {
     interface Raw {

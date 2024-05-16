@@ -3,19 +3,17 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { CompanyTypeProperties } from "./CompanyTypeProperties";
 import { AttributeData } from "./AttributeData";
 
-export const CompanyTypeData: core.serialization.ObjectSchema<
-    serializers.CompanyTypeData.Raw,
-    SayariAnalyticsApi.CompanyTypeData
-> = core.serialization
-    .object({
-        properties: CompanyTypeProperties,
-    })
-    .extend(AttributeData);
+export const CompanyTypeData: core.serialization.ObjectSchema<serializers.CompanyTypeData.Raw, Sayari.CompanyTypeData> =
+    core.serialization
+        .object({
+            properties: CompanyTypeProperties,
+        })
+        .extend(AttributeData);
 
 export declare namespace CompanyTypeData {
     interface Raw extends AttributeData.Raw {

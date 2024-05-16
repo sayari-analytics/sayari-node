@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ProjectWithMembers } from "./ProjectWithMembers";
 
 export const GetProjectsResponse: core.serialization.ObjectSchema<
     serializers.GetProjectsResponse.Raw,
-    SayariAnalyticsApi.GetProjectsResponse
+    Sayari.GetProjectsResponse
 > = core.serialization.object({
     next: core.serialization.string().optional(),
     prev: core.serialization.string().optional(),

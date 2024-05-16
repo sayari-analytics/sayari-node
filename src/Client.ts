@@ -19,9 +19,9 @@ import { SupplyChain } from "./api/resources/supplyChain/client/Client";
 import { Trade } from "./api/resources/trade/client/Client";
 import { Traversal } from "./api/resources/traversal/client/Client";
 
-export declare namespace SayariAnalyticsApiClient {
+export declare namespace SayariClient {
     interface Options {
-        environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
+        environment?: core.Supplier<environments.SayariEnvironment | string>;
         clientId: core.Supplier<string>;
         clientSecret: core.Supplier<string>;
     }
@@ -32,10 +32,10 @@ export declare namespace SayariAnalyticsApiClient {
     }
 }
 
-export class SayariAnalyticsApiClient {
+export class SayariClient {
     private readonly _oauthTokenProvider: core.OAuthTokenProvider;
 
-    constructor(protected readonly _options: SayariAnalyticsApiClient.Options) {
+    constructor(protected readonly _options: SayariClient.Options) {
         this._oauthTokenProvider = new core.OAuthTokenProvider({
             clientId: this._options.clientId,
             clientSecret: this._options.clientSecret,

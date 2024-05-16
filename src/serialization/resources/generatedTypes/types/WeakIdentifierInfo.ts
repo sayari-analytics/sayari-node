@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { WeakIdentifierData } from "./WeakIdentifierData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
 export const WeakIdentifierInfo: core.serialization.ObjectSchema<
     serializers.WeakIdentifierInfo.Raw,
-    SayariAnalyticsApi.WeakIdentifierInfo
+    Sayari.WeakIdentifierInfo
 > = core.serialization
     .object({
         data: core.serialization.list(WeakIdentifierData),

@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const UsageInfo: core.serialization.ObjectSchema<serializers.UsageInfo.Raw, SayariAnalyticsApi.UsageInfo> =
+export const UsageInfo: core.serialization.ObjectSchema<serializers.UsageInfo.Raw, Sayari.UsageInfo> =
     core.serialization.object({
         entity: core.serialization.number().optional(),
         entitySummary: core.serialization.property("entity_summary", core.serialization.number().optional()),

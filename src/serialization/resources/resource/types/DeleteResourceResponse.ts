@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { EntityResponseData } from "./EntityResponseData";
 
 export const DeleteResourceResponse: core.serialization.ObjectSchema<
     serializers.DeleteResourceResponse.Raw,
-    SayariAnalyticsApi.DeleteResourceResponse
+    Sayari.DeleteResourceResponse
 > = core.serialization.object({
     data: EntityResponseData,
 });

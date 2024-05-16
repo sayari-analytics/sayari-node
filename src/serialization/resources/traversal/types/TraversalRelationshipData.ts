@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { RelationshipInfo } from "../../sharedTypes/types/RelationshipInfo";
 
 export const TraversalRelationshipData: core.serialization.ObjectSchema<
     serializers.TraversalRelationshipData.Raw,
-    SayariAnalyticsApi.TraversalRelationshipData
+    Sayari.TraversalRelationshipData
 > = core.serialization.object({
     values: core.serialization.list(RelationshipInfo),
     former: core.serialization.boolean().optional(),

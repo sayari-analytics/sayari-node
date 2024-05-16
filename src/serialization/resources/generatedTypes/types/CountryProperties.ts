@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { CountryContext } from "./CountryContext";
 import { Country } from "./Country";
 
 export const CountryProperties: core.serialization.ObjectSchema<
     serializers.CountryProperties.Raw,
-    SayariAnalyticsApi.CountryProperties
+    Sayari.CountryProperties
 > = core.serialization.object({
     context: CountryContext.optional(),
     date: core.serialization.string().optional(),

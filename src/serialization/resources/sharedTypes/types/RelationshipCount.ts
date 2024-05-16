@@ -3,14 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Relationships } from "../../generatedTypes/types/Relationships";
 
-export const RelationshipCount: core.serialization.Schema<
-    serializers.RelationshipCount.Raw,
-    SayariAnalyticsApi.RelationshipCount
-> = core.serialization.record(Relationships, core.serialization.number().optional());
+export const RelationshipCount: core.serialization.Schema<serializers.RelationshipCount.Raw, Sayari.RelationshipCount> =
+    core.serialization.record(Relationships, core.serialization.number().optional());
 
 export declare namespace RelationshipCount {
     type Raw = Record<Relationships.Raw, number | null | undefined>;

@@ -1,4 +1,4 @@
-export * as SayariAnalyticsApi from "./api";
-export { SayariAnalyticsApiEnvironment } from "./environments";
-export { SayariAnalyticsApiError, SayariAnalyticsApiTimeoutError } from "./errors";
+export * as Sayari from "./api";
+export { SayariEnvironment } from "./environments";
+export { SayariError, SayariTimeoutError } from "./errors";
 export { SayariClient } from "./wrapper/SayariClient";

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const TranslationContext: core.serialization.Schema<
     serializers.TranslationContext.Raw,
-    SayariAnalyticsApi.TranslationContext
+    Sayari.TranslationContext
 > = core.serialization.enum_(["sayari_machine_translation", "pinyin", "google_translate"]);
 
 export declare namespace TranslationContext {

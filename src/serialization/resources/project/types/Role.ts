@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const Role: core.serialization.Schema<serializers.Role.Raw, SayariAnalyticsApi.Role> = core.serialization.enum_([
+export const Role: core.serialization.Schema<serializers.Role.Raw, Sayari.Role> = core.serialization.enum_([
     "viewer",
     "editor",
     "admin",

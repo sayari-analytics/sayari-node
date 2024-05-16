@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const BusinessPurposeStandard: core.serialization.Schema<
     serializers.BusinessPurposeStandard.Raw,
-    SayariAnalyticsApi.BusinessPurposeStandard
+    Sayari.BusinessPurposeStandard
 > = core.serialization.enum_([
     "CNAE2",
     "ISIC3",

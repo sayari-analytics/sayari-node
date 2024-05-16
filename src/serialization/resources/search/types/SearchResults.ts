@@ -3,20 +3,18 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Coordinates } from "./Coordinates";
 import { EntityMatches } from "../../sharedTypes/types/EntityMatches";
 
-export const SearchResults: core.serialization.ObjectSchema<
-    serializers.SearchResults.Raw,
-    SayariAnalyticsApi.SearchResults
-> = core.serialization
-    .object({
-        coordinates: core.serialization.list(Coordinates),
-        matches: EntityMatches,
-    })
-    .extend(core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails));
+export const SearchResults: core.serialization.ObjectSchema<serializers.SearchResults.Raw, Sayari.SearchResults> =
+    core.serialization
+        .object({
+            coordinates: core.serialization.list(Coordinates),
+            matches: EntityMatches,
+        })
+        .extend(core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails));
 
 export declare namespace SearchResults {
     interface Raw extends serializers.EntityDetails.Raw {

@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { EntityResponseData } from "./EntityResponseData";
 
 export const SaveEntityResponse: core.serialization.ObjectSchema<
     serializers.SaveEntityResponse.Raw,
-    SayariAnalyticsApi.SaveEntityResponse
+    Sayari.SaveEntityResponse
 > = core.serialization.object({
     data: EntityResponseData,
 });

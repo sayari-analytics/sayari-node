@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const ReferencedByDataType: core.serialization.Schema<
     serializers.ReferencedByDataType.Raw,
-    SayariAnalyticsApi.ReferencedByDataType
+    Sayari.ReferencedByDataType
 > = core.serialization.enum_(["about", "mentions"]);
 
 export declare namespace ReferencedByDataType {

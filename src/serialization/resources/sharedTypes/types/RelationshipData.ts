@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { RelationshipInfo } from "./RelationshipInfo";
 import { Relationships } from "../../generatedTypes/types/Relationships";
 
 export const RelationshipData: core.serialization.ObjectSchema<
     serializers.RelationshipData.Raw,
-    SayariAnalyticsApi.RelationshipData
+    Sayari.RelationshipData
 > = core.serialization.object({
     target: core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails),
     types: core.serialization.record(Relationships, core.serialization.list(RelationshipInfo).optional()),

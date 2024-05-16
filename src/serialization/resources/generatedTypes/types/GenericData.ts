@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { GenericProperties } from "./GenericProperties";
 import { AttributeData } from "./AttributeData";
 
-export const GenericData: core.serialization.ObjectSchema<serializers.GenericData.Raw, SayariAnalyticsApi.GenericData> =
+export const GenericData: core.serialization.ObjectSchema<serializers.GenericData.Raw, Sayari.GenericData> =
     core.serialization
         .object({
             properties: GenericProperties,

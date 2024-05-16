@@ -3,18 +3,16 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { HistoryInfo } from "./HistoryInfo";
 
-export const HistoryResponse: core.serialization.ObjectSchema<
-    serializers.HistoryResponse.Raw,
-    SayariAnalyticsApi.HistoryResponse
-> = core.serialization.object({
-    size: core.serialization.number(),
-    nextToken: core.serialization.property("next_token", core.serialization.string()),
-    events: core.serialization.list(HistoryInfo),
-});
+export const HistoryResponse: core.serialization.ObjectSchema<serializers.HistoryResponse.Raw, Sayari.HistoryResponse> =
+    core.serialization.object({
+        size: core.serialization.number(),
+        nextToken: core.serialization.property("next_token", core.serialization.string()),
+        events: core.serialization.list(HistoryInfo),
+    });
 
 export declare namespace HistoryResponse {
     interface Raw {

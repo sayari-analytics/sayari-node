@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const HsCodeInfo: core.serialization.ObjectSchema<serializers.HsCodeInfo.Raw, SayariAnalyticsApi.HsCodeInfo> =
+export const HsCodeInfo: core.serialization.ObjectSchema<serializers.HsCodeInfo.Raw, Sayari.HsCodeInfo> =
     core.serialization.object({
         code: core.serialization.string(),
         description: core.serialization.string(),

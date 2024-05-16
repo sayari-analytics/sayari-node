@@ -3,20 +3,18 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const ShipmentAddress: core.serialization.ObjectSchema<
-    serializers.ShipmentAddress.Raw,
-    SayariAnalyticsApi.ShipmentAddress
-> = core.serialization.object({
-    x: core.serialization.number().optional(),
-    y: core.serialization.number().optional(),
-    city: core.serialization.string().optional(),
-    state: core.serialization.string().optional(),
-    country: core.serialization.string().optional(),
-    value: core.serialization.string().optional(),
-});
+export const ShipmentAddress: core.serialization.ObjectSchema<serializers.ShipmentAddress.Raw, Sayari.ShipmentAddress> =
+    core.serialization.object({
+        x: core.serialization.number().optional(),
+        y: core.serialization.number().optional(),
+        city: core.serialization.string().optional(),
+        state: core.serialization.string().optional(),
+        country: core.serialization.string().optional(),
+        value: core.serialization.string().optional(),
+    });
 
 export declare namespace ShipmentAddress {
     interface Raw {

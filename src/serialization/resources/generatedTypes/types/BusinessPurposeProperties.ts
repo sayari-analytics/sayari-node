@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { BusinessPurposeStandard } from "./BusinessPurposeStandard";
 
 export const BusinessPurposeProperties: core.serialization.ObjectSchema<
     serializers.BusinessPurposeProperties.Raw,
-    SayariAnalyticsApi.BusinessPurposeProperties
+    Sayari.BusinessPurposeProperties
 > = core.serialization.object({
     code: core.serialization.string().optional(),
     date: core.serialization.string().optional(),

@@ -3,17 +3,15 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const AuthResponse: core.serialization.ObjectSchema<
-    serializers.AuthResponse.Raw,
-    SayariAnalyticsApi.AuthResponse
-> = core.serialization.object({
-    accessToken: core.serialization.property("access_token", core.serialization.string()),
-    expiresIn: core.serialization.property("expires_in", core.serialization.number()),
-    tokenType: core.serialization.property("token_type", core.serialization.string()),
-});
+export const AuthResponse: core.serialization.ObjectSchema<serializers.AuthResponse.Raw, Sayari.AuthResponse> =
+    core.serialization.object({
+        accessToken: core.serialization.property("access_token", core.serialization.string()),
+        expiresIn: core.serialization.property("expires_in", core.serialization.number()),
+        tokenType: core.serialization.property("token_type", core.serialization.string()),
+    });
 
 export declare namespace AuthResponse {
     interface Raw {

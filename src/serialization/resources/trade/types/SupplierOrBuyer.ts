@@ -3,18 +3,16 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { SupplierMetadata } from "./SupplierMetadata";
 
-export const SupplierOrBuyer: core.serialization.ObjectSchema<
-    serializers.SupplierOrBuyer.Raw,
-    SayariAnalyticsApi.SupplierOrBuyer
-> = core.serialization
-    .object({
-        metadata: SupplierMetadata,
-    })
-    .extend(core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails));
+export const SupplierOrBuyer: core.serialization.ObjectSchema<serializers.SupplierOrBuyer.Raw, Sayari.SupplierOrBuyer> =
+    core.serialization
+        .object({
+            metadata: SupplierMetadata,
+        })
+        .extend(core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails));
 
 export declare namespace SupplierOrBuyer {
     interface Raw extends serializers.EntityDetails.Raw {

@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Entities } from "../../generatedTypes/types/Entities";
 import { CompanyType } from "./CompanyType";
@@ -24,7 +24,7 @@ import { Relationships } from "../../generatedTypes/types/Relationships";
 import { RiskData } from "./RiskData";
 import { Risk } from "../../generatedTypes/types/Risk";
 
-export const CoreEntity: core.serialization.ObjectSchema<serializers.CoreEntity.Raw, SayariAnalyticsApi.CoreEntity> =
+export const CoreEntity: core.serialization.ObjectSchema<serializers.CoreEntity.Raw, Sayari.CoreEntity> =
     core.serialization
         .object({
             id: core.serialization.string(),

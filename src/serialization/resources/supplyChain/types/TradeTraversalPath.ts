@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { TradeTraversalPathSegments } from "./TradeTraversalPathSegments";
 
 export const TradeTraversalPath: core.serialization.ObjectSchema<
     serializers.TradeTraversalPath.Raw,
-    SayariAnalyticsApi.TradeTraversalPath
+    Sayari.TradeTraversalPath
 > = core.serialization.object({
     start: core.serialization.string(),
     end: core.serialization.string(),

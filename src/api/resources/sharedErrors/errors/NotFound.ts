@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../../../errors/index";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 
-export class NotFound extends errors.SayariAnalyticsApiError {
-    constructor(body: SayariAnalyticsApi.NotFoundResponse) {
+export class NotFound extends errors.SayariError {
+    constructor(body: Sayari.NotFoundResponse) {
         super({
             message: "NotFound",
             statusCode: 404,

@@ -3,26 +3,24 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const CountryContext: core.serialization.Schema<
-    serializers.CountryContext.Raw,
-    SayariAnalyticsApi.CountryContext
-> = core.serialization.enum_([
-    "citizenship",
-    "incorporation",
-    "residence",
-    "nationality",
-    "address",
-    "vessel_flag",
-    "domicile",
-    "shipment_departure",
-    "shipment_arrival",
-    "shipment_transit",
-    "activity_in",
-    "mentioned_in",
-]);
+export const CountryContext: core.serialization.Schema<serializers.CountryContext.Raw, Sayari.CountryContext> =
+    core.serialization.enum_([
+        "citizenship",
+        "incorporation",
+        "residence",
+        "nationality",
+        "address",
+        "vessel_flag",
+        "domicile",
+        "shipment_departure",
+        "shipment_arrival",
+        "shipment_transit",
+        "activity_in",
+        "mentioned_in",
+    ]);
 
 export declare namespace CountryContext {
     type Raw =

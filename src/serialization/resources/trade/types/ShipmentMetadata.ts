@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Country } from "../../generatedTypes/types/Country";
 import { AddressProperties } from "../../generatedTypes/types/AddressProperties";
 
 export const ShipmentMetadata: core.serialization.ObjectSchema<
     serializers.ShipmentMetadata.Raw,
-    SayariAnalyticsApi.ShipmentMetadata
+    Sayari.ShipmentMetadata
 > = core.serialization.object({
     arrivalCountry: core.serialization.property("arrival_country", core.serialization.list(Country)),
     jurisdiction: core.serialization.list(Country),

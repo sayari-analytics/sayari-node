@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { AdditionalInformationProperties } from "../../generatedTypes/types/AdditionalInformationProperties";
 
 export const NotificationAdditionalInformation: core.serialization.ObjectSchema<
     serializers.NotificationAdditionalInformation.Raw,
-    SayariAnalyticsApi.NotificationAdditionalInformation
+    Sayari.NotificationAdditionalInformation
 > = core.serialization.object({
     value: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     properties: core.serialization.list(AdditionalInformationProperties),

@@ -3,19 +3,17 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { DateOfBirthProperties } from "./DateOfBirthProperties";
 import { AttributeData } from "./AttributeData";
 
-export const DateOfBirthData: core.serialization.ObjectSchema<
-    serializers.DateOfBirthData.Raw,
-    SayariAnalyticsApi.DateOfBirthData
-> = core.serialization
-    .object({
-        properties: DateOfBirthProperties,
-    })
-    .extend(AttributeData);
+export const DateOfBirthData: core.serialization.ObjectSchema<serializers.DateOfBirthData.Raw, Sayari.DateOfBirthData> =
+    core.serialization
+        .object({
+            properties: DateOfBirthProperties,
+        })
+        .extend(AttributeData);
 
 export declare namespace DateOfBirthData {
     interface Raw extends AttributeData.Raw {

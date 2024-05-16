@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Project } from "./Project";
 
 export const CreateProjectResponse: core.serialization.ObjectSchema<
     serializers.CreateProjectResponse.Raw,
-    SayariAnalyticsApi.CreateProjectResponse
+    Sayari.CreateProjectResponse
 > = core.serialization.object({
     data: Project,
 });
