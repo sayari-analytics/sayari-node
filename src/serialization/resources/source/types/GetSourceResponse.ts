@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Source } from "./Source";
 
 export const GetSourceResponse: core.serialization.ObjectSchema<
     serializers.GetSourceResponse.Raw,
-    SayariAnalyticsApi.GetSourceResponse
+    Sayari.GetSourceResponse
 > = core.serialization.object({}).extend(Source);
 
 export declare namespace GetSourceResponse {

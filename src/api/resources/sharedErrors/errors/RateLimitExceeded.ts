@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../../../errors/index";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 
-export class RateLimitExceeded extends errors.SayariAnalyticsApiError {
-    constructor(body?: SayariAnalyticsApi.RateLimitResponse) {
+export class RateLimitExceeded extends errors.SayariError {
+    constructor(body?: Sayari.RateLimitResponse) {
         super({
             message: "RateLimitExceeded",
             statusCode: 429,

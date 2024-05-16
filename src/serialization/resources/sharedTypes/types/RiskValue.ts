@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const RiskValue: core.serialization.Schema<serializers.RiskValue.Raw, SayariAnalyticsApi.RiskValue> =
+export const RiskValue: core.serialization.Schema<serializers.RiskValue.Raw, Sayari.RiskValue> =
     core.serialization.undiscriminatedUnion([
         core.serialization.string(),
         core.serialization.number(),

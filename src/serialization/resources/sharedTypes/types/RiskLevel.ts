@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const RiskLevel: core.serialization.Schema<serializers.RiskLevel.Raw, SayariAnalyticsApi.RiskLevel> =
+export const RiskLevel: core.serialization.Schema<serializers.RiskLevel.Raw, Sayari.RiskLevel> =
     core.serialization.enum_(["critical", "high", "elevated", "relevant"]);
 
 export declare namespace RiskLevel {

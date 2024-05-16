@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ShortestPathData } from "./ShortestPathData";
 
 export const ShortestPathResponse: core.serialization.ObjectSchema<
     serializers.ShortestPathResponse.Raw,
-    SayariAnalyticsApi.ShortestPathResponse
+    Sayari.ShortestPathResponse
 > = core.serialization.object({
     entities: core.serialization.list(core.serialization.string()),
     data: core.serialization.list(ShortestPathData),

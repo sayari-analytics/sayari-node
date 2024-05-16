@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { PsaEntity } from "./PsaEntity";
 import { PossiblySameAsMatch } from "./PossiblySameAsMatch";
 
 export const PossiblySameAsData: core.serialization.ObjectSchema<
     serializers.PossiblySameAsData.Raw,
-    SayariAnalyticsApi.PossiblySameAsData
+    Sayari.PossiblySameAsData
 > = core.serialization.object({
     editable: core.serialization.boolean().optional(),
     entity: PsaEntity,

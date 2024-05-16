@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { TranslatedNameData } from "./TranslatedNameData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
 export const TranslatedNameInfo: core.serialization.ObjectSchema<
     serializers.TranslatedNameInfo.Raw,
-    SayariAnalyticsApi.TranslatedNameInfo
+    Sayari.TranslatedNameInfo
 > = core.serialization
     .object({
         data: core.serialization.list(TranslatedNameData),

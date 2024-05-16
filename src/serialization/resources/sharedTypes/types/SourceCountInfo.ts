@@ -3,16 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const SourceCountInfo: core.serialization.ObjectSchema<
-    serializers.SourceCountInfo.Raw,
-    SayariAnalyticsApi.SourceCountInfo
-> = core.serialization.object({
-    count: core.serialization.number(),
-    label: core.serialization.string(),
-});
+export const SourceCountInfo: core.serialization.ObjectSchema<serializers.SourceCountInfo.Raw, Sayari.SourceCountInfo> =
+    core.serialization.object({
+        count: core.serialization.number(),
+        label: core.serialization.string(),
+    });
 
 export declare namespace SourceCountInfo {
     interface Raw {

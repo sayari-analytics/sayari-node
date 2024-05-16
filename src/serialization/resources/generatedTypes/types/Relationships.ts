@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const Relationships: core.serialization.Schema<serializers.Relationships.Raw, SayariAnalyticsApi.Relationships> =
+export const Relationships: core.serialization.Schema<serializers.Relationships.Raw, Sayari.Relationships> =
     core.serialization.enum_([
         "notify_party_of",
         "has_notify_party",

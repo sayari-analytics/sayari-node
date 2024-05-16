@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const ConnectionErrorResponse: core.serialization.Schema<
     serializers.ConnectionErrorResponse.Raw,
-    SayariAnalyticsApi.ConnectionErrorResponse
+    Sayari.ConnectionErrorResponse
 > = core.serialization.unknown();
 
 export declare namespace ConnectionErrorResponse {

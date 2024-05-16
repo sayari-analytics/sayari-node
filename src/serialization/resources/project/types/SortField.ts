@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const SortField: core.serialization.Schema<serializers.SortField.Raw, SayariAnalyticsApi.SortField> =
+export const SortField: core.serialization.Schema<serializers.SortField.Raw, Sayari.SortField> =
     core.serialization.enum_([
         "+created",
         "-created",

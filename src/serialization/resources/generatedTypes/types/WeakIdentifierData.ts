@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { WeakIdentifierProperties } from "./WeakIdentifierProperties";
 import { AttributeData } from "./AttributeData";
 
 export const WeakIdentifierData: core.serialization.ObjectSchema<
     serializers.WeakIdentifierData.Raw,
-    SayariAnalyticsApi.WeakIdentifierData
+    Sayari.WeakIdentifierData
 > = core.serialization
     .object({
         properties: WeakIdentifierProperties,

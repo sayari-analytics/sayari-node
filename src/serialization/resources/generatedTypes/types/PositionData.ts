@@ -3,19 +3,17 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { PositionProperties } from "./PositionProperties";
 import { AttributeData } from "./AttributeData";
 
-export const PositionData: core.serialization.ObjectSchema<
-    serializers.PositionData.Raw,
-    SayariAnalyticsApi.PositionData
-> = core.serialization
-    .object({
-        properties: PositionProperties,
-    })
-    .extend(AttributeData);
+export const PositionData: core.serialization.ObjectSchema<serializers.PositionData.Raw, Sayari.PositionData> =
+    core.serialization
+        .object({
+            properties: PositionProperties,
+        })
+        .extend(AttributeData);
 
 export declare namespace PositionData {
     interface Raw extends AttributeData.Raw {

@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const Coordinate: core.serialization.ObjectSchema<serializers.Coordinate.Raw, SayariAnalyticsApi.Coordinate> =
+export const Coordinate: core.serialization.ObjectSchema<serializers.Coordinate.Raw, Sayari.Coordinate> =
     core.serialization.object({
         lat: core.serialization.number(),
         lng: core.serialization.number(),

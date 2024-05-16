@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { SourceId } from "./SourceId";
 import { Country } from "../../generatedTypes/types/Country";
 import { Entities } from "../../generatedTypes/types/Entities";
 import { Risk } from "../../generatedTypes/types/Risk";
 
-export const FilterList: core.serialization.ObjectSchema<serializers.FilterList.Raw, SayariAnalyticsApi.FilterList> =
+export const FilterList: core.serialization.ObjectSchema<serializers.FilterList.Raw, Sayari.FilterList> =
     core.serialization.object({
         source: core.serialization.list(SourceId).optional(),
         country: core.serialization.list(Country).optional(),

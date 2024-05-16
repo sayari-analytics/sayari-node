@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { BothIdentifierTypes } from "../../generatedTypes/types/BothIdentifierTypes";
 
 export const ShipmentIdentifier: core.serialization.ObjectSchema<
     serializers.ShipmentIdentifier.Raw,
-    SayariAnalyticsApi.ShipmentIdentifier
+    Sayari.ShipmentIdentifier
 > = core.serialization.object({
     value: core.serialization.string(),
     type: BothIdentifierTypes,

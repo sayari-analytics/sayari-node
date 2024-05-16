@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../../../errors/index";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 
-export class Unauthorized extends errors.SayariAnalyticsApiError {
-    constructor(body?: SayariAnalyticsApi.UnauthorizedResponse) {
+export class Unauthorized extends errors.SayariError {
+    constructor(body?: Sayari.UnauthorizedResponse) {
         super({
             message: "Unauthorized",
             statusCode: 401,

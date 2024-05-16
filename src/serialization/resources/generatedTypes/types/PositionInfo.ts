@@ -3,21 +3,19 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { PositionData } from "./PositionData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
-export const PositionInfo: core.serialization.ObjectSchema<
-    serializers.PositionInfo.Raw,
-    SayariAnalyticsApi.PositionInfo
-> = core.serialization
-    .object({
-        data: core.serialization.list(PositionData),
-        next: core.serialization.unknown().optional(),
-        offset: core.serialization.number().optional(),
-    })
-    .extend(PaginatedResponse);
+export const PositionInfo: core.serialization.ObjectSchema<serializers.PositionInfo.Raw, Sayari.PositionInfo> =
+    core.serialization
+        .object({
+            data: core.serialization.list(PositionData),
+            next: core.serialization.unknown().optional(),
+            offset: core.serialization.number().optional(),
+        })
+        .extend(PaginatedResponse);
 
 export declare namespace PositionInfo {
     interface Raw extends PaginatedResponse.Raw {

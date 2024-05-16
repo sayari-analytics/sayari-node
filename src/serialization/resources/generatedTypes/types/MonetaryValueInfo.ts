@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { MonetaryValueData } from "./MonetaryValueData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
 export const MonetaryValueInfo: core.serialization.ObjectSchema<
     serializers.MonetaryValueInfo.Raw,
-    SayariAnalyticsApi.MonetaryValueInfo
+    Sayari.MonetaryValueInfo
 > = core.serialization
     .object({
         data: core.serialization.list(MonetaryValueData),

@@ -3,18 +3,16 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { UsageInfo } from "./UsageInfo";
 
-export const UsageResponse: core.serialization.ObjectSchema<
-    serializers.UsageResponse.Raw,
-    SayariAnalyticsApi.UsageResponse
-> = core.serialization.object({
-    usage: UsageInfo,
-    from: core.serialization.string(),
-    to: core.serialization.string(),
-});
+export const UsageResponse: core.serialization.ObjectSchema<serializers.UsageResponse.Raw, Sayari.UsageResponse> =
+    core.serialization.object({
+        usage: UsageInfo,
+        from: core.serialization.string(),
+        to: core.serialization.string(),
+    });
 
 export declare namespace UsageResponse {
     interface Raw {

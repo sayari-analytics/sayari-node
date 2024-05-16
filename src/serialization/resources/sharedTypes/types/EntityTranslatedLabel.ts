@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const EntityTranslatedLabel: core.serialization.Schema<
     serializers.EntityTranslatedLabel.Raw,
-    SayariAnalyticsApi.EntityTranslatedLabel
+    Sayari.EntityTranslatedLabel
 > = core.serialization.string();
 
 export declare namespace EntityTranslatedLabel {

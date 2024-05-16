@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { IntKeyValue } from "./IntKeyValue";
 
-export const BucketAgg: core.serialization.ObjectSchema<serializers.BucketAgg.Raw, SayariAnalyticsApi.BucketAgg> =
+export const BucketAgg: core.serialization.ObjectSchema<serializers.BucketAgg.Raw, Sayari.BucketAgg> =
     core.serialization.object({
         key: core.serialization.string(),
         docCount: core.serialization.property("doc_count", core.serialization.number()),

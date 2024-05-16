@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { RiskValue } from "./RiskValue";
 import { RiskLevel } from "./RiskLevel";
 
-export const RiskData: core.serialization.ObjectSchema<serializers.RiskData.Raw, SayariAnalyticsApi.RiskData> =
+export const RiskData: core.serialization.ObjectSchema<serializers.RiskData.Raw, Sayari.RiskData> =
     core.serialization.object({
         value: RiskValue,
         metadata: core.serialization.record(core.serialization.string(), core.serialization.unknown()),

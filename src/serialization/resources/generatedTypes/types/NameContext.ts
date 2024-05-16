@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const NameContext: core.serialization.Schema<serializers.NameContext.Raw, SayariAnalyticsApi.NameContext> =
+export const NameContext: core.serialization.Schema<serializers.NameContext.Raw, Sayari.NameContext> =
     core.serialization.enum_(["primary", "given", "family", "alias", "machine_translation", "transliteration"]);
 
 export declare namespace NameContext {

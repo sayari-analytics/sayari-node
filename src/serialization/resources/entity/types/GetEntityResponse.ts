@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const GetEntityResponse: core.serialization.ObjectSchema<
     serializers.GetEntityResponse.Raw,
-    SayariAnalyticsApi.GetEntityResponse
+    Sayari.GetEntityResponse
 > = core.serialization
     .object({})
     .extend(core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails));

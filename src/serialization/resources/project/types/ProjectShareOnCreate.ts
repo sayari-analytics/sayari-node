@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Role } from "./Role";
 
 export const ProjectShareOnCreate: core.serialization.ObjectSchema<
     serializers.ProjectShareOnCreate.Raw,
-    SayariAnalyticsApi.ProjectShareOnCreate
+    Sayari.ProjectShareOnCreate
 > = core.serialization.object({
     org: Role,
 });

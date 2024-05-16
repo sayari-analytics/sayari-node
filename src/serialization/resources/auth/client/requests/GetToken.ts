@@ -3,14 +3,15 @@
  */
 
 import * as serializers from "../../../../index";
-import * as SayariAnalyticsApi from "../../../../../api/index";
+import * as Sayari from "../../../../../api/index";
 import * as core from "../../../../../core";
 
-export const GetToken: core.serialization.Schema<serializers.GetToken.Raw, SayariAnalyticsApi.GetToken> =
-    core.serialization.object({
+export const GetToken: core.serialization.Schema<serializers.GetToken.Raw, Sayari.GetToken> = core.serialization.object(
+    {
         clientId: core.serialization.property("client_id", core.serialization.string()),
         clientSecret: core.serialization.property("client_secret", core.serialization.string()),
-    });
+    }
+);
 
 export declare namespace GetToken {
     interface Raw {

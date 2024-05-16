@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const ContactType: core.serialization.Schema<serializers.ContactType.Raw, SayariAnalyticsApi.ContactType> =
+export const ContactType: core.serialization.Schema<serializers.ContactType.Raw, Sayari.ContactType> =
     core.serialization.enum_(["phone_number", "fax", "email", "url"]);
 
 export declare namespace ContactType {

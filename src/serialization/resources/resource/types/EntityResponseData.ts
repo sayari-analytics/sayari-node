@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ResourceType } from "./ResourceType";
 
 export const EntityResponseData: core.serialization.ObjectSchema<
     serializers.EntityResponseData.Raw,
-    SayariAnalyticsApi.EntityResponseData
+    Sayari.EntityResponseData
 > = core.serialization.object({
     type: ResourceType,
     id: core.serialization.string(),

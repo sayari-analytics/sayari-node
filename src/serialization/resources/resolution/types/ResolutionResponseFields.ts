@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Country } from "../../generatedTypes/types/Country";
 import { Entities } from "../../generatedTypes/types/Entities";
 
 export const ResolutionResponseFields: core.serialization.ObjectSchema<
     serializers.ResolutionResponseFields.Raw,
-    SayariAnalyticsApi.ResolutionResponseFields
+    Sayari.ResolutionResponseFields
 > = core.serialization.object({
     name: core.serialization.list(core.serialization.string()).optional(),
     identifier: core.serialization.list(core.serialization.string()).optional(),

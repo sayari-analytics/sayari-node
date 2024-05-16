@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { StatusProperties } from "./StatusProperties";
 import { AttributeData } from "./AttributeData";
 
-export const StatusData: core.serialization.ObjectSchema<serializers.StatusData.Raw, SayariAnalyticsApi.StatusData> =
+export const StatusData: core.serialization.ObjectSchema<serializers.StatusData.Raw, Sayari.StatusData> =
     core.serialization
         .object({
             properties: StatusProperties,

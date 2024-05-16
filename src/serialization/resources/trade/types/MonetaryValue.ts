@@ -3,18 +3,16 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Currency } from "../../generatedTypes/types/Currency";
 
-export const MonetaryValue: core.serialization.ObjectSchema<
-    serializers.MonetaryValue.Raw,
-    SayariAnalyticsApi.MonetaryValue
-> = core.serialization.object({
-    value: core.serialization.number(),
-    currency: Currency.optional(),
-    context: core.serialization.string().optional(),
-});
+export const MonetaryValue: core.serialization.ObjectSchema<serializers.MonetaryValue.Raw, Sayari.MonetaryValue> =
+    core.serialization.object({
+        value: core.serialization.number(),
+        currency: Currency.optional(),
+        context: core.serialization.string().optional(),
+    });
 
 export declare namespace MonetaryValue {
     interface Raw {

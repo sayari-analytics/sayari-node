@@ -3,18 +3,16 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const ProjectCounts: core.serialization.ObjectSchema<
-    serializers.ProjectCounts.Raw,
-    SayariAnalyticsApi.ProjectCounts
-> = core.serialization.object({
-    entity: core.serialization.number().optional(),
-    graph: core.serialization.number().optional(),
-    search: core.serialization.number().optional(),
-    record: core.serialization.number().optional(),
-});
+export const ProjectCounts: core.serialization.ObjectSchema<serializers.ProjectCounts.Raw, Sayari.ProjectCounts> =
+    core.serialization.object({
+        entity: core.serialization.number().optional(),
+        graph: core.serialization.number().optional(),
+        search: core.serialization.number().optional(),
+        record: core.serialization.number().optional(),
+    });
 
 export declare namespace ProjectCounts {
     interface Raw {

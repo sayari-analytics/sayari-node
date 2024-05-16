@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { SupplierOrBuyer } from "./SupplierOrBuyer";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
 export const SupplierSearchResponse: core.serialization.ObjectSchema<
     serializers.SupplierSearchResponse.Raw,
-    SayariAnalyticsApi.SupplierSearchResponse
+    Sayari.SupplierSearchResponse
 > = core.serialization
     .object({
         offset: core.serialization.number(),

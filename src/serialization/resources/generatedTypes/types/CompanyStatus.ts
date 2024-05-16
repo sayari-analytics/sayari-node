@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const CompanyStatus: core.serialization.Schema<serializers.CompanyStatus.Raw, SayariAnalyticsApi.CompanyStatus> =
+export const CompanyStatus: core.serialization.Schema<serializers.CompanyStatus.Raw, Sayari.CompanyStatus> =
     core.serialization.enum_([
         "seized",
         "in_receivership",

@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
 export const RecordReferences: core.serialization.ObjectSchema<
     serializers.RecordReferences.Raw,
-    SayariAnalyticsApi.RecordReferences
+    Sayari.RecordReferences
 > = core.serialization
     .object({
         next: core.serialization.boolean(),

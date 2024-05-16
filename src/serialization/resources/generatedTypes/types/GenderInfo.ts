@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { GenderData } from "./GenderData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
-export const GenderInfo: core.serialization.ObjectSchema<serializers.GenderInfo.Raw, SayariAnalyticsApi.GenderInfo> =
+export const GenderInfo: core.serialization.ObjectSchema<serializers.GenderInfo.Raw, Sayari.GenderInfo> =
     core.serialization
         .object({
             data: core.serialization.list(GenderData),

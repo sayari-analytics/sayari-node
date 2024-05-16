@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { MeasurementType } from "./MeasurementType";
 import { Unit } from "./Unit";
 
 export const MeasurementProperties: core.serialization.ObjectSchema<
     serializers.MeasurementProperties.Raw,
-    SayariAnalyticsApi.MeasurementProperties
+    Sayari.MeasurementProperties
 > = core.serialization.object({
     date: core.serialization.string().optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),

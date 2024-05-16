@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ProjectShareOnCreate } from "./ProjectShareOnCreate";
 
 export const CreateProjectRequest: core.serialization.ObjectSchema<
     serializers.CreateProjectRequest.Raw,
-    SayariAnalyticsApi.CreateProjectRequest
+    Sayari.CreateProjectRequest
 > = core.serialization.object({
     label: core.serialization.string(),
     share: ProjectShareOnCreate.optional(),

@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Notifications {
     interface Options {
-        environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
+        environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -28,28 +28,28 @@ export class Notifications {
      * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
      *
      * @param {string} id - Unique identifier of the project
-     * @param {SayariAnalyticsApi.ProjectNotifications} request
+     * @param {Sayari.ProjectNotifications} request
      * @param {Notifications.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
-     * @throws {@link SayariAnalyticsApi.BadGateway}
-     * @throws {@link SayariAnalyticsApi.ConnectionError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
+     * @throws {@link Sayari.BadGateway}
+     * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayariAnalyticsApi.notifications.projectNotifications("0oZnoG", {
+     *     await sayari.notifications.projectNotifications("0oZnoG", {
      *         limit: 20
      *     })
      */
     public async projectNotifications(
         id: string,
-        request: SayariAnalyticsApi.ProjectNotifications = {},
+        request: Sayari.ProjectNotifications = {},
         requestOptions?: Notifications.RequestOptions
-    ): Promise<SayariAnalyticsApi.ProjectNotificationsResponse> {
+    ): Promise<Sayari.ProjectNotificationsResponse> {
         const { limit, offset } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
@@ -62,8 +62,7 @@ export class Notifications {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 `/v1/notifications/projects/${encodeURIComponent(id)}`
             ),
             method: "GET",
@@ -71,7 +70,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -92,7 +91,7 @@ export class Notifications {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -101,7 +100,7 @@ export class Notifications {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -110,7 +109,7 @@ export class Notifications {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -119,7 +118,7 @@ export class Notifications {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -128,7 +127,7 @@ export class Notifications {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -137,7 +136,7 @@ export class Notifications {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -146,7 +145,7 @@ export class Notifications {
                         })
                     );
                 case 502:
-                    throw new SayariAnalyticsApi.BadGateway(
+                    throw new Sayari.BadGateway(
                         await serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -155,7 +154,7 @@ export class Notifications {
                         })
                     );
                 case 520:
-                    throw new SayariAnalyticsApi.ConnectionError(
+                    throw new Sayari.ConnectionError(
                         await serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -164,7 +163,7 @@ export class Notifications {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -173,14 +172,14 @@ export class Notifications {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -190,28 +189,28 @@ export class Notifications {
      * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> The Resource Notifications endpoint returns a list of notifications for a saved entity.
      *
      * @param {string} id - Unique identifier of the resource
-     * @param {SayariAnalyticsApi.ResourceNotifications} request
+     * @param {Sayari.ResourceNotifications} request
      * @param {Notifications.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
-     * @throws {@link SayariAnalyticsApi.BadGateway}
-     * @throws {@link SayariAnalyticsApi.ConnectionError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
+     * @throws {@link Sayari.BadGateway}
+     * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayariAnalyticsApi.notifications.resourceNotifications("03ePyj", {
+     *     await sayari.notifications.resourceNotifications("03ePyj", {
      *         limit: 20
      *     })
      */
     public async resourceNotifications(
         id: string,
-        request: SayariAnalyticsApi.ResourceNotifications = {},
+        request: Sayari.ResourceNotifications = {},
         requestOptions?: Notifications.RequestOptions
-    ): Promise<SayariAnalyticsApi.ResourceNotificationsResponse> {
+    ): Promise<Sayari.ResourceNotificationsResponse> {
         const { limit, offset } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
@@ -224,8 +223,7 @@ export class Notifications {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 `/v1/notifications/resources/${encodeURIComponent(id)}`
             ),
             method: "GET",
@@ -233,7 +231,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -254,7 +252,7 @@ export class Notifications {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -263,7 +261,7 @@ export class Notifications {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -272,7 +270,7 @@ export class Notifications {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -281,7 +279,7 @@ export class Notifications {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -290,7 +288,7 @@ export class Notifications {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -299,7 +297,7 @@ export class Notifications {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -308,7 +306,7 @@ export class Notifications {
                         })
                     );
                 case 502:
-                    throw new SayariAnalyticsApi.BadGateway(
+                    throw new Sayari.BadGateway(
                         await serializers.BadGatewayResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -317,7 +315,7 @@ export class Notifications {
                         })
                     );
                 case 520:
-                    throw new SayariAnalyticsApi.ConnectionError(
+                    throw new Sayari.ConnectionError(
                         await serializers.ConnectionErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -326,7 +324,7 @@ export class Notifications {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -335,14 +333,14 @@ export class Notifications {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -354,15 +352,15 @@ export class Notifications {
      * @param {string} projectId
      * @param {Notifications.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.notifications.deleteProjectNotifications("YWmNKV")
+     *     await sayari.notifications.deleteProjectNotifications("YWmNKV")
      */
     public async deleteProjectNotifications(
         projectId: string,
@@ -370,8 +368,7 @@ export class Notifications {
     ): Promise<void> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 `/v1/notifications/projects/${encodeURIComponent(projectId)}`
             ),
             method: "DELETE",
@@ -379,7 +376,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -394,7 +391,7 @@ export class Notifications {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -403,7 +400,7 @@ export class Notifications {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -412,7 +409,7 @@ export class Notifications {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -421,7 +418,7 @@ export class Notifications {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -430,7 +427,7 @@ export class Notifications {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -439,7 +436,7 @@ export class Notifications {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -448,7 +445,7 @@ export class Notifications {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -457,14 +454,14 @@ export class Notifications {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -476,15 +473,15 @@ export class Notifications {
      * @param {string} entityId
      * @param {Notifications.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.notifications.deleteEntityNotifications("N0xLDy4wcud-M1ZtwdsvRA")
+     *     await sayari.notifications.deleteEntityNotifications("N0xLDy4wcud-M1ZtwdsvRA")
      */
     public async deleteEntityNotifications(
         entityId: string,
@@ -492,8 +489,7 @@ export class Notifications {
     ): Promise<void> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 `/v1/notifications/entity/${encodeURIComponent(entityId)}`
             ),
             method: "DELETE",
@@ -501,7 +497,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -516,7 +512,7 @@ export class Notifications {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -525,7 +521,7 @@ export class Notifications {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -534,7 +530,7 @@ export class Notifications {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -543,7 +539,7 @@ export class Notifications {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -552,7 +548,7 @@ export class Notifications {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -561,7 +557,7 @@ export class Notifications {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -570,7 +566,7 @@ export class Notifications {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -579,14 +575,14 @@ export class Notifications {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -598,15 +594,15 @@ export class Notifications {
      * @param {string} resourceId
      * @param {Notifications.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.notifications.deleteResourceNotifications("oGxxqG")
+     *     await sayari.notifications.deleteResourceNotifications("oGxxqG")
      */
     public async deleteResourceNotifications(
         resourceId: string,
@@ -614,8 +610,7 @@ export class Notifications {
     ): Promise<void> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 `/v1/notifications/resources/${encodeURIComponent(resourceId)}`
             ),
             method: "DELETE",
@@ -623,7 +618,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -638,7 +633,7 @@ export class Notifications {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -647,7 +642,7 @@ export class Notifications {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -656,7 +651,7 @@ export class Notifications {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -665,7 +660,7 @@ export class Notifications {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -674,7 +669,7 @@ export class Notifications {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -683,7 +678,7 @@ export class Notifications {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -692,7 +687,7 @@ export class Notifications {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -701,14 +696,14 @@ export class Notifications {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }

@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ProjectCounts } from "./ProjectCounts";
 
-export const Project: core.serialization.ObjectSchema<serializers.Project.Raw, SayariAnalyticsApi.Project> =
+export const Project: core.serialization.ObjectSchema<serializers.Project.Raw, Sayari.Project> =
     core.serialization.object({
         id: core.serialization.string(),
         label: core.serialization.string(),

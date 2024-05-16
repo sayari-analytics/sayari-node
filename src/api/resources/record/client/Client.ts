@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Record_ {
     interface Options {
-        environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
+        environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -28,24 +28,24 @@ export class Record_ {
      * Retrieve a record from the database based on the ID
      *
      * @param {string} id - The unique identifier for a record in the database
-     * @param {SayariAnalyticsApi.GetRecord} request
+     * @param {Sayari.GetRecord} request
      * @param {Record_.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F1682970471254")
+     *     await sayari.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F1682970471254")
      */
     public async getRecord(
         id: string,
-        request: SayariAnalyticsApi.GetRecord = {},
+        request: Sayari.GetRecord = {},
         requestOptions?: Record_.RequestOptions
-    ): Promise<SayariAnalyticsApi.GetRecordResponse> {
+    ): Promise<Sayari.GetRecordResponse> {
         const { referencesLimit, referencesOffset } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (referencesLimit != null) {
@@ -58,8 +58,7 @@ export class Record_ {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 `/v1/record/${encodeURIComponent(id)}`
             ),
             method: "GET",
@@ -67,7 +66,7 @@ export class Record_ {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -88,7 +87,7 @@ export class Record_ {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -97,7 +96,7 @@ export class Record_ {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -106,7 +105,7 @@ export class Record_ {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -115,7 +114,7 @@ export class Record_ {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -124,7 +123,7 @@ export class Record_ {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -133,7 +132,7 @@ export class Record_ {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -142,7 +141,7 @@ export class Record_ {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -151,14 +150,14 @@ export class Record_ {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }

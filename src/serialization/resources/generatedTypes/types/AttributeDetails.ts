@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { AdditionalInformationInfo } from "./AdditionalInformationInfo";
 import { AddressInfo } from "./AddressInfo";
@@ -30,7 +30,7 @@ import { WeakIdentifierInfo } from "./WeakIdentifierInfo";
 
 export const AttributeDetails: core.serialization.ObjectSchema<
     serializers.AttributeDetails.Raw,
-    SayariAnalyticsApi.AttributeDetails
+    Sayari.AttributeDetails
 > = core.serialization.object({
     additionalInformation: core.serialization.property("additional_information", AdditionalInformationInfo.optional()),
     address: AddressInfo.optional(),

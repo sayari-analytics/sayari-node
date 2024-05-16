@@ -3,18 +3,16 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const UpdateAttribute: core.serialization.ObjectSchema<
-    serializers.UpdateAttribute.Raw,
-    SayariAnalyticsApi.UpdateAttribute
-> = core.serialization.object({
-    value: core.serialization.unknown(),
-    date: core.serialization.string().optional(),
-    fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
-    toDate: core.serialization.property("to_date", core.serialization.string().optional()),
-});
+export const UpdateAttribute: core.serialization.ObjectSchema<serializers.UpdateAttribute.Raw, Sayari.UpdateAttribute> =
+    core.serialization.object({
+        value: core.serialization.unknown(),
+        date: core.serialization.string().optional(),
+        fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
+        toDate: core.serialization.property("to_date", core.serialization.string().optional()),
+    });
 
 export declare namespace UpdateAttribute {
     interface Raw {

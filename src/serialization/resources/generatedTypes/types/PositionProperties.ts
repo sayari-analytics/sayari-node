@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const PositionProperties: core.serialization.ObjectSchema<
     serializers.PositionProperties.Raw,
-    SayariAnalyticsApi.PositionProperties
+    Sayari.PositionProperties
 > = core.serialization.object({
     date: core.serialization.string().optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),

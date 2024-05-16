@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../../../errors/index";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 
-export class BadGateway extends errors.SayariAnalyticsApiError {
-    constructor(body?: SayariAnalyticsApi.BadGatewayResponse) {
+export class BadGateway extends errors.SayariError {
+    constructor(body?: Sayari.BadGatewayResponse) {
         super({
             message: "BadGateway",
             statusCode: 502,

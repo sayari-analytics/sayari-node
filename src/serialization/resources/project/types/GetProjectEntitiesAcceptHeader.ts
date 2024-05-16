@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const GetProjectEntitiesAcceptHeader: core.serialization.Schema<
     serializers.GetProjectEntitiesAcceptHeader.Raw,
-    SayariAnalyticsApi.GetProjectEntitiesAcceptHeader
+    Sayari.GetProjectEntitiesAcceptHeader
 > = core.serialization.enum_(["application/json", "text/csv", "application/vnd.ms-excel"]);
 
 export declare namespace GetProjectEntitiesAcceptHeader {

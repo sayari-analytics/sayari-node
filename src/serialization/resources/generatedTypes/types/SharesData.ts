@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { SharesProperties } from "./SharesProperties";
 import { AttributeData } from "./AttributeData";
 
-export const SharesData: core.serialization.ObjectSchema<serializers.SharesData.Raw, SayariAnalyticsApi.SharesData> =
+export const SharesData: core.serialization.ObjectSchema<serializers.SharesData.Raw, Sayari.SharesData> =
     core.serialization
         .object({
             properties: SharesProperties,

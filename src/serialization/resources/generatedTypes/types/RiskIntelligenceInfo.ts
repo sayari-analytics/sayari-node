@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { RiskIntelligenceData } from "./RiskIntelligenceData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
 export const RiskIntelligenceInfo: core.serialization.ObjectSchema<
     serializers.RiskIntelligenceInfo.Raw,
-    SayariAnalyticsApi.RiskIntelligenceInfo
+    Sayari.RiskIntelligenceInfo
 > = core.serialization
     .object({
         data: core.serialization.list(RiskIntelligenceData),

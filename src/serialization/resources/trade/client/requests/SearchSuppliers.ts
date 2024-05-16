@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../../index";
-import * as SayariAnalyticsApi from "../../../../../api/index";
+import * as Sayari from "../../../../../api/index";
 import * as core from "../../../../../core";
 import { TradeFilterList } from "../../types/TradeFilterList";
 
 export const SearchSuppliers: core.serialization.Schema<
     serializers.SearchSuppliers.Raw,
-    Omit<SayariAnalyticsApi.SearchSuppliers, "limit" | "offset">
+    Omit<Sayari.SearchSuppliers, "limit" | "offset">
 > = core.serialization.object({
     q: core.serialization.string(),
     filter: TradeFilterList.optional(),

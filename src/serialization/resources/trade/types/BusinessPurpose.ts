@@ -3,16 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const BusinessPurpose: core.serialization.ObjectSchema<
-    serializers.BusinessPurpose.Raw,
-    SayariAnalyticsApi.BusinessPurpose
-> = core.serialization.object({
-    value: core.serialization.string().optional(),
-    code: core.serialization.string().optional(),
-});
+export const BusinessPurpose: core.serialization.ObjectSchema<serializers.BusinessPurpose.Raw, Sayari.BusinessPurpose> =
+    core.serialization.object({
+        value: core.serialization.string().optional(),
+        code: core.serialization.string().optional(),
+    });
 
 export declare namespace BusinessPurpose {
     interface Raw {

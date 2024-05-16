@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { RecordReferences } from "./RecordReferences";
 import { RecordDetails } from "../../sharedTypes/types/RecordDetails";
 
 export const GetRecordResponse: core.serialization.ObjectSchema<
     serializers.GetRecordResponse.Raw,
-    SayariAnalyticsApi.GetRecordResponse
+    Sayari.GetRecordResponse
 > = core.serialization
     .object({
         references: RecordReferences,

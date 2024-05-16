@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const MatchExplanation: core.serialization.ObjectSchema<
     serializers.MatchExplanation.Raw,
-    SayariAnalyticsApi.MatchExplanation
+    Sayari.MatchExplanation
 > = core.serialization.object({
     matched: core.serialization.string().optional(),
     uploaded: core.serialization.string().optional(),

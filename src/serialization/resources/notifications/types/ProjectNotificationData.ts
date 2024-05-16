@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Notification } from "./Notification";
 
 export const ProjectNotificationData: core.serialization.ObjectSchema<
     serializers.ProjectNotificationData.Raw,
-    SayariAnalyticsApi.ProjectNotificationData
+    Sayari.ProjectNotificationData
 > = core.serialization.object({
     id: core.serialization.string(),
     resourceId: core.serialization.property("resource_id", core.serialization.string()),

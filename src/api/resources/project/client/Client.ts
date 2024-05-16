@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 import * as serializers from "../../../../serialization/index";
 import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Project {
     interface Options {
-        environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
+        environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -27,29 +27,28 @@ export class Project {
     /**
      * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Create a new project.
      *
-     * @param {SayariAnalyticsApi.CreateProjectRequest} request
+     * @param {Sayari.CreateProjectRequest} request
      * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.project.createProject({
+     *     await sayari.project.createProject({
      *         label: "Project Alpha"
      *     })
      */
     public async createProject(
-        request: SayariAnalyticsApi.CreateProjectRequest,
+        request: Sayari.CreateProjectRequest,
         requestOptions?: Project.RequestOptions
-    ): Promise<SayariAnalyticsApi.CreateProjectResponse> {
+    ): Promise<Sayari.CreateProjectResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 "/v1/projects"
             ),
             method: "POST",
@@ -57,7 +56,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -78,7 +77,7 @@ export class Project {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -87,7 +86,7 @@ export class Project {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -96,7 +95,7 @@ export class Project {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -105,7 +104,7 @@ export class Project {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -114,7 +113,7 @@ export class Project {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -123,7 +122,7 @@ export class Project {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -132,7 +131,7 @@ export class Project {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -141,14 +140,14 @@ export class Project {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -157,32 +156,32 @@ export class Project {
     /**
      * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Retrieve a list of projects including upload progress info.
      *
-     * @param {SayariAnalyticsApi.GetProjects} request
+     * @param {Sayari.GetProjects} request
      * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.project.getProjects({
+     *     await sayari.project.getProjects({
      *         archived: false,
      *         limit: 8
      *     })
      *
      * @example
-     *     await sayariAnalyticsApi.project.getProjects({
+     *     await sayari.project.getProjects({
      *         archived: true,
      *         limit: 5
      *     })
      */
     public async getProjects(
-        request: SayariAnalyticsApi.GetProjects = {},
+        request: Sayari.GetProjects = {},
         requestOptions?: Project.RequestOptions
-    ): Promise<SayariAnalyticsApi.GetProjectsResponse> {
+    ): Promise<Sayari.GetProjectsResponse> {
         const { next, prev, limit, archived } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (next != null) {
@@ -203,8 +202,7 @@ export class Project {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 "/v1/projects"
             ),
             method: "GET",
@@ -212,7 +210,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -233,7 +231,7 @@ export class Project {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -242,7 +240,7 @@ export class Project {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -251,7 +249,7 @@ export class Project {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -260,7 +258,7 @@ export class Project {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -269,7 +267,7 @@ export class Project {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -278,7 +276,7 @@ export class Project {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -287,7 +285,7 @@ export class Project {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -296,14 +294,14 @@ export class Project {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -313,26 +311,26 @@ export class Project {
      * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Retrieve a list of entities in a project.
      *
      * @param {string} id - The project identifier.
-     * @param {SayariAnalyticsApi.GetProjectEntities} request
+     * @param {Sayari.GetProjectEntities} request
      * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.NotAcceptable}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.NotAcceptable}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.project.getProjectEntities("gPq6EY", {
-     *         accept: SayariAnalyticsApi.GetProjectEntitiesAcceptHeader.Json
+     *     await sayari.project.getProjectEntities("gPq6EY", {
+     *         accept: Sayari.GetProjectEntitiesAcceptHeader.Json
      *     })
      */
     public async getProjectEntities(
         id: string,
-        request: SayariAnalyticsApi.GetProjectEntities,
+        request: Sayari.GetProjectEntities,
         requestOptions?: Project.RequestOptions
-    ): Promise<SayariAnalyticsApi.GetProjectEntitiesResponse> {
+    ): Promise<Sayari.GetProjectEntitiesResponse> {
         const {
             next,
             prev,
@@ -423,8 +421,7 @@ export class Project {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 `/v1/projects/${encodeURIComponent(id)}/contents/entity`
             ),
             method: "GET",
@@ -432,7 +429,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 Accept: accept,
@@ -454,7 +451,7 @@ export class Project {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -463,7 +460,7 @@ export class Project {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -472,7 +469,7 @@ export class Project {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -481,7 +478,7 @@ export class Project {
                         })
                     );
                 case 406:
-                    throw new SayariAnalyticsApi.NotAcceptable(
+                    throw new Sayari.NotAcceptable(
                         await serializers.NotAcceptableResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -490,7 +487,7 @@ export class Project {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -499,7 +496,7 @@ export class Project {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -508,7 +505,7 @@ export class Project {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -517,14 +514,14 @@ export class Project {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -536,24 +533,23 @@ export class Project {
      * @param {string} projectId
      * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.project.deleteProject("Gam5qG")
+     *     await sayari.project.deleteProject("Gam5qG")
      */
     public async deleteProject(
         projectId: string,
         requestOptions?: Project.RequestOptions
-    ): Promise<SayariAnalyticsApi.DeleteProjectResponse> {
+    ): Promise<Sayari.DeleteProjectResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 `/v1/projects/${encodeURIComponent(projectId)}`
             ),
             method: "DELETE",
@@ -561,7 +557,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -581,7 +577,7 @@ export class Project {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -590,7 +586,7 @@ export class Project {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -599,7 +595,7 @@ export class Project {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -608,7 +604,7 @@ export class Project {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -617,7 +613,7 @@ export class Project {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -626,7 +622,7 @@ export class Project {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -635,7 +631,7 @@ export class Project {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -644,14 +640,14 @@ export class Project {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }

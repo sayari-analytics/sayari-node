@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const Risk: core.serialization.Schema<serializers.Risk.Raw, SayariAnalyticsApi.Risk> = core.serialization.enum_([
+export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> = core.serialization.enum_([
     "sheffield_hallam_university_forced_labor_entity",
     "forced_labor_xinjiang_origin_direct",
     "regulatory_action",

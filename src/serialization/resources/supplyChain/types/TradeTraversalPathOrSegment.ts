@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { TradeTraversalPath } from "./TradeTraversalPath";
 import { TradeTraversalPathSegment } from "./TradeTraversalPathSegment";
 
 export const TradeTraversalPathOrSegment: core.serialization.Schema<
     serializers.TradeTraversalPathOrSegment.Raw,
-    SayariAnalyticsApi.TradeTraversalPathOrSegment
+    Sayari.TradeTraversalPathOrSegment
 > = core.serialization.undiscriminatedUnion([
     core.serialization.list(TradeTraversalPath),
     core.serialization.list(core.serialization.list(TradeTraversalPathSegment)),

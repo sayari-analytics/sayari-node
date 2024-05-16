@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const NotAcceptableResponse: core.serialization.ObjectSchema<
     serializers.NotAcceptableResponse.Raw,
-    SayariAnalyticsApi.NotAcceptableResponse
+    Sayari.NotAcceptableResponse
 > = core.serialization.object({
     status: core.serialization.number(),
     message: core.serialization.list(core.serialization.string()),

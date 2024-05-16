@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const AddressType: core.serialization.Schema<serializers.AddressType.Raw, SayariAnalyticsApi.AddressType> =
+export const AddressType: core.serialization.Schema<serializers.AddressType.Raw, Sayari.AddressType> =
     core.serialization.enum_(["arrival", "departure", "mailing", "physical", "registered", "business"]);
 
 export declare namespace AddressType {

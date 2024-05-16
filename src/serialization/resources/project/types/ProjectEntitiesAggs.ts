@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { BucketAgg } from "./BucketAgg";
 import { HsCodeAgg } from "./HsCodeAgg";
 
 export const ProjectEntitiesAggs: core.serialization.ObjectSchema<
     serializers.ProjectEntitiesAggs.Raw,
-    SayariAnalyticsApi.ProjectEntitiesAggs
+    Sayari.ProjectEntitiesAggs
 > = core.serialization.object({
     hitCount: core.serialization.property("hit_count", core.serialization.list(BucketAgg).optional()),
     country: core.serialization.list(BucketAgg).optional(),

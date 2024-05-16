@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const EntityId: core.serialization.Schema<serializers.EntityId.Raw, SayariAnalyticsApi.EntityId> =
+export const EntityId: core.serialization.Schema<serializers.EntityId.Raw, Sayari.EntityId> =
     core.serialization.string();
 
 export declare namespace EntityId {

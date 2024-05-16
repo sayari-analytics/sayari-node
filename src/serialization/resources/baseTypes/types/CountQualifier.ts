@@ -3,13 +3,11 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const CountQualifier: core.serialization.Schema<
-    serializers.CountQualifier.Raw,
-    SayariAnalyticsApi.CountQualifier
-> = core.serialization.enum_(["eq", "gte"]);
+export const CountQualifier: core.serialization.Schema<serializers.CountQualifier.Raw, Sayari.CountQualifier> =
+    core.serialization.enum_(["eq", "gte"]);
 
 export declare namespace CountQualifier {
     type Raw = "eq" | "gte";

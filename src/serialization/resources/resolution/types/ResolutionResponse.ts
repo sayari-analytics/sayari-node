@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ResolutionResponseFields } from "./ResolutionResponseFields";
 import { ResolutionResult } from "./ResolutionResult";
 
 export const ResolutionResponse: core.serialization.ObjectSchema<
     serializers.ResolutionResponse.Raw,
-    SayariAnalyticsApi.ResolutionResponse
+    Sayari.ResolutionResponse
 > = core.serialization.object({
     fields: ResolutionResponseFields,
     data: core.serialization.list(ResolutionResult),

@@ -3,23 +3,21 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Language } from "./Language";
 
-export const NameProperties: core.serialization.ObjectSchema<
-    serializers.NameProperties.Raw,
-    SayariAnalyticsApi.NameProperties
-> = core.serialization.object({
-    context: core.serialization.string().optional(),
-    date: core.serialization.string().optional(),
-    fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
-    language: Language.optional(),
-    toDate: core.serialization.property("to_date", core.serialization.string().optional()),
-    translated: core.serialization.string().optional(),
-    transliterated: core.serialization.string().optional(),
-    value: core.serialization.string(),
-});
+export const NameProperties: core.serialization.ObjectSchema<serializers.NameProperties.Raw, Sayari.NameProperties> =
+    core.serialization.object({
+        context: core.serialization.string().optional(),
+        date: core.serialization.string().optional(),
+        fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
+        language: Language.optional(),
+        toDate: core.serialization.property("to_date", core.serialization.string().optional()),
+        translated: core.serialization.string().optional(),
+        transliterated: core.serialization.string().optional(),
+        value: core.serialization.string(),
+    });
 
 export declare namespace NameProperties {
     interface Raw {

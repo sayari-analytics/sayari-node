@@ -3,26 +3,24 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { NotificationType } from "./NotificationType";
 import { Risk } from "../../generatedTypes/types/Risk";
 import { RiskValue } from "../../sharedTypes/types/RiskValue";
 import { NotificationAdditionalInformation } from "./NotificationAdditionalInformation";
 
-export const Notification: core.serialization.ObjectSchema<
-    serializers.Notification.Raw,
-    SayariAnalyticsApi.Notification
-> = core.serialization.object({
-    type: NotificationType,
-    field: Risk,
-    values: core.serialization.list(RiskValue),
-    date: core.serialization.string(),
-    additionalInformation: core.serialization.property(
-        "additional_information",
-        NotificationAdditionalInformation.optional()
-    ),
-});
+export const Notification: core.serialization.ObjectSchema<serializers.Notification.Raw, Sayari.Notification> =
+    core.serialization.object({
+        type: NotificationType,
+        field: Risk,
+        values: core.serialization.list(RiskValue),
+        date: core.serialization.string(),
+        additionalInformation: core.serialization.property(
+            "additional_information",
+            NotificationAdditionalInformation.optional()
+        ),
+    });
 
 export declare namespace Notification {
     interface Raw {

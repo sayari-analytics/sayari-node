@@ -3,33 +3,31 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Country } from "../../generatedTypes/types/Country";
 
-export const RecordDetails: core.serialization.ObjectSchema<
-    serializers.RecordDetails.Raw,
-    SayariAnalyticsApi.RecordDetails
-> = core.serialization.object({
-    id: core.serialization.string(),
-    label: core.serialization.string(),
-    source: core.serialization.string(),
-    publicationDate: core.serialization.property("publication_date", core.serialization.string().optional()),
-    acquisitionDate: core.serialization.property("acquisition_date", core.serialization.string()),
-    referencesCount: core.serialization.property("references_count", core.serialization.number()),
-    recordUrl: core.serialization.property("record_url", core.serialization.string()),
-    sourceUrl: core.serialization.property("source_url", core.serialization.string().optional()),
-    documentUrls: core.serialization.property(
-        "document_urls",
-        core.serialization.list(core.serialization.string()).optional()
-    ),
-    matches: core.serialization
-        .record(core.serialization.string(), core.serialization.list(core.serialization.string()))
-        .optional(),
-    country: Country.optional(),
-    page: core.serialization.number().optional(),
-    pageCount: core.serialization.property("page_count", core.serialization.number().optional()),
-});
+export const RecordDetails: core.serialization.ObjectSchema<serializers.RecordDetails.Raw, Sayari.RecordDetails> =
+    core.serialization.object({
+        id: core.serialization.string(),
+        label: core.serialization.string(),
+        source: core.serialization.string(),
+        publicationDate: core.serialization.property("publication_date", core.serialization.string().optional()),
+        acquisitionDate: core.serialization.property("acquisition_date", core.serialization.string()),
+        referencesCount: core.serialization.property("references_count", core.serialization.number()),
+        recordUrl: core.serialization.property("record_url", core.serialization.string()),
+        sourceUrl: core.serialization.property("source_url", core.serialization.string().optional()),
+        documentUrls: core.serialization.property(
+            "document_urls",
+            core.serialization.list(core.serialization.string()).optional()
+        ),
+        matches: core.serialization
+            .record(core.serialization.string(), core.serialization.list(core.serialization.string()))
+            .optional(),
+        country: Country.optional(),
+        page: core.serialization.number().optional(),
+        pageCount: core.serialization.property("page_count", core.serialization.number().optional()),
+    });
 
 export declare namespace RecordDetails {
     interface Raw {

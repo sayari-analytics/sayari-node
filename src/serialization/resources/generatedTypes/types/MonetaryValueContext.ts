@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const MonetaryValueContext: core.serialization.Schema<
     serializers.MonetaryValueContext.Raw,
-    SayariAnalyticsApi.MonetaryValueContext
+    Sayari.MonetaryValueContext
 > = core.serialization.enum_(["cost_insurance_and_freight", "free_on_board"]);
 
 export declare namespace MonetaryValueContext {

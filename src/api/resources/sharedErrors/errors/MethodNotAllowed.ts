@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../../../errors/index";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 
-export class MethodNotAllowed extends errors.SayariAnalyticsApiError {
-    constructor(body: SayariAnalyticsApi.MethodNotAllowedResponse) {
+export class MethodNotAllowed extends errors.SayariError {
+    constructor(body: Sayari.MethodNotAllowedResponse) {
         super({
             message: "MethodNotAllowed",
             statusCode: 405,

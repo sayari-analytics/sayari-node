@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { NotificationType } from "./NotificationType";
 import { Risk } from "../../generatedTypes/types/Risk";
@@ -11,7 +11,7 @@ import { RiskValue } from "../../sharedTypes/types/RiskValue";
 
 export const ResourceNotificationData: core.serialization.ObjectSchema<
     serializers.ResourceNotificationData.Raw,
-    SayariAnalyticsApi.ResourceNotificationData
+    Sayari.ResourceNotificationData
 > = core.serialization.object({
     savedResourceId: core.serialization.property("saved_resource_id", core.serialization.string()),
     projectId: core.serialization.property("project_id", core.serialization.string()),

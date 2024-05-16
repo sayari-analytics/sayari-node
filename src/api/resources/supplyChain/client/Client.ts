@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
 export declare namespace SupplyChain {
     interface Options {
-        environment?: core.Supplier<environments.SayariAnalyticsApiEnvironment | string>;
+        environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -28,30 +28,30 @@ export class SupplyChain {
      * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
      *
      * @param {string} id - The root entity identifier.
-     * @param {SayariAnalyticsApi.UpstreamTradeTraversalRequest} request
+     * @param {Sayari.UpstreamTradeTraversalRequest} request
      * @param {SupplyChain.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link SayariAnalyticsApi.BadRequest}
-     * @throws {@link SayariAnalyticsApi.Unauthorized}
-     * @throws {@link SayariAnalyticsApi.NotFound}
-     * @throws {@link SayariAnalyticsApi.MethodNotAllowed}
-     * @throws {@link SayariAnalyticsApi.RateLimitExceeded}
-     * @throws {@link SayariAnalyticsApi.InternalServerError}
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayariAnalyticsApi.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
+     *     await sayari.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
      *         date: "2023-06-01",
      *         hsCode: ["3206"],
      *         components: ["3204"],
      *         maxDepth: 2,
-     *         risks: [SayariAnalyticsApi.Risk.ForcedLaborUflpaOriginSubtier]
+     *         risks: [Sayari.Risk.ForcedLaborUflpaOriginSubtier]
      *     })
      */
     public async upstreamTradeTraversal(
         id: string,
-        request: SayariAnalyticsApi.UpstreamTradeTraversalRequest = {},
+        request: Sayari.UpstreamTradeTraversalRequest = {},
         requestOptions?: SupplyChain.RequestOptions
-    ): Promise<SayariAnalyticsApi.UpstreamTradeTraversalResponse> {
+    ): Promise<Sayari.UpstreamTradeTraversalResponse> {
         const {
             countries,
             notCountries,
@@ -107,8 +107,7 @@ export class SupplyChain {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariAnalyticsApiEnvironment.Production,
+                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
                 `/v1/upstream/${encodeURIComponent(id)}`
             ),
             method: "GET",
@@ -116,7 +115,7 @@ export class SupplyChain {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "sayari",
-                "X-Fern-SDK-Version": "0.0.205",
+                "X-Fern-SDK-Version": "0.0.210",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -137,7 +136,7 @@ export class SupplyChain {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new SayariAnalyticsApi.BadRequest(
+                    throw new Sayari.BadRequest(
                         await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -146,7 +145,7 @@ export class SupplyChain {
                         })
                     );
                 case 401:
-                    throw new SayariAnalyticsApi.Unauthorized(
+                    throw new Sayari.Unauthorized(
                         await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -155,7 +154,7 @@ export class SupplyChain {
                         })
                     );
                 case 404:
-                    throw new SayariAnalyticsApi.NotFound(
+                    throw new Sayari.NotFound(
                         await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -164,7 +163,7 @@ export class SupplyChain {
                         })
                     );
                 case 405:
-                    throw new SayariAnalyticsApi.MethodNotAllowed(
+                    throw new Sayari.MethodNotAllowed(
                         await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -173,7 +172,7 @@ export class SupplyChain {
                         })
                     );
                 case 429:
-                    throw new SayariAnalyticsApi.RateLimitExceeded(
+                    throw new Sayari.RateLimitExceeded(
                         await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -182,7 +181,7 @@ export class SupplyChain {
                         })
                     );
                 case 500:
-                    throw new SayariAnalyticsApi.InternalServerError(
+                    throw new Sayari.InternalServerError(
                         await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -191,7 +190,7 @@ export class SupplyChain {
                         })
                     );
                 default:
-                    throw new errors.SayariAnalyticsApiError({
+                    throw new errors.SayariError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -200,14 +199,14 @@ export class SupplyChain {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariAnalyticsApiTimeoutError();
+                throw new errors.SayariTimeoutError();
             case "unknown":
-                throw new errors.SayariAnalyticsApiError({
+                throw new errors.SayariError({
                     message: _response.error.errorMessage,
                 });
         }

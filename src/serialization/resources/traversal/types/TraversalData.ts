@@ -3,18 +3,16 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { TraversalPath } from "./TraversalPath";
 
-export const TraversalData: core.serialization.ObjectSchema<
-    serializers.TraversalData.Raw,
-    SayariAnalyticsApi.TraversalData
-> = core.serialization.object({
-    source: core.serialization.string(),
-    target: core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails),
-    path: core.serialization.list(TraversalPath),
-});
+export const TraversalData: core.serialization.ObjectSchema<serializers.TraversalData.Raw, Sayari.TraversalData> =
+    core.serialization.object({
+        source: core.serialization.string(),
+        target: core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails),
+        path: core.serialization.list(TraversalPath),
+    });
 
 export declare namespace TraversalData {
     interface Raw {

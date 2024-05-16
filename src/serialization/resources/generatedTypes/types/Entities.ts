@@ -3,24 +3,23 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const Entities: core.serialization.Schema<serializers.Entities.Raw, SayariAnalyticsApi.Entities> =
-    core.serialization.enum_([
-        "property",
-        "vessel",
-        "legal_matter",
-        "shipment",
-        "security",
-        "company",
-        "person",
-        "unknown",
-        "tradename",
-        "aircraft",
-        "intellectual_property",
-        "generic",
-    ]);
+export const Entities: core.serialization.Schema<serializers.Entities.Raw, Sayari.Entities> = core.serialization.enum_([
+    "property",
+    "vessel",
+    "legal_matter",
+    "shipment",
+    "security",
+    "company",
+    "person",
+    "unknown",
+    "tradename",
+    "aircraft",
+    "intellectual_property",
+    "generic",
+]);
 
 export declare namespace Entities {
     type Raw =

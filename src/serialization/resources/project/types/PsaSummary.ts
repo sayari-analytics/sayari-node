@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Risk } from "../../generatedTypes/types/Risk";
 import { Country } from "../../generatedTypes/types/Country";
 
-export const PsaSummary: core.serialization.ObjectSchema<serializers.PsaSummary.Raw, SayariAnalyticsApi.PsaSummary> =
+export const PsaSummary: core.serialization.ObjectSchema<serializers.PsaSummary.Raw, Sayari.PsaSummary> =
     core.serialization.object({
         risk: core.serialization.list(Risk),
         countries: core.serialization.list(Country),

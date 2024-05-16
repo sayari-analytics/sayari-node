@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { EntityRegistrationDate } from "./EntityRegistrationDate";
 import { EntityTranslatedLabel } from "./EntityTranslatedLabel";
@@ -20,27 +20,25 @@ import { EmbeddedEntity } from "./EmbeddedEntity";
 import { RiskData } from "./RiskData";
 import { Risk } from "../../generatedTypes/types/Risk";
 
-export const EntityDetails: core.serialization.ObjectSchema<
-    serializers.EntityDetails.Raw,
-    SayariAnalyticsApi.EntityDetails
-> = core.serialization
-    .object({
-        registrationDate: core.serialization.property("registration_date", EntityRegistrationDate.optional()),
-        translatedLabel: core.serialization.property("translated_label", EntityTranslatedLabel.optional()),
-        hsCode: core.serialization.property("hs_code", EntityHsCode.optional()),
-        shipmentArrival: core.serialization.property("shipment_arrival", ShipmentArrival.optional()),
-        shipmentDeparture: core.serialization.property("shipment_departure", ShipmentDeparture.optional()),
-        companyType: core.serialization.property("company_type", CompanyType.optional()),
-        latestStatus: core.serialization.property("latest_status", Status.optional()),
-        risk: EntityRisk,
-        attributes: AttributeDetails.optional(),
-        relationships: core.serialization
-            .lazyObject(async () => (await import("../../..")).EntityRelationships)
-            .optional(),
-        possiblySameAs: core.serialization.property("possibly_same_as", PossiblySameAs.optional()),
-        referencedBy: core.serialization.property("referenced_by", ReferencedBy.optional()),
-    })
-    .extend(EmbeddedEntity);
+export const EntityDetails: core.serialization.ObjectSchema<serializers.EntityDetails.Raw, Sayari.EntityDetails> =
+    core.serialization
+        .object({
+            registrationDate: core.serialization.property("registration_date", EntityRegistrationDate.optional()),
+            translatedLabel: core.serialization.property("translated_label", EntityTranslatedLabel.optional()),
+            hsCode: core.serialization.property("hs_code", EntityHsCode.optional()),
+            shipmentArrival: core.serialization.property("shipment_arrival", ShipmentArrival.optional()),
+            shipmentDeparture: core.serialization.property("shipment_departure", ShipmentDeparture.optional()),
+            companyType: core.serialization.property("company_type", CompanyType.optional()),
+            latestStatus: core.serialization.property("latest_status", Status.optional()),
+            risk: EntityRisk,
+            attributes: AttributeDetails.optional(),
+            relationships: core.serialization
+                .lazyObject(async () => (await import("../../..")).EntityRelationships)
+                .optional(),
+            possiblySameAs: core.serialization.property("possibly_same_as", PossiblySameAs.optional()),
+            referencedBy: core.serialization.property("referenced_by", ReferencedBy.optional()),
+        })
+        .extend(EmbeddedEntity);
 
 export declare namespace EntityDetails {
     interface Raw extends EmbeddedEntity.Raw {

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const TradeTraversalProduct: core.serialization.ObjectSchema<
     serializers.TradeTraversalProduct.Raw,
-    SayariAnalyticsApi.TradeTraversalProduct
+    Sayari.TradeTraversalProduct
 > = core.serialization.object({
     hsCode: core.serialization.string(),
     minDate: core.serialization.string(),

@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ProjectEntity } from "./ProjectEntity";
 import { ProjectEntitiesAggs } from "./ProjectEntitiesAggs";
@@ -11,7 +11,7 @@ import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
 export const GetProjectEntitiesResponse: core.serialization.ObjectSchema<
     serializers.GetProjectEntitiesResponse.Raw,
-    SayariAnalyticsApi.GetProjectEntitiesResponse
+    Sayari.GetProjectEntitiesResponse
 > = core.serialization
     .object({
         next: core.serialization.string().optional(),

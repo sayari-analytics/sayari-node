@@ -3,18 +3,16 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { IntKeyValue } from "./IntKeyValue";
 
-export const HsCodeAggBucket: core.serialization.ObjectSchema<
-    serializers.HsCodeAggBucket.Raw,
-    SayariAnalyticsApi.HsCodeAggBucket
-> = core.serialization.object({
-    key: core.serialization.string(),
-    docCount: core.serialization.property("doc_count", core.serialization.number()),
-    hsCodeSums: core.serialization.property("hs_code_sums", IntKeyValue.optional()),
-});
+export const HsCodeAggBucket: core.serialization.ObjectSchema<serializers.HsCodeAggBucket.Raw, Sayari.HsCodeAggBucket> =
+    core.serialization.object({
+        key: core.serialization.string(),
+        docCount: core.serialization.property("doc_count", core.serialization.number()),
+        hsCodeSums: core.serialization.property("hs_code_sums", IntKeyValue.optional()),
+    });
 
 export declare namespace HsCodeAggBucket {
     interface Raw {

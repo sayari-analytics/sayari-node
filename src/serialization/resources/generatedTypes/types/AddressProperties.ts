@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Language } from "./Language";
 
 export const AddressProperties: core.serialization.ObjectSchema<
     serializers.AddressProperties.Raw,
-    SayariAnalyticsApi.AddressProperties
+    Sayari.AddressProperties
 > = core.serialization.object({
     building: core.serialization.string().optional(),
     category: core.serialization.string().optional(),

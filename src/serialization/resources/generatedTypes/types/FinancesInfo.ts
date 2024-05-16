@@ -3,21 +3,19 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { FinancesData } from "./FinancesData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
-export const FinancesInfo: core.serialization.ObjectSchema<
-    serializers.FinancesInfo.Raw,
-    SayariAnalyticsApi.FinancesInfo
-> = core.serialization
-    .object({
-        data: core.serialization.list(FinancesData),
-        next: core.serialization.unknown().optional(),
-        offset: core.serialization.number().optional(),
-    })
-    .extend(PaginatedResponse);
+export const FinancesInfo: core.serialization.ObjectSchema<serializers.FinancesInfo.Raw, Sayari.FinancesInfo> =
+    core.serialization
+        .object({
+            data: core.serialization.list(FinancesData),
+            next: core.serialization.unknown().optional(),
+            offset: core.serialization.number().optional(),
+        })
+        .extend(PaginatedResponse);
 
 export declare namespace FinancesInfo {
     interface Raw extends PaginatedResponse.Raw {

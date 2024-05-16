@@ -3,42 +3,40 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { TradeCount } from "./TradeCount";
 import { ProjectEntityUpstream } from "./ProjectEntityUpstream";
 import { CoreEntity } from "../../sharedTypes/types/CoreEntity";
 import { PsaSummary } from "./PsaSummary";
 
-export const ProjectEntity: core.serialization.ObjectSchema<
-    serializers.ProjectEntity.Raw,
-    SayariAnalyticsApi.ProjectEntity
-> = core.serialization.object({
-    id: core.serialization.string(),
-    project: core.serialization.string(),
-    label: core.serialization.string(),
-    created: core.serialization.string(),
-    updated: core.serialization.string(),
-    updatedBy: core.serialization.property("updated_by", core.serialization.string()),
-    version: core.serialization.number(),
-    type: core.serialization.stringLiteral("entity"),
-    entityId: core.serialization.property("entity_id", core.serialization.string()),
-    tagIds: core.serialization.property("tag_ids", core.serialization.list(core.serialization.string())),
-    caseStatus: core.serialization.property("case_status", core.serialization.string()),
-    matchStrength: core.serialization.property("match_strength", core.serialization.unknown()),
-    shippedHsCodes: core.serialization.property(
-        "shipped_hs_codes",
-        core.serialization.list(core.serialization.string())
-    ),
-    receivedHsCodes: core.serialization.property(
-        "received_hs_codes",
-        core.serialization.list(core.serialization.string())
-    ),
-    tradeCountInclMg: core.serialization.property("trade_count_incl_mg", TradeCount),
-    upstream: ProjectEntityUpstream,
-    summary: CoreEntity,
-    psa: PsaSummary.optional(),
-});
+export const ProjectEntity: core.serialization.ObjectSchema<serializers.ProjectEntity.Raw, Sayari.ProjectEntity> =
+    core.serialization.object({
+        id: core.serialization.string(),
+        project: core.serialization.string(),
+        label: core.serialization.string(),
+        created: core.serialization.string(),
+        updated: core.serialization.string(),
+        updatedBy: core.serialization.property("updated_by", core.serialization.string()),
+        version: core.serialization.number(),
+        type: core.serialization.stringLiteral("entity"),
+        entityId: core.serialization.property("entity_id", core.serialization.string()),
+        tagIds: core.serialization.property("tag_ids", core.serialization.list(core.serialization.string())),
+        caseStatus: core.serialization.property("case_status", core.serialization.string()),
+        matchStrength: core.serialization.property("match_strength", core.serialization.unknown()),
+        shippedHsCodes: core.serialization.property(
+            "shipped_hs_codes",
+            core.serialization.list(core.serialization.string())
+        ),
+        receivedHsCodes: core.serialization.property(
+            "received_hs_codes",
+            core.serialization.list(core.serialization.string())
+        ),
+        tradeCountInclMg: core.serialization.property("trade_count_incl_mg", TradeCount),
+        upstream: ProjectEntityUpstream,
+        summary: CoreEntity,
+        psa: PsaSummary.optional(),
+    });
 
 export declare namespace ProjectEntity {
     interface Raw {

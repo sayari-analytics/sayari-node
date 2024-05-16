@@ -3,19 +3,17 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { FinancesProperties } from "./FinancesProperties";
 import { AttributeData } from "./AttributeData";
 
-export const FinancesData: core.serialization.ObjectSchema<
-    serializers.FinancesData.Raw,
-    SayariAnalyticsApi.FinancesData
-> = core.serialization
-    .object({
-        properties: FinancesProperties,
-    })
-    .extend(AttributeData);
+export const FinancesData: core.serialization.ObjectSchema<serializers.FinancesData.Raw, Sayari.FinancesData> =
+    core.serialization
+        .object({
+            properties: FinancesProperties,
+        })
+        .extend(AttributeData);
 
 export declare namespace FinancesData {
     interface Raw extends AttributeData.Raw {

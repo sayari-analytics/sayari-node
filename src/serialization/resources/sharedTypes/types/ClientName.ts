@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const ClientName: core.serialization.Schema<serializers.ClientName.Raw, SayariAnalyticsApi.ClientName> =
+export const ClientName: core.serialization.Schema<serializers.ClientName.Raw, Sayari.ClientName> =
     core.serialization.enum_(["sayari-go", "sayari-python", "sayari-java", "sayari-node"]);
 
 export declare namespace ClientName {

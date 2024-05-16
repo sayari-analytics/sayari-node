@@ -3,16 +3,17 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Attributes } from "../../generatedTypes/types/Attributes";
 
-export const EntitySummary: core.serialization.ObjectSchema<
-    serializers.EntitySummary.Raw,
-    SayariAnalyticsApi.EntitySummary
-> = core.serialization.object({
-    attributes: core.serialization.record(Attributes, core.serialization.list(core.serialization.unknown()).optional()),
-});
+export const EntitySummary: core.serialization.ObjectSchema<serializers.EntitySummary.Raw, Sayari.EntitySummary> =
+    core.serialization.object({
+        attributes: core.serialization.record(
+            Attributes,
+            core.serialization.list(core.serialization.unknown()).optional()
+        ),
+    });
 
 export declare namespace EntitySummary {
     interface Raw {

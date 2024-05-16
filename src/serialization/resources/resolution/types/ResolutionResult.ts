@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Entities } from "../../generatedTypes/types/Entities";
 import { Identifier } from "../../sharedTypes/types/Identifier";
@@ -13,7 +13,7 @@ import { MatchStrength } from "./MatchStrength";
 
 export const ResolutionResult: core.serialization.ObjectSchema<
     serializers.ResolutionResult.Raw,
-    SayariAnalyticsApi.ResolutionResult
+    Sayari.ResolutionResult
 > = core.serialization.object({
     profile: core.serialization.string(),
     score: core.serialization.number(),

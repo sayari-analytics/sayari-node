@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const ProjectEntitiesAggsDefinition: core.serialization.Schema<
     serializers.ProjectEntitiesAggsDefinition.Raw,
-    SayariAnalyticsApi.ProjectEntitiesAggsDefinition
+    Sayari.ProjectEntitiesAggsDefinition
 > = core.serialization.string();
 
 export declare namespace ProjectEntitiesAggsDefinition {

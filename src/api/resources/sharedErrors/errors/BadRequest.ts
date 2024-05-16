@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../../../errors/index";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 
-export class BadRequest extends errors.SayariAnalyticsApiError {
-    constructor(body?: SayariAnalyticsApi.BadRequestResponse) {
+export class BadRequest extends errors.SayariError {
+    constructor(body?: Sayari.BadRequestResponse) {
         super({
             message: "BadRequest",
             statusCode: 400,

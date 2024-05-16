@@ -3,17 +3,16 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { NameProperties } from "./NameProperties";
 import { AttributeData } from "./AttributeData";
 
-export const NameData: core.serialization.ObjectSchema<serializers.NameData.Raw, SayariAnalyticsApi.NameData> =
-    core.serialization
-        .object({
-            properties: NameProperties,
-        })
-        .extend(AttributeData);
+export const NameData: core.serialization.ObjectSchema<serializers.NameData.Raw, Sayari.NameData> = core.serialization
+    .object({
+        properties: NameProperties,
+    })
+    .extend(AttributeData);
 
 export declare namespace NameData {
     interface Raw extends AttributeData.Raw {

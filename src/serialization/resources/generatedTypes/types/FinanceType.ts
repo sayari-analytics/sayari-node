@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const FinanceType: core.serialization.Schema<serializers.FinanceType.Raw, SayariAnalyticsApi.FinanceType> =
+export const FinanceType: core.serialization.Schema<serializers.FinanceType.Raw, Sayari.FinanceType> =
     core.serialization.enum_([
         "share_percentage",
         "share_amount",

@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { AttributeProperties } from "./AttributeProperties";
 
 export const AttributeResponseData: core.serialization.ObjectSchema<
     serializers.AttributeResponseData.Raw,
-    SayariAnalyticsApi.AttributeResponseData
+    Sayari.AttributeResponseData
 > = core.serialization.object({
     value: core.serialization.unknown(),
     properties: core.serialization.list(AttributeProperties),

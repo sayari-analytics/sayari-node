@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../../../errors/index";
-import * as SayariAnalyticsApi from "../../../index";
+import * as Sayari from "../../../index";
 
-export class NotAcceptable extends errors.SayariAnalyticsApiError {
-    constructor(body: SayariAnalyticsApi.NotAcceptableResponse) {
+export class NotAcceptable extends errors.SayariError {
+    constructor(body: Sayari.NotAcceptableResponse) {
         super({
             message: "NotAcceptable",
             statusCode: 406,

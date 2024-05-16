@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { PersonStatusProperties } from "./PersonStatusProperties";
 import { AttributeData } from "./AttributeData";
 
 export const PersonStatusData: core.serialization.ObjectSchema<
     serializers.PersonStatusData.Raw,
-    SayariAnalyticsApi.PersonStatusData
+    Sayari.PersonStatusData
 > = core.serialization
     .object({
         properties: PersonStatusProperties,

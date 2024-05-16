@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { StatusContext } from "./StatusContext";
 import { CompanyStatus } from "./CompanyStatus";
 
 export const StatusProperties: core.serialization.ObjectSchema<
     serializers.StatusProperties.Raw,
-    SayariAnalyticsApi.StatusProperties
+    Sayari.StatusProperties
 > = core.serialization.object({
     context: StatusContext.optional(),
     date: core.serialization.string().optional(),

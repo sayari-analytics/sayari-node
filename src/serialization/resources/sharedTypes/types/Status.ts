@@ -3,14 +3,15 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const Status: core.serialization.ObjectSchema<serializers.Status.Raw, SayariAnalyticsApi.Status> =
-    core.serialization.object({
+export const Status: core.serialization.ObjectSchema<serializers.Status.Raw, Sayari.Status> = core.serialization.object(
+    {
         status: core.serialization.string(),
         date: core.serialization.string().optional(),
-    });
+    }
+);
 
 export declare namespace Status {
     interface Raw {

@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { EntityRisk } from "./EntityRisk";
 import { EntityRegistrationDate } from "./EntityRegistrationDate";
@@ -13,7 +13,7 @@ import { EmbeddedEntity } from "./EmbeddedEntity";
 import { RiskData } from "./RiskData";
 import { Risk } from "../../generatedTypes/types/Risk";
 
-export const PsaEntity: core.serialization.ObjectSchema<serializers.PsaEntity.Raw, SayariAnalyticsApi.PsaEntity> =
+export const PsaEntity: core.serialization.ObjectSchema<serializers.PsaEntity.Raw, Sayari.PsaEntity> =
     core.serialization
         .object({
             risk: EntityRisk,

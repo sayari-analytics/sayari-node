@@ -3,16 +3,17 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const HsCode: core.serialization.ObjectSchema<serializers.HsCode.Raw, SayariAnalyticsApi.HsCode> =
-    core.serialization.object({
+export const HsCode: core.serialization.ObjectSchema<serializers.HsCode.Raw, Sayari.HsCode> = core.serialization.object(
+    {
         key: core.serialization.string(),
         docCount: core.serialization.property("doc_count", core.serialization.number()),
         value: core.serialization.string(),
         valueSimple: core.serialization.property("value_simple", core.serialization.string().optional()),
-    });
+    }
+);
 
 export declare namespace HsCode {
     interface Raw {

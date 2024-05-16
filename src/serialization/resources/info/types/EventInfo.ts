@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const EventInfo: core.serialization.Schema<serializers.EventInfo.Raw, SayariAnalyticsApi.EventInfo> =
+export const EventInfo: core.serialization.Schema<serializers.EventInfo.Raw, Sayari.EventInfo> =
     core.serialization.record(core.serialization.string(), core.serialization.unknown());
 
 export declare namespace EventInfo {

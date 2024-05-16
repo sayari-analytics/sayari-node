@@ -3,21 +3,19 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { DateOfBirthData } from "./DateOfBirthData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
-export const DateOfBirthInfo: core.serialization.ObjectSchema<
-    serializers.DateOfBirthInfo.Raw,
-    SayariAnalyticsApi.DateOfBirthInfo
-> = core.serialization
-    .object({
-        data: core.serialization.list(DateOfBirthData),
-        next: core.serialization.unknown().optional(),
-        offset: core.serialization.number().optional(),
-    })
-    .extend(PaginatedResponse);
+export const DateOfBirthInfo: core.serialization.ObjectSchema<serializers.DateOfBirthInfo.Raw, Sayari.DateOfBirthInfo> =
+    core.serialization
+        .object({
+            data: core.serialization.list(DateOfBirthData),
+            next: core.serialization.unknown().optional(),
+            offset: core.serialization.number().optional(),
+        })
+        .extend(PaginatedResponse);
 
 export declare namespace DateOfBirthInfo {
     interface Raw extends PaginatedResponse.Raw {

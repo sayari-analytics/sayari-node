@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const Unit: core.serialization.Schema<serializers.Unit.Raw, SayariAnalyticsApi.Unit> = core.serialization.enum_([
+export const Unit: core.serialization.Schema<serializers.Unit.Raw, Sayari.Unit> = core.serialization.enum_([
     "metre",
     "kilogram",
     "unit",

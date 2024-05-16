@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Tag } from "./Tag";
 
 export const RiskIntelligenceProperties: core.serialization.ObjectSchema<
     serializers.RiskIntelligenceProperties.Raw,
-    SayariAnalyticsApi.RiskIntelligenceProperties
+    Sayari.RiskIntelligenceProperties
 > = core.serialization.object({
     authority: core.serialization.string().optional(),
     date: core.serialization.string().optional(),

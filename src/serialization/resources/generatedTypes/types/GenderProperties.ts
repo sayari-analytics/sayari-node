@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Gender } from "./Gender";
 
 export const GenderProperties: core.serialization.ObjectSchema<
     serializers.GenderProperties.Raw,
-    SayariAnalyticsApi.GenderProperties
+    Sayari.GenderProperties
 > = core.serialization.object({
     date: core.serialization.string().optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),

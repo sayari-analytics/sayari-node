@@ -3,21 +3,19 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ReferencedByData } from "./ReferencedByData";
 import { PaginatedResponse } from "../../baseTypes/types/PaginatedResponse";
 
-export const ReferencedBy: core.serialization.ObjectSchema<
-    serializers.ReferencedBy.Raw,
-    SayariAnalyticsApi.ReferencedBy
-> = core.serialization
-    .object({
-        offset: core.serialization.number().optional(),
-        next: core.serialization.unknown().optional(),
-        data: core.serialization.list(ReferencedByData),
-    })
-    .extend(PaginatedResponse);
+export const ReferencedBy: core.serialization.ObjectSchema<serializers.ReferencedBy.Raw, Sayari.ReferencedBy> =
+    core.serialization
+        .object({
+            offset: core.serialization.number().optional(),
+            next: core.serialization.unknown().optional(),
+            data: core.serialization.list(ReferencedByData),
+        })
+        .extend(PaginatedResponse);
 
 export declare namespace ReferencedBy {
     interface Raw extends PaginatedResponse.Raw {

@@ -3,13 +3,11 @@
  */
 
 import * as serializers from "../../../index";
-import * as SayariAnalyticsApi from "../../../../api/index";
+import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const NotificationType: core.serialization.Schema<
-    serializers.NotificationType.Raw,
-    SayariAnalyticsApi.NotificationType
-> = core.serialization.enum_(["risk"]);
+export const NotificationType: core.serialization.Schema<serializers.NotificationType.Raw, Sayari.NotificationType> =
+    core.serialization.enum_(["risk"]);
 
 export declare namespace NotificationType {
     type Raw = "risk";
