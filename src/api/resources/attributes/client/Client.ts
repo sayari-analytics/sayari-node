@@ -25,7 +25,7 @@ export class Attributes {
     constructor(protected readonly _options: Attributes.Options = {}) {}
 
     /**
-     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Adds a new Attribute
+     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Adds a new Attribute
      *
      * @param {Sayari.AddAttribute} request
      * @param {Attributes.RequestOptions} requestOptions - Request-specific configuration.
@@ -68,7 +68,7 @@ export class Attributes {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.222",
+                "X-Fern-SDK-Version": "0.0.228",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -175,7 +175,7 @@ export class Attributes {
     }
 
     /**
-     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Updates an existing Attribute
+     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Updates an existing Attribute
      *
      * @param {string} attributeId
      * @param {Sayari.UpdateAttribute} request
@@ -219,7 +219,7 @@ export class Attributes {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.222",
+                "X-Fern-SDK-Version": "0.0.228",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -335,7 +335,7 @@ export class Attributes {
     }
 
     /**
-     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Delete an existing Attribute
+     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Delete an existing Attribute
      *
      * @param {string} attributeId
      * @param {Attributes.RequestOptions} requestOptions - Request-specific configuration.
@@ -366,7 +366,7 @@ export class Attributes {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.222",
+                "X-Fern-SDK-Version": "0.0.228",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

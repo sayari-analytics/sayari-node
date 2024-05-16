@@ -16,7 +16,7 @@
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Adds a new Attribute
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Adds a new Attribute
 
 </dd>
 
@@ -112,7 +112,7 @@ await sayari.attributes.postAttribute({
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Updates an existing Attribute
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Updates an existing Attribute
 
 </dd>
 
@@ -219,7 +219,7 @@ await sayari.attributes.patchAttribute(
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Delete an existing Attribute
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Delete an existing Attribute
 
 </dd>
 
@@ -763,7 +763,7 @@ await sayari.info.getHistory({
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
 
 </dd>
 
@@ -858,7 +858,7 @@ await sayari.notifications.projectNotifications("0oZnoG", {
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> The Resource Notifications endpoint returns a list of notifications for a saved entity.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The Resource Notifications endpoint returns a list of notifications for a saved entity.
 
 </dd>
 
@@ -1204,7 +1204,7 @@ await sayari.notifications.deleteResourceNotifications("oGxxqG");
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Create a new project.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Create a new project.
 
 </dd>
 
@@ -1289,7 +1289,7 @@ await sayari.project.createProject({
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Retrieve a list of projects including upload progress info.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Retrieve a list of projects including upload progress info.
 
 </dd>
 
@@ -1375,7 +1375,7 @@ await sayari.project.getProjects({
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Retrieve a list of entities in a project.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Retrieve a list of entities in a project.
 
 </dd>
 
@@ -1823,7 +1823,7 @@ await sayari.resolution.resolutionPost({
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Save an entity to a project.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Save an entity to a project.
 
 </dd>
 
@@ -2521,7 +2521,7 @@ await sayari.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
 
 </dd>
 
@@ -2622,7 +2622,7 @@ await sayari.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
 
 </dd>
 
@@ -2708,7 +2708,7 @@ await sayari.trade.searchShipments({
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
 
 </dd>
 
@@ -2794,7 +2794,7 @@ await sayari.trade.searchSuppliers({
 
 <dd>
 
-<Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
 
 </dd>
 

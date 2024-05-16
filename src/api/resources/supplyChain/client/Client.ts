@@ -25,7 +25,7 @@ export class SupplyChain {
     constructor(protected readonly _options: SupplyChain.Options = {}) {}
 
     /**
-     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
+     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
      *
      * @param {string} id - The root entity identifier.
      * @param {Sayari.UpstreamTradeTraversalRequest} request
@@ -115,7 +115,7 @@ export class SupplyChain {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.222",
+                "X-Fern-SDK-Version": "0.0.228",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

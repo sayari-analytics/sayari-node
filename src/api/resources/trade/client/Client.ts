@@ -25,7 +25,7 @@ export class Trade {
     constructor(protected readonly _options: Trade.Options = {}) {}
 
     /**
-     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
+     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
      *
      * @param {Sayari.SearchShipments} request
      * @param {Trade.RequestOptions} requestOptions - Request-specific configuration.
@@ -66,7 +66,7 @@ export class Trade {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.222",
+                "X-Fern-SDK-Version": "0.0.228",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -156,7 +156,7 @@ export class Trade {
     }
 
     /**
-     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
+     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
      *
      * @param {Sayari.SearchSuppliers} request
      * @param {Trade.RequestOptions} requestOptions - Request-specific configuration.
@@ -197,7 +197,7 @@ export class Trade {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.222",
+                "X-Fern-SDK-Version": "0.0.228",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -287,7 +287,7 @@ export class Trade {
     }
 
     /**
-     * <Callout intent="warning">This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Callout> Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
+     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
      *
      * @param {Sayari.SearchBuyers} request
      * @param {Trade.RequestOptions} requestOptions - Request-specific configuration.
@@ -328,7 +328,7 @@ export class Trade {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.222",
+                "X-Fern-SDK-Version": "0.0.228",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
