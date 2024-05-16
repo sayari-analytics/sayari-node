@@ -42,8 +42,11 @@ jobs:
       - name: test examples
         run: |
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Running hello world"
+          node examples/hello-world.mjs
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running smoke test"
-          node examples/smoke_test.mjs
+          node examples/smoke-test.mjs
 
 #  publish:
 #    needs: [ compile, test, run-examples ]
