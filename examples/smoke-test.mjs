@@ -1,11 +1,11 @@
 import * as dotenv from "dotenv";
-import { SayariClient } from "@sayari/sdk";
+import { SayariClient } from "../dist/index.js";
 
 // INSTRUCTIONS FOR RUNNING THIS SCRIPT:
 // 1. Install the sayari SDK:
-//    - Run the cmd `npm install --save @sayari/sdk` or `yarn add @sayari/sdk`
+//    - Build the client module `yarn build`
 //        or
-//    - Install directly from the cloned repo `npm install {PATH_TO}/sayari-node`
+//    - Install (`npm install --save @sayari/sdk` or `yarn add @sayari/sdk`) and update above import statement to import from "@sayari/sdk"
 // 2. Provide credentials in the form of clientID and clientSecret in one of two ways.
 //    - Export 'CLIENT_ID' and 'CLIENT_SECRET' values into the environment where this is to be run.
 //        or
