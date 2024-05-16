@@ -1,4 +1,4 @@
-import { SayariClient } from "../dist/index.js";
+import { SayariClient } from "@sayari/sdk";
 
 // NOTE: To connect you most provide your client ID and client secret. To avoid accidentally checking these into git,
 // it is recommended to use ENV variables
