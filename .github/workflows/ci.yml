@@ -41,6 +41,7 @@ jobs:
         run: yarn && yarn build
       - name: test examples
         run: |
+          nmp install .
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running hello world"
           node examples/hello-world.mjs
