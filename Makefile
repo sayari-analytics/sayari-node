@@ -1,6 +1,6 @@
 smoke-test:
 	yarn build
-	node examples/smoke_test.mjs
+	node examples/smoke-test.mjs
 
 test:
 	yarn & yarn test
