@@ -2,11 +2,11 @@ import { SayariClient } from "../src/index";
 
 var clientID = String(process.env.CLIENT_ID);
 var clientSecret = String(process.env.CLIENT_SECRET);
-var baseURL = String(process.env.BASE_URL);
+var baseURL = 'https://api.sayari.com';
 
-// use prod if no alternative URL is provided
-if (!baseURL) {
-    baseURL = 'https://api.sayari.com'
+// use BASE_URL if provided
+if (process.env.BASE_URL) {
+    baseURL = String(process.env.BASE_URL)
 }
 
 expect(clientID).not.toBe('');
