@@ -6,3 +6,4 @@ examples/
 .github/workflows/
 tests/
 Makefile
+README.md
