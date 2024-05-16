@@ -1,6 +1,6 @@
 {
     "name": "@sayari/sdk",
-    "version": "0.0.222",
+    "version": "0.0.228",
     "private": false,
     "repository": "https://github.com/sayari-analytics/sayari-node",
     "main": "./index.js",
