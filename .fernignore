@@ -3,3 +3,5 @@ src/wrapper
 src/index.ts
 .gitignore
 examples/
+.github/workflows/
+tests/
