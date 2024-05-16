@@ -36,7 +36,7 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v4
       - name: Build
-        run: yarn build
+        run: yarn && yarn build
       - name: test examples
         run: |
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
