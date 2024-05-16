@@ -1,6 +1,6 @@
 {
     "name": "sayari",
-    "version": "0.0.201",
+    "version": "0.0.205",
     "private": false,
     "repository": "https://github.com/sayari-analytics/sayari-node",
     "main": "./index.js",
@@ -17,7 +17,8 @@
         "formdata-node": "^6.0.3",
         "node-fetch": "2.7.0",
         "qs": "6.11.2",
-        "js-base64": "3.7.2"
+        "js-base64": "3.7.2",
+        "dotenv": "^16.4.5"
     },
     "devDependencies": {
         "@types/url-join": "4.0.1",
