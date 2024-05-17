@@ -130,8 +130,6 @@ describe("SDK", () => {
         while (!done) {
             const randString = generateRandomString(3)
 
-            console.log("START OF TRAVERSAL TEST")
-
             // get an entity
             const entitySearchResults = await client.search.searchEntity({q: randString});
             if (entitySearchResults.data.length == 0) {
@@ -147,11 +145,32 @@ describe("SDK", () => {
             console.log("Attempting Ownership traversal w/ entity: ", entity.id)
             const traversal = await client.traversal.ownership(entity.id)
             if (traversal.data.length == 0) {
-                console.log("no result, will retry with a different entity")
+                console.log("no ownership result, will retry with a different entity")
                 continue
             }
             expect(traversal.data.length).toBeGreaterThan(0)
             expect(traversal.data[0].source).toEqual(entity.id)
+
+            // do UBO traversal
+            console.log("Attempting UBO traversal w/ entity: ", entity.id)
+            const ubo = await client.traversal.ubo(entity.id)
+            if (ubo.data.length == 0) {
+                console.log("no ubo result, will retry with a different entity")
+                continue
+            }
+            expect(ubo.data.length).toBeGreaterThan(0)
+            const uboID = ubo.data[0].target.id
+
+            // do ownership traversal from ubo
+            console.log("Attempting Ownership traversal w/ UBO entity: ", uboID)
+            const downstream = await client.traversal.ownership(uboID)
+            expect(downstream.data.length).toBeGreaterThan(0)
+
+            // shortest path
+            const shortestPath = await client.traversal.shortestPath({entities: [entity.id, uboID]})
+            expect(shortestPath.data[0].path.length).toBeGreaterThan(0)
+
+            // TODO: figure out good test for watchlist traversal
 
             done = true
         }
