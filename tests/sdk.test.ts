@@ -177,7 +177,49 @@ describe("SDK", () => {
     }, longTimeout);
 
     // Test shipment search
+    test("shipment search", async () => {
+        let done = false;
+        while (!done) {
+            const randomString = generateRandomString(3)
 
+            const randShipments = await client.trade.searchShipments({q: randomString})
+            if (randShipments.data.length == 0) {
+                continue
+            }
+            expect(randShipments.data.length).toBeGreaterThan(0)
+
+            // test field and multi-filter
+            const buyerName = "HANSOLL TEXTILE LTD"
+            const buyerID = "f_nIivE32HCYDPEoSPTGJw"
+            const hsCode = "600410"
+            const shipments = await client.trade.searchShipments({q: buyerName, filter: {hsCode: [hsCode], buyerId: [buyerID]}})
+            expect(shipments.data.length).toBeGreaterThan(0)
+
+            for (var shipment of shipments.data) {
+                 expect(shipment.productDescriptions.length).toBeGreaterThan(0)
+                 let hsFound = false
+                 for (var shipmentHScode of shipment.hsCodes) {
+                    if (shipmentHScode.code.startsWith(hsCode)) {
+                        hsFound = true
+                        break
+                    }
+                 }
+                 expect(hsFound).toEqual(true)
+
+                 expect(shipment.buyer.length).toBeGreaterThan(0)
+                 let entityFound = false
+                 for (var buyer of shipment.buyer) {
+                    if (buyer.id == buyerID) {
+                        entityFound = true
+                        break
+                    }
+                 }
+                 expect(entityFound).toEqual(true)
+            }
+
+            done = true
+        }
+    });
     // Test supplier search
 
     // Test buyer search
