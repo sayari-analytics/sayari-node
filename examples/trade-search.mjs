@@ -13,7 +13,7 @@ const client = new SayariClient({ clientId: clientID, clientSecret: clientSecret
 
 // Search for shipments
 const shipments = await client.trade.searchShipments({q:"microcenter"})
-console.log("Found", shipments.data.length, "shipments.")
+console.log(`Found ${shipments.data.length} shipments.`)
 
 // Search for suppliers
 const suppliers = await client.trade.searchSuppliers({q:"microcenter"})
