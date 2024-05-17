@@ -254,8 +254,25 @@ describe("SDK", () => {
     });
 
     // Test usage
+    test("usage", async () => {
+        if (baseURL == 'https://api.sayari.com') {
+            const usage = await client.info.getUsage()
+            expect(usage.usage.entity).toBeGreaterThan(0)
+            expect(usage.usage.entitySummary).toBeGreaterThan(0)
+            expect(usage.usage.record).toBeGreaterThan(0)
+            expect(usage.usage.resolve).toBeGreaterThan(0)
+            expect(usage.usage.searchEntities).toBeGreaterThan(0)
+            expect(usage.usage.searchRecords).toBeGreaterThan(0)
+            expect(usage.usage.searchTrade).toBeGreaterThan(0)
+            expect(usage.usage.traversal).toBeGreaterThan(0)
+        }
+    });
 
     // Test history
+    test("history", async () => {
+        const history = await client.info.getHistory({size: 10})
+        expect(history.size).toEqual(history.events.length)
+    });
 
 });
 
