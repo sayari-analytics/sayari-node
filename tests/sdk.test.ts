@@ -220,9 +220,38 @@ describe("SDK", () => {
             done = true
         }
     });
+
     // Test supplier search
+    test("supplier search", async () => {
+        let done = false;
+        while (!done) {
+            const randomString = generateRandomString(3)
+
+            const suppliers = await client.trade.searchSuppliers({q: randomString})
+            if (suppliers.data.length == 0) {
+                continue
+            }
+            expect(suppliers.data.length).toBeGreaterThan(0)
+
+            done = true
+        }
+    });
 
     // Test buyer search
+    test("buyer search", async () => {
+        let done = false;
+        while (!done) {
+            const randomString = generateRandomString(3)
+
+            const buyers = await client.trade.searchBuyers({q: randomString})
+            if (buyers.data.length == 0) {
+                continue
+            }
+            expect(buyers.data.length).toBeGreaterThan(0)
+
+            done = true
+        }
+    });
 
     // Test usage
 
