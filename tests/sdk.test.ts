@@ -60,6 +60,29 @@ describe("SDK", () => {
         expect(entityDetails.pep).toEqual(firstEntity.pep)
         expect(entityDetails.psaCount).toEqual(firstEntity.psaCount)
         expect(entityDetails.type).toEqual(firstEntity.type)
+    }, longTimeout);
+
+    test("resolution", async () => {
+        const randString = generateRandomString(3)
+
+        const resolution = await client.resolution.resolution({name: randString});
+        expect(resolution.data.length).toBeGreaterThan(0)
+        expect(resolution.fields.name).toEqual([randString])
+    });
+
+    test("records", async () => {
+        const randString = generateRandomString(3)
+
+        // Test POST
+        const records = await client.search.searchRecord({q: randString});
+        expect(records.data.length).toBeGreaterThan(0)
+
+        // Test GET
+        const recordsGet = await client.search.searchRecordGet({q: randString});
+        expect(recordsGet.data.length).toBeGreaterThan(0)
+
+        // results should match
+        expect(records.data.length).toEqual(recordsGet.data.length)
     });
 });
 
