@@ -27,76 +27,101 @@ describe("SDK", () => {
     }, longTimeout);
 
     test("entities", async () => {
-        const randString = generateRandomString(3)
+        let done = false;
+        while (!done) {
+            const randString = generateRandomString(3)
 
-        // Test POST
-        const entitySearchResults = await client.search.searchEntity({q: randString});
-        expect(entitySearchResults.data.length).toBeGreaterThan(0)
+            // Test POST
+            const entitySearchResults = await client.search.searchEntity({q: randString});
+            if (entitySearchResults.data.length == 0) {
+                continue
+            }
+            expect(entitySearchResults.data.length).toBeGreaterThan(0)
 
-        // Test GET
-        const entitySearchResultsGet = await client.search.searchEntityGet({q: randString});
-        expect(entitySearchResultsGet.data.length).toBeGreaterThan(0)
+            // Test GET
+            const entitySearchResultsGet = await client.search.searchEntityGet({q: randString});
+            expect(entitySearchResultsGet.data.length).toBeGreaterThan(0)
 
-        // results should match
-        expect(entitySearchResults.data.length).toEqual(entitySearchResultsGet.data.length)
+            // results should match
+            expect(entitySearchResults.data.length).toEqual(entitySearchResultsGet.data.length)
 
-        // Use first entity for testing
-        const firstEntity = entitySearchResults.data[0]
-        console.log(firstEntity.id)
-        console.log(firstEntity.label)
+            // Use first entity for testing
+            const firstEntity = entitySearchResults.data[0]
+            console.log(firstEntity.id)
+            console.log(firstEntity.label)
 
-        // Test entity summary
-        const entitySummary = await client.entity.entitySummary(firstEntity.id);
-        expect(entitySummary.label).toEqual(firstEntity.label)
-        expect(entitySummary.degree).toEqual(firstEntity.degree)
-        expect(entitySummary.pep).toEqual(firstEntity.pep)
-        expect(entitySummary.psaCount).toEqual(firstEntity.psaCount)
-        expect(entitySummary.type).toEqual(firstEntity.type)
+            // Test entity summary
+            const entitySummary = await client.entity.entitySummary(firstEntity.id);
+            expect(entitySummary.label).toEqual(firstEntity.label)
+            expect(entitySummary.degree).toEqual(firstEntity.degree)
+            expect(entitySummary.pep).toEqual(firstEntity.pep)
+            expect(entitySummary.psaCount).toEqual(firstEntity.psaCount)
+            expect(entitySummary.type).toEqual(firstEntity.type)
 
-        // Get entity details
-        const entityDetails = await client.entity.getEntity(firstEntity.id);
-        expect(entityDetails.label).toEqual(firstEntity.label)
-        expect(entityDetails.degree).toEqual(firstEntity.degree)
-        expect(entityDetails.pep).toEqual(firstEntity.pep)
-        expect(entityDetails.psaCount).toEqual(firstEntity.psaCount)
-        expect(entityDetails.type).toEqual(firstEntity.type)
+            // Get entity details
+            const entityDetails = await client.entity.getEntity(firstEntity.id);
+            expect(entityDetails.label).toEqual(firstEntity.label)
+            expect(entityDetails.degree).toEqual(firstEntity.degree)
+            expect(entityDetails.pep).toEqual(firstEntity.pep)
+            expect(entityDetails.psaCount).toEqual(firstEntity.psaCount)
+            expect(entityDetails.type).toEqual(firstEntity.type)
+
+            done = true
+        }
+
     }, longTimeout);
 
     test("resolution", async () => {
-        const randString = generateRandomString(3)
+        let done = false;
+        while (!done) {
+            const randString = generateRandomString(3)
 
-        const resolution = await client.resolution.resolution({name: randString});
-        expect(resolution.data.length).toBeGreaterThan(0)
-        expect(resolution.fields.name).toEqual([randString])
+            const resolution = await client.resolution.resolution({name: randString});
+            if (resolution.data.length == 0) {
+                continue
+            }
+            expect(resolution.data.length).toBeGreaterThan(0)
+            expect(resolution.fields.name).toEqual([randString])
+
+            done = true
+        }
     });
 
     test("records", async () => {
-        const randString = generateRandomString(3)
+        let done = false;
+        while (!done) {
+            const randString = generateRandomString(3)
 
-        // Test POST
-        const records = await client.search.searchRecord({q: randString});
-        expect(records.data.length).toBeGreaterThan(0)
+            // Test POST
+            const records = await client.search.searchRecord({q: randString});
+            if (records.data.length == 0) {
+                continue
+            }
+            expect(records.data.length).toBeGreaterThan(0)
 
-        // Test GET
-        const recordsGet = await client.search.searchRecordGet({q: randString});
-        expect(recordsGet.data.length).toBeGreaterThan(0)
+            // Test GET
+            const recordsGet = await client.search.searchRecordGet({q: randString});
+            expect(recordsGet.data.length).toBeGreaterThan(0)
 
-        // results should match
-        expect(records.data.length).toEqual(recordsGet.data.length)
+            // results should match
+            expect(records.data.length).toEqual(recordsGet.data.length)
 
-        // Use first record for testing
-        const firstRecord = records.data[0]
-        console.log(firstRecord.id)
-        console.log(firstRecord.label)
+            // Use first record for testing
+            const firstRecord = records.data[0]
+            console.log(firstRecord.id)
+            console.log(firstRecord.label)
 
-        // Get record details
-        const recordDetails = await client.record.getRecord(firstRecord.id);
-        expect(recordDetails.label).toEqual(firstRecord.label)
-        expect(recordDetails.source).toEqual(firstRecord.source)
-        expect(recordDetails.publicationDate).toEqual(firstRecord.publicationDate)
-        expect(recordDetails.recordUrl).toEqual(firstRecord.recordUrl)
-        expect(recordDetails.referencesCount).toEqual(firstRecord.referencesCount)
-        expect(recordDetails.sourceUrl).toEqual(firstRecord.sourceUrl)
+            // Get record details
+            const recordDetails = await client.record.getRecord(firstRecord.id);
+            expect(recordDetails.label).toEqual(firstRecord.label)
+            expect(recordDetails.source).toEqual(firstRecord.source)
+            expect(recordDetails.publicationDate).toEqual(firstRecord.publicationDate)
+            expect(recordDetails.recordUrl).toEqual(firstRecord.recordUrl)
+            expect(recordDetails.referencesCount).toEqual(firstRecord.referencesCount)
+            expect(recordDetails.sourceUrl).toEqual(firstRecord.sourceUrl)
+
+            done = true
+        }
     }, longTimeout);
 
     // Test traversals
