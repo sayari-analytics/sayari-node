@@ -47,6 +47,9 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running smoke test"
           node examples/smoke-test.mjs
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Running trade search"
+          node examples/trade-search.mjs
 
   publish:
     needs: [ compile, test, run-examples ]
