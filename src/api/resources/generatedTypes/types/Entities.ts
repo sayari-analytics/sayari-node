@@ -7,53 +7,53 @@
  */
 export type Entities =
     /**
-     * Land, real estate, real property, or personal property not categorized under another entity type */
-    | "property"
-    /**
-     * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
-    | "vessel"
-    /**
-     * A civil or criminal legal case or similar type of proceeding */
-    | "legal_matter"
-    /**
-     * A shipment between two entities */
-    | "shipment"
-    /**
-     * A tradable financial asset */
-    | "security"
-    /**
-     * A legal entity or organization */
-    | "company"
+     * An unknown placeholder entity. Rarely used. An unknown entity has insufficient information to be grouped by an existing entity type. */
+    | "unknown"
     /**
      * A natural person (human being) */
     | "person"
     /**
-     * An unknown placeholder entity. Rarely used. An unknown entity has insufficient information to be grouped by an existing entity type. */
-    | "unknown"
-    /**
-     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
-    | "tradename"
-    /**
-     * An airplane, helicopter, or other vehicle that travels by flight */
-    | "aircraft"
+     * A civil or criminal legal case or similar type of proceeding */
+    | "legal_matter"
     /**
      * A trademark, patent, copyright, or similar type of intangible property */
     | "intellectual_property"
     /**
+     * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
+    | "vessel"
+    /**
+     * A legal entity or organization */
+    | "company"
+    /**
+     * An airplane, helicopter, or other vehicle that travels by flight */
+    | "aircraft"
+    /**
+     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
+    | "tradename"
+    /**
      * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
-    | "generic";
+    | "generic"
+    /**
+     * A tradable financial asset */
+    | "security"
+    /**
+     * A shipment between two entities */
+    | "shipment"
+    /**
+     * Land, real estate, real property, or personal property not categorized under another entity type */
+    | "property";
 
 export const Entities = {
-    Property: "property",
-    Vessel: "vessel",
-    LegalMatter: "legal_matter",
-    Shipment: "shipment",
-    Security: "security",
-    Company: "company",
-    Person: "person",
     Unknown: "unknown",
-    Tradename: "tradename",
-    Aircraft: "aircraft",
+    Person: "person",
+    LegalMatter: "legal_matter",
     IntellectualProperty: "intellectual_property",
+    Vessel: "vessel",
+    Company: "company",
+    Aircraft: "aircraft",
+    Tradename: "tradename",
     Generic: "generic",
+    Security: "security",
+    Shipment: "shipment",
+    Property: "property",
 } as const;

@@ -8,52 +8,52 @@ import * as core from "../../../../core";
 
 export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, Sayari.Attributes> =
     core.serialization.enum_([
-        "status",
+        "date_of_birth",
         "company_type",
-        "name",
-        "weak_identifier",
-        "address",
-        "finances",
-        "monetary_value",
-        "business_purpose",
-        "identifier",
-        "financials",
-        "measurement",
-        "country",
-        "risk_intelligence",
-        "translated_name",
-        "shares",
         "gender",
         "additional_information",
+        "translated_name",
+        "address",
+        "business_purpose",
+        "shares",
         "contact",
+        "name",
+        "status",
         "position",
-        "date_of_birth",
-        "person_status",
         "generic",
+        "monetary_value",
+        "finances",
+        "identifier",
+        "weak_identifier",
+        "risk_intelligence",
+        "financials",
+        "country",
+        "measurement",
+        "person_status",
     ]);
 
 export declare namespace Attributes {
     type Raw =
-        | "status"
+        | "date_of_birth"
         | "company_type"
-        | "name"
-        | "weak_identifier"
-        | "address"
-        | "finances"
-        | "monetary_value"
-        | "business_purpose"
-        | "identifier"
-        | "financials"
-        | "measurement"
-        | "country"
-        | "risk_intelligence"
-        | "translated_name"
-        | "shares"
         | "gender"
         | "additional_information"
+        | "translated_name"
+        | "address"
+        | "business_purpose"
+        | "shares"
         | "contact"
+        | "name"
+        | "status"
         | "position"
-        | "date_of_birth"
-        | "person_status"
-        | "generic";
+        | "generic"
+        | "monetary_value"
+        | "finances"
+        | "identifier"
+        | "weak_identifier"
+        | "risk_intelligence"
+        | "financials"
+        | "country"
+        | "measurement"
+        | "person_status";
 }

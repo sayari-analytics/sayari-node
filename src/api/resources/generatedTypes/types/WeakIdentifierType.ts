@@ -320,6 +320,9 @@ export type WeakIdentifierType =
      * Internal ID for Hungarian companies by Opten Ltd */
     | "hun_opten_id"
     /**
+     * Unique Ireland ID number. Assigned to every legal entity registered with Ireland Companies Registration Office. */
+    | "irl_registration_no"
+    /**
      * A temporary malformed type */
     | "malformed mmr_prior_reg_no";
 
@@ -429,5 +432,6 @@ export const WeakIdentifierType = {
     CriOpNo: "cri_op_no",
     AusStateRegNumber: "aus_state_reg_number",
     HunOptenId: "hun_opten_id",
+    IrlRegistrationNo: "irl_registration_no",
     MalformedMmrPriorRegNo: "malformed mmr_prior_reg_no",
 } as const;

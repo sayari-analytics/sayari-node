@@ -1688,6 +1688,9 @@ export type IdentifierType =
      * Unique Hong Kong tax ID number. Assigned to every company registered with the Hong Kong Business Registration Office. */
     | "cn_hk_br_number"
     /**
+     * Unique Identification Number. Registration number assigned to companies by the Companies and Intellectual Property Authority. */
+    | "bwa_uin_reg_number"
+    /**
      * Unique Canada ID number. Assigned to every entity registered with Canadian Securities Administrators National Registration Database. */
     | "can_nrd"
     /**
@@ -2270,6 +2273,7 @@ export const IdentifierType = {
     CmNuiTaxRegNum: "cm_nui_tax_reg_num",
     EuFsdId: "eu_fsd_id",
     CnHkBrNumber: "cn_hk_br_number",
+    BwaUinRegNumber: "bwa_uin_reg_number",
     CanNrd: "can_nrd",
     UsaIrsGiin: "usa_irs_giin",
 } as const;
