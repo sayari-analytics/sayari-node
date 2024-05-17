@@ -12,7 +12,7 @@ if (process.env.BASE_URL) {
 expect(clientID).not.toBe('');
 expect(baseURL).not.toBe('');
 
-const longTimeout = 10000 // 10s
+const longTimeout = 30000 // 30s
 
 const client = new SayariClient({
     clientId: clientID,
@@ -83,7 +83,34 @@ describe("SDK", () => {
 
         // results should match
         expect(records.data.length).toEqual(recordsGet.data.length)
-    });
+
+        // Use first record for testing
+        const firstRecord = records.data[0]
+        console.log(firstRecord.id)
+        console.log(firstRecord.label)
+
+        // Get record details
+        const recordDetails = await client.record.getRecord(firstRecord.id);
+        expect(recordDetails.label).toEqual(firstRecord.label)
+        expect(recordDetails.source).toEqual(firstRecord.source)
+        expect(recordDetails.publicationDate).toEqual(firstRecord.publicationDate)
+        expect(recordDetails.recordUrl).toEqual(firstRecord.recordUrl)
+        expect(recordDetails.referencesCount).toEqual(firstRecord.referencesCount)
+        expect(recordDetails.sourceUrl).toEqual(firstRecord.sourceUrl)
+    }, longTimeout);
+
+    // Test traversals
+
+    // Test shipment search
+
+    // Test supplier search
+
+    // Test buyer search
+
+    // Test usage
+
+    // Test history
+
 });
 
 function generateRandomString(length: number) {
