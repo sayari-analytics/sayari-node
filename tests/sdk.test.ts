@@ -1,13 +1,8 @@
 import { SayariClient } from "../src/index";
 
-var clientID = String(process.env.CLIENT_ID);
-var clientSecret = String(process.env.CLIENT_SECRET);
-var baseURL = 'https://api.sayari.com';
-
-// use BASE_URL if provided
-if (process.env.BASE_URL) {
-    baseURL = String(process.env.BASE_URL)
-}
+const clientID = String(process.env.CLIENT_ID);
+const clientSecret = String(process.env.CLIENT_SECRET);
+const baseURL = process.env.BASE_URL ||  'https://api.sayari.com'
 
 expect(clientID).not.toBe('');
 expect(baseURL).not.toBe('');
@@ -27,8 +22,7 @@ describe("SDK", () => {
     }, longTimeout);
 
     test("entities", async () => {
-        let done = false;
-        while (!done) {
+        while (true) {
             const randString = generateRandomString(3)
 
             // Test POST
@@ -66,14 +60,13 @@ describe("SDK", () => {
             expect(entityDetails.psaCount).toEqual(firstEntity.psaCount)
             expect(entityDetails.type).toEqual(firstEntity.type)
 
-            done = true
+            break
         }
 
     }, longTimeout);
 
     test("resolution", async () => {
-        let done = false;
-        while (!done) {
+        while (true) {
             const randString = generateRandomString(3)
 
             const resolution = await client.resolution.resolution({name: randString});
@@ -83,13 +76,12 @@ describe("SDK", () => {
             expect(resolution.data.length).toBeGreaterThan(0)
             expect(resolution.fields.name).toEqual([randString])
 
-            done = true
+            break
         }
     }, longTimeout);
 
     test("records", async () => {
-        let done = false;
-        while (!done) {
+        while (true) {
             const randString = generateRandomString(3)
 
             // Test POST
@@ -120,14 +112,13 @@ describe("SDK", () => {
             expect(recordDetails.referencesCount).toEqual(firstRecord.referencesCount)
             expect(recordDetails.sourceUrl).toEqual(firstRecord.sourceUrl)
 
-            done = true
+            break
         }
     }, longTimeout);
 
     // Test traversals
     test("traversal", async () => {
-        let done = false;
-        while (!done) {
+        while (true) {
             const randString = generateRandomString(3)
 
             // get an entity
@@ -172,14 +163,13 @@ describe("SDK", () => {
 
             // TODO: figure out good test for watchlist traversal
 
-            done = true
+            break
         }
     }, longTimeout);
 
     // Test shipment search
     test("shipment search", async () => {
-        let done = false;
-        while (!done) {
+        while (true) {
             const randomString = generateRandomString(3)
 
             const randShipments = await client.trade.searchShipments({q: randomString})
@@ -217,14 +207,13 @@ describe("SDK", () => {
                  expect(entityFound).toEqual(true)
             }
 
-            done = true
+            break
         }
     }, longTimeout);
 
     // Test supplier search
     test("supplier search", async () => {
-        let done = false;
-        while (!done) {
+        while (true) {
             const randomString = generateRandomString(3)
 
             const suppliers = await client.trade.searchSuppliers({q: randomString})
@@ -233,14 +222,13 @@ describe("SDK", () => {
             }
             expect(suppliers.data.length).toBeGreaterThan(0)
 
-            done = true
+            break
         }
     }, longTimeout);
 
     // Test buyer search
     test("buyer search", async () => {
-        let done = false;
-        while (!done) {
+        while (true) {
             const randomString = generateRandomString(3)
 
             const buyers = await client.trade.searchBuyers({q: randomString})
@@ -249,7 +237,7 @@ describe("SDK", () => {
             }
             expect(buyers.data.length).toBeGreaterThan(0)
 
-            done = true
+            break
         }
     }, longTimeout);
 

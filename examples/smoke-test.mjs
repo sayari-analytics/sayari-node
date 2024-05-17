@@ -14,14 +14,9 @@ import { SayariClient } from "../dist/index.js";
 // Pull Client creds from ENV file
 dotenv.config({ path: '../.env' });
 dotenv.config();
-var clientID = process.env.CLIENT_ID;
-var clientSecret = process.env.CLIENT_SECRET;
-var baseURL = 'https://api.sayari.com';
-
-// use BASE_URL if provided
-if (process.env.BASE_URL) {
-    baseURL = String(process.env.BASE_URL)
-}
+const clientID = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
+const baseURL = process.env.BASE_URL ||  'https://api.sayari.com'
 
 // Create an authenticated sayari client
 const client = new SayariClient({ clientId: clientID, clientSecret: clientSecret, environment: baseURL })
@@ -33,7 +28,6 @@ console.log("Found", sources.data.length, "sources")
 // get the first source
 const firstSource = await client.source.getSource(sources.data[0].id)
 console.log("First source is:", firstSource.label)
-
 
 // search for an entity
 const search_term = "victoria beckham limited"

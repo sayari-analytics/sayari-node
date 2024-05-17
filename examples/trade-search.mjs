@@ -4,8 +4,8 @@ import { SayariClient } from "../dist/index.js";
 // Pull Client creds from ENV file
 dotenv.config({ path: '../.env' });
 dotenv.config();
-var clientID = process.env.CLIENT_ID;
-var clientSecret = process.env.CLIENT_SECRET;
+const clientID = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
 const baseURL = process.env.BASE_URL ||  'https://api.sayari.com'
 
 // Create an authenticated sayari client
@@ -17,8 +17,8 @@ console.log(`Found ${shipments.data.length} shipments.`)
 
 // Search for suppliers
 const suppliers = await client.trade.searchSuppliers({q:"microcenter"})
-console.log("Found", suppliers.data.length, "suppliers.")
+console.log(`Found ${suppliers.data.length} suppliers.`)
 
 // Search for buyers
 const buyers = await client.trade.searchBuyers({q:"microcenter"})
-console.log("Found", buyers.data.length, "buyers.")
+console.log(`Found ${buyers.data.length} buyers.`)
