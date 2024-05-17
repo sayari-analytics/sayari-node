@@ -115,6 +115,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "cri_op_no",
     "aus_state_reg_number",
     "hun_opten_id",
+    "irl_registration_no",
     "malformed mmr_prior_reg_no",
 ]);
 
@@ -225,5 +226,6 @@ export declare namespace WeakIdentifierType {
         | "cri_op_no"
         | "aus_state_reg_number"
         | "hun_opten_id"
+        | "irl_registration_no"
         | "malformed mmr_prior_reg_no";
 }
