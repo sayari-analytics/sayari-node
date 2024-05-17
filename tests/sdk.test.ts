@@ -85,7 +85,7 @@ describe("SDK", () => {
 
             done = true
         }
-    });
+    }, longTimeout);
 
     test("records", async () => {
         let done = false;
@@ -219,7 +219,7 @@ describe("SDK", () => {
 
             done = true
         }
-    });
+    }, longTimeout);
 
     // Test supplier search
     test("supplier search", async () => {
@@ -235,7 +235,7 @@ describe("SDK", () => {
 
             done = true
         }
-    });
+    }, longTimeout);
 
     // Test buyer search
     test("buyer search", async () => {
@@ -251,7 +251,7 @@ describe("SDK", () => {
 
             done = true
         }
-    });
+    }, longTimeout);
 
     // Test usage
     test("usage", async () => {
@@ -266,13 +266,13 @@ describe("SDK", () => {
             expect(usage.usage.searchTrade).toBeGreaterThan(0)
             expect(usage.usage.traversal).toBeGreaterThan(0)
         }
-    });
+    }, longTimeout);
 
     // Test history
     test("history", async () => {
         const history = await client.info.getHistory({size: 10})
         expect(history.size).toEqual(history.events.length)
-    });
+    }, longTimeout);
 
 });
 
