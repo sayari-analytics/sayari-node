@@ -12,7 +12,7 @@ if (process.env.BASE_URL) {
 expect(clientID).not.toBe('');
 expect(baseURL).not.toBe('');
 
-const longTimeout = 30000 // 30s
+const longTimeout = 60000 // 60s
 
 const client = new SayariClient({
     clientId: clientID,
@@ -125,6 +125,37 @@ describe("SDK", () => {
     }, longTimeout);
 
     // Test traversals
+    test("traversal", async () => {
+        let done = false;
+        while (!done) {
+            const randString = generateRandomString(3)
+
+            console.log("START OF TRAVERSAL TEST")
+
+            // get an entity
+            const entitySearchResults = await client.search.searchEntity({q: randString});
+            if (entitySearchResults.data.length == 0) {
+                console.log("no result, will retry with a different search term")
+                continue
+            }
+            expect(entitySearchResults.data.length).toBeGreaterThan(0)
+
+            // use the first one for testing
+            const entity = entitySearchResults.data[0]
+
+            // do traversal
+            console.log("Attempting Ownership traversal w/ entity: ", entity.id)
+            const traversal = await client.traversal.ownership(entity.id)
+            if (traversal.data.length == 0) {
+                console.log("no result, will retry with a different entity")
+                continue
+            }
+            expect(traversal.data.length).toBeGreaterThan(0)
+            expect(traversal.data[0].source).toEqual(entity.id)
+
+            done = true
+        }
+    }, longTimeout);
 
     // Test shipment search
 
