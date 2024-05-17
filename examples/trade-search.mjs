@@ -6,12 +6,7 @@ dotenv.config({ path: '../.env' });
 dotenv.config();
 var clientID = process.env.CLIENT_ID;
 var clientSecret = process.env.CLIENT_SECRET;
-var baseURL = 'https://api.sayari.com';
-
-// use BASE_URL if provided
-if (process.env.BASE_URL) {
-    baseURL = String(process.env.BASE_URL)
-}
+const baseURL = process.env.BASE_URL ||  'https://api.sayari.com'
 
 // Create an authenticated sayari client
 const client = new SayariClient({ clientId: clientID, clientSecret: clientSecret, environment: baseURL })
