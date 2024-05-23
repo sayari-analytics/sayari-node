@@ -89,7 +89,10 @@ export type BusinessPurposeStandard =
     | "ATECO"
     /**
      * Code d'activité économique Quebec */
-    | "CAE";
+    | "CAE"
+    /**
+     * Abu Dhabi Global Market Activity Code */
+    | "ADGM";
 
 export const BusinessPurposeStandard = {
     Cnae2: "CNAE2",
@@ -120,4 +123,5 @@ export const BusinessPurposeStandard = {
     Esa2010: "ESA2010",
     Ateco: "ATECO",
     Cae: "CAE",
+    Adgm: "ADGM",
 } as const;
