@@ -91,6 +91,9 @@ export type BusinessPurposeStandard =
      * Code d'activité économique Quebec */
     | "CAE"
     /**
+     * Finland Standard Industrial Classification TOL 2008 */
+    | "TOL2008"
+    /**
      * Abu Dhabi Global Market Activity Code */
     | "ADGM";
 
@@ -123,5 +126,6 @@ export const BusinessPurposeStandard = {
     Esa2010: "ESA2010",
     Ateco: "ATECO",
     Cae: "CAE",
+    Tol2008: "TOL2008",
     Adgm: "ADGM",
 } as const;
