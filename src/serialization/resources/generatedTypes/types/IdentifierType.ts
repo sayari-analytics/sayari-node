@@ -563,6 +563,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "gbr_trustee_id",
         "gbr_go_no",
         "irl_registration_no",
+        "irl_rcn",
         "blz_bccar_reg_no",
         "chn_customs_registration_no",
         "isl_vat_num",
@@ -1145,6 +1146,7 @@ export declare namespace IdentifierType {
         | "gbr_trustee_id"
         | "gbr_go_no"
         | "irl_registration_no"
+        | "irl_rcn"
         | "blz_bccar_reg_no"
         | "chn_customs_registration_no"
         | "isl_vat_num"
