@@ -1628,6 +1628,9 @@ export type IdentifierType =
      * Unique Ireland ID number. Assigned to every legal entity registered with Ireland Companies Registration Office. */
     | "irl_registration_no"
     /**
+     * Registered Charity Number (RCN). Unique Identifier issued by the Charities Regulator to the registered charitable organizations awarded with charitable status. */
+    | "irl_rcn"
+    /**
      * Belize Companies & Corporate Affairs Registry (BCCAR) registration number */
     | "blz_bccar_reg_no"
     /**
@@ -2253,6 +2256,7 @@ export const IdentifierType = {
     GbrTrusteeId: "gbr_trustee_id",
     GbrGoNo: "gbr_go_no",
     IrlRegistrationNo: "irl_registration_no",
+    IrlRcn: "irl_rcn",
     BlzBccarRegNo: "blz_bccar_reg_no",
     ChnCustomsRegistrationNo: "chn_customs_registration_no",
     IslVatNum: "isl_vat_num",

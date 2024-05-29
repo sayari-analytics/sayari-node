@@ -35,6 +35,7 @@ export type Risk =
     | "owned_by_forced_labor_xinjiang_uflpa"
     | "forced_labor_xinjiang_uflpa_adjacent"
     | "owned_by_wro_entity"
+    | "psa_military_civil_fusion"
     | "forced_labor_aspi_origin_subtier"
     | "former_wro_entity"
     | "forced_labor_wro_origin_direct"
@@ -74,6 +75,7 @@ export type Risk =
     | "psa_entity_licensed_with_fsb_rf"
     | "psa_forced_labor_xinjiang_uflpa"
     | "owner_of_wro_entity"
+    | "military_civil_fusion"
     | "forced_labor_xinjiang_registration"
     | "forced_labor_xinjiang_name"
     | "owned_by_aspi_forced_labor_entity"
@@ -136,6 +138,7 @@ export const Risk = {
     OwnedByForcedLaborXinjiangUflpa: "owned_by_forced_labor_xinjiang_uflpa",
     ForcedLaborXinjiangUflpaAdjacent: "forced_labor_xinjiang_uflpa_adjacent",
     OwnedByWroEntity: "owned_by_wro_entity",
+    PsaMilitaryCivilFusion: "psa_military_civil_fusion",
     ForcedLaborAspiOriginSubtier: "forced_labor_aspi_origin_subtier",
     FormerWroEntity: "former_wro_entity",
     ForcedLaborWroOriginDirect: "forced_labor_wro_origin_direct",
@@ -179,6 +182,7 @@ export const Risk = {
     PsaEntityLicensedWithFsbRf: "psa_entity_licensed_with_fsb_rf",
     PsaForcedLaborXinjiangUflpa: "psa_forced_labor_xinjiang_uflpa",
     OwnerOfWroEntity: "owner_of_wro_entity",
+    MilitaryCivilFusion: "military_civil_fusion",
     ForcedLaborXinjiangRegistration: "forced_labor_xinjiang_registration",
     ForcedLaborXinjiangName: "forced_labor_xinjiang_name",
     OwnedByAspiForcedLaborEntity: "owned_by_aspi_forced_labor_entity",

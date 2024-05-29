@@ -39,6 +39,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owned_by_forced_labor_xinjiang_uflpa",
     "forced_labor_xinjiang_uflpa_adjacent",
     "owned_by_wro_entity",
+    "psa_military_civil_fusion",
     "forced_labor_aspi_origin_subtier",
     "former_wro_entity",
     "forced_labor_wro_origin_direct",
@@ -78,6 +79,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_entity_licensed_with_fsb_rf",
     "psa_forced_labor_xinjiang_uflpa",
     "owner_of_wro_entity",
+    "military_civil_fusion",
     "forced_labor_xinjiang_registration",
     "forced_labor_xinjiang_name",
     "owned_by_aspi_forced_labor_entity",
@@ -142,6 +144,7 @@ export declare namespace Risk {
         | "owned_by_forced_labor_xinjiang_uflpa"
         | "forced_labor_xinjiang_uflpa_adjacent"
         | "owned_by_wro_entity"
+        | "psa_military_civil_fusion"
         | "forced_labor_aspi_origin_subtier"
         | "former_wro_entity"
         | "forced_labor_wro_origin_direct"
@@ -181,6 +184,7 @@ export declare namespace Risk {
         | "psa_entity_licensed_with_fsb_rf"
         | "psa_forced_labor_xinjiang_uflpa"
         | "owner_of_wro_entity"
+        | "military_civil_fusion"
         | "forced_labor_xinjiang_registration"
         | "forced_labor_xinjiang_name"
         | "owned_by_aspi_forced_labor_entity"
