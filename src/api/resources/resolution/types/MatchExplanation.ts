@@ -7,4 +7,5 @@ export interface MatchExplanation {
     uploaded?: string;
     nameCustomTfIdfScore?: number;
     highQualityMatchName?: boolean;
+    isDeletionRecommended?: boolean;
 }

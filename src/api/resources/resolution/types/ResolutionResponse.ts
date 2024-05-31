@@ -14,7 +14,7 @@ import * as Sayari from "../../../index";
  *         },
  *         data: [{
  *                 profile: "corporate",
- *                 score: 167.00832,
+ *                 score: 167.28214,
  *                 entityId: "mGq1lpuqKssNWTjIokuPeA",
  *                 label: "VICTORIA BECKHAM LIMITED",
  *                 type: Sayari.Entities.Company,
@@ -31,7 +31,7 @@ import * as Sayari from "../../../index";
  *                         value: "6517802",
  *                         label: "Unknown"
  *                     }],
- *                 psaId: 695785012897,
+ *                 psaId: 4655744767230,
  *                 addresses: ["202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB", "Unit 33, Ransomes Dock Business Centre, 35-37 Parkgate Road, London SW11 4NP", "SAUNDERS BUILDING, 202 HAMMERSMITH ROAD, HAMMERSMITH, LONDON", "Ransome's Dock, 35-37 Parkgate Road, London, SW11 4NP", "Hammersmith Road, London, W6 7DN", "202 HAMMERSMITH ROAD UNITED KINGDOM", "202 HAMMERSMITH ROAD BRITISH ISLES"],
  *                 countries: [Sayari.Country.Gbr, Sayari.Country.Usa, Sayari.Country.Vnm],
  *                 sources: ["2b618f1996252fe537a6d998ae14c9b2", "2b788dbdf9194ed5a5c309386a6516b1", "a447a7b622c4ead6e1caf94983dc2337", "ecdfb3f2ecc8c3797e77d5795a8066ef", "e5de7b52cc88ef4cd1a10e201bdf46ee", "2a4fe9a14e332c8f9ded1f8a457c2b89", "ecdfb3f2ecc8c3797e77d5795a8066ef", "4ea8bac1bed868e1510ffd21842e9551"],
@@ -43,38 +43,71 @@ import * as Sayari from "../../../index";
  *                 explanation: {
  *                     "name": [{
  *                             matched: "<em>VICTORIA</em> <em>BECKHAM</em> LIMITED",
- *                             uploaded: "victoria beckham limited"
+ *                             uploaded: "victoria beckham limited",
+ *                             nameCustomTfIdfScore: 0.5416772821044128,
+ *                             highQualityMatchName: true,
+ *                             isDeletionRecommended: false
  *                         }, {
  *                             matched: "<em>BECKHAM</em> VENTURES LIMITED",
- *                             uploaded: "victoria beckham limited"
+ *                             uploaded: "victoria beckham limited",
+ *                             nameCustomTfIdfScore: 0.5,
+ *                             highQualityMatchName: false,
+ *                             isDeletionRecommended: false
  *                         }]
  *                 },
  *                 matchStrength: {
  *                     value: "weak"
  *                 }
- *             }, {
+ *             }]
+ *     }
+ *
+ * @example
+ *     {
+ *         fields: {
+ *             name: ["victoria beckham limited"],
+ *             profile: ["supplier"]
+ *         },
+ *         data: [{
  *                 profile: "corporate",
- *                 score: 163.52704,
- *                 entityId: "v7fh4Kv5aLpfk7ld8oul2w",
- *                 label: "VICTORIA BY VICTORIA BECKHAM",
- *                 type: Sayari.Entities.IntellectualProperty,
+ *                 score: 167.28214,
+ *                 entityId: "mGq1lpuqKssNWTjIokuPeA",
+ *                 label: "VICTORIA BECKHAM LIMITED",
+ *                 type: Sayari.Entities.Company,
  *                 identifiers: [{
- *                         type: Sayari.IdentifierType.ChnCnipaTm,
- *                         value: "11314607",
- *                         label: "Chn Cnipa Tm"
+ *                         type: Sayari.IdentifierType.UkCompanyNumber,
+ *                         value: "06517802",
+ *                         label: "Uk Company Number"
+ *                     }, {
+ *                         type: Sayari.IdentifierType.CaCorporateIdNum,
+ *                         value: "04781466",
+ *                         label: "Ca Corporate Id Num"
+ *                     }, {
+ *                         type: Sayari.WeakIdentifierType.Unknown,
+ *                         value: "6517802",
+ *                         label: "Unknown"
  *                     }],
- *                 addresses: [],
- *                 countries: [Sayari.Country.Chn],
- *                 sources: ["8f50655ba1d1552ab4b89d119bd9c318"],
+ *                 psaId: 4655744767230,
+ *                 addresses: ["202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB", "Unit 33, Ransomes Dock Business Centre, 35-37 Parkgate Road, London SW11 4NP", "SAUNDERS BUILDING, 202 HAMMERSMITH ROAD, HAMMERSMITH, LONDON", "Ransome's Dock, 35-37 Parkgate Road, London, SW11 4NP", "Hammersmith Road, London, W6 7DN", "202 HAMMERSMITH ROAD UNITED KINGDOM", "202 HAMMERSMITH ROAD BRITISH ISLES"],
+ *                 countries: [Sayari.Country.Gbr, Sayari.Country.Usa, Sayari.Country.Vnm],
+ *                 sources: ["2b618f1996252fe537a6d998ae14c9b2", "2b788dbdf9194ed5a5c309386a6516b1", "a447a7b622c4ead6e1caf94983dc2337", "ecdfb3f2ecc8c3797e77d5795a8066ef", "e5de7b52cc88ef4cd1a10e201bdf46ee", "2a4fe9a14e332c8f9ded1f8a457c2b89", "ecdfb3f2ecc8c3797e77d5795a8066ef", "4ea8bac1bed868e1510ffd21842e9551"],
  *                 typedMatchedQueries: ["name|0", "looseName|0"],
  *                 matchedQueries: ["name"],
  *                 highlight: {
- *                     "name": ["<em>VICTORIA</em> BY <em>VICTORIA</em> <em>BECKHAM</em>"]
+ *                     "name": ["<em>VICTORIA</em> <em>BECKHAM</em> LIMITED", "<em>BECKHAM</em> VENTURES LIMITED"]
  *                 },
  *                 explanation: {
  *                     "name": [{
- *                             matched: "<em>VICTORIA</em> BY <em>VICTORIA</em> <em>BECKHAM</em>",
- *                             uploaded: "victoria beckham limited"
+ *                             matched: "<em>VICTORIA</em> <em>BECKHAM</em> LIMITED",
+ *                             uploaded: "victoria beckham limited",
+ *                             nameCustomTfIdfScore: 0.5416772821044128,
+ *                             highQualityMatchName: true,
+ *                             isDeletionRecommended: false
+ *                         }, {
+ *                             matched: "<em>BECKHAM</em> VENTURES LIMITED",
+ *                             uploaded: "victoria beckham limited",
+ *                             nameCustomTfIdfScore: 0.5,
+ *                             highQualityMatchName: false,
+ *                             isDeletionRecommended: false
  *                         }]
  *                 },
  *                 matchStrength: {

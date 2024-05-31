@@ -39,14 +39,33 @@ export class Resolution {
      *
      * @example
      *     await sayari.resolution.resolution({
-     *         name: "victoria beckham limited"
+     *         name: "victoria beckham limited",
+     *         limit: 1
+     *     })
+     *
+     * @example
+     *     await sayari.resolution.resolution({
+     *         name: "victoria beckham limited",
+     *         limit: 1,
+     *         profile: Sayari.ProfileEnum.Supplier
      *     })
      */
     public async resolution(
         request: Sayari.Resolution = {},
         requestOptions?: Resolution.RequestOptions
     ): Promise<Sayari.ResolutionResponse> {
-        const { limit, offset, name, identifier, country, address, dateOfBirth, contact, type: type_ } = request;
+        const {
+            limit,
+            offset,
+            name,
+            identifier,
+            country,
+            address,
+            dateOfBirth,
+            contact,
+            type: type_,
+            profile,
+        } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
@@ -114,6 +133,10 @@ export class Resolution {
             }
         }
 
+        if (profile != null) {
+            _queryParams["profile"] = profile;
+        }
+
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
@@ -124,7 +147,7 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.306",
+                "X-Fern-SDK-Version": "0.0.323",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -236,8 +259,15 @@ export class Resolution {
      *
      * @example
      *     await sayari.resolution.resolutionPost({
-     *         limit: 2,
+     *         limit: 1,
      *         name: ["victoria beckham limited"]
+     *     })
+     *
+     * @example
+     *     await sayari.resolution.resolutionPost({
+     *         limit: 1,
+     *         name: ["victoria beckham limited"],
+     *         profile: Sayari.ProfileEnum.Supplier
      *     })
      */
     public async resolutionPost(
@@ -264,7 +294,7 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.306",
+                "X-Fern-SDK-Version": "0.0.323",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
