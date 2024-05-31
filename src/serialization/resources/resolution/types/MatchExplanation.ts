@@ -12,15 +12,26 @@ export const MatchExplanation: core.serialization.ObjectSchema<
 > = core.serialization.object({
     matched: core.serialization.string().optional(),
     uploaded: core.serialization.string().optional(),
-    nameCustomTfIdfScore: core.serialization.number().optional(),
-    highQualityMatchName: core.serialization.boolean().optional(),
+    nameCustomTfIdfScore: core.serialization.property(
+        "name_custom_tf_idf_score",
+        core.serialization.number().optional()
+    ),
+    highQualityMatchName: core.serialization.property(
+        "high_quality_match_name",
+        core.serialization.boolean().optional()
+    ),
+    isDeletionRecommended: core.serialization.property(
+        "is_deletion_recommended",
+        core.serialization.boolean().optional()
+    ),
 });
 
 export declare namespace MatchExplanation {
     interface Raw {
         matched?: string | null;
         uploaded?: string | null;
-        nameCustomTfIdfScore?: number | null;
-        highQualityMatchName?: boolean | null;
+        name_custom_tf_idf_score?: number | null;
+        high_quality_match_name?: boolean | null;
+        is_deletion_recommended?: boolean | null;
     }
 }

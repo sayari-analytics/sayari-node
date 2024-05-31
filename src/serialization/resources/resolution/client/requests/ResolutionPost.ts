@@ -8,6 +8,7 @@ import * as core from "../../../../../core";
 import { BothIdentifierTypes } from "../../../generatedTypes/types/BothIdentifierTypes";
 import { Country } from "../../../generatedTypes/types/Country";
 import { Entities } from "../../../generatedTypes/types/Entities";
+import { ProfileEnum } from "../../types/ProfileEnum";
 
 export const ResolutionPost: core.serialization.Schema<
     serializers.ResolutionPost.Raw,
@@ -23,6 +24,7 @@ export const ResolutionPost: core.serialization.Schema<
     ),
     contact: core.serialization.list(core.serialization.string()).optional(),
     type: core.serialization.list(Entities).optional(),
+    profile: ProfileEnum.optional(),
 });
 
 export declare namespace ResolutionPost {
@@ -34,5 +36,6 @@ export declare namespace ResolutionPost {
         date_of_birth?: string[] | null;
         contact?: string[] | null;
         type?: Entities.Raw[] | null;
+        profile?: ProfileEnum.Raw | null;
     }
 }

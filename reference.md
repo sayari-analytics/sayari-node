@@ -1673,6 +1673,7 @@ The resolution endpoints allow users to search for matching entities against a p
 ```ts
 await sayari.resolution.resolution({
     name: "victoria beckham limited",
+    limit: 1,
 });
 ```
 
@@ -1757,7 +1758,7 @@ The resolution endpoints allow users to search for matching entities against a p
 
 ```ts
 await sayari.resolution.resolutionPost({
-    limit: 2,
+    limit: 1,
     name: ["victoria beckham limited"],
 });
 ```
