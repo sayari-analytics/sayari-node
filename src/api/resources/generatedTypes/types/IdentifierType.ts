@@ -1698,7 +1698,13 @@ export type IdentifierType =
     | "can_nrd"
     /**
      * Global Intermediary Identification Number (GIIN). Unique Identifier issued by the IRS to financial institutions, branches, direct reporting non-financial foreign entities, and sponsored entities. */
-    | "usa_irs_giin";
+    | "usa_irs_giin"
+    /**
+     * Unique internal ID number assigned to individuals. Assigned to every individual registered with Canadian Securities Administrators National Registration Database. */
+    | "can_nrd_individual_id"
+    /**
+     * Unique Jamaica company registration number. Assigned to every company in the Jamaica Corporate Registry. */
+    | "jam_company_id";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2280,4 +2286,6 @@ export const IdentifierType = {
     BwaUinRegNumber: "bwa_uin_reg_number",
     CanNrd: "can_nrd",
     UsaIrsGiin: "usa_irs_giin",
+    CanNrdIndividualId: "can_nrd_individual_id",
+    JamCompanyId: "jam_company_id",
 } as const;
