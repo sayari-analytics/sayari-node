@@ -1359,6 +1359,92 @@ await sayari.project.getProjects({
 </dl>
 </details>
 
+<details><summary> <code>sayari.project.<a href="./src/api/resources/project/client/Client.ts">getProjects</a>({ ...params }) -> Sayari.GetProjectsResponse</code> </summary>
+
+<dl>
+
+<dd>
+
+#### 📝 Description
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Retrieve a list of projects including upload progress info.
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+```ts
+await sayari.project.getProjects({
+    archived: true,
+    limit: 5,
+});
+```
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+**request: `Sayari.GetProjects`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**requestOptions: `Project.RequestOptions`**
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+</details>
+
 <details><summary> <code>sayari.project.<a href="./src/api/resources/project/client/Client.ts">getProjectEntities</a>(id, { ...params }) -> Sayari.GetProjectEntitiesResponse</code> </summary>
 
 <dl>
@@ -1720,6 +1806,93 @@ await sayari.resolution.resolution({
 </dl>
 </details>
 
+<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolution</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
+
+<dl>
+
+<dd>
+
+#### 📝 Description
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+The resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the search endpoint, except it's tuned to only return the best match so the client doesn't need to do as much or any post-processing work to filter down results.
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+```ts
+await sayari.resolution.resolution({
+    name: "victoria beckham limited",
+    limit: 1,
+    profile: Sayari.ProfileEnum.Supplier,
+});
+```
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+**request: `Sayari.Resolution`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**requestOptions: `Resolution.RequestOptions`**
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+</details>
+
 <details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPost</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
 
 <dl>
@@ -1760,6 +1933,93 @@ The resolution endpoints allow users to search for matching entities against a p
 await sayari.resolution.resolutionPost({
     limit: 1,
     name: ["victoria beckham limited"],
+});
+```
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+**request: `Sayari.ResolutionPost`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**requestOptions: `Resolution.RequestOptions`**
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+</details>
+
+<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPost</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
+
+<dl>
+
+<dd>
+
+#### 📝 Description
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+The resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the search endpoint, except it's tuned to only return the best match so the client doesn't need to do as much or any post-processing work to filter down results.
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+```ts
+await sayari.resolution.resolutionPost({
+    limit: 1,
+    name: ["victoria beckham limited"],
+    profile: Sayari.ProfileEnum.Supplier,
 });
 ```
 
