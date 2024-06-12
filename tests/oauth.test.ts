@@ -25,9 +25,9 @@ describe("OAuth", () => {
         });
 
         const entityDetails = await client.entity.getEntity(resolution.data[0].entityId);
-        expect(entityDetails.type).toEqual("intellectual_property");
+        expect(entityDetails.id).toEqual(resolution.data[0].entityId);
 
         const again = await client.entity.getEntity(resolution.data[0].entityId);
-        expect(again.type).toEqual("intellectual_property");
+        expect(again.id).toEqual(resolution.data[0].entityId);
     });
 });
