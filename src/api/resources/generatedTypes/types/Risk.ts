@@ -6,6 +6,7 @@ export type Risk =
     | "sheffield_hallam_university_forced_labor_entity"
     | "forced_labor_xinjiang_origin_direct"
     | "regulatory_action"
+    | "forced_labor_uflpa_origin_subtier_product_map"
     | "forced_labor_xinjiang_geospatial"
     | "eu_high_risk_third"
     | "sheffield_hallam_university_useful_resources"
@@ -20,6 +21,7 @@ export type Risk =
     | "imports_bis_high_priority_items"
     | "reputational_risk_bribery_and_corruption"
     | "sanctioned_adjacent"
+    | "forced_labor_aspi_origin_subtier_product_map"
     | "psa_export_controls"
     | "owner_of_sanctioned_entity"
     | "psa_regulatory_action"
@@ -49,6 +51,7 @@ export type Risk =
     | "psa_sheffield_hallam_university_forced_labor_entity"
     | "export_controls_adjacent"
     | "export_to_soe"
+    | "forced_labor_sheffield_hallam_university_reports_origin_subtier_product_map"
     | "psa_sanctioned"
     | "ofac_50_percent_rule"
     | "owner_of_export_controls_entity"
@@ -75,6 +78,7 @@ export type Risk =
     | "psa_entity_licensed_with_fsb_rf"
     | "psa_forced_labor_xinjiang_uflpa"
     | "owner_of_wro_entity"
+    | "forced_labor_xinjiang_origin_subtier_product_map"
     | "military_civil_fusion"
     | "forced_labor_xinjiang_registration"
     | "forced_labor_xinjiang_name"
@@ -87,6 +91,7 @@ export type Risk =
     | "owner_of_forced_labor_xinjiang_entity"
     | "law_enforcement_action"
     | "owned_by_soe"
+    | "forced_labor_wro_origin_subtier_product_map"
     | "entity_licensed_with_fsb_rf"
     | "psa_forced_labor_xinjiang_registration"
     | "forced_labor_sheffield_hallam_university_reports_origin_direct"
@@ -109,6 +114,7 @@ export const Risk = {
     SheffieldHallamUniversityForcedLaborEntity: "sheffield_hallam_university_forced_labor_entity",
     ForcedLaborXinjiangOriginDirect: "forced_labor_xinjiang_origin_direct",
     RegulatoryAction: "regulatory_action",
+    ForcedLaborUflpaOriginSubtierProductMap: "forced_labor_uflpa_origin_subtier_product_map",
     ForcedLaborXinjiangGeospatial: "forced_labor_xinjiang_geospatial",
     EuHighRiskThird: "eu_high_risk_third",
     SheffieldHallamUniversityUsefulResources: "sheffield_hallam_university_useful_resources",
@@ -123,6 +129,7 @@ export const Risk = {
     ImportsBisHighPriorityItems: "imports_bis_high_priority_items",
     ReputationalRiskBriberyAndCorruption: "reputational_risk_bribery_and_corruption",
     SanctionedAdjacent: "sanctioned_adjacent",
+    ForcedLaborAspiOriginSubtierProductMap: "forced_labor_aspi_origin_subtier_product_map",
     PsaExportControls: "psa_export_controls",
     OwnerOfSanctionedEntity: "owner_of_sanctioned_entity",
     PsaRegulatoryAction: "psa_regulatory_action",
@@ -153,6 +160,8 @@ export const Risk = {
     PsaSheffieldHallamUniversityForcedLaborEntity: "psa_sheffield_hallam_university_forced_labor_entity",
     ExportControlsAdjacent: "export_controls_adjacent",
     ExportToSoe: "export_to_soe",
+    ForcedLaborSheffieldHallamUniversityReportsOriginSubtierProductMap:
+        "forced_labor_sheffield_hallam_university_reports_origin_subtier_product_map",
     PsaSanctioned: "psa_sanctioned",
     Ofac50PercentRule: "ofac_50_percent_rule",
     OwnerOfExportControlsEntity: "owner_of_export_controls_entity",
@@ -182,6 +191,7 @@ export const Risk = {
     PsaEntityLicensedWithFsbRf: "psa_entity_licensed_with_fsb_rf",
     PsaForcedLaborXinjiangUflpa: "psa_forced_labor_xinjiang_uflpa",
     OwnerOfWroEntity: "owner_of_wro_entity",
+    ForcedLaborXinjiangOriginSubtierProductMap: "forced_labor_xinjiang_origin_subtier_product_map",
     MilitaryCivilFusion: "military_civil_fusion",
     ForcedLaborXinjiangRegistration: "forced_labor_xinjiang_registration",
     ForcedLaborXinjiangName: "forced_labor_xinjiang_name",
@@ -195,6 +205,7 @@ export const Risk = {
     OwnerOfForcedLaborXinjiangEntity: "owner_of_forced_labor_xinjiang_entity",
     LawEnforcementAction: "law_enforcement_action",
     OwnedBySoe: "owned_by_soe",
+    ForcedLaborWroOriginSubtierProductMap: "forced_labor_wro_origin_subtier_product_map",
     EntityLicensedWithFsbRf: "entity_licensed_with_fsb_rf",
     PsaForcedLaborXinjiangRegistration: "psa_forced_labor_xinjiang_registration",
     ForcedLaborSheffieldHallamUniversityReportsOriginDirect:
