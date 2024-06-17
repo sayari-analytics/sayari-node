@@ -20,6 +20,7 @@ export const CountryContext: core.serialization.Schema<serializers.CountryContex
         "shipment_transit",
         "activity_in",
         "mentioned_in",
+        "product_origin",
     ]);
 
 export declare namespace CountryContext {
@@ -35,5 +36,6 @@ export declare namespace CountryContext {
         | "shipment_arrival"
         | "shipment_transit"
         | "activity_in"
-        | "mentioned_in";
+        | "mentioned_in"
+        | "product_origin";
 }

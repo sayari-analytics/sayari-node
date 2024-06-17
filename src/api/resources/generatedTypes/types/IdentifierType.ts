@@ -1704,7 +1704,10 @@ export type IdentifierType =
     | "can_nrd_individual_id"
     /**
      * Unique Jamaica company registration number. Assigned to every company in the Jamaica Corporate Registry. */
-    | "jam_company_id";
+    | "jam_company_id"
+    /**
+     * Spain Internal Employee Number */
+    | "esp_internal_employee_number";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2288,4 +2291,5 @@ export const IdentifierType = {
     UsaIrsGiin: "usa_irs_giin",
     CanNrdIndividualId: "can_nrd_individual_id",
     JamCompanyId: "jam_company_id",
+    EspInternalEmployeeNumber: "esp_internal_employee_number",
 } as const;
