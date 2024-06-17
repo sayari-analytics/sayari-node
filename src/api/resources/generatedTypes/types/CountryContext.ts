@@ -41,7 +41,10 @@ export type CountryContext =
     | "activity_in"
     /**
      * The entity is mentioned in a record originating from this country */
-    | "mentioned_in";
+    | "mentioned_in"
+    /**
+     * The country of origin of a product */
+    | "product_origin";
 
 export const CountryContext = {
     Citizenship: "citizenship",
@@ -56,4 +59,5 @@ export const CountryContext = {
     ShipmentTransit: "shipment_transit",
     ActivityIn: "activity_in",
     MentionedIn: "mentioned_in",
+    ProductOrigin: "product_origin",
 } as const;
