@@ -590,6 +590,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "can_nrd_individual_id",
         "jam_company_id",
         "esp_internal_employee_number",
+        "can_new_brunswick_reference_number",
     ]);
 
 export declare namespace IdentifierType {
@@ -1175,5 +1176,6 @@ export declare namespace IdentifierType {
         | "usa_irs_giin"
         | "can_nrd_individual_id"
         | "jam_company_id"
-        | "esp_internal_employee_number";
+        | "esp_internal_employee_number"
+        | "can_new_brunswick_reference_number";
 }
