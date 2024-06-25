@@ -3,50 +3,50 @@
  */
 
 export type Attributes =
+    | "financials"
+    | "monetary_value"
+    | "identifier"
+    | "shares"
+    | "translated_name"
+    | "additional_information"
+    | "position"
+    | "finances"
     | "date_of_birth"
+    | "contact"
+    | "status"
+    | "risk_intelligence"
+    | "country"
+    | "generic"
+    | "name"
+    | "business_purpose"
+    | "measurement"
     | "company_type"
     | "gender"
-    | "additional_information"
-    | "translated_name"
-    | "address"
-    | "business_purpose"
-    | "shares"
-    | "contact"
-    | "name"
-    | "status"
-    | "position"
-    | "generic"
-    | "monetary_value"
-    | "finances"
-    | "identifier"
     | "weak_identifier"
-    | "risk_intelligence"
-    | "financials"
-    | "country"
-    | "measurement"
+    | "address"
     | "person_status";
 
 export const Attributes = {
+    Financials: "financials",
+    MonetaryValue: "monetary_value",
+    Identifier: "identifier",
+    Shares: "shares",
+    TranslatedName: "translated_name",
+    AdditionalInformation: "additional_information",
+    Position: "position",
+    Finances: "finances",
     DateOfBirth: "date_of_birth",
+    Contact: "contact",
+    Status: "status",
+    RiskIntelligence: "risk_intelligence",
+    Country: "country",
+    Generic: "generic",
+    Name: "name",
+    BusinessPurpose: "business_purpose",
+    Measurement: "measurement",
     CompanyType: "company_type",
     Gender: "gender",
-    AdditionalInformation: "additional_information",
-    TranslatedName: "translated_name",
-    Address: "address",
-    BusinessPurpose: "business_purpose",
-    Shares: "shares",
-    Contact: "contact",
-    Name: "name",
-    Status: "status",
-    Position: "position",
-    Generic: "generic",
-    MonetaryValue: "monetary_value",
-    Finances: "finances",
-    Identifier: "identifier",
     WeakIdentifier: "weak_identifier",
-    RiskIntelligence: "risk_intelligence",
-    Financials: "financials",
-    Country: "country",
-    Measurement: "measurement",
+    Address: "address",
     PersonStatus: "person_status",
 } as const;

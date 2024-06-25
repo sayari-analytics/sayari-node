@@ -1707,7 +1707,10 @@ export type IdentifierType =
     | "jam_company_id"
     /**
      * Spain Internal Employee Number */
-    | "esp_internal_employee_number";
+    | "esp_internal_employee_number"
+    /**
+     * Unique Canada province ID number. Assigned to every legal entity registered with the New Brunswick Corporate Affairs Registry. */
+    | "can_new_brunswick_reference_number";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2292,4 +2295,5 @@ export const IdentifierType = {
     CanNrdIndividualId: "can_nrd_individual_id",
     JamCompanyId: "jam_company_id",
     EspInternalEmployeeNumber: "esp_internal_employee_number",
+    CanNewBrunswickReferenceNumber: "can_new_brunswick_reference_number",
 } as const;

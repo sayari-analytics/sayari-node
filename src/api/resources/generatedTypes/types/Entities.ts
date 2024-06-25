@@ -7,53 +7,53 @@
  */
 export type Entities =
     /**
-     * An unknown placeholder entity. Rarely used. An unknown entity has insufficient information to be grouped by an existing entity type. */
-    | "unknown"
-    /**
-     * A natural person (human being) */
-    | "person"
+     * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
+    | "vessel"
     /**
      * A civil or criminal legal case or similar type of proceeding */
     | "legal_matter"
     /**
-     * A trademark, patent, copyright, or similar type of intangible property */
-    | "intellectual_property"
-    /**
-     * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
-    | "vessel"
-    /**
-     * A legal entity or organization */
-    | "company"
-    /**
-     * An airplane, helicopter, or other vehicle that travels by flight */
-    | "aircraft"
+     * Land, real estate, real property, or personal property not categorized under another entity type */
+    | "property"
     /**
      * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
     | "tradename"
     /**
+     * A legal entity or organization */
+    | "company"
+    /**
      * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
     | "generic"
+    /**
+     * An unknown placeholder entity. Rarely used. An unknown entity has insufficient information to be grouped by an existing entity type. */
+    | "unknown"
     /**
      * A tradable financial asset */
     | "security"
     /**
+     * A trademark, patent, copyright, or similar type of intangible property */
+    | "intellectual_property"
+    /**
      * A shipment between two entities */
     | "shipment"
     /**
-     * Land, real estate, real property, or personal property not categorized under another entity type */
-    | "property";
+     * An airplane, helicopter, or other vehicle that travels by flight */
+    | "aircraft"
+    /**
+     * A natural person (human being) */
+    | "person";
 
 export const Entities = {
-    Unknown: "unknown",
-    Person: "person",
-    LegalMatter: "legal_matter",
-    IntellectualProperty: "intellectual_property",
     Vessel: "vessel",
-    Company: "company",
-    Aircraft: "aircraft",
-    Tradename: "tradename",
-    Generic: "generic",
-    Security: "security",
-    Shipment: "shipment",
+    LegalMatter: "legal_matter",
     Property: "property",
+    Tradename: "tradename",
+    Company: "company",
+    Generic: "generic",
+    Unknown: "unknown",
+    Security: "security",
+    IntellectualProperty: "intellectual_property",
+    Shipment: "shipment",
+    Aircraft: "aircraft",
+    Person: "person",
 } as const;
