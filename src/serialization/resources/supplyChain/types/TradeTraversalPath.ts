@@ -5,21 +5,22 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { TradeTraversalPathSegments } from "./TradeTraversalPathSegments";
+import { TradeTraversalEntity } from "./TradeTraversalEntity";
+import { TradeTraversalPathSegment } from "./TradeTraversalPathSegment";
 
 export const TradeTraversalPath: core.serialization.ObjectSchema<
     serializers.TradeTraversalPath.Raw,
     Sayari.TradeTraversalPath
 > = core.serialization.object({
-    start: core.serialization.string(),
-    end: core.serialization.string(),
-    paths: core.serialization.list(TradeTraversalPathSegments),
+    source: core.serialization.string(),
+    target: TradeTraversalEntity,
+    path: core.serialization.list(TradeTraversalPathSegment),
 });
 
 export declare namespace TradeTraversalPath {
     interface Raw {
-        start: string;
-        end: string;
-        paths: TradeTraversalPathSegments.Raw[];
+        source: string;
+        target: TradeTraversalEntity.Raw;
+        path: TradeTraversalPathSegment.Raw[];
     }
 }

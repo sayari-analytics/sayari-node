@@ -14,6 +14,7 @@ export const SaveEntityRequest: core.serialization.ObjectSchema<
     type: ResourceType,
     project: core.serialization.string(),
     entityId: core.serialization.property("entity_id", core.serialization.string()),
+    customFields: core.serialization.property("custom_fields", core.serialization.unknown()),
 });
 
 export declare namespace SaveEntityRequest {
@@ -21,5 +22,6 @@ export declare namespace SaveEntityRequest {
         type: ResourceType.Raw;
         project: string;
         entity_id: string;
+        custom_fields?: unknown;
     }
 }

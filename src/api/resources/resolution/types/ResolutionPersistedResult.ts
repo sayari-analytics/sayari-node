@@ -4,4 +4,6 @@
 
 import * as Sayari from "../../../index";
 
-export type TradeTraversalPathOrSegment = Sayari.TradeTraversalPath[] | Sayari.TradeTraversalPathSegment[][];
+export interface ResolutionPersistedResult extends Sayari.ResolutionResult {
+    savedEntityId: string;
+}

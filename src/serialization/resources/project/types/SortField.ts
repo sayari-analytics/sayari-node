@@ -8,40 +8,48 @@ import * as core from "../../../../core";
 
 export const SortField: core.serialization.Schema<serializers.SortField.Raw, Sayari.SortField> =
     core.serialization.enum_([
-        "+created",
+        "created",
         "-created",
-        "+saved_resource_id",
+        "saved_resource_id",
         "-saved_resource_id",
-        "+entity_id",
+        "entity_id",
         "-entity_id",
-        "+country",
+        "country",
         "-country",
-        "+latest_status",
+        "latest_status",
         "-latest_status",
-        "+label",
+        "label",
         "-label",
-        "+receiver_of",
+        "custom_<field name>",
+        "-custom_<field name>",
+        "receiver_of",
         "-receiver_of",
-        "+shipper_of",
+        "shipper_of",
         "-shipper_of",
+        "upstream_entities",
+        "-upstream_entities",
     ]);
 
 export declare namespace SortField {
     type Raw =
-        | "+created"
+        | "created"
         | "-created"
-        | "+saved_resource_id"
+        | "saved_resource_id"
         | "-saved_resource_id"
-        | "+entity_id"
+        | "entity_id"
         | "-entity_id"
-        | "+country"
+        | "country"
         | "-country"
-        | "+latest_status"
+        | "latest_status"
         | "-latest_status"
-        | "+label"
+        | "label"
         | "-label"
-        | "+receiver_of"
+        | "custom_<field name>"
+        | "-custom_<field name>"
+        | "receiver_of"
         | "-receiver_of"
-        | "+shipper_of"
-        | "-shipper_of";
+        | "shipper_of"
+        | "-shipper_of"
+        | "upstream_entities"
+        | "-upstream_entities";
 }

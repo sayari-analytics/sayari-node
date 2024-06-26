@@ -24,6 +24,10 @@ import * as Sayari from "../../../index";
  *                 entityId: "FyI9lrlmA-7z_3enlTOhlw",
  *                 tagIds: [],
  *                 caseStatus: "not_assigned",
+ *                 customFields: {
+ *                     "custom_company_size": "200+",
+ *                     "custom_company_type": "flower services"
+ *                 },
  *                 receivedHsCodes: ["271290", "271220"],
  *                 shippedHsCodes: [],
  *                 tradeCountInclMg: {
@@ -43,7 +47,8 @@ import * as Sayari from "../../../index";
  *                 },
  *                 upstream: {
  *                     risk: [],
- *                     countries: []
+ *                     countries: [],
+ *                     entities: 0
  *                 },
  *                 psa: {
  *                     risk: [Sayari.Risk.EuHighRiskThird, Sayari.Risk.BaselAml, Sayari.Risk.CpiScore, Sayari.Risk.OwnerOfRegulatoryActionEntity],
@@ -213,7 +218,13 @@ import * as Sayari from "../../../index";
  *                     docCount: 1
  *                 }],
  *             tagIds: [],
- *             upstreamRisk: [],
+ *             upstreamRisk: [{
+ *                     key: "eu_high_risk_third",
+ *                     docCount: 1
+ *                 }, {
+ *                     key: "export_to_soe",
+ *                     docCount: 4
+ *                 }],
  *             hitCount: [{
  *                     key: "hit_count",
  *                     docCount: 1
@@ -250,7 +261,13 @@ import * as Sayari from "../../../index";
  *                     docCount: 1
  *                 }],
  *             businessPurpose: [],
- *             upstreamCountry: [],
+ *             upstreamCountry: [{
+ *                     key: "USA",
+ *                     docCount: 1
+ *                 }, {
+ *                     key: "CAN",
+ *                     docCount: 3
+ *                 }],
  *             receivedHsCodes: {
  *                 docCount: 2,
  *                 hsCodeTerms: {
@@ -275,6 +292,29 @@ import * as Sayari from "../../../index";
  *                     key: "not_assigned",
  *                     docCount: 1
  *                 }],
+ *             upstreamCountryTiers: {
+ *                 "USA": {
+ *                     [Sayari.UpstreamTiers.Tier2]: 1,
+ *                     "totalCount": 1
+ *                 },
+ *                 "CAN": {
+ *                     [Sayari.UpstreamTiers.Tier1]: 1,
+ *                     [Sayari.UpstreamTiers.Tier2]: 2,
+ *                     "totalCount": 3
+ *                 }
+ *             },
+ *             upstreamRiskTiers: {
+ *                 "eu_high_risk_third": {
+ *                     [Sayari.UpstreamTiers.Tier4]: 1,
+ *                     "totalCount": 1
+ *                 },
+ *                 "export_to_soe": {
+ *                     [Sayari.UpstreamTiers.Tier1]: 1,
+ *                     [Sayari.UpstreamTiers.Tier3]: 1,
+ *                     [Sayari.UpstreamTiers.Tier4]: 2,
+ *                     "totalCount": 4
+ *                 }
+ *             },
  *             shippedHsCodes: {
  *                 docCount: 0,
  *                 hsCodeTerms: {

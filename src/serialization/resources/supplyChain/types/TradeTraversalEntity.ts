@@ -10,17 +10,19 @@ export const TradeTraversalEntity: core.serialization.ObjectSchema<
     serializers.TradeTraversalEntity.Raw,
     Sayari.TradeTraversalEntity
 > = core.serialization.object({
+    id: core.serialization.string(),
     type: core.serialization.string(),
     label: core.serialization.string(),
     countries: core.serialization.list(core.serialization.string()),
-    risks: core.serialization.list(core.serialization.string()),
+    risk: core.serialization.list(core.serialization.string()),
 });
 
 export declare namespace TradeTraversalEntity {
     interface Raw {
+        id: string;
         type: string;
         label: string;
         countries: string[];
-        risks: string[];
+        risk: string[];
     }
 }

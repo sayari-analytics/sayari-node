@@ -41,11 +41,9 @@ export class SupplyChain {
      *
      * @example
      *     await sayari.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
-     *         date: "2023-06-01",
-     *         hsCode: ["3206"],
-     *         components: ["3204"],
-     *         maxDepth: 2,
-     *         risks: [Sayari.Risk.ForcedLaborUflpaOriginSubtier]
+     *         minDate: "2023-03-15",
+     *         product: ["3204"],
+     *         risk: [Sayari.Risk.ForcedLaborXinjiangOriginSubtier]
      *     })
      */
     public async upstreamTradeTraversal(
@@ -54,18 +52,28 @@ export class SupplyChain {
         requestOptions?: SupplyChain.RequestOptions
     ): Promise<Sayari.UpstreamTradeTraversalResponse> {
         const {
+            risk,
+            notRisk,
             countries,
             notCountries,
-            risks,
-            notRisk,
-            hsCode,
-            notHsCode,
-            components,
-            notComponents,
+            product,
+            notProduct,
+            component,
+            notComponent,
+            minDate,
+            maxDate,
             maxDepth,
-            date,
+            limit,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        if (risk != null) {
+            _queryParams["risk"] = JSON.stringify(risk);
+        }
+
+        if (notRisk != null) {
+            _queryParams["-risk"] = JSON.stringify(notRisk);
+        }
+
         if (countries != null) {
             _queryParams["countries"] = JSON.stringify(countries);
         }
@@ -74,49 +82,49 @@ export class SupplyChain {
             _queryParams["-countries"] = JSON.stringify(notCountries);
         }
 
-        if (risks != null) {
-            _queryParams["risks"] = JSON.stringify(risks);
+        if (product != null) {
+            _queryParams["product"] = JSON.stringify(product);
         }
 
-        if (notRisk != null) {
-            _queryParams["-risks"] = JSON.stringify(notRisk);
+        if (notProduct != null) {
+            _queryParams["-product"] = JSON.stringify(notProduct);
         }
 
-        if (hsCode != null) {
-            _queryParams["hs_code"] = JSON.stringify(hsCode);
+        if (component != null) {
+            _queryParams["component"] = JSON.stringify(component);
         }
 
-        if (notHsCode != null) {
-            _queryParams["-hs_code"] = JSON.stringify(notHsCode);
+        if (notComponent != null) {
+            _queryParams["-component"] = JSON.stringify(notComponent);
         }
 
-        if (components != null) {
-            _queryParams["components"] = JSON.stringify(components);
+        if (minDate != null) {
+            _queryParams["min_date"] = minDate;
         }
 
-        if (notComponents != null) {
-            _queryParams["-components"] = JSON.stringify(notComponents);
+        if (maxDate != null) {
+            _queryParams["max_date"] = maxDate;
         }
 
         if (maxDepth != null) {
             _queryParams["max_depth"] = maxDepth.toString();
         }
 
-        if (date != null) {
-            _queryParams["date"] = date;
+        if (limit != null) {
+            _queryParams["limit"] = limit.toString();
         }
 
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                `/v1/upstream/${encodeURIComponent(id)}`
+                `/v1/supply_chain/upstream/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

@@ -3,8 +3,9 @@
  */
 
 export interface TradeTraversalEntity {
+    id: string;
     type: string;
     label: string;
     countries: string[];
-    risks: string[];
+    risk: string[];
 }

@@ -14,11 +14,13 @@ export const ProjectEntityUpstream: core.serialization.ObjectSchema<
 > = core.serialization.object({
     risk: core.serialization.list(Risk),
     countries: core.serialization.list(Country),
+    entities: core.serialization.number(),
 });
 
 export declare namespace ProjectEntityUpstream {
     interface Raw {
         risk: Risk.Raw[];
         countries: Country.Raw[];
+        entities: number;
     }
 }

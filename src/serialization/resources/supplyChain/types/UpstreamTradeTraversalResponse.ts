@@ -5,9 +5,7 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { EntityId } from "./EntityId";
-import { TradeTraversalEntity } from "./TradeTraversalEntity";
-import { TradeTraversalPathOrSegment } from "./TradeTraversalPathOrSegment";
+import { TradeTraversalPath } from "./TradeTraversalPath";
 
 export const UpstreamTradeTraversalResponse: core.serialization.ObjectSchema<
     serializers.UpstreamTradeTraversalResponse.Raw,
@@ -16,8 +14,7 @@ export const UpstreamTradeTraversalResponse: core.serialization.ObjectSchema<
     status: core.serialization.number().optional(),
     success: core.serialization.boolean().optional(),
     message: core.serialization.string().optional(),
-    entities: core.serialization.record(EntityId, TradeTraversalEntity),
-    paths: TradeTraversalPathOrSegment,
+    data: core.serialization.list(TradeTraversalPath),
 });
 
 export declare namespace UpstreamTradeTraversalResponse {
@@ -25,7 +22,6 @@ export declare namespace UpstreamTradeTraversalResponse {
         status?: number | null;
         success?: boolean | null;
         message?: string | null;
-        entities: Record<EntityId.Raw, TradeTraversalEntity.Raw>;
-        paths: TradeTraversalPathOrSegment.Raw;
+        data: TradeTraversalPath.Raw[];
     }
 }

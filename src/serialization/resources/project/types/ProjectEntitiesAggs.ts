@@ -6,7 +6,9 @@ import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { BucketAgg } from "./BucketAgg";
+import { TierCountAgg } from "./TierCountAgg";
 import { HsCodeAgg } from "./HsCodeAgg";
+import { TierCountKeys } from "./TierCountKeys";
 
 export const ProjectEntitiesAggs: core.serialization.ObjectSchema<
     serializers.ProjectEntitiesAggs.Raw,
@@ -15,8 +17,10 @@ export const ProjectEntitiesAggs: core.serialization.ObjectSchema<
     hitCount: core.serialization.property("hit_count", core.serialization.list(BucketAgg).optional()),
     country: core.serialization.list(BucketAgg).optional(),
     upstreamCountry: core.serialization.property("upstream_country", core.serialization.list(BucketAgg).optional()),
+    upstreamCountryTiers: core.serialization.property("upstream_country_tiers", TierCountAgg.optional()),
     risk: core.serialization.list(BucketAgg).optional(),
     upstreamRisk: core.serialization.property("upstream_risk", core.serialization.list(BucketAgg).optional()),
+    upstreamRiskTiers: core.serialization.property("upstream_risk_tiers", TierCountAgg.optional()),
     source: core.serialization.list(BucketAgg).optional(),
     businessPurpose: core.serialization.property("business_purpose", core.serialization.list(BucketAgg).optional()),
     tagIds: core.serialization.property("tag_ids", core.serialization.list(BucketAgg).optional()),
@@ -35,8 +39,10 @@ export declare namespace ProjectEntitiesAggs {
         hit_count?: BucketAgg.Raw[] | null;
         country?: BucketAgg.Raw[] | null;
         upstream_country?: BucketAgg.Raw[] | null;
+        upstream_country_tiers?: TierCountAgg.Raw | null;
         risk?: BucketAgg.Raw[] | null;
         upstream_risk?: BucketAgg.Raw[] | null;
+        upstream_risk_tiers?: TierCountAgg.Raw | null;
         source?: BucketAgg.Raw[] | null;
         business_purpose?: BucketAgg.Raw[] | null;
         tag_ids?: BucketAgg.Raw[] | null;

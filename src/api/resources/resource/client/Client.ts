@@ -42,7 +42,12 @@ export class Resource {
      *     await sayari.resource.saveEntity({
      *         type: Sayari.ResourceType.Entity,
      *         project: "GNJbkG",
-     *         entityId: "Zk0qOaM2SSYg_ZhsljykMQ"
+     *         entityId: "Zk0qOaM2SSYg_ZhsljykMQ",
+     *         customFields: {
+     *             "properties": {
+     *                 "custom_name": "Victoria Beckham"
+     *             }
+     *         }
      *     })
      */
     public async saveEntity(
@@ -59,7 +64,7 @@ export class Resource {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -191,7 +196,7 @@ export class Resource {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
