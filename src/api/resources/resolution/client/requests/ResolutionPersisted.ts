@@ -18,7 +18,7 @@ import * as Sayari from "../../../../index";
  *         limit: 1,
  *         body: {
  *             name: ["victoria beckham limited"],
- *             profile: Sayari.ProfileEnum.Supplier
+ *             profile: Sayari.ProfileEnum.Suppliers
  *         }
  *     }
  */

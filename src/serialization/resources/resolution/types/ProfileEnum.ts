@@ -7,8 +7,8 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const ProfileEnum: core.serialization.Schema<serializers.ProfileEnum.Raw, Sayari.ProfileEnum> =
-    core.serialization.enum_(["corporate", "supplier"]);
+    core.serialization.enum_(["corporate", "suppliers"]);
 
 export declare namespace ProfileEnum {
-    type Raw = "corporate" | "supplier";
+    type Raw = "corporate" | "suppliers";
 }

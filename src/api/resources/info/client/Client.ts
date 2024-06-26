@@ -38,7 +38,7 @@ export class Info {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.info.getUsage({
+     *     await client.info.getUsage({
      *         from: "2023-01-15",
      *         to: "2023-01-15"
      *     })
@@ -67,7 +67,7 @@ export class Info {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -169,7 +169,7 @@ export class Info {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.info.getHistory({
+     *     await client.info.getHistory({
      *         events: "string",
      *         from: "2023-01-15",
      *         to: "2023-01-15",
@@ -217,7 +217,7 @@ export class Info {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

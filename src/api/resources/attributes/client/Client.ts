@@ -40,7 +40,7 @@ export class Attributes {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.attributes.postAttribute({
+     *     await client.attributes.postAttribute({
      *         entity: "zq04axX2dLn9tE6W6Q8Qhg",
      *         type: "address",
      *         value: {
@@ -69,7 +69,7 @@ export class Attributes {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -193,7 +193,7 @@ export class Attributes {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.attributes.patchAttribute("enEwNGF4WDJkTG45dEU2VzZROFFoZ3xhZGRyZXNzfDBwbEVCMHxVNzhzN21yOUVFTThIZ3pwREM3UDFB", {
+     *     await client.attributes.patchAttribute("enEwNGF4WDJkTG45dEU2VzZROFFoZ3xhZGRyZXNzfDBwbEVCMHxVNzhzN21yOUVFTThIZ3pwREM3UDFB", {
      *         value: {
      *             "street1": "1600 Pennsylvania Avenue NW",
      *             "city": "Washington DC",
@@ -221,7 +221,7 @@ export class Attributes {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -353,7 +353,7 @@ export class Attributes {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.attributes.deleteAttribute("enEwNGF4WDJkTG45dEU2VzZROFFoZ3xhZGRyZXNzfDBwbEVCMHxVNzhzN21yOUVFTThIZ3pwREM3UDFB")
+     *     await client.attributes.deleteAttribute("enEwNGF4WDJkTG45dEU2VzZROFFoZ3xhZGRyZXNzfDBwbEVCMHxVNzhzN21yOUVFTThIZ3pwREM3UDFB")
      */
     public async deleteAttribute(
         attributeId: string,
@@ -369,7 +369,7 @@ export class Attributes {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

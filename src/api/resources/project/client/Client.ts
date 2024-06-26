@@ -39,7 +39,7 @@ export class Project {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.project.createProject({
+     *     await client.project.createProject({
      *         label: "Project Alpha"
      *     })
      */
@@ -57,7 +57,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -169,13 +169,13 @@ export class Project {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.project.getProjects({
+     *     await client.project.getProjects({
      *         archived: false,
      *         limit: 8
      *     })
      *
      * @example
-     *     await sayari.project.getProjects({
+     *     await client.project.getProjects({
      *         archived: true,
      *         limit: 5
      *     })
@@ -212,7 +212,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -325,7 +325,7 @@ export class Project {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.project.getProjectEntities("gPq6EY", {
+     *     await client.project.getProjectEntities("gPq6EY", {
      *         accept: Sayari.GetProjectEntitiesAcceptHeader.Json
      *     })
      */
@@ -447,7 +447,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 Accept: accept,
@@ -560,7 +560,7 @@ export class Project {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.project.deleteProject("Gam5qG")
+     *     await client.project.deleteProject("Gam5qG")
      */
     public async deleteProject(
         projectId: string,
@@ -576,7 +576,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

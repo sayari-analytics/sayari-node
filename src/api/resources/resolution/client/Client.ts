@@ -39,16 +39,16 @@ export class Resolution {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.resolution.resolution({
+     *     await client.resolution.resolution({
      *         name: "victoria beckham limited",
      *         limit: 1
      *     })
      *
      * @example
-     *     await sayari.resolution.resolution({
+     *     await client.resolution.resolution({
      *         name: "victoria beckham limited",
      *         limit: 1,
-     *         profile: Sayari.ProfileEnum.Supplier
+     *         profile: Sayari.ProfileEnum.Suppliers
      *     })
      */
     public async resolution(
@@ -148,7 +148,7 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -260,7 +260,7 @@ export class Resolution {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.resolution.resolutionPost({
+     *     await client.resolution.resolutionPost({
      *         limit: 1,
      *         body: {
      *             name: ["victoria beckham limited"]
@@ -268,11 +268,11 @@ export class Resolution {
      *     })
      *
      * @example
-     *     await sayari.resolution.resolutionPost({
+     *     await client.resolution.resolutionPost({
      *         limit: 1,
      *         body: {
      *             name: ["victoria beckham limited"],
-     *             profile: Sayari.ProfileEnum.Supplier
+     *             profile: Sayari.ProfileEnum.Suppliers
      *         }
      *     })
      */
@@ -300,7 +300,7 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -414,7 +414,7 @@ export class Resolution {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.resolution.resolutionPersisted("V03eYM", {
+     *     await client.resolution.resolutionPersisted("V03eYM", {
      *         limit: 1,
      *         body: {
      *             name: ["victoria beckham limited"]
@@ -422,11 +422,11 @@ export class Resolution {
      *     })
      *
      * @example
-     *     await sayari.resolution.resolutionPersisted("6GaxYn", {
+     *     await client.resolution.resolutionPersisted("6GaxYn", {
      *         limit: 1,
      *         body: {
      *             name: ["victoria beckham limited"],
-     *             profile: Sayari.ProfileEnum.Supplier
+     *             profile: Sayari.ProfileEnum.Suppliers
      *         }
      *     })
      */
@@ -455,7 +455,7 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

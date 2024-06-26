@@ -40,7 +40,7 @@ export class Record_ {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F1682970471254")
+     *     await client.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F1682970471254")
      */
     public async getRecord(
         id: string,
@@ -67,7 +67,7 @@ export class Record_ {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

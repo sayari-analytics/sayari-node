@@ -15,7 +15,7 @@ import * as Sayari from "../../../../index";
  *     {
  *         name: "victoria beckham limited",
  *         limit: 1,
- *         profile: Sayari.ProfileEnum.Supplier
+ *         profile: Sayari.ProfileEnum.Suppliers
  *     }
  */
 export interface Resolution {
@@ -56,7 +56,7 @@ export interface Resolution {
      */
     type?: Sayari.Entities | Sayari.Entities[];
     /**
-     * Profile can be used to switch between search algorithms. The default profile `corporate` is optimized for accurate entity attribute matching and is ideal for business verification and matching entities with corporate data. The `supplier` profile is optimized for matching entities with extensive trade data. Ideal for supply chain and trade-related use cases.
+     * Profile can be used to switch between search algorithms. The default profile `corporate` is optimized for accurate entity attribute matching and is ideal for business verification and matching entities with corporate data. The `suppliers` profile is optimized for matching entities with extensive trade data. Ideal for supply chain and trade-related use cases.
      */
     profile?: Sayari.ProfileEnum;
 }

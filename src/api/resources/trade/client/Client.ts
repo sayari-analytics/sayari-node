@@ -38,7 +38,7 @@ export class Trade {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.trade.searchShipments({
+     *     await client.trade.searchShipments({
      *         limit: 1,
      *         q: "rum"
      *     })
@@ -67,7 +67,7 @@ export class Trade {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -170,7 +170,7 @@ export class Trade {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.trade.searchSuppliers({
+     *     await client.trade.searchSuppliers({
      *         limit: 1,
      *         q: "rum"
      *     })
@@ -199,7 +199,7 @@ export class Trade {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -302,7 +302,7 @@ export class Trade {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.trade.searchBuyers({
+     *     await client.trade.searchBuyers({
      *         limit: 1,
      *         q: "rum"
      *     })
@@ -331,7 +331,7 @@ export class Trade {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
