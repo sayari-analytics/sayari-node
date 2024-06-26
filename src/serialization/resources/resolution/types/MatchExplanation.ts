@@ -24,6 +24,11 @@ export const MatchExplanation: core.serialization.ObjectSchema<
         "is_deletion_recommended",
         core.serialization.boolean().optional()
     ),
+    nCommonTermMatches: core.serialization.property("n_common_term_matches", core.serialization.number().optional()),
+    nUncommonTermMatches: core.serialization.property(
+        "n_uncommon_term_matches",
+        core.serialization.number().optional()
+    ),
 });
 
 export declare namespace MatchExplanation {
@@ -33,5 +38,7 @@ export declare namespace MatchExplanation {
         name_custom_tf_idf_score?: number | null;
         high_quality_match_name?: boolean | null;
         is_deletion_recommended?: boolean | null;
+        n_common_term_matches?: number | null;
+        n_uncommon_term_matches?: number | null;
     }
 }
