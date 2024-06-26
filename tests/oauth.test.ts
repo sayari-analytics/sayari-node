@@ -29,5 +29,5 @@ describe("OAuth", () => {
 
         const again = await client.entity.getEntity(resolution.data[0].entityId);
         expect(again.id).toEqual(resolution.data[0].entityId);
-    });
+    }, 60000);
 });

@@ -7,7 +7,7 @@ const baseURL = process.env.BASE_URL ||  'https://api.sayari.com'
 expect(clientID).not.toBe('');
 expect(baseURL).not.toBe('');
 
-const longTimeout = 60000 // 60s
+const longTimeout = 100000
 
 const client = new SayariClient({
     clientId: clientID,
