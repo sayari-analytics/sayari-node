@@ -7,4 +7,5 @@ import * as Sayari from "../../../index";
 export interface ProjectEntityUpstream {
     risk: Sayari.Risk[];
     countries: Sayari.Country[];
+    entities: number;
 }

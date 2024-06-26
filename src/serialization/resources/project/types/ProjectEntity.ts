@@ -23,6 +23,7 @@ export const ProjectEntity: core.serialization.ObjectSchema<serializers.ProjectE
         entityId: core.serialization.property("entity_id", core.serialization.string()),
         tagIds: core.serialization.property("tag_ids", core.serialization.list(core.serialization.string())),
         caseStatus: core.serialization.property("case_status", core.serialization.string()),
+        customFields: core.serialization.property("custom_fields", core.serialization.unknown().optional()),
         matchStrength: core.serialization.property("match_strength", core.serialization.unknown()),
         shippedHsCodes: core.serialization.property(
             "shipped_hs_codes",
@@ -51,6 +52,7 @@ export declare namespace ProjectEntity {
         entity_id: string;
         tag_ids: string[];
         case_status: string;
+        custom_fields?: unknown | null;
         match_strength?: unknown;
         shipped_hs_codes: string[];
         received_hs_codes: string[];

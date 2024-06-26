@@ -3,73 +3,89 @@
  */
 
 /**
- * Defines a sort order on a field, either ascending or descending. The value must begin with either a '+' or a '-' to indicate an ascending or descending sort, respectively, followed by a field name to sort on.
+ * Defines a sort order on a field, either ascending or descending. The value should begin with a '-' to indicate a descending sort, followed by a field name to sort on.
  */
 export type SortField =
     /**
      * The date the entity was saved to the project, ascending. */
-    | "+created"
+    | "created"
     /**
      * The date the entity was saved to the project, descending. */
     | "-created"
     /**
      * The unique identifier of the saved entity within the project, e.g. `12200`, ascending. */
-    | "+saved_resource_id"
+    | "saved_resource_id"
     /**
      * The unique identifier of the saved entity within the project, e.g. `12200`, descending. */
     | "-saved_resource_id"
     /**
      * The unique identifier of the entity, e.g. `pLH5fpfZoWTiS1z8ieSTDQ`, ascending. */
-    | "+entity_id"
+    | "entity_id"
     /**
      * The unique identifier of the entity, e.g. `pLH5fpfZoWTiS1z8ieSTDQ`, descending. */
     | "-entity_id"
     /**
      * The [country](/sayari-library/ontology/enumerated-types#country) of the entity, ascending. */
-    | "+country"
+    | "country"
     /**
      * The [country](/sayari-library/ontology/enumerated-types#country) of the entity, descending. */
     | "-country"
     /**
      * The most recent [company status](/sayari-library/ontology/enumerated-types#company-status) of the entity, ascending. */
-    | "+latest_status"
+    | "latest_status"
     /**
      * The most recent [company status](/sayari-library/ontology/enumerated-types#company-status) of the entity, descending. */
     | "-latest_status"
     /**
      * The label (display name) of the entity, ascending. */
-    | "+label"
+    | "label"
     /**
      * The label (display name) of the entity, descending. */
     | "-label"
     /**
+     * <Warning>This sorting option is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> One of the custom fields provided by the user, ascending. */
+    | "custom_<field name>"
+    /**
+     * <Warning>This sorting option is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> One of the custom fields provided by the user, descending. */
+    | "-custom_<field name>"
+    /**
      * The number of shipments the entity has received, ascending. */
-    | "+receiver_of"
+    | "receiver_of"
     /**
      * The number of shipments the entity has received, descending. */
     | "-receiver_of"
     /**
      * The number of shipments the entity has shipped, ascending. */
-    | "+shipper_of"
+    | "shipper_of"
     /**
      * The number of shipments the entity has shipped, descending. */
-    | "-shipper_of";
+    | "-shipper_of"
+    /**
+     * The number of upstream entities in the supply chain of the entity, ascending. */
+    | "upstream_entities"
+    /**
+     * The number of upstream entities in the supply chain of the entity, descending. */
+    | "-upstream_entities";
 
 export const SortField = {
-    CreatedAsc: "+created",
+    CreatedAsc: "created",
     CreatedDesc: "-created",
-    IdAsc: "+saved_resource_id",
+    IdAsc: "saved_resource_id",
     IdDesc: "-saved_resource_id",
-    EntityIdAsc: "+entity_id",
+    EntityIdAsc: "entity_id",
     EntityIdDesc: "-entity_id",
-    CountryAsc: "+country",
+    CountryAsc: "country",
     CountryDesc: "-country",
-    StatusAsc: "+latest_status",
+    StatusAsc: "latest_status",
     StatusDesc: "-latest_status",
-    LabelAsc: "+label",
+    LabelAsc: "label",
     LabelDesc: "-label",
-    ReceiverOfAcc: "+receiver_of",
+    CustomFieldsAsc: "custom_<field name>",
+    CustomFieldsDesc: "-custom_<field name>",
+    ReceiverOfAcc: "receiver_of",
     ReceiverOfDesc: "-receiver_of",
-    ShipperOfAsc: "+shipper_of",
+    ShipperOfAsc: "shipper_of",
     ShipperOfDesc: "-shipper_of",
+    UpstreamEntitiesAsc: "upstream_entities",
+    UpstreamEntitiesDesc: "-upstream_entities",
 } as const;

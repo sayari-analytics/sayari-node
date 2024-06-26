@@ -4,6 +4,4 @@
 
 import * as Sayari from "../../../index";
 
-export interface TradeTraversalPathSegments {
-    segments: Sayari.TradeTraversalPathSegment[];
-}
+export type TierCountAgg = Record<string, Sayari.TierCount>;

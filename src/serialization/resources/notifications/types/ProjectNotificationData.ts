@@ -15,6 +15,7 @@ export const ProjectNotificationData: core.serialization.ObjectSchema<
     resourceId: core.serialization.property("resource_id", core.serialization.string()),
     entityId: core.serialization.property("entity_id", core.serialization.string()),
     notifications: core.serialization.list(Notification),
+    customFields: core.serialization.property("custom_fields", core.serialization.unknown().optional()),
 });
 
 export declare namespace ProjectNotificationData {
@@ -23,5 +24,6 @@ export declare namespace ProjectNotificationData {
         resource_id: string;
         entity_id: string;
         notifications: Notification.Raw[];
+        custom_fields?: unknown | null;
     }
 }

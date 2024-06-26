@@ -8,39 +8,28 @@ import * as Sayari from "../../../../index";
  * @example
  *     {
  *         limit: 1,
- *         name: ["victoria beckham limited"]
+ *         body: {
+ *             name: ["victoria beckham limited"]
+ *         }
  *     }
  *
  * @example
  *     {
  *         limit: 1,
- *         name: ["victoria beckham limited"],
- *         profile: Sayari.ProfileEnum.Supplier
+ *         body: {
+ *             name: ["victoria beckham limited"],
+ *             profile: Sayari.ProfileEnum.Supplier
+ *         }
  *     }
  */
 export interface ResolutionPost {
     /**
-     * A limit on the number of objects to be returned with a range between 1 and 10. Defaults to 10.
+     * A limit on the number of objects to be returned with a range between 1 and 10 inclusive. Defaults to 10.
      */
     limit?: number;
     /**
      * Number of results to skip before returning response. Defaults to 0.
      */
     offset?: number;
-    /** Entity name */
-    name?: string[];
-    /** Entity identifier. Can be from either the [Identifier Type](/sayari-library/ontology/enumerated-types#identifier-type) or [Weak Identifier Type](/sayari-library/ontology/enumerated-types#weak-identifier-type) enums. */
-    identifier?: Sayari.BothIdentifierTypes[];
-    /** Entity country - must be ISO (3166) Trigram i.e., `USA`. See complete list [here](/sayari-library/ontology/enumerated-types#country) */
-    country?: Sayari.Country[];
-    /** Entity address */
-    address?: string[];
-    /** Entity date of birth */
-    dateOfBirth?: string[];
-    /** Entity contact */
-    contact?: string[];
-    /** [Entity type](/sayari-library/ontology/entities). If multiple values are passed for any field, the endpoint will match entities with ANY of the values. */
-    type?: Sayari.Entities[];
-    /** Profile can be used to switch between search algorithms. The default profile `corporate` is optimized for accurate entity attribute matching and is ideal for business verification and matching entities with corporate data. The `supplier` profile is optimized for matching entities with extensive trade data. Ideal for supply chain and trade-related use cases. */
-    profile?: Sayari.ProfileEnum;
+    body: Sayari.ResolutionBody;
 }

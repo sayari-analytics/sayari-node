@@ -5,8 +5,6 @@
 import * as Sayari from "../../../index";
 
 export interface TradeTraversalPathSegment {
-    src: string;
-    dst: string;
-    hsCodes?: string[];
-    products?: Sayari.TradeTraversalProduct[];
+    entity: Sayari.TradeTraversalEntity;
+    products: Sayari.TradeTraversalProduct[];
 }

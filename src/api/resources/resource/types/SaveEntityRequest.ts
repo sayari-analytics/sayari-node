@@ -9,7 +9,12 @@ import * as Sayari from "../../../index";
  *     {
  *         type: Sayari.ResourceType.Entity,
  *         project: "GNJbkG",
- *         entityId: "Zk0qOaM2SSYg_ZhsljykMQ"
+ *         entityId: "Zk0qOaM2SSYg_ZhsljykMQ",
+ *         customFields: {
+ *             "properties": {
+ *                 "custom_name": "Victoria Beckham"
+ *             }
+ *         }
  *     }
  */
 export interface SaveEntityRequest {
@@ -18,4 +23,6 @@ export interface SaveEntityRequest {
     project: string;
     /** The entity identifier. */
     entityId: string;
+    /** <Warning>This property is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> custom user key/value pairs (key must be prefixed with "custom\_" and value must be "string" type) */
+    customFields?: unknown;
 }

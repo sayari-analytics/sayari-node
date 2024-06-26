@@ -57,7 +57,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -212,7 +212,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -408,9 +408,24 @@ export class Project {
 
         if (filters != null) {
             if (Array.isArray(filters)) {
-                _queryParams["filters"] = filters.map((item) => item);
+                _queryParams["filters"] = await Promise.all(
+                    filters.map(
+                        async (item) =>
+                            await serializers.ProjectEntitiesFilter.jsonOrThrow(item, {
+                                unrecognizedObjectKeys: "passthrough",
+                                allowUnrecognizedUnionMembers: true,
+                                allowUnrecognizedEnumValues: true,
+                                breadcrumbsPrefix: ["request", "filters"],
+                            })
+                    )
+                );
             } else {
-                _queryParams["filters"] = filters;
+                _queryParams["filters"] = await serializers.ProjectEntitiesFilter.jsonOrThrow(filters, {
+                    unrecognizedObjectKeys: "passthrough",
+                    allowUnrecognizedUnionMembers: true,
+                    allowUnrecognizedEnumValues: true,
+                    breadcrumbsPrefix: ["request", "filters"],
+                });
             }
         }
 
@@ -432,7 +447,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 Accept: accept,
@@ -561,7 +576,7 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

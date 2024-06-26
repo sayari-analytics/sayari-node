@@ -11,8 +11,10 @@ export interface ProjectEntitiesAggs {
     hitCount?: Sayari.BucketAgg[];
     country?: Sayari.BucketAgg[];
     upstreamCountry?: Sayari.BucketAgg[];
+    upstreamCountryTiers?: Sayari.TierCountAgg;
     risk?: Sayari.BucketAgg[];
     upstreamRisk?: Sayari.BucketAgg[];
+    upstreamRiskTiers?: Sayari.TierCountAgg;
     source?: Sayari.BucketAgg[];
     businessPurpose?: Sayari.BucketAgg[];
     tagIds?: Sayari.BucketAgg[];

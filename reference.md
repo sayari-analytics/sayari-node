@@ -842,6 +842,102 @@ await sayari.notifications.projectNotifications("0oZnoG", {
 </dl>
 </details>
 
+<details><summary> <code>sayari.notifications.<a href="./src/api/resources/notifications/client/Client.ts">projectNotifications</a>(id, { ...params }) -> Sayari.ProjectNotificationsResponse</code> </summary>
+
+<dl>
+
+<dd>
+
+#### 📝 Description
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+```ts
+await sayari.notifications.projectNotifications("0oZnoG", {
+    limit: 20,
+    sort: Sayari.NotificationsSortField.DateDesc,
+});
+```
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+**id: `string`** — Unique identifier of the project
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**request: `Sayari.ProjectNotifications`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**requestOptions: `Notifications.RequestOptions`**
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+</details>
+
 <details><summary> <code>sayari.notifications.<a href="./src/api/resources/notifications/client/Client.ts">resourceNotifications</a>(id, { ...params }) -> Sayari.ResourceNotificationsResponse</code> </summary>
 
 <dl>
@@ -1932,7 +2028,9 @@ The resolution endpoints allow users to search for matching entities against a p
 ```ts
 await sayari.resolution.resolutionPost({
     limit: 1,
-    name: ["victoria beckham limited"],
+    body: {
+        name: ["victoria beckham limited"],
+    },
 });
 ```
 
@@ -2018,8 +2116,10 @@ The resolution endpoints allow users to search for matching entities against a p
 ```ts
 await sayari.resolution.resolutionPost({
     limit: 1,
-    name: ["victoria beckham limited"],
-    profile: Sayari.ProfileEnum.Supplier,
+    body: {
+        name: ["victoria beckham limited"],
+        profile: Sayari.ProfileEnum.Supplier,
+    },
 });
 ```
 
@@ -2042,6 +2142,203 @@ await sayari.resolution.resolutionPost({
 <dd>
 
 **request: `Sayari.ResolutionPost`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**requestOptions: `Resolution.RequestOptions`**
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+</details>
+
+<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPersisted</a>(projectId, { ...params }) -> Sayari.ResolutionPersistedResponse</code> </summary>
+
+<dl>
+
+<dd>
+
+#### 📝 Description
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+```ts
+await sayari.resolution.resolutionPersisted("V03eYM", {
+    limit: 1,
+    body: {
+        name: ["victoria beckham limited"],
+    },
+});
+```
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+**projectId: `string`** — Unique identifier of the project
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**request: `Sayari.ResolutionPersisted`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**requestOptions: `Resolution.RequestOptions`**
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+</details>
+
+<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPersisted</a>(projectId, { ...params }) -> Sayari.ResolutionPersistedResponse</code> </summary>
+
+<dl>
+
+<dd>
+
+#### 📝 Description
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+```ts
+await sayari.resolution.resolutionPersisted("6GaxYn", {
+    limit: 1,
+    body: {
+        name: ["victoria beckham limited"],
+        profile: Sayari.ProfileEnum.Supplier,
+    },
+});
+```
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+**projectId: `string`** — Unique identifier of the project
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**request: `Sayari.ResolutionPersisted`**
 
 </dd>
 
@@ -2109,6 +2406,11 @@ await sayari.resource.saveEntity({
     type: Sayari.ResourceType.Entity,
     project: "GNJbkG",
     entityId: "Zk0qOaM2SSYg_ZhsljykMQ",
+    customFields: {
+        properties: {
+            custom_name: "Victoria Beckham",
+        },
+    },
 });
 ```
 
@@ -2804,11 +3106,9 @@ await sayari.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
 
 ```ts
 await sayari.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
-    date: "2023-06-01",
-    hsCode: ["3206"],
-    components: ["3204"],
-    maxDepth: 2,
-    risks: [Sayari.Risk.ForcedLaborUflpaOriginSubtier],
+    minDate: "2023-03-15",
+    product: ["3204"],
+    risk: [Sayari.Risk.ForcedLaborXinjiangOriginSubtier],
 });
 ```
 

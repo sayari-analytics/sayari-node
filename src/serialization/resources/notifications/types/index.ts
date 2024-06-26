@@ -1,3 +1,4 @@
+export * from "./NotificationsSortField";
 export * from "./NotificationType";
 export * from "./NotificationAdditionalInformation";
 export * from "./Notification";

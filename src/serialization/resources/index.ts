@@ -35,6 +35,5 @@ export * from "./trade/types";
 export * as traversal from "./traversal";
 export * from "./traversal/types";
 export * from "./auth/client/requests";
-export * from "./resolution/client/requests";
 export * from "./search/client/requests";
 export * from "./trade/client/requests";

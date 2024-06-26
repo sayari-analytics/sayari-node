@@ -49,11 +49,11 @@ export interface GetProjectEntities {
     translation?: string;
     sort?: Sayari.SortField;
     /**
-     * Only return entities that match the specified filters.
+     * Filter for entities in a project. The format is `field=value`, where the equal sign is encoded as `%3D`. Supported fields are as follows
      */
     filters?: Sayari.ProjectEntitiesFilter | Sayari.ProjectEntitiesFilter[];
     /**
-     * Aggregations for entities in a project.
+     * Aggregations that should be returned for entities in the project.
      */
     aggregations?: Sayari.ProjectEntitiesAggsDefinition | Sayari.ProjectEntitiesAggsDefinition[];
     /**

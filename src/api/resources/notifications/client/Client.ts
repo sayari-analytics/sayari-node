@@ -45,13 +45,19 @@ export class Notifications {
      *     await sayari.notifications.projectNotifications("0oZnoG", {
      *         limit: 20
      *     })
+     *
+     * @example
+     *     await sayari.notifications.projectNotifications("0oZnoG", {
+     *         limit: 20,
+     *         sort: Sayari.NotificationsSortField.DateDesc
+     *     })
      */
     public async projectNotifications(
         id: string,
         request: Sayari.ProjectNotifications = {},
         requestOptions?: Notifications.RequestOptions
     ): Promise<Sayari.ProjectNotificationsResponse> {
-        const { limit, offset } = request;
+        const { limit, offset, sort } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
@@ -59,6 +65,10 @@ export class Notifications {
 
         if (offset != null) {
             _queryParams["offset"] = offset.toString();
+        }
+
+        if (sort != null) {
+            _queryParams["sort"] = sort;
         }
 
         const _response = await core.fetcher({
@@ -71,7 +81,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -233,7 +243,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -379,7 +389,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -501,7 +511,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -623,7 +633,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.0.393",
+                "X-Fern-SDK-Version": "0.0.394",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

@@ -6,6 +6,7 @@ import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ProjectNotificationData } from "./ProjectNotificationData";
+import { QualifiedCount } from "../../baseTypes/types/QualifiedCount";
 
 export const ProjectNotificationsResponse: core.serialization.ObjectSchema<
     serializers.ProjectNotificationsResponse.Raw,
@@ -15,6 +16,7 @@ export const ProjectNotificationsResponse: core.serialization.ObjectSchema<
     limit: core.serialization.number(),
     next: core.serialization.boolean(),
     data: core.serialization.list(ProjectNotificationData),
+    size: QualifiedCount,
 });
 
 export declare namespace ProjectNotificationsResponse {
@@ -23,5 +25,6 @@ export declare namespace ProjectNotificationsResponse {
         limit: number;
         next: boolean;
         data: ProjectNotificationData.Raw[];
+        size: QualifiedCount.Raw;
     }
 }

@@ -20,7 +20,7 @@ import * as Sayari from "../../../../index";
  */
 export interface Resolution {
     /**
-     * A limit on the number of objects to be returned with a range between 1 and 10. Defaults to 10.
+     * A limit on the number of objects to be returned with a range between 1 and 10 inclusive. Defaults to 10.
      */
     limit?: number;
     /**

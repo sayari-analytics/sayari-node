@@ -7,14 +7,20 @@ import * as Sayari from "../../../../index";
 /**
  * @example
  *     {
- *         date: "2023-06-01",
- *         hsCode: ["3206"],
- *         components: ["3204"],
- *         maxDepth: 2,
- *         risks: [Sayari.Risk.ForcedLaborUflpaOriginSubtier]
+ *         minDate: "2023-03-15",
+ *         product: ["3204"],
+ *         risk: [Sayari.Risk.ForcedLaborXinjiangOriginSubtier]
  *     }
  */
 export interface UpstreamTradeTraversalRequest {
+    /**
+     * Risk leaf node filter. Only return supply chains that end with a supplier that has 1+ of the specified [risk factors](/sayari-library/ontology/risk-factors).
+     */
+    risk?: Sayari.Risk[];
+    /**
+     * Risk leaf node filter. Only return supply chains that end with a supplier that has none of the specified [risk factors](/sayari-library/ontology/risk-factors).
+     */
+    notRisk?: Sayari.Risk[];
     /**
      * Country leaf node filter. Only return supply chains that end with a supplier in 1+ of the specified countries.
      */
@@ -24,35 +30,35 @@ export interface UpstreamTradeTraversalRequest {
      */
     notCountries?: Sayari.Country[];
     /**
-     * Risk leaf node filter. Only return supply chains that end with a supplier that has 1+ of the specified risk factors.
-     */
-    risks?: Sayari.Risk[];
-    /**
-     * Risk leaf node filter. Only return supply chains that end with a supplier that has none of the specified risk factors.
-     */
-    notRisk?: Sayari.Risk[];
-    /**
      * Product root edge filter. Only return supply chains that start with an edge that has 1+ of the specified HS codes.
      */
-    hsCode?: string[];
+    product?: string[];
     /**
      * Product root edge filter. Only return supply chains that start with an edge that has none of the specified HS codes.
      */
-    notHsCode?: string[];
+    notProduct?: string[];
     /**
      * Component node filter. Only return supply chains that contain at least one edge with 1+ of the specified HS codes.
      */
-    components?: string[];
+    component?: string[];
     /**
      * Component node filter. Only return supply chains that contain no edges with any of the specified HS codes.
      */
-    notComponents?: string[];
+    notComponent?: string[];
+    /**
+     * Minimum date edge filter. Only return supply chains with edge dates that are greater than or equal to this date.
+     */
+    minDate?: string;
+    /**
+     * Maximum date edge filter. Only return supply chains with edge dates that are less than or equal to this date.
+     */
+    maxDate?: string;
     /**
      * The maximum depth of the traversal, from 1 to 4 inclusive. Default is 4. Reduce if query is timing out.
      */
     maxDepth?: number;
     /**
-     * The date range to filter the supply chain by by only considering shipments within the specified date range, inclusive. The date range is formatted as "YYYY-MM-DD|YYYY-MM-DD", where the first date is the start date and the second date is the end date. Both dates are optional, e.g. "|2022-01-01" will return all shipments up to and including 2022-01-01.
+     * The maximum number of results to return. Default and maximum values are 25,000.
      */
-    date?: string;
+    limit?: number;
 }

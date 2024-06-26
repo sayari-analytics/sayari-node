@@ -5,8 +5,6 @@
 import * as Sayari from "../../../index";
 
 /**
- * OK
- *
  * @example
  *     {
  *         fields: {
