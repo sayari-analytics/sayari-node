@@ -7,7 +7,7 @@ import * as Sayari from "../../../index";
 export interface ResolutionResponseFields {
     name?: string[];
     identifier?: string[];
-    profile?: string[];
+    profile?: string;
     /** Entity country - must be ISO (3166) Trigram i.e., USA. See complete list [here](/sayari-library/ontology/enumerated-types#country) */
     country?: Sayari.Country[];
     /** List of physical addresses associated with the entity. */

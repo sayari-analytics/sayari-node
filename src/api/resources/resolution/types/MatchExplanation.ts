@@ -8,4 +8,6 @@ export interface MatchExplanation {
     nameCustomTfIdfScore?: number;
     highQualityMatchName?: boolean;
     isDeletionRecommended?: boolean;
+    nCommonTermMatches?: number;
+    nUncommonTermMatches?: number;
 }

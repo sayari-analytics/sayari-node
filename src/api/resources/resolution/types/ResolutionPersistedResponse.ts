@@ -65,7 +65,7 @@ import * as Sayari from "../../../index";
  *     {
  *         fields: {
  *             name: ["victoria beckham limited"],
- *             profile: ["suppliers"],
+ *             profile: "suppliers",
  *             customIdentifier: "abc123"
  *         },
  *         data: [{

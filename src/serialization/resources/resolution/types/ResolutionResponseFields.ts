@@ -14,7 +14,7 @@ export const ResolutionResponseFields: core.serialization.ObjectSchema<
 > = core.serialization.object({
     name: core.serialization.list(core.serialization.string()).optional(),
     identifier: core.serialization.list(core.serialization.string()).optional(),
-    profile: core.serialization.list(core.serialization.string()).optional(),
+    profile: core.serialization.string().optional(),
     country: core.serialization.list(Country).optional(),
     address: core.serialization.list(core.serialization.string()).optional(),
     dateOfBirth: core.serialization.property(
@@ -29,7 +29,7 @@ export declare namespace ResolutionResponseFields {
     interface Raw {
         name?: string[] | null;
         identifier?: string[] | null;
-        profile?: string[] | null;
+        profile?: string | null;
         country?: Country.Raw[] | null;
         address?: string[] | null;
         date_of_birth?: string[] | null;
