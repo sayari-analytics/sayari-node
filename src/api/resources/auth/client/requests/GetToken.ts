@@ -6,9 +6,7 @@
  * @example
  *     {
  *         clientId: "your client_id here",
- *         clientSecret: "your client_secret here",
- *         audience: "sayari.com",
- *         grantType: "client_credentials"
+ *         clientSecret: "your client_secret here"
  *     }
  */
 export interface GetToken {

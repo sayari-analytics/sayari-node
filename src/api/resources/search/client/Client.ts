@@ -39,7 +39,7 @@ export class Search {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.search.searchEntity({
+     *     await client.search.searchEntity({
      *         limit: 1,
      *         q: "victoria beckham limited"
      *     })
@@ -68,7 +68,7 @@ export class Search {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -181,7 +181,7 @@ export class Search {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.search.searchEntityGet({
+     *     await client.search.searchEntityGet({
      *         limit: 1,
      *         q: "victoria beckham limited"
      *     })
@@ -231,7 +231,7 @@ export class Search {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -343,7 +343,7 @@ export class Search {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.search.searchRecord({
+     *     await client.search.searchRecord({
      *         limit: 1,
      *         q: "victoria beckham limited"
      *     })
@@ -372,7 +372,7 @@ export class Search {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -485,7 +485,7 @@ export class Search {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.search.searchRecordGet({
+     *     await client.search.searchRecordGet({
      *         q: "victoria beckham limited",
      *         limit: 1
      *     })
@@ -531,7 +531,7 @@ export class Search {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

@@ -39,7 +39,7 @@ export class Resource {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.resource.saveEntity({
+     *     await client.resource.saveEntity({
      *         type: Sayari.ResourceType.Entity,
      *         project: "GNJbkG",
      *         entityId: "Zk0qOaM2SSYg_ZhsljykMQ",
@@ -64,7 +64,7 @@ export class Resource {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -177,7 +177,7 @@ export class Resource {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.resource.deleteResource(Sayari.ResourceType.Entity, "YWmNKV")
+     *     await client.resource.deleteResource(Sayari.ResourceType.Entity, "YWmNKV")
      */
     public async deleteResource(
         type: Sayari.ResourceType,
@@ -196,7 +196,7 @@ export class Resource {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

@@ -42,7 +42,7 @@ export class Traversal {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.traversal.traversal("mGq1lpuqKssNWTjIokuPeA", {
+     *     await client.traversal.traversal("mGq1lpuqKssNWTjIokuPeA", {
      *         limit: 1
      *     })
      */
@@ -211,7 +211,7 @@ export class Traversal {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -344,7 +344,7 @@ export class Traversal {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.traversal.ubo("mGq1lpuqKssNWTjIokuPeA", {
+     *     await client.traversal.ubo("mGq1lpuqKssNWTjIokuPeA", {
      *         limit: 1
      *     })
      */
@@ -513,7 +513,7 @@ export class Traversal {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -646,7 +646,7 @@ export class Traversal {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.traversal.ownership("mGq1lpuqKssNWTjIokuPeA", {
+     *     await client.traversal.ownership("mGq1lpuqKssNWTjIokuPeA", {
      *         limit: 1
      *     })
      */
@@ -815,7 +815,7 @@ export class Traversal {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -948,7 +948,7 @@ export class Traversal {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.traversal.watchlist("mGq1lpuqKssNWTjIokuPeA", {
+     *     await client.traversal.watchlist("mGq1lpuqKssNWTjIokuPeA", {
      *         limit: 1
      *     })
      */
@@ -1117,7 +1117,7 @@ export class Traversal {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -1249,7 +1249,7 @@ export class Traversal {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.traversal.shortestPath({
+     *     await client.traversal.shortestPath({
      *         entities: "string"
      *     })
      */
@@ -1275,7 +1275,7 @@ export class Traversal {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

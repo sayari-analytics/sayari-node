@@ -38,7 +38,7 @@ export class Source {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.source.listSources({
+     *     await client.source.listSources({
      *         limit: 2
      *     })
      */
@@ -66,7 +66,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -169,7 +169,7 @@ export class Source {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9")
+     *     await client.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9")
      */
     public async getSource(id: string, requestOptions?: Source.RequestOptions): Promise<Sayari.GetSourceResponse> {
         const _response = await core.fetcher({
@@ -182,7 +182,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

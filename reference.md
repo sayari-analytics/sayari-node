@@ -1,6 +1,6 @@
 ## Attributes
 
-<details><summary> <code>sayari.attributes.<a href="./src/api/resources/attributes/client/Client.ts">postAttribute</a>({ ...params }) -> Sayari.AttributeResponse</code> </summary>
+<details><summary> <code>client.attributes.<a href="./src/api/resources/attributes/client/Client.ts">postAttribute</a>({ ...params }) -> Sayari.AttributeResponse</code> </summary>
 
 <dl>
 
@@ -37,7 +37,7 @@
 <dd>
 
 ```ts
-await sayari.attributes.postAttribute({
+await client.attributes.postAttribute({
     entity: "zq04axX2dLn9tE6W6Q8Qhg",
     type: "address",
     value: {
@@ -96,7 +96,7 @@ await sayari.attributes.postAttribute({
 </dl>
 </details>
 
-<details><summary> <code>sayari.attributes.<a href="./src/api/resources/attributes/client/Client.ts">patchAttribute</a>(attributeId, { ...params }) -> Sayari.AttributeResponse</code> </summary>
+<details><summary> <code>client.attributes.<a href="./src/api/resources/attributes/client/Client.ts">patchAttribute</a>(attributeId, { ...params }) -> Sayari.AttributeResponse</code> </summary>
 
 <dl>
 
@@ -133,7 +133,7 @@ await sayari.attributes.postAttribute({
 <dd>
 
 ```ts
-await sayari.attributes.patchAttribute(
+await client.attributes.patchAttribute(
     "enEwNGF4WDJkTG45dEU2VzZROFFoZ3xhZGRyZXNzfDBwbEVCMHxVNzhzN21yOUVFTThIZ3pwREM3UDFB",
     {
         value: {
@@ -203,7 +203,7 @@ await sayari.attributes.patchAttribute(
 </dl>
 </details>
 
-<details><summary> <code>sayari.attributes.<a href="./src/api/resources/attributes/client/Client.ts">deleteAttribute</a>(attributeId) -> Sayari.AttributeResponse</code> </summary>
+<details><summary> <code>client.attributes.<a href="./src/api/resources/attributes/client/Client.ts">deleteAttribute</a>(attributeId) -> Sayari.AttributeResponse</code> </summary>
 
 <dl>
 
@@ -240,7 +240,7 @@ await sayari.attributes.patchAttribute(
 <dd>
 
 ```ts
-await sayari.attributes.deleteAttribute(
+await client.attributes.deleteAttribute(
     "enEwNGF4WDJkTG45dEU2VzZROFFoZ3xhZGRyZXNzfDBwbEVCMHxVNzhzN21yOUVFTThIZ3pwREM3UDFB"
 );
 ```
@@ -290,7 +290,7 @@ await sayari.attributes.deleteAttribute(
 
 ## Auth
 
-<details><summary> <code>sayari.auth.<a href="./src/api/resources/auth/client/Client.ts">getToken</a>({ ...params }) -> Sayari.AuthResponse</code> </summary>
+<details><summary> <code>client.auth.<a href="./src/api/resources/auth/client/Client.ts">getToken</a>({ ...params }) -> Sayari.AuthResponse</code> </summary>
 
 <dl>
 
@@ -327,11 +327,9 @@ Hit the auth endpoint to get a bearer token
 <dd>
 
 ```ts
-await sayari.auth.getToken({
+await client.auth.getToken({
     clientId: "your client_id here",
     clientSecret: "your client_secret here",
-    audience: "sayari.com",
-    grantType: "client_credentials",
 });
 ```
 
@@ -380,7 +378,7 @@ await sayari.auth.getToken({
 
 ## Entity
 
-<details><summary> <code>sayari.entity.<a href="./src/api/resources/entity/client/Client.ts">getEntity</a>(id, { ...params }) -> Sayari.GetEntityResponse</code> </summary>
+<details><summary> <code>client.entity.<a href="./src/api/resources/entity/client/Client.ts">getEntity</a>(id, { ...params }) -> Sayari.GetEntityResponse</code> </summary>
 
 <dl>
 
@@ -417,7 +415,7 @@ Retrieve an entity from the database based on the ID
 <dd>
 
 ```ts
-await sayari.entity.getEntity("mGq1lpuqKssNWTjIokuPeA", {
+await client.entity.getEntity("mGq1lpuqKssNWTjIokuPeA", {
     attributesNameLimit: 1,
     attributesAddressLimit: 1,
     attributesCountryLimit: 1,
@@ -485,7 +483,7 @@ await sayari.entity.getEntity("mGq1lpuqKssNWTjIokuPeA", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.entity.<a href="./src/api/resources/entity/client/Client.ts">entitySummary</a>(id) -> Sayari.EntitySummaryResponse</code> </summary>
+<details><summary> <code>client.entity.<a href="./src/api/resources/entity/client/Client.ts">entitySummary</a>(id) -> Sayari.EntitySummaryResponse</code> </summary>
 
 <dl>
 
@@ -522,7 +520,7 @@ The Entity Summary endpoint returns a smaller entity payload
 <dd>
 
 ```ts
-await sayari.entity.entitySummary("mGq1lpuqKssNWTjIokuPeA");
+await client.entity.entitySummary("mGq1lpuqKssNWTjIokuPeA");
 ```
 
 </dd>
@@ -570,7 +568,7 @@ await sayari.entity.entitySummary("mGq1lpuqKssNWTjIokuPeA");
 
 ## Info
 
-<details><summary> <code>sayari.info.<a href="./src/api/resources/info/client/Client.ts">getUsage</a>({ ...params }) -> Sayari.UsageResponse</code> </summary>
+<details><summary> <code>client.info.<a href="./src/api/resources/info/client/Client.ts">getUsage</a>({ ...params }) -> Sayari.UsageResponse</code> </summary>
 
 <dl>
 
@@ -607,7 +605,7 @@ The usage endpoint provides a simple interface to retrieve information on usage 
 <dd>
 
 ```ts
-await sayari.info.getUsage({
+await client.info.getUsage({
     from: "2023-01-15",
     to: "2023-01-15",
 });
@@ -656,7 +654,7 @@ await sayari.info.getUsage({
 </dl>
 </details>
 
-<details><summary> <code>sayari.info.<a href="./src/api/resources/info/client/Client.ts">getHistory</a>({ ...params }) -> Sayari.HistoryResponse</code> </summary>
+<details><summary> <code>client.info.<a href="./src/api/resources/info/client/Client.ts">getHistory</a>({ ...params }) -> Sayari.HistoryResponse</code> </summary>
 
 <dl>
 
@@ -693,7 +691,7 @@ The history endpoint return a user's event history.
 <dd>
 
 ```ts
-await sayari.info.getHistory({
+await client.info.getHistory({
     events: "string",
     from: "2023-01-15",
     to: "2023-01-15",
@@ -747,7 +745,7 @@ await sayari.info.getHistory({
 
 ## Notifications
 
-<details><summary> <code>sayari.notifications.<a href="./src/api/resources/notifications/client/Client.ts">projectNotifications</a>(id, { ...params }) -> Sayari.ProjectNotificationsResponse</code> </summary>
+<details><summary> <code>client.notifications.<a href="./src/api/resources/notifications/client/Client.ts">projectNotifications</a>(id, { ...params }) -> Sayari.ProjectNotificationsResponse</code> </summary>
 
 <dl>
 
@@ -784,7 +782,7 @@ await sayari.info.getHistory({
 <dd>
 
 ```ts
-await sayari.notifications.projectNotifications("0oZnoG", {
+await client.notifications.projectNotifications("0oZnoG", {
     limit: 20,
 });
 ```
@@ -842,7 +840,7 @@ await sayari.notifications.projectNotifications("0oZnoG", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.notifications.<a href="./src/api/resources/notifications/client/Client.ts">projectNotifications</a>(id, { ...params }) -> Sayari.ProjectNotificationsResponse</code> </summary>
+<details><summary> <code>client.notifications.<a href="./src/api/resources/notifications/client/Client.ts">projectNotifications</a>(id, { ...params }) -> Sayari.ProjectNotificationsResponse</code> </summary>
 
 <dl>
 
@@ -879,7 +877,7 @@ await sayari.notifications.projectNotifications("0oZnoG", {
 <dd>
 
 ```ts
-await sayari.notifications.projectNotifications("0oZnoG", {
+await client.notifications.projectNotifications("0oZnoG", {
     limit: 20,
     sort: Sayari.NotificationsSortField.DateDesc,
 });
@@ -938,7 +936,7 @@ await sayari.notifications.projectNotifications("0oZnoG", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.notifications.<a href="./src/api/resources/notifications/client/Client.ts">resourceNotifications</a>(id, { ...params }) -> Sayari.ResourceNotificationsResponse</code> </summary>
+<details><summary> <code>client.notifications.<a href="./src/api/resources/notifications/client/Client.ts">resourceNotifications</a>(id, { ...params }) -> Sayari.ResourceNotificationsResponse</code> </summary>
 
 <dl>
 
@@ -975,7 +973,7 @@ await sayari.notifications.projectNotifications("0oZnoG", {
 <dd>
 
 ```ts
-await sayari.notifications.resourceNotifications("03ePyj", {
+await client.notifications.resourceNotifications("03ePyj", {
     limit: 20,
 });
 ```
@@ -1033,7 +1031,7 @@ await sayari.notifications.resourceNotifications("03ePyj", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.notifications.<a href="./src/api/resources/notifications/client/Client.ts">deleteProjectNotifications</a>(projectId) -> void</code> </summary>
+<details><summary> <code>client.notifications.<a href="./src/api/resources/notifications/client/Client.ts">deleteProjectNotifications</a>(projectId) -> void</code> </summary>
 
 <dl>
 
@@ -1070,7 +1068,7 @@ Deletes all notifications from a project.
 <dd>
 
 ```ts
-await sayari.notifications.deleteProjectNotifications("YWmNKV");
+await client.notifications.deleteProjectNotifications("YWmNKV");
 ```
 
 </dd>
@@ -1116,7 +1114,7 @@ await sayari.notifications.deleteProjectNotifications("YWmNKV");
 </dl>
 </details>
 
-<details><summary> <code>sayari.notifications.<a href="./src/api/resources/notifications/client/Client.ts">deleteEntityNotifications</a>(entityId) -> void</code> </summary>
+<details><summary> <code>client.notifications.<a href="./src/api/resources/notifications/client/Client.ts">deleteEntityNotifications</a>(entityId) -> void</code> </summary>
 
 <dl>
 
@@ -1153,7 +1151,7 @@ Deletes notifications for saved resources of an entity.
 <dd>
 
 ```ts
-await sayari.notifications.deleteEntityNotifications("N0xLDy4wcud-M1ZtwdsvRA");
+await client.notifications.deleteEntityNotifications("N0xLDy4wcud-M1ZtwdsvRA");
 ```
 
 </dd>
@@ -1199,7 +1197,7 @@ await sayari.notifications.deleteEntityNotifications("N0xLDy4wcud-M1ZtwdsvRA");
 </dl>
 </details>
 
-<details><summary> <code>sayari.notifications.<a href="./src/api/resources/notifications/client/Client.ts">deleteResourceNotifications</a>(resourceId) -> void</code> </summary>
+<details><summary> <code>client.notifications.<a href="./src/api/resources/notifications/client/Client.ts">deleteResourceNotifications</a>(resourceId) -> void</code> </summary>
 
 <dl>
 
@@ -1236,7 +1234,7 @@ Deletes notifications for a saved resource.
 <dd>
 
 ```ts
-await sayari.notifications.deleteResourceNotifications("oGxxqG");
+await client.notifications.deleteResourceNotifications("oGxxqG");
 ```
 
 </dd>
@@ -1284,7 +1282,7 @@ await sayari.notifications.deleteResourceNotifications("oGxxqG");
 
 ## Project
 
-<details><summary> <code>sayari.project.<a href="./src/api/resources/project/client/Client.ts">createProject</a>({ ...params }) -> Sayari.CreateProjectResponse</code> </summary>
+<details><summary> <code>client.project.<a href="./src/api/resources/project/client/Client.ts">createProject</a>({ ...params }) -> Sayari.CreateProjectResponse</code> </summary>
 
 <dl>
 
@@ -1321,7 +1319,7 @@ await sayari.notifications.deleteResourceNotifications("oGxxqG");
 <dd>
 
 ```ts
-await sayari.project.createProject({
+await client.project.createProject({
     label: "Project Alpha",
 });
 ```
@@ -1369,7 +1367,7 @@ await sayari.project.createProject({
 </dl>
 </details>
 
-<details><summary> <code>sayari.project.<a href="./src/api/resources/project/client/Client.ts">getProjects</a>({ ...params }) -> Sayari.GetProjectsResponse</code> </summary>
+<details><summary> <code>client.project.<a href="./src/api/resources/project/client/Client.ts">getProjects</a>({ ...params }) -> Sayari.GetProjectsResponse</code> </summary>
 
 <dl>
 
@@ -1406,7 +1404,7 @@ await sayari.project.createProject({
 <dd>
 
 ```ts
-await sayari.project.getProjects({
+await client.project.getProjects({
     archived: false,
     limit: 8,
 });
@@ -1455,7 +1453,7 @@ await sayari.project.getProjects({
 </dl>
 </details>
 
-<details><summary> <code>sayari.project.<a href="./src/api/resources/project/client/Client.ts">getProjects</a>({ ...params }) -> Sayari.GetProjectsResponse</code> </summary>
+<details><summary> <code>client.project.<a href="./src/api/resources/project/client/Client.ts">getProjects</a>({ ...params }) -> Sayari.GetProjectsResponse</code> </summary>
 
 <dl>
 
@@ -1492,7 +1490,7 @@ await sayari.project.getProjects({
 <dd>
 
 ```ts
-await sayari.project.getProjects({
+await client.project.getProjects({
     archived: true,
     limit: 5,
 });
@@ -1541,7 +1539,7 @@ await sayari.project.getProjects({
 </dl>
 </details>
 
-<details><summary> <code>sayari.project.<a href="./src/api/resources/project/client/Client.ts">getProjectEntities</a>(id, { ...params }) -> Sayari.GetProjectEntitiesResponse</code> </summary>
+<details><summary> <code>client.project.<a href="./src/api/resources/project/client/Client.ts">getProjectEntities</a>(id, { ...params }) -> Sayari.GetProjectEntitiesResponse</code> </summary>
 
 <dl>
 
@@ -1578,7 +1576,7 @@ await sayari.project.getProjects({
 <dd>
 
 ```ts
-await sayari.project.getProjectEntities("gPq6EY", {
+await client.project.getProjectEntities("gPq6EY", {
     accept: Sayari.GetProjectEntitiesAcceptHeader.Json,
 });
 ```
@@ -1636,7 +1634,7 @@ await sayari.project.getProjectEntities("gPq6EY", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.project.<a href="./src/api/resources/project/client/Client.ts">deleteProject</a>(projectId) -> Sayari.DeleteProjectResponse</code> </summary>
+<details><summary> <code>client.project.<a href="./src/api/resources/project/client/Client.ts">deleteProject</a>(projectId) -> Sayari.DeleteProjectResponse</code> </summary>
 
 <dl>
 
@@ -1673,7 +1671,7 @@ Deletes an existing project.
 <dd>
 
 ```ts
-await sayari.project.deleteProject("Gam5qG");
+await client.project.deleteProject("Gam5qG");
 ```
 
 </dd>
@@ -1721,7 +1719,7 @@ await sayari.project.deleteProject("Gam5qG");
 
 ## Record
 
-<details><summary> <code>sayari.record.<a href="./src/api/resources/record/client/Client.ts">getRecord</a>(id, { ...params }) -> Sayari.GetRecordResponse</code> </summary>
+<details><summary> <code>client.record.<a href="./src/api/resources/record/client/Client.ts">getRecord</a>(id, { ...params }) -> Sayari.GetRecordResponse</code> </summary>
 
 <dl>
 
@@ -1758,7 +1756,7 @@ Retrieve a record from the database based on the ID
 <dd>
 
 ```ts
-await sayari.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F1682970471254");
+await client.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F1682970471254");
 ```
 
 </dd>
@@ -1816,7 +1814,7 @@ await sayari.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F168
 
 ## Resolution
 
-<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolution</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
+<details><summary> <code>client.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolution</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
 
 <dl>
 
@@ -1853,7 +1851,7 @@ The resolution endpoints allow users to search for matching entities against a p
 <dd>
 
 ```ts
-await sayari.resolution.resolution({
+await client.resolution.resolution({
     name: "victoria beckham limited",
     limit: 1,
 });
@@ -1902,7 +1900,7 @@ await sayari.resolution.resolution({
 </dl>
 </details>
 
-<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolution</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
+<details><summary> <code>client.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolution</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
 
 <dl>
 
@@ -1939,10 +1937,10 @@ The resolution endpoints allow users to search for matching entities against a p
 <dd>
 
 ```ts
-await sayari.resolution.resolution({
+await client.resolution.resolution({
     name: "victoria beckham limited",
     limit: 1,
-    profile: Sayari.ProfileEnum.Supplier,
+    profile: Sayari.ProfileEnum.Suppliers,
 });
 ```
 
@@ -1989,7 +1987,7 @@ await sayari.resolution.resolution({
 </dl>
 </details>
 
-<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPost</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
+<details><summary> <code>client.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPost</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
 
 <dl>
 
@@ -2026,7 +2024,7 @@ The resolution endpoints allow users to search for matching entities against a p
 <dd>
 
 ```ts
-await sayari.resolution.resolutionPost({
+await client.resolution.resolutionPost({
     limit: 1,
     body: {
         name: ["victoria beckham limited"],
@@ -2077,7 +2075,7 @@ await sayari.resolution.resolutionPost({
 </dl>
 </details>
 
-<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPost</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
+<details><summary> <code>client.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPost</a>({ ...params }) -> Sayari.ResolutionResponse</code> </summary>
 
 <dl>
 
@@ -2114,11 +2112,11 @@ The resolution endpoints allow users to search for matching entities against a p
 <dd>
 
 ```ts
-await sayari.resolution.resolutionPost({
+await client.resolution.resolutionPost({
     limit: 1,
     body: {
         name: ["victoria beckham limited"],
-        profile: Sayari.ProfileEnum.Supplier,
+        profile: Sayari.ProfileEnum.Suppliers,
     },
 });
 ```
@@ -2166,7 +2164,7 @@ await sayari.resolution.resolutionPost({
 </dl>
 </details>
 
-<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPersisted</a>(projectId, { ...params }) -> Sayari.ResolutionPersistedResponse</code> </summary>
+<details><summary> <code>client.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPersisted</a>(projectId, { ...params }) -> Sayari.ResolutionPersistedResponse</code> </summary>
 
 <dl>
 
@@ -2203,7 +2201,7 @@ await sayari.resolution.resolutionPost({
 <dd>
 
 ```ts
-await sayari.resolution.resolutionPersisted("V03eYM", {
+await client.resolution.resolutionPersisted("V03eYM", {
     limit: 1,
     body: {
         name: ["victoria beckham limited"],
@@ -2264,7 +2262,7 @@ await sayari.resolution.resolutionPersisted("V03eYM", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPersisted</a>(projectId, { ...params }) -> Sayari.ResolutionPersistedResponse</code> </summary>
+<details><summary> <code>client.resolution.<a href="./src/api/resources/resolution/client/Client.ts">resolutionPersisted</a>(projectId, { ...params }) -> Sayari.ResolutionPersistedResponse</code> </summary>
 
 <dl>
 
@@ -2301,11 +2299,11 @@ await sayari.resolution.resolutionPersisted("V03eYM", {
 <dd>
 
 ```ts
-await sayari.resolution.resolutionPersisted("6GaxYn", {
+await client.resolution.resolutionPersisted("6GaxYn", {
     limit: 1,
     body: {
         name: ["victoria beckham limited"],
-        profile: Sayari.ProfileEnum.Supplier,
+        profile: Sayari.ProfileEnum.Suppliers,
     },
 });
 ```
@@ -2365,7 +2363,7 @@ await sayari.resolution.resolutionPersisted("6GaxYn", {
 
 ## Resource
 
-<details><summary> <code>sayari.resource.<a href="./src/api/resources/resource/client/Client.ts">saveEntity</a>({ ...params }) -> Sayari.SaveEntityResponse</code> </summary>
+<details><summary> <code>client.resource.<a href="./src/api/resources/resource/client/Client.ts">saveEntity</a>({ ...params }) -> Sayari.SaveEntityResponse</code> </summary>
 
 <dl>
 
@@ -2402,7 +2400,7 @@ await sayari.resolution.resolutionPersisted("6GaxYn", {
 <dd>
 
 ```ts
-await sayari.resource.saveEntity({
+await client.resource.saveEntity({
     type: Sayari.ResourceType.Entity,
     project: "GNJbkG",
     entityId: "Zk0qOaM2SSYg_ZhsljykMQ",
@@ -2457,7 +2455,7 @@ await sayari.resource.saveEntity({
 </dl>
 </details>
 
-<details><summary> <code>sayari.resource.<a href="./src/api/resources/resource/client/Client.ts">deleteResource</a>(type, resourceId) -> Sayari.DeleteResourceResponse</code> </summary>
+<details><summary> <code>client.resource.<a href="./src/api/resources/resource/client/Client.ts">deleteResource</a>(type, resourceId) -> Sayari.DeleteResourceResponse</code> </summary>
 
 <dl>
 
@@ -2494,7 +2492,7 @@ Deletes an existing saved resource from a project.
 <dd>
 
 ```ts
-await sayari.resource.deleteResource(Sayari.ResourceType.Entity, "YWmNKV");
+await client.resource.deleteResource(Sayari.ResourceType.Entity, "YWmNKV");
 ```
 
 </dd>
@@ -2552,7 +2550,7 @@ await sayari.resource.deleteResource(Sayari.ResourceType.Entity, "YWmNKV");
 
 ## Search
 
-<details><summary> <code>sayari.search.<a href="./src/api/resources/search/client/Client.ts">searchEntity</a>({ ...params }) -> Sayari.EntitySearchResponse</code> </summary>
+<details><summary> <code>client.search.<a href="./src/api/resources/search/client/Client.ts">searchEntity</a>({ ...params }) -> Sayari.EntitySearchResponse</code> </summary>
 
 <dl>
 
@@ -2589,7 +2587,7 @@ Search for an entity. Please note, searches are limited to a maximum of 10,000 r
 <dd>
 
 ```ts
-await sayari.search.searchEntity({
+await client.search.searchEntity({
     limit: 1,
     q: "victoria beckham limited",
 });
@@ -2638,7 +2636,7 @@ await sayari.search.searchEntity({
 </dl>
 </details>
 
-<details><summary> <code>sayari.search.<a href="./src/api/resources/search/client/Client.ts">searchEntityGet</a>({ ...params }) -> Sayari.EntitySearchResponse</code> </summary>
+<details><summary> <code>client.search.<a href="./src/api/resources/search/client/Client.ts">searchEntityGet</a>({ ...params }) -> Sayari.EntitySearchResponse</code> </summary>
 
 <dl>
 
@@ -2675,7 +2673,7 @@ Search for an entity. Please note, searches are limited to a maximum of 10,000 r
 <dd>
 
 ```ts
-await sayari.search.searchEntityGet({
+await client.search.searchEntityGet({
     limit: 1,
     q: "victoria beckham limited",
 });
@@ -2724,7 +2722,7 @@ await sayari.search.searchEntityGet({
 </dl>
 </details>
 
-<details><summary> <code>sayari.search.<a href="./src/api/resources/search/client/Client.ts">searchRecord</a>({ ...params }) -> Sayari.RecordSearchResponse</code> </summary>
+<details><summary> <code>client.search.<a href="./src/api/resources/search/client/Client.ts">searchRecord</a>({ ...params }) -> Sayari.RecordSearchResponse</code> </summary>
 
 <dl>
 
@@ -2761,7 +2759,7 @@ Search for a record. Please note, searches are limited to a maximum of 10,000 re
 <dd>
 
 ```ts
-await sayari.search.searchRecord({
+await client.search.searchRecord({
     limit: 1,
     q: "victoria beckham limited",
 });
@@ -2810,7 +2808,7 @@ await sayari.search.searchRecord({
 </dl>
 </details>
 
-<details><summary> <code>sayari.search.<a href="./src/api/resources/search/client/Client.ts">searchRecordGet</a>({ ...params }) -> Sayari.RecordSearchResponse</code> </summary>
+<details><summary> <code>client.search.<a href="./src/api/resources/search/client/Client.ts">searchRecordGet</a>({ ...params }) -> Sayari.RecordSearchResponse</code> </summary>
 
 <dl>
 
@@ -2847,7 +2845,7 @@ Search for a record. Please note, searches are limited to a maximum of 10,000 re
 <dd>
 
 ```ts
-await sayari.search.searchRecordGet({
+await client.search.searchRecordGet({
     q: "victoria beckham limited",
     limit: 1,
 });
@@ -2898,7 +2896,7 @@ await sayari.search.searchRecordGet({
 
 ## Source
 
-<details><summary> <code>sayari.source.<a href="./src/api/resources/source/client/Client.ts">listSources</a>({ ...params }) -> Sayari.ListSourcesResponse</code> </summary>
+<details><summary> <code>client.source.<a href="./src/api/resources/source/client/Client.ts">listSources</a>({ ...params }) -> Sayari.ListSourcesResponse</code> </summary>
 
 <dl>
 
@@ -2935,7 +2933,7 @@ Returns metadata for all sources that Sayari collects data from
 <dd>
 
 ```ts
-await sayari.source.listSources({
+await client.source.listSources({
     limit: 2,
 });
 ```
@@ -2983,7 +2981,7 @@ await sayari.source.listSources({
 </dl>
 </details>
 
-<details><summary> <code>sayari.source.<a href="./src/api/resources/source/client/Client.ts">getSource</a>(id) -> Sayari.GetSourceResponse</code> </summary>
+<details><summary> <code>client.source.<a href="./src/api/resources/source/client/Client.ts">getSource</a>(id) -> Sayari.GetSourceResponse</code> </summary>
 
 <dl>
 
@@ -3020,7 +3018,7 @@ Returns metadata for a source that Sayari collects data from
 <dd>
 
 ```ts
-await sayari.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
+await client.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
 ```
 
 </dd>
@@ -3068,7 +3066,7 @@ await sayari.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
 
 ## SupplyChain
 
-<details><summary> <code>sayari.supplyChain.<a href="./src/api/resources/supplyChain/client/Client.ts">upstreamTradeTraversal</a>(id, { ...params }) -> Sayari.UpstreamTradeTraversalResponse</code> </summary>
+<details><summary> <code>client.supplyChain.<a href="./src/api/resources/supplyChain/client/Client.ts">upstreamTradeTraversal</a>(id, { ...params }) -> Sayari.UpstreamTradeTraversalResponse</code> </summary>
 
 <dl>
 
@@ -3105,7 +3103,7 @@ await sayari.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
 <dd>
 
 ```ts
-await sayari.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
+await client.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
     minDate: "2023-03-15",
     product: ["3204"],
     risk: [Sayari.Risk.ForcedLaborXinjiangOriginSubtier],
@@ -3167,7 +3165,7 @@ await sayari.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
 
 ## Trade
 
-<details><summary> <code>sayari.trade.<a href="./src/api/resources/trade/client/Client.ts">searchShipments</a>({ ...params }) -> Sayari.ShipmentSearchResponse</code> </summary>
+<details><summary> <code>client.trade.<a href="./src/api/resources/trade/client/Client.ts">searchShipments</a>({ ...params }) -> Sayari.ShipmentSearchResponse</code> </summary>
 
 <dl>
 
@@ -3204,7 +3202,7 @@ await sayari.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
 <dd>
 
 ```ts
-await sayari.trade.searchShipments({
+await client.trade.searchShipments({
     limit: 1,
     q: "rum",
 });
@@ -3253,7 +3251,7 @@ await sayari.trade.searchShipments({
 </dl>
 </details>
 
-<details><summary> <code>sayari.trade.<a href="./src/api/resources/trade/client/Client.ts">searchSuppliers</a>({ ...params }) -> Sayari.SupplierSearchResponse</code> </summary>
+<details><summary> <code>client.trade.<a href="./src/api/resources/trade/client/Client.ts">searchSuppliers</a>({ ...params }) -> Sayari.SupplierSearchResponse</code> </summary>
 
 <dl>
 
@@ -3290,7 +3288,7 @@ await sayari.trade.searchShipments({
 <dd>
 
 ```ts
-await sayari.trade.searchSuppliers({
+await client.trade.searchSuppliers({
     limit: 1,
     q: "rum",
 });
@@ -3339,7 +3337,7 @@ await sayari.trade.searchSuppliers({
 </dl>
 </details>
 
-<details><summary> <code>sayari.trade.<a href="./src/api/resources/trade/client/Client.ts">searchBuyers</a>({ ...params }) -> Sayari.BuyerSearchResponse</code> </summary>
+<details><summary> <code>client.trade.<a href="./src/api/resources/trade/client/Client.ts">searchBuyers</a>({ ...params }) -> Sayari.BuyerSearchResponse</code> </summary>
 
 <dl>
 
@@ -3376,7 +3374,7 @@ await sayari.trade.searchSuppliers({
 <dd>
 
 ```ts
-await sayari.trade.searchBuyers({
+await client.trade.searchBuyers({
     limit: 1,
     q: "rum",
 });
@@ -3427,7 +3425,7 @@ await sayari.trade.searchBuyers({
 
 ## Traversal
 
-<details><summary> <code>sayari.traversal.<a href="./src/api/resources/traversal/client/Client.ts">traversal</a>(id, { ...params }) -> Sayari.TraversalResponse</code> </summary>
+<details><summary> <code>client.traversal.<a href="./src/api/resources/traversal/client/Client.ts">traversal</a>(id, { ...params }) -> Sayari.TraversalResponse</code> </summary>
 
 <dl>
 
@@ -3464,7 +3462,7 @@ The Traversal endpoint returns paths from a single target entity to up to 50 dir
 <dd>
 
 ```ts
-await sayari.traversal.traversal("mGq1lpuqKssNWTjIokuPeA", {
+await client.traversal.traversal("mGq1lpuqKssNWTjIokuPeA", {
     limit: 1,
 });
 ```
@@ -3522,7 +3520,7 @@ await sayari.traversal.traversal("mGq1lpuqKssNWTjIokuPeA", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.traversal.<a href="./src/api/resources/traversal/client/Client.ts">ubo</a>(id, { ...params }) -> Sayari.TraversalResponse</code> </summary>
+<details><summary> <code>client.traversal.<a href="./src/api/resources/traversal/client/Client.ts">ubo</a>(id, { ...params }) -> Sayari.TraversalResponse</code> </summary>
 
 <dl>
 
@@ -3559,7 +3557,7 @@ The UBO endpoint returns paths from a single target entity to up to 50 beneficia
 <dd>
 
 ```ts
-await sayari.traversal.ubo("mGq1lpuqKssNWTjIokuPeA", {
+await client.traversal.ubo("mGq1lpuqKssNWTjIokuPeA", {
     limit: 1,
 });
 ```
@@ -3617,7 +3615,7 @@ await sayari.traversal.ubo("mGq1lpuqKssNWTjIokuPeA", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.traversal.<a href="./src/api/resources/traversal/client/Client.ts">ownership</a>(id, { ...params }) -> Sayari.TraversalResponse</code> </summary>
+<details><summary> <code>client.traversal.<a href="./src/api/resources/traversal/client/Client.ts">ownership</a>(id, { ...params }) -> Sayari.TraversalResponse</code> </summary>
 
 <dl>
 
@@ -3654,7 +3652,7 @@ The Ownership endpoint returns paths from a single target entity to up to 50 ent
 <dd>
 
 ```ts
-await sayari.traversal.ownership("mGq1lpuqKssNWTjIokuPeA", {
+await client.traversal.ownership("mGq1lpuqKssNWTjIokuPeA", {
     limit: 1,
 });
 ```
@@ -3712,7 +3710,7 @@ await sayari.traversal.ownership("mGq1lpuqKssNWTjIokuPeA", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.traversal.<a href="./src/api/resources/traversal/client/Client.ts">watchlist</a>(id, { ...params }) -> Sayari.TraversalResponse</code> </summary>
+<details><summary> <code>client.traversal.<a href="./src/api/resources/traversal/client/Client.ts">watchlist</a>(id, { ...params }) -> Sayari.TraversalResponse</code> </summary>
 
 <dl>
 
@@ -3749,7 +3747,7 @@ The Watchlist endpoint returns paths from a single target entity to up to 50 oth
 <dd>
 
 ```ts
-await sayari.traversal.watchlist("mGq1lpuqKssNWTjIokuPeA", {
+await client.traversal.watchlist("mGq1lpuqKssNWTjIokuPeA", {
     limit: 1,
 });
 ```
@@ -3807,7 +3805,7 @@ await sayari.traversal.watchlist("mGq1lpuqKssNWTjIokuPeA", {
 </dl>
 </details>
 
-<details><summary> <code>sayari.traversal.<a href="./src/api/resources/traversal/client/Client.ts">shortestPath</a>({ ...params }) -> Sayari.ShortestPathResponse</code> </summary>
+<details><summary> <code>client.traversal.<a href="./src/api/resources/traversal/client/Client.ts">shortestPath</a>({ ...params }) -> Sayari.ShortestPathResponse</code> </summary>
 
 <dl>
 
@@ -3844,7 +3842,7 @@ The Shortest Path endpoint returns a response identifying the shortest traversal
 <dd>
 
 ```ts
-await sayari.traversal.shortestPath({
+await client.traversal.shortestPath({
     entities: "string",
 });
 ```

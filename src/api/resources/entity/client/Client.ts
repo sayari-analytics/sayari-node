@@ -40,7 +40,7 @@ export class Entity {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.entity.getEntity("mGq1lpuqKssNWTjIokuPeA", {
+     *     await client.entity.getEntity("mGq1lpuqKssNWTjIokuPeA", {
      *         attributesNameLimit: 1,
      *         attributesAddressLimit: 1,
      *         attributesCountryLimit: 1,
@@ -328,7 +328,7 @@ export class Entity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -440,7 +440,7 @@ export class Entity {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.entity.entitySummary("mGq1lpuqKssNWTjIokuPeA")
+     *     await client.entity.entitySummary("mGq1lpuqKssNWTjIokuPeA")
      */
     public async entitySummary(
         id: string,
@@ -456,7 +456,7 @@ export class Entity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

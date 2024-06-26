@@ -36,11 +36,9 @@ export class Auth {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.auth.getToken({
+     *     await client.auth.getToken({
      *         clientId: "your client_id here",
-     *         clientSecret: "your client_secret here",
-     *         audience: "sayari.com",
-     *         grantType: "client_credentials"
+     *         clientSecret: "your client_secret here"
      *     })
      */
     public async getToken(
@@ -57,7 +55,7 @@ export class Auth {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

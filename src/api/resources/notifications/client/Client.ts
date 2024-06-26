@@ -42,12 +42,12 @@ export class Notifications {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.notifications.projectNotifications("0oZnoG", {
+     *     await client.notifications.projectNotifications("0oZnoG", {
      *         limit: 20
      *     })
      *
      * @example
-     *     await sayari.notifications.projectNotifications("0oZnoG", {
+     *     await client.notifications.projectNotifications("0oZnoG", {
      *         limit: 20,
      *         sort: Sayari.NotificationsSortField.DateDesc
      *     })
@@ -81,7 +81,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -214,7 +214,7 @@ export class Notifications {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
-     *     await sayari.notifications.resourceNotifications("03ePyj", {
+     *     await client.notifications.resourceNotifications("03ePyj", {
      *         limit: 20
      *     })
      */
@@ -243,7 +243,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -373,7 +373,7 @@ export class Notifications {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.notifications.deleteProjectNotifications("YWmNKV")
+     *     await client.notifications.deleteProjectNotifications("YWmNKV")
      */
     public async deleteProjectNotifications(
         projectId: string,
@@ -389,7 +389,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -495,7 +495,7 @@ export class Notifications {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.notifications.deleteEntityNotifications("N0xLDy4wcud-M1ZtwdsvRA")
+     *     await client.notifications.deleteEntityNotifications("N0xLDy4wcud-M1ZtwdsvRA")
      */
     public async deleteEntityNotifications(
         entityId: string,
@@ -511,7 +511,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -617,7 +617,7 @@ export class Notifications {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await sayari.notifications.deleteResourceNotifications("oGxxqG")
+     *     await client.notifications.deleteResourceNotifications("oGxxqG")
      */
     public async deleteResourceNotifications(
         resourceId: string,
@@ -633,7 +633,7 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.0",
+                "X-Fern-SDK-Version": "0.1.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
