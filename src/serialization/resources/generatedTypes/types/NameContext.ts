@@ -7,8 +7,16 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const NameContext: core.serialization.Schema<serializers.NameContext.Raw, Sayari.NameContext> =
-    core.serialization.enum_(["primary", "given", "family", "alias", "machine_translation", "transliteration"]);
+    core.serialization.enum_([
+        "primary",
+        "given",
+        "family",
+        "alias",
+        "machine_translation",
+        "transliteration",
+        "trade_name",
+    ]);
 
 export declare namespace NameContext {
-    type Raw = "primary" | "given" | "family" | "alias" | "machine_translation" | "transliteration";
+    type Raw = "primary" | "given" | "family" | "alias" | "machine_translation" | "transliteration" | "trade_name";
 }

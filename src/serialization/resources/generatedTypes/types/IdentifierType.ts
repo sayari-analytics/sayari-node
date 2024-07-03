@@ -590,7 +590,11 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "can_nrd_individual_id",
         "jam_company_id",
         "esp_internal_employee_number",
+        "nzl_russia_sanctions_uid",
         "can_new_brunswick_reference_number",
+        "fra_asset_freeze_id",
+        "srb_beneficial_owner_id",
+        "can_pe_registration_number",
     ]);
 
 export declare namespace IdentifierType {
@@ -1177,5 +1181,9 @@ export declare namespace IdentifierType {
         | "can_nrd_individual_id"
         | "jam_company_id"
         | "esp_internal_employee_number"
-        | "can_new_brunswick_reference_number";
+        | "nzl_russia_sanctions_uid"
+        | "can_new_brunswick_reference_number"
+        | "fra_asset_freeze_id"
+        | "srb_beneficial_owner_id"
+        | "can_pe_registration_number";
 }
