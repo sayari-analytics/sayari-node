@@ -23,7 +23,10 @@ export type NameContext =
     | "machine_translation"
     /**
      * A machine transliteration of a name using a specific system (e.g., Pinyin, ISO, UNGEGN) */
-    | "transliteration";
+    | "transliteration"
+    /**
+     * A discretely registered name used by a person or company not operating under its legal name */
+    | "trade_name";
 
 export const NameContext = {
     Primary: "primary",
@@ -32,4 +35,5 @@ export const NameContext = {
     Alias: "alias",
     MachineTranslation: "machine_translation",
     Transliteration: "transliteration",
+    TradeName: "trade_name",
 } as const;

@@ -1709,8 +1709,20 @@ export type IdentifierType =
      * Spain Internal Employee Number */
     | "esp_internal_employee_number"
     /**
+     * Unique identifier assigned to every entity in the New Zealand Russia Sanctions Register. */
+    | "nzl_russia_sanctions_uid"
+    /**
      * Unique Canada province ID number. Assigned to every legal entity registered with the New Brunswick Corporate Affairs Registry. */
-    | "can_new_brunswick_reference_number";
+    | "can_new_brunswick_reference_number"
+    /**
+     * Unique reference number assigned to every entity in the France National Asset Freeze Register. */
+    | "fra_asset_freeze_id"
+    /**
+     * Unique Serbia ID number. Assigned to every entity registered with the Serbia Business Register Agency's Register of Beneficial Owners. */
+    | "srb_beneficial_owner_id"
+    /**
+     * Unique Canada province ID number. Assigned to every entity registered with the Prince Edward Island Corporate Registry. */
+    | "can_pe_registration_number";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2295,5 +2307,9 @@ export const IdentifierType = {
     CanNrdIndividualId: "can_nrd_individual_id",
     JamCompanyId: "jam_company_id",
     EspInternalEmployeeNumber: "esp_internal_employee_number",
+    NzlRussiaSanctionsUid: "nzl_russia_sanctions_uid",
     CanNewBrunswickReferenceNumber: "can_new_brunswick_reference_number",
+    FraAssetFreezeId: "fra_asset_freeze_id",
+    SrbBeneficialOwnerId: "srb_beneficial_owner_id",
+    CanPeRegistrationNumber: "can_pe_registration_number",
 } as const;
