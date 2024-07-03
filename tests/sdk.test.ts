@@ -180,7 +180,7 @@ describe("SDK", () => {
 
             // test field and multi-filter
             const buyerName = "HANSOLL TEXTILE LTD"
-            const buyerID = "f_nIivE32HCYDPEoSPTGJw"
+            const buyerID = "ZxL0IrGu9KNKx3NJjN0aeA"
             const hsCode = "600410"
             const shipments = await client.trade.searchShipments({q: buyerName, filter: {hsCode: [hsCode], buyerId: [buyerID]}})
             expect(shipments.data.length).toBeGreaterThan(0)
