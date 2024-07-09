@@ -595,6 +595,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "fra_asset_freeze_id",
         "srb_beneficial_owner_id",
         "can_pe_registration_number",
+        "cuw_reg_number",
     ]);
 
 export declare namespace IdentifierType {
@@ -1185,5 +1186,6 @@ export declare namespace IdentifierType {
         | "can_new_brunswick_reference_number"
         | "fra_asset_freeze_id"
         | "srb_beneficial_owner_id"
-        | "can_pe_registration_number";
+        | "can_pe_registration_number"
+        | "cuw_reg_number";
 }

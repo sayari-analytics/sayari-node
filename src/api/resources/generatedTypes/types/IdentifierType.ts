@@ -1722,7 +1722,10 @@ export type IdentifierType =
     | "srb_beneficial_owner_id"
     /**
      * Unique Canada province ID number. Assigned to every entity registered with the Prince Edward Island Corporate Registry. */
-    | "can_pe_registration_number";
+    | "can_pe_registration_number"
+    /**
+     * Curacao Registry Number. Unique Identifier issued by the Curacao Chamber of Commerce & Industry to the registered companies. */
+    | "cuw_reg_number";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2312,4 +2315,5 @@ export const IdentifierType = {
     FraAssetFreezeId: "fra_asset_freeze_id",
     SrbBeneficialOwnerId: "srb_beneficial_owner_id",
     CanPeRegistrationNumber: "can_pe_registration_number",
+    CuwRegNumber: "cuw_reg_number",
 } as const;
