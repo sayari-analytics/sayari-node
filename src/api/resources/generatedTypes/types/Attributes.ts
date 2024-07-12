@@ -3,50 +3,50 @@
  */
 
 export type Attributes =
-    | "financials"
-    | "monetary_value"
     | "identifier"
-    | "shares"
-    | "translated_name"
-    | "additional_information"
-    | "position"
-    | "finances"
-    | "date_of_birth"
-    | "contact"
-    | "status"
     | "risk_intelligence"
-    | "country"
-    | "generic"
-    | "name"
-    | "business_purpose"
-    | "measurement"
-    | "company_type"
+    | "status"
+    | "additional_information"
+    | "person_status"
     | "gender"
-    | "weak_identifier"
+    | "financials"
     | "address"
-    | "person_status";
+    | "date_of_birth"
+    | "generic"
+    | "measurement"
+    | "contact"
+    | "monetary_value"
+    | "finances"
+    | "position"
+    | "name"
+    | "company_type"
+    | "business_purpose"
+    | "country"
+    | "weak_identifier"
+    | "translated_name"
+    | "shares";
 
 export const Attributes = {
-    Financials: "financials",
-    MonetaryValue: "monetary_value",
     Identifier: "identifier",
-    Shares: "shares",
-    TranslatedName: "translated_name",
-    AdditionalInformation: "additional_information",
-    Position: "position",
-    Finances: "finances",
-    DateOfBirth: "date_of_birth",
-    Contact: "contact",
-    Status: "status",
     RiskIntelligence: "risk_intelligence",
-    Country: "country",
-    Generic: "generic",
-    Name: "name",
-    BusinessPurpose: "business_purpose",
-    Measurement: "measurement",
-    CompanyType: "company_type",
-    Gender: "gender",
-    WeakIdentifier: "weak_identifier",
-    Address: "address",
+    Status: "status",
+    AdditionalInformation: "additional_information",
     PersonStatus: "person_status",
+    Gender: "gender",
+    Financials: "financials",
+    Address: "address",
+    DateOfBirth: "date_of_birth",
+    Generic: "generic",
+    Measurement: "measurement",
+    Contact: "contact",
+    MonetaryValue: "monetary_value",
+    Finances: "finances",
+    Position: "position",
+    Name: "name",
+    CompanyType: "company_type",
+    BusinessPurpose: "business_purpose",
+    Country: "country",
+    WeakIdentifier: "weak_identifier",
+    TranslatedName: "translated_name",
+    Shares: "shares",
 } as const;
