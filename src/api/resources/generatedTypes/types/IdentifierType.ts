@@ -1724,6 +1724,9 @@ export type IdentifierType =
      * Unique Canada province ID number. Assigned to every entity registered with the Prince Edward Island Corporate Registry. */
     | "can_pe_registration_number"
     /**
+     * Hex digest of FSMA entity name */
+    | "bel_fsma_name_hash"
+    /**
      * Curacao Registry Number. Unique Identifier issued by the Curacao Chamber of Commerce & Industry to the registered companies. */
     | "cuw_reg_number";
 
@@ -2315,5 +2318,6 @@ export const IdentifierType = {
     FraAssetFreezeId: "fra_asset_freeze_id",
     SrbBeneficialOwnerId: "srb_beneficial_owner_id",
     CanPeRegistrationNumber: "can_pe_registration_number",
+    BelFsmaNameHash: "bel_fsma_name_hash",
     CuwRegNumber: "cuw_reg_number",
 } as const;

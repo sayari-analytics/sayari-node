@@ -7,32 +7,32 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const Entities: core.serialization.Schema<serializers.Entities.Raw, Sayari.Entities> = core.serialization.enum_([
-    "vessel",
-    "legal_matter",
     "property",
-    "tradename",
-    "company",
-    "generic",
-    "unknown",
-    "security",
-    "intellectual_property",
-    "shipment",
-    "aircraft",
     "person",
+    "unknown",
+    "company",
+    "aircraft",
+    "vessel",
+    "generic",
+    "intellectual_property",
+    "tradename",
+    "legal_matter",
+    "shipment",
+    "security",
 ]);
 
 export declare namespace Entities {
     type Raw =
-        | "vessel"
-        | "legal_matter"
         | "property"
-        | "tradename"
-        | "company"
-        | "generic"
+        | "person"
         | "unknown"
-        | "security"
-        | "intellectual_property"
-        | "shipment"
+        | "company"
         | "aircraft"
-        | "person";
+        | "vessel"
+        | "generic"
+        | "intellectual_property"
+        | "tradename"
+        | "legal_matter"
+        | "shipment"
+        | "security";
 }

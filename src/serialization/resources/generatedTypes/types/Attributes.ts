@@ -8,52 +8,52 @@ import * as core from "../../../../core";
 
 export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, Sayari.Attributes> =
     core.serialization.enum_([
-        "financials",
-        "monetary_value",
         "identifier",
-        "shares",
-        "translated_name",
-        "additional_information",
-        "position",
-        "finances",
-        "date_of_birth",
-        "contact",
-        "status",
         "risk_intelligence",
-        "country",
-        "generic",
-        "name",
-        "business_purpose",
-        "measurement",
-        "company_type",
-        "gender",
-        "weak_identifier",
-        "address",
+        "status",
+        "additional_information",
         "person_status",
+        "gender",
+        "financials",
+        "address",
+        "date_of_birth",
+        "generic",
+        "measurement",
+        "contact",
+        "monetary_value",
+        "finances",
+        "position",
+        "name",
+        "company_type",
+        "business_purpose",
+        "country",
+        "weak_identifier",
+        "translated_name",
+        "shares",
     ]);
 
 export declare namespace Attributes {
     type Raw =
-        | "financials"
-        | "monetary_value"
         | "identifier"
-        | "shares"
-        | "translated_name"
-        | "additional_information"
-        | "position"
-        | "finances"
-        | "date_of_birth"
-        | "contact"
-        | "status"
         | "risk_intelligence"
-        | "country"
-        | "generic"
-        | "name"
-        | "business_purpose"
-        | "measurement"
-        | "company_type"
+        | "status"
+        | "additional_information"
+        | "person_status"
         | "gender"
-        | "weak_identifier"
+        | "financials"
         | "address"
-        | "person_status";
+        | "date_of_birth"
+        | "generic"
+        | "measurement"
+        | "contact"
+        | "monetary_value"
+        | "finances"
+        | "position"
+        | "name"
+        | "company_type"
+        | "business_purpose"
+        | "country"
+        | "weak_identifier"
+        | "translated_name"
+        | "shares";
 }
