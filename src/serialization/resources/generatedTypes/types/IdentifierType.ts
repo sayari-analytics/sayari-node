@@ -370,6 +370,8 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "usa_cusip_number",
         "svn_co_reg_no",
         "isr_company_number",
+        "isr_association_number",
+        "isr_pbc_number",
         "rks_business_number",
         "rks_fiscal_number",
         "jpn_edinet_code",
@@ -963,6 +965,8 @@ export declare namespace IdentifierType {
         | "usa_cusip_number"
         | "svn_co_reg_no"
         | "isr_company_number"
+        | "isr_association_number"
+        | "isr_pbc_number"
         | "rks_business_number"
         | "rks_fiscal_number"
         | "jpn_edinet_code"

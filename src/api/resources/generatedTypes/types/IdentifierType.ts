@@ -1058,6 +1058,12 @@ export type IdentifierType =
     /**
      * Israeli Registrar of Companies company number */
     | "isr_company_number"
+    /**
+     * Unique Israel association registration number. Assigned to every association in the Israel Ministry of Justice Association and Public Benefit Company Registry. */
+    | "isr_association_number"
+    /**
+     * Unique Israel public benefit company registration number. Assigned to every public benefit company in the Israel Ministry of Justice Association and Public Benefit Company Registry. */
+    | "isr_pbc_number"
     | "rks_business_number"
     /**
      * A fiscal number from the Kosovo company registry */
@@ -2093,6 +2099,8 @@ export const IdentifierType = {
     UsaCusipNumber: "usa_cusip_number",
     SvnCoRegNo: "svn_co_reg_no",
     IsrCompanyNumber: "isr_company_number",
+    IsrAssociationNumber: "isr_association_number",
+    IsrPbcNumber: "isr_pbc_number",
     RksBusinessNumber: "rks_business_number",
     RksFiscalNumber: "rks_fiscal_number",
     JpnEdinetCode: "jpn_edinet_code",
