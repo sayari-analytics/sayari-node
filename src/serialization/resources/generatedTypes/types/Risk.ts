@@ -10,6 +10,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "sheffield_hallam_university_forced_labor_entity",
     "forced_labor_xinjiang_origin_direct",
     "regulatory_action",
+    "forced_labor_uflpa_origin_subtier_product_blueprint",
     "forced_labor_xinjiang_geospatial",
     "eu_high_risk_third",
     "sheffield_hallam_university_useful_resources",
@@ -36,6 +37,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owned_by_cmic_entity",
     "ofac_sdn",
     "owned_by_bis_meu_entity",
+    "forced_labor_aspi_origin_subtier_product_blueprint",
     "owned_by_forced_labor_xinjiang_uflpa",
     "forced_labor_xinjiang_uflpa_adjacent",
     "owned_by_wro_entity",
@@ -49,6 +51,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "forced_labor_china_keywords",
     "exports_bis_high_priority_items_critical_components",
     "soe_adjacent",
+    "forced_labor_sheffield_hallam_university_reports_origin_subtier_product_blueprint",
     "state_owned",
     "psa_sheffield_hallam_university_forced_labor_entity",
     "export_controls_adjacent",
@@ -79,6 +82,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_sheffield_hallam_university_useful_resources",
     "psa_wro_entity",
     "psa_entity_licensed_with_fsb_rf",
+    "forced_labor_wro_origin_subtier_product_blueprint",
     "psa_forced_labor_xinjiang_uflpa",
     "owner_of_wro_entity",
     "military_civil_fusion",
@@ -109,6 +113,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "forced_labor_xinjiang_uflpa",
     "psa_state_owned",
     "forced_labor_uflpa_origin_direct",
+    "forced_labor_xinjiang_origin_subtier_product_blueprint",
     "owned_by_sanctioned_entity",
 ]);
 
@@ -117,6 +122,7 @@ export declare namespace Risk {
         | "sheffield_hallam_university_forced_labor_entity"
         | "forced_labor_xinjiang_origin_direct"
         | "regulatory_action"
+        | "forced_labor_uflpa_origin_subtier_product_blueprint"
         | "forced_labor_xinjiang_geospatial"
         | "eu_high_risk_third"
         | "sheffield_hallam_university_useful_resources"
@@ -143,6 +149,7 @@ export declare namespace Risk {
         | "owned_by_cmic_entity"
         | "ofac_sdn"
         | "owned_by_bis_meu_entity"
+        | "forced_labor_aspi_origin_subtier_product_blueprint"
         | "owned_by_forced_labor_xinjiang_uflpa"
         | "forced_labor_xinjiang_uflpa_adjacent"
         | "owned_by_wro_entity"
@@ -156,6 +163,7 @@ export declare namespace Risk {
         | "forced_labor_china_keywords"
         | "exports_bis_high_priority_items_critical_components"
         | "soe_adjacent"
+        | "forced_labor_sheffield_hallam_university_reports_origin_subtier_product_blueprint"
         | "state_owned"
         | "psa_sheffield_hallam_university_forced_labor_entity"
         | "export_controls_adjacent"
@@ -186,6 +194,7 @@ export declare namespace Risk {
         | "psa_sheffield_hallam_university_useful_resources"
         | "psa_wro_entity"
         | "psa_entity_licensed_with_fsb_rf"
+        | "forced_labor_wro_origin_subtier_product_blueprint"
         | "psa_forced_labor_xinjiang_uflpa"
         | "owner_of_wro_entity"
         | "military_civil_fusion"
@@ -216,5 +225,6 @@ export declare namespace Risk {
         | "forced_labor_xinjiang_uflpa"
         | "psa_state_owned"
         | "forced_labor_uflpa_origin_direct"
+        | "forced_labor_xinjiang_origin_subtier_product_blueprint"
         | "owned_by_sanctioned_entity";
 }
