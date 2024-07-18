@@ -16,8 +16,11 @@ export declare namespace Trade {
     }
 
     interface RequestOptions {
+        /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
+        /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
+        /** A hook to abort the request. */
         abortSignal?: AbortSignal;
     }
 }
@@ -73,13 +76,14 @@ export class Trade {
             },
             contentType: "application/json",
             queryParameters: _queryParams,
-            body: await serializers.SearchShipments.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
+            requestType: "json",
+            body: serializers.SearchShipments.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.ShipmentSearchResponse.parseOrThrow(_response.body, {
+            return serializers.ShipmentSearchResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -91,7 +95,7 @@ export class Trade {
             switch (_response.error.statusCode) {
                 case 400:
                     throw new Sayari.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -100,7 +104,7 @@ export class Trade {
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -109,7 +113,7 @@ export class Trade {
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
-                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -118,7 +122,7 @@ export class Trade {
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
-                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -127,7 +131,7 @@ export class Trade {
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -205,13 +209,14 @@ export class Trade {
             },
             contentType: "application/json",
             queryParameters: _queryParams,
-            body: await serializers.SearchSuppliers.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
+            requestType: "json",
+            body: serializers.SearchSuppliers.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.SupplierSearchResponse.parseOrThrow(_response.body, {
+            return serializers.SupplierSearchResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -223,7 +228,7 @@ export class Trade {
             switch (_response.error.statusCode) {
                 case 400:
                     throw new Sayari.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -232,7 +237,7 @@ export class Trade {
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -241,7 +246,7 @@ export class Trade {
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
-                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -250,7 +255,7 @@ export class Trade {
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
-                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -259,7 +264,7 @@ export class Trade {
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -337,13 +342,14 @@ export class Trade {
             },
             contentType: "application/json",
             queryParameters: _queryParams,
-            body: await serializers.SearchBuyers.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
+            requestType: "json",
+            body: serializers.SearchBuyers.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.BuyerSearchResponse.parseOrThrow(_response.body, {
+            return serializers.BuyerSearchResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -355,7 +361,7 @@ export class Trade {
             switch (_response.error.statusCode) {
                 case 400:
                     throw new Sayari.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -364,7 +370,7 @@ export class Trade {
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -373,7 +379,7 @@ export class Trade {
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
-                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -382,7 +388,7 @@ export class Trade {
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
-                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -391,7 +397,7 @@ export class Trade {
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

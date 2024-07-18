@@ -13,9 +13,7 @@ export const EntityRelationships: core.serialization.ObjectSchema<
 > = core.serialization
     .object({
         next: core.serialization.unknown().optional(),
-        data: core.serialization.list(
-            core.serialization.lazyObject(async () => (await import("../../..")).RelationshipData)
-        ),
+        data: core.serialization.list(core.serialization.lazyObject(() => serializers.RelationshipData)),
     })
     .extend(PaginatedResponse);
 

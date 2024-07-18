@@ -16,8 +16,11 @@ export declare namespace Project {
     }
 
     interface RequestOptions {
+        /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
+        /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
+        /** A hook to abort the request. */
         abortSignal?: AbortSignal;
     }
 }
@@ -62,13 +65,14 @@ export class Project {
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
-            body: await serializers.CreateProjectRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            requestType: "json",
+            body: serializers.CreateProjectRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.CreateProjectResponse.parseOrThrow(_response.body, {
+            return serializers.CreateProjectResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -80,7 +84,7 @@ export class Project {
             switch (_response.error.statusCode) {
                 case 400:
                     throw new Sayari.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -89,7 +93,7 @@ export class Project {
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -98,7 +102,7 @@ export class Project {
                     );
                 case 404:
                     throw new Sayari.NotFound(
-                        await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
+                        serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -107,7 +111,7 @@ export class Project {
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
-                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -116,7 +120,7 @@ export class Project {
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
-                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -125,7 +129,7 @@ export class Project {
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -218,12 +222,13 @@ export class Project {
             },
             contentType: "application/json",
             queryParameters: _queryParams,
+            requestType: "json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.GetProjectsResponse.parseOrThrow(_response.body, {
+            return serializers.GetProjectsResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -235,7 +240,7 @@ export class Project {
             switch (_response.error.statusCode) {
                 case 400:
                     throw new Sayari.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -244,7 +249,7 @@ export class Project {
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -253,7 +258,7 @@ export class Project {
                     );
                 case 404:
                     throw new Sayari.NotFound(
-                        await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
+                        serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -262,7 +267,7 @@ export class Project {
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
-                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -271,7 +276,7 @@ export class Project {
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
-                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -280,7 +285,7 @@ export class Project {
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -409,18 +414,17 @@ export class Project {
         if (filters != null) {
             if (Array.isArray(filters)) {
                 _queryParams["filters"] = await Promise.all(
-                    filters.map(
-                        async (item) =>
-                            await serializers.ProjectEntitiesFilter.jsonOrThrow(item, {
-                                unrecognizedObjectKeys: "passthrough",
-                                allowUnrecognizedUnionMembers: true,
-                                allowUnrecognizedEnumValues: true,
-                                breadcrumbsPrefix: ["request", "filters"],
-                            })
+                    filters.map(async (item) =>
+                        serializers.ProjectEntitiesFilter.jsonOrThrow(item, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["request", "filters"],
+                        })
                     )
                 );
             } else {
-                _queryParams["filters"] = await serializers.ProjectEntitiesFilter.jsonOrThrow(filters, {
+                _queryParams["filters"] = serializers.ProjectEntitiesFilter.jsonOrThrow(filters, {
                     unrecognizedObjectKeys: "passthrough",
                     allowUnrecognizedUnionMembers: true,
                     allowUnrecognizedEnumValues: true,
@@ -454,12 +458,13 @@ export class Project {
             },
             contentType: "application/json",
             queryParameters: _queryParams,
+            requestType: "json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.GetProjectEntitiesResponse.parseOrThrow(_response.body, {
+            return serializers.GetProjectEntitiesResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -471,7 +476,7 @@ export class Project {
             switch (_response.error.statusCode) {
                 case 400:
                     throw new Sayari.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -480,7 +485,7 @@ export class Project {
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -489,7 +494,7 @@ export class Project {
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
-                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -498,7 +503,7 @@ export class Project {
                     );
                 case 406:
                     throw new Sayari.NotAcceptable(
-                        await serializers.NotAcceptableResponse.parseOrThrow(_response.error.body, {
+                        serializers.NotAcceptableResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -507,7 +512,7 @@ export class Project {
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
-                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -516,7 +521,7 @@ export class Project {
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -581,12 +586,13 @@ export class Project {
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
+            requestType: "json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.DeleteProjectResponse.parseOrThrow(_response.body, {
+            return serializers.DeleteProjectResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -598,7 +604,7 @@ export class Project {
             switch (_response.error.statusCode) {
                 case 400:
                     throw new Sayari.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -607,7 +613,7 @@ export class Project {
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -616,7 +622,7 @@ export class Project {
                     );
                 case 404:
                     throw new Sayari.NotFound(
-                        await serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
+                        serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -625,7 +631,7 @@ export class Project {
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
-                        await serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -634,7 +640,7 @@ export class Project {
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
-                        await serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -643,7 +649,7 @@ export class Project {
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

@@ -16,8 +16,11 @@ export declare namespace Auth {
     }
 
     interface RequestOptions {
+        /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
+        /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
+        /** A hook to abort the request. */
         abortSignal?: AbortSignal;
     }
 }
@@ -60,8 +63,9 @@ export class Auth {
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
+            requestType: "json",
             body: {
-                ...(await serializers.GetToken.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" })),
+                ...serializers.GetToken.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
                 audience: "sayari.com",
                 grant_type: "client_credentials",
             },
@@ -70,7 +74,7 @@ export class Auth {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.AuthResponse.parseOrThrow(_response.body, {
+            return serializers.AuthResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -82,7 +86,7 @@ export class Auth {
             switch (_response.error.statusCode) {
                 case 400:
                     throw new Sayari.BadRequest(
-                        await serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -91,7 +95,7 @@ export class Auth {
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
-                        await serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -100,7 +104,7 @@ export class Auth {
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
-                        await serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

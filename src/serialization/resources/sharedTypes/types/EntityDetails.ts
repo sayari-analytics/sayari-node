@@ -32,9 +32,7 @@ export const EntityDetails: core.serialization.ObjectSchema<serializers.EntityDe
             latestStatus: core.serialization.property("latest_status", Status.optional()),
             risk: EntityRisk,
             attributes: AttributeDetails.optional(),
-            relationships: core.serialization
-                .lazyObject(async () => (await import("../../..")).EntityRelationships)
-                .optional(),
+            relationships: core.serialization.lazyObject(() => serializers.EntityRelationships).optional(),
             possiblySameAs: core.serialization.property("possibly_same_as", PossiblySameAs.optional()),
             referencedBy: core.serialization.property("referenced_by", ReferencedBy.optional()),
         })

@@ -12,7 +12,7 @@ export const RelationshipData: core.serialization.ObjectSchema<
     serializers.RelationshipData.Raw,
     Sayari.RelationshipData
 > = core.serialization.object({
-    target: core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails),
+    target: core.serialization.lazyObject(() => serializers.EntityDetails),
     types: core.serialization.record(Relationships, core.serialization.list(RelationshipInfo).optional()),
     dates: core.serialization.list(core.serialization.string()),
     firstObserved: core.serialization.property("first_observed", core.serialization.string().optional()),
