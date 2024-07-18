@@ -6,6 +6,7 @@ export type Risk =
     | "sheffield_hallam_university_forced_labor_entity"
     | "forced_labor_xinjiang_origin_direct"
     | "regulatory_action"
+    | "forced_labor_uflpa_origin_subtier_product_blueprint"
     | "forced_labor_xinjiang_geospatial"
     | "eu_high_risk_third"
     | "sheffield_hallam_university_useful_resources"
@@ -32,6 +33,7 @@ export type Risk =
     | "owned_by_cmic_entity"
     | "ofac_sdn"
     | "owned_by_bis_meu_entity"
+    | "forced_labor_aspi_origin_subtier_product_blueprint"
     | "owned_by_forced_labor_xinjiang_uflpa"
     | "forced_labor_xinjiang_uflpa_adjacent"
     | "owned_by_wro_entity"
@@ -45,6 +47,7 @@ export type Risk =
     | "forced_labor_china_keywords"
     | "exports_bis_high_priority_items_critical_components"
     | "soe_adjacent"
+    | "forced_labor_sheffield_hallam_university_reports_origin_subtier_product_blueprint"
     | "state_owned"
     | "psa_sheffield_hallam_university_forced_labor_entity"
     | "export_controls_adjacent"
@@ -75,6 +78,7 @@ export type Risk =
     | "psa_sheffield_hallam_university_useful_resources"
     | "psa_wro_entity"
     | "psa_entity_licensed_with_fsb_rf"
+    | "forced_labor_wro_origin_subtier_product_blueprint"
     | "psa_forced_labor_xinjiang_uflpa"
     | "owner_of_wro_entity"
     | "military_civil_fusion"
@@ -105,12 +109,14 @@ export type Risk =
     | "forced_labor_xinjiang_uflpa"
     | "psa_state_owned"
     | "forced_labor_uflpa_origin_direct"
+    | "forced_labor_xinjiang_origin_subtier_product_blueprint"
     | "owned_by_sanctioned_entity";
 
 export const Risk = {
     SheffieldHallamUniversityForcedLaborEntity: "sheffield_hallam_university_forced_labor_entity",
     ForcedLaborXinjiangOriginDirect: "forced_labor_xinjiang_origin_direct",
     RegulatoryAction: "regulatory_action",
+    ForcedLaborUflpaOriginSubtierProductBlueprint: "forced_labor_uflpa_origin_subtier_product_blueprint",
     ForcedLaborXinjiangGeospatial: "forced_labor_xinjiang_geospatial",
     EuHighRiskThird: "eu_high_risk_third",
     SheffieldHallamUniversityUsefulResources: "sheffield_hallam_university_useful_resources",
@@ -137,6 +143,7 @@ export const Risk = {
     OwnedByCmicEntity: "owned_by_cmic_entity",
     OfacSdn: "ofac_sdn",
     OwnedByBisMeuEntity: "owned_by_bis_meu_entity",
+    ForcedLaborAspiOriginSubtierProductBlueprint: "forced_labor_aspi_origin_subtier_product_blueprint",
     OwnedByForcedLaborXinjiangUflpa: "owned_by_forced_labor_xinjiang_uflpa",
     ForcedLaborXinjiangUflpaAdjacent: "forced_labor_xinjiang_uflpa_adjacent",
     OwnedByWroEntity: "owned_by_wro_entity",
@@ -151,6 +158,8 @@ export const Risk = {
     ForcedLaborChinaKeywords: "forced_labor_china_keywords",
     ExportsBisHighPriorityItemsCriticalComponents: "exports_bis_high_priority_items_critical_components",
     SoeAdjacent: "soe_adjacent",
+    ForcedLaborSheffieldHallamUniversityReportsOriginSubtierProductBlueprint:
+        "forced_labor_sheffield_hallam_university_reports_origin_subtier_product_blueprint",
     StateOwned: "state_owned",
     PsaSheffieldHallamUniversityForcedLaborEntity: "psa_sheffield_hallam_university_forced_labor_entity",
     ExportControlsAdjacent: "export_controls_adjacent",
@@ -184,6 +193,7 @@ export const Risk = {
     PsaSheffieldHallamUniversityUsefulResources: "psa_sheffield_hallam_university_useful_resources",
     PsaWroEntity: "psa_wro_entity",
     PsaEntityLicensedWithFsbRf: "psa_entity_licensed_with_fsb_rf",
+    ForcedLaborWroOriginSubtierProductBlueprint: "forced_labor_wro_origin_subtier_product_blueprint",
     PsaForcedLaborXinjiangUflpa: "psa_forced_labor_xinjiang_uflpa",
     OwnerOfWroEntity: "owner_of_wro_entity",
     MilitaryCivilFusion: "military_civil_fusion",
@@ -216,5 +226,6 @@ export const Risk = {
     ForcedLaborXinjiangUflpa: "forced_labor_xinjiang_uflpa",
     PsaStateOwned: "psa_state_owned",
     ForcedLaborUflpaOriginDirect: "forced_labor_uflpa_origin_direct",
+    ForcedLaborXinjiangOriginSubtierProductBlueprint: "forced_labor_xinjiang_origin_subtier_product_blueprint",
     OwnedBySanctionedEntity: "owned_by_sanctioned_entity",
 } as const;
