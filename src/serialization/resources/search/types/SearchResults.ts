@@ -14,7 +14,7 @@ export const SearchResults: core.serialization.ObjectSchema<serializers.SearchRe
             coordinates: core.serialization.list(Coordinates),
             matches: EntityMatches,
         })
-        .extend(core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails));
+        .extend(core.serialization.lazyObject(() => serializers.EntityDetails));
 
 export declare namespace SearchResults {
     interface Raw extends serializers.EntityDetails.Raw {

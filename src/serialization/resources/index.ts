@@ -10,6 +10,8 @@ export * as generatedTypes from "./generatedTypes";
 export * from "./generatedTypes/types";
 export * as info from "./info";
 export * from "./info/types";
+export * as metadata from "./metadata";
+export * from "./metadata/types";
 export * as notifications from "./notifications";
 export * from "./notifications/types";
 export * as project from "./project";

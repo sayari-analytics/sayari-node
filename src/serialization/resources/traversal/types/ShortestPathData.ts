@@ -12,7 +12,7 @@ export const ShortestPathData: core.serialization.ObjectSchema<
     Sayari.ShortestPathData
 > = core.serialization.object({
     source: core.serialization.string(),
-    target: core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails),
+    target: core.serialization.lazyObject(() => serializers.EntityDetails),
     path: core.serialization.list(TraversalPath),
 });
 

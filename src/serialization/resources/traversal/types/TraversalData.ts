@@ -10,7 +10,7 @@ import { TraversalPath } from "./TraversalPath";
 export const TraversalData: core.serialization.ObjectSchema<serializers.TraversalData.Raw, Sayari.TraversalData> =
     core.serialization.object({
         source: core.serialization.string(),
-        target: core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails),
+        target: core.serialization.lazyObject(() => serializers.EntityDetails),
         path: core.serialization.list(TraversalPath),
     });
 

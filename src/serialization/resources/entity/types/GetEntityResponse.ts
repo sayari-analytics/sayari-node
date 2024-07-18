@@ -9,9 +9,7 @@ import * as core from "../../../../core";
 export const GetEntityResponse: core.serialization.ObjectSchema<
     serializers.GetEntityResponse.Raw,
     Sayari.GetEntityResponse
-> = core.serialization
-    .object({})
-    .extend(core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails));
+> = core.serialization.object({}).extend(core.serialization.lazyObject(() => serializers.EntityDetails));
 
 export declare namespace GetEntityResponse {
     interface Raw extends serializers.EntityDetails.Raw {}

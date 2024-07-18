@@ -12,7 +12,7 @@ export const SupplierOrBuyer: core.serialization.ObjectSchema<serializers.Suppli
         .object({
             metadata: SupplierMetadata,
         })
-        .extend(core.serialization.lazyObject(async () => (await import("../../..")).EntityDetails));
+        .extend(core.serialization.lazyObject(() => serializers.EntityDetails));
 
 export declare namespace SupplierOrBuyer {
     interface Raw extends serializers.EntityDetails.Raw {

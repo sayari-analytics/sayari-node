@@ -8,6 +8,7 @@ import { Auth } from "./api/resources/auth/client/Client";
 import { Attributes } from "./api/resources/attributes/client/Client";
 import { Entity } from "./api/resources/entity/client/Client";
 import { Info } from "./api/resources/info/client/Client";
+import { Metadata } from "./api/resources/metadata/client/Client";
 import { Notifications } from "./api/resources/notifications/client/Client";
 import { Project } from "./api/resources/project/client/Client";
 import { Record_ } from "./api/resources/record/client/Client";
@@ -27,8 +28,11 @@ export declare namespace SayariClient {
     }
 
     interface RequestOptions {
+        /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
+        /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
+        /** A hook to abort the request. */
         abortSignal?: AbortSignal;
     }
 }
@@ -77,6 +81,15 @@ export class SayariClient {
 
     public get info(): Info {
         return (this._info ??= new Info({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    protected _metadata: Metadata | undefined;
+
+    public get metadata(): Metadata {
+        return (this._metadata ??= new Metadata({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));
