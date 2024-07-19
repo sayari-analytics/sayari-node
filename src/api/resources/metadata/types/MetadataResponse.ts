@@ -18,11 +18,11 @@ import * as Sayari from "../../../index";
  *     }
  */
 export interface MetadataResponse {
-    /** Usage information for each endpoint */
+    /** Currently deployed version of the application. */
     version: string;
-    /** The start date of the returned usage information. */
+    /** Currently deployed main data release. */
     masterRelease: string;
-    /** The end date of the returned usage information. */
+    /** Currently deployed watchlist release. */
     watchlistRelease: string;
     user: Sayari.UserInfo;
 }

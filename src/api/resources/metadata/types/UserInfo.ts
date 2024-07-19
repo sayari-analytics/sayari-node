@@ -3,7 +3,10 @@
  */
 
 export interface UserInfo {
+    /** Currently logged in user ID */
     id: string;
+    /** Name of the sayari organization tied to credentials */
     groupDisplayNames?: string;
+    /** Licenses associated with the organization */
     roles?: string;
 }
