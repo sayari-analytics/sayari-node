@@ -6,6 +6,7 @@ import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Notification } from "./Notification";
+import { ProjectNotificationRiskData } from "./ProjectNotificationRiskData";
 
 export const ProjectNotificationData: core.serialization.ObjectSchema<
     serializers.ProjectNotificationData.Raw,
@@ -16,6 +17,7 @@ export const ProjectNotificationData: core.serialization.ObjectSchema<
     entityId: core.serialization.property("entity_id", core.serialization.string()),
     notifications: core.serialization.list(Notification),
     customFields: core.serialization.property("custom_fields", core.serialization.unknown().optional()),
+    riskNotifications: core.serialization.property("risk_notifications", ProjectNotificationRiskData),
 });
 
 export declare namespace ProjectNotificationData {
@@ -25,5 +27,6 @@ export declare namespace ProjectNotificationData {
         entity_id: string;
         notifications: Notification.Raw[];
         custom_fields?: unknown | null;
+        risk_notifications: ProjectNotificationRiskData.Raw;
     }
 }

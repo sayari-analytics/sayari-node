@@ -30,6 +30,11 @@ import * as Sayari from "../../../index";
  *                     "properties": {
  *                         "custom_name": "Victoria Beckham"
  *                     }
+ *                 },
+ *                 riskNotifications: {
+ *                     added: ["forced_labor_xinjiang_origin_subtier"],
+ *                     removed: [],
+ *                     date: "2024-02-06T00:00:00.000Z"
  *                 }
  *             }, {
  *                 id: "wxwqZshCF4trlrmOa2eu9w",
@@ -40,7 +45,12 @@ import * as Sayari from "../../../index";
  *                         field: Sayari.Risk.ForcedLaborSheffieldHallamUniversityReportsOriginSubtier,
  *                         values: ["3"],
  *                         date: "2024-02-15T00:00:00.000Z"
- *                     }]
+ *                     }],
+ *                 riskNotifications: {
+ *                     added: [],
+ *                     removed: ["forced_labor_sheffield_hallam_university_reports_origin_subtier"],
+ *                     date: "2024-02-15T00:00:00.000Z"
+ *                 }
  *             }, {
  *                 id: "dX9cfM3FPefIp8VAuBKgIQ",
  *                 entityId: "dX9cfM3FPefIp8VAuBKgIQ",
@@ -65,6 +75,11 @@ import * as Sayari from "../../../index";
  *                     "properties": {
  *                         "custom_identifier": "abc123"
  *                     }
+ *                 },
+ *                 riskNotifications: {
+ *                     added: ["forced_labor_sheffield_hallam_university_reports_origin_subtier"],
+ *                     removed: ["owner_of_regulatory_action_entity", "forced_labor_sheffield_hallam_university_reports_origin_direct"],
+ *                     date: "2024-02-15T00:00:00.000Z"
  *                 }
  *             }]
  *     }
@@ -92,6 +107,11 @@ import * as Sayari from "../../../index";
  *                     "properties": {
  *                         "custom_name": "Victoria Beckham"
  *                     }
+ *                 },
+ *                 riskNotifications: {
+ *                     added: ["forced_labor_xinjiang_origin_subtier"],
+ *                     removed: [],
+ *                     date: "2024-02-06T00:00:00.000Z"
  *                 }
  *             }, {
  *                 id: "wxwqZshCF4trlrmOa2eu9w",
@@ -102,7 +122,12 @@ import * as Sayari from "../../../index";
  *                         field: Sayari.Risk.ForcedLaborSheffieldHallamUniversityReportsOriginSubtier,
  *                         values: ["3"],
  *                         date: "2024-02-15T00:00:00.000Z"
- *                     }]
+ *                     }],
+ *                 riskNotifications: {
+ *                     added: [],
+ *                     removed: ["forced_labor_sheffield_hallam_university_reports_origin_subtier"],
+ *                     date: "2024-02-15T00:00:00.000Z"
+ *                 }
  *             }, {
  *                 id: "dX9cfM3FPefIp8VAuBKgIQ",
  *                 entityId: "dX9cfM3FPefIp8VAuBKgIQ",
@@ -127,6 +152,11 @@ import * as Sayari from "../../../index";
  *                     "properties": {
  *                         "custom_identifier": "abc123"
  *                     }
+ *                 },
+ *                 riskNotifications: {
+ *                     added: ["forced_labor_sheffield_hallam_university_reports_origin_subtier"],
+ *                     removed: ["owner_of_regulatory_action_entity", "forced_labor_sheffield_hallam_university_reports_origin_direct"],
+ *                     date: "2024-02-15T00:00:00.000Z"
  *                 }
  *             }]
  *     }
