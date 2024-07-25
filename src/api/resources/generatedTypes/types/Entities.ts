@@ -7,53 +7,53 @@
  */
 export type Entities =
     /**
-     * Land, real estate, real property, or personal property not categorized under another entity type */
-    | "property"
-    /**
-     * A natural person (human being) */
-    | "person"
+     * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
+    | "generic"
     /**
      * An unknown placeholder entity. Rarely used. An unknown entity has insufficient information to be grouped by an existing entity type. */
     | "unknown"
     /**
-     * A legal entity or organization */
-    | "company"
-    /**
      * An airplane, helicopter, or other vehicle that travels by flight */
     | "aircraft"
-    /**
-     * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
-    | "vessel"
-    /**
-     * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
-    | "generic"
     /**
      * A trademark, patent, copyright, or similar type of intangible property */
     | "intellectual_property"
     /**
-     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
-    | "tradename"
+     * A natural person (human being) */
+    | "person"
+    /**
+     * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
+    | "vessel"
     /**
      * A civil or criminal legal case or similar type of proceeding */
     | "legal_matter"
     /**
-     * A shipment between two entities */
-    | "shipment"
-    /**
      * A tradable financial asset */
-    | "security";
+    | "security"
+    /**
+     * Land, real estate, real property, or personal property not categorized under another entity type */
+    | "property"
+    /**
+     * A legal entity or organization */
+    | "company"
+    /**
+     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
+    | "tradename"
+    /**
+     * A shipment between two entities */
+    | "shipment";
 
 export const Entities = {
-    Property: "property",
-    Person: "person",
-    Unknown: "unknown",
-    Company: "company",
-    Aircraft: "aircraft",
-    Vessel: "vessel",
     Generic: "generic",
+    Unknown: "unknown",
+    Aircraft: "aircraft",
     IntellectualProperty: "intellectual_property",
-    Tradename: "tradename",
+    Person: "person",
+    Vessel: "vessel",
     LegalMatter: "legal_matter",
-    Shipment: "shipment",
     Security: "security",
+    Property: "property",
+    Company: "company",
+    Tradename: "tradename",
+    Shipment: "shipment",
 } as const;

@@ -3,50 +3,50 @@
  */
 
 export type Attributes =
-    | "identifier"
-    | "risk_intelligence"
-    | "status"
-    | "additional_information"
-    | "person_status"
-    | "gender"
-    | "financials"
-    | "address"
-    | "date_of_birth"
     | "generic"
-    | "measurement"
+    | "status"
+    | "financials"
     | "contact"
-    | "monetary_value"
+    | "business_purpose"
     | "finances"
-    | "position"
     | "name"
     | "company_type"
-    | "business_purpose"
+    | "identifier"
+    | "shares"
+    | "position"
+    | "additional_information"
+    | "gender"
     | "country"
     | "weak_identifier"
+    | "date_of_birth"
+    | "person_status"
+    | "address"
+    | "monetary_value"
     | "translated_name"
-    | "shares";
+    | "risk_intelligence"
+    | "measurement";
 
 export const Attributes = {
-    Identifier: "identifier",
-    RiskIntelligence: "risk_intelligence",
-    Status: "status",
-    AdditionalInformation: "additional_information",
-    PersonStatus: "person_status",
-    Gender: "gender",
-    Financials: "financials",
-    Address: "address",
-    DateOfBirth: "date_of_birth",
     Generic: "generic",
-    Measurement: "measurement",
+    Status: "status",
+    Financials: "financials",
     Contact: "contact",
-    MonetaryValue: "monetary_value",
+    BusinessPurpose: "business_purpose",
     Finances: "finances",
-    Position: "position",
     Name: "name",
     CompanyType: "company_type",
-    BusinessPurpose: "business_purpose",
+    Identifier: "identifier",
+    Shares: "shares",
+    Position: "position",
+    AdditionalInformation: "additional_information",
+    Gender: "gender",
     Country: "country",
     WeakIdentifier: "weak_identifier",
+    DateOfBirth: "date_of_birth",
+    PersonStatus: "person_status",
+    Address: "address",
+    MonetaryValue: "monetary_value",
     TranslatedName: "translated_name",
-    Shares: "shares",
+    RiskIntelligence: "risk_intelligence",
+    Measurement: "measurement",
 } as const;
