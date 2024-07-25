@@ -8,52 +8,52 @@ import * as core from "../../../../core";
 
 export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, Sayari.Attributes> =
     core.serialization.enum_([
-        "identifier",
-        "risk_intelligence",
-        "status",
-        "additional_information",
-        "person_status",
-        "gender",
-        "financials",
-        "address",
-        "date_of_birth",
         "generic",
-        "measurement",
+        "status",
+        "financials",
         "contact",
-        "monetary_value",
+        "business_purpose",
         "finances",
-        "position",
         "name",
         "company_type",
-        "business_purpose",
+        "identifier",
+        "shares",
+        "position",
+        "additional_information",
+        "gender",
         "country",
         "weak_identifier",
+        "date_of_birth",
+        "person_status",
+        "address",
+        "monetary_value",
         "translated_name",
-        "shares",
+        "risk_intelligence",
+        "measurement",
     ]);
 
 export declare namespace Attributes {
     type Raw =
-        | "identifier"
-        | "risk_intelligence"
-        | "status"
-        | "additional_information"
-        | "person_status"
-        | "gender"
-        | "financials"
-        | "address"
-        | "date_of_birth"
         | "generic"
-        | "measurement"
+        | "status"
+        | "financials"
         | "contact"
-        | "monetary_value"
+        | "business_purpose"
         | "finances"
-        | "position"
         | "name"
         | "company_type"
-        | "business_purpose"
+        | "identifier"
+        | "shares"
+        | "position"
+        | "additional_information"
+        | "gender"
         | "country"
         | "weak_identifier"
+        | "date_of_birth"
+        | "person_status"
+        | "address"
+        | "monetary_value"
         | "translated_name"
-        | "shares";
+        | "risk_intelligence"
+        | "measurement";
 }
