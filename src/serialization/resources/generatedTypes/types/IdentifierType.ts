@@ -153,6 +153,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "usa_ny_dos_id",
         "bfa_rccm_number",
         "fl_prop_folio",
+        "usa_fl_pb_pcn",
         "qat_qfc_number",
         "grc_afm_number",
         "vnm_enterprise_code",
@@ -599,6 +600,9 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "can_pe_registration_number",
         "bel_fsma_name_hash",
         "cuw_reg_number",
+        "tur_shipment_id",
+        "bd_bin",
+        "aer_ner_number",
     ]);
 
 export declare namespace IdentifierType {
@@ -748,6 +752,7 @@ export declare namespace IdentifierType {
         | "usa_ny_dos_id"
         | "bfa_rccm_number"
         | "fl_prop_folio"
+        | "usa_fl_pb_pcn"
         | "qat_qfc_number"
         | "grc_afm_number"
         | "vnm_enterprise_code"
@@ -1193,5 +1198,8 @@ export declare namespace IdentifierType {
         | "srb_beneficial_owner_id"
         | "can_pe_registration_number"
         | "bel_fsma_name_hash"
-        | "cuw_reg_number";
+        | "cuw_reg_number"
+        | "tur_shipment_id"
+        | "bd_bin"
+        | "aer_ner_number";
 }

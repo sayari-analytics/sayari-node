@@ -418,6 +418,9 @@ export type IdentifierType =
      * USA Florida Broward County parcel ID number */
     | "fl_prop_folio"
     /**
+     * Unique USA county land and property ID number. Assigned to every parcel and property registered with the Palm Beach County Property Appraiser’s Office. */
+    | "usa_fl_pb_pcn"
+    /**
      * Qatar corporate registry ID number */
     | "qat_qfc_number"
     /**
@@ -1734,7 +1737,16 @@ export type IdentifierType =
     | "bel_fsma_name_hash"
     /**
      * Curacao Registry Number. Unique Identifier issued by the Curacao Chamber of Commerce & Industry to the registered companies. */
-    | "cuw_reg_number";
+    | "cuw_reg_number"
+    /**
+     * Unique concatenation of bill of lading number and item number for shipments in Turkey. */
+    | "tur_shipment_id"
+    /**
+     * Unique business Identification number. Assigned to every registered business in Bangladesh. */
+    | "bd_bin"
+    /**
+     * Unique registration number. Assigned to every company registered with the UAE National Economic Register. */
+    | "aer_ner_number";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -1882,6 +1894,7 @@ export const IdentifierType = {
     UsaNyDosId: "usa_ny_dos_id",
     BfaRccmNumber: "bfa_rccm_number",
     FlPropFolio: "fl_prop_folio",
+    UsaFlPbPcn: "usa_fl_pb_pcn",
     QatQfcNumber: "qat_qfc_number",
     GrcAfmNumber: "grc_afm_number",
     VnmEnterpriseCode: "vnm_enterprise_code",
@@ -2328,4 +2341,7 @@ export const IdentifierType = {
     CanPeRegistrationNumber: "can_pe_registration_number",
     BelFsmaNameHash: "bel_fsma_name_hash",
     CuwRegNumber: "cuw_reg_number",
+    TurShipmentId: "tur_shipment_id",
+    BdBin: "bd_bin",
+    AerNerNumber: "aer_ner_number",
 } as const;
