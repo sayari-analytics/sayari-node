@@ -27,6 +27,7 @@ export const Tag: core.serialization.Schema<serializers.Tag.Raw, Sayari.Tag> = c
     "uflpa_entity",
     "sheffield_hallam_university_forced_labor_entity",
     "aspi_uyghur_forced_labor_report_entity",
+    "bis_boycott_requester_list",
 ]);
 
 export declare namespace Tag {
@@ -50,5 +51,6 @@ export declare namespace Tag {
         | "wro_entity"
         | "uflpa_entity"
         | "sheffield_hallam_university_forced_labor_entity"
-        | "aspi_uyghur_forced_labor_report_entity";
+        | "aspi_uyghur_forced_labor_report_entity"
+        | "bis_boycott_requester_list";
 }

@@ -25,7 +25,8 @@ export type Tag =
     | "wro_entity"
     | "uflpa_entity"
     | "sheffield_hallam_university_forced_labor_entity"
-    | "aspi_uyghur_forced_labor_report_entity";
+    | "aspi_uyghur_forced_labor_report_entity"
+    | "bis_boycott_requester_list";
 
 export const Tag = {
     Pep: "pep",
@@ -48,4 +49,5 @@ export const Tag = {
     UflpaEntity: "uflpa_entity",
     SheffieldHallamUniversityForcedLaborEntity: "sheffield_hallam_university_forced_labor_entity",
     AspiUyghurForcedLaborReportEntity: "aspi_uyghur_forced_labor_report_entity",
+    BisBoycottRequesterList: "bis_boycott_requester_list",
 } as const;
