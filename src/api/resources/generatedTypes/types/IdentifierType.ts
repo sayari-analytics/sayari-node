@@ -1739,6 +1739,12 @@ export type IdentifierType =
      * Curacao Registry Number. Unique Identifier issued by the Curacao Chamber of Commerce & Industry to the registered companies. */
     | "cuw_reg_number"
     /**
+     * A unique concatenation of bill of lading number, date of customs declaration and Russia customs sequence number. */
+    | "rus_declaration_number"
+    /**
+     * Russia Trade Internal Shipment ID */
+    | "ru_trade_internal_shipment_id"
+    /**
      * Unique concatenation of bill of lading number and item number for shipments in Turkey. */
     | "tur_shipment_id"
     /**
@@ -2341,6 +2347,8 @@ export const IdentifierType = {
     CanPeRegistrationNumber: "can_pe_registration_number",
     BelFsmaNameHash: "bel_fsma_name_hash",
     CuwRegNumber: "cuw_reg_number",
+    RusDeclarationNumber: "rus_declaration_number",
+    RuTradeInternalShipmentId: "ru_trade_internal_shipment_id",
     TurShipmentId: "tur_shipment_id",
     BdBin: "bd_bin",
     AerNerNumber: "aer_ner_number",
