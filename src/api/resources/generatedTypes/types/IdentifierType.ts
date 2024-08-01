@@ -1752,7 +1752,10 @@ export type IdentifierType =
     | "bd_bin"
     /**
      * Unique registration number. Assigned to every company registered with the UAE National Economic Register. */
-    | "aer_ner_number";
+    | "aer_ner_number"
+    /**
+     * Belgium unique natural person ID number. */
+    | "bel_national_register_no";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2352,4 +2355,5 @@ export const IdentifierType = {
     TurShipmentId: "tur_shipment_id",
     BdBin: "bd_bin",
     AerNerNumber: "aer_ner_number",
+    BelNationalRegisterNo: "bel_national_register_no",
 } as const;
