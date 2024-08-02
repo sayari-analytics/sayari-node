@@ -66,6 +66,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "pep",
     "owned_by_entity_in_export_controls",
     "psa_forced_labor_aspi_uyghur",
+    "bis_boycott_requester_list",
     "eu_50_percent_rule",
     "forced_labor_xinjiang_operations",
     "forced_labor_wro_origin_subtier",
@@ -97,6 +98,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owner_of_forced_labor_xinjiang_entity",
     "law_enforcement_action",
     "owned_by_soe",
+    "owned_by_military_civil_fusion",
     "entity_licensed_with_fsb_rf",
     "psa_forced_labor_xinjiang_registration",
     "forced_labor_sheffield_hallam_university_reports_origin_direct",
@@ -105,6 +107,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "reputational_risk_cybercrime",
     "psa_forced_labor_xinjiang_operations",
     "owner_of_soe",
+    "psa_bis_boycott_requester_list",
     "forced_labor_aspi_origin_direct",
     "exports_bis_high_priority_items",
     "forced_labor_uflpa_origin_subtier",
@@ -178,6 +181,7 @@ export declare namespace Risk {
         | "pep"
         | "owned_by_entity_in_export_controls"
         | "psa_forced_labor_aspi_uyghur"
+        | "bis_boycott_requester_list"
         | "eu_50_percent_rule"
         | "forced_labor_xinjiang_operations"
         | "forced_labor_wro_origin_subtier"
@@ -209,6 +213,7 @@ export declare namespace Risk {
         | "owner_of_forced_labor_xinjiang_entity"
         | "law_enforcement_action"
         | "owned_by_soe"
+        | "owned_by_military_civil_fusion"
         | "entity_licensed_with_fsb_rf"
         | "psa_forced_labor_xinjiang_registration"
         | "forced_labor_sheffield_hallam_university_reports_origin_direct"
@@ -217,6 +222,7 @@ export declare namespace Risk {
         | "reputational_risk_cybercrime"
         | "psa_forced_labor_xinjiang_operations"
         | "owner_of_soe"
+        | "psa_bis_boycott_requester_list"
         | "forced_labor_aspi_origin_direct"
         | "exports_bis_high_priority_items"
         | "forced_labor_uflpa_origin_subtier"

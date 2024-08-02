@@ -62,6 +62,7 @@ export type Risk =
     | "pep"
     | "owned_by_entity_in_export_controls"
     | "psa_forced_labor_aspi_uyghur"
+    | "bis_boycott_requester_list"
     | "eu_50_percent_rule"
     | "forced_labor_xinjiang_operations"
     | "forced_labor_wro_origin_subtier"
@@ -93,6 +94,7 @@ export type Risk =
     | "owner_of_forced_labor_xinjiang_entity"
     | "law_enforcement_action"
     | "owned_by_soe"
+    | "owned_by_military_civil_fusion"
     | "entity_licensed_with_fsb_rf"
     | "psa_forced_labor_xinjiang_registration"
     | "forced_labor_sheffield_hallam_university_reports_origin_direct"
@@ -101,6 +103,7 @@ export type Risk =
     | "reputational_risk_cybercrime"
     | "psa_forced_labor_xinjiang_operations"
     | "owner_of_soe"
+    | "psa_bis_boycott_requester_list"
     | "forced_labor_aspi_origin_direct"
     | "exports_bis_high_priority_items"
     | "forced_labor_uflpa_origin_subtier"
@@ -175,6 +178,7 @@ export const Risk = {
     Pep: "pep",
     OwnedByEntityInExportControls: "owned_by_entity_in_export_controls",
     PsaForcedLaborAspiUyghur: "psa_forced_labor_aspi_uyghur",
+    BisBoycottRequesterList: "bis_boycott_requester_list",
     Eu50PercentRule: "eu_50_percent_rule",
     ForcedLaborXinjiangOperations: "forced_labor_xinjiang_operations",
     ForcedLaborWroOriginSubtier: "forced_labor_wro_origin_subtier",
@@ -209,6 +213,7 @@ export const Risk = {
     OwnerOfForcedLaborXinjiangEntity: "owner_of_forced_labor_xinjiang_entity",
     LawEnforcementAction: "law_enforcement_action",
     OwnedBySoe: "owned_by_soe",
+    OwnedByMilitaryCivilFusion: "owned_by_military_civil_fusion",
     EntityLicensedWithFsbRf: "entity_licensed_with_fsb_rf",
     PsaForcedLaborXinjiangRegistration: "psa_forced_labor_xinjiang_registration",
     ForcedLaborSheffieldHallamUniversityReportsOriginDirect:
@@ -218,6 +223,7 @@ export const Risk = {
     ReputationalRiskCybercrime: "reputational_risk_cybercrime",
     PsaForcedLaborXinjiangOperations: "psa_forced_labor_xinjiang_operations",
     OwnerOfSoe: "owner_of_soe",
+    PsaBisBoycottRequesterList: "psa_bis_boycott_requester_list",
     ForcedLaborAspiOriginDirect: "forced_labor_aspi_origin_direct",
     ExportsBisHighPriorityItems: "exports_bis_high_priority_items",
     ForcedLaborUflpaOriginSubtier: "forced_labor_uflpa_origin_subtier",
