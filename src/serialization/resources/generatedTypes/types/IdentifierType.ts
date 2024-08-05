@@ -605,6 +605,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "tur_shipment_id",
         "bd_bin",
         "aer_ner_number",
+        "twn_passport_number",
         "bel_national_register_no",
     ]);
 
@@ -1207,5 +1208,6 @@ export declare namespace IdentifierType {
         | "tur_shipment_id"
         | "bd_bin"
         | "aer_ner_number"
+        | "twn_passport_number"
         | "bel_national_register_no";
 }

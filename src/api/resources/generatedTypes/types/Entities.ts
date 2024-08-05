@@ -7,26 +7,32 @@
  */
 export type Entities =
     /**
-     * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
-    | "generic"
-    /**
      * An unknown placeholder entity. Rarely used. An unknown entity has insufficient information to be grouped by an existing entity type. */
     | "unknown"
     /**
-     * An airplane, helicopter, or other vehicle that travels by flight */
-    | "aircraft"
+     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
+    | "tradename"
+    /**
+     * A civil or criminal legal case or similar type of proceeding */
+    | "legal_matter"
+    /**
+     * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
+    | "generic"
+    /**
+     * A shipment between two entities */
+    | "shipment"
     /**
      * A trademark, patent, copyright, or similar type of intangible property */
     | "intellectual_property"
     /**
-     * A natural person (human being) */
-    | "person"
+     * An airplane, helicopter, or other vehicle that travels by flight */
+    | "aircraft"
     /**
      * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
     | "vessel"
     /**
-     * A civil or criminal legal case or similar type of proceeding */
-    | "legal_matter"
+     * A natural person (human being) */
+    | "person"
     /**
      * A tradable financial asset */
     | "security"
@@ -35,25 +41,19 @@ export type Entities =
     | "property"
     /**
      * A legal entity or organization */
-    | "company"
-    /**
-     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
-    | "tradename"
-    /**
-     * A shipment between two entities */
-    | "shipment";
+    | "company";
 
 export const Entities = {
-    Generic: "generic",
     Unknown: "unknown",
-    Aircraft: "aircraft",
-    IntellectualProperty: "intellectual_property",
-    Person: "person",
-    Vessel: "vessel",
+    Tradename: "tradename",
     LegalMatter: "legal_matter",
+    Generic: "generic",
+    Shipment: "shipment",
+    IntellectualProperty: "intellectual_property",
+    Aircraft: "aircraft",
+    Vessel: "vessel",
+    Person: "person",
     Security: "security",
     Property: "property",
     Company: "company",
-    Tradename: "tradename",
-    Shipment: "shipment",
 } as const;
