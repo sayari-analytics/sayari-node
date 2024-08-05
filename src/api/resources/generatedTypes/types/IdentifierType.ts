@@ -1754,6 +1754,9 @@ export type IdentifierType =
      * Unique registration number. Assigned to every company registered with the UAE National Economic Register. */
     | "aer_ner_number"
     /**
+     * Taiwan Passport Number */
+    | "twn_passport_number"
+    /**
      * Belgium unique natural person ID number. */
     | "bel_national_register_no";
 
@@ -2355,5 +2358,6 @@ export const IdentifierType = {
     TurShipmentId: "tur_shipment_id",
     BdBin: "bd_bin",
     AerNerNumber: "aer_ner_number",
+    TwnPassportNumber: "twn_passport_number",
     BelNationalRegisterNo: "bel_national_register_no",
 } as const;

@@ -8,52 +8,52 @@ import * as core from "../../../../core";
 
 export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, Sayari.Attributes> =
     core.serialization.enum_([
-        "generic",
-        "status",
-        "financials",
-        "contact",
-        "business_purpose",
-        "finances",
+        "address",
         "name",
-        "company_type",
-        "identifier",
-        "shares",
-        "position",
-        "additional_information",
+        "contact",
+        "risk_intelligence",
         "gender",
-        "country",
+        "finances",
+        "translated_name",
+        "status",
         "weak_identifier",
         "date_of_birth",
         "person_status",
-        "address",
+        "generic",
+        "position",
         "monetary_value",
-        "translated_name",
-        "risk_intelligence",
+        "financials",
+        "shares",
+        "country",
+        "company_type",
         "measurement",
+        "additional_information",
+        "identifier",
+        "business_purpose",
     ]);
 
 export declare namespace Attributes {
     type Raw =
-        | "generic"
-        | "status"
-        | "financials"
-        | "contact"
-        | "business_purpose"
-        | "finances"
+        | "address"
         | "name"
-        | "company_type"
-        | "identifier"
-        | "shares"
-        | "position"
-        | "additional_information"
+        | "contact"
+        | "risk_intelligence"
         | "gender"
-        | "country"
+        | "finances"
+        | "translated_name"
+        | "status"
         | "weak_identifier"
         | "date_of_birth"
         | "person_status"
-        | "address"
+        | "generic"
+        | "position"
         | "monetary_value"
-        | "translated_name"
-        | "risk_intelligence"
-        | "measurement";
+        | "financials"
+        | "shares"
+        | "country"
+        | "company_type"
+        | "measurement"
+        | "additional_information"
+        | "identifier"
+        | "business_purpose";
 }
