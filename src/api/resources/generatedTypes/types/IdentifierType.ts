@@ -1679,6 +1679,9 @@ export type IdentifierType =
      * Unique Hungary Tax ID. Issued to companies registered in Hungary. */
     | "hun_tax_number"
     /**
+     * Statistical Number for Hungarian companies issued by the Hungarian Central Statistical Office */
+    | "hun_krs_number"
+    /**
      * Unique HUN registration number. Assigned to every legal entity registered with the Ministry of Justice of Hungary. */
     | "hun_company_register_number"
     /**
@@ -2333,6 +2336,7 @@ export const IdentifierType = {
     SyriaCommercialRegisterNumber: "syria_commercial_register_number",
     CnHurdInternalCompanyId: "cn_hurd_internal_company_id",
     HunTaxNumber: "hun_tax_number",
+    HunKrsNumber: "hun_krs_number",
     HunCompanyRegisterNumber: "hun_company_register_number",
     HunPersonTaxId: "hun_person_tax_id",
     MwTpinTaxRegNum: "mw_tpin_tax_reg_num",
