@@ -4,49 +4,49 @@
 
 export type Attributes =
     | "address"
+    | "shares"
+    | "person_status"
     | "name"
-    | "contact"
+    | "financials"
     | "risk_intelligence"
     | "gender"
-    | "finances"
-    | "translated_name"
-    | "status"
-    | "weak_identifier"
+    | "company_type"
     | "date_of_birth"
-    | "person_status"
+    | "measurement"
     | "generic"
+    | "identifier"
+    | "status"
+    | "finances"
+    | "weak_identifier"
+    | "translated_name"
+    | "contact"
+    | "additional_information"
     | "position"
     | "monetary_value"
-    | "financials"
-    | "shares"
     | "country"
-    | "company_type"
-    | "measurement"
-    | "additional_information"
-    | "identifier"
     | "business_purpose";
 
 export const Attributes = {
     Address: "address",
+    Shares: "shares",
+    PersonStatus: "person_status",
     Name: "name",
-    Contact: "contact",
+    Financials: "financials",
     RiskIntelligence: "risk_intelligence",
     Gender: "gender",
-    Finances: "finances",
-    TranslatedName: "translated_name",
-    Status: "status",
-    WeakIdentifier: "weak_identifier",
+    CompanyType: "company_type",
     DateOfBirth: "date_of_birth",
-    PersonStatus: "person_status",
+    Measurement: "measurement",
     Generic: "generic",
+    Identifier: "identifier",
+    Status: "status",
+    Finances: "finances",
+    WeakIdentifier: "weak_identifier",
+    TranslatedName: "translated_name",
+    Contact: "contact",
+    AdditionalInformation: "additional_information",
     Position: "position",
     MonetaryValue: "monetary_value",
-    Financials: "financials",
-    Shares: "shares",
     Country: "country",
-    CompanyType: "company_type",
-    Measurement: "measurement",
-    AdditionalInformation: "additional_information",
-    Identifier: "identifier",
     BusinessPurpose: "business_purpose",
 } as const;

@@ -10,14 +10,14 @@ export type Entities =
      * An unknown placeholder entity. Rarely used. An unknown entity has insufficient information to be grouped by an existing entity type. */
     | "unknown"
     /**
-     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
-    | "tradename"
+     * A legal entity or organization */
+    | "company"
     /**
-     * A civil or criminal legal case or similar type of proceeding */
-    | "legal_matter"
+     * A natural person (human being) */
+    | "person"
     /**
-     * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
-    | "generic"
+     * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
+    | "vessel"
     /**
      * A shipment between two entities */
     | "shipment"
@@ -25,35 +25,35 @@ export type Entities =
      * A trademark, patent, copyright, or similar type of intangible property */
     | "intellectual_property"
     /**
-     * An airplane, helicopter, or other vehicle that travels by flight */
-    | "aircraft"
-    /**
-     * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
-    | "vessel"
-    /**
-     * A natural person (human being) */
-    | "person"
-    /**
      * A tradable financial asset */
     | "security"
+    /**
+     * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
+    | "generic"
+    /**
+     * A civil or criminal legal case or similar type of proceeding */
+    | "legal_matter"
+    /**
+     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
+    | "tradename"
     /**
      * Land, real estate, real property, or personal property not categorized under another entity type */
     | "property"
     /**
-     * A legal entity or organization */
-    | "company";
+     * An airplane, helicopter, or other vehicle that travels by flight */
+    | "aircraft";
 
 export const Entities = {
     Unknown: "unknown",
-    Tradename: "tradename",
-    LegalMatter: "legal_matter",
-    Generic: "generic",
+    Company: "company",
+    Person: "person",
+    Vessel: "vessel",
     Shipment: "shipment",
     IntellectualProperty: "intellectual_property",
-    Aircraft: "aircraft",
-    Vessel: "vessel",
-    Person: "person",
     Security: "security",
+    Generic: "generic",
+    LegalMatter: "legal_matter",
+    Tradename: "tradename",
     Property: "property",
-    Company: "company",
+    Aircraft: "aircraft",
 } as const;
