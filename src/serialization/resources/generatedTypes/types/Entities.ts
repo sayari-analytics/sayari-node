@@ -8,31 +8,31 @@ import * as core from "../../../../core";
 
 export const Entities: core.serialization.Schema<serializers.Entities.Raw, Sayari.Entities> = core.serialization.enum_([
     "unknown",
-    "tradename",
-    "legal_matter",
-    "generic",
+    "company",
+    "person",
+    "vessel",
     "shipment",
     "intellectual_property",
-    "aircraft",
-    "vessel",
-    "person",
     "security",
+    "generic",
+    "legal_matter",
+    "tradename",
     "property",
-    "company",
+    "aircraft",
 ]);
 
 export declare namespace Entities {
     type Raw =
         | "unknown"
-        | "tradename"
-        | "legal_matter"
-        | "generic"
+        | "company"
+        | "person"
+        | "vessel"
         | "shipment"
         | "intellectual_property"
-        | "aircraft"
-        | "vessel"
-        | "person"
         | "security"
+        | "generic"
+        | "legal_matter"
+        | "tradename"
         | "property"
-        | "company";
+        | "aircraft";
 }

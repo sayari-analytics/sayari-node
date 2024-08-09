@@ -1123,6 +1123,12 @@ export type IdentifierType =
      * Guernsey Corporate Registry Number */
     | "ggy_corporate_reg_number"
     /**
+     * Unique Guernsey intellectual property ID number. Assigned to every trademark application submitted to the Guernsey Intellectual Property Office. */
+    | "ggy_trademark_submission_ref"
+    /**
+     * Unique Guernsey intellectual property ID number. Assigned to every trademark registered with the Guernsey Intellectual Property Office. */
+    | "ggy_trademark_no"
+    /**
      * Jersey Corporate Registry Number */
     | "jey_corporate_reg_number"
     /**
@@ -2148,6 +2154,8 @@ export const IdentifierType = {
     UsaIlChicagoAccountNumber: "usa_il_chicago_account_number",
     CymCoNo: "cym_co_no",
     GgyCorporateRegNumber: "ggy_corporate_reg_number",
+    GgyTrademarkSubmissionRef: "ggy_trademark_submission_ref",
+    GgyTrademarkNo: "ggy_trademark_no",
     JeyCorporateRegNumber: "jey_corporate_reg_number",
     CokCorpRegCorpid: "cok_corp_reg_corpid",
     CokCorpRegCorpofficerid: "cok_corp_reg_corpofficerid",
