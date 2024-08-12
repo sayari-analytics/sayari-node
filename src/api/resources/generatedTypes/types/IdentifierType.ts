@@ -192,6 +192,9 @@ export type IdentifierType =
      * North Macedonia corporate registry ID number */
     | "mkd_embs_branch_number"
     /**
+     * North Macedonia unique identifier. Assigned to every North Macedonia Corporate Registry Announcement. */
+    | "mkd_archive_number"
+    /**
      * Moldova legal person ID number */
     | "mda_idno_number"
     /**
@@ -1837,6 +1840,7 @@ export const IdentifierType = {
     LuxRcsNumber: "lux_rcs_number",
     MkdEmbsNumber: "mkd_embs_number",
     MkdEmbsBranchNumber: "mkd_embs_branch_number",
+    MkdArchiveNumber: "mkd_archive_number",
     MdaIdnoNumber: "mda_idno_number",
     UryRucNumber: "ury_ruc_number",
     CheUidNumber: "che_uid_number",

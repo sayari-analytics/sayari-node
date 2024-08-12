@@ -75,6 +75,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "lux_rcs_number",
         "mkd_embs_number",
         "mkd_embs_branch_number",
+        "mkd_archive_number",
         "mda_idno_number",
         "ury_ruc_number",
         "che_uid_number",
@@ -681,6 +682,7 @@ export declare namespace IdentifierType {
         | "lux_rcs_number"
         | "mkd_embs_number"
         | "mkd_embs_branch_number"
+        | "mkd_archive_number"
         | "mda_idno_number"
         | "ury_ruc_number"
         | "che_uid_number"
