@@ -174,6 +174,7 @@ describe("SDK", () => {
 
             const randShipments = await client.trade.searchShipments({q: randomString})
             if (randShipments.data.length == 0) {
+                await sleep(1000);
                 continue
             }
             expect(randShipments.data.length).toBeGreaterThan(0)
@@ -218,6 +219,7 @@ describe("SDK", () => {
 
             const suppliers = await client.trade.searchSuppliers({q: randomString})
             if (suppliers.data.length == 0) {
+                await sleep(1000);
                 continue
             }
             expect(suppliers.data.length).toBeGreaterThan(0)
@@ -233,6 +235,7 @@ describe("SDK", () => {
 
             const buyers = await client.trade.searchBuyers({q: randomString})
             if (buyers.data.length == 0) {
+                await sleep(1000);
                 continue
             }
             expect(buyers.data.length).toBeGreaterThan(0)
