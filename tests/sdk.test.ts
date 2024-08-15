@@ -170,6 +170,9 @@ describe("SDK", () => {
     // Test shipment search
     test("shipment search", async () => {
         while (true) {
+            // slow test down to prevent 429
+            await new Promise(f => setTimeout(f, 1000));
+
             const randomString = generateRandomString(3)
 
             const randShipments = await client.trade.searchShipments({q: randomString})
@@ -214,6 +217,9 @@ describe("SDK", () => {
     // Test supplier search
     test("supplier search", async () => {
         while (true) {
+            // slow test down to prevent 429
+            await new Promise(f => setTimeout(f, 1000));
+
             const randomString = generateRandomString(3)
 
             const suppliers = await client.trade.searchSuppliers({q: randomString})
@@ -229,6 +235,9 @@ describe("SDK", () => {
     // Test buyer search
     test("buyer search", async () => {
         while (true) {
+            // slow test down to prevent 429
+            await new Promise(f => setTimeout(f, 1000));
+
             const randomString = generateRandomString(3)
 
             const buyers = await client.trade.searchBuyers({q: randomString})
