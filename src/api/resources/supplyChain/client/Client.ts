@@ -128,6 +128,7 @@ export class SupplyChain {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
                 "X-Fern-SDK-Version": "0.1.12",
+                "User-Agent": "@sayari/sdk/0.1.12",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
