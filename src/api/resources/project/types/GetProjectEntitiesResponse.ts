@@ -288,6 +288,16 @@ import * as Sayari from "../../../index";
  *                         }]
  *                 }
  *             },
+ *             customFields: [{
+ *                     key: "custom_id1",
+ *                     docCount: 7
+ *                 }, {
+ *                     key: "custom_size",
+ *                     docCount: 15
+ *                 }],
+ *             customFieldsCount: {
+ *                 value: 2
+ *             },
  *             caseStatuses: [{
  *                     key: "not_assigned",
  *                     docCount: 1

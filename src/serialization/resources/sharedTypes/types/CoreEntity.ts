@@ -39,7 +39,6 @@ export const CoreEntity: core.serialization.ObjectSchema<serializers.CoreEntity.
             shipmentDeparture: core.serialization.property("shipment_departure", ShipmentDeparture.optional()),
             hsCode: core.serialization.property("hs_code", EntityHsCode.optional()),
             translatedLabel: core.serialization.property("translated_label", EntityTranslatedLabel.optional()),
-            shortLabel: core.serialization.property("short_label", core.serialization.string().optional()),
             identifiers: core.serialization.list(Identifier),
             addresses: core.serialization.list(core.serialization.string()).optional(),
             dateOfBirth: core.serialization.property("date_of_birth", core.serialization.string().optional()),
@@ -88,7 +87,6 @@ export declare namespace CoreEntity {
         shipment_departure?: ShipmentDeparture.Raw | null;
         hs_code?: EntityHsCode.Raw | null;
         translated_label?: EntityTranslatedLabel.Raw | null;
-        short_label?: string | null;
         identifiers: Identifier.Raw[];
         addresses?: string[] | null;
         date_of_birth?: string | null;

@@ -25,7 +25,6 @@ export interface CoreEntity extends Sayari.EntitySummary {
     shipmentDeparture?: Sayari.ShipmentDeparture;
     hsCode?: Sayari.EntityHsCode;
     translatedLabel?: Sayari.EntityTranslatedLabel;
-    shortLabel?: string;
     identifiers: Sayari.Identifier[];
     /** List of physical addresses associated with the entity. See more [here](/sayari-library/ontology/attributes#address) */
     addresses?: string[];

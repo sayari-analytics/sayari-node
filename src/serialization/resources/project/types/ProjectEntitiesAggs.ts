@@ -8,6 +8,7 @@ import * as core from "../../../../core";
 import { BucketAgg } from "./BucketAgg";
 import { TierCountAgg } from "./TierCountAgg";
 import { HsCodeAgg } from "./HsCodeAgg";
+import { IntKeyValue } from "./IntKeyValue";
 import { TierCountKeys } from "./TierCountKeys";
 
 export const ProjectEntitiesAggs: core.serialization.ObjectSchema<
@@ -29,6 +30,8 @@ export const ProjectEntitiesAggs: core.serialization.ObjectSchema<
     shippedHsCodes: core.serialization.property("shipped_hs_codes", HsCodeAgg.optional()),
     receivedHsCodes: core.serialization.property("received_hs_codes", HsCodeAgg.optional()),
     matchResults: core.serialization.property("match_results", core.serialization.list(BucketAgg).optional()),
+    customFields: core.serialization.property("custom_fields", core.serialization.list(BucketAgg).optional()),
+    customFieldsCount: core.serialization.property("custom_fields_count", IntKeyValue.optional()),
     location: core.serialization.list(BucketAgg).optional(),
     sourceType: core.serialization.property("source_type", core.serialization.list(BucketAgg).optional()),
     region: core.serialization.list(BucketAgg).optional(),
@@ -51,6 +54,8 @@ export declare namespace ProjectEntitiesAggs {
         shipped_hs_codes?: HsCodeAgg.Raw | null;
         received_hs_codes?: HsCodeAgg.Raw | null;
         match_results?: BucketAgg.Raw[] | null;
+        custom_fields?: BucketAgg.Raw[] | null;
+        custom_fields_count?: IntKeyValue.Raw | null;
         location?: BucketAgg.Raw[] | null;
         source_type?: BucketAgg.Raw[] | null;
         region?: BucketAgg.Raw[] | null;

@@ -23,6 +23,8 @@ export interface ProjectEntitiesAggs {
     shippedHsCodes?: Sayari.HsCodeAgg;
     receivedHsCodes?: Sayari.HsCodeAgg;
     matchResults?: Sayari.BucketAgg[];
+    customFields?: Sayari.BucketAgg[];
+    customFieldsCount?: Sayari.IntKeyValue;
     location?: Sayari.BucketAgg[];
     sourceType?: Sayari.BucketAgg[];
     region?: Sayari.BucketAgg[];
