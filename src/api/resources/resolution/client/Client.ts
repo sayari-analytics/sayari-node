@@ -69,6 +69,7 @@ export class Resolution {
             contact,
             type: type_,
             profile,
+            nameMinPercentage,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
@@ -141,6 +142,10 @@ export class Resolution {
             _queryParams["profile"] = profile;
         }
 
+        if (nameMinPercentage != null) {
+            _queryParams["name_min_percentage"] = nameMinPercentage.toString();
+        }
+
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
@@ -151,8 +156,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.12",
-                "User-Agent": "@sayari/sdk/0.1.12",
+                "X-Fern-SDK-Version": "0.1.13",
+                "User-Agent": "@sayari/sdk/0.1.13",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -305,8 +310,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.12",
-                "User-Agent": "@sayari/sdk/0.1.12",
+                "X-Fern-SDK-Version": "0.1.13",
+                "User-Agent": "@sayari/sdk/0.1.13",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -462,8 +467,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.12",
-                "User-Agent": "@sayari/sdk/0.1.12",
+                "X-Fern-SDK-Version": "0.1.13",
+                "User-Agent": "@sayari/sdk/0.1.13",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
