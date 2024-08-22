@@ -59,4 +59,8 @@ export interface Resolution {
      * Profile can be used to switch between search algorithms. The default profile `corporate` is optimized for accurate entity attribute matching and is ideal for business verification and matching entities with corporate data. The `suppliers` profile is optimized for matching entities with extensive trade data. Ideal for supply chain and trade-related use cases.
      */
     profile?: Sayari.ProfileEnum;
+    /**
+     * Adding this param enable an alternative matching logic. It will set a minimum percentage of tokens needed to match with user input to be considered a "hit". Accepts integers from 0 to 100 inclusive.
+     */
+    nameMinPercentage?: number;
 }
