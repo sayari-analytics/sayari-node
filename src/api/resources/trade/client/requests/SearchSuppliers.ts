@@ -13,7 +13,7 @@ import * as Sayari from "../../../../index";
  */
 export interface SearchSuppliers {
     /**
-     * A limit on the number of objects to be returned with a range between 1 and 100. Defaults to 100.
+     * A limit on the number of objects to be returned with a range between 1 and 10000. Defaults to 100.
      */
     limit?: number;
     /**

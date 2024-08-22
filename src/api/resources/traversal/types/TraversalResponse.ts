@@ -184,7 +184,7 @@ import * as Sayari from "../../../index";
  *     {
  *         minDepth: 1,
  *         maxDepth: 4,
- *         relationships: [Sayari.Relationships.HasShareholder, Sayari.Relationships.HasBeneficialOwner, Sayari.Relationships.HasOwner, Sayari.Relationships.SubsidiaryOf, Sayari.Relationships.BranchOf],
+ *         relationships: [Sayari.Relationships.HasShareholder, Sayari.Relationships.HasBeneficialOwner, Sayari.Relationships.HasPartner, Sayari.Relationships.SubsidiaryOf, Sayari.Relationships.BranchOf],
  *         countries: [],
  *         types: [],
  *         name: "",
@@ -1121,7 +1121,7 @@ import * as Sayari from "../../../index";
  *     {
  *         minDepth: 1,
  *         maxDepth: 4,
- *         relationships: [Sayari.Relationships.ShareholderOf, Sayari.Relationships.BeneficialOwnerOf, Sayari.Relationships.OwnerOf, Sayari.Relationships.HasSubsidiary, Sayari.Relationships.HasBranch],
+ *         relationships: [Sayari.Relationships.ShareholderOf, Sayari.Relationships.BeneficialOwnerOf, Sayari.Relationships.PartnerOf, Sayari.Relationships.HasSubsidiary, Sayari.Relationships.HasBranch],
  *         countries: [],
  *         types: [],
  *         name: "",
@@ -1483,7 +1483,7 @@ import * as Sayari from "../../../index";
  *     {
  *         minDepth: 1,
  *         maxDepth: 4,
- *         relationships: [Sayari.Relationships.BeneficialOwnerOf, Sayari.Relationships.BranchOf, Sayari.Relationships.DirectorOf, Sayari.Relationships.FamilyOf, Sayari.Relationships.HasBeneficialOwner, Sayari.Relationships.HasBranch, Sayari.Relationships.HasDirector, Sayari.Relationships.HasLegalSuccessor, Sayari.Relationships.HasManager, Sayari.Relationships.HasMemberOfTheBoard, Sayari.Relationships.HasOfficer, Sayari.Relationships.HasOwner, Sayari.Relationships.HasPartner, Sayari.Relationships.HasShareholder, Sayari.Relationships.HasSubsidiary, Sayari.Relationships.HasSupervisor, Sayari.Relationships.LegalSuccessorOf, Sayari.Relationships.LinkedTo, Sayari.Relationships.ManagerOf, Sayari.Relationships.MemberOfTheBoardOf, Sayari.Relationships.OfficerOf, Sayari.Relationships.PartnerOf, Sayari.Relationships.ReceivedBy, Sayari.Relationships.ReceiverOf, Sayari.Relationships.ReceivesFrom, Sayari.Relationships.ShareholderOf, Sayari.Relationships.ShippedBy, Sayari.Relationships.ShipperOf, Sayari.Relationships.ShipsTo, Sayari.Relationships.SubsidiaryOf, Sayari.Relationships.SupervisorOf],
+ *         relationships: [Sayari.Relationships.BeneficialOwnerOf, Sayari.Relationships.BranchOf, Sayari.Relationships.DirectorOf, Sayari.Relationships.FamilyOf, Sayari.Relationships.HasBeneficialOwner, Sayari.Relationships.HasBranch, Sayari.Relationships.HasDirector, Sayari.Relationships.HasLegalSuccessor, Sayari.Relationships.HasManager, Sayari.Relationships.HasMemberOfTheBoard, Sayari.Relationships.HasOfficer, Sayari.Relationships.HasPartner, Sayari.Relationships.HasShareholder, Sayari.Relationships.HasSubsidiary, Sayari.Relationships.HasSupervisor, Sayari.Relationships.LegalSuccessorOf, Sayari.Relationships.LinkedTo, Sayari.Relationships.ManagerOf, Sayari.Relationships.MemberOfTheBoardOf, Sayari.Relationships.OfficerOf, Sayari.Relationships.PartnerOf, Sayari.Relationships.ReceivedBy, Sayari.Relationships.ReceiverOf, Sayari.Relationships.ReceivesFrom, Sayari.Relationships.ShareholderOf, Sayari.Relationships.ShippedBy, Sayari.Relationships.ShipperOf, Sayari.Relationships.ShipsTo, Sayari.Relationships.SubsidiaryOf, Sayari.Relationships.SupervisorOf],
  *         countries: [],
  *         types: [],
  *         name: "",

@@ -49,6 +49,7 @@ import * as Sayari from "../../../index";
  *                     y: 36.035,
  *                     value: "27201"
  *                 },
+ *                 productOrigin: [Sayari.Country.Usa],
  *                 monetaryValue: [],
  *                 weight: [{
  *                         value: 5388,

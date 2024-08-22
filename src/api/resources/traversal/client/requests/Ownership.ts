@@ -28,7 +28,7 @@ export interface Ownership {
      */
     maxDepth?: number;
     /**
-     * Set relationship type(s) to follow when traversing related entities. Defaults to shareholder_of, beneficial_owner_of, owner_of, has_subsidiary, and has_branch.
+     * Set relationship type(s) to follow when traversing related entities. Defaults to shareholder_of, beneficial_owner_of, partner_of, has_subsidiary, and has_branch.
      */
     relationships?: Sayari.Relationships | Sayari.Relationships[];
     /**

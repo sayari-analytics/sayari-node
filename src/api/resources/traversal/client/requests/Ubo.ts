@@ -28,7 +28,7 @@ export interface Ubo {
      */
     maxDepth?: number;
     /**
-     * Set relationship type(s) to follow when traversing related entities. Defaults to has_shareholder, has_beneficial_owner, has_owner, subsidiary_of, and branch_of.
+     * Set relationship type(s) to follow when traversing related entities. Defaults to has_shareholder, has_beneficial_owner, has_partner, subsidiary_of, and branch_of.
      */
     relationships?: Sayari.Relationships | Sayari.Relationships[];
     /**

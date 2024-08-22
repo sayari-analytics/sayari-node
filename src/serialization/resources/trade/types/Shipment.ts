@@ -7,6 +7,7 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { SourceOrDestinationEntity } from "./SourceOrDestinationEntity";
 import { ShipmentAddress } from "./ShipmentAddress";
+import { Country } from "../../generatedTypes/types/Country";
 import { MonetaryValue } from "./MonetaryValue";
 import { Weight } from "./Weight";
 import { ShipmentIdentifier } from "./ShipmentIdentifier";
@@ -23,6 +24,7 @@ export const Shipment: core.serialization.ObjectSchema<serializers.Shipment.Raw,
         departureDate: core.serialization.property("departure_date", core.serialization.string().optional()),
         departureAddress: core.serialization.property("departure_address", ShipmentAddress.optional()),
         arrivalAddress: core.serialization.property("arrival_address", ShipmentAddress.optional()),
+        productOrigin: core.serialization.property("product_origin", core.serialization.list(Country)),
         monetaryValue: core.serialization.property("monetary_value", core.serialization.list(MonetaryValue)),
         weight: core.serialization.list(Weight),
         identifier: core.serialization.list(ShipmentIdentifier),
@@ -45,6 +47,7 @@ export declare namespace Shipment {
         departure_date?: string | null;
         departure_address?: ShipmentAddress.Raw | null;
         arrival_address?: ShipmentAddress.Raw | null;
+        product_origin: Country.Raw[];
         monetary_value: MonetaryValue.Raw[];
         weight: Weight.Raw[];
         identifier: ShipmentIdentifier.Raw[];

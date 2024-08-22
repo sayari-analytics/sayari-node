@@ -13,6 +13,7 @@ export interface Shipment {
     departureDate?: string;
     departureAddress?: Sayari.ShipmentAddress;
     arrivalAddress?: Sayari.ShipmentAddress;
+    productOrigin: Sayari.Country[];
     monetaryValue: Sayari.MonetaryValue[];
     weight: Sayari.Weight[];
     identifier: Sayari.ShipmentIdentifier[];
