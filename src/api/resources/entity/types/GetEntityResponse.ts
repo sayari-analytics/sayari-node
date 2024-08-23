@@ -8,6 +8,509 @@ import * as Sayari from "../../../index";
  * OK
  *
  * @example
- *     {}
+ *     {
+ *         id: "mGq1lpuqKssNWTjIokuPeA",
+ *         label: "VICTORIA BECKHAM LIMITED",
+ *         degree: 67,
+ *         entityUrl: "/v1/entity/mGq1lpuqKssNWTjIokuPeA",
+ *         pep: false,
+ *         psaId: "695785012897",
+ *         psaCount: 3,
+ *         sanctioned: false,
+ *         closed: false,
+ *         companyType: "Stock Corporation - Out of State - Stock",
+ *         registrationDate: "Incorporated 2008-02-28",
+ *         latestStatus: {
+ *             status: "active",
+ *             date: "2023-08-29"
+ *         },
+ *         tradeCount: {
+ *             "sent": 41,
+ *             "received": 0
+ *         },
+ *         type: Sayari.Entities.Company,
+ *         identifiers: [{
+ *                 value: "06517802",
+ *                 type: Sayari.IdentifierType.UkCompanyNumber,
+ *                 label: "Uk Company Number"
+ *             }, {
+ *                 value: "6517802",
+ *                 type: Sayari.WeakIdentifierType.Unknown,
+ *                 label: "Unknown"
+ *             }, {
+ *                 value: "04781466",
+ *                 type: Sayari.IdentifierType.CaCorporateIdNum,
+ *                 label: "Ca Corporate Id Num"
+ *             }],
+ *         addresses: ["202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB", "Unit 33, Ransomes Dock Business Centre, 35-37 Parkgate Road, London SW11 4NP", "SAUNDERS BUILDING, 202 HAMMERSMITH ROAD, HAMMERSMITH, LONDON"],
+ *         countries: [Sayari.Country.Gbr, Sayari.Country.Usa],
+ *         relationshipCount: {
+ *             [Sayari.Relationships.LinkedTo]: 3,
+ *             [Sayari.Relationships.HasOfficer]: 2,
+ *             [Sayari.Relationships.ShareholderOf]: 1,
+ *             [Sayari.Relationships.HasShareholder]: 2,
+ *             [Sayari.Relationships.HasRegisteredAgent]: 5,
+ *             [Sayari.Relationships.ShipperOf]: 41,
+ *             [Sayari.Relationships.HasDirector]: 11,
+ *             [Sayari.Relationships.OwnerOf]: 3,
+ *             [Sayari.Relationships.HasFounder]: 1,
+ *             [Sayari.Relationships.ShipsTo]: 1
+ *         },
+ *         sourceCount: {
+ *             "2b618f1996252fe537a6d998ae14c9b2": {
+ *                 count: 1,
+ *                 label: "UK Corporate Registry Confirmation Statements"
+ *             },
+ *             "2b788dbdf9194ed5a5c309386a6516b1": {
+ *                 count: 28,
+ *                 label: "UK HM Revenue & Customs Traders Database"
+ *             },
+ *             "a447a7b622c4ead6e1caf94983dc2337": {
+ *                 count: 6,
+ *                 label: "USA California Secretary of State"
+ *             },
+ *             "ecdfb3f2ecc8c3797e77d5795a8066ef": {
+ *                 count: 35,
+ *                 label: "UK Corporate Registry"
+ *             },
+ *             "e5de7b52cc88ef4cd1a10e201bdf46ee": {
+ *                 count: 41,
+ *                 label: "Vietnam Imports & Exports (January 2023 - Present)"
+ *             },
+ *             "2a4fe9a14e332c8f9ded1f8a457c2b89": {
+ *                 count: 36,
+ *                 label: "UK Land Commercial and Corporate Ownership Data (CCOD)"
+ *             },
+ *             "4ea8bac1bed868e1510ffd21842e9551": {
+ *                 count: 69,
+ *                 label: "UK Persons with Significant Control"
+ *             }
+ *         },
+ *         risk: {
+ *             [Sayari.Risk.BaselAml]: {
+ *                 value: 4.63,
+ *                 metadata: {
+ *                     "country": [
+ *                         "USA"
+ *                     ]
+ *                 },
+ *                 level: Sayari.RiskLevel.Relevant
+ *             },
+ *             [Sayari.Risk.CpiScore]: {
+ *                 value: 67,
+ *                 metadata: {
+ *                     "country": [
+ *                         "USA"
+ *                     ]
+ *                 },
+ *                 level: Sayari.RiskLevel.Relevant
+ *             }
+ *         },
+ *         userAttributeCount: {},
+ *         userRecordCount: 0,
+ *         userRelatedEntitiesCount: 0,
+ *         userRelationshipCount: {},
+ *         relatedEntitiesCount: 67,
+ *         attributeCount: {
+ *             [Sayari.Attributes.CompanyType]: 2,
+ *             [Sayari.Attributes.Name]: 2,
+ *             [Sayari.Attributes.BusinessPurpose]: 4,
+ *             [Sayari.Attributes.Identifier]: 3,
+ *             [Sayari.Attributes.AdditionalInformation]: 106,
+ *             [Sayari.Attributes.Country]: 8,
+ *             [Sayari.Attributes.Status]: 5,
+ *             [Sayari.Attributes.Address]: 7
+ *         },
+ *         referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1540252800000:4a34442eccf1622995130b194a5d50e7",
+ *         attributes: {
+ *             additionalInformation: {
+ *                 limit: 1,
+ *                 next: "_SjfEipa7hytJ93C1IT_sg",
+ *                 size: {
+ *                     count: 106,
+ *                     qualifier: Sayari.CountQualifier.Eq
+ *                 },
+ *                 data: [{
+ *                         properties: {
+ *                             type: "Traded Goods"
+ *                         },
+ *                         record: ["2b788dbdf9194ed5a5c309386a6516b1/22950249e3df0c33ce05bd54850ba9f3/1672444800000"],
+ *                         recordCount: 9,
+ *                         editable: false
+ *                     }]
+ *             },
+ *             address: {
+ *                 limit: 1,
+ *                 next: "5TPSsmsFxea24_QTyk8o1Q",
+ *                 size: {
+ *                     count: 7,
+ *                     qualifier: Sayari.CountQualifier.Eq
+ *                 },
+ *                 data: [{
+ *                         properties: {
+ *                             value: "202 HAMMERSMITH ROAD UNITED KINGDOM",
+ *                             houseNumber: "202",
+ *                             road: "Hammersmith Road",
+ *                             country: "United Kingdom",
+ *                             x: -0.22579,
+ *                             y: 51.49291,
+ *                             precisionCode: "G3",
+ *                             normalized: "202 HAMMERSMITH KINGDOM RD UNITED"
+ *                         },
+ *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1678752000000"],
+ *                         recordCount: 5,
+ *                         editable: false
+ *                     }]
+ *             },
+ *             businessPurpose: {
+ *                 limit: 1,
+ *                 next: "5fZrn5ZbUyo6d_huc6NlAA",
+ *                 size: {
+ *                     count: 4,
+ *                     qualifier: Sayari.CountQualifier.Eq
+ *                 },
+ *                 data: [{
+ *                         properties: {
+ *                             value: "Other amusement and recreation activities n.e.c.",
+ *                             code: "9329",
+ *                             standard: Sayari.BusinessPurposeStandard.Isic4
+ *                         },
+ *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
+ *                         recordCount: 18,
+ *                         editable: false
+ *                     }]
+ *             },
+ *             companyType: {
+ *                 limit: 1,
+ *                 next: "iuJ_MCygy24sDCcVkbCATA",
+ *                 size: {
+ *                     count: 2,
+ *                     qualifier: Sayari.CountQualifier.Eq
+ *                 },
+ *                 data: [{
+ *                         properties: {
+ *                             value: "Stock Corporation - Out of State - Stock"
+ *                         },
+ *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
+ *                         recordCount: 6,
+ *                         editable: false
+ *                     }]
+ *             },
+ *             country: {
+ *                 limit: 1,
+ *                 next: "_ZTsEnhxCbjokYYWu1kMoQ",
+ *                 size: {
+ *                     count: 8,
+ *                     qualifier: Sayari.CountQualifier.Eq
+ *                 },
+ *                 data: [{
+ *                         properties: {
+ *                             value: Sayari.Country.Gbr,
+ *                             context: Sayari.CountryContext.Address
+ *                         },
+ *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
+ *                         recordCount: 23,
+ *                         editable: false
+ *                     }]
+ *             },
+ *             identifier: {
+ *                 limit: 1,
+ *                 next: "07v3Rsu6x-gDuukFa0jEsw",
+ *                 size: {
+ *                     count: 3,
+ *                     qualifier: Sayari.CountQualifier.Eq
+ *                 },
+ *                 data: [{
+ *                         properties: {
+ *                             value: "04781466",
+ *                             type: Sayari.IdentifierType.CaCorporateIdNum
+ *                         },
+ *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
+ *                         recordCount: 6,
+ *                         editable: false
+ *                     }]
+ *             },
+ *             name: {
+ *                 limit: 1,
+ *                 next: "5lxpjuZmt31xiCnbDILp0A",
+ *                 size: {
+ *                     count: 2,
+ *                     qualifier: Sayari.CountQualifier.Eq
+ *                 },
+ *                 data: [{
+ *                         properties: {
+ *                             value: "BECKHAM VENTURES LIMITED",
+ *                             context: "alias",
+ *                             toDate: "2014-09-03"
+ *                         },
+ *                         record: ["2a4fe9a14e332c8f9ded1f8a457c2b89/NGL944625/1560779151522"],
+ *                         recordCount: 30,
+ *                         editable: false
+ *                     }]
+ *             },
+ *             status: {
+ *                 limit: 1,
+ *                 next: "EdC1n7V2lU0oKTokzO_YLw",
+ *                 size: {
+ *                     count: 5,
+ *                     qualifier: Sayari.CountQualifier.Eq
+ *                 },
+ *                 data: [{
+ *                         properties: {
+ *                             text: "Good"
+ *                         },
+ *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
+ *                         recordCount: 6,
+ *                         editable: false
+ *                     }]
+ *             }
+ *         },
+ *         relationships: {
+ *             limit: 1,
+ *             next: "fzenMMQtpFHx9Cam_2nDndg",
+ *             size: {
+ *                 count: 67,
+ *                 qualifier: Sayari.CountQualifier.Eq
+ *             },
+ *             data: [{
+ *                     target: {
+ *                         id: "zenMMQtpFHx9Cam_2nDndg",
+ *                         label: "Victoria Beckham Holdings Limited",
+ *                         degree: 17,
+ *                         entityUrl: "/v1/entity/zenMMQtpFHx9Cam_2nDndg",
+ *                         pep: false,
+ *                         psaCount: 0,
+ *                         sanctioned: false,
+ *                         closed: false,
+ *                         companyType: "Private Limited Company",
+ *                         registrationDate: "Incorporated 2017-11-02",
+ *                         latestStatus: {
+ *                             status: "active"
+ *                         },
+ *                         tradeCount: {
+ *                             "sent": 0,
+ *                             "received": 0
+ *                         },
+ *                         type: Sayari.Entities.Company,
+ *                         identifiers: [{
+ *                                 value: "11043864",
+ *                                 type: Sayari.IdentifierType.UkCompanyNumber,
+ *                                 label: "Uk Company Number"
+ *                             }],
+ *                         addresses: ["35-37 Parkgate Road, London, SW11 4NP", "Hammersmith Road, London", "202 HAMMERSMITH ROAD, LONDON, W6 7DN"],
+ *                         countries: [Sayari.Country.Gbr],
+ *                         relationshipCount: {
+ *                             [Sayari.Relationships.ShareholderOf]: 2,
+ *                             [Sayari.Relationships.HasShareholder]: 5,
+ *                             [Sayari.Relationships.HasRegisteredAgent]: 1,
+ *                             [Sayari.Relationships.HasDirector]: 9,
+ *                             [Sayari.Relationships.LinkedTo]: 7
+ *                         },
+ *                         sourceCount: {
+ *                             "ecdfb3f2ecc8c3797e77d5795a8066ef": {
+ *                                 count: 34,
+ *                                 label: "UK Corporate Registry"
+ *                             },
+ *                             "2b618f1996252fe537a6d998ae14c9b2": {
+ *                                 count: 1,
+ *                                 label: "UK Corporate Registry Confirmation Statements"
+ *                             },
+ *                             "4ea8bac1bed868e1510ffd21842e9551": {
+ *                                 count: 147,
+ *                                 label: "UK Persons with Significant Control"
+ *                             }
+ *                         },
+ *                         risk: {
+ *                             [Sayari.Risk.BaselAml]: {
+ *                                 value: 3.99,
+ *                                 metadata: {
+ *                                     "country": [
+ *                                         "GBR"
+ *                                     ]
+ *                                 },
+ *                                 level: Sayari.RiskLevel.Relevant
+ *                             },
+ *                             [Sayari.Risk.CpiScore]: {
+ *                                 value: 78,
+ *                                 metadata: {
+ *                                     "country": [
+ *                                         "GBR"
+ *                                     ]
+ *                                 },
+ *                                 level: Sayari.RiskLevel.Relevant
+ *                             }
+ *                         },
+ *                         userAttributeCount: {},
+ *                         userRecordCount: 0,
+ *                         userRelatedEntitiesCount: 0,
+ *                         userRelationshipCount: {},
+ *                         relatedEntitiesCount: 17,
+ *                         attributeCount: {
+ *                             [Sayari.Attributes.CompanyType]: 1,
+ *                             [Sayari.Attributes.Name]: 2,
+ *                             [Sayari.Attributes.BusinessPurpose]: 3,
+ *                             [Sayari.Attributes.Identifier]: 1,
+ *                             [Sayari.Attributes.AdditionalInformation]: 1,
+ *                             [Sayari.Attributes.Country]: 3,
+ *                             [Sayari.Attributes.Status]: 2,
+ *                             [Sayari.Attributes.Address]: 3
+ *                         },
+ *                         referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/11043864/1540252800000:40ec7b0310d308ebf9006148b53a2802"
+ *                     },
+ *                     types: {
+ *                         [Sayari.Relationships.HasShareholder]: [{
+ *                                 editable: false,
+ *                                 record: "4ea8bac1bed868e1510ffd21842e9551/56910fae410d43596d5a94fd9405023a/1711843200000",
+ *                                 attributes: {},
+ *                                 acquisitionDate: "2024-03-31"
+ *                             }, {
+ *                                 editable: false,
+ *                                 record: "4ea8bac1bed868e1510ffd21842e9551/06517802/1560176240192",
+ *                                 attributes: {
+ *                                     [Sayari.Attributes.Position]: [{
+ *                                             "value": "Has right to appoint and remove directors"
+ *                                         }, {
+ *                                             "value": "Owns 75-100% of shares"
+ *                                         }, {
+ *                                             "value": "Owns 75-100% of voting rights"
+ *                                         }],
+ *                                     [Sayari.Attributes.Shares]: [{
+ *                                             "percentage": 75
+ *                                         }]
+ *                                 },
+ *                                 acquisitionDate: "2019-06-10"
+ *                             }],
+ *                         [Sayari.Relationships.LinkedTo]: [{
+ *                                 editable: false,
+ *                                 record: "4ea8bac1bed868e1510ffd21842e9551/56910fae410d43596d5a94fd9405023a/1711843200000",
+ *                                 attributes: {},
+ *                                 acquisitionDate: "2024-03-31"
+ *                             }, {
+ *                                 editable: false,
+ *                                 record: "4ea8bac1bed868e1510ffd21842e9551/06517802/1560176240192",
+ *                                 attributes: {
+ *                                     [Sayari.Attributes.Position]: [{
+ *                                             "value": "Has right to appoint and remove directors"
+ *                                         }, {
+ *                                             "value": "Owns 75-100% of shares"
+ *                                         }, {
+ *                                             "value": "Owns 75-100% of voting rights"
+ *                                         }]
+ *                                 },
+ *                                 acquisitionDate: "2019-06-10"
+ *                             }]
+ *                     },
+ *                     dates: ["2017-11-16"],
+ *                     firstObserved: "2017-11-16",
+ *                     lastObserved: "2017-11-16"
+ *                 }]
+ *         },
+ *         possiblySameAs: {
+ *             limit: 1,
+ *             size: {
+ *                 count: 3,
+ *                 qualifier: Sayari.CountQualifier.Eq
+ *             },
+ *             next: "eyJ0eXBlIjoic2F5YXJpIiwib2Zmc2V0IjoxfQ",
+ *             data: [{
+ *                     entity: {
+ *                         id: "NGUTEUTI4YZ6R5d56vgNIw",
+ *                         label: "BECKHAM VENTURES INC.",
+ *                         degree: 3,
+ *                         entityUrl: "/v1/entity/NGUTEUTI4YZ6R5d56vgNIw",
+ *                         pep: false,
+ *                         psaId: "695785012897",
+ *                         psaCount: 3,
+ *                         sanctioned: false,
+ *                         closed: false,
+ *                         companyType: "FOREIGN BUSINESS CORPORATION",
+ *                         registrationDate: " 2013-01-16",
+ *                         latestStatus: {
+ *                             status: "active",
+ *                             date: "2013-01-16"
+ *                         },
+ *                         tradeCount: {
+ *                             "sent": 0,
+ *                             "received": 0
+ *                         },
+ *                         type: Sayari.Entities.Company,
+ *                         identifiers: [{
+ *                                 value: "4346762",
+ *                                 type: Sayari.IdentifierType.UsaNyDosId,
+ *                                 label: "Usa Ny Dos Id"
+ *                             }],
+ *                         addresses: ["99 WASHINGTON AVE., SUITE 805A, ALBANY, NY, 12201", "511 WEST 25TH STREET, SUITE # 701/7TH FLOOR, NEW YORK, NEW YORK, 10001", "80 STATE STREET, ALBANY, NEW YORK, 12207-2543"],
+ *                         countries: [Sayari.Country.Usa],
+ *                         relationshipCount: {
+ *                             [Sayari.Relationships.HasOfficer]: 1,
+ *                             [Sayari.Relationships.HasRegisteredAgent]: 2,
+ *                             [Sayari.Relationships.LinkedTo]: 2
+ *                         },
+ *                         sourceCount: {
+ *                             "b4d06d4b77f51fab3c77c9653aabdda4": {
+ *                                 count: 8,
+ *                                 label: "USA New York Corporate Registry (Active Entities)"
+ *                             }
+ *                         },
+ *                         risk: {
+ *                             [Sayari.Risk.BaselAml]: {
+ *                                 value: 4.63,
+ *                                 metadata: {
+ *                                     "country": [
+ *                                         "USA"
+ *                                     ]
+ *                                 },
+ *                                 level: Sayari.RiskLevel.Relevant
+ *                             },
+ *                             [Sayari.Risk.CpiScore]: {
+ *                                 value: 67,
+ *                                 metadata: {
+ *                                     "country": [
+ *                                         "USA"
+ *                                     ]
+ *                                 },
+ *                                 level: Sayari.RiskLevel.Relevant
+ *                             }
+ *                         },
+ *                         userAttributeCount: {},
+ *                         userRecordCount: 0,
+ *                         userRelatedEntitiesCount: 0,
+ *                         userRelationshipCount: {},
+ *                         relatedEntitiesCount: 3,
+ *                         attributeCount: {
+ *                             [Sayari.Attributes.CompanyType]: 1,
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Identifier]: 1,
+ *                             [Sayari.Attributes.Country]: 3,
+ *                             [Sayari.Attributes.Status]: 1,
+ *                             [Sayari.Attributes.Address]: 3
+ *                         },
+ *                         referenceId: "b4d06d4b77f51fab3c77c9653aabdda4/a80e7f4c-c219-437b-9941-32d89ea5885a/1560542045043:15d813b260619393762864f22d3c5b2d"
+ *                     },
+ *                     editable: false,
+ *                     matches: {}
+ *                 }]
+ *         },
+ *         referencedBy: {
+ *             limit: 1,
+ *             size: {
+ *                 count: 216,
+ *                 qualifier: Sayari.CountQualifier.Eq
+ *             },
+ *             next: "Vk5NfGdsb2JhbF90cmFkZV90YV92bm18ZnwyMDI0LTAxLTAzfHtENjM0QjlCMS0zOUUyLTQyNzMtOEYzNUFFODExMzBFMThEN318MTcwNDI0MDAwMDAwMA",
+ *             data: [{
+ *                     record: {
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{D634B9B1-39E2-4273-8F35AE81130E18D7}/1704240000000",
+ *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
+ *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
+ *                         publicationDate: "2024-01-03",
+ *                         acquisitionDate: "2024-01-03",
+ *                         referencesCount: 3,
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BD634B9B1-39E2-4273-8F35AE81130E18D7%7D%2F1704240000000"
+ *                     },
+ *                     type: Sayari.ReferencedByDataType.Mentions
+ *                 }]
+ *         }
+ *     }
  */
 export interface GetEntityResponse extends Sayari.EntityDetails {}
