@@ -1770,7 +1770,10 @@ export type IdentifierType =
     | "twn_passport_number"
     /**
      * Belgium unique natural person ID number. */
-    | "bel_national_register_no";
+    | "bel_national_register_no"
+    /**
+     * ??? */
+    | "ukr_fiu_list_number";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2376,4 +2379,5 @@ export const IdentifierType = {
     AerNerNumber: "aer_ner_number",
     TwnPassportNumber: "twn_passport_number",
     BelNationalRegisterNo: "bel_national_register_no",
+    UkrFiuListNumber: "ukr_fiu_list_number",
 } as const;
