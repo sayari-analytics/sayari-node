@@ -1324,6 +1324,12 @@ export type IdentifierType =
      * Identifier for corporations and trademarks in US Virgin Islands */
     | "usa_usvi_corp_number"
     /**
+     * Nicaragua Trade Internal Shipment ID */
+    | "nic_trade_internal_shipment_id"
+    /**
+     * Nicaragua RUC Number */
+    | "nic_ruc_number"
+    /**
      * Nicaragua Numero Unico */
     | "nic_numero_unico"
     | "cri_cedula_juridica"
@@ -1771,6 +1777,9 @@ export type IdentifierType =
     /**
      * Belgium unique natural person ID number. */
     | "bel_national_register_no"
+    /**
+     * Afghanistan Trade Internal Shipment ID */
+    | "afg_trade_internal_shipment_id"
     /**
      * ??? */
     | "ukr_fiu_list_number";
@@ -2227,6 +2236,8 @@ export const IdentifierType = {
     EspNif: "esp_nif",
     UsaSamUeiNumber: "usa_sam_uei_number",
     UsaUsviCorpNumber: "usa_usvi_corp_number",
+    NicTradeInternalShipmentId: "nic_trade_internal_shipment_id",
+    NicRucNumber: "nic_ruc_number",
     NicNumeroUnico: "nic_numero_unico",
     CriCedulaJuridica: "cri_cedula_juridica",
     CriCedulaCitizenPerson: "cri_cedula_citizen_person",
@@ -2379,5 +2390,6 @@ export const IdentifierType = {
     AerNerNumber: "aer_ner_number",
     TwnPassportNumber: "twn_passport_number",
     BelNationalRegisterNo: "bel_national_register_no",
+    AfgTradeInternalShipmentId: "afg_trade_internal_shipment_id",
     UkrFiuListNumber: "ukr_fiu_list_number",
 } as const;
