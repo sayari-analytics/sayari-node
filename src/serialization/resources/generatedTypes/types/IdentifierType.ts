@@ -459,6 +459,8 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "esp_nif",
         "usa_sam_uei_number",
         "usa_usvi_corp_number",
+        "nic_trade_internal_shipment_id",
+        "nic_ruc_number",
         "nic_numero_unico",
         "cri_cedula_juridica",
         "cri_cedula_citizen_person",
@@ -611,6 +613,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "aer_ner_number",
         "twn_passport_number",
         "bel_national_register_no",
+        "afg_trade_internal_shipment_id",
         "ukr_fiu_list_number",
     ]);
 
@@ -1067,6 +1070,8 @@ export declare namespace IdentifierType {
         | "esp_nif"
         | "usa_sam_uei_number"
         | "usa_usvi_corp_number"
+        | "nic_trade_internal_shipment_id"
+        | "nic_ruc_number"
         | "nic_numero_unico"
         | "cri_cedula_juridica"
         | "cri_cedula_citizen_person"
@@ -1219,5 +1224,6 @@ export declare namespace IdentifierType {
         | "aer_ner_number"
         | "twn_passport_number"
         | "bel_national_register_no"
+        | "afg_trade_internal_shipment_id"
         | "ukr_fiu_list_number";
 }

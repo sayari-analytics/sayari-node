@@ -11,9 +11,13 @@ export type MonetaryValueContext =
     | "cost_insurance_and_freight"
     /**
      * Indicates free on board (FOB) arrangement */
-    | "free_on_board";
+    | "free_on_board"
+    /**
+     * Indicates value determined by customs authorities */
+    | "assessed_value";
 
 export const MonetaryValueContext = {
     CostInsuranceAndFreight: "cost_insurance_and_freight",
     FreeOnBoard: "free_on_board",
+    AssessedValue: "assessed_value",
 } as const;
