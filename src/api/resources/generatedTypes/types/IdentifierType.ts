@@ -1781,7 +1781,7 @@ export type IdentifierType =
      * Afghanistan Trade Internal Shipment ID */
     | "afg_trade_internal_shipment_id"
     /**
-     * ??? */
+     * Ukraine SFMS List Identifier. Reference number assigned to all entities listed under Ukraine SFMS List for Terrorism. */
     | "ukr_fiu_list_number";
 
 export const IdentifierType = {
