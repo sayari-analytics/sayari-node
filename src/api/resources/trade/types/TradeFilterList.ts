@@ -22,8 +22,16 @@ export interface TradeFilterList {
     supplierRisk?: Sayari.Risk[];
     /** Buyer with an exact match for the provided [country code](/sayari-library/ontology/enumerated-types#country). */
     buyerCountry?: Sayari.Country[];
+    /** Buyer city location */
+    buyerCity?: string[];
+    /** Buyer state location */
+    buyerState?: string[];
     /** Supplier with an exact match for the provided [country code](/sayari-library/ontology/enumerated-types#country). */
     supplierCountry?: Sayari.Country[];
+    /** Supplier city location */
+    supplierCity?: string[];
+    /** Supplier state location */
+    supplierState?: string[];
     /** Shipment departs from a country with an exact match for the provided [country code](/sayari-library/ontology/enumerated-types#country). */
     departureCountry?: Sayari.Country[];
     /** Shipment departs from a state that contains the provided state name. */
@@ -40,6 +48,8 @@ export interface TradeFilterList {
     hsCode?: string[];
     /** The HS description contains the provided string. */
     hsDescription?: string[];
+    /** Product Origin with an exact match for the provided [country code](/sayari-library/ontology/enumerated-types#country). */
+    productOrigin?: Sayari.Country[];
     /** The supplier purpose contains the provided string. */
     supplierPurpose?: string[];
     /** The buyer purpose contains the provided string. */
@@ -50,6 +60,8 @@ export interface TradeFilterList {
     departureDate?: string[];
     /** The shipment identifier starts with the provided string. */
     shipmentIdentifier?: string[];
+    /** Countries through which a shipment passes for the provided [country code](/sayari-library/ontology/enumerated-types#country). */
+    transitCountry?: Sayari.Country[];
     /** The shipment weight is within the provided range. */
     weight?: string[];
     /** An exact match for the provided sources. */
