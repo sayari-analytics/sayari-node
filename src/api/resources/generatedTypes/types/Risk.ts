@@ -9,6 +9,7 @@ export type Risk =
     | "forced_labor_uflpa_origin_subtier_product_blueprint"
     | "forced_labor_xinjiang_geospatial"
     | "eu_high_risk_third"
+    | "uk_sanctioned"
     | "sheffield_hallam_university_useful_resources"
     | "exports_to_entity_licensed_with_fsb_rf"
     | "owner_of_aspi_forced_labor_entity"
@@ -25,6 +26,7 @@ export type Risk =
     | "owner_of_sanctioned_entity"
     | "psa_regulatory_action"
     | "forced_labor_xinjiang_contractors"
+    | "uk_50_percent_rule"
     | "owned_by_xinjiang_entity"
     | "forced_labor_xinjiang_origin_subtier"
     | "psa_forced_labor_xinjiang_name"
@@ -122,6 +124,7 @@ export const Risk = {
     ForcedLaborUflpaOriginSubtierProductBlueprint: "forced_labor_uflpa_origin_subtier_product_blueprint",
     ForcedLaborXinjiangGeospatial: "forced_labor_xinjiang_geospatial",
     EuHighRiskThird: "eu_high_risk_third",
+    UkSanctioned: "uk_sanctioned",
     SheffieldHallamUniversityUsefulResources: "sheffield_hallam_university_useful_resources",
     ExportsToEntityLicensedWithFsbRf: "exports_to_entity_licensed_with_fsb_rf",
     OwnerOfAspiForcedLaborEntity: "owner_of_aspi_forced_labor_entity",
@@ -138,6 +141,7 @@ export const Risk = {
     OwnerOfSanctionedEntity: "owner_of_sanctioned_entity",
     PsaRegulatoryAction: "psa_regulatory_action",
     ForcedLaborXinjiangContractors: "forced_labor_xinjiang_contractors",
+    Uk50PercentRule: "uk_50_percent_rule",
     OwnedByXinjiangEntity: "owned_by_xinjiang_entity",
     ForcedLaborXinjiangOriginSubtier: "forced_labor_xinjiang_origin_subtier",
     PsaForcedLaborXinjiangName: "psa_forced_labor_xinjiang_name",

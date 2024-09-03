@@ -13,6 +13,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "forced_labor_uflpa_origin_subtier_product_blueprint",
     "forced_labor_xinjiang_geospatial",
     "eu_high_risk_third",
+    "uk_sanctioned",
     "sheffield_hallam_university_useful_resources",
     "exports_to_entity_licensed_with_fsb_rf",
     "owner_of_aspi_forced_labor_entity",
@@ -29,6 +30,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owner_of_sanctioned_entity",
     "psa_regulatory_action",
     "forced_labor_xinjiang_contractors",
+    "uk_50_percent_rule",
     "owned_by_xinjiang_entity",
     "forced_labor_xinjiang_origin_subtier",
     "psa_forced_labor_xinjiang_name",
@@ -128,6 +130,7 @@ export declare namespace Risk {
         | "forced_labor_uflpa_origin_subtier_product_blueprint"
         | "forced_labor_xinjiang_geospatial"
         | "eu_high_risk_third"
+        | "uk_sanctioned"
         | "sheffield_hallam_university_useful_resources"
         | "exports_to_entity_licensed_with_fsb_rf"
         | "owner_of_aspi_forced_labor_entity"
@@ -144,6 +147,7 @@ export declare namespace Risk {
         | "owner_of_sanctioned_entity"
         | "psa_regulatory_action"
         | "forced_labor_xinjiang_contractors"
+        | "uk_50_percent_rule"
         | "owned_by_xinjiang_entity"
         | "forced_labor_xinjiang_origin_subtier"
         | "psa_forced_labor_xinjiang_name"
