@@ -62,14 +62,17 @@ export class Resolution {
             limit,
             offset,
             name,
-            identifier,
-            country,
             address,
+            city,
+            state,
+            country,
+            identifier,
             dateOfBirth,
             contact,
             type: type_,
             profile,
             nameMinPercentage,
+            nameMinTokens,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
@@ -88,13 +91,27 @@ export class Resolution {
             }
         }
 
-        if (identifier != null) {
-            if (Array.isArray(identifier)) {
-                _queryParams["identifier"] = identifier.map((item) =>
-                    typeof item === "string" ? item : JSON.stringify(item)
-                );
+        if (address != null) {
+            if (Array.isArray(address)) {
+                _queryParams["address"] = address.map((item) => item);
             } else {
-                _queryParams["identifier"] = typeof identifier === "string" ? identifier : JSON.stringify(identifier);
+                _queryParams["address"] = address;
+            }
+        }
+
+        if (city != null) {
+            if (Array.isArray(city)) {
+                _queryParams["city"] = city.map((item) => item);
+            } else {
+                _queryParams["city"] = city;
+            }
+        }
+
+        if (state != null) {
+            if (Array.isArray(state)) {
+                _queryParams["state"] = state.map((item) => item);
+            } else {
+                _queryParams["state"] = state;
             }
         }
 
@@ -106,11 +123,13 @@ export class Resolution {
             }
         }
 
-        if (address != null) {
-            if (Array.isArray(address)) {
-                _queryParams["address"] = address.map((item) => item);
+        if (identifier != null) {
+            if (Array.isArray(identifier)) {
+                _queryParams["identifier"] = identifier.map((item) =>
+                    typeof item === "string" ? item : JSON.stringify(item)
+                );
             } else {
-                _queryParams["address"] = address;
+                _queryParams["identifier"] = typeof identifier === "string" ? identifier : JSON.stringify(identifier);
             }
         }
 
@@ -144,6 +163,10 @@ export class Resolution {
 
         if (nameMinPercentage != null) {
             _queryParams["name_min_percentage"] = nameMinPercentage.toString();
+        }
+
+        if (nameMinTokens != null) {
+            _queryParams["name_min_tokens"] = nameMinTokens.toString();
         }
 
         const _response = await core.fetcher({

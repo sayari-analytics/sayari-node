@@ -32,17 +32,25 @@ export interface Resolution {
      */
     name?: string | string[];
     /**
-     * Entity identifier. Can be from either the [Identifier Type](/sayari-library/ontology/enumerated-types#identifier-type) or [Weak Identifier Type](/sayari-library/ontology/enumerated-types#weak-identifier-type) enums.
+     * Entity address. For optimal matching results, it's recommended to concatenate the full address string (street, city, state, postal code).
      */
-    identifier?: Sayari.BothIdentifierTypes | Sayari.BothIdentifierTypes[];
+    address?: string | string[];
+    /**
+     * Entity city that contains the provided city name.
+     */
+    city?: string | string[];
+    /**
+     * Entity state that contains the provided state name.
+     */
+    state?: string | string[];
     /**
      * Entity country - must be ISO (3166) Trigram i.e., `USA`. See complete list [here](/sayari-library/ontology/enumerated-types#country)
      */
     country?: Sayari.Country | Sayari.Country[];
     /**
-     * Entity address
+     * Entity identifier. Can be from either the [Identifier Type](/sayari-library/ontology/enumerated-types#identifier-type) or [Weak Identifier Type](/sayari-library/ontology/enumerated-types#weak-identifier-type) enums.
      */
-    address?: string | string[];
+    identifier?: Sayari.BothIdentifierTypes | Sayari.BothIdentifierTypes[];
     /**
      * Entity date of birth
      */
@@ -60,7 +68,11 @@ export interface Resolution {
      */
     profile?: Sayari.ProfileEnum;
     /**
-     * Adding this param enable an alternative matching logic. It will set a minimum percentage of tokens needed to match with user input to be considered a "hit". Accepts integers from 0 to 100 inclusive.
+     * Adding this param enables an alternative matching logic. It will set a minimum percentage of tokens needed to match with user input to be considered a "hit". Accepts integers from 0 to 100 inclusive.
      */
     nameMinPercentage?: number;
+    /**
+     * Adding this param enables an alternative matching logic. It sets the minimum number of matching tokens the resolved hits need to have in common with the user input to be considered a "hit". Accepts non-negative integers.
+     */
+    nameMinTokens?: number;
 }
