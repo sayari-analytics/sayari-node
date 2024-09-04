@@ -9,10 +9,14 @@ export interface ResolutionBody {
     name?: string[];
     /** Entity identifier. Can be from either the [Identifier Type](/sayari-library/ontology/enumerated-types#identifier-type) or [Weak Identifier Type](/sayari-library/ontology/enumerated-types#weak-identifier-type) enums. */
     identifier?: Sayari.BothIdentifierTypes[];
-    /** Entity country - must be ISO (3166) Trigram i.e., `USA`. See complete list [here](/sayari-library/ontology/enumerated-types#country) */
-    country?: Sayari.Country[];
     /** Entity address */
     address?: string[];
+    /** Entity city that contains the provided city name. */
+    city?: string;
+    /** Entity state that contains the provided state name. */
+    state?: string;
+    /** Entity country - must be ISO (3166) Trigram i.e., `USA`. See complete list [here](/sayari-library/ontology/enumerated-types#country) */
+    country?: Sayari.Country[];
     /** Entity date of birth */
     dateOfBirth?: string[];
     /** Entity contact */
@@ -21,4 +25,8 @@ export interface ResolutionBody {
     type?: Sayari.Entities[];
     /** Profile can be used to switch between search algorithms. The default profile `corporate` is optimized for accurate entity attribute matching and is ideal for business verification and matching entities with corporate data. The `suppliers` profile is optimized for matching entities with extensive trade data. Ideal for supply chain and trade-related use cases. */
     profile?: Sayari.ProfileEnum;
+    /** Adding this param enables an alternative matching logic. It will set a minimum percentage of tokens needed to match with user input to be considered a "hit". Accepts integers from 0 to 100 inclusive. */
+    nameMinPercentage?: number;
+    /** Adding this param enables an alternative matching logic. It sets the minimum number of matching tokens the resolved hits need to have in common with the user input to be considered a "hit". Accepts non-negative integers. */
+    nameMinTokens?: number;
 }

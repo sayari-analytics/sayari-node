@@ -14,8 +14,10 @@ export const ResolutionBody: core.serialization.ObjectSchema<serializers.Resolut
     core.serialization.object({
         name: core.serialization.list(core.serialization.string()).optional(),
         identifier: core.serialization.list(BothIdentifierTypes).optional(),
-        country: core.serialization.list(Country).optional(),
         address: core.serialization.list(core.serialization.string()).optional(),
+        city: core.serialization.string().optional(),
+        state: core.serialization.string().optional(),
+        country: core.serialization.list(Country).optional(),
         dateOfBirth: core.serialization.property(
             "date_of_birth",
             core.serialization.list(core.serialization.string()).optional()
@@ -23,17 +25,23 @@ export const ResolutionBody: core.serialization.ObjectSchema<serializers.Resolut
         contact: core.serialization.list(core.serialization.string()).optional(),
         type: core.serialization.list(Entities).optional(),
         profile: ProfileEnum.optional(),
+        nameMinPercentage: core.serialization.property("name_min_percentage", core.serialization.number().optional()),
+        nameMinTokens: core.serialization.property("name_min_tokens", core.serialization.number().optional()),
     });
 
 export declare namespace ResolutionBody {
     interface Raw {
         name?: string[] | null;
         identifier?: BothIdentifierTypes.Raw[] | null;
-        country?: Country.Raw[] | null;
         address?: string[] | null;
+        city?: string | null;
+        state?: string | null;
+        country?: Country.Raw[] | null;
         date_of_birth?: string[] | null;
         contact?: string[] | null;
         type?: Entities.Raw[] | null;
         profile?: ProfileEnum.Raw | null;
+        name_min_percentage?: number | null;
+        name_min_tokens?: number | null;
     }
 }
