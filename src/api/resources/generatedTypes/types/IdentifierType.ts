@@ -1782,7 +1782,10 @@ export type IdentifierType =
     | "afg_trade_internal_shipment_id"
     /**
      * Ukraine SFMS List Identifier. Reference number assigned to all entities listed under Ukraine SFMS List for Terrorism. */
-    | "ukr_fiu_list_number";
+    | "ukr_fiu_list_number"
+    /**
+     * Tanzania Registration Number. Unique identifier issued by the Tanzania Business Registration and Licensing Agency and assigned to the registered entities. */
+    | "tza_brela_reg_num";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2392,4 +2395,5 @@ export const IdentifierType = {
     BelNationalRegisterNo: "bel_national_register_no",
     AfgTradeInternalShipmentId: "afg_trade_internal_shipment_id",
     UkrFiuListNumber: "ukr_fiu_list_number",
+    TzaBrelaRegNum: "tza_brela_reg_num",
 } as const;
