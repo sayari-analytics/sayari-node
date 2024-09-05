@@ -3,50 +3,50 @@
  */
 
 export type Attributes =
-    | "address"
-    | "shares"
-    | "person_status"
-    | "name"
-    | "financials"
-    | "risk_intelligence"
+    | "position"
+    | "business_purpose"
     | "gender"
-    | "company_type"
-    | "date_of_birth"
-    | "measurement"
+    | "country"
+    | "additional_information"
     | "generic"
-    | "identifier"
+    | "company_type"
+    | "measurement"
+    | "financials"
     | "status"
     | "finances"
-    | "weak_identifier"
     | "translated_name"
+    | "person_status"
+    | "date_of_birth"
+    | "shares"
+    | "risk_intelligence"
+    | "address"
     | "contact"
-    | "additional_information"
-    | "position"
     | "monetary_value"
-    | "country"
-    | "business_purpose";
+    | "identifier"
+    | "weak_identifier"
+    | "name";
 
 export const Attributes = {
-    Address: "address",
-    Shares: "shares",
-    PersonStatus: "person_status",
-    Name: "name",
-    Financials: "financials",
-    RiskIntelligence: "risk_intelligence",
+    Position: "position",
+    BusinessPurpose: "business_purpose",
     Gender: "gender",
-    CompanyType: "company_type",
-    DateOfBirth: "date_of_birth",
-    Measurement: "measurement",
+    Country: "country",
+    AdditionalInformation: "additional_information",
     Generic: "generic",
-    Identifier: "identifier",
+    CompanyType: "company_type",
+    Measurement: "measurement",
+    Financials: "financials",
     Status: "status",
     Finances: "finances",
-    WeakIdentifier: "weak_identifier",
     TranslatedName: "translated_name",
+    PersonStatus: "person_status",
+    DateOfBirth: "date_of_birth",
+    Shares: "shares",
+    RiskIntelligence: "risk_intelligence",
+    Address: "address",
     Contact: "contact",
-    AdditionalInformation: "additional_information",
-    Position: "position",
     MonetaryValue: "monetary_value",
-    Country: "country",
-    BusinessPurpose: "business_purpose",
+    Identifier: "identifier",
+    WeakIdentifier: "weak_identifier",
+    Name: "name",
 } as const;

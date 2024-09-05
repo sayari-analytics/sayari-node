@@ -7,11 +7,32 @@
  */
 export type Entities =
     /**
+     * A civil or criminal legal case or similar type of proceeding */
+    | "legal_matter"
+    /**
+     * A trademark, patent, copyright, or similar type of intangible property */
+    | "intellectual_property"
+    /**
+     * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
+    | "generic"
+    /**
      * An unknown placeholder entity. Rarely used. An unknown entity has insufficient information to be grouped by an existing entity type. */
     | "unknown"
     /**
+     * A tradable financial asset */
+    | "security"
+    /**
+     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
+    | "tradename"
+    /**
      * A legal entity or organization */
     | "company"
+    /**
+     * A shipment between two entities */
+    | "shipment"
+    /**
+     * Land, real estate, real property, or personal property not categorized under another entity type */
+    | "property"
     /**
      * A natural person (human being) */
     | "person"
@@ -19,41 +40,20 @@ export type Entities =
      * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
     | "vessel"
     /**
-     * A shipment between two entities */
-    | "shipment"
-    /**
-     * A trademark, patent, copyright, or similar type of intangible property */
-    | "intellectual_property"
-    /**
-     * A tradable financial asset */
-    | "security"
-    /**
-     * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
-    | "generic"
-    /**
-     * A civil or criminal legal case or similar type of proceeding */
-    | "legal_matter"
-    /**
-     * A discretely registered name used by a person or company not operating under its legal name. This includes doing-business-as (DBA) names, fictitious names, etc. in jurisdictions that treat them as registered objects distinct from the person/company using them. */
-    | "tradename"
-    /**
-     * Land, real estate, real property, or personal property not categorized under another entity type */
-    | "property"
-    /**
      * An airplane, helicopter, or other vehicle that travels by flight */
     | "aircraft";
 
 export const Entities = {
+    LegalMatter: "legal_matter",
+    IntellectualProperty: "intellectual_property",
+    Generic: "generic",
     Unknown: "unknown",
+    Security: "security",
+    Tradename: "tradename",
     Company: "company",
+    Shipment: "shipment",
+    Property: "property",
     Person: "person",
     Vessel: "vessel",
-    Shipment: "shipment",
-    IntellectualProperty: "intellectual_property",
-    Security: "security",
-    Generic: "generic",
-    LegalMatter: "legal_matter",
-    Tradename: "tradename",
-    Property: "property",
     Aircraft: "aircraft",
 } as const;
