@@ -8,52 +8,52 @@ import * as core from "../../../../core";
 
 export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, Sayari.Attributes> =
     core.serialization.enum_([
-        "address",
-        "shares",
-        "person_status",
-        "name",
-        "financials",
-        "risk_intelligence",
+        "position",
+        "business_purpose",
         "gender",
-        "company_type",
-        "date_of_birth",
-        "measurement",
+        "country",
+        "additional_information",
         "generic",
-        "identifier",
+        "company_type",
+        "measurement",
+        "financials",
         "status",
         "finances",
-        "weak_identifier",
         "translated_name",
+        "person_status",
+        "date_of_birth",
+        "shares",
+        "risk_intelligence",
+        "address",
         "contact",
-        "additional_information",
-        "position",
         "monetary_value",
-        "country",
-        "business_purpose",
+        "identifier",
+        "weak_identifier",
+        "name",
     ]);
 
 export declare namespace Attributes {
     type Raw =
-        | "address"
-        | "shares"
-        | "person_status"
-        | "name"
-        | "financials"
-        | "risk_intelligence"
+        | "position"
+        | "business_purpose"
         | "gender"
-        | "company_type"
-        | "date_of_birth"
-        | "measurement"
+        | "country"
+        | "additional_information"
         | "generic"
-        | "identifier"
+        | "company_type"
+        | "measurement"
+        | "financials"
         | "status"
         | "finances"
-        | "weak_identifier"
         | "translated_name"
+        | "person_status"
+        | "date_of_birth"
+        | "shares"
+        | "risk_intelligence"
+        | "address"
         | "contact"
-        | "additional_information"
-        | "position"
         | "monetary_value"
-        | "country"
-        | "business_purpose";
+        | "identifier"
+        | "weak_identifier"
+        | "name";
 }
