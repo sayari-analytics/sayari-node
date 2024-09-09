@@ -1784,6 +1784,12 @@ export type IdentifierType =
      * Ukraine SFMS List Identifier. Reference number assigned to all entities listed under Ukraine SFMS List for Terrorism. */
     | "ukr_fiu_list_number"
     /**
+     * Unique identification number assigned to every entity registered with the Bank of Spain. */
+    | "esp_be_code"
+    /**
+     * Spain TR Number */
+    | "esp_tr_number"
+    /**
      * Unique Jersey ID number. Assigned to every registered trademark. */
     | "jey_trademark_reg_no"
     /**
@@ -1791,7 +1797,10 @@ export type IdentifierType =
     | "gbr_enforcement_action_num"
     /**
      * Tanzania Registration Number. Unique identifier issued by the Tanzania Business Registration and Licensing Agency and assigned to the registered entities. */
-    | "tza_brela_reg_num";
+    | "tza_brela_reg_num"
+    /**
+     * Unique India identifier code. Assigned to all entities listed on the India National Stock Exchange. */
+    | "ind_nse_ticker_code";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2401,7 +2410,10 @@ export const IdentifierType = {
     BelNationalRegisterNo: "bel_national_register_no",
     AfgTradeInternalShipmentId: "afg_trade_internal_shipment_id",
     UkrFiuListNumber: "ukr_fiu_list_number",
+    EspBeCode: "esp_be_code",
+    EspTrNumber: "esp_tr_number",
     JeyTrademarkRegNo: "jey_trademark_reg_no",
     GbrEnforcementActionNum: "gbr_enforcement_action_num",
     TzaBrelaRegNum: "tza_brela_reg_num",
+    IndNseTickerCode: "ind_nse_ticker_code",
 } as const;
