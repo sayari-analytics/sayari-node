@@ -44,10 +44,10 @@ export type SortField =
     | "-label"
     /**
      * <Warning>This sorting option is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> One of the custom fields provided by the user, ascending. */
-    | "custom_<field name>"
+    | "custom_{field name}"
     /**
      * <Warning>This sorting option is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> One of the custom fields provided by the user, descending. */
-    | "-custom_<field name>"
+    | "-custom_{field name}"
     /**
      * The number of shipments the entity has received, ascending. */
     | "receiver_of"
@@ -80,8 +80,8 @@ export const SortField = {
     StatusDesc: "-latest_status",
     LabelAsc: "label",
     LabelDesc: "-label",
-    CustomFieldsAsc: "custom_<field name>",
-    CustomFieldsDesc: "-custom_<field name>",
+    CustomFieldsAsc: "custom_{field name}",
+    CustomFieldsDesc: "-custom_{field name}",
     ReceiverOfAcc: "receiver_of",
     ReceiverOfDesc: "-receiver_of",
     ShipperOfAsc: "shipper_of",

@@ -12,7 +12,7 @@ export const ResolutionPersistedResponseFields: core.serialization.ObjectSchema<
     Sayari.ResolutionPersistedResponseFields
 > = core.serialization
     .object({
-        customFieldName: core.serialization.property("custom_<field name>", core.serialization.string().optional()),
+        customFieldName: core.serialization.property("custom_{field name}", core.serialization.string().optional()),
         customName: core.serialization.property("custom_name", core.serialization.string().optional()),
         customIdentifier: core.serialization.property("custom_identifier", core.serialization.string().optional()),
     })
@@ -20,7 +20,7 @@ export const ResolutionPersistedResponseFields: core.serialization.ObjectSchema<
 
 export declare namespace ResolutionPersistedResponseFields {
     interface Raw extends ResolutionResponseFields.Raw {
-        "custom_<field name>"?: string | null;
+        "custom_{field name}"?: string | null;
         custom_name?: string | null;
         custom_identifier?: string | null;
     }

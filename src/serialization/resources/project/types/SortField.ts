@@ -20,8 +20,8 @@ export const SortField: core.serialization.Schema<serializers.SortField.Raw, Say
         "-latest_status",
         "label",
         "-label",
-        "custom_<field name>",
-        "-custom_<field name>",
+        "custom_{field name}",
+        "-custom_{field name}",
         "receiver_of",
         "-receiver_of",
         "shipper_of",
@@ -44,8 +44,8 @@ export declare namespace SortField {
         | "-latest_status"
         | "label"
         | "-label"
-        | "custom_<field name>"
-        | "-custom_<field name>"
+        | "custom_{field name}"
+        | "-custom_{field name}"
         | "receiver_of"
         | "-receiver_of"
         | "shipper_of"
