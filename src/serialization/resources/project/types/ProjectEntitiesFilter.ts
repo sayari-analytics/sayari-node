@@ -53,7 +53,7 @@ export const ProjectEntitiesFilter: core.serialization.ObjectSchema<
     statusExact: core.serialization.property("status.exact", core.serialization.list(CompanyStatus).optional()),
     bounds: core.serialization.string().optional(),
     customFieldName: core.serialization.property(
-        "custom_<field name>",
+        "custom_{field name}",
         core.serialization.list(core.serialization.string()).optional()
     ),
 });
@@ -74,6 +74,6 @@ export declare namespace ProjectEntitiesFilter {
         "source.exact"?: string[] | null;
         "status.exact"?: CompanyStatus.Raw[] | null;
         bounds?: string | null;
-        "custom_<field name>"?: string[] | null;
+        "custom_{field name}"?: string[] | null;
     }
 }
