@@ -51,7 +51,7 @@ export class Resolution {
      *     await client.resolution.resolution({
      *         name: "victoria beckham limited",
      *         limit: 1,
-     *         profile: Sayari.ProfileEnum.Suppliers
+     *         profile: "suppliers"
      *     })
      */
     public async resolution(
@@ -305,7 +305,7 @@ export class Resolution {
      *         limit: 1,
      *         body: {
      *             name: ["victoria beckham limited"],
-     *             profile: Sayari.ProfileEnum.Suppliers
+     *             profile: "suppliers"
      *         }
      *     })
      */
@@ -461,7 +461,7 @@ export class Resolution {
      *         limit: 1,
      *         body: {
      *             name: ["victoria beckham limited"],
-     *             profile: Sayari.ProfileEnum.Suppliers
+     *             profile: "suppliers"
      *         }
      *     })
      */

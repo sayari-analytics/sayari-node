@@ -7,7 +7,7 @@ import * as Sayari from "../../../../index";
 /**
  * @example
  *     {
- *         accept: Sayari.GetProjectEntitiesAcceptHeader.Json
+ *         accept: "application/json"
  *     }
  */
 export interface GetProjectEntities {

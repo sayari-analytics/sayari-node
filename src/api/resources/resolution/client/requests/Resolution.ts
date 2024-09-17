@@ -15,7 +15,7 @@ import * as Sayari from "../../../../index";
  *     {
  *         name: "victoria beckham limited",
  *         limit: 1,
- *         profile: Sayari.ProfileEnum.Suppliers
+ *         profile: "suppliers"
  *     }
  */
 export interface Resolution {

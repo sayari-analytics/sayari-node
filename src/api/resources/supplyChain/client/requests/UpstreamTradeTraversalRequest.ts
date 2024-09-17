@@ -9,7 +9,7 @@ import * as Sayari from "../../../../index";
  *     {
  *         minDate: "2023-03-15",
  *         product: ["3204"],
- *         risk: [Sayari.Risk.ForcedLaborXinjiangOriginSubtier]
+ *         risk: ["forced_labor_xinjiang_origin_subtier"]
  *     }
  */
 export interface UpstreamTradeTraversalRequest {

@@ -333,7 +333,7 @@ export class Project {
      *
      * @example
      *     await client.project.getProjectEntities("gPq6EY", {
-     *         accept: Sayari.GetProjectEntitiesAcceptHeader.Json
+     *         accept: "application/json"
      *     })
      */
     public async getProjectEntities(
