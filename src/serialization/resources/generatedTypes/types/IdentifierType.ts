@@ -621,6 +621,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "gbr_enforcement_action_num",
         "tza_brela_reg_num",
         "ind_nse_ticker_code",
+        "can_qc_sap_registry_ref_num",
     ]);
 
 export declare namespace IdentifierType {
@@ -1237,5 +1238,6 @@ export declare namespace IdentifierType {
         | "jey_trademark_reg_no"
         | "gbr_enforcement_action_num"
         | "tza_brela_reg_num"
-        | "ind_nse_ticker_code";
+        | "ind_nse_ticker_code"
+        | "can_qc_sap_registry_ref_num";
 }
