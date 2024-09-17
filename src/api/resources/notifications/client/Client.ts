@@ -52,7 +52,7 @@ export class Notifications {
      * @example
      *     await client.notifications.projectNotifications("0oZnoG", {
      *         limit: 20,
-     *         sort: Sayari.NotificationsSortField.DateDesc
+     *         sort: "-date"
      *     })
      */
     public async projectNotifications(

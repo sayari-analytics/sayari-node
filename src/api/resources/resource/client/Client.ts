@@ -43,7 +43,7 @@ export class Resource {
      *
      * @example
      *     await client.resource.saveEntity({
-     *         type: Sayari.ResourceType.Entity,
+     *         type: "entity",
      *         project: "GNJbkG",
      *         entityId: "Zk0qOaM2SSYg_ZhsljykMQ",
      *         customFields: {
@@ -182,7 +182,7 @@ export class Resource {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await client.resource.deleteResource(Sayari.ResourceType.Entity, "YWmNKV")
+     *     await client.resource.deleteResource("entity", "YWmNKV")
      */
     public async deleteResource(
         type: Sayari.ResourceType,

@@ -1137,7 +1137,7 @@ await client.project.getProjects({
 
 ```typescript
 await client.project.getProjectEntities("gPq6EY", {
-    accept: Sayari.GetProjectEntitiesAcceptHeader.Json,
+    accept: "application/json",
 });
 ```
 
@@ -1560,7 +1560,7 @@ await client.resolution.resolutionPersisted("V03eYM", {
 
 ```typescript
 await client.resource.saveEntity({
-    type: Sayari.ResourceType.Entity,
+    type: "entity",
     project: "GNJbkG",
     entityId: "Zk0qOaM2SSYg_ZhsljykMQ",
     customFields: {
@@ -1631,7 +1631,7 @@ Deletes an existing saved resource from a project.
 <dd>
 
 ```typescript
-await client.resource.deleteResource(Sayari.ResourceType.Entity, "YWmNKV");
+await client.resource.deleteResource("entity", "YWmNKV");
 ```
 
 </dd>
@@ -2103,7 +2103,7 @@ await client.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
 await client.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
     minDate: "2023-03-15",
     product: ["3204"],
-    risk: [Sayari.Risk.ForcedLaborXinjiangOriginSubtier],
+    risk: ["forced_labor_xinjiang_origin_subtier"],
 });
 ```
 

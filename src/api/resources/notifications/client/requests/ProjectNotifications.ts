@@ -13,7 +13,7 @@ import * as Sayari from "../../../../index";
  * @example
  *     {
  *         limit: 20,
- *         sort: Sayari.NotificationsSortField.DateDesc
+ *         sort: "-date"
  *     }
  */
 export interface ProjectNotifications {
