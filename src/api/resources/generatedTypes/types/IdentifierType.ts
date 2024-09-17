@@ -1800,7 +1800,10 @@ export type IdentifierType =
     | "tza_brela_reg_num"
     /**
      * Unique India identifier code. Assigned to all entities listed on the India National Stock Exchange. */
-    | "ind_nse_ticker_code";
+    | "ind_nse_ticker_code"
+    /**
+     * Penalty number assigned by the Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
+    | "can_qc_sap_registry_ref_num";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2416,4 +2419,5 @@ export const IdentifierType = {
     GbrEnforcementActionNum: "gbr_enforcement_action_num",
     TzaBrelaRegNum: "tza_brela_reg_num",
     IndNseTickerCode: "ind_nse_ticker_code",
+    CanQcSapRegistryRefNum: "can_qc_sap_registry_ref_num",
 } as const;
