@@ -1802,6 +1802,9 @@ export type IdentifierType =
      * Unique India identifier code. Assigned to all entities listed on the India National Stock Exchange. */
     | "ind_nse_ticker_code"
     /**
+     * Unique Florida county land and property ID number. Assigned to every parcel registered with the Saint Lucie County Property Appraiser’s Office. */
+    | "usa_fl_sl_pid"
+    /**
      * Penalty number assigned by the Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
     | "can_qc_sap_registry_ref_num";
 
@@ -2419,5 +2422,6 @@ export const IdentifierType = {
     GbrEnforcementActionNum: "gbr_enforcement_action_num",
     TzaBrelaRegNum: "tza_brela_reg_num",
     IndNseTickerCode: "ind_nse_ticker_code",
+    UsaFlSlPid: "usa_fl_sl_pid",
     CanQcSapRegistryRefNum: "can_qc_sap_registry_ref_num",
 } as const;
