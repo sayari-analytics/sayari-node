@@ -621,6 +621,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "gbr_enforcement_action_num",
         "tza_brela_reg_num",
         "ind_nse_ticker_code",
+        "usa_fl_sl_pid",
         "can_qc_sap_registry_ref_num",
     ]);
 
@@ -1239,5 +1240,6 @@ export declare namespace IdentifierType {
         | "gbr_enforcement_action_num"
         | "tza_brela_reg_num"
         | "ind_nse_ticker_code"
+        | "usa_fl_sl_pid"
         | "can_qc_sap_registry_ref_num";
 }
