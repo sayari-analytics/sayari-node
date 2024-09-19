@@ -8,52 +8,52 @@ import * as core from "../../../../core";
 
 export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, Sayari.Attributes> =
     core.serialization.enum_([
-        "position",
-        "business_purpose",
-        "gender",
-        "country",
-        "additional_information",
-        "generic",
-        "company_type",
-        "measurement",
-        "financials",
-        "status",
-        "finances",
-        "translated_name",
         "person_status",
-        "date_of_birth",
-        "shares",
-        "risk_intelligence",
+        "country",
         "address",
-        "contact",
+        "additional_information",
+        "company_type",
+        "position",
+        "weak_identifier",
+        "finances",
+        "shares",
+        "generic",
+        "measurement",
+        "status",
+        "date_of_birth",
+        "name",
+        "financials",
+        "gender",
+        "translated_name",
+        "risk_intelligence",
         "monetary_value",
         "identifier",
-        "weak_identifier",
-        "name",
+        "contact",
+        "business_purpose",
     ]);
 
 export declare namespace Attributes {
     type Raw =
-        | "position"
-        | "business_purpose"
-        | "gender"
-        | "country"
-        | "additional_information"
-        | "generic"
-        | "company_type"
-        | "measurement"
-        | "financials"
-        | "status"
-        | "finances"
-        | "translated_name"
         | "person_status"
-        | "date_of_birth"
-        | "shares"
-        | "risk_intelligence"
+        | "country"
         | "address"
-        | "contact"
+        | "additional_information"
+        | "company_type"
+        | "position"
+        | "weak_identifier"
+        | "finances"
+        | "shares"
+        | "generic"
+        | "measurement"
+        | "status"
+        | "date_of_birth"
+        | "name"
+        | "financials"
+        | "gender"
+        | "translated_name"
+        | "risk_intelligence"
         | "monetary_value"
         | "identifier"
-        | "weak_identifier"
-        | "name";
+        | "contact"
+        | "business_purpose";
 }

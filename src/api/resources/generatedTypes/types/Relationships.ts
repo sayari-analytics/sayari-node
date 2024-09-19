@@ -4,80 +4,17 @@
 
 export type Relationships =
     /**
-     * Partnerships or similar types of companies of which this entity is a business partner with an ownership stake */
-    | "partner_of"
+     * Entities for which this entity works as a lawyer in a professional capacity */
+    | "lawyer_of"
     /**
-     * Business partners with an ownership stake in this company */
-    | "has_partner"
+     * Lawyers reported to work for this entity in a professional capacity */
+    | "has_lawyer"
     /**
-     * Entities of which this entity is reported to be a Registered Agent, corporate secretary, or similar */
-    | "registered_agent_of"
+     * Entities that legally founded this company */
+    | "founder_of"
     /**
-     * Entities acting in a Registered Agent, corporate secretary, or similar role for this entity */
-    | "has_registered_agent"
-    /**
-     * Securities this entity has issued */
-    | "issuer_of"
-    /**
-     * Companies that issued this security */
-    | "has_issuer"
-    /**
-     * Companies of which this entity is a direct owner */
-    | "shareholder_of"
-    /**
-     * Direct owners of this company */
-    | "has_shareholder"
-    /**
-     * Deprecated and converted to officer_of */
-    | "executive_of"
-    /**
-     * Deprecated and converted to officer_of */
-    | "has_executive"
-    /**
-     * Family members of this entity */
-    | "family_of"
-    /**
-     * Companies audited by this entity */
-    | "auditor_of"
-    /**
-     * Auditors of this company */
-    | "has_auditor"
-    /**
-     * The entity in charge of the transportation of goods */
-    | "carrier_of"
-    /**
-     * The shipment carrying the goods */
-    | "has_carrier"
-    /**
-     * Deprecated and converted to legal_representative_of */
-    | "judidical_representative_of"
-    /**
-     * Deprecated and converted to legal_representative_of */
-    | "has_judicial_representative"
-    /**
-     * A placeholder relationship. Rarely used. */
-    | "generic"
-    /**
-     * Entities from which this entity inherited legal personality */
-    | "legal_successor_of"
-    /**
-     * Successor entities to which this entity granted legal personality */
-    | "has_legal_successor"
-    /**
-     * Deprecated and converted to linked_to */
-    | "associate_of"
-    /**
-     * Deprecated and converted to linked_to */
-    | "has_associate"
-    /**
-     * Deprecated and converted to linked_to */
-    | "client_of"
-    /**
-     * Deprecated and converted to linked_to */
-    | "has_client"
-    /**
-     * Entities connected to this entity via a type of relationship that does not exist in the Graph ontology */
-    | "linked_to"
+     * The source entity is reported to be the founder of a company */
+    | "has_founder"
     /**
      * Entities created by or legally derived from this entity */
     | "legal_predecessor_of"
@@ -85,38 +22,26 @@ export type Relationships =
      * Entities from which this entity was created or legally derived */
     | "has_legal_predecessor"
     /**
+     * Legal Matters to which this entity is tied in a professional capacity */
+    | "lawyer_in"
+    /**
+     * Shipments this entity sent */
+    | "shipper_of"
+    /**
+     * The entity that sent this shipment */
+    | "shipped_by"
+    /**
+     * Deprecated and converted to linked_to */
+    | "associate_of"
+    /**
+     * Deprecated and converted to linked_to */
+    | "has_associate"
+    /**
      * Deprecated and converted to legal_representative_of */
     | "judicial_representative_of"
     /**
-     * Entities with a corporate or statutory body of oversight/control of which this entity is a member */
-    | "member_of_the_board_of"
-    /**
-     * Entities that are members of this entity's corporate or statutory body of oversight/control */
-    | "has_member_of_the_board"
-    /**
-     * Legal Matters in which this entity is a litigant */
-    | "party_to"
-    /**
-     * Litigants in this Legal Matter */
-    | "has_party"
-    /**
-     * Shipments that this entity were notified of upon their arrival at their destinations */
-    | "notify_party_of"
-    /**
-     * Entity to be notified when this shipment arrives */
-    | "has_notify_party"
-    /**
-     * Companies that indirectly own this company and/or report it as a subsidiary */
-    | "subsidiary_of"
-    /**
-     * Companies reported to be subsidiaries or indirectly owned by this company */
-    | "has_subsidiary"
-    /**
-     * Shipments this entity received */
-    | "receiver_of"
-    /**
-     * The entity that received this shipment */
-    | "received_by"
+     * Deprecated and converted to legal_representative_of */
+    | "has_judicial_representative"
     /**
      * Deprecated and converted to shareholder_of */
     | "sole_proprietor_of"
@@ -124,11 +49,50 @@ export type Relationships =
      * Deprecated and converted to shareholder_of */
     | "has_sole_proprietor"
     /**
-     * Deprecated and converted to officer_of (in jurisdictions where the secretary is a fairly important control figure) or registered_agent_of (in jurisdictions where the secretary is more of a clerical role) */
-    | "secretary_of"
+     * Companies of which this entity is a direct owner */
+    | "shareholder_of"
     /**
-     * Deprecated and converted to officer_of (in jurisdictions where the secretary is a fairly important control figure) or registered_agent_of (in jurisdictions where the secretary is more of a clerical role) */
-    | "has_secretary"
+     * Direct owners of this company */
+    | "has_shareholder"
+    /**
+     * Companies that indirectly own this company and/or report it as a subsidiary */
+    | "subsidiary_of"
+    /**
+     * Companies reported to be subsidiaries or indirectly owned by this company */
+    | "has_subsidiary"
+    /**
+     * Deprecated and converted to officer_of */
+    | "executive_of"
+    /**
+     * Deprecated and converted to officer_of */
+    | "has_executive"
+    /**
+     * Companies of which this entity is a liquidator */
+    | "liquidator_of"
+    /**
+     * Liquidators of this company */
+    | "has_liquidator"
+    /**
+     * Entities of which this entity is reported to be a Registered Agent, corporate secretary, or similar */
+    | "registered_agent_of"
+    /**
+     * Entities acting in a Registered Agent, corporate secretary, or similar role for this entity */
+    | "has_registered_agent"
+    /**
+     * Companies audited by this entity */
+    | "auditor_of"
+    /**
+     * Auditors of this company */
+    | "has_auditor"
+    /**
+     * Entities of which this entity is reported to be (or have acted as) a legal representative */
+    | "legal_representative_of"
+    /**
+     * Entities reported to be (or have acted as) legal representatives of this entity */
+    | "has_legal_representative"
+    /**
+     * Deprecated and converted to legal_representative_of */
+    | "judidical_representative_of"
     /**
      * Companies of which this entity is an employee */
     | "employee_of"
@@ -142,23 +106,44 @@ export type Relationships =
      * CEOs, Treasurers, etc. of this company */
     | "has_officer"
     /**
-     * Companies of which this entity is a Manager */
-    | "manager_of"
+     * A placeholder relationship. Rarely used. */
+    | "generic"
     /**
-     * Managers of this company */
-    | "has_manager"
+     * Entities with a corporate or statutory body of oversight/control of which this entity is a member */
+    | "member_of_the_board_of"
     /**
-     * Entities of which this entity is reported to be (or have acted as) a legal representative */
-    | "legal_representative_of"
+     * Entities that are members of this entity's corporate or statutory body of oversight/control */
+    | "has_member_of_the_board"
     /**
-     * Entities reported to be (or have acted as) legal representatives of this entity */
-    | "has_legal_representative"
+     * Shipments that this entity were notified of upon their arrival at their destinations */
+    | "notify_party_of"
     /**
-     * Companies of which this entity is a liquidator */
-    | "liquidator_of"
+     * Entity to be notified when this shipment arrives */
+    | "has_notify_party"
     /**
-     * Liquidators of this company */
-    | "has_liquidator"
+     * Entities reported to be beneficially or indirectly owned by this entity */
+    | "beneficial_owner_of"
+    /**
+     * Entities reported to beneficially or indirectly own this entity */
+    | "has_beneficial_owner"
+    /**
+     * Deprecated and converted to linked_to */
+    | "client_of"
+    /**
+     * Deprecated and converted to linked_to */
+    | "has_client"
+    /**
+     * Partnerships or similar types of companies of which this entity is a business partner with an ownership stake */
+    | "partner_of"
+    /**
+     * Business partners with an ownership stake in this company */
+    | "has_partner"
+    /**
+     * Securities this entity has issued */
+    | "issuer_of"
+    /**
+     * Companies that issued this security */
+    | "has_issuer"
     /**
      * Parent companies of which this company is a branch */
     | "branch_of"
@@ -166,23 +151,29 @@ export type Relationships =
      * Branches of this company */
     | "has_branch"
     /**
-     * Entities for which this entity works as a lawyer in a professional capacity */
-    | "lawyer_of"
+     * Deprecated and converted to officer_of (in jurisdictions where the secretary is a fairly important control figure) or registered_agent_of (in jurisdictions where the secretary is more of a clerical role) */
+    | "secretary_of"
     /**
-     * Lawyers reported to work for this entity in a professional capacity */
-    | "has_lawyer"
+     * Deprecated and converted to officer_of (in jurisdictions where the secretary is a fairly important control figure) or registered_agent_of (in jurisdictions where the secretary is more of a clerical role) */
+    | "has_secretary"
     /**
-     * The entity who has sent a shipment */
-    | "ships_to"
+     * Legal Matters in which this entity is a litigant */
+    | "party_to"
     /**
-     * The entity that has received a shipment */
-    | "receives_from"
+     * Litigants in this Legal Matter */
+    | "has_party"
     /**
-     * Entities of which this entity is reported to be a supervisor, typically in East Asia */
-    | "supervisor_of"
+     * Entities from which this entity inherited legal personality */
+    | "legal_successor_of"
     /**
-     * Supervisors of this company, typically in East Asia */
-    | "has_supervisor"
+     * Successor entities to which this entity granted legal personality */
+    | "has_legal_successor"
+    /**
+     * Shipments this entity received */
+    | "receiver_of"
+    /**
+     * The entity that received this shipment */
+    | "received_by"
     /**
      * Non-corporate entities (trade name, security, intellectual property, etc.) directly owned by this entity */
     | "owner_of"
@@ -190,26 +181,35 @@ export type Relationships =
      * Direct owners of this entity */
     | "has_owner"
     /**
-     * Shipments this entity sent */
-    | "shipper_of"
+     * Entities connected to this entity via a type of relationship that does not exist in the Graph ontology */
+    | "linked_to"
     /**
-     * The entity that sent this shipment */
-    | "shipped_by"
+     * Entities of which this entity is reported to be a supervisor, typically in East Asia */
+    | "supervisor_of"
     /**
-     * Legal Matters to which this entity is tied in a professional capacity */
-    | "lawyer_in"
+     * Supervisors of this company, typically in East Asia */
+    | "has_supervisor"
     /**
-     * Entities that legally founded this company */
-    | "founder_of"
+     * Companies of which this entity is a Manager */
+    | "manager_of"
     /**
-     * The source entity is reported to be the founder of a company */
-    | "has_founder"
+     * Managers of this company */
+    | "has_manager"
     /**
-     * Entities reported to be beneficially or indirectly owned by this entity */
-    | "beneficial_owner_of"
+     * Family members of this entity */
+    | "family_of"
     /**
-     * Entities reported to beneficially or indirectly own this entity */
-    | "has_beneficial_owner"
+     * The entity in charge of the transportation of goods */
+    | "carrier_of"
+    /**
+     * The shipment carrying the goods */
+    | "has_carrier"
+    /**
+     * The entity who has sent a shipment */
+    | "ships_to"
+    /**
+     * The entity that has received a shipment */
+    | "receives_from"
     /**
      * Companies of which this entity is a Director */
     | "director_of"
@@ -219,75 +219,75 @@ export type Relationships =
     | "possibly_same_as";
 
 export const Relationships = {
-    PartnerOf: "partner_of",
-    HasPartner: "has_partner",
-    RegisteredAgentOf: "registered_agent_of",
-    HasRegisteredAgent: "has_registered_agent",
-    IssuerOf: "issuer_of",
-    HasIssuer: "has_issuer",
-    ShareholderOf: "shareholder_of",
-    HasShareholder: "has_shareholder",
-    ExecutiveOf: "executive_of",
-    HasExecutive: "has_executive",
-    FamilyOf: "family_of",
-    AuditorOf: "auditor_of",
-    HasAuditor: "has_auditor",
-    CarrierOf: "carrier_of",
-    HasCarrier: "has_carrier",
-    JudidicalRepresentativeOf: "judidical_representative_of",
-    HasJudicialRepresentative: "has_judicial_representative",
-    Generic: "generic",
-    LegalSuccessorOf: "legal_successor_of",
-    HasLegalSuccessor: "has_legal_successor",
-    AssociateOf: "associate_of",
-    HasAssociate: "has_associate",
-    ClientOf: "client_of",
-    HasClient: "has_client",
-    LinkedTo: "linked_to",
+    LawyerOf: "lawyer_of",
+    HasLawyer: "has_lawyer",
+    FounderOf: "founder_of",
+    HasFounder: "has_founder",
     LegalPredecessorOf: "legal_predecessor_of",
     HasLegalPredecessor: "has_legal_predecessor",
+    LawyerIn: "lawyer_in",
+    ShipperOf: "shipper_of",
+    ShippedBy: "shipped_by",
+    AssociateOf: "associate_of",
+    HasAssociate: "has_associate",
     JudicialRepresentativeOf: "judicial_representative_of",
-    MemberOfTheBoardOf: "member_of_the_board_of",
-    HasMemberOfTheBoard: "has_member_of_the_board",
-    PartyTo: "party_to",
-    HasParty: "has_party",
-    NotifyPartyOf: "notify_party_of",
-    HasNotifyParty: "has_notify_party",
-    SubsidiaryOf: "subsidiary_of",
-    HasSubsidiary: "has_subsidiary",
-    ReceiverOf: "receiver_of",
-    ReceivedBy: "received_by",
+    HasJudicialRepresentative: "has_judicial_representative",
     SoleProprietorOf: "sole_proprietor_of",
     HasSoleProprietor: "has_sole_proprietor",
-    SecretaryOf: "secretary_of",
-    HasSecretary: "has_secretary",
+    ShareholderOf: "shareholder_of",
+    HasShareholder: "has_shareholder",
+    SubsidiaryOf: "subsidiary_of",
+    HasSubsidiary: "has_subsidiary",
+    ExecutiveOf: "executive_of",
+    HasExecutive: "has_executive",
+    LiquidatorOf: "liquidator_of",
+    HasLiquidator: "has_liquidator",
+    RegisteredAgentOf: "registered_agent_of",
+    HasRegisteredAgent: "has_registered_agent",
+    AuditorOf: "auditor_of",
+    HasAuditor: "has_auditor",
+    LegalRepresentativeOf: "legal_representative_of",
+    HasLegalRepresentative: "has_legal_representative",
+    JudidicalRepresentativeOf: "judidical_representative_of",
     EmployeeOf: "employee_of",
     HasEmployee: "has_employee",
     OfficerOf: "officer_of",
     HasOfficer: "has_officer",
-    ManagerOf: "manager_of",
-    HasManager: "has_manager",
-    LegalRepresentativeOf: "legal_representative_of",
-    HasLegalRepresentative: "has_legal_representative",
-    LiquidatorOf: "liquidator_of",
-    HasLiquidator: "has_liquidator",
-    BranchOf: "branch_of",
-    HasBranch: "has_branch",
-    LawyerOf: "lawyer_of",
-    HasLawyer: "has_lawyer",
-    ShipsTo: "ships_to",
-    ReceivesFrom: "receives_from",
-    SupervisorOf: "supervisor_of",
-    HasSupervisor: "has_supervisor",
-    OwnerOf: "owner_of",
-    HasOwner: "has_owner",
-    ShipperOf: "shipper_of",
-    ShippedBy: "shipped_by",
-    LawyerIn: "lawyer_in",
-    FounderOf: "founder_of",
-    HasFounder: "has_founder",
+    Generic: "generic",
+    MemberOfTheBoardOf: "member_of_the_board_of",
+    HasMemberOfTheBoard: "has_member_of_the_board",
+    NotifyPartyOf: "notify_party_of",
+    HasNotifyParty: "has_notify_party",
     BeneficialOwnerOf: "beneficial_owner_of",
     HasBeneficialOwner: "has_beneficial_owner",
+    ClientOf: "client_of",
+    HasClient: "has_client",
+    PartnerOf: "partner_of",
+    HasPartner: "has_partner",
+    IssuerOf: "issuer_of",
+    HasIssuer: "has_issuer",
+    BranchOf: "branch_of",
+    HasBranch: "has_branch",
+    SecretaryOf: "secretary_of",
+    HasSecretary: "has_secretary",
+    PartyTo: "party_to",
+    HasParty: "has_party",
+    LegalSuccessorOf: "legal_successor_of",
+    HasLegalSuccessor: "has_legal_successor",
+    ReceiverOf: "receiver_of",
+    ReceivedBy: "received_by",
+    OwnerOf: "owner_of",
+    HasOwner: "has_owner",
+    LinkedTo: "linked_to",
+    SupervisorOf: "supervisor_of",
+    HasSupervisor: "has_supervisor",
+    ManagerOf: "manager_of",
+    HasManager: "has_manager",
+    FamilyOf: "family_of",
+    CarrierOf: "carrier_of",
+    HasCarrier: "has_carrier",
+    ShipsTo: "ships_to",
+    ReceivesFrom: "receives_from",
     DirectorOf: "director_of",
     HasDirector: "has_director",
     PossiblySameAs: "possibly_same_as",
