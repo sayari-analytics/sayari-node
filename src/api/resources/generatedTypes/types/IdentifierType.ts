@@ -1802,6 +1802,9 @@ export type IdentifierType =
      * Unique India identifier code. Assigned to all entities listed on the India National Stock Exchange. */
     | "ind_nse_ticker_code"
     /**
+     * Unique Florida county land and property ID number. Assigned to every parcel registered with the Martin County Property Appraiser’s Office. */
+    | "usa_fl_martin_pid"
+    /**
      * Unique Florida county land and property ID number. Assigned to every parcel registered with the Saint Lucie County Property Appraiser’s Office. */
     | "usa_fl_sl_pid"
     /**
@@ -2422,6 +2425,7 @@ export const IdentifierType = {
     GbrEnforcementActionNum: "gbr_enforcement_action_num",
     TzaBrelaRegNum: "tza_brela_reg_num",
     IndNseTickerCode: "ind_nse_ticker_code",
+    UsaFlMartinPid: "usa_fl_martin_pid",
     UsaFlSlPid: "usa_fl_sl_pid",
     CanQcSapRegistryRefNum: "can_qc_sap_registry_ref_num",
 } as const;
