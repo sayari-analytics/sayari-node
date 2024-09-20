@@ -40,6 +40,7 @@ export const BusinessPurposeStandard: core.serialization.Schema<
     "CAE",
     "TOL2008",
     "ADGM",
+    "NIC2008",
 ]);
 
 export declare namespace BusinessPurposeStandard {
@@ -73,5 +74,6 @@ export declare namespace BusinessPurposeStandard {
         | "ATECO"
         | "CAE"
         | "TOL2008"
-        | "ADGM";
+        | "ADGM"
+        | "NIC2008";
 }

@@ -95,7 +95,10 @@ export type BusinessPurposeStandard =
     | "TOL2008"
     /**
      * Abu Dhabi Global Market Activity Code */
-    | "ADGM";
+    | "ADGM"
+    /**
+     * India National Industrial Classification - 2008 (NIC-2008) */
+    | "NIC2008";
 
 export const BusinessPurposeStandard = {
     Cnae2: "CNAE2",
@@ -128,4 +131,5 @@ export const BusinessPurposeStandard = {
     Cae: "CAE",
     Tol2008: "TOL2008",
     Adgm: "ADGM",
+    Nic2008: "NIC2008",
 } as const;
