@@ -5,6 +5,7 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
+import { MatchQuality } from "./MatchQuality";
 
 export const MatchExplanation: core.serialization.ObjectSchema<
     serializers.MatchExplanation.Raw,
@@ -29,6 +30,7 @@ export const MatchExplanation: core.serialization.ObjectSchema<
         "n_uncommon_term_matches",
         core.serialization.number().optional()
     ),
+    matchQuality: core.serialization.property("match_quality", MatchQuality.optional()),
 });
 
 export declare namespace MatchExplanation {
@@ -40,5 +42,6 @@ export declare namespace MatchExplanation {
         is_deletion_recommended?: boolean | null;
         n_common_term_matches?: number | null;
         n_uncommon_term_matches?: number | null;
+        match_quality?: MatchQuality.Raw | null;
     }
 }
