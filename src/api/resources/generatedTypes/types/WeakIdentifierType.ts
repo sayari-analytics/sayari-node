@@ -323,6 +323,9 @@ export type WeakIdentifierType =
      * Unique Ireland ID number. Assigned to every legal entity registered with Ireland Companies Registration Office. */
     | "irl_registration_no"
     /**
+     * USA Minnesota Secretary of State Filing Number */
+    | "usa_mn_filing_number"
+    /**
      * A temporary malformed type */
     | "malformed mmr_prior_reg_no";
 
@@ -433,5 +436,6 @@ export const WeakIdentifierType = {
     AusStateRegNumber: "aus_state_reg_number",
     HunOptenId: "hun_opten_id",
     IrlRegistrationNo: "irl_registration_no",
+    UsaMnFilingNumber: "usa_mn_filing_number",
     MalformedMmrPriorRegNo: "malformed mmr_prior_reg_no",
 } as const;
