@@ -2670,7 +2670,7 @@ The Shortest Path endpoint returns a response identifying the shortest traversal
 
 ```typescript
 await client.traversal.shortestPath({
-    entities: "string",
+    entities: "H1y25N5ymnFyZ-q9Lpwm_g&entities=xthsA_jQuKn3GW8-9ILQqg",
 });
 ```
 

@@ -5,9 +5,12 @@
 /**
  * @example
  *     {
- *         entities: "string"
+ *         entities: "H1y25N5ymnFyZ-q9Lpwm_g&entities=xthsA_jQuKn3GW8-9ILQqg"
  *     }
  */
 export interface ShortestPath {
+    /**
+     * A list of Sayari entity IDs specifying the source and target entities for the shortest path calculation. The list must contain exactly two entity IDs The first entity ID represents the source.The second entity ID represents the target.
+     */
     entities: string | string[];
 }
