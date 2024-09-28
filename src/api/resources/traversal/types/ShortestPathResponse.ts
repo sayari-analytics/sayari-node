@@ -9,118 +9,111 @@ import * as Sayari from "../../../index";
  *
  * @example
  *     {
- *         entities: ["mGq1lpuqKssNWTjIokuPeA", "ekPP386sHXHREr15-iVgvw"],
+ *         entities: ["H1y25N5ymnFyZ-q9Lpwm_g", "1nOeH5G2EhmRVtmeVqO2Lw"],
  *         data: [{
- *                 source: "mGq1lpuqKssNWTjIokuPeA",
+ *                 source: "H1y25N5ymnFyZ-q9Lpwm_g",
  *                 target: {
- *                     id: "ekPP386sHXHREr15-iVgvw",
- *                     label: "BECKHAM RETAIL LIMITED",
- *                     degree: 6,
- *                     entityUrl: "/v1/entity/ekPP386sHXHREr15-iVgvw",
+ *                     id: "1nOeH5G2EhmRVtmeVqO2Lw",
+ *                     label: "Mr Thomas Bangalter",
+ *                     degree: 1,
+ *                     entityUrl: "/v1/entity/1nOeH5G2EhmRVtmeVqO2Lw",
  *                     pep: false,
  *                     psaCount: 0,
  *                     sanctioned: false,
  *                     closed: false,
- *                     companyType: "Private Limited Company",
- *                     registrationDate: "Incorporated 2013-08-22",
- *                     latestStatus: {
- *                         status: "active"
- *                     },
  *                     tradeCount: {
  *                         "sent": 0,
  *                         "received": 0
  *                     },
- *                     type: Sayari.Entities.Company,
+ *                     type: Sayari.Entities.Person,
  *                     identifiers: [{
- *                             value: "08661308",
- *                             type: Sayari.IdentifierType.UkCompanyNumber,
- *                             label: "Uk Company Number"
+ *                             value: "053673450003",
+ *                             type: Sayari.IdentifierType.UkPersonNumber,
+ *                             label: "Uk Person Number"
+ *                         }, {
+ *                             value: "053673450002",
+ *                             type: Sayari.IdentifierType.UkPersonNumber,
+ *                             label: "Uk Person Number"
  *                         }],
- *                     addresses: ["202 HAMMERSMITH ROAD, LONDON, W6 7DN"],
- *                     countries: [Sayari.Country.Gbr],
+ *                     addresses: ["5TH FLOOR 104 OXFORD STREET, W1D 1LP, LONDON, UNITED KINGDOM", "Oxford Street, London, W1D 1LP", "8 AVENUE RACHEL, 75018, FRANCE"],
+ *                     dateOfBirth: "1975-01",
+ *                     countries: [Sayari.Country.Fra, Sayari.Country.Gbr],
  *                     relationshipCount: {
- *                         [Sayari.Relationships.LinkedTo]: 1,
- *                         [Sayari.Relationships.HasRegisteredAgent]: 1,
- *                         [Sayari.Relationships.HasDirector]: 4,
- *                         [Sayari.Relationships.HasShareholder]: 1
+ *                         [Sayari.Relationships.RegisteredAgentOf]: 1,
+ *                         [Sayari.Relationships.ShareholderOf]: 1,
+ *                         [Sayari.Relationships.DirectorOf]: 1
  *                     },
  *                     sourceCount: {
- *                         "ecdfb3f2ecc8c3797e77d5795a8066ef": {
- *                             count: 33,
- *                             label: "UK Corporate Registry"
- *                         },
- *                         "2b618f1996252fe537a6d998ae14c9b2": {
- *                             count: 1,
- *                             label: "UK Corporate Registry Confirmation Statements"
- *                         },
  *                         "4ea8bac1bed868e1510ffd21842e9551": {
- *                             count: 23,
+ *                             count: 28,
  *                             label: "UK Persons with Significant Control"
+ *                         },
+ *                         "ecdfb3f2ecc8c3797e77d5795a8066ef": {
+ *                             count: 17,
+ *                             label: "UK Corporate Registry"
  *                         }
  *                     },
- *                     risk: {},
+ *                     risk: {
+ *                         [Sayari.Risk.BaselAml]: {
+ *                             value: 3.67,
+ *                             metadata: {
+ *                                 "country": [
+ *                                     "GBR"
+ *                                 ]
+ *                             },
+ *                             level: Sayari.RiskLevel.Relevant
+ *                         },
+ *                         [Sayari.Risk.CpiScore]: {
+ *                             value: 71,
+ *                             metadata: {
+ *                                 "country": [
+ *                                     "FRA"
+ *                                 ]
+ *                             },
+ *                             level: Sayari.RiskLevel.Relevant
+ *                         }
+ *                     },
  *                     userAttributeCount: {},
  *                     userRecordCount: 0,
  *                     userRelatedEntitiesCount: 0,
  *                     userRelationshipCount: {},
- *                     relatedEntitiesCount: 6,
+ *                     relatedEntitiesCount: 1,
  *                     attributeCount: {
- *                         [Sayari.Attributes.CompanyType]: 1,
- *                         [Sayari.Attributes.Name]: 2,
- *                         [Sayari.Attributes.BusinessPurpose]: 2,
- *                         [Sayari.Attributes.Identifier]: 1,
- *                         [Sayari.Attributes.Country]: 2,
- *                         [Sayari.Attributes.Status]: 2,
- *                         [Sayari.Attributes.Address]: 1
+ *                         [Sayari.Attributes.Name]: 1,
+ *                         [Sayari.Attributes.Identifier]: 2,
+ *                         [Sayari.Attributes.AdditionalInformation]: 2,
+ *                         [Sayari.Attributes.Country]: 4,
+ *                         [Sayari.Attributes.DateOfBirth]: 1,
+ *                         [Sayari.Attributes.Address]: 5
  *                     },
- *                     referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/08661308/1540252800000:6f842cf70eab52cc2178b948dea30489"
+ *                     referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/03389614/1540252800000:9030330caf25555c42c0bc0d84ea4aa1"
  *                 },
  *                 path: [{
- *                         field: "shareholder_of",
+ *                         field: "has_lawyer",
  *                         entity: {
- *                             id: "ekPP386sHXHREr15-iVgvw",
- *                             label: "BECKHAM RETAIL LIMITED",
- *                             degree: 6,
- *                             entityUrl: "/v1/entity/ekPP386sHXHREr15-iVgvw",
+ *                             id: "xthsA_jQuKn3GW8-9ILQqg",
+ *                             label: "LAWRENCE E. APOLZON",
+ *                             degree: 179,
+ *                             entityUrl: "/v1/entity/xthsA_jQuKn3GW8-9ILQqg",
  *                             pep: false,
  *                             psaCount: 0,
  *                             sanctioned: false,
  *                             closed: false,
- *                             companyType: "Private Limited Company",
- *                             registrationDate: "Incorporated 2013-08-22",
- *                             latestStatus: {
- *                                 status: "active"
- *                             },
  *                             tradeCount: {
  *                                 "sent": 0,
  *                                 "received": 0
  *                             },
- *                             type: Sayari.Entities.Company,
- *                             identifiers: [{
- *                                     value: "08661308",
- *                                     type: Sayari.IdentifierType.UkCompanyNumber,
- *                                     label: "Uk Company Number"
- *                                 }],
- *                             addresses: ["202 HAMMERSMITH ROAD, LONDON, W6 7DN"],
- *                             countries: [Sayari.Country.Gbr],
+ *                             type: Sayari.Entities.Person,
+ *                             identifiers: [],
+ *                             addresses: ["Fross Zelnick Lehrman & Zissu, P.C., 866 United Nations Plaza, New York NY 10017", "FROSS ZELNICK LEHRMAN & ZISSU, P.C., 4 TIMES SQUARE, 17TH FLOOR, NEW YORK, NY 10036", "Fross Zelnick Lehrman & Zissu, P.C., 151 West 42nd Street, 17th Floor, New York, NY 10036"],
+ *                             countries: [Sayari.Country.Usa],
  *                             relationshipCount: {
- *                                 [Sayari.Relationships.LinkedTo]: 1,
- *                                 [Sayari.Relationships.HasRegisteredAgent]: 1,
- *                                 [Sayari.Relationships.HasDirector]: 4,
- *                                 [Sayari.Relationships.HasShareholder]: 1
+ *                                 [Sayari.Relationships.LawyerOf]: 179
  *                             },
  *                             sourceCount: {
- *                                 "ecdfb3f2ecc8c3797e77d5795a8066ef": {
- *                                     count: 33,
- *                                     label: "UK Corporate Registry"
- *                                 },
- *                                 "2b618f1996252fe537a6d998ae14c9b2": {
- *                                     count: 1,
- *                                     label: "UK Corporate Registry Confirmation Statements"
- *                                 },
- *                                 "4ea8bac1bed868e1510ffd21842e9551": {
- *                                     count: 23,
- *                                     label: "UK Persons with Significant Control"
+ *                                 "ac1fa195f9cd4ccf657bca3c6db0bb19": {
+ *                                     count: 199,
+ *                                     label: "USA Patents and Trademark Office Trademark Applications"
  *                                 }
  *                             },
  *                             risk: {},
@@ -128,225 +121,19 @@ import * as Sayari from "../../../index";
  *                             userRecordCount: 0,
  *                             userRelatedEntitiesCount: 0,
  *                             userRelationshipCount: {},
- *                             relatedEntitiesCount: 6,
+ *                             relatedEntitiesCount: 179,
  *                             attributeCount: {
- *                                 [Sayari.Attributes.CompanyType]: 1,
- *                                 [Sayari.Attributes.Name]: 2,
- *                                 [Sayari.Attributes.BusinessPurpose]: 2,
- *                                 [Sayari.Attributes.Identifier]: 1,
- *                                 [Sayari.Attributes.Country]: 2,
- *                                 [Sayari.Attributes.Status]: 2,
- *                                 [Sayari.Attributes.Address]: 1
+ *                                 [Sayari.Attributes.Country]: 1,
+ *                                 [Sayari.Attributes.Address]: 5,
+ *                                 [Sayari.Attributes.Name]: 1
  *                             },
- *                             referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/08661308/1540252800000:6f842cf70eab52cc2178b948dea30489"
+ *                             referenceId: "ac1fa195f9cd4ccf657bca3c6db0bb19/76232419/1717632000000:6d0f0edbd065319df4be58c3bc7909f5"
  *                         },
  *                         relationships: {
- *                             [Sayari.Relationships.LinkedTo]: {
+ *                             [Sayari.Relationships.HasLawyer]: {
  *                                 values: [{
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/08661308/1560176240192",
- *                                         acquisitionDate: "2019-06-10",
- *                                         attributes: {
- *                                             [Sayari.Attributes.Position]: [{
- *                                                     "value": "Has right to appoint and remove directors"
- *                                                 }, {
- *                                                     "value": "Owns 75-100% of shares"
- *                                                 }, {
- *                                                     "value": "Owns 75-100% of voting rights"
- *                                                 }]
- *                                         }
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1586822400000",
- *                                         acquisitionDate: "2020-04-14",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1601424000000",
- *                                         acquisitionDate: "2020-09-30",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1616630400000",
- *                                         acquisitionDate: "2021-03-25",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1634169600000",
- *                                         acquisitionDate: "2021-10-14",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1649894400000",
- *                                         acquisitionDate: "2022-04-14",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1667433600000",
- *                                         acquisitionDate: "2022-11-03",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1675123200000",
- *                                         acquisitionDate: "2023-01-31",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1676505600000",
- *                                         acquisitionDate: "2023-02-16",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1678320000000",
- *                                         acquisitionDate: "2023-03-09",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1680566400000",
- *                                         acquisitionDate: "2023-04-04",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1682899200000",
- *                                         acquisitionDate: "2023-05-01",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1685577600000",
- *                                         acquisitionDate: "2023-06-01",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1689033600000",
- *                                         acquisitionDate: "2023-07-11",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1692662400000",
- *                                         acquisitionDate: "2023-08-22",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1694476800000",
- *                                         acquisitionDate: "2023-09-12",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1696896000000",
- *                                         acquisitionDate: "2023-10-10",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1699488000000",
- *                                         acquisitionDate: "2023-11-09",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1702252800000",
- *                                         acquisitionDate: "2023-12-11",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1704067200000",
- *                                         acquisitionDate: "2024-01-01",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1706832000000",
- *                                         acquisitionDate: "2024-02-02",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1709596800000",
- *                                         acquisitionDate: "2024-03-05",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1711843200000",
- *                                         acquisitionDate: "2024-03-31",
- *                                         attributes: {}
- *                                     }]
- *                             },
- *                             [Sayari.Relationships.ShareholderOf]: {
- *                                 values: [{
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/08661308/1560176240192",
- *                                         acquisitionDate: "2019-06-10",
- *                                         attributes: {
- *                                             [Sayari.Attributes.Position]: [{
- *                                                     "value": "Has right to appoint and remove directors"
- *                                                 }, {
- *                                                     "value": "Owns 75-100% of shares"
- *                                                 }, {
- *                                                     "value": "Owns 75-100% of voting rights"
- *                                                 }],
- *                                             [Sayari.Attributes.Shares]: [{
- *                                                     "percentage": 75
- *                                                 }]
- *                                         }
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1586822400000",
- *                                         acquisitionDate: "2020-04-14",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1601424000000",
- *                                         acquisitionDate: "2020-09-30",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1616630400000",
- *                                         acquisitionDate: "2021-03-25",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1634169600000",
- *                                         acquisitionDate: "2021-10-14",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1649894400000",
- *                                         acquisitionDate: "2022-04-14",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1667433600000",
- *                                         acquisitionDate: "2022-11-03",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1675123200000",
- *                                         acquisitionDate: "2023-01-31",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1676505600000",
- *                                         acquisitionDate: "2023-02-16",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1678320000000",
- *                                         acquisitionDate: "2023-03-09",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1680566400000",
- *                                         acquisitionDate: "2023-04-04",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1682899200000",
- *                                         acquisitionDate: "2023-05-01",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1685577600000",
- *                                         acquisitionDate: "2023-06-01",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1689033600000",
- *                                         acquisitionDate: "2023-07-11",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1692662400000",
- *                                         acquisitionDate: "2023-08-22",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1694476800000",
- *                                         acquisitionDate: "2023-09-12",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1696896000000",
- *                                         acquisitionDate: "2023-10-10",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1699488000000",
- *                                         acquisitionDate: "2023-11-09",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1702252800000",
- *                                         acquisitionDate: "2023-12-11",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1704067200000",
- *                                         acquisitionDate: "2024-01-01",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1706832000000",
- *                                         acquisitionDate: "2024-02-02",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1709596800000",
- *                                         acquisitionDate: "2024-03-05",
- *                                         attributes: {}
- *                                     }, {
- *                                         record: "4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1711843200000",
- *                                         acquisitionDate: "2024-03-31",
+ *                                         record: "ac1fa195f9cd4ccf657bca3c6db0bb19/76082348/1717632000000",
+ *                                         acquisitionDate: "2024-06-06",
  *                                         attributes: {}
  *                                     }]
  *                             }
