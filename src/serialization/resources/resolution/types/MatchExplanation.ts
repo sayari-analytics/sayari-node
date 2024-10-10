@@ -13,18 +13,11 @@ export const MatchExplanation: core.serialization.ObjectSchema<
 > = core.serialization.object({
     matched: core.serialization.string().optional(),
     uploaded: core.serialization.string().optional(),
-    nameCustomTfIdfScore: core.serialization.property(
-        "name_custom_tf_idf_score",
-        core.serialization.number().optional()
-    ),
     highQualityMatchName: core.serialization.property(
         "high_quality_match_name",
         core.serialization.boolean().optional()
     ),
-    isDeletionRecommended: core.serialization.property(
-        "is_deletion_recommended",
-        core.serialization.boolean().optional()
-    ),
+    scores: core.serialization.record(core.serialization.string(), core.serialization.number()).optional(),
     nCommonTermMatches: core.serialization.property("n_common_term_matches", core.serialization.number().optional()),
     nUncommonTermMatches: core.serialization.property(
         "n_uncommon_term_matches",
@@ -37,9 +30,8 @@ export declare namespace MatchExplanation {
     interface Raw {
         matched?: string | null;
         uploaded?: string | null;
-        name_custom_tf_idf_score?: number | null;
         high_quality_match_name?: boolean | null;
-        is_deletion_recommended?: boolean | null;
+        scores?: Record<string, number> | null;
         n_common_term_matches?: number | null;
         n_uncommon_term_matches?: number | null;
         match_quality?: MatchQuality.Raw | null;

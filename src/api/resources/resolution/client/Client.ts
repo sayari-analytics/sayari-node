@@ -43,15 +43,15 @@ export class Resolution {
      *
      * @example
      *     await client.resolution.resolution({
-     *         name: "victoria beckham limited",
-     *         limit: 1
+     *         name: "Thomas Bangalter",
+     *         address: "8 AVENUE RACHEL",
+     *         country: "FRA"
      *     })
      *
      * @example
      *     await client.resolution.resolution({
-     *         name: "victoria beckham limited",
-     *         limit: 1,
-     *         profile: "suppliers"
+     *         name: "Oleg Deripaska",
+     *         country: "RUS"
      *     })
      */
     public async resolution(
@@ -73,6 +73,8 @@ export class Resolution {
             profile,
             nameMinPercentage,
             nameMinTokens,
+            minimumScoreThreshold,
+            searchFallback,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
@@ -169,6 +171,14 @@ export class Resolution {
             _queryParams["name_min_tokens"] = nameMinTokens.toString();
         }
 
+        if (minimumScoreThreshold != null) {
+            _queryParams["minimum_score_threshold"] = minimumScoreThreshold.toString();
+        }
+
+        if (searchFallback != null) {
+            _queryParams["search_fallback"] = searchFallback.toString();
+        }
+
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
@@ -179,8 +189,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.17",
-                "User-Agent": "@sayari/sdk/0.1.17",
+                "X-Fern-SDK-Version": "0.1.18",
+                "User-Agent": "@sayari/sdk/0.1.18",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -333,8 +343,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.17",
-                "User-Agent": "@sayari/sdk/0.1.17",
+                "X-Fern-SDK-Version": "0.1.18",
+                "User-Agent": "@sayari/sdk/0.1.18",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -348,163 +358,6 @@ export class Resolution {
         });
         if (_response.ok) {
             return serializers.ResolutionResponse.parseOrThrow(_response.body, {
-                unrecognizedObjectKeys: "passthrough",
-                allowUnrecognizedUnionMembers: true,
-                allowUnrecognizedEnumValues: true,
-                breadcrumbsPrefix: ["response"],
-            });
-        }
-
-        if (_response.error.reason === "status-code") {
-            switch (_response.error.statusCode) {
-                case 400:
-                    throw new Sayari.BadRequest(
-                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 401:
-                    throw new Sayari.Unauthorized(
-                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 405:
-                    throw new Sayari.MethodNotAllowed(
-                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 406:
-                    throw new Sayari.NotAcceptable(
-                        serializers.NotAcceptableResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 429:
-                    throw new Sayari.RateLimitExceeded(
-                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                case 500:
-                    throw new Sayari.InternalServerError(
-                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        })
-                    );
-                default:
-                    throw new errors.SayariError({
-                        statusCode: _response.error.statusCode,
-                        body: _response.error.body,
-                    });
-            }
-        }
-
-        switch (_response.error.reason) {
-            case "non-json":
-                throw new errors.SayariError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.rawBody,
-                });
-            case "timeout":
-                throw new errors.SayariTimeoutError();
-            case "unknown":
-                throw new errors.SayariError({
-                    message: _response.error.errorMessage,
-                });
-        }
-    }
-
-    /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
-     *
-     * @param {string} projectId - Unique identifier of the project
-     * @param {Sayari.ResolutionPersisted} request
-     * @param {Resolution.RequestOptions} requestOptions - Request-specific configuration.
-     *
-     * @throws {@link Sayari.BadRequest}
-     * @throws {@link Sayari.Unauthorized}
-     * @throws {@link Sayari.MethodNotAllowed}
-     * @throws {@link Sayari.NotAcceptable}
-     * @throws {@link Sayari.RateLimitExceeded}
-     * @throws {@link Sayari.InternalServerError}
-     *
-     * @example
-     *     await client.resolution.resolutionPersisted("V03eYM", {
-     *         limit: 1,
-     *         body: {
-     *             name: ["victoria beckham limited"]
-     *         }
-     *     })
-     *
-     * @example
-     *     await client.resolution.resolutionPersisted("6GaxYn", {
-     *         limit: 1,
-     *         body: {
-     *             name: ["victoria beckham limited"],
-     *             profile: "suppliers"
-     *         }
-     *     })
-     */
-    public async resolutionPersisted(
-        projectId: string,
-        request: Sayari.ResolutionPersisted,
-        requestOptions?: Resolution.RequestOptions
-    ): Promise<Sayari.ResolutionPersistedResponse> {
-        const { limit, offset, body: _body } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
-        if (limit != null) {
-            _queryParams["limit"] = limit.toString();
-        }
-
-        if (offset != null) {
-            _queryParams["offset"] = offset.toString();
-        }
-
-        const _response = await core.fetcher({
-            url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                `/v1/resolution/persisted/${encodeURIComponent(projectId)}`
-            ),
-            method: "POST",
-            headers: {
-                Authorization: await this._getAuthorizationHeader(),
-                "X-Fern-Language": "JavaScript",
-                "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.17",
-                "User-Agent": "@sayari/sdk/0.1.17",
-                "X-Fern-Runtime": core.RUNTIME.type,
-                "X-Fern-Runtime-Version": core.RUNTIME.version,
-            },
-            contentType: "application/json",
-            queryParameters: _queryParams,
-            requestType: "json",
-            body: serializers.ResolutionBody.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
-            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
-            maxRetries: requestOptions?.maxRetries,
-            abortSignal: requestOptions?.abortSignal,
-        });
-        if (_response.ok) {
-            return serializers.ResolutionPersistedResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,

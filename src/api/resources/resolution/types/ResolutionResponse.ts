@@ -8,36 +8,65 @@ import * as Sayari from "../../../index";
  * @example
  *     {
  *         fields: {
- *             name: ["victoria beckham limited"]
+ *             name: ["Thomas Bangalter"],
+ *             address: ["8 AVENUE RACHEL"],
+ *             country: [Sayari.Country.Fra]
  *         },
  *         data: [{
  *                 profile: "corporate",
- *                 score: 491.08936,
- *                 entityId: "ds5rQ3rMIeoN3xZUzVyVNQ",
- *                 label: "VICTORIA BECKHAM",
+ *                 score: 453.80554,
+ *                 entityId: "1nOeH5G2EhmRVtmeVqO2Lw",
+ *                 label: "Mr Thomas Bangalter",
  *                 type: Sayari.Entities.Person,
- *                 identifiers: [],
- *                 addresses: ["C/O LEE & THOMPSON LLP, 4 GEE'S COURT, ST-CHRISTOPHER'S PLACE"],
- *                 countries: [Sayari.Country.Gbr, Sayari.Country.Mex],
- *                 sources: ["b9d809b02049993ba8dc2e4c5f7cceca"],
- *                 typedMatchedQueries: ["name|0", "name|100phrase|0", "name|100match|0", "looseName|0"],
- *                 matchedQueries: ["name"],
+ *                 identifiers: [{
+ *                         type: Sayari.IdentifierType.UkPersonNumber,
+ *                         value: "053673450003",
+ *                         label: "Uk Person Number"
+ *                     }, {
+ *                         type: Sayari.IdentifierType.UkPersonNumber,
+ *                         value: "053673450002",
+ *                         label: "Uk Person Number"
+ *                     }],
+ *                 addresses: ["5TH FLOOR 104 OXFORD STREET, W1D 1LP, LONDON, UNITED KINGDOM", "Oxford Street, London, W1D 1LP", "8 AVENUE RACHEL, 75018, FRANCE", "4th Floor, 205 Wardour Street, London, W1F 8ZJ", "MSE BUSINESS MANAGEMENT LLP 4TH FLOOR, 205 WARDOUR STREET, W1F 8ZJ, UNITED KINGDOM"],
+ *                 countries: [Sayari.Country.Fra, Sayari.Country.Gbr],
+ *                 sources: ["ecdfb3f2ecc8c3797e77d5795a8066ef", "4ea8bac1bed868e1510ffd21842e9551"],
+ *                 typedMatchedQueries: ["address|sub|phraseStripped|0", "name|100match|0", "address|subclause|0", "address|numericFirst|0", "address|numericFull|0", "address|V2|Strict|0", "name|StrictV2|0", "address|V3|0", "name|100phrase|0", "country|0", "address|sub|cleanedAddress|0", "address|sub|phraseFirstHalf|0"],
+ *                 matchedQueries: ["address", "name", "identifier", "country"],
  *                 highlight: {
- *                     "name": ["<em>VICTORIA</em> <em>BECKHAM</em>"]
+ *                     "name": ["Mr <em>Thomas</em> <em>Bangalter</em>"],
+ *                     "address": ["<em>8</em> <em>AVENUE</em> <em>RACHEL</em>, 75018, FRANCE"],
+ *                     "country": ["<em>FRA</em>"]
  *                 },
  *                 explanation: {
  *                     "name": [{
- *                             matched: "<em>VICTORIA</em> <em>BECKHAM</em>",
- *                             uploaded: "victoria beckham limited",
- *                             nameCustomTfIdfScore: 0.5416772821044128,
+ *                             matched: "Mr <em>Thomas</em> <em>Bangalter</em>",
+ *                             uploaded: "Thomas Bangalter",
  *                             highQualityMatchName: true,
- *                             isDeletionRecommended: false,
+ *                             scores: {
+ *                                 "tf": 0.35648895767689204,
+ *                                 "lv": 0.9142857142857143,
+ *                                 "fz": 0.8421052631578947,
+ *                                 "l1": 1,
+ *                                 "l2": 1
+ *                             },
  *                             nCommonTermMatches: 1,
  *                             nUncommonTermMatches: 1
+ *                         }],
+ *                     "address": [{
+ *                             matched: "<em>8</em> <em>AVENUE</em> <em>RACHEL</em>, 75018, FRANCE",
+ *                             uploaded: "8 AVENUE RACHEL",
+ *                             matchQuality: Sayari.MatchQuality.Medium,
+ *                             scores: {
+ *                                 "9p": 0.47058823529411764
+ *                             }
+ *                         }],
+ *                     "country": [{
+ *                             matched: "<em>FRA</em>",
+ *                             uploaded: "FRA"
  *                         }]
  *                 },
  *                 matchStrength: {
- *                     value: "weak"
+ *                     value: "strong"
  *                 }
  *             }]
  *     }
@@ -45,33 +74,51 @@ import * as Sayari from "../../../index";
  * @example
  *     {
  *         fields: {
- *             name: ["victoria beckham limited"],
- *             profile: "suppliers"
+ *             name: ["Oleg Deripaska"],
+ *             country: [Sayari.Country.Rus]
  *         },
  *         data: [{
- *                 profile: "suppliers",
- *                 score: 490.31046,
- *                 entityId: "ds5rQ3rMIeoN3xZUzVyVNQ",
- *                 label: "VICTORIA BECKHAM",
+ *                 profile: "corporate",
+ *                 score: 684.66614,
+ *                 entityId: "2C2Jb953-IeDXWd1arRMVw",
+ *                 label: "Oleg Vladimirovich Deripaska",
  *                 type: Sayari.Entities.Person,
- *                 identifiers: [],
- *                 addresses: ["C/O LEE & THOMPSON LLP, 4 GEE'S COURT, ST-CHRISTOPHER'S PLACE"],
- *                 countries: [Sayari.Country.Gbr, Sayari.Country.Mex],
- *                 sources: ["b9d809b02049993ba8dc2e4c5f7cceca"],
- *                 typedMatchedQueries: ["name|0", "name|100phrase|0", "name|100match|0", "looseName|0"],
- *                 matchedQueries: ["name"],
+ *                 identifiers: [{
+ *                         type: Sayari.IdentifierType.UsaOfacSdnNumber,
+ *                         value: "24283",
+ *                         label: "Usa Ofac Sdn Number"
+ *                     }, {
+ *                         type: Sayari.IdentifierType.EuSanctionRn,
+ *                         value: "EU.7890.86",
+ *                         label: "Eu Sanction Rn"
+ *                     }],
+ *                 addresses: ["5, Belgrave Square, Belgravia, London, SW1X 8PH, United Kingdom", "64 Severnaya Street Oktyabrsky Khutor, Ust-Labinsky District, Krasnodar Krai (Territory), 352332, RU"],
+ *                 countries: [Sayari.Country.Rus, Sayari.Country.Cyp, Sayari.Country.Gbr, Sayari.Country.Hkg, Sayari.Country.Bel],
+ *                 sources: ["a8c6ee1cd4dfc952105ee8c0e4836f08", "72b09952a36b8f7ae72ae6ca7f410d8c"],
+ *                 typedMatchedQueries: ["name|0", "name|100phrase|0", "country|1", "country|0", "name|100match|0", "looseName|0"],
+ *                 matchedQueries: ["name", "country"],
  *                 highlight: {
- *                     "name": ["<em>VICTORIA</em> <em>BECKHAM</em>"]
+ *                     "name": ["<em>Oleg</em> <em>DERIPASKA</em>", "Mr <em>Oleg</em> <em>Deripaska</em>", "<em>Oleg</em> Vladimirovich <em>Deripaska</em>", "<em>\u041E\u043B\u0435\u0433</em> \u0412\u043B\u0430\u0434\u0438\u043C\u0438\u0440\u043E\u0432\u0438\u0447 <em>\u0414\u0415\u0420\u0418\u041F\u0410\u0421\u041A\u0410</em>", "<em>Oleg</em> Vladimirovi\u010D <em>DERIPASKA</em>"],
+ *                     "country": ["<em>RUS</em>"]
  *                 },
  *                 explanation: {
  *                     "name": [{
- *                             matched: "<em>VICTORIA</em> <em>BECKHAM</em>",
- *                             uploaded: "victoria beckham limited",
- *                             nameCustomTfIdfScore: 0.5416772821044128,
+ *                             matched: "<em>Oleg</em> <em>DERIPASKA</em>",
+ *                             uploaded: "Oleg Deripaska",
  *                             highQualityMatchName: true,
- *                             isDeletionRecommended: false,
+ *                             scores: {
+ *                                 "tf": 0.5438196814788134,
+ *                                 "lv": 1,
+ *                                 "fz": 1,
+ *                                 "l1": 1,
+ *                                 "l2": 1
+ *                             },
  *                             nCommonTermMatches: 1,
  *                             nUncommonTermMatches: 1
+ *                         }],
+ *                     "country": [{
+ *                             matched: "<em>RUS</em>",
+ *                             uploaded: "RUS"
  *                         }]
  *                 },
  *                 matchStrength: {
