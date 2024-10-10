@@ -13,7 +13,7 @@ import { ProfileEnum } from "./ProfileEnum";
 export const ResolutionBody: core.serialization.ObjectSchema<serializers.ResolutionBody.Raw, Sayari.ResolutionBody> =
     core.serialization.object({
         name: core.serialization.list(core.serialization.string()).optional(),
-        identifier: core.serialization.list(BothIdentifierTypes).optional(),
+        identifier: BothIdentifierTypes.optional(),
         address: core.serialization.list(core.serialization.string()).optional(),
         city: core.serialization.string().optional(),
         state: core.serialization.string().optional(),
@@ -27,12 +27,17 @@ export const ResolutionBody: core.serialization.ObjectSchema<serializers.Resolut
         profile: ProfileEnum.optional(),
         nameMinPercentage: core.serialization.property("name_min_percentage", core.serialization.number().optional()),
         nameMinTokens: core.serialization.property("name_min_tokens", core.serialization.number().optional()),
+        minimumScoreThreshold: core.serialization.property(
+            "minimum_score_threshold",
+            core.serialization.number().optional()
+        ),
+        searchFallback: core.serialization.property("search_fallback", core.serialization.boolean().optional()),
     });
 
 export declare namespace ResolutionBody {
     interface Raw {
         name?: string[] | null;
-        identifier?: BothIdentifierTypes.Raw[] | null;
+        identifier?: BothIdentifierTypes.Raw | null;
         address?: string[] | null;
         city?: string | null;
         state?: string | null;
@@ -43,5 +48,7 @@ export declare namespace ResolutionBody {
         profile?: ProfileEnum.Raw | null;
         name_min_percentage?: number | null;
         name_min_tokens?: number | null;
+        minimum_score_threshold?: number | null;
+        search_fallback?: boolean | null;
     }
 }
