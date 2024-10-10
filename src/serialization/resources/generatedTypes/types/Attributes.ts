@@ -8,52 +8,52 @@ import * as core from "../../../../core";
 
 export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, Sayari.Attributes> =
     core.serialization.enum_([
-        "person_status",
-        "country",
-        "address",
-        "additional_information",
-        "company_type",
-        "position",
-        "weak_identifier",
-        "finances",
-        "shares",
-        "generic",
-        "measurement",
-        "status",
-        "date_of_birth",
+        "contact",
         "name",
+        "country",
         "financials",
+        "date_of_birth",
+        "shares",
+        "identifier",
+        "monetary_value",
+        "additional_information",
+        "position",
+        "generic",
+        "finances",
+        "weak_identifier",
+        "person_status",
         "gender",
         "translated_name",
         "risk_intelligence",
-        "monetary_value",
-        "identifier",
-        "contact",
         "business_purpose",
+        "measurement",
+        "address",
+        "status",
+        "company_type",
     ]);
 
 export declare namespace Attributes {
     type Raw =
-        | "person_status"
-        | "country"
-        | "address"
-        | "additional_information"
-        | "company_type"
-        | "position"
-        | "weak_identifier"
-        | "finances"
-        | "shares"
-        | "generic"
-        | "measurement"
-        | "status"
-        | "date_of_birth"
+        | "contact"
         | "name"
+        | "country"
         | "financials"
+        | "date_of_birth"
+        | "shares"
+        | "identifier"
+        | "monetary_value"
+        | "additional_information"
+        | "position"
+        | "generic"
+        | "finances"
+        | "weak_identifier"
+        | "person_status"
         | "gender"
         | "translated_name"
         | "risk_intelligence"
-        | "monetary_value"
-        | "identifier"
-        | "contact"
-        | "business_purpose";
+        | "business_purpose"
+        | "measurement"
+        | "address"
+        | "status"
+        | "company_type";
 }
