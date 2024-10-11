@@ -1348,8 +1348,9 @@ The resolution endpoints allow users to search for matching entities against a p
 
 ```typescript
 await client.resolution.resolution({
-    name: "victoria beckham limited",
-    limit: 1,
+    name: "Thomas Bangalter",
+    address: "8 AVENUE RACHEL",
+    country: "FRA",
 });
 ```
 
@@ -1435,82 +1436,6 @@ await client.resolution.resolutionPost({
 <dd>
 
 **request:** `Sayari.ResolutionPost`
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**requestOptions:** `Resolution.RequestOptions`
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.resolution.<a href="/src/api/resources/resolution/client/Client.ts">resolutionPersisted</a>(projectId, { ...params }) -> Sayari.ResolutionPersistedResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```typescript
-await client.resolution.resolutionPersisted("V03eYM", {
-    limit: 1,
-    body: {
-        name: ["victoria beckham limited"],
-    },
-});
-```
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**projectId:** `string` — Unique identifier of the project
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request:** `Sayari.ResolutionPersisted`
 
 </dd>
 </dl>

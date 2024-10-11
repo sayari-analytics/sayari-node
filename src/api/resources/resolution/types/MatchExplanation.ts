@@ -7,9 +7,8 @@ import * as Sayari from "../../../index";
 export interface MatchExplanation {
     matched?: string;
     uploaded?: string;
-    nameCustomTfIdfScore?: number;
     highQualityMatchName?: boolean;
-    isDeletionRecommended?: boolean;
+    scores?: Record<string, number>;
     nCommonTermMatches?: number;
     nUncommonTermMatches?: number;
     matchQuality?: Sayari.MatchQuality;
