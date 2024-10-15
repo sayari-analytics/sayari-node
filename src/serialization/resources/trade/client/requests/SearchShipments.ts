@@ -11,14 +11,14 @@ export const SearchShipments: core.serialization.Schema<
     serializers.SearchShipments.Raw,
     Omit<Sayari.SearchShipments, "limit" | "offset">
 > = core.serialization.object({
-    q: core.serialization.string(),
+    q: core.serialization.string().optional(),
     filter: TradeFilterList.optional(),
     facets: core.serialization.boolean().optional(),
 });
 
 export declare namespace SearchShipments {
     interface Raw {
-        q: string;
+        q?: string | null;
         filter?: TradeFilterList.Raw | null;
         facets?: boolean | null;
     }

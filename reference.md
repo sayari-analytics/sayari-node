@@ -1417,7 +1417,9 @@ The resolution endpoints allow users to search for matching entities against a p
 await client.resolution.resolutionPost({
     limit: 1,
     body: {
-        name: ["victoria beckham limited"],
+        name: ["Thomas Bangalter"],
+        address: ["8 AVENUE RACHEL"],
+        country: ["FRA"],
     },
 });
 ```
@@ -2086,7 +2088,7 @@ await client.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
+Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
 
 </dd>
 </dl>
@@ -2104,7 +2106,12 @@ await client.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
 ```typescript
 await client.trade.searchShipments({
     limit: 1,
-    q: "rum",
+    filter: {
+        departureCountry: ["DEU"],
+        arrivalCountry: ["RUS"],
+        hsCode: ["854231"],
+        arrivalDate: ["2024-01 TO 2024-10"],
+    },
 });
 ```
 
@@ -2152,7 +2159,7 @@ await client.trade.searchShipments({
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
+Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
 
 </dd>
 </dl>
@@ -2170,7 +2177,12 @@ await client.trade.searchShipments({
 ```typescript
 await client.trade.searchSuppliers({
     limit: 1,
-    q: "rum",
+    filter: {
+        departureCountry: ["DEU"],
+        arrivalCountry: ["RUS"],
+        hsCode: ["854231"],
+        arrivalDate: ["2024-01 TO 2024-10"],
+    },
 });
 ```
 
@@ -2218,7 +2230,7 @@ await client.trade.searchSuppliers({
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
+Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
 
 </dd>
 </dl>
@@ -2236,7 +2248,12 @@ await client.trade.searchSuppliers({
 ```typescript
 await client.trade.searchBuyers({
     limit: 1,
-    q: "rum",
+    filter: {
+        departureCountry: ["DEU"],
+        arrivalCountry: ["RUS"],
+        hsCode: ["854231"],
+        arrivalDate: ["2024-01 TO 2024-10"],
+    },
 });
 ```
 

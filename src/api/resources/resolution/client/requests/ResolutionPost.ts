@@ -9,7 +9,9 @@ import * as Sayari from "../../../../index";
  *     {
  *         limit: 1,
  *         body: {
- *             name: ["victoria beckham limited"]
+ *             name: ["Thomas Bangalter"],
+ *             address: ["8 AVENUE RACHEL"],
+ *             country: ["FRA"]
  *         }
  *     }
  *
@@ -17,8 +19,8 @@ import * as Sayari from "../../../../index";
  *     {
  *         limit: 1,
  *         body: {
- *             name: ["victoria beckham limited"],
- *             profile: "suppliers"
+ *             name: ["Oleg Deripaska"],
+ *             country: ["RUS"]
  *         }
  *     }
  */

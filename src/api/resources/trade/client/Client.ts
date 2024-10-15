@@ -29,7 +29,7 @@ export class Trade {
     constructor(protected readonly _options: Trade.Options = {}) {}
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
      *
      * @param {Sayari.SearchShipments} request
      * @param {Trade.RequestOptions} requestOptions - Request-specific configuration.
@@ -43,11 +43,16 @@ export class Trade {
      * @example
      *     await client.trade.searchShipments({
      *         limit: 1,
-     *         q: "rum"
+     *         filter: {
+     *             departureCountry: ["DEU"],
+     *             arrivalCountry: ["RUS"],
+     *             hsCode: ["854231"],
+     *             arrivalDate: ["2024-01 TO 2024-10"]
+     *         }
      *     })
      */
     public async searchShipments(
-        request: Sayari.SearchShipments,
+        request: Sayari.SearchShipments = {},
         requestOptions?: Trade.RequestOptions
     ): Promise<Sayari.ShipmentSearchResponse> {
         const { limit, offset, ..._body } = request;
@@ -70,8 +75,8 @@ export class Trade {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.18",
-                "User-Agent": "@sayari/sdk/0.1.18",
+                "X-Fern-SDK-Version": "0.1.19",
+                "User-Agent": "@sayari/sdk/0.1.19",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -163,7 +168,7 @@ export class Trade {
     }
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
      *
      * @param {Sayari.SearchSuppliers} request
      * @param {Trade.RequestOptions} requestOptions - Request-specific configuration.
@@ -177,11 +182,16 @@ export class Trade {
      * @example
      *     await client.trade.searchSuppliers({
      *         limit: 1,
-     *         q: "rum"
+     *         filter: {
+     *             departureCountry: ["DEU"],
+     *             arrivalCountry: ["RUS"],
+     *             hsCode: ["854231"],
+     *             arrivalDate: ["2024-01 TO 2024-10"]
+     *         }
      *     })
      */
     public async searchSuppliers(
-        request: Sayari.SearchSuppliers,
+        request: Sayari.SearchSuppliers = {},
         requestOptions?: Trade.RequestOptions
     ): Promise<Sayari.SupplierSearchResponse> {
         const { limit, offset, ..._body } = request;
@@ -204,8 +214,8 @@ export class Trade {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.18",
-                "User-Agent": "@sayari/sdk/0.1.18",
+                "X-Fern-SDK-Version": "0.1.19",
+                "User-Agent": "@sayari/sdk/0.1.19",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -297,7 +307,7 @@ export class Trade {
     }
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
+     * Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
      *
      * @param {Sayari.SearchBuyers} request
      * @param {Trade.RequestOptions} requestOptions - Request-specific configuration.
@@ -311,11 +321,16 @@ export class Trade {
      * @example
      *     await client.trade.searchBuyers({
      *         limit: 1,
-     *         q: "rum"
+     *         filter: {
+     *             departureCountry: ["DEU"],
+     *             arrivalCountry: ["RUS"],
+     *             hsCode: ["854231"],
+     *             arrivalDate: ["2024-01 TO 2024-10"]
+     *         }
      *     })
      */
     public async searchBuyers(
-        request: Sayari.SearchBuyers,
+        request: Sayari.SearchBuyers = {},
         requestOptions?: Trade.RequestOptions
     ): Promise<Sayari.BuyerSearchResponse> {
         const { limit, offset, ..._body } = request;
@@ -338,8 +353,8 @@ export class Trade {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.18",
-                "User-Agent": "@sayari/sdk/0.1.18",
+                "X-Fern-SDK-Version": "0.1.19",
+                "User-Agent": "@sayari/sdk/0.1.19",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

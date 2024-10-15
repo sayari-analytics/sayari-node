@@ -12,74 +12,94 @@ import * as Sayari from "../../../index";
  *         offset: 0,
  *         limit: 1,
  *         size: {
- *             count: 5541,
+ *             count: 4,
  *             qualifier: Sayari.CountQualifier.Eq
  *         },
  *         next: true,
  *         data: [{
- *                 id: "LvKN1AA74GQ289vydvYgtg",
- *                 label: "RedbusAvto OU",
- *                 degree: 2523,
- *                 entityUrl: "/v1/entity/LvKN1AA74GQ289vydvYgtg",
+ *                 id: "yNwunHdFInERKig0Thusgg",
+ *                 label: "ERBE ELEKTROMEDIZIN GMBH",
+ *                 degree: 6349,
+ *                 entityUrl: "/v1/entity/yNwunHdFInERKig0Thusgg",
  *                 pep: false,
- *                 psaCount: 0,
+ *                 psaId: "4904853096420",
+ *                 psaCount: 1,
  *                 sanctioned: false,
  *                 closed: false,
  *                 type: Sayari.Entities.Company,
- *                 identifiers: [],
- *                 addresses: [],
- *                 countries: [],
+ *                 identifiers: [{
+ *                         value: "52990027L4WYH1AZ2T91",
+ *                         type: Sayari.IdentifierType.Lei,
+ *                         label: "Lei"
+ *                     }, {
+ *                         value: "26.035.445/0001-09",
+ *                         type: Sayari.IdentifierType.BraCnpj,
+ *                         label: "Bra Cnpj"
+ *                     }],
+ *                 addresses: ["WALDHOERNLESTRASSE 17 72072 TUEBINGEN 0 GERMANY", "72072, , TUEBINGEN, WALDHOERNLESTRASSE 17,"],
+ *                 countries: [Sayari.Country.Usa, Sayari.Country.Swe, Sayari.Country.Bel, Sayari.Country.Mex, Sayari.Country.Ita, Sayari.Country.Deu],
  *                 relationshipCount: {
- *                     [Sayari.Relationships.ShipperOf]: 2522,
- *                     [Sayari.Relationships.ShipsTo]: 1
+ *                     [Sayari.Relationships.LinkedTo]: 2,
+ *                     [Sayari.Relationships.OfficerOf]: 1,
+ *                     [Sayari.Relationships.HasOfficer]: 5,
+ *                     [Sayari.Relationships.ShareholderOf]: 3,
+ *                     [Sayari.Relationships.HasShareholder]: 1,
+ *                     [Sayari.Relationships.ShipsTo]: 30,
+ *                     [Sayari.Relationships.ReceivesFrom]: 3
  *                 },
  *                 tradeCount: {
- *                     "sent": 20,
- *                     "received": 33308
+ *                     "sent": 6278,
+ *                     "received": 5
  *                 },
  *                 sourceCount: {
- *                     "96c06a5a03b61b91324c7e05b3114fb6": {
- *                         count: 2522,
- *                         label: "Ukraine Imports & Exports (January 2023 - Present)"
+ *                     "ee100f9b5dfdae8991ba43f5de6e1854": {
+ *                         count: 8,
+ *                         label: "Panama Imports & Exports (January 2022 - Present)"
+ *                     },
+ *                     "26a8072830039f470287902c1530ef79": {
+ *                         count: 6,
+ *                         label: "Belgium Crossroads Bank for Enterprises"
  *                     }
  *                 },
- *                 risk: {},
+ *                 risk: {
+ *                     [Sayari.Risk.BaselAml]: {
+ *                         value: 5.07,
+ *                         metadata: {
+ *                             "country": [
+ *                                 "ECU"
+ *                             ]
+ *                         },
+ *                         level: Sayari.RiskLevel.Relevant
+ *                     },
+ *                     [Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponents]: {
+ *                         value: 1,
+ *                         metadata: {
+ *                             "origin_shipment_product": [
+ *                                 "854231"
+ *                             ]
+ *                         },
+ *                         level: Sayari.RiskLevel.High
+ *                     }
+ *                 },
  *                 userAttributeCount: {},
  *                 userRecordCount: 0,
  *                 userRelatedEntitiesCount: 0,
  *                 userRelationshipCount: {},
- *                 relatedEntitiesCount: 2523,
+ *                 relatedEntitiesCount: 6349,
  *                 attributeCount: {
- *                     [Sayari.Attributes.Name]: 1
+ *                     [Sayari.Attributes.CompanyType]: 6,
+ *                     [Sayari.Attributes.Name]: 2,
+ *                     [Sayari.Attributes.BusinessPurpose]: 11,
+ *                     [Sayari.Attributes.Identifier]: 8
  *                 },
  *                 metadata: {
- *                     latestShipmentDate: "2023-10-27",
- *                     shipments: 2522,
+ *                     latestShipmentDate: "2024-07-10",
+ *                     shipments: 6,
  *                     hsCodes: [{
- *                             key: "870323",
- *                             docCount: 1292,
- *                             value: "Vehicles; with only spark-ignition internal combustion reciprocating piston engine, cylinder capacity over 1500 but not over 3000cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
- *                         }, {
- *                             key: "8703239013",
- *                             docCount: 1288,
- *                             value: "Vehicles; with only spark-ignition internal combustion reciprocating piston engine, cylinder capacity over 1500 but not over 3000cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
- *                         }, {
- *                             key: "870332",
- *                             docCount: 509,
- *                             value: "Vehicles; with only compression-ignition internal combustion piston engine (diesel or semi-diesel), cylinder capacity over 1500 but not over 2500cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
- *                         }, {
- *                             key: "8703329030",
- *                             docCount: 508,
- *                             value: "Vehicles; with only compression-ignition internal combustion piston engine (diesel or semi-diesel), cylinder capacity over 1500 but not over 2500cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
- *                         }, {
- *                             key: "870322",
- *                             docCount: 472,
- *                             value: "Vehicles; with only spark-ignition internal combustion piston engine, cylinder capacity over 1000 but not over 1500cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
+ *                             key: "854231",
+ *                             docCount: 6,
+ *                             value: "Electronic integrated circuits; processors and controllers, whether or not combined with memories, converters, logic circuits, amplifiers, clock and timing circuits, or other circuits",
+ *                             valueSimple: "Integrated Circuits"
  *                         }]
  *                 }
  *             }]

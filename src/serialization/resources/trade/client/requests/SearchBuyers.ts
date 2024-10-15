@@ -11,14 +11,14 @@ export const SearchBuyers: core.serialization.Schema<
     serializers.SearchBuyers.Raw,
     Omit<Sayari.SearchBuyers, "limit" | "offset">
 > = core.serialization.object({
-    q: core.serialization.string(),
+    q: core.serialization.string().optional(),
     filter: TradeFilterList.optional(),
     facets: core.serialization.boolean().optional(),
 });
 
 export declare namespace SearchBuyers {
     interface Raw {
-        q: string;
+        q?: string | null;
         filter?: TradeFilterList.Raw | null;
         facets?: boolean | null;
     }
