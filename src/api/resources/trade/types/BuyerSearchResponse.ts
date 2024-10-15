@@ -12,114 +12,99 @@ import * as Sayari from "../../../index";
  *         offset: 0,
  *         limit: 1,
  *         size: {
- *             count: 5974,
+ *             count: 3,
  *             qualifier: Sayari.CountQualifier.Eq
  *         },
  *         next: true,
  *         data: [{
- *                 id: "VRttegVx-TLCsNHKfNe1Cw",
- *                 label: "\u0422\u043E\u0432\u0430\u0440\u0438\u0441\u0442\u0432\u043E \u0437 \u043E\u0431\u043C\u0435\u0436\u0435\u043D\u043E\u044E \u0432\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u0430\u043B\u044C\u043D\u0456\u0441\u0442\u044E \"\u0412\u0415\u0421\u0422-\u0421\u041F\u0420\u0418\u041D\u0422\"",
- *                 degree: 4333,
- *                 entityUrl: "/v1/entity/VRttegVx-TLCsNHKfNe1Cw",
+ *                 id: "uWNWgzX-Kvp1j-WeXKmLQw",
+ *                 label: "\u041E\u041E\u041E \"\u042D\u0420\u0411\u042D \u042D\u041B\u0415\u041A\u0422\u0420\u041E\u041C\u0415\u0414\u0418\u0426\u0418\u041D\"",
+ *                 degree: 195,
+ *                 entityUrl: "/v1/entity/uWNWgzX-Kvp1j-WeXKmLQw",
  *                 pep: false,
- *                 psaCount: 0,
+ *                 psaId: "4398046624552",
+ *                 psaCount: 1,
  *                 sanctioned: false,
  *                 closed: false,
- *                 translatedLabel: "VOLYN LIMITED LIABILITY COMPANY VOLYN INSTITUTE OF INFORMATION TECHNOLOGIES",
- *                 companyType: "\u0410\u0414\u0412\u041E\u041A\u0410\u0422\u0421\u042C\u041A\u0415 \u0411\u042E\u0420\u041E",
- *                 registrationDate: "Registered 2021-02-02",
+ *                 translatedLabel: "GESELLSCHAFT MIT BESCHRANKTER HAFTUNG \"ERBE ELEKTROMEDIZIN\"",
+ *                 registrationDate: "2008-09-08",
  *                 type: Sayari.Entities.Company,
  *                 identifiers: [{
- *                         value: "44102648",
- *                         type: Sayari.WeakIdentifierType.UkrEdrpou,
- *                         label: "Ukr Edrpou"
+ *                         value: "7705856072",
+ *                         type: Sayari.IdentifierType.RuInn,
+ *                         label: "Ru Inn"
  *                     }, {
- *                         value: "43994030",
- *                         type: Sayari.WeakIdentifierType.UkrEdrpou,
- *                         label: "Ukr Edrpou"
- *                     }, {
- *                         value: "43913941",
- *                         type: Sayari.WeakIdentifierType.UkrEdrpou,
- *                         label: "Ukr Edrpou"
- *                     }, {
- *                         value: "44154434",
- *                         type: Sayari.WeakIdentifierType.UkrEdrpou,
- *                         label: "Ukr Edrpou"
- *                     }, {
- *                         value: "10019810200000131",
- *                         type: Sayari.IdentifierType.UkrRegNum,
- *                         label: "Ukr Reg Num"
+ *                         value: "5087746065578",
+ *                         type: Sayari.IdentifierType.RuOgrn,
+ *                         label: "Ru Ogrn"
  *                     }],
- *                 addresses: [".", "\u0423\u043A\u0440\u0430\u0457\u043D\u0430, 43020, \u0412\u043E\u043B\u0438\u043D\u0441\u044C\u043A\u0430 \u043E\u0431\u043B., \u043C\u0456\u0441\u0442\u043E \u041B\u0443\u0446\u044C\u043A, \u0432\u0443\u043B.\u0420\u0456\u0432\u043D\u0435\u043D\u0441\u044C\u043A\u0430, \u0431\u0443\u0434\u0438\u043D\u043E\u043A 48", "\u0423\u043A\u0440\u0430\u0457\u043D\u0430, 43020, \u0412\u043E\u043B\u0438\u043D\u0441\u044C\u043A\u0430 \u043E\u0431\u043B., \u043C\u0456\u0441\u0442\u043E \u041B\u0443\u0446\u044C\u043A, \u0432\u0443\u043B.\u0415\u043B\u0435\u043A\u0442\u0440\u043E\u0430\u043F\u0430\u0440\u0430\u0442\u043D\u0430, \u0431\u0443\u0434\u0438\u043D\u043E\u043A 17"],
- *                 countries: [Sayari.Country.Ukr],
+ *                 addresses: ["119270, , \u0413.\u041C\u041E\u0421\u041A\u0412\u0410, \u0423\u041B.\u0425\u0410\u041C\u041E\u0412\u041D\u0418\u0427\u0415\u0421\u041A\u0418\u0419 \u0412\u0410\u041B,\u0414.12,\u042D\u0422.2,\u041F\u041E\u041C.\u0425,\u041A\u041E\u041C.15,", "119270, \u0413\u041E\u0420\u041E\u0414 \u041C\u041E\u0421\u041A\u0412\u0410, \u0423\u041B. \u0425\u0410\u041C\u041E\u0412\u041D\u0418\u0427\u0415\u0421\u041A\u0418\u0419 \u0412\u0410\u041B, \u0414. 12, \u042D\u0422\u0410\u0416 2 \u041F\u041E\u041C \u0425 \u041A\u041E\u041C 15"],
+ *                 countries: [Sayari.Country.Rus],
  *                 relationshipCount: {
- *                     [Sayari.Relationships.ReceiverOf]: 4142,
- *                     [Sayari.Relationships.HasBeneficialOwner]: 73,
- *                     [Sayari.Relationships.HasOfficer]: 65,
- *                     [Sayari.Relationships.HasShareholder]: 75,
- *                     [Sayari.Relationships.HasFounder]: 78,
- *                     [Sayari.Relationships.ReceivesFrom]: 98,
- *                     [Sayari.Relationships.HasLegalRepresentative]: 4
+ *                     [Sayari.Relationships.HasShareholder]: 1,
+ *                     [Sayari.Relationships.NotifyPartyOf]: 133,
+ *                     [Sayari.Relationships.HasDirector]: 1,
+ *                     [Sayari.Relationships.ReceivesFrom]: 1,
+ *                     [Sayari.Relationships.HasLegalRepresentative]: 1
  *                 },
  *                 tradeCount: {
  *                     "sent": 0,
- *                     "received": 150
+ *                     "received": 192
  *                 },
  *                 sourceCount: {
- *                     "96c06a5a03b61b91324c7e05b3114fb6": {
- *                         count: 4142,
- *                         label: "Ukraine Imports & Exports (January 2023 - Present)"
+ *                     "a9a18eeb901e4376c912e95dc05ceb78": {
+ *                         count: 9,
+ *                         label: "Russia Federal Tax Registry"
  *                     },
- *                     "d1bce737c158efddbef5048d63aaf124": {
- *                         count: 241,
- *                         label: "Ukraine Ministry of Justice Registry of Companies"
+ *                     "66dfefb726ae00fde8f09f34c5578d35": {
+ *                         count: 360,
+ *                         label: "Russia Imports & Exports (January 2023 - Present)"
  *                     }
  *                 },
- *                 risk: {},
+ *                 risk: {
+ *                     [Sayari.Risk.ImportsBisHighPriorityItems]: {
+ *                         value: 1,
+ *                         metadata: {
+ *                             "origin_shipment_product": [
+ *                                 "853669"
+ *                             ]
+ *                         },
+ *                         level: Sayari.RiskLevel.Elevated
+ *                     },
+ *                     [Sayari.Risk.ImportsBisHighPriorityItemsCriticalComponents]: {
+ *                         value: 1,
+ *                         metadata: {
+ *                             "origin_shipment_product": [
+ *                                 "854231"
+ *                             ]
+ *                         },
+ *                         level: Sayari.RiskLevel.High
+ *                     }
+ *                 },
  *                 userAttributeCount: {},
  *                 userRecordCount: 0,
  *                 userRelatedEntitiesCount: 0,
  *                 userRelationshipCount: {},
- *                 relatedEntitiesCount: 4333,
+ *                 relatedEntitiesCount: 195,
  *                 attributeCount: {
- *                     [Sayari.Attributes.CompanyType]: 6,
- *                     [Sayari.Attributes.Name]: 77,
- *                     [Sayari.Attributes.BusinessPurpose]: 100,
- *                     [Sayari.Attributes.Identifier]: 70,
- *                     [Sayari.Attributes.AdditionalInformation]: 56,
+ *                     [Sayari.Attributes.Name]: 3,
+ *                     [Sayari.Attributes.BusinessPurpose]: 10,
+ *                     [Sayari.Attributes.Identifier]: 7,
+ *                     [Sayari.Attributes.AdditionalInformation]: 2,
  *                     [Sayari.Attributes.Country]: 2,
- *                     [Sayari.Attributes.Contact]: 27,
- *                     [Sayari.Attributes.Status]: 70,
- *                     [Sayari.Attributes.Address]: 14
+ *                     [Sayari.Attributes.Shares]: 1,
+ *                     [Sayari.Attributes.Status]: 1,
+ *                     [Sayari.Attributes.Address]: 4,
+ *                     [Sayari.Attributes.Financials]: 3
  *                 },
  *                 metadata: {
- *                     latestShipmentDate: "2023-10-28",
- *                     shipments: 4142,
+ *                     latestShipmentDate: "2024-07-10",
+ *                     shipments: 6,
  *                     hsCodes: [{
- *                             key: "870323",
- *                             docCount: 1492,
- *                             value: "Vehicles; with only spark-ignition internal combustion reciprocating piston engine, cylinder capacity over 1500 but not over 3000cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
- *                         }, {
- *                             key: "8703239013",
- *                             docCount: 1477,
- *                             value: "Vehicles; with only spark-ignition internal combustion reciprocating piston engine, cylinder capacity over 1500 but not over 3000cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
- *                         }, {
- *                             key: "870332",
- *                             docCount: 897,
- *                             value: "Vehicles; with only compression-ignition internal combustion piston engine (diesel or semi-diesel), cylinder capacity over 1500 but not over 2500cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
- *                         }, {
- *                             key: "8703329030",
- *                             docCount: 830,
- *                             value: "Vehicles; with only compression-ignition internal combustion piston engine (diesel or semi-diesel), cylinder capacity over 1500 but not over 2500cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
- *                         }, {
- *                             key: "870322",
- *                             docCount: 551,
- *                             value: "Vehicles; with only spark-ignition internal combustion piston engine, cylinder capacity over 1000 but not over 1500cc",
- *                             valueSimple: "Cars & Passenger Vehicles"
+ *                             key: "854231",
+ *                             docCount: 6,
+ *                             value: "Electronic integrated circuits; processors and controllers, whether or not combined with memories, converters, logic circuits, amplifiers, clock and timing circuits, or other circuits",
+ *                             valueSimple: "Integrated Circuits"
  *                         }]
  *                 }
  *             }]

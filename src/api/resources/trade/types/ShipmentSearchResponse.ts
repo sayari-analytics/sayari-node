@@ -12,61 +12,65 @@ import * as Sayari from "../../../index";
  *         offset: 0,
  *         limit: 1,
  *         size: {
- *             count: 10000,
- *             qualifier: Sayari.CountQualifier.Gte
+ *             count: 13,
+ *             qualifier: Sayari.CountQualifier.Eq
  *         },
  *         next: true,
  *         data: [{
- *                 id: "KIB4wNCMtzLhG-onltADgQ",
+ *                 id: "Sdl3aYnJ23Y-3IxgIOkXPA",
  *                 type: "shipment",
  *                 buyer: [{
- *                         id: "M_vGQfA6PWYdNkj5a_XMNQ",
- *                         names: ["HEMINGWAY RUM COMPANY LLC"],
+ *                         id: "uWNWgzX-Kvp1j-WeXKmLQw",
+ *                         names: ["\u041E\u041E\u041E \"\u042D\u0420\u0411\u042D \u042D\u041B\u0415\u041A\u0422\u0420\u041E\u041C\u0415\u0414\u0418\u0426\u0418\u041D\"", "LLC \"ERBE ELECTROMEDICAL\""],
  *                         risks: {
- *                             [Sayari.Risk.BaselAml]: 4.63,
- *                             [Sayari.Risk.CpiScore]: 67
+ *                             [Sayari.Risk.ImportsBisHighPriorityItems]: 1,
+ *                             [Sayari.Risk.ImportsBisHighPriorityItemsCriticalComponents]: 1
  *                         },
- *                         countries: [Sayari.Country.Usa],
- *                         businessPurpose: []
+ *                         countries: [Sayari.Country.Rus],
+ *                         businessPurpose: [{
+ *                                 value: "\u0422\u043E\u0440\u0433\u043E\u0432\u043B\u044F \u0440\u043E\u0437\u043D\u0438\u0447\u043D\u0430\u044F \u043B\u0435\u043A\u0430\u0440\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u043C\u0438 \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0430\u043C\u0438 \u0432 \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0445 \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u0430\u0445 (\u0430\u043F\u0442\u0435\u043A\u0430\u0445)",
+ *                                 code: "47.73"
+ *                             }]
  *                     }],
  *                 supplier: [{
- *                         id: "9NQnfZhEFrRnp4YWk5yAVQ",
- *                         names: ["FOURSQUARE RUM DISTILLERY FOURSQUARE"],
+ *                         id: "yNwunHdFInERKig0Thusgg",
+ *                         names: ["ERBE ELEKTROMEDIZIN GMBH", "ERBE ELEKTROMED"],
  *                         risks: {
- *                             [Sayari.Risk.EuHighRiskThird]: true,
- *                             [Sayari.Risk.BaselAml]: 5.81,
- *                             [Sayari.Risk.CpiScore]: 65
+ *                             [Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponents]: 1,
+ *                             [Sayari.Risk.ExportsBisHighPriorityItems]: 1
  *                         },
- *                         countries: [Sayari.Country.Brb],
- *                         businessPurpose: []
+ *                         countries: [Sayari.Country.Deu, Sayari.Country.Usa, Sayari.Country.Mex, Sayari.Country.Bra, Sayari.Country.Bel, Sayari.Country.Ecu, Sayari.Country.Ita, Sayari.Country.Sgp, Sayari.Country.Can, Sayari.Country.Swe, Sayari.Country.Zaf],
+ *                         businessPurpose: [{
+ *                                 value: "Manufacture of irradiation, electromedical and electrotherapeutic equipment",
+ *                                 code: "2660"
+ *                             }]
  *                     }],
- *                 arrivalDate: "2022-05-25",
- *                 departureDate: "2022-05",
- *                 departureAddress: {
- *                     x: -79.4861,
- *                     city: "ALAMANCE",
- *                     state: "NC",
- *                     y: 36.035,
- *                     value: "27201"
- *                 },
- *                 productOrigin: [Sayari.Country.Usa],
- *                 monetaryValue: [],
+ *                 arrivalDate: "2024-05-14",
+ *                 productOrigin: [Sayari.Country.Deu],
+ *                 monetaryValue: [{
+ *                         value: 2570.52,
+ *                         currency: Sayari.Currency.Usd,
+ *                         context: "cost_insurance_and_freight"
+ *                     }],
  *                 weight: [{
- *                         value: 5388,
+ *                         value: 5.5,
  *                         unit: "kilogram",
- *                         type: "gross_weight"
+ *                         type: "net_weight"
  *                     }],
  *                 identifier: [{
- *                         value: "TSCW15541208",
- *                         type: Sayari.IdentifierType.BillOfLading
+ *                         value: "10013160/140524/3162513",
+ *                         type: Sayari.IdentifierType.RusDeclarationNumber
  *                     }],
  *                 sources: [{
- *                         id: "16a4cc2d0f467fa993b28587d542a25d",
- *                         label: "USA Imports (2021 - Present)"
+ *                         id: "66dfefb726ae00fde8f09f34c5578d35",
+ *                         label: "Russia Imports & Exports (January 2023 - Present)"
  *                     }],
- *                 hsCodes: [],
- *                 productDescriptions: ["0000000006FOURSQUARE 5YR OLD RUM"],
- *                 record: "16a4cc2d0f467fa993b28587d542a25d/TSCW15541208/1653523200000/0"
+ *                 hsCodes: [{
+ *                         code: "854231",
+ *                         description: "Electronic integrated circuits; processors and controllers, whether or not combined with memories, converters, logic circuits, amplifiers, clock and timing circuits, or other circuits"
+ *                     }],
+ *                 productDescriptions: ["\u0421\u0425\u0415\u041C\u042B \u0418\u041D\u0422\u0415\u0413\u0420\u0410\u041B\u042C\u041D\u042B\u0415 \u041C\u041E\u041D\u041E\u041B\u0418\u0422\u041D\u042B\u0415, \u0426\u0418\u0424\u0420\u041E\u0412\u042B\u0415, \u041D\u0415 \u041B\u041E\u041C \u042D\u041B\u0415\u041A\u0422\u0420\u041E\u041E\u0411\u041E\u0420\u0423\u0414\u041E\u0412\u0410\u041D\u0418\u042F, \u041D\u0415 \u0421\u041E\u0414\u0415\u0420\u0416\u0410\u0422 \u041A\u0420\u0418\u041F\u0422\u041E\u0413\u0420\u0410\u0424\u0418\u0427\u0415\u0421\u041A\u0418\u0425 \u041C\u041E\u0414\u0423\u041B\u0415\u0419 \u0418 \u041F\u0420\u0418\u0415\u041C\u041E\u041F\u0415\u0420\u0415\u0414\u0410\u0422\u041E\u0427\u041D\u042B\u0425 \u0423\u0421\u0422\u0420-\u0412, \u041D\u0415 \u0414\u041B\u042F \u0428\u0418\u0424\u0420\u041E\u0412\u0410\u041D\u0418\u042F, \u0413\u0420\u0410\u0416\u0414\u0410\u041D\u0421\u041A\u041E\u0413\u041E \u041D\u0410\u0417\u041D\u0410\u0427\u0415\u041D\u0418\u042F, \u0414\u041B\u042F \u0418\u0421\u041F\u041E\u041B\u042C\u0417\u041E\u0412\u0410\u041D\u0418\u042F \u0412 \u0421\u041E\u0421\u0422\u0410\u0412\u0415 \u041C\u0415\u0414\u0418\u0426\u0418\u041D\u0421\u041A\u041E\u0413\u041E \u041E\u0411\u041E\u0420\u0423\u0414\u041E\u0412\u0410\u041D\u0418\u042F"],
+ *                 record: "4337bf42a200a30b90d536c5992167e1/1001325059/1721001600000/0"
  *             }]
  *     }
  */

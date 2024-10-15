@@ -189,8 +189,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.18",
-                "User-Agent": "@sayari/sdk/0.1.18",
+                "X-Fern-SDK-Version": "0.1.19",
+                "User-Agent": "@sayari/sdk/0.1.19",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -306,7 +306,9 @@ export class Resolution {
      *     await client.resolution.resolutionPost({
      *         limit: 1,
      *         body: {
-     *             name: ["victoria beckham limited"]
+     *             name: ["Thomas Bangalter"],
+     *             address: ["8 AVENUE RACHEL"],
+     *             country: ["FRA"]
      *         }
      *     })
      *
@@ -314,8 +316,8 @@ export class Resolution {
      *     await client.resolution.resolutionPost({
      *         limit: 1,
      *         body: {
-     *             name: ["victoria beckham limited"],
-     *             profile: "suppliers"
+     *             name: ["Oleg Deripaska"],
+     *             country: ["RUS"]
      *         }
      *     })
      */
@@ -343,8 +345,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.18",
-                "User-Agent": "@sayari/sdk/0.1.18",
+                "X-Fern-SDK-Version": "0.1.19",
+                "User-Agent": "@sayari/sdk/0.1.19",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

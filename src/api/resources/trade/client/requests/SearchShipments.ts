@@ -8,7 +8,12 @@ import * as Sayari from "../../../../index";
  * @example
  *     {
  *         limit: 1,
- *         q: "rum"
+ *         filter: {
+ *             departureCountry: ["DEU"],
+ *             arrivalCountry: ["RUS"],
+ *             hsCode: ["854231"],
+ *             arrivalDate: ["2024-01 TO 2024-10"]
+ *         }
  *     }
  */
 export interface SearchShipments {
@@ -21,7 +26,7 @@ export interface SearchShipments {
      */
     offset?: number;
     /** Query term. The syntax for the query parameter follows elasticsearch simple query string syntax. The includes the ability to use search operators and to perform nested queries. Must be url encoded. */
-    q: string;
+    q?: string;
     /** Filters to be applied to search query to limit the result-set. */
     filter?: Sayari.TradeFilterList;
     /** Whether or not to return search facets in results giving counts by field. Defaults to false. */
