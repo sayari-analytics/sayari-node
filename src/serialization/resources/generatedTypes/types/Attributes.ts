@@ -8,52 +8,52 @@ import * as core from "../../../../core";
 
 export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, Sayari.Attributes> =
     core.serialization.enum_([
+        "monetary_value",
+        "identifier",
         "contact",
-        "name",
+        "gender",
+        "shares",
+        "status",
+        "finances",
+        "measurement",
+        "business_purpose",
+        "weak_identifier",
+        "risk_intelligence",
+        "additional_information",
+        "generic",
         "country",
+        "person_status",
+        "position",
+        "company_type",
         "financials",
         "date_of_birth",
-        "shares",
-        "identifier",
-        "monetary_value",
-        "additional_information",
-        "position",
-        "generic",
-        "finances",
-        "weak_identifier",
-        "person_status",
-        "gender",
+        "name",
         "translated_name",
-        "risk_intelligence",
-        "business_purpose",
-        "measurement",
         "address",
-        "status",
-        "company_type",
     ]);
 
 export declare namespace Attributes {
     type Raw =
+        | "monetary_value"
+        | "identifier"
         | "contact"
-        | "name"
+        | "gender"
+        | "shares"
+        | "status"
+        | "finances"
+        | "measurement"
+        | "business_purpose"
+        | "weak_identifier"
+        | "risk_intelligence"
+        | "additional_information"
+        | "generic"
         | "country"
+        | "person_status"
+        | "position"
+        | "company_type"
         | "financials"
         | "date_of_birth"
-        | "shares"
-        | "identifier"
-        | "monetary_value"
-        | "additional_information"
-        | "position"
-        | "generic"
-        | "finances"
-        | "weak_identifier"
-        | "person_status"
-        | "gender"
+        | "name"
         | "translated_name"
-        | "risk_intelligence"
-        | "business_purpose"
-        | "measurement"
-        | "address"
-        | "status"
-        | "company_type";
+        | "address";
 }
