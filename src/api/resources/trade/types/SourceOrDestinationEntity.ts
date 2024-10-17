@@ -7,11 +7,14 @@ import * as Sayari from "../../../index";
 export interface SourceOrDestinationEntity {
     /** Unique identifier of the entity */
     id: string;
+    type: string;
     names: string[];
     /** [Risks](/sayari-library/ontology/risk-factors) */
     risks: Record<Sayari.Risk, unknown>;
-    /** [Business Purpose](/sayari-library/ontology/enumerated-types#business-purpose-standard) */
-    businessPurpose: Sayari.BusinessPurpose[];
-    /** [Countries](/sayari-library/ontology/enumerated-types#country) */
+    /** [Business Purpose](/sayari-library/ontology/attributes#business-purpose) */
+    businessPurpose: Sayari.BusinessPurposeProperties[];
+    /** [Address](/sayari-library/ontology/attributes#address) */
+    address: unknown[];
+    /** [Country](/sayari-library/ontology/attributes#country) */
     countries: Sayari.Country[];
 }

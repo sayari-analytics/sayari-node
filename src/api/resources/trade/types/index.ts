@@ -5,7 +5,6 @@ export * from "./ShipmentAddress";
 export * from "./MonetaryValue";
 export * from "./Weight";
 export * from "./SourceOrDestinationEntity";
-export * from "./BusinessPurpose";
 export * from "./ShipmentIdentifier";
 export * from "./ShipmentCountry";
 export * from "./ShipmentMetadata";

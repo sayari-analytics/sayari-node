@@ -26,6 +26,16 @@ import * as Sayari from "../../../index";
  *                 psaCount: 1,
  *                 sanctioned: false,
  *                 closed: false,
+ *                 companyType: "Foreign entity",
+ *                 registrationDate: "Registered 1965-07-20",
+ *                 latestStatus: {
+ *                     status: "active",
+ *                     date: "2015-01-07"
+ *                 },
+ *                 tradeCount: {
+ *                     "sent": 6278,
+ *                     "received": 5
+ *                 },
  *                 type: Sayari.Entities.Company,
  *                 identifiers: [{
  *                         value: "52990027L4WYH1AZ2T91",
@@ -35,21 +45,35 @@ import * as Sayari from "../../../index";
  *                         value: "26.035.445/0001-09",
  *                         type: Sayari.IdentifierType.BraCnpj,
  *                         label: "Bra Cnpj"
+ *                     }, {
+ *                         value: "B8534_HRB380137",
+ *                         type: Sayari.IdentifierType.DeuRegisternummer,
+ *                         label: "Deu Registernummer"
+ *                     }, {
+ *                         value: "0507.995.037",
+ *                         type: Sayari.IdentifierType.BelEnterpriseNumber,
+ *                         label: "Bel Enterprise Number"
+ *                     }, {
+ *                         value: "LBB853438013700000",
+ *                         type: Sayari.IdentifierType.ValidatisNumber,
+ *                         label: "Validatis Number"
  *                     }],
- *                 addresses: ["WALDHOERNLESTRASSE 17 72072 TUEBINGEN 0 GERMANY", "72072, , TUEBINGEN, WALDHOERNLESTRASSE 17,"],
- *                 countries: [Sayari.Country.Usa, Sayari.Country.Swe, Sayari.Country.Bel, Sayari.Country.Mex, Sayari.Country.Ita, Sayari.Country.Deu],
+ *                 addresses: ["WALDHOERNLESTRASSE 17 72072 TUEBINGEN 0 GERMANY", "72072, , TUEBINGEN, WALDHOERNLESTRASSE 17,", "WALDH\u00D6RNLESTRA\u00DFE 17"],
+ *                 countries: [Sayari.Country.Usa, Sayari.Country.Swe, Sayari.Country.Bel, Sayari.Country.Mex, Sayari.Country.Ita, Sayari.Country.Sgp, Sayari.Country.Ecu, Sayari.Country.Deu, Sayari.Country.Bra, Sayari.Country.Can],
  *                 relationshipCount: {
  *                     [Sayari.Relationships.LinkedTo]: 2,
  *                     [Sayari.Relationships.OfficerOf]: 1,
  *                     [Sayari.Relationships.HasOfficer]: 5,
  *                     [Sayari.Relationships.ShareholderOf]: 3,
  *                     [Sayari.Relationships.HasShareholder]: 1,
+ *                     [Sayari.Relationships.HasDirector]: 1,
+ *                     [Sayari.Relationships.HasLawyer]: 1,
+ *                     [Sayari.Relationships.OwnerOf]: 20,
  *                     [Sayari.Relationships.ShipsTo]: 30,
- *                     [Sayari.Relationships.ReceivesFrom]: 3
- *                 },
- *                 tradeCount: {
- *                     "sent": 6278,
- *                     "received": 5
+ *                     [Sayari.Relationships.ReceivesFrom]: 3,
+ *                     [Sayari.Relationships.SubsidiaryOf]: 1,
+ *                     [Sayari.Relationships.HasSubsidiary]: 1,
+ *                     [Sayari.Relationships.HasLegalRepresentative]: 5
  *                 },
  *                 sourceCount: {
  *                     "ee100f9b5dfdae8991ba43f5de6e1854": {
@@ -59,6 +83,138 @@ import * as Sayari from "../../../index";
  *                     "26a8072830039f470287902c1530ef79": {
  *                         count: 6,
  *                         label: "Belgium Crossroads Bank for Enterprises"
+ *                     },
+ *                     "c7c2684a1a28cce25025c6b7c6a97bf1": {
+ *                         count: 24,
+ *                         label: "Colombia Imports & Exports (2008-2020)"
+ *                     },
+ *                     "d302aa0d7153d87aeaa4406f9a3b28fa": {
+ *                         count: 109,
+ *                         label: "Colombia Imports & Exports (January 2022 - Present)"
+ *                     },
+ *                     "9615bab28dddcc89548c928ab192ee7c": {
+ *                         count: 11,
+ *                         label: "Sri Lanka Imports & Exports (January 2023 - Present)"
+ *                     },
+ *                     "c22aabd1653affa3d007fb01dcc66b72": {
+ *                         count: 3,
+ *                         label: "Singapore Handshakes Shareholder Profiles (3rd Party Data)"
+ *                     },
+ *                     "33ce74530696fdc957af6e05194905a2": {
+ *                         count: 1,
+ *                         label: "Nicaragua Imports & Exports (January 2024 - Present)"
+ *                     },
+ *                     "16279c76cf40cfb1f5ad0809e6a76fd7": {
+ *                         count: 2,
+ *                         label: "Italy Company Registry (3rd Party Data)"
+ *                     },
+ *                     "4a34a8375e7041cf8661fa82366c60ea": {
+ *                         count: 161,
+ *                         label: "Ecuador Imports & Exports (January 2022 - Present)"
+ *                     },
+ *                     "8511f57f6098dcc36e3a814c3ea5bdd7": {
+ *                         count: 3,
+ *                         label: "Uzbekistan Imports & Exports (January 2022 - Present)"
+ *                     },
+ *                     "b812677c0a32a1746b3ac741c7b97ae0": {
+ *                         count: 58,
+ *                         label: "Legal Entity Identifier (LEI) Registry (3rd Party Data)"
+ *                     },
+ *                     "ac1fa195f9cd4ccf657bca3c6db0bb19": {
+ *                         count: 1,
+ *                         label: "USA Patents and Trademark Office Trademark Applications"
+ *                     },
+ *                     "7a92887d4f18fc21abe0d658b25364e7": {
+ *                         count: 735,
+ *                         label: "USA USASpending.gov Profiles Database"
+ *                     },
+ *                     "a7829d9c8999fcaa78af55886da9be06": {
+ *                         count: 42,
+ *                         label: "Turkey Imports & Exports (January 2024 - Present)"
+ *                     },
+ *                     "92fbab1cd3a92b583e0ec0ca5c48a254": {
+ *                         count: 1,
+ *                         label: "Germany Handelsregister Announcements"
+ *                     },
+ *                     "ce462e9deea545cce35df38c48512a0c": {
+ *                         count: 5243,
+ *                         label: "India Imports & Exports (January 2023 - Present)"
+ *                     },
+ *                     "66dfefb726ae00fde8f09f34c5578d35": {
+ *                         count: 227,
+ *                         label: "Russia Imports & Exports (January 2023 - Present)"
+ *                     },
+ *                     "83ffee6075e54030397fa4c499a5a7ba": {
+ *                         count: 4,
+ *                         label: "Tanzania Imports & Exports (January 2023 - Present)"
+ *                     },
+ *                     "5547652362cfeeb62963e058f95d6fdd": {
+ *                         count: 66,
+ *                         label: "Peru Imports & Exports (January 2023 - Present)"
+ *                     },
+ *                     "e5de7b52cc88ef4cd1a10e201bdf46ee": {
+ *                         count: 71,
+ *                         label: "Vietnam Imports & Exports (January 2023 - Present)"
+ *                     },
+ *                     "b9d809b02049993ba8dc2e4c5f7cceca": {
+ *                         count: 152,
+ *                         label: "Mexico Industrial Property Trademark Registry (MARCIA)"
+ *                     },
+ *                     "31df3cc3a57cc4a39dcc29dd4b9ce5e5": {
+ *                         count: 108,
+ *                         label: "Mexico Imports & Exports (January 2022 - Present)"
+ *                     },
+ *                     "31d2e44e0e61ae41a8a7d09b8499fd4e": {
+ *                         count: 1,
+ *                         label: "Belgium KBO Open Data (Active Entities)"
+ *                     },
+ *                     "b2695e88b6f5b89ba1d9011e06dbcbc7": {
+ *                         count: 4,
+ *                         label: "Botswana Imports & Exports (January 2023 - Present)"
+ *                     },
+ *                     "f5fdf9a3e7f4ae43eae3191eea1f3127": {
+ *                         count: 1,
+ *                         label: "Sweden Business Register (Statistics Sweden)"
+ *                     },
+ *                     "9c66f2f4dc556f40ce096ebf4f0c97ac": {
+ *                         count: 7,
+ *                         label: "Germany Validatis Shareholder Lists (3rd Party Data)"
+ *                     },
+ *                     "16a4cc2d0f467fa993b28587d542a25d": {
+ *                         count: 398,
+ *                         label: "USA Imports (2021 - Present)"
+ *                     },
+ *                     "a4475601393f5a6a27154175556f7a85": {
+ *                         count: 2,
+ *                         label: "Canada Intellectual Property Office Trademarks Database"
+ *                     },
+ *                     "fecea39fdc2bbbca36ed77ff68c8c89b": {
+ *                         count: 32,
+ *                         label: "Brazil Receita Federal"
+ *                     },
+ *                     "96c06a5a03b61b91324c7e05b3114fb6": {
+ *                         count: 3,
+ *                         label: "Ukraine Imports & Exports (January 2023 - May 2023)"
+ *                     },
+ *                     "0b325d9555f1011ae80446f3778bc3c8": {
+ *                         count: 1,
+ *                         label: "Paraguay Imports & Exports (January 2022 - Present)"
+ *                     },
+ *                     "41c82cb8bda87edc819b7790081e1e26": {
+ *                         count: 12,
+ *                         label: "Ghana Imports (January 2023 - Present)"
+ *                     },
+ *                     "9f22a5470e1faf82004e203d094cca29": {
+ *                         count: 4,
+ *                         label: "Kenya Imports (January 2024 - present)"
+ *                     },
+ *                     "a6cd51a15ff02fb3ab273f3c90d2097c": {
+ *                         count: 2,
+ *                         label: "Italy Chambers of Commerce Registry"
+ *                     },
+ *                     "b7593dcf982bcb9ca86f24ef369ed1e5": {
+ *                         count: 145,
+ *                         label: "Philippines Imports & Exports (January 2023 - Present)"
  *                     }
  *                 },
  *                 risk: {
@@ -79,19 +235,57 @@ import * as Sayari from "../../../index";
  *                             ]
  *                         },
  *                         level: Sayari.RiskLevel.High
+ *                     },
+ *                     [Sayari.Risk.CpiScore]: {
+ *                         value: 34,
+ *                         metadata: {
+ *                             "country": [
+ *                                 "ECU"
+ *                             ]
+ *                         },
+ *                         level: Sayari.RiskLevel.Relevant
+ *                     },
+ *                     [Sayari.Risk.ExportsBisHighPriorityItems]: {
+ *                         value: 1,
+ *                         metadata: {
+ *                             "origin_shipment_product": [
+ *                                 "853669"
+ *                             ]
+ *                         },
+ *                         level: Sayari.RiskLevel.Elevated
  *                     }
  *                 },
+ *                 userAttributeCounts: {},
  *                 userAttributeCount: {},
  *                 userRecordCount: 0,
  *                 userRelatedEntitiesCount: 0,
  *                 userRelationshipCount: {},
  *                 relatedEntitiesCount: 6349,
+ *                 attributeCounts: {
+ *                     "company_type": 6,
+ *                     "name": 2,
+ *                     "business_purpose": 11,
+ *                     "identifier": 8,
+ *                     "additional_information": 2,
+ *                     "country": 22,
+ *                     "contact": 3,
+ *                     "status": 5,
+ *                     "address": 20,
+ *                     "financials": 1
+ *                 },
  *                 attributeCount: {
  *                     [Sayari.Attributes.CompanyType]: 6,
  *                     [Sayari.Attributes.Name]: 2,
  *                     [Sayari.Attributes.BusinessPurpose]: 11,
- *                     [Sayari.Attributes.Identifier]: 8
+ *                     [Sayari.Attributes.Identifier]: 8,
+ *                     [Sayari.Attributes.AdditionalInformation]: 2,
+ *                     [Sayari.Attributes.Country]: 22,
+ *                     [Sayari.Attributes.Contact]: 3,
+ *                     [Sayari.Attributes.Status]: 5,
+ *                     [Sayari.Attributes.Address]: 20,
+ *                     [Sayari.Attributes.Financials]: 1
  *                 },
+ *                 referenceId: "fecea39fdc2bbbca36ed77ff68c8c89b/27709659/1566236147596:c14ee31028469ae2871467bb07abc96a",
  *                 metadata: {
  *                     latestShipmentDate: "2024-07-10",
  *                     shipments: 6,
