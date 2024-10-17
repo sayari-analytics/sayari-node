@@ -3,50 +3,50 @@
  */
 
 export type Attributes =
-    | "monetary_value"
-    | "identifier"
     | "contact"
-    | "gender"
-    | "shares"
-    | "status"
-    | "finances"
-    | "measurement"
-    | "business_purpose"
-    | "weak_identifier"
-    | "risk_intelligence"
-    | "additional_information"
-    | "generic"
+    | "name"
     | "country"
-    | "person_status"
-    | "position"
-    | "company_type"
     | "financials"
     | "date_of_birth"
-    | "name"
+    | "shares"
+    | "identifier"
+    | "monetary_value"
+    | "additional_information"
+    | "position"
+    | "generic"
+    | "finances"
+    | "weak_identifier"
+    | "person_status"
+    | "gender"
     | "translated_name"
-    | "address";
+    | "risk_intelligence"
+    | "business_purpose"
+    | "measurement"
+    | "address"
+    | "status"
+    | "company_type";
 
 export const Attributes = {
-    MonetaryValue: "monetary_value",
-    Identifier: "identifier",
     Contact: "contact",
-    Gender: "gender",
-    Shares: "shares",
-    Status: "status",
-    Finances: "finances",
-    Measurement: "measurement",
-    BusinessPurpose: "business_purpose",
-    WeakIdentifier: "weak_identifier",
-    RiskIntelligence: "risk_intelligence",
-    AdditionalInformation: "additional_information",
-    Generic: "generic",
+    Name: "name",
     Country: "country",
-    PersonStatus: "person_status",
-    Position: "position",
-    CompanyType: "company_type",
     Financials: "financials",
     DateOfBirth: "date_of_birth",
-    Name: "name",
+    Shares: "shares",
+    Identifier: "identifier",
+    MonetaryValue: "monetary_value",
+    AdditionalInformation: "additional_information",
+    Position: "position",
+    Generic: "generic",
+    Finances: "finances",
+    WeakIdentifier: "weak_identifier",
+    PersonStatus: "person_status",
+    Gender: "gender",
     TranslatedName: "translated_name",
+    RiskIntelligence: "risk_intelligence",
+    BusinessPurpose: "business_purpose",
+    Measurement: "measurement",
     Address: "address",
+    Status: "status",
+    CompanyType: "company_type",
 } as const;
