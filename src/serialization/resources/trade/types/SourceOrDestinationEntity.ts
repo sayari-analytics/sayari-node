@@ -6,7 +6,7 @@ import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Risk } from "../../generatedTypes/types/Risk";
-import { BusinessPurpose } from "./BusinessPurpose";
+import { BusinessPurposeProperties } from "../../generatedTypes/types/BusinessPurposeProperties";
 import { Country } from "../../generatedTypes/types/Country";
 
 export const SourceOrDestinationEntity: core.serialization.ObjectSchema<
@@ -14,18 +14,25 @@ export const SourceOrDestinationEntity: core.serialization.ObjectSchema<
     Sayari.SourceOrDestinationEntity
 > = core.serialization.object({
     id: core.serialization.string(),
+    type: core.serialization.string(),
     names: core.serialization.list(core.serialization.string()),
     risks: core.serialization.record(Risk, core.serialization.unknown()),
-    businessPurpose: core.serialization.property("business_purpose", core.serialization.list(BusinessPurpose)),
+    businessPurpose: core.serialization.property(
+        "business_purpose",
+        core.serialization.list(BusinessPurposeProperties)
+    ),
+    address: core.serialization.list(core.serialization.unknown()),
     countries: core.serialization.list(Country),
 });
 
 export declare namespace SourceOrDestinationEntity {
     interface Raw {
         id: string;
+        type: string;
         names: string[];
         risks: Record<Risk.Raw, unknown>;
-        business_purpose: BusinessPurpose.Raw[];
+        business_purpose: BusinessPurposeProperties.Raw[];
+        address: unknown[];
         countries: Country.Raw[];
     }
 }

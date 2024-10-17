@@ -21,7 +21,8 @@ import * as Sayari from "../../../index";
  *                 type: "shipment",
  *                 buyer: [{
  *                         id: "uWNWgzX-Kvp1j-WeXKmLQw",
- *                         names: ["\u041E\u041E\u041E \"\u042D\u0420\u0411\u042D \u042D\u041B\u0415\u041A\u0422\u0420\u041E\u041C\u0415\u0414\u0418\u0426\u0418\u041D\"", "LLC \"ERBE ELECTROMEDICAL\""],
+ *                         type: "receiver_of",
+ *                         names: ["\u041E\u041E\u041E \"\u042D\u0420\u0411\u042D \u042D\u041B\u0415\u041A\u0422\u0420\u041E\u041C\u0415\u0414\u0418\u0426\u0418\u041D\"", "LLC \"ERBE ELECTROMEDICAL\"", "LIMITED LIABILITY COMPANY ERBE ELECTROMEDITSIN", "GESELLSCHAFT MIT BESCHRANKTER HAFTUNG \"ERBE ELEKTROMEDIZIN\""],
  *                         risks: {
  *                             [Sayari.Risk.ImportsBisHighPriorityItems]: 1,
  *                             [Sayari.Risk.ImportsBisHighPriorityItemsCriticalComponents]: 1
@@ -30,10 +31,90 @@ import * as Sayari from "../../../index";
  *                         businessPurpose: [{
  *                                 value: "\u0422\u043E\u0440\u0433\u043E\u0432\u043B\u044F \u0440\u043E\u0437\u043D\u0438\u0447\u043D\u0430\u044F \u043B\u0435\u043A\u0430\u0440\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u043C\u0438 \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0430\u043C\u0438 \u0432 \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0445 \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u0430\u0445 (\u0430\u043F\u0442\u0435\u043A\u0430\u0445)",
  *                                 code: "47.73"
+ *                             }, {
+ *                                 value: "\u0422\u043E\u0440\u0433\u043E\u0432\u043B\u044F \u0440\u043E\u0437\u043D\u0438\u0447\u043D\u0430\u044F \u0438\u0437\u0434\u0435\u043B\u0438\u044F\u043C\u0438, \u043F\u0440\u0438\u043C\u0435\u043D\u044F\u0435\u043C\u044B\u043C\u0438 \u0432 \u043C\u0435\u0434\u0438\u0446\u0438\u043D\u0441\u043A\u0438\u0445 \u0446\u0435\u043B\u044F\u0445, \u043E\u0440\u0442\u043E\u043F\u0435\u0434\u0438\u0447\u0435\u0441\u043A\u0438\u043C\u0438 \u0438\u0437\u0434\u0435\u043B\u0438\u044F\u043C\u0438 \u0432 \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0445 \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u0430\u0445",
+ *                                 code: "47.74"
+ *                             }, {
+ *                                 value: "\u0422\u043E\u0440\u0433\u043E\u0432\u043B\u044F \u0440\u043E\u0437\u043D\u0438\u0447\u043D\u0430\u044F \u043A\u043E\u0441\u043C\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u043C\u0438 \u0438 \u0442\u043E\u0432\u0430\u0440\u0430\u043C\u0438 \u043B\u0438\u0447\u043D\u043E\u0439 \u0433\u0438\u0433\u0438\u0435\u043D\u044B \u0432 \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0445 \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u0430\u0445",
+ *                                 code: "47.75"
+ *                             }, {
+ *                                 value: "\u0422\u043E\u0440\u0433\u043E\u0432\u043B\u044F \u043E\u043F\u0442\u043E\u0432\u0430\u044F \u0444\u0430\u0440\u043C\u0430\u0446\u0435\u0432\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u043F\u0440\u043E\u0434\u0443\u043A\u0446\u0438\u0435\u0439",
+ *                                 code: "46.46"
+ *                             }, {
+ *                                 code: "4646",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 code: "4775",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "Retail sale of second-hand goods",
+ *                                 code: "4774",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "Other retail sale of new goods in specialized stores",
+ *                                 code: "4773",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "Repair of electronic and optical equipment",
+ *                                 code: "3313",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "\u0420\u0435\u043C\u043E\u043D\u0442 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u043E\u0433\u043E \u0438 \u043E\u043F\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F",
+ *                                 code: "33.13"
+ *                             }],
+ *                         address: [{
+ *                                 "x": 37.57419598175875,
+ *                                 "city": "\u0413.\u043C\u043E\u0441\u043A\u0432\u0430",
+ *                                 "y": 55.71777599664301,
+ *                                 "country": "RUS",
+ *                                 "value": "119270, , MOSCOW, KHAMOVNICHESKY VAL STREET, 12, FLOOR 2, ROOM. X, ROOM 15,"
+ *                             }, {
+ *                                 "x": 37.57419598175875,
+ *                                 "city": "\u0413.\u043C\u043E\u0441\u043A\u0432\u0430",
+ *                                 "y": 55.71777599664301,
+ *                                 "country": "RUS",
+ *                                 "value": "119270, , \u0413.\u041C\u041E\u0421\u041A\u0412\u0410, \u0423\u041B.\u0425\u0410\u041C\u041E\u0412\u041D\u0418\u0427\u0415\u0421\u041A\u0418\u0419 \u0412\u0410\u041B,\u0414.12,\u042D\u0422.2,\u041F\u041E\u041C.\u0425,\u041A\u041E\u041C.15,"
+ *                             }, {
+ *                                 "x": 37.57419598175875,
+ *                                 "city": "\u0413.\u043C\u043E\u0441\u043A\u0432\u0430",
+ *                                 "y": 55.71777599664301,
+ *                                 "country": "RUS",
+ *                                 "value": "119270, , MOSCOW, KHAMOVNICHESKY VAL STREET, 12, FL12, ROOM.H, ROOM 15,"
+ *                             }, {
+ *                                 "x": 37.57419598175875,
+ *                                 "city": "\u0413.\u043C\u043E\u0441\u043A\u0432\u0430",
+ *                                 "y": 55.71777599664301,
+ *                                 "country": "RUS",
+ *                                 "value": "119270, , \u0413.\u041C\u041E\u0421\u041A\u0412\u0410, \u0423\u041B.\u0425\u0410\u041C\u041E\u0412\u041D\u0418\u0427\u0415\u0421\u041A\u0418\u0419 \u0412\u0410\u041B,\u0414.12,\u042D\u042212,\u041F\u041E\u041C.\u0425,\u041A\u041E\u041C.15,"
+ *                             }, {
+ *                                 "x": 37.57419598175875,
+ *                                 "city": "\u0413\u043E\u0440\u043E\u0434 \u041C\u043E\u0441\u043A\u0432\u0430",
+ *                                 "y": 55.71777599664301,
+ *                                 "country": "RUS",
+ *                                 "value": "119270, \u0413\u041E\u0420\u041E\u0414 \u041C\u041E\u0421\u041A\u0412\u0410, \u0423\u041B. \u0425\u0410\u041C\u041E\u0412\u041D\u0418\u0427\u0415\u0421\u041A\u0418\u0419 \u0412\u0410\u041B, \u0414. 12, \u042D\u0422\u0410\u0416 2 \u041F\u041E\u041C \u0425 \u041A\u041E\u041C 15"
+ *                             }, {
+ *                                 "x": 37.57419598175875,
+ *                                 "city": "\u0413\u043E\u0440\u043E\u0434 \u041C\u043E\u0441\u043A\u0432\u0430",
+ *                                 "y": 55.71777599664301,
+ *                                 "country": "RUS",
+ *                                 "value": "119270, MOSCOW, KHAMOVNICHESKY VAL STREET, BUILDING 12, FLOOR 2 ROM X ROOM 15"
+ *                             }, {
+ *                                 "x": 37.57419598175875,
+ *                                 "city": "\u0413\u043E\u0440\u043E\u0434 \u041C\u043E\u0441\u043A\u0432\u0430",
+ *                                 "y": 55.71777599664301,
+ *                                 "country": "RUS",
+ *                                 "value": "119270, CITY MOSCOW, ST. KHAMOVNICHESKY VAL, 12, FLOOR 2 ROM X ROOM 15"
+ *                             }, {
+ *                                 "x": 37.57419598175875,
+ *                                 "city": "\u0413\u043E\u0440\u043E\u0434 \u041C\u043E\u0441\u043A\u0432\u0430",
+ *                                 "y": 55.71777599664301,
+ *                                 "country": "RUS",
+ *                                 "value": "119270, \u0413\u041E\u0420\u041E\u0414 \u041C\u041E\u0421\u041A\u0412\u0410, \u0423\u041B\u0418\u0426\u0410 \u0425\u0410\u041C\u041E\u0412\u041D\u0418\u0427\u0415\u0421\u041A\u0418\u0419 \u0412\u0410\u041B, \u0414\u041E\u041C 12, \u042D\u0422\u0410\u0416 2 \u041F\u041E\u041C \u0425 \u041A\u041E\u041C 15"
  *                             }]
  *                     }],
  *                 supplier: [{
  *                         id: "yNwunHdFInERKig0Thusgg",
+ *                         type: "shipper_of",
  *                         names: ["ERBE ELEKTROMEDIZIN GMBH", "ERBE ELEKTROMED"],
  *                         risks: {
  *                             [Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponents]: 1,
@@ -41,12 +122,176 @@ import * as Sayari from "../../../index";
  *                         },
  *                         countries: [Sayari.Country.Deu, Sayari.Country.Usa, Sayari.Country.Mex, Sayari.Country.Bra, Sayari.Country.Bel, Sayari.Country.Ecu, Sayari.Country.Ita, Sayari.Country.Sgp, Sayari.Country.Can, Sayari.Country.Swe, Sayari.Country.Zaf],
  *                         businessPurpose: [{
+ *                                 value: "Activities of holding companies",
+ *                                 code: "6420",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "Activities of head offices",
+ *                                 code: "7010",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "Holdings de institui\u00E7\u00F5es n\u00E3o-financeiras",
+ *                                 code: "64.62-0",
+ *                                 standard: Sayari.BusinessPurposeStandard.Cnae2
+ *                             }, {
  *                                 value: "Manufacture of irradiation, electromedical and electrotherapeutic equipment",
- *                                 code: "2660"
+ *                                 code: "2660",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "Manufacture of irradiation, electromedical and electrotherapeutic equipment",
+ *                                 code: "26.60",
+ *                                 standard: Sayari.BusinessPurposeStandard.Nace2
+ *                             }, {
+ *                                 value: "Manufacture of medical and dental instruments and supplies",
+ *                                 code: "3250",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "Manufacture of medical and dental instruments and supplies",
+ *                                 code: "32.50",
+ *                                 standard: Sayari.BusinessPurposeStandard.Nace2
+ *                             }, {
+ *                                 value: "Repair of electronic and optical equipment",
+ *                                 code: "3313",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "Repair of electronic and optical equipment",
+ *                                 code: "33.13",
+ *                                 standard: Sayari.BusinessPurposeStandard.Nace2
+ *                             }, {
+ *                                 value: "Wholesale of other household goods",
+ *                                 code: "4649",
+ *                                 standard: Sayari.BusinessPurposeStandard.Isic4
+ *                             }, {
+ *                                 value: "Wholesale of pharmaceutical goods",
+ *                                 code: "46.46",
+ *                                 standard: Sayari.BusinessPurposeStandard.Nace2
+ *                             }],
+ *                         address: [{
+ *                                 "x": 9.057763185844635,
+ *                                 "city": "T\u00FCbingen",
+ *                                 "state": "bw",
+ *                                 "y": 48.49839220684879,
+ *                                 "country": "DEU",
+ *                                 "value": "WALDHOERNLESTRASSE 17 72072 TUEBINGEN 0 GERMANY"
+ *                             }, {
+ *                                 "x": 9.057763185844635,
+ *                                 "city": "Tuebingen",
+ *                                 "y": 48.49839220684879,
+ *                                 "country": "DEU",
+ *                                 "value": "72072, , TUEBINGEN, WALDHOERNLESTRASSE 17,"
+ *                             }, {
+ *                                 "value": "WALDH\u00D6RNLESTRA\u00DFE 17"
+ *                             }, {
+ *                                 "x": 9.056857700153852,
+ *                                 "city": "Tuebingen",
+ *                                 "y": 48.49829144306095,
+ *                                 "country": "DEU",
+ *                                 "value": "WALDHOERNLESTRASSE TUEBINGEN 72072"
+ *                             }, {
+ *                                 "x": 9.052098,
+ *                                 "city": "Tubingen",
+ *                                 "y": 48.522904,
+ *                                 "country": "Alemania",
+ *                                 "value": "TUBINGEN, ALEMANIA"
+ *                             }, {
+ *                                 "value": "\u041E\u041E\u041E \"\u042D\u0420\u0411\u042D \u042D\u041B\u0415\u041A\u0422\u0420\u041E\u041C\u0415\u0414\u0418\u0426\u0418\u041D\""
+ *                             }, {
+ *                                 "x": 9.060085569236273,
+ *                                 "city": "Tubingen",
+ *                                 "y": 48.493932657539084,
+ *                                 "country": "DEU",
+ *                                 "value": "WALDHORNSTRASSE. 17 72072 TBINGEN D ,TUBINGEN ,INFO@ERBE-MED.COM"
+ *                             }, {
+ *                                 "x": 9.052220000000034,
+ *                                 "city": "Tubinga",
+ *                                 "y": 48.52266000000003,
+ *                                 "country": "Alemania",
+ *                                 "value": "TUBINGA, ALEMANIA"
+ *                             }, {
+ *                                 "value": "WALDHOERNLESTRASSE 17 72072 TUEBING ,TUBINGA ,INFO@ERBE-MED.COM"
+ *                             }, {
+ *                                 "x": -64.65251108919011,
+ *                                 "y": -4.155371602541514,
+ *                                 "country": "BRA",
+ *                                 "value": "JAPON E5-107 Y AV. AMAZONAS"
+ *                             }, {
+ *                                 "x": 9.052098,
+ *                                 "city": "TUBINGEN",
+ *                                 "y": 48.522904,
+ *                                 "country": "DEU",
+ *                                 "value": "1420-DE-72004 TUBINGEN"
+ *                             }, {
+ *                                 "x": -78.48600274748468,
+ *                                 "city": "Quito",
+ *                                 "y": -0.17858591191971498,
+ *                                 "country": "Ecuador",
+ *                                 "value": "JAPON ES 107 AV. AMAZONAS 170506 QUITO ECUADOR"
+ *                             }, {
+ *                                 "x": 9.057763185844635,
+ *                                 "y": 48.49839220684879,
+ *                                 "country": "DEU",
+ *                                 "value": "WALDH\u00D6RNLESTRASSE  NUM. EXT. 17"
+ *                             }, {
+ *                                 "x": 8.9971125,
+ *                                 "city": "TUBINGEN",
+ *                                 "y": 48.4834617,
+ *                                 "country": "Deutschland",
+ *                                 "value": "72072 TBINGEN, DEUTSCHLAND"
+ *                             }, {
+ *                                 "x": 80.0602634,
+ *                                 "city": "OK\u00C4ND",
+ *                                 "y": 6.2482506,
+ *                                 "country": "LKA",
+ *                                 "value": "OK\u00C4ND"
+ *                             }, {
+ *                                 "x": 80.0602634,
+ *                                 "city": "OK\u00C4ND",
+ *                                 "y": 6.2482506,
+ *                                 "country": "LKA",
+ *                                 "value": "OK\u00C4ND"
+ *                             }, {
+ *                                 "x": -78.48600822430384,
+ *                                 "city": "Quito",
+ *                                 "y": -0.1786202845064082,
+ *                                 "country": "Ecuador",
+ *                                 "value": "JAPON E5-107 Y AV. AMAZONAS QUITO ECUADOR"
+ *                             }, {
+ *                                 "x": -78.48600822430384,
+ *                                 "city": "Quito",
+ *                                 "y": -0.1786202845064082,
+ *                                 "country": "Ecuador",
+ *                                 "value": "JAPON E5 107 Y AV. AMAZONAS QUITO ECUADOR"
+ *                             }, {
+ *                                 "x": -64.65251108919011,
+ *                                 "city": "Es-107av.",
+ *                                 "state": "Amazonas",
+ *                                 "y": -4.155371602541514,
+ *                                 "country": "BRA",
+ *                                 "value": "(EMPRESA GRUPOCOR) JAPON ES-107AV. AMAZONAS"
+ *                             }, {
+ *                                 "x": -66.08332999999993,
+ *                                 "y": -3.533329999999978,
+ *                                 "country": "BRA",
+ *                                 "value": "JAPON ES 107 AV. AMAZONAS"
+ *                             }, {
+ *                                 "x": -64.65251108919011,
+ *                                 "y": -4.155371602541514,
+ *                                 "country": "BRA",
+ *                                 "value": "JAPON E5 107 Y AV AMAZONAS"
  *                             }]
  *                     }],
  *                 arrivalDate: "2024-05-14",
+ *                 arrivalCountry: [Sayari.Country.Rus],
+ *                 departureCountry: [Sayari.Country.Deu],
+ *                 arrivalAddress: {
+ *                     country: "RUS"
+ *                 },
+ *                 departureAddress: {
+ *                     country: "DEU"
+ *                 },
  *                 productOrigin: [Sayari.Country.Deu],
+ *                 transitCountry: [],
+ *                 countries: [Sayari.Country.Deu, Sayari.Country.Rus],
  *                 monetaryValue: [{
  *                         value: 2570.52,
  *                         currency: Sayari.Currency.Usd,
@@ -60,6 +305,9 @@ import * as Sayari from "../../../index";
  *                 identifier: [{
  *                         value: "10013160/140524/3162513",
  *                         type: Sayari.IdentifierType.RusDeclarationNumber
+ *                     }, {
+ *                         value: "1001325059",
+ *                         type: Sayari.IdentifierType.RuTradeInternalShipmentId
  *                     }],
  *                 sources: [{
  *                         id: "66dfefb726ae00fde8f09f34c5578d35",
@@ -69,7 +317,7 @@ import * as Sayari from "../../../index";
  *                         code: "854231",
  *                         description: "Electronic integrated circuits; processors and controllers, whether or not combined with memories, converters, logic circuits, amplifiers, clock and timing circuits, or other circuits"
  *                     }],
- *                 productDescriptions: ["\u0421\u0425\u0415\u041C\u042B \u0418\u041D\u0422\u0415\u0413\u0420\u0410\u041B\u042C\u041D\u042B\u0415 \u041C\u041E\u041D\u041E\u041B\u0418\u0422\u041D\u042B\u0415, \u0426\u0418\u0424\u0420\u041E\u0412\u042B\u0415, \u041D\u0415 \u041B\u041E\u041C \u042D\u041B\u0415\u041A\u0422\u0420\u041E\u041E\u0411\u041E\u0420\u0423\u0414\u041E\u0412\u0410\u041D\u0418\u042F, \u041D\u0415 \u0421\u041E\u0414\u0415\u0420\u0416\u0410\u0422 \u041A\u0420\u0418\u041F\u0422\u041E\u0413\u0420\u0410\u0424\u0418\u0427\u0415\u0421\u041A\u0418\u0425 \u041C\u041E\u0414\u0423\u041B\u0415\u0419 \u0418 \u041F\u0420\u0418\u0415\u041C\u041E\u041F\u0415\u0420\u0415\u0414\u0410\u0422\u041E\u0427\u041D\u042B\u0425 \u0423\u0421\u0422\u0420-\u0412, \u041D\u0415 \u0414\u041B\u042F \u0428\u0418\u0424\u0420\u041E\u0412\u0410\u041D\u0418\u042F, \u0413\u0420\u0410\u0416\u0414\u0410\u041D\u0421\u041A\u041E\u0413\u041E \u041D\u0410\u0417\u041D\u0410\u0427\u0415\u041D\u0418\u042F, \u0414\u041B\u042F \u0418\u0421\u041F\u041E\u041B\u042C\u0417\u041E\u0412\u0410\u041D\u0418\u042F \u0412 \u0421\u041E\u0421\u0422\u0410\u0412\u0415 \u041C\u0415\u0414\u0418\u0426\u0418\u041D\u0421\u041A\u041E\u0413\u041E \u041E\u0411\u041E\u0420\u0423\u0414\u041E\u0412\u0410\u041D\u0418\u042F"],
+ *                 productDescriptions: ["\u0421\u0425\u0415\u041C\u042B \u0418\u041D\u0422\u0415\u0413\u0420\u0410\u041B\u042C\u041D\u042B\u0415 \u041C\u041E\u041D\u041E\u041B\u0418\u0422\u041D\u042B\u0415, \u0426\u0418\u0424\u0420\u041E\u0412\u042B\u0415, \u041D\u0415 \u041B\u041E\u041C \u042D\u041B\u0415\u041A\u0422\u0420\u041E\u041E\u0411\u041E\u0420\u0423\u0414\u041E\u0412\u0410\u041D\u0418\u042F, \u041D\u0415 \u0421\u041E\u0414\u0415\u0420\u0416\u0410\u0422 \u041A\u0420\u0418\u041F\u0422\u041E\u0413\u0420\u0410\u0424\u0418\u0427\u0415\u0421\u041A\u0418\u0425 \u041C\u041E\u0414\u0423\u041B\u0415\u0419 \u0418 \u041F\u0420\u0418\u0415\u041C\u041E\u041F\u0415\u0420\u0415\u0414\u0410\u0422\u041E\u0427\u041D\u042B\u0425 \u0423\u0421\u0422\u0420-\u0412, \u041D\u0415 \u0414\u041B\u042F \u0428\u0418\u0424\u0420\u041E\u0412\u0410\u041D\u0418\u042F, \u0413\u0420\u0410\u0416\u0414\u0410\u041D\u0421\u041A\u041E\u0413\u041E \u041D\u0410\u0417\u041D\u0410\u0427\u0415\u041D\u0418\u042F, \u0414\u041B\u042F \u0418\u0421\u041F\u041E\u041B\u042C\u0417\u041E\u0412\u0410\u041D\u0418\u042F \u0412 \u0421\u041E\u0421\u0422\u0410\u0412\u0415 \u041C\u0415\u0414\u0418\u0426\u0418\u041D\u0421\u041A\u041E\u0413\u041E \u041E\u0411\u041E\u0420\u0423\u0414\u041E\u0412\u0410\u041D\u0418\u042F:"],
  *                 record: "4337bf42a200a30b90d536c5992167e1/1001325059/1721001600000/0"
  *             }]
  *     }

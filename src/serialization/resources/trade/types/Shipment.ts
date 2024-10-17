@@ -24,6 +24,10 @@ export const Shipment: core.serialization.ObjectSchema<serializers.Shipment.Raw,
         departureDate: core.serialization.property("departure_date", core.serialization.string().optional()),
         departureAddress: core.serialization.property("departure_address", ShipmentAddress.optional()),
         arrivalAddress: core.serialization.property("arrival_address", ShipmentAddress.optional()),
+        arrivalCountry: core.serialization.property("arrival_country", core.serialization.list(Country)),
+        departureCountry: core.serialization.property("departure_country", core.serialization.list(Country)),
+        transitCountry: core.serialization.property("transit_country", core.serialization.list(Country)),
+        countries: core.serialization.list(Country),
         productOrigin: core.serialization.property("product_origin", core.serialization.list(Country)),
         monetaryValue: core.serialization.property("monetary_value", core.serialization.list(MonetaryValue)),
         weight: core.serialization.list(Weight),
@@ -47,6 +51,10 @@ export declare namespace Shipment {
         departure_date?: string | null;
         departure_address?: ShipmentAddress.Raw | null;
         arrival_address?: ShipmentAddress.Raw | null;
+        arrival_country: Country.Raw[];
+        departure_country: Country.Raw[];
+        transit_country: Country.Raw[];
+        countries: Country.Raw[];
         product_origin: Country.Raw[];
         monetary_value: MonetaryValue.Raw[];
         weight: Weight.Raw[];
