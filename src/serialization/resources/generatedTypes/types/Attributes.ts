@@ -8,52 +8,52 @@ import * as core from "../../../../core";
 
 export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, Sayari.Attributes> =
     core.serialization.enum_([
-        "contact",
-        "name",
-        "country",
-        "financials",
-        "date_of_birth",
-        "shares",
-        "identifier",
-        "monetary_value",
         "additional_information",
-        "position",
-        "generic",
-        "finances",
-        "weak_identifier",
-        "person_status",
-        "gender",
-        "translated_name",
-        "risk_intelligence",
-        "business_purpose",
-        "measurement",
         "address",
-        "status",
+        "business_purpose",
         "company_type",
+        "contact",
+        "country",
+        "date_of_birth",
+        "finances",
+        "financials",
+        "gender",
+        "generic",
+        "identifier",
+        "measurement",
+        "monetary_value",
+        "name",
+        "person_status",
+        "position",
+        "risk_intelligence",
+        "shares",
+        "status",
+        "translated_name",
+        "weak_identifier",
     ]);
 
 export declare namespace Attributes {
     type Raw =
-        | "contact"
-        | "name"
-        | "country"
-        | "financials"
-        | "date_of_birth"
-        | "shares"
-        | "identifier"
-        | "monetary_value"
         | "additional_information"
-        | "position"
-        | "generic"
-        | "finances"
-        | "weak_identifier"
-        | "person_status"
-        | "gender"
-        | "translated_name"
-        | "risk_intelligence"
-        | "business_purpose"
-        | "measurement"
         | "address"
+        | "business_purpose"
+        | "company_type"
+        | "contact"
+        | "country"
+        | "date_of_birth"
+        | "finances"
+        | "financials"
+        | "gender"
+        | "generic"
+        | "identifier"
+        | "measurement"
+        | "monetary_value"
+        | "name"
+        | "person_status"
+        | "position"
+        | "risk_intelligence"
+        | "shares"
         | "status"
-        | "company_type";
+        | "translated_name"
+        | "weak_identifier";
 }
