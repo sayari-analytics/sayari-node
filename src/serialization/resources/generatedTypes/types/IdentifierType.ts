@@ -40,6 +40,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "mdv_registration_number",
         "ind_director_id_number",
         "ind_permanent_account_number",
+        "ind_tin",
         "ind_corporate_id_number",
         "kaz_tin",
         "kaz_bin",
@@ -666,6 +667,7 @@ export declare namespace IdentifierType {
         | "mdv_registration_number"
         | "ind_director_id_number"
         | "ind_permanent_account_number"
+        | "ind_tin"
         | "ind_corporate_id_number"
         | "kaz_tin"
         | "kaz_bin"
