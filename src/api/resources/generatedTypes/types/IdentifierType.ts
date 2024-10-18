@@ -99,6 +99,9 @@ export type IdentifierType =
      * A permanent account number (PAN) is a 10-digit alphanumeric tax ID issued by the Indian Income Tax Department. */
     | "ind_permanent_account_number"
     /**
+     * India tax identification number. Unique ID number assigned to every taxpayer by the Commercial Tax Department of each state. */
+    | "ind_tin"
+    /**
      * A unique identification number assigned by the Registrar of Companies (ROC) in various states under the Indian Ministry of Corporate Affairs (MCA) */
     | "ind_corporate_id_number"
     /**
@@ -1862,6 +1865,7 @@ export const IdentifierType = {
     MdvRegistrationNumber: "mdv_registration_number",
     IndDirectorIdNumber: "ind_director_id_number",
     IndPermanentAccountNumber: "ind_permanent_account_number",
+    IndTin: "ind_tin",
     IndCorporateIdNumber: "ind_corporate_id_number",
     KazTin: "kaz_tin",
     KazBin: "kaz_bin",
