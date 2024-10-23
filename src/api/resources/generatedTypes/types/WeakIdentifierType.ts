@@ -326,6 +326,9 @@ export type WeakIdentifierType =
      * USA Minnesota Secretary of State Filing Number */
     | "usa_mn_filing_number"
     /**
+     * Internal registration number for entities that have registered with HM Revenue & Customs under respective regulations for money laundering supervision and guidance. */
+    | "mlr_reg_num"
+    /**
      * A temporary malformed type */
     | "malformed mmr_prior_reg_no";
 
@@ -437,5 +440,6 @@ export const WeakIdentifierType = {
     HunOptenId: "hun_opten_id",
     IrlRegistrationNo: "irl_registration_no",
     UsaMnFilingNumber: "usa_mn_filing_number",
+    MlrRegNum: "mlr_reg_num",
     MalformedMmrPriorRegNo: "malformed mmr_prior_reg_no",
 } as const;

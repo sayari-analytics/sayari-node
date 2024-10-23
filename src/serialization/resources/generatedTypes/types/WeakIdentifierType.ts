@@ -117,6 +117,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "hun_opten_id",
     "irl_registration_no",
     "usa_mn_filing_number",
+    "mlr_reg_num",
     "malformed mmr_prior_reg_no",
 ]);
 
@@ -229,5 +230,6 @@ export declare namespace WeakIdentifierType {
         | "hun_opten_id"
         | "irl_registration_no"
         | "usa_mn_filing_number"
+        | "mlr_reg_num"
         | "malformed mmr_prior_reg_no";
 }
