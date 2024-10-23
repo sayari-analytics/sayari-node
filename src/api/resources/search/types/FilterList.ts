@@ -8,11 +8,18 @@ import * as Sayari from "../../../index";
  * Filter your search on the following attributes.
  */
 export interface FilterList {
+    /** List of source IDs to filter by. */
     source?: Sayari.SourceId[];
+    /** List of countries to filter by. */
     country?: Sayari.Country[];
+    /** List of states or provinces to filter by. */
     state?: string[];
+    /** List of cities to filter by. */
     city?: string[];
+    /** List of entity types to filter by. */
     entityType?: Sayari.Entities[];
+    /** Pipe-delimited bounding box coordinates (north,west,south,east). E.g., '"46.12|-76|45|-75"'. */
     bounds?: string[];
+    /** List of risk factors to filter by. */
     risk?: Sayari.Risk[];
 }
