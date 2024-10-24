@@ -1814,6 +1814,12 @@ export type IdentifierType =
      * Penalty number assigned by the Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
     | "can_qc_sap_registry_ref_num"
     /**
+     * Izmir Chamber of Commerce registration number */
+    | "tur_izmir_coc_reg_no"
+    /**
+     * Turkey Trade Registry Number, Ticaret Sicil. Unique registration number for companies in Turkey. */
+    | "tur_ticaret_sicil_no"
+    /**
      * EU ESMA Sanctions List. Reference number assigned to all entities listed under the European Securities and Markets Authority (ESMA) Sanctions List. */
     | "xxx_eu_esma_sanctions_id"
     /**
@@ -1829,8 +1835,11 @@ export type IdentifierType =
      * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Companies. */
     | "ind_company_registration_number"
     /**
-     * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Cooperative Societies */
-    | "ind_coopsoc_registration_number";
+     * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Cooperative Societies. */
+    | "ind_coopsoc_registration_number"
+    /**
+     * Unique India intellectual property ID number. Assigned to every trademark application submitted to the Controller General of Patents, Designs and Trademarks of the Ministry of Commerce and Industry, Government of India. */
+    | "ind_trademark_submission_ref";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2450,10 +2459,13 @@ export const IdentifierType = {
     UsaFlMartinPid: "usa_fl_martin_pid",
     UsaFlSlPid: "usa_fl_sl_pid",
     CanQcSapRegistryRefNum: "can_qc_sap_registry_ref_num",
+    TurIzmirCocRegNo: "tur_izmir_coc_reg_no",
+    TurTicaretSicilNo: "tur_ticaret_sicil_no",
     XxxEuEsmaSanctionsId: "xxx_eu_esma_sanctions_id",
     IndDarpanUid: "ind_darpan_uid",
     IndCharityRegistrationNumber: "ind_charity_registration_number",
     IndSocietyRegistrationNumber: "ind_society_registration_number",
     IndCompanyRegistrationNumber: "ind_company_registration_number",
     IndCoopsocRegistrationNumber: "ind_coopsoc_registration_number",
+    IndTrademarkSubmissionRef: "ind_trademark_submission_ref",
 } as const;

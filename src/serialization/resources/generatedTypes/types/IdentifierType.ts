@@ -625,12 +625,15 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "usa_fl_martin_pid",
         "usa_fl_sl_pid",
         "can_qc_sap_registry_ref_num",
+        "tur_izmir_coc_reg_no",
+        "tur_ticaret_sicil_no",
         "xxx_eu_esma_sanctions_id",
         "ind_darpan_uid",
         "ind_charity_registration_number",
         "ind_society_registration_number",
         "ind_company_registration_number",
         "ind_coopsoc_registration_number",
+        "ind_trademark_submission_ref",
     ]);
 
 export declare namespace IdentifierType {
@@ -1252,10 +1255,13 @@ export declare namespace IdentifierType {
         | "usa_fl_martin_pid"
         | "usa_fl_sl_pid"
         | "can_qc_sap_registry_ref_num"
+        | "tur_izmir_coc_reg_no"
+        | "tur_ticaret_sicil_no"
         | "xxx_eu_esma_sanctions_id"
         | "ind_darpan_uid"
         | "ind_charity_registration_number"
         | "ind_society_registration_number"
         | "ind_company_registration_number"
-        | "ind_coopsoc_registration_number";
+        | "ind_coopsoc_registration_number"
+        | "ind_trademark_submission_ref";
 }
