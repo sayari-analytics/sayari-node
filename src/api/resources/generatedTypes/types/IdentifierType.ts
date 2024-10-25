@@ -1835,8 +1835,11 @@ export type IdentifierType =
      * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Companies. */
     | "ind_company_registration_number"
     /**
-     * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Cooperative Societies. */
+     * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Cooperative Societies */
     | "ind_coopsoc_registration_number"
+    /**
+     * Unique identifiers for each bank branch participating in India's National Electronic Funds Transfer (NEFT), Real Time Gross Settlement (RTGS), and Immediate Payment Service (IMPS) electronic funds transfer systems. */
+    | "ind_ifsc"
     /**
      * Unique India intellectual property ID number. Assigned to every trademark application submitted to the Controller General of Patents, Designs and Trademarks of the Ministry of Commerce and Industry, Government of India. */
     | "ind_trademark_submission_ref";
@@ -2467,5 +2470,6 @@ export const IdentifierType = {
     IndSocietyRegistrationNumber: "ind_society_registration_number",
     IndCompanyRegistrationNumber: "ind_company_registration_number",
     IndCoopsocRegistrationNumber: "ind_coopsoc_registration_number",
+    IndIfsc: "ind_ifsc",
     IndTrademarkSubmissionRef: "ind_trademark_submission_ref",
 } as const;
