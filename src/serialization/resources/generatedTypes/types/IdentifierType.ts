@@ -633,6 +633,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "ind_society_registration_number",
         "ind_company_registration_number",
         "ind_coopsoc_registration_number",
+        "ind_ifsc",
         "ind_trademark_submission_ref",
     ]);
 
@@ -1263,5 +1264,6 @@ export declare namespace IdentifierType {
         | "ind_society_registration_number"
         | "ind_company_registration_number"
         | "ind_coopsoc_registration_number"
+        | "ind_ifsc"
         | "ind_trademark_submission_ref";
 }
