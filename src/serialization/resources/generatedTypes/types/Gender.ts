@@ -7,11 +7,11 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const Gender: core.serialization.Schema<serializers.Gender.Raw, Sayari.Gender> = core.serialization.enum_([
-    "male",
     "female",
+    "male",
     "other",
 ]);
 
 export declare namespace Gender {
-    type Raw = "male" | "female" | "other";
+    type Raw = "female" | "male" | "other";
 }

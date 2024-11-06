@@ -8,34 +8,34 @@ import * as core from "../../../../core";
 
 export const CountryContext: core.serialization.Schema<serializers.CountryContext.Raw, Sayari.CountryContext> =
     core.serialization.enum_([
-        "citizenship",
-        "incorporation",
-        "residence",
-        "nationality",
-        "address",
-        "vessel_flag",
-        "domicile",
-        "shipment_departure",
-        "shipment_arrival",
-        "shipment_transit",
         "activity_in",
+        "address",
+        "citizenship",
+        "domicile",
+        "incorporation",
         "mentioned_in",
+        "nationality",
         "product_origin",
+        "residence",
+        "shipment_arrival",
+        "shipment_departure",
+        "shipment_transit",
+        "vessel_flag",
     ]);
 
 export declare namespace CountryContext {
     type Raw =
-        | "citizenship"
-        | "incorporation"
-        | "residence"
-        | "nationality"
-        | "address"
-        | "vessel_flag"
-        | "domicile"
-        | "shipment_departure"
-        | "shipment_arrival"
-        | "shipment_transit"
         | "activity_in"
+        | "address"
+        | "citizenship"
+        | "domicile"
+        | "incorporation"
         | "mentioned_in"
-        | "product_origin";
+        | "nationality"
+        | "product_origin"
+        | "residence"
+        | "shipment_arrival"
+        | "shipment_departure"
+        | "shipment_transit"
+        | "vessel_flag";
 }
