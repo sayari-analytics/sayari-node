@@ -7,17 +7,17 @@
  */
 export type Gender =
     /**
-     * Refers to a male person */
-    | "male"
-    /**
      * Refers to a female person */
     | "female"
+    /**
+     * Refers to a male person */
+    | "male"
     /**
      * Indicates a gender other than male or female */
     | "other";
 
 export const Gender = {
-    Male: "male",
     Female: "female",
+    Male: "male",
     Other: "other",
 } as const;

@@ -10,7 +10,15 @@ export const BusinessPurposeStandard: core.serialization.Schema<
     serializers.BusinessPurposeStandard.Raw,
     Sayari.BusinessPurposeStandard
 > = core.serialization.enum_([
+    "ADGM",
+    "ATECO",
+    "CAE",
+    "CAEM2005",
+    "CCNAE2021",
     "CNAE2",
+    "ESA2010",
+    "GCED2011",
+    "HS",
     "ISIC3",
     "ISIC31",
     "ISIC4",
@@ -18,34 +26,34 @@ export const BusinessPurposeStandard: core.serialization.Schema<
     "KSIC10",
     "NACE1",
     "NACE2",
-    "NAICS2017",
-    "SKD2002",
-    "SKD2008",
-    "TSIC2552",
     "NACEBEL2003",
     "NACEBEL2008",
     "NAF1",
     "NAF2",
-    "GCED2011",
-    "SCIAN2018",
-    "CCNAE2021",
-    "CAEM2005",
-    "SBI2008",
-    "HS",
-    "SIC",
-    "SSIC2020",
-    "PKD2007",
-    "ESA2010",
-    "ATECO",
-    "CAE",
-    "TOL2008",
-    "ADGM",
+    "NAICS2017",
     "NIC2008",
+    "PKD2007",
+    "SBI2008",
+    "SCIAN2018",
+    "SIC",
+    "SKD2002",
+    "SKD2008",
+    "SSIC2020",
+    "TOL2008",
+    "TSIC2552",
 ]);
 
 export declare namespace BusinessPurposeStandard {
     type Raw =
+        | "ADGM"
+        | "ATECO"
+        | "CAE"
+        | "CAEM2005"
+        | "CCNAE2021"
         | "CNAE2"
+        | "ESA2010"
+        | "GCED2011"
+        | "HS"
         | "ISIC3"
         | "ISIC31"
         | "ISIC4"
@@ -53,27 +61,19 @@ export declare namespace BusinessPurposeStandard {
         | "KSIC10"
         | "NACE1"
         | "NACE2"
-        | "NAICS2017"
-        | "SKD2002"
-        | "SKD2008"
-        | "TSIC2552"
         | "NACEBEL2003"
         | "NACEBEL2008"
         | "NAF1"
         | "NAF2"
-        | "GCED2011"
-        | "SCIAN2018"
-        | "CCNAE2021"
-        | "CAEM2005"
-        | "SBI2008"
-        | "HS"
-        | "SIC"
-        | "SSIC2020"
+        | "NAICS2017"
+        | "NIC2008"
         | "PKD2007"
-        | "ESA2010"
-        | "ATECO"
-        | "CAE"
+        | "SBI2008"
+        | "SCIAN2018"
+        | "SIC"
+        | "SKD2002"
+        | "SKD2008"
+        | "SSIC2020"
         | "TOL2008"
-        | "ADGM"
-        | "NIC2008";
+        | "TSIC2552";
 }
