@@ -8,13 +8,17 @@ import { SayariError } from "@sayari/sdk";
 const currentPath = path.resolve(".env");
 const parentPath = path.resolve("../.env");
 
-// Load environment variables from the appropriate .env file
-if (fs.existsSync(currentPath)) {
-    dotenv.config({ path: currentPath });
-} else if (fs.existsSync(parentPath)) {
-    dotenv.config({ path: parentPath });
+// Load environment variables from the .env file if CLIENT_ID and CLIENT_SECRET are not set
+if (!process.env.CLIENT_ID || !process.env.CLIENT_SECRET) {
+    if (fs.existsSync(currentPath)) {
+        dotenv.config({ path: currentPath });
+    } else if (fs.existsSync(parentPath)) {
+        dotenv.config({ path: parentPath });
+    } else {
+        console.warn("Warning: .env file not found in current or parent directory.");
+    }
 } else {
-    console.warn("Warning: .env file not found in current or parent directory.");
+    console.log("Environment variables CLIENT_ID and CLIENT_SECRET are already set.");
 }
 
 const config = {
