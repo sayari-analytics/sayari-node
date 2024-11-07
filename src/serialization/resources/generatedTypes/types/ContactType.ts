@@ -7,8 +7,8 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const ContactType: core.serialization.Schema<serializers.ContactType.Raw, Sayari.ContactType> =
-    core.serialization.enum_(["email", "fax", "phone_number", "url"]);
+    core.serialization.enum_(["phone_number", "fax", "email", "url"]);
 
 export declare namespace ContactType {
-    type Raw = "email" | "fax" | "phone_number" | "url";
+    type Raw = "phone_number" | "fax" | "email" | "url";
 }

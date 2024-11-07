@@ -8,20 +8,20 @@ import * as core from "../../../../core";
 
 export const FinanceType: core.serialization.Schema<serializers.FinanceType.Raw, Sayari.FinanceType> =
     core.serialization.enum_([
-        "authorized_capital",
-        "paid_up_capital",
-        "registered_capital",
-        "share_amount",
         "share_percentage",
+        "share_amount",
+        "registered_capital",
+        "paid_up_capital",
+        "authorized_capital",
         "subscribed_capital",
     ]);
 
 export declare namespace FinanceType {
     type Raw =
-        | "authorized_capital"
-        | "paid_up_capital"
-        | "registered_capital"
-        | "share_amount"
         | "share_percentage"
+        | "share_amount"
+        | "registered_capital"
+        | "paid_up_capital"
+        | "authorized_capital"
         | "subscribed_capital";
 }

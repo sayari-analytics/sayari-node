@@ -7,29 +7,29 @@
  */
 export type FinanceType =
     /**
-     * The maximum amount of share capital a company is allowed to issue under its legal statutes */
-    | "authorized_capital"
-    /**
-     * Cumulative monetary value of the share capital for which one or more shareholders have paid a given company */
-    | "paid_up_capital"
-    /**
-     * Cumulative monetary value of the share capital of a given company */
-    | "registered_capital"
+     * Percentage ownership of a given company's share capital, represented as a value from 0-100 */
+    | "share_percentage"
     /**
      * Cumulative monetary value of one or more company shares, typically either held by a shareholder or issued by the company */
     | "share_amount"
     /**
-     * Percentage ownership of a given company's share capital, represented as a value from 0-100 */
-    | "share_percentage"
+     * Cumulative monetary value of the share capital of a given company */
+    | "registered_capital"
+    /**
+     * Cumulative monetary value of the share capital for which one or more shareholders have paid a given company */
+    | "paid_up_capital"
+    /**
+     * The maximum amount of share capital a company is allowed to issue under its legal statutes */
+    | "authorized_capital"
     /**
      * Cumulative monetary value of the share capital held by shareholders of a given company */
     | "subscribed_capital";
 
 export const FinanceType = {
-    AuthorizedCapital: "authorized_capital",
-    PaidUpCapital: "paid_up_capital",
-    RegisteredCapital: "registered_capital",
-    ShareAmount: "share_amount",
     SharePercentage: "share_percentage",
+    ShareAmount: "share_amount",
+    RegisteredCapital: "registered_capital",
+    PaidUpCapital: "paid_up_capital",
+    AuthorizedCapital: "authorized_capital",
     SubscribedCapital: "subscribed_capital",
 } as const;

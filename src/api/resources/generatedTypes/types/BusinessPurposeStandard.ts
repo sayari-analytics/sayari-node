@@ -7,32 +7,8 @@
  */
 export type BusinessPurposeStandard =
     /**
-     * Abu Dhabi Global Market Activity Code */
-    | "ADGM"
-    /**
-     * San Marino Codici ATECO */
-    | "ATECO"
-    /**
-     * Code d'activité économique Quebec */
-    | "CAE"
-    /**
-     * Clasificatorul Activităţilor Din Economia Moldovei - Moldova Classification of Economic Activities, Rev. 2005 */
-    | "CAEM2005"
-    /**
-     * Clasificador Nacional de Actividades Económicas(CNAE) - Cuba National Economic Activity Classifications, Rev. 2021 */
-    | "CCNAE2021"
-    /**
      * Classificação Nacional de Atividades Econômicas - Brazil National Economic Activity Classification, Rev. 2.0 */
     | "CNAE2"
-    /**
-     * European System of Accounts */
-    | "ESA2010"
-    /**
-     * Экономикалык Ишмердиктердин Тyрлөрүнүн Мамлекеттик Классификатору - Kyrgyz State Economic Activity Classification, Rev. 2011 */
-    | "GCED2011"
-    /**
-     * Harmonized System Codes (standardized numerical method of classifying traded products) */
-    | "HS"
     /**
      * International Standard Industrial Classification, Rev. 3 */
     | "ISIC3"
@@ -55,6 +31,18 @@ export type BusinessPurposeStandard =
      * Nomenclature of Economic Activities, Rev. 2 */
     | "NACE2"
     /**
+     * North American Industry Classification System, Rev. 2017 */
+    | "NAICS2017"
+    /**
+     * Standardna klasifikacija dejavnosti - Slovenia Standard Classification of Activities, Rev. 2002 */
+    | "SKD2002"
+    /**
+     * Standardna klasifikacija dejavnosti - Slovenia Standard Classification of Activities, Rev. 2008 */
+    | "SKD2008"
+    /**
+     * การจัดประเภทมาตรฐานอุตสาหกรรมประเทศไทย ปี 2552 - Thailand Standard Industrial Classification, Rev. 2009 */
+    | "TSIC2552"
+    /**
      * Nomenclature des activités économiques - Belgium Nomenclature of Economic Activities, Rev. 2003 */
     | "NACEBEL2003"
     /**
@@ -67,49 +55,53 @@ export type BusinessPurposeStandard =
      * Nomenclature d'activités française - French Nomenclature of Economic Activities, Rev. 2 */
     | "NAF2"
     /**
-     * North American Industry Classification System, Rev. 2017 */
-    | "NAICS2017"
-    /**
-     * India National Industrial Classification - 2008 (NIC-2008) */
-    | "NIC2008"
-    /**
-     * Polska Klasyfikacja Działalności (PKD) - Polish Classification of Activities, Rev. 2007 */
-    | "PKD2007"
-    /**
-     * De Standaard Bedrijfsindeling (SBI) - Netherlands Standard Company Classification, Rev. 2008 */
-    | "SBI2008"
+     * Экономикалык Ишмердиктердин Тyрлөрүнүн Мамлекеттик Классификатору - Kyrgyz State Economic Activity Classification, Rev. 2011 */
+    | "GCED2011"
     /**
      * Sistema de Clasificación Industrial de América del Norte - Mexico North American Industry Classification System, Rev. 2018 */
     | "SCIAN2018"
     /**
+     * Clasificador Nacional de Actividades Económicas(CNAE) - Cuba National Economic Activity Classifications, Rev. 2021 */
+    | "CCNAE2021"
+    /**
+     * Clasificatorul Activităţilor Din Economia Moldovei - Moldova Classification of Economic Activities, Rev. 2005 */
+    | "CAEM2005"
+    /**
+     * De Standaard Bedrijfsindeling (SBI) - Netherlands Standard Company Classification, Rev. 2008 */
+    | "SBI2008"
+    /**
+     * Harmonized System Codes (standardized numerical method of classifying traded products) */
+    | "HS"
+    /**
      * Standard Industrial Classification (SIC) Code List (USA) */
     | "SIC"
-    /**
-     * Standardna klasifikacija dejavnosti - Slovenia Standard Classification of Activities, Rev. 2002 */
-    | "SKD2002"
-    /**
-     * Standardna klasifikacija dejavnosti - Slovenia Standard Classification of Activities, Rev. 2008 */
-    | "SKD2008"
     /**
      * Singapore Standard Industrial Classification (national standard for classifying economic activities undertaken by economic units) */
     | "SSIC2020"
     /**
+     * Polska Klasyfikacja Działalności (PKD) - Polish Classification of Activities, Rev. 2007 */
+    | "PKD2007"
+    /**
+     * European System of Accounts */
+    | "ESA2010"
+    /**
+     * San Marino Codici ATECO */
+    | "ATECO"
+    /**
+     * Code d'activité économique Quebec */
+    | "CAE"
+    /**
      * Finland Standard Industrial Classification TOL 2008 */
     | "TOL2008"
     /**
-     * การจัดประเภทมาตรฐานอุตสาหกรรมประเทศไทย ปี 2552 - Thailand Standard Industrial Classification, Rev. 2009 */
-    | "TSIC2552";
+     * Abu Dhabi Global Market Activity Code */
+    | "ADGM"
+    /**
+     * India National Industrial Classification - 2008 (NIC-2008) */
+    | "NIC2008";
 
 export const BusinessPurposeStandard = {
-    Adgm: "ADGM",
-    Ateco: "ATECO",
-    Cae: "CAE",
-    Caem2005: "CAEM2005",
-    Ccnae2021: "CCNAE2021",
     Cnae2: "CNAE2",
-    Esa2010: "ESA2010",
-    Gced2011: "GCED2011",
-    Hs: "HS",
     Isic3: "ISIC3",
     Isic31: "ISIC31",
     Isic4: "ISIC4",
@@ -117,19 +109,27 @@ export const BusinessPurposeStandard = {
     Ksic10: "KSIC10",
     Nace1: "NACE1",
     Nace2: "NACE2",
+    Naics2017: "NAICS2017",
+    Skd2002: "SKD2002",
+    Skd2008: "SKD2008",
+    Tsic2552: "TSIC2552",
     Nacebel2003: "NACEBEL2003",
     Nacebel2008: "NACEBEL2008",
     Naf1: "NAF1",
     Naf2: "NAF2",
-    Naics2017: "NAICS2017",
-    Nic2008: "NIC2008",
-    Pkd2007: "PKD2007",
-    Sbi2008: "SBI2008",
+    Gced2011: "GCED2011",
     Scian2018: "SCIAN2018",
+    Ccnae2021: "CCNAE2021",
+    Caem2005: "CAEM2005",
+    Sbi2008: "SBI2008",
+    Hs: "HS",
     Sic: "SIC",
-    Skd2002: "SKD2002",
-    Skd2008: "SKD2008",
     Ssic2020: "SSIC2020",
+    Pkd2007: "PKD2007",
+    Esa2010: "ESA2010",
+    Ateco: "ATECO",
+    Cae: "CAE",
     Tol2008: "TOL2008",
-    Tsic2552: "TSIC2552",
+    Adgm: "ADGM",
+    Nic2008: "NIC2008",
 } as const;
