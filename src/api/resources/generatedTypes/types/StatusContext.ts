@@ -10,22 +10,22 @@ export type StatusContext =
      * e.g., "Broker", "Intermediary". An individual who acts as an intermediary for trading, lending, and investing purposes. */
     | "broker_license"
     /**
-     * e.g., "Partnership". A basic form of partnership under common law. A company entity, typically unincorporated, comprised of two or more partners who agree to share in all assets, profits, and liabilities of a business. */
-    | "general_partnership_status"
-    /**
      * e.g., "Investment Advisor". An individual who provides investment advice and/or securities analysis services for a fee. */
     | "investment_advisor_license"
     /**
-     * e.g., "LLP", "Limited-Liability Limited Partnership". A partnership in which some or all partners have limited liabilities. Each partner's liabilities are limited to the amount they contribute to the business. */
-    | "limited_liability_partnership_status"
-    /**
      * e.g., "Sole proprietor", "Sole proprietorship", "Individual entrepreneurship", "Sole trader". */
-    | "sole_proprietorship_status";
+    | "sole_proprietorship_status"
+    /**
+     * e.g., "Partnership". A basic form of partnership under common law. A company entity, typically unincorporated, comprised of two or more partners who agree to share in all assets, profits, and liabilities of a business. */
+    | "general_partnership_status"
+    /**
+     * e.g., "LLP", "Limited-Liability Limited Partnership". A partnership in which some or all partners have limited liabilities. Each partner's liabilities are limited to the amount they contribute to the business. */
+    | "limited_liability_partnership_status";
 
 export const StatusContext = {
     BrokerLicense: "broker_license",
-    GeneralPartnershipStatus: "general_partnership_status",
     InvestmentAdvisorLicense: "investment_advisor_license",
-    LimitedLiabilityPartnershipStatus: "limited_liability_partnership_status",
     SoleProprietorshipStatus: "sole_proprietorship_status",
+    GeneralPartnershipStatus: "general_partnership_status",
+    LimitedLiabilityPartnershipStatus: "limited_liability_partnership_status",
 } as const;

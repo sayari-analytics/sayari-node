@@ -8,38 +8,38 @@ import * as core from "../../../../core";
 
 export const CompanyStatus: core.serialization.Schema<serializers.CompanyStatus.Raw, Sayari.CompanyStatus> =
     core.serialization.enum_([
+        "seized",
+        "in_receivership",
+        "registration_revoked",
+        "opening",
+        "dissolved",
         "active",
+        "inactive",
         "closed",
         "closing",
-        "dissolved",
-        "expanded",
-        "expired",
-        "in_receivership",
-        "inactive",
-        "incorporated",
-        "opening",
         "registered",
-        "registration_revoked",
-        "seized",
-        "terminated",
+        "incorporated",
         "under_external_control",
+        "expired",
+        "expanded",
+        "terminated",
     ]);
 
 export declare namespace CompanyStatus {
     type Raw =
+        | "seized"
+        | "in_receivership"
+        | "registration_revoked"
+        | "opening"
+        | "dissolved"
         | "active"
+        | "inactive"
         | "closed"
         | "closing"
-        | "dissolved"
-        | "expanded"
-        | "expired"
-        | "in_receivership"
-        | "inactive"
-        | "incorporated"
-        | "opening"
         | "registered"
-        | "registration_revoked"
-        | "seized"
-        | "terminated"
-        | "under_external_control";
+        | "incorporated"
+        | "under_external_control"
+        | "expired"
+        | "expanded"
+        | "terminated";
 }

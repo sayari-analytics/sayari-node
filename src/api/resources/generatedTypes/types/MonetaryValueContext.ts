@@ -7,17 +7,17 @@
  */
 export type MonetaryValueContext =
     /**
-     * Indicates value determined by customs authorities */
-    | "assessed_value"
-    /**
      * Indicates cost, insurance, and freight (CIF) arrangement */
     | "cost_insurance_and_freight"
     /**
      * Indicates free on board (FOB) arrangement */
-    | "free_on_board";
+    | "free_on_board"
+    /**
+     * Indicates value determined by customs authorities */
+    | "assessed_value";
 
 export const MonetaryValueContext = {
-    AssessedValue: "assessed_value",
     CostInsuranceAndFreight: "cost_insurance_and_freight",
     FreeOnBoard: "free_on_board",
+    AssessedValue: "assessed_value",
 } as const;

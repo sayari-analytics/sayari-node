@@ -7,50 +7,50 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const Tag: core.serialization.Schema<serializers.Tag.Raw, Sayari.Tag> = core.serialization.enum_([
-    "aspi_uyghur_forced_labor_report_entity",
-    "bis_boycott_requester_list",
+    "pep",
+    "state_owned",
+    "former_soe",
+    "sanctioned",
+    "formerly_sanctioned",
+    "reputational_risk_terrorism",
+    "reputational_risk_organized_crime",
+    "reputational_risk_financial_crime",
+    "reputational_risk_bribery_and_corruption",
+    "reputational_risk_other",
+    "reputational_risk_cybercrime",
+    "reputational_risk_modern_slavery",
+    "regulatory_action",
+    "law_enforcement_action",
     "export_controls",
     "forced_labor_xinjiang_contractors",
-    "former_soe",
-    "formerly_sanctioned",
-    "law_enforcement_action",
-    "pep",
-    "regulatory_action",
-    "reputational_risk_bribery_and_corruption",
-    "reputational_risk_cybercrime",
-    "reputational_risk_financial_crime",
-    "reputational_risk_modern_slavery",
-    "reputational_risk_organized_crime",
-    "reputational_risk_other",
-    "reputational_risk_terrorism",
-    "sanctioned",
-    "sheffield_hallam_university_forced_labor_entity",
-    "state_owned",
-    "uflpa_entity",
     "wro_entity",
+    "uflpa_entity",
+    "sheffield_hallam_university_forced_labor_entity",
+    "aspi_uyghur_forced_labor_report_entity",
+    "bis_boycott_requester_list",
 ]);
 
 export declare namespace Tag {
     type Raw =
-        | "aspi_uyghur_forced_labor_report_entity"
-        | "bis_boycott_requester_list"
+        | "pep"
+        | "state_owned"
+        | "former_soe"
+        | "sanctioned"
+        | "formerly_sanctioned"
+        | "reputational_risk_terrorism"
+        | "reputational_risk_organized_crime"
+        | "reputational_risk_financial_crime"
+        | "reputational_risk_bribery_and_corruption"
+        | "reputational_risk_other"
+        | "reputational_risk_cybercrime"
+        | "reputational_risk_modern_slavery"
+        | "regulatory_action"
+        | "law_enforcement_action"
         | "export_controls"
         | "forced_labor_xinjiang_contractors"
-        | "former_soe"
-        | "formerly_sanctioned"
-        | "law_enforcement_action"
-        | "pep"
-        | "regulatory_action"
-        | "reputational_risk_bribery_and_corruption"
-        | "reputational_risk_cybercrime"
-        | "reputational_risk_financial_crime"
-        | "reputational_risk_modern_slavery"
-        | "reputational_risk_organized_crime"
-        | "reputational_risk_other"
-        | "reputational_risk_terrorism"
-        | "sanctioned"
-        | "sheffield_hallam_university_forced_labor_entity"
-        | "state_owned"
+        | "wro_entity"
         | "uflpa_entity"
-        | "wro_entity";
+        | "sheffield_hallam_university_forced_labor_entity"
+        | "aspi_uyghur_forced_labor_report_entity"
+        | "bis_boycott_requester_list";
 }

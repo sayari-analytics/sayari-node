@@ -7,80 +7,53 @@
  */
 export type Currency =
     /**
-     * UAE Dirham/784/2 */
-    | "AED"
-    /**
      * Afghani/971/2 */
     | "AFN"
+    /**
+     * Euro/978/2 */
+    | "EUR"
     /**
      * Lek/008/2 */
     | "ALL"
     /**
-     * Armenian Dram/051/2 */
-    | "AMD"
+     * Algerian Dinar/012/2 */
+    | "DZD"
     /**
-     * Netherlands Antillean Guilder/532/2 */
-    | "ANG"
+     * US Dollar/840/2 */
+    | "USD"
     /**
      * Kwanza/973/2 */
     | "AOA"
     /**
+     * East Caribbean Dollar/951/2 */
+    | "XCD"
+    /**
      * Argentine Peso/032/2 */
     | "ARS"
     /**
-     * Australian Dollar/036/2 */
-    | "AUD"
+     * Armenian Dram/051/2 */
+    | "AMD"
     /**
      * Aruban Florin/533/2 */
     | "AWG"
     /**
+     * Australian Dollar/036/2 */
+    | "AUD"
+    /**
      * Azerbaijan Manat/944/2 */
     | "AZN"
-    /**
-     * Convertible Mark/977/2 */
-    | "BAM"
-    /**
-     * Barbados Dollar/052/2 */
-    | "BBD"
-    /**
-     * Taka/050/2 */
-    | "BDT"
-    /**
-     * Belgian Franc */
-    | "BEF"
-    /**
-     * Bulgarian Lev/975/2 */
-    | "BGN"
-    /**
-     * Bahraini Dinar/048/3 */
-    | "BHD"
-    /**
-     * Burundi Franc/108/0 */
-    | "BIF"
-    /**
-     * Bermudian Dollar/060/2 */
-    | "BMD"
-    /**
-     * Brunei Dollar/096/2 */
-    | "BND"
-    /**
-     * Boliviano/068/2 */
-    | "BOB"
-    /**
-     * Mvdol/984/2 */
-    | "BOV"
-    /**
-     * Brazilian Real/986/2 */
-    | "BRL"
     /**
      * Bahamian Dollar/044/2 */
     | "BSD"
     /**
-     * Ngultrum/064/2 */
-    | "BTN"
+     * Bahraini Dinar/048/3 */
+    | "BHD"
     /**
-     * Pula/072/2 */
-    | "BWP"
+     * Taka/050/2 */
+    | "BDT"
+    /**
+     * Barbados Dollar/052/2 */
+    | "BBD"
     /**
      * Belarusian Ruble/933/2 */
     | "BYN"
@@ -88,26 +61,65 @@ export type Currency =
      * Belize Dollar/084/2 */
     | "BZD"
     /**
+     * CFA Franc BCEAO/952/0 */
+    | "XOF"
+    /**
+     * Bermudian Dollar/060/2 */
+    | "BMD"
+    /**
+     * Indian Rupee/356/2 */
+    | "INR"
+    /**
+     * Ngultrum/064/2 */
+    | "BTN"
+    /**
+     * Boliviano/068/2 */
+    | "BOB"
+    /**
+     * Mvdol/984/2 */
+    | "BOV"
+    /**
+     * Convertible Mark/977/2 */
+    | "BAM"
+    /**
+     * Pula/072/2 */
+    | "BWP"
+    /**
+     * Norwegian Krone/578/2 */
+    | "NOK"
+    /**
+     * Brazilian Real/986/2 */
+    | "BRL"
+    /**
+     * Brunei Dollar/096/2 */
+    | "BND"
+    /**
+     * Bulgarian Lev/975/2 */
+    | "BGN"
+    /**
+     * Burundi Franc/108/0 */
+    | "BIF"
+    /**
+     * Cabo Verde Escudo/132/2 */
+    | "CVE"
+    /**
+     * Riel/116/2 */
+    | "KHR"
+    /**
+     * CFA Franc BEAC/950/0 */
+    | "XAF"
+    /**
      * Canadian Dollar/124/2 */
     | "CAD"
     /**
-     * Congolese Franc/976/2 */
-    | "CDF"
-    /**
-     * WIR Euro/947/2 */
-    | "CHE"
-    /**
-     * Swiss Franc/756/2 */
-    | "CHF"
-    /**
-     * WIR Franc/948/2 */
-    | "CHW"
-    /**
-     * Unidad de Fomento/990/4 */
-    | "CLF"
+     * Cayman Islands Dollar/136/2 */
+    | "KYD"
     /**
      * Chilean Peso/152/0 */
     | "CLP"
+    /**
+     * Unidad de Fomento/990/4 */
+    | "CLF"
     /**
      * Yuan Renminbi/156/2 */
     | "CNY"
@@ -118,35 +130,47 @@ export type Currency =
      * Unidad de Valor Real/970/2 */
     | "COU"
     /**
+     * Comorian Franc /174/0 */
+    | "KMF"
+    /**
+     * Congolese Franc/976/2 */
+    | "CDF"
+    /**
+     * New Zealand Dollar/554/2 */
+    | "NZD"
+    /**
      * Costa Rican Colon/188/2 */
     | "CRC"
     /**
-     * Peso Convertible/931/2 */
-    | "CUC"
+     * Kuna/191/2 */
+    | "HRK"
     /**
      * Cuban Peso/192/2 */
     | "CUP"
     /**
-     * Cabo Verde Escudo/132/2 */
-    | "CVE"
+     * Peso Convertible/931/2 */
+    | "CUC"
+    /**
+     * Netherlands Antillean Guilder/532/2 */
+    | "ANG"
     /**
      * Czech Koruna/203/2 */
     | "CZK"
     /**
-     * Djibouti Franc/262/0 */
-    | "DJF"
-    /**
      * Danish Krone/208/2 */
     | "DKK"
+    /**
+     * Djibouti Franc/262/0 */
+    | "DJF"
     /**
      * Dominican Peso/214/2 */
     | "DOP"
     /**
-     * Algerian Dinar/012/2 */
-    | "DZD"
-    /**
      * Egyptian Pound/818/2 */
     | "EGP"
+    /**
+     * El Salvador Colon/222/2 */
+    | "SVC"
     /**
      * Nakfa/232/2 */
     | "ERN"
@@ -154,17 +178,17 @@ export type Currency =
      * Ethiopian Birr/230/2 */
     | "ETB"
     /**
-     * Euro/978/2 */
-    | "EUR"
+     * Falkland Islands Pound/238/2 */
+    | "FKP"
     /**
      * Fiji Dollar/242/2 */
     | "FJD"
     /**
-     * Falkland Islands Pound/238/2 */
-    | "FKP"
+     * CFP Franc/953/0 */
+    | "XPF"
     /**
-     * Pound Sterling/826/2 */
-    | "GBP"
+     * Dalasi/270/2 */
+    | "GMD"
     /**
      * Lari/981/2 */
     | "GEL"
@@ -175,74 +199,62 @@ export type Currency =
      * Gibraltar Pound/292/2 */
     | "GIP"
     /**
-     * Dalasi/270/2 */
-    | "GMD"
+     * Quetzal/320/2 */
+    | "GTQ"
+    /**
+     * Pound Sterling/826/2 */
+    | "GBP"
     /**
      * Guinean Franc/324/0 */
     | "GNF"
     /**
-     * Quetzal/320/2 */
-    | "GTQ"
-    /**
      * Guyana Dollar/328/2 */
     | "GYD"
-    /**
-     * Hong Kong Dollar/344/2 */
-    | "HKD"
-    /**
-     * Lempira/340/2 */
-    | "HNL"
-    /**
-     * Kuna/191/2 */
-    | "HRK"
     /**
      * Gourde/332/2 */
     | "HTG"
     /**
+     * Lempira/340/2 */
+    | "HNL"
+    /**
+     * Hong Kong Dollar/344/2 */
+    | "HKD"
+    /**
      * Forint/348/2 */
     | "HUF"
-    /**
-     * Rupiah/360/2 */
-    | "IDR"
-    /**
-     * New Israeli Sheqel/376/2 */
-    | "ILS"
-    /**
-     * Indian Rupee/356/2 */
-    | "INR"
-    /**
-     * Iraqi Dinar/368/3 */
-    | "IQD"
-    /**
-     * Iranian Rial/364/2 */
-    | "IRR"
     /**
      * Iceland Krona/352/0 */
     | "ISK"
     /**
-     * Italian Lira */
-    | "ITL"
+     * Rupiah/360/2 */
+    | "IDR"
+    /**
+     * SDR (Special Drawing Right)/960/N.A. */
+    | "XDR"
+    /**
+     * Iranian Rial/364/2 */
+    | "IRR"
+    /**
+     * Iraqi Dinar/368/3 */
+    | "IQD"
+    /**
+     * New Israeli Sheqel/376/2 */
+    | "ILS"
     /**
      * Jamaican Dollar/388/2 */
     | "JMD"
     /**
-     * Jordanian Dinar/400/3 */
-    | "JOD"
-    /**
      * Yen/392/0 */
     | "JPY"
     /**
+     * Jordanian Dinar/400/3 */
+    | "JOD"
+    /**
+     * Tenge/398/2 */
+    | "KZT"
+    /**
      * Kenyan Shilling/404/2 */
     | "KES"
-    /**
-     * Som/417/2 */
-    | "KGS"
-    /**
-     * Riel/116/2 */
-    | "KHR"
-    /**
-     * Comorian Franc /174/0 */
-    | "KMF"
     /**
      * North Korean Won/408/2 */
     | "KPW"
@@ -253,11 +265,8 @@ export type Currency =
      * Kuwaiti Dinar/414/3 */
     | "KWD"
     /**
-     * Cayman Islands Dollar/136/2 */
-    | "KYD"
-    /**
-     * Tenge/398/2 */
-    | "KZT"
+     * Som/417/2 */
+    | "KGS"
     /**
      * Lao Kip/418/2 */
     | "LAK"
@@ -265,44 +274,38 @@ export type Currency =
      * Lebanese Pound/422/2 */
     | "LBP"
     /**
-     * Sri Lanka Rupee/144/2 */
-    | "LKR"
+     * Loti/426/2 */
+    | "LSL"
+    /**
+     * Rand/710/2 */
+    | "ZAR"
     /**
      * Liberian Dollar/430/2 */
     | "LRD"
     /**
-     * Loti/426/2 */
-    | "LSL"
-    /**
-     * Latvian Lat; Learn more [here](https://en.wikipedia.org/wiki/Latvian_lats) */
-    | "LVL"
-    /**
      * Libyan Dinar/434/3 */
     | "LYD"
     /**
-     * Moroccan Dirham/504/2 */
-    | "MAD"
-    /**
-     * Moldovan Leu/498/2 */
-    | "MDL"
-    /**
-     * Malagasy Ariary/969/2 */
-    | "MGA"
-    /**
-     * Denar/807/2 */
-    | "MKD"
-    /**
-     * Kyat/104/2 */
-    | "MMK"
-    /**
-     * Tugrik/496/2 */
-    | "MNT"
+     * Swiss Franc/756/2 */
+    | "CHF"
     /**
      * Pataca/446/2 */
     | "MOP"
     /**
-     * Mauritanian Ouguiya */
-    | "MRO"
+     * Denar/807/2 */
+    | "MKD"
+    /**
+     * Malagasy Ariary/969/2 */
+    | "MGA"
+    /**
+     * Malawi Kwacha/454/2 */
+    | "MWK"
+    /**
+     * Malaysian Ringgit/458/2 */
+    | "MYR"
+    /**
+     * Rufiyaa/462/2 */
+    | "MVR"
     /**
      * Ouguiya/929/2 */
     | "MRU"
@@ -310,11 +313,8 @@ export type Currency =
      * Mauritius Rupee/480/2 */
     | "MUR"
     /**
-     * Rufiyaa/462/2 */
-    | "MVR"
-    /**
-     * Malawi Kwacha/454/2 */
-    | "MWK"
+     * ADB Unit of Account/965/N.A. */
+    | "XUA"
     /**
      * Mexican Peso/484/2 */
     | "MXN"
@@ -322,56 +322,56 @@ export type Currency =
      * Mexican Unidad de Inversion (UDI)/979/2 */
     | "MXV"
     /**
-     * Malaysian Ringgit/458/2 */
-    | "MYR"
+     * Moldovan Leu/498/2 */
+    | "MDL"
+    /**
+     * Tugrik/496/2 */
+    | "MNT"
+    /**
+     * Moroccan Dirham/504/2 */
+    | "MAD"
     /**
      * Mozambique Metical/943/2 */
     | "MZN"
     /**
+     * Kyat/104/2 */
+    | "MMK"
+    /**
      * Namibia Dollar/516/2 */
     | "NAD"
-    /**
-     * Naira/566/2 */
-    | "NGN"
-    /**
-     * Cordoba Oro/558/2 */
-    | "NIO"
-    /**
-     * Dutch Guilder */
-    | "NLG"
-    /**
-     * Norwegian Krone/578/2 */
-    | "NOK"
     /**
      * Nepalese Rupee/524/2 */
     | "NPR"
     /**
-     * New Zealand Dollar/554/2 */
-    | "NZD"
+     * Cordoba Oro/558/2 */
+    | "NIO"
+    /**
+     * Naira/566/2 */
+    | "NGN"
     /**
      * Rial Omani/512/3 */
     | "OMR"
     /**
+     * Pakistan Rupee/586/2 */
+    | "PKR"
+    /**
      * Balboa/590/2 */
     | "PAB"
-    /**
-     * Sol/604/2 */
-    | "PEN"
     /**
      * Kina/598/2 */
     | "PGK"
     /**
+     * Guarani/600/0 */
+    | "PYG"
+    /**
+     * Sol/604/2 */
+    | "PEN"
+    /**
      * Philippine Peso/608/2 */
     | "PHP"
     /**
-     * Pakistan Rupee/586/2 */
-    | "PKR"
-    /**
      * Zloty/985/2 */
     | "PLN"
-    /**
-     * Guarani/600/0 */
-    | "PYG"
     /**
      * Qatari Rial/634/2 */
     | "QAR"
@@ -379,110 +379,116 @@ export type Currency =
      * Romanian Leu/946/2 */
     | "RON"
     /**
-     * Serbian Dinar/941/2 */
-    | "RSD"
-    /**
      * Russian Ruble/643/2 */
     | "RUB"
     /**
      * Rwanda Franc/646/0 */
     | "RWF"
     /**
-     * Saudi Riyal/682/2 */
-    | "SAR"
-    /**
-     * Solomon Islands Dollar/090/2 */
-    | "SBD"
-    /**
-     * Seychelles Rupee/690/2 */
-    | "SCR"
-    /**
-     * Sudanese Pound/938/2 */
-    | "SDG"
-    /**
-     * Swedish Krona/752/2 */
-    | "SEK"
-    /**
-     * Singapore Dollar/702/2 */
-    | "SGD"
-    /**
      * Saint Helena Pound/654/2 */
     | "SHP"
     /**
-     * Slovak Koruna */
-    | "SKK"
-    /**
-     * Leone/694/2 */
-    | "SLL"
-    /**
-     * Somali Shilling/706/2 */
-    | "SOS"
-    /**
-     * Surinam Dollar/968/2 */
-    | "SRD"
-    /**
-     * South Sudanese Pound/728/2 */
-    | "SSP"
+     * Tala/882/2 */
+    | "WST"
     /**
      * Dobra/930/2 */
     | "STN"
     /**
-     * El Salvador Colon/222/2 */
-    | "SVC"
+     * Saudi Riyal/682/2 */
+    | "SAR"
     /**
-     * Syrian Pound/760/2 */
-    | "SYP"
+     * Serbian Dinar/941/2 */
+    | "RSD"
+    /**
+     * Seychelles Rupee/690/2 */
+    | "SCR"
+    /**
+     * Leone/694/2 */
+    | "SLL"
+    /**
+     * Singapore Dollar/702/2 */
+    | "SGD"
+    /**
+     * Sucre/994/N.A. */
+    | "XSU"
+    /**
+     * Solomon Islands Dollar/090/2 */
+    | "SBD"
+    /**
+     * Somali Shilling/706/2 */
+    | "SOS"
+    /**
+     * South Sudanese Pound/728/2 */
+    | "SSP"
+    /**
+     * Sri Lanka Rupee/144/2 */
+    | "LKR"
+    /**
+     * Sudanese Pound/938/2 */
+    | "SDG"
+    /**
+     * Surinam Dollar/968/2 */
+    | "SRD"
     /**
      * Lilangeni/748/2 */
     | "SZL"
     /**
-     * Baht/764/2 */
-    | "THB"
+     * Swedish Krona/752/2 */
+    | "SEK"
     /**
-     * Somoni/972/2 */
-    | "TJS"
+     * WIR Euro/947/2 */
+    | "CHE"
     /**
-     * Turkmenistan New Manat/934/2 */
-    | "TMT"
+     * WIR Franc/948/2 */
+    | "CHW"
     /**
-     * Tunisian Dinar/788/3 */
-    | "TND"
-    /**
-     * Pa’anga/776/2 */
-    | "TOP"
-    /**
-     * Turkish Lira/949/2 */
-    | "TRY"
-    /**
-     * Trinidad and Tobago Dollar/780/2 */
-    | "TTD"
+     * Syrian Pound/760/2 */
+    | "SYP"
     /**
      * New Taiwan Dollar/901/2 */
     | "TWD"
     /**
+     * Somoni/972/2 */
+    | "TJS"
+    /**
      * Tanzanian Shilling/834/2 */
     | "TZS"
     /**
-     * Hryvnia/980/2 */
-    | "UAH"
+     * Baht/764/2 */
+    | "THB"
+    /**
+     * Pa’anga/776/2 */
+    | "TOP"
+    /**
+     * Trinidad and Tobago Dollar/780/2 */
+    | "TTD"
+    /**
+     * Tunisian Dinar/788/3 */
+    | "TND"
+    /**
+     * Turkish Lira/949/2 */
+    | "TRY"
+    /**
+     * Turkmenistan New Manat/934/2 */
+    | "TMT"
     /**
      * Uganda Shilling/800/0 */
     | "UGX"
     /**
-     * Ukrainian Hryvnia */
-    | "UKH"
+     * Hryvnia/980/2 */
+    | "UAH"
     /**
-     * US Dollar/840/2 */
-    | "USD"
+     * UAE Dirham/784/2 */
+    | "AED"
     /**
      * US Dollar (Next day)/997/2 */
     | "USN"
     /**
-     * Uruguay Peso en Unidades Indexadas (UI)/940/0 */
-    | "UYI"
-    /**
      * Peso Uruguayo/858/2 */
     | "UYU"
+    /**
+     * Uruguay Peso en Unidades Indexadas (UI)/940/0 */
+    | "UYI"
     /**
      * Unidad Previsional/927/4 */
     | "UYW"
@@ -490,26 +496,23 @@ export type Currency =
      * Uzbekistan Sum/860/2 */
     | "UZS"
     /**
+     * Vatu/548/0 */
+    | "VUV"
+    /**
      * Bolívar Soberano/928/2 */
     | "VES"
     /**
      * Dong/704/0 */
     | "VND"
     /**
-     * Vatu/548/0 */
-    | "VUV"
+     * Yemeni Rial/886/2 */
+    | "YER"
     /**
-     * Tala/882/2 */
-    | "WST"
+     * Zambian Kwacha/967/2 */
+    | "ZMW"
     /**
-     * CFA Franc BEAC/950/0 */
-    | "XAF"
-    /**
-     * Silver/961/N.A. */
-    | "XAG"
-    /**
-     * Gold/959/N.A. */
-    | "XAU"
+     * Zimbabwe Dollar/932/2 */
+    | "ZWL"
     /**
      * Bond Markets Unit European Composite Unit (EURCO)/955/N.A. */
     | "XBA"
@@ -523,233 +526,230 @@ export type Currency =
      * Bond Markets Unit European Unit of Account 17 (E.U.A.-17)/958/N.A. */
     | "XBD"
     /**
-     * East Caribbean Dollar/951/2 */
-    | "XCD"
-    /**
-     * SDR (Special Drawing Right)/960/N.A. */
-    | "XDR"
-    /**
-     * CFA Franc BCEAO/952/0 */
-    | "XOF"
-    /**
-     * Palladium/964/N.A. */
-    | "XPD"
-    /**
-     * CFP Franc/953/0 */
-    | "XPF"
-    /**
-     * Platinum/962/N.A. */
-    | "XPT"
-    /**
-     * Sucre/994/N.A. */
-    | "XSU"
-    /**
      * Codes specifically reserved for testing purposes/963/N.A. */
     | "XTS"
-    /**
-     * ADB Unit of Account/965/N.A. */
-    | "XUA"
     /**
      * The code assigned to transactions where no currency is involved/999/N.A. */
     | "XXX"
     /**
-     * Yemeni Rial/886/2 */
-    | "YER"
+     * Gold/959/N.A. */
+    | "XAU"
     /**
-     * Rand/710/2 */
-    | "ZAR"
+     * Palladium/964/N.A. */
+    | "XPD"
     /**
-     * Zambian Kwacha/967/2 */
-    | "ZMW"
+     * Platinum/962/N.A. */
+    | "XPT"
     /**
-     * Zimbabwe Dollar/932/2 */
-    | "ZWL";
+     * Silver/961/N.A. */
+    | "XAG"
+    /**
+     * Latvian Lat; Learn more [here](https://en.wikipedia.org/wiki/Latvian_lats) */
+    | "LVL"
+    /**
+     * Slovak Koruna */
+    | "SKK"
+    /**
+     * Italian Lira */
+    | "ITL"
+    /**
+     * Dutch Guilder */
+    | "NLG"
+    /**
+     * Belgian Franc */
+    | "BEF"
+    /**
+     * Mauritanian Ouguiya */
+    | "MRO"
+    /**
+     * Ukrainian Hryvnia */
+    | "UKH";
 
 export const Currency = {
-    Aed: "AED",
     Afn: "AFN",
+    Eur: "EUR",
     All: "ALL",
-    Amd: "AMD",
-    Ang: "ANG",
+    Dzd: "DZD",
+    Usd: "USD",
     Aoa: "AOA",
+    Xcd: "XCD",
     Ars: "ARS",
-    Aud: "AUD",
+    Amd: "AMD",
     Awg: "AWG",
+    Aud: "AUD",
     Azn: "AZN",
-    Bam: "BAM",
-    Bbd: "BBD",
-    Bdt: "BDT",
-    Bef: "BEF",
-    Bgn: "BGN",
-    Bhd: "BHD",
-    Bif: "BIF",
-    Bmd: "BMD",
-    Bnd: "BND",
-    Bob: "BOB",
-    Bov: "BOV",
-    Brl: "BRL",
     Bsd: "BSD",
-    Btn: "BTN",
-    Bwp: "BWP",
+    Bhd: "BHD",
+    Bdt: "BDT",
+    Bbd: "BBD",
     Byn: "BYN",
     Bzd: "BZD",
+    Xof: "XOF",
+    Bmd: "BMD",
+    Inr: "INR",
+    Btn: "BTN",
+    Bob: "BOB",
+    Bov: "BOV",
+    Bam: "BAM",
+    Bwp: "BWP",
+    Nok: "NOK",
+    Brl: "BRL",
+    Bnd: "BND",
+    Bgn: "BGN",
+    Bif: "BIF",
+    Cve: "CVE",
+    Khr: "KHR",
+    Xaf: "XAF",
     Cad: "CAD",
-    Cdf: "CDF",
-    Che: "CHE",
-    Chf: "CHF",
-    Chw: "CHW",
-    Clf: "CLF",
+    Kyd: "KYD",
     Clp: "CLP",
+    Clf: "CLF",
     Cny: "CNY",
     Cop: "COP",
     Cou: "COU",
+    Kmf: "KMF",
+    Cdf: "CDF",
+    Nzd: "NZD",
     Crc: "CRC",
-    Cuc: "CUC",
+    Hrk: "HRK",
     Cup: "CUP",
-    Cve: "CVE",
+    Cuc: "CUC",
+    Ang: "ANG",
     Czk: "CZK",
-    Djf: "DJF",
     Dkk: "DKK",
+    Djf: "DJF",
     Dop: "DOP",
-    Dzd: "DZD",
     Egp: "EGP",
+    Svc: "SVC",
     Ern: "ERN",
     Etb: "ETB",
-    Eur: "EUR",
-    Fjd: "FJD",
     Fkp: "FKP",
-    Gbp: "GBP",
+    Fjd: "FJD",
+    Xpf: "XPF",
+    Gmd: "GMD",
     Gel: "GEL",
     Ghs: "GHS",
     Gip: "GIP",
-    Gmd: "GMD",
-    Gnf: "GNF",
     Gtq: "GTQ",
+    Gbp: "GBP",
+    Gnf: "GNF",
     Gyd: "GYD",
-    Hkd: "HKD",
-    Hnl: "HNL",
-    Hrk: "HRK",
     Htg: "HTG",
+    Hnl: "HNL",
+    Hkd: "HKD",
     Huf: "HUF",
-    Idr: "IDR",
-    Ils: "ILS",
-    Inr: "INR",
-    Iqd: "IQD",
-    Irr: "IRR",
     Isk: "ISK",
-    Itl: "ITL",
+    Idr: "IDR",
+    Xdr: "XDR",
+    Irr: "IRR",
+    Iqd: "IQD",
+    Ils: "ILS",
     Jmd: "JMD",
-    Jod: "JOD",
     Jpy: "JPY",
+    Jod: "JOD",
+    Kzt: "KZT",
     Kes: "KES",
-    Kgs: "KGS",
-    Khr: "KHR",
-    Kmf: "KMF",
     Kpw: "KPW",
     Krw: "KRW",
     Kwd: "KWD",
-    Kyd: "KYD",
-    Kzt: "KZT",
+    Kgs: "KGS",
     Lak: "LAK",
     Lbp: "LBP",
-    Lkr: "LKR",
-    Lrd: "LRD",
     Lsl: "LSL",
-    Lvl: "LVL",
+    Zar: "ZAR",
+    Lrd: "LRD",
     Lyd: "LYD",
-    Mad: "MAD",
-    Mdl: "MDL",
-    Mga: "MGA",
-    Mkd: "MKD",
-    Mmk: "MMK",
-    Mnt: "MNT",
+    Chf: "CHF",
     Mop: "MOP",
-    Mro: "MRO",
+    Mkd: "MKD",
+    Mga: "MGA",
+    Mwk: "MWK",
+    Myr: "MYR",
+    Mvr: "MVR",
     Mru: "MRU",
     Mur: "MUR",
-    Mvr: "MVR",
-    Mwk: "MWK",
+    Xua: "XUA",
     Mxn: "MXN",
     Mxv: "MXV",
-    Myr: "MYR",
+    Mdl: "MDL",
+    Mnt: "MNT",
+    Mad: "MAD",
     Mzn: "MZN",
+    Mmk: "MMK",
     Nad: "NAD",
-    Ngn: "NGN",
-    Nio: "NIO",
-    Nlg: "NLG",
-    Nok: "NOK",
     Npr: "NPR",
-    Nzd: "NZD",
+    Nio: "NIO",
+    Ngn: "NGN",
     Omr: "OMR",
-    Pab: "PAB",
-    Pen: "PEN",
-    Pgk: "PGK",
-    Php: "PHP",
     Pkr: "PKR",
-    Pln: "PLN",
+    Pab: "PAB",
+    Pgk: "PGK",
     Pyg: "PYG",
+    Pen: "PEN",
+    Php: "PHP",
+    Pln: "PLN",
     Qar: "QAR",
     Ron: "RON",
-    Rsd: "RSD",
     Rub: "RUB",
     Rwf: "RWF",
-    Sar: "SAR",
-    Sbd: "SBD",
-    Scr: "SCR",
-    Sdg: "SDG",
-    Sek: "SEK",
-    Sgd: "SGD",
     Shp: "SHP",
-    Skk: "SKK",
-    Sll: "SLL",
-    Sos: "SOS",
-    Srd: "SRD",
-    Ssp: "SSP",
+    Wst: "WST",
     Stn: "STN",
-    Svc: "SVC",
-    Syp: "SYP",
+    Sar: "SAR",
+    Rsd: "RSD",
+    Scr: "SCR",
+    Sll: "SLL",
+    Sgd: "SGD",
+    Xsu: "XSU",
+    Sbd: "SBD",
+    Sos: "SOS",
+    Ssp: "SSP",
+    Lkr: "LKR",
+    Sdg: "SDG",
+    Srd: "SRD",
     Szl: "SZL",
-    Thb: "THB",
-    Tjs: "TJS",
-    Tmt: "TMT",
-    Tnd: "TND",
-    Top: "TOP",
-    Try: "TRY",
-    Ttd: "TTD",
+    Sek: "SEK",
+    Che: "CHE",
+    Chw: "CHW",
+    Syp: "SYP",
     Twd: "TWD",
+    Tjs: "TJS",
     Tzs: "TZS",
-    Uah: "UAH",
+    Thb: "THB",
+    Top: "TOP",
+    Ttd: "TTD",
+    Tnd: "TND",
+    Try: "TRY",
+    Tmt: "TMT",
     Ugx: "UGX",
-    Ukh: "UKH",
-    Usd: "USD",
+    Uah: "UAH",
+    Aed: "AED",
     Usn: "USN",
-    Uyi: "UYI",
     Uyu: "UYU",
+    Uyi: "UYI",
     Uyw: "UYW",
     Uzs: "UZS",
+    Vuv: "VUV",
     Ves: "VES",
     Vnd: "VND",
-    Vuv: "VUV",
-    Wst: "WST",
-    Xaf: "XAF",
-    Xag: "XAG",
-    Xau: "XAU",
+    Yer: "YER",
+    Zmw: "ZMW",
+    Zwl: "ZWL",
     Xba: "XBA",
     Xbb: "XBB",
     Xbc: "XBC",
     Xbd: "XBD",
-    Xcd: "XCD",
-    Xdr: "XDR",
-    Xof: "XOF",
-    Xpd: "XPD",
-    Xpf: "XPF",
-    Xpt: "XPT",
-    Xsu: "XSU",
     Xts: "XTS",
-    Xua: "XUA",
     Xxx: "XXX",
-    Yer: "YER",
-    Zar: "ZAR",
-    Zmw: "ZMW",
-    Zwl: "ZWL",
+    Xau: "XAU",
+    Xpd: "XPD",
+    Xpt: "XPT",
+    Xag: "XAG",
+    Lvl: "LVL",
+    Skk: "SKK",
+    Itl: "ITL",
+    Nlg: "NLG",
+    Bef: "BEF",
+    Mro: "MRO",
+    Ukh: "UKH",
 } as const;

@@ -7,33 +7,33 @@
  */
 export type NameContext =
     /**
-     * An alternative, former, or otherwise non-primary name */
-    | "alias"
-    /**
-     * A family name (i.e., last name) */
-    | "family"
+     * The main name, full name, or "best name" for an entity */
+    | "primary"
     /**
      * A given name (i.e., first name, middle name) */
     | "given"
     /**
+     * A family name (i.e., last name) */
+    | "family"
+    /**
+     * An alternative, former, or otherwise non-primary name */
+    | "alias"
+    /**
      * A machine translation of a name */
     | "machine_translation"
     /**
-     * The main name, full name, or "best name" for an entity */
-    | "primary"
+     * A machine transliteration of a name using a specific system (e.g., Pinyin, ISO, UNGEGN) */
+    | "transliteration"
     /**
      * A discretely registered name used by a person or company not operating under its legal name */
-    | "trade_name"
-    /**
-     * A machine transliteration of a name using a specific system (e.g., Pinyin, ISO, UNGEGN) */
-    | "transliteration";
+    | "trade_name";
 
 export const NameContext = {
-    Alias: "alias",
-    Family: "family",
-    Given: "given",
-    MachineTranslation: "machine_translation",
     Primary: "primary",
-    TradeName: "trade_name",
+    Given: "given",
+    Family: "family",
+    Alias: "alias",
+    MachineTranslation: "machine_translation",
     Transliteration: "transliteration",
+    TradeName: "trade_name",
 } as const;
