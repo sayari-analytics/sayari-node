@@ -44,6 +44,10 @@ export interface GetProjectEntities {
      */
     shippedHsCodes?: string | string[];
     /**
+     * Only return entities that have shipped or received the specified HS code(s).
+     */
+    combinedHsCodes?: string | string[];
+    /**
      * The language code to translate the entity labels to. Defaults to the user's preferred language.
      */
     translation?: string;

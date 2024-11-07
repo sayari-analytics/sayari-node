@@ -8,4 +8,6 @@ export interface ProjectEntityUpstream {
     risk: Sayari.Risk[];
     countries: Sayari.Country[];
     entities: number;
+    matchHasUpstream: Record<string, boolean>;
+    matchProducts: Record<string, string[]>;
 }

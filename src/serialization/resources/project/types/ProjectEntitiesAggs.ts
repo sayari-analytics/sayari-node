@@ -29,6 +29,7 @@ export const ProjectEntitiesAggs: core.serialization.ObjectSchema<
     shipmentCounts: core.serialization.property("shipment_counts", core.serialization.list(BucketAgg).optional()),
     shippedHsCodes: core.serialization.property("shipped_hs_codes", HsCodeAgg.optional()),
     receivedHsCodes: core.serialization.property("received_hs_codes", HsCodeAgg.optional()),
+    combinedHsCodes: core.serialization.property("combined_hs_codes", HsCodeAgg.optional()),
     matchResults: core.serialization.property("match_results", core.serialization.list(BucketAgg).optional()),
     customFields: core.serialization.property("custom_fields", core.serialization.list(BucketAgg).optional()),
     customFieldsCount: core.serialization.property("custom_fields_count", IntKeyValue.optional()),
@@ -53,6 +54,7 @@ export declare namespace ProjectEntitiesAggs {
         shipment_counts?: BucketAgg.Raw[] | null;
         shipped_hs_codes?: HsCodeAgg.Raw | null;
         received_hs_codes?: HsCodeAgg.Raw | null;
+        combined_hs_codes?: HsCodeAgg.Raw | null;
         match_results?: BucketAgg.Raw[] | null;
         custom_fields?: BucketAgg.Raw[] | null;
         custom_fields_count?: IntKeyValue.Raw | null;
