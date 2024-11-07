@@ -7,443 +7,69 @@
  */
 export type IdentifierType =
     /**
-     * Internal ID that can be used to link related companies within source */
-    | "cn_tianyancha_company_id"
+     * Primary license number of free zone establishment in Dubai */
+    | "aer_free_zone_license"
     /**
-     * Internal ID that can be used to link related people within source */
-    | "cn_tianyancha_human_id"
+     * Registration number for Dubai free zone */
+    | "aer_free_zone_reg_no"
     /**
-     * A Chinese Unified Social Credit Code */
-    | "cn_unified_social_credit_code"
-    /**
-     * A Chinese company registration number */
-    | "cn_registration_number"
-    /**
-     * A Chinese company organization code */
-    | "cn_organization_code"
-    /**
-     * Part of a Qichacha URL, used to uniquely identify people within the site */
-    | "cn_qichacha_internal_id"
-    /**
-     * A Hong Kong CR Number */
-    | "cn_hk_cr_number"
-    /**
-     * A Hong Kong document filing number used by ICRIS */
-    | "cn_hk_filing_number"
-    /**
-     * A Bahraini CR Number */
-    | "bh_cr_number"
-    /**
-     * A Bahraini CR Number combined with a Bahraini branch number */
-    | "bh_cr_number_and_branch"
-    /**
-     * Deprecated; use jo_national_institution_number */
-    | "jo_internal_id"
-    /**
-     * A Jordanian National Institution Number */
-    | "jo_national_institution_number"
-    /**
-     * Deprecated; use weak ID jor_sol_prop_institution_number */
-    | "jo_institution_number"
-    /**
-     * A Malta company number */
-    | "malta_company_number"
-    /**
-     * A number linked to a Maltese national ID card */
-    | "malta_national_id"
-    /**
-     * Seems to be tied to accounting/auditing firms */
-    | "malta_accountancy_registration_id"
-    /**
-     * A UK company registration number. The pattern was sourced from the snapshot file documentation provided to us. When the first two characters are not digits, they have a special meaning. */
-    | "uk_company_number"
-    /**
-     * Unique UK ID number. Assigned to every firm in the FCA financial services registry. */
-    | "uk_firm_reference_number"
-    /**
-     * Internal person ID */
-    | "uk_person_number"
-    /**
-     * A tax ID issued by the Mexican Tax Administration Service */
-    | "mx_rfc_person"
-    /**
-     * A unique identity code for citizens and residents of Mexico */
-    | "mx_curp"
-    | "mx_rfc_company"
-    | "mx_office_fme"
-    /**
-     * A Russian tax ID. Individuals get a 12-digit number; companies get 10 digits. */
-    | "ru_inn"
-    /**
-     * A Russian company registration number with 12 digits */
-    | "ru_ogrn"
-    /**
-     * Internal company ID */
-    | "ven_saren_internal_employer_number"
-    /**
-     * Brazilian corporate ID number */
-    | "bra_cnpj"
-    /**
-     * Venezuelan tax ID for companies and individuals */
-    | "ven_rif"
-    /**
-     * A Venezuelan national ID number for individuals */
-    | "ven_cedula_number"
-    /**
-     * Maldives corporate registration number */
-    | "mdv_registration_number"
-    /**
-     * A unique eight-digit identification number that is required for any existing or proposed director of a company in India */
-    | "ind_director_id_number"
-    /**
-     * A permanent account number (PAN) is a 10-digit alphanumeric tax ID issued by the Indian Income Tax Department. */
-    | "ind_permanent_account_number"
-    /**
-     * India tax identification number. Unique ID number assigned to every taxpayer by the Commercial Tax Department of each state. */
-    | "ind_tin"
-    /**
-     * A unique identification number assigned by the Registrar of Companies (ROC) in various states under the Indian Ministry of Corporate Affairs (MCA) */
-    | "ind_corporate_id_number"
-    /**
-     * A Kazakh tax ID number */
-    | "kaz_tin"
-    /**
-     * A 12-digit Kazakh business identification number */
-    | "kaz_bin"
-    | "kaz_state_reg_num"
-    | "kaz_okpo_num"
-    /**
-     * A nine-digit Kazakh identifier */
-    | "kaz_identifier"
-    /**
-     * Kosovo registration number */
-    | "rks_registration_number"
-    /**
-     * General Electronic Commercial Registry (G.E.MI.) number for all legal forms of businesses in Greece */
-    | "grc_gemi_number"
-    /**
-     * A certificate number for the National Registry of Contractors in Venezuela */
-    | "ven_rnc_number"
-    /**
-     * A Virginia State Corporation Commission entity number */
-    | "usa_va_reg_id"
-    | "usa_ny_reg_id"
-    /**
-     * USA IRS employer ID number */
-    | "usa_fei_number"
-    | "ukr_moj_id"
-    /**
-     * Mauritius business registration number */
-    | "mus_reg_id"
-    /**
-     * Title number for a property in the UK */
-    | "uk_title_number"
-    /**
-     * Registration number from the Mongolian corporate registry */
-    | "mng_reg_number"
-    /**
-     * Registration number from the Montenegro corporate registry */
-    | "mne_reg_number"
-    /**
-     * Kyrgyzstan company registration number */
-    | "kgz_reg_number"
-    /**
-     * China customs code for import and export. May include China USCC; China OC; U.S. SSN; or U.S. EIN. */
-    | "cn_importexport_code"
-    /**
-     * North Korea-China trade data ID code */
-    | "prk_entity_id"
-    | "prk_registration_id"
-    /**
-     * Former Yugoslav republic natural person ID number */
-    | "yugoslav_master_citizen_num"
-    /**
-     * Burkina Faso tax ID number */
-    | "bfa_entity_id"
-    /**
-     * Afghanistan tax ID number */
-    | "afghan_tin_number"
+     * Unique registration number. Assigned to every company registered with the UAE National Economic Register. */
+    | "aer_ner_number"
     /**
      * Afghanistan natural and legal person business license ID code */
     | "afg_business_license"
     /**
-     * Madagascar tax ID number */
-    | "mdg_nif_number"
-    | "mdg_stat_number"
+     * Afghanistan passport number */
+    | "afg_passport"
     /**
-     * Madagascar corporate registry ID number */
-    | "mdg_rcs_number"
+     * Afghanistan Trade Internal Shipment ID */
+    | "afg_trade_internal_shipment_id"
     /**
-     * Latvia natural person ID number */
-    | "lva_personal_code"
+     * Afghanistan tax ID number */
+    | "afghan_tin_number"
     /**
-     * Unique ID number. Assigned to individual bank accounts for use in cross-border financial transactions. */
-    | "iban"
+     * Angola company registration number */
+    | "ago_matricula_number"
     /**
-     * Latvia corporate registry ID number */
-    | "lva_reg_number"
-    /**
-     * Taiwan tax ID number */
-    | "twn_unified_number"
-    /**
-     * Luxembourg corporate registry ID number */
-    | "lux_rcs_number"
-    /**
-     * North Macedonia corporate registry ID number */
-    | "mkd_embs_number"
-    /**
-     * North Macedonia corporate registry ID number */
-    | "mkd_embs_branch_number"
-    /**
-     * North Macedonia unique identifier. Assigned to every North Macedonia Corporate Registry Announcement. */
-    | "mkd_archive_number"
-    /**
-     * Moldova legal person ID number */
-    | "mda_idno_number"
-    /**
-     * Uruguay tax ID number */
-    | "ury_ruc_number"
-    /**
-     * Switzerland business registry ID number */
-    | "che_uid_number"
-    /**
-     * El Salvador commercial registry ID number */
-    | "slv_commercial_reg_number"
-    /**
-     * El Salvador natural person ID number */
-    | "slv_uid_number"
-    | "mato_grosso_legal_id"
-    /**
-     * Unique global ID code. Assigned to legal entities participating in financial transactions. */
-    | "lei"
-    /**
-     * Value-added tax ID number */
-    | "vat"
-    /**
-     * Italy tax ID code */
-    | "ita_fiscal_code"
-    /**
-     * Italy VAT number */
-    | "ita_vat_number"
-    | "rio_de_janeiro_legal_id"
-    /**
-     * Iceland natural and legal person ID number */
-    | "isl_tin_number"
-    /**
-     * Laos corporate registry ID number */
-    | "lao_enterprise_number"
-    /**
-     * Slovakia legal person ID number */
-    | "svk_ico_number"
-    /**
-     * Cambodia tax ID number */
-    | "khm_tin_number"
-    /**
-     * Czechia legal person ID number */
-    | "cze_ico_number"
-    /**
-     * Iran natural and legal person ID number */
-    | "irn_national_id"
-    /**
-     * Ecuador tax ID number */
-    | "ecu_ruc_number"
-    /**
-     * Greece tax ID number */
-    | "grc_vat_number"
-    /**
-     * Canada federal corporate registry ID number */
-    | "can_corporation_number"
-    /**
-     * Canada tax reporting ID code */
-    | "can_cra_program_account_number"
-    /**
-     * Montenegro tax ID number */
-    | "mne_pib"
-    /**
-     * Chile tax ID Number */
-    | "chl_cedula_number"
-    /**
-     * Brazil litigation case ID number */
-    | "bra_case_number"
-    /**
-     * India limited liability partnership ID number */
-    | "ind_llpin"
-    /**
-     * India foreign company registration number */
-    | "ind_fcrn"
-    /**
-     * Bermuda corporate registry ID number */
-    | "bmu_registration_number"
-    /**
-     * Brazil natural person tax ID number */
-    | "bra_cpf_number"
-    /**
-     * Iran natural person ID number */
-    | "irn_national_number"
-    /**
-     * China customs import and export registration code */
-    | "chn_customs_registration_code"
-    /**
-     * Liechtenstein corporate registry ID number */
-    | "lie_public_reg_no"
-    /**
-     * China tax ID number */
-    | "cn_tax_identification_number"
-    /**
-     * Macao corporate registry ID number */
-    | "mac_registration_no"
-    /**
-     * Mexico corporate registry internal ID number */
-    | "siger_internal_id"
-    /**
-     * Lebanon natural person ID number */
-    | "lbn_national_id"
-    /**
-     * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
-    | "int_maritime_org_id"
-    /**
-     * Russia vessel registry ID number */
-    | "ru_ship_register_id"
-    /**
-     * UID used to merge entities internally */
-    | "sayari_internal_identifier"
-    /**
-     * Aruba chamber of commerce ID code */
-    | "aruba_chamber_of_commerce_id"
-    /**
-     * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
-    | "imo_no"
-    /**
-     * British Virgin Islands corporate registry ID number */
-    | "vgb_company_number"
-    /**
-     * Yemen chamber of commerce ID number */
-    | "yem_coc_registration_number"
-    /**
-     * Malaysia natural person ID number */
-    | "mys_id_card_no"
-    /**
-     * Malaysia corporate registry ID number */
-    | "mys_company_reg_no"
-    /**
-     * Paraguay tax ID number */
-    | "pry_ruc_number"
-    /**
-     * Paraguay natural person ID number */
-    | "pry_cedula_number"
-    /**
-     * Paraguay tax ID number */
-    | "pry_old_ruc_number"
-    /**
-     * OHADA corporate registry ID number */
-    | "rccm_no"
-    /**
-     * Brazil natural person ID number */
-    | "bra_rg_number"
-    /**
-     * Senegal tax ID number */
-    | "ninea_no"
+     * Angola taxpayer number */
+    | "ago_nif_number"
+    | "alb_registration_number"
     /**
      * Albania tax ID number */
     | "alb_tax_id"
-    | "alb_registration_number"
     /**
-     * Argentina corporate registry ID number */
-    | "arg_igj_number"
+     * Unique Canada province ID number. Assigned to every legal entity in the Alberta Corporate Registry. */
+    | "alberta_corporation_number"
     /**
-     * Argentina natural person ID number */
-    | "arg_dni_number"
+     * Authoritative legal entity identifier (ALEI), a government-issued registration number that is standardized according to [ISO 8000](https://en.wikipedia.org/wiki/ISO_8000) */
+    | "alei"
     /**
-     * Argentina tax ID number */
-    | "arg_cuit_number"
+     * Dubai International Financial Centre registration number */
+    | "are_difc_reg_no"
     /**
-     * Argentina social security ID number */
-    | "arg_cuil_number"
+     * Case number for Dubai land cases */
+    | "are_dubai_land_case_no"
+    /**
+     * Abu Dhabi Registration Authority Number */
+    | "are_reg_auth_number"
     /**
      * Argentina natural person ID number */
     | "arg_cdi_number"
     /**
-     * Bosnia and Herzegovina corporate registry ID number */
-    | "bih_mbs_number"
+     * Argentina social security ID number */
+    | "arg_cuil_number"
     /**
-     * Bosnia and Herzegovina legal person ID number */
-    | "bih_jib_number"
-    | "bih_customs_number"
+     * Argentina tax ID number */
+    | "arg_cuit_number"
     /**
-     * USA Puerto Rico corporate registry ID number */
-    | "usa_puerto_rico_register_number"
+     * Argentina natural person ID number */
+    | "arg_dni_number"
     /**
-     * Djibouti corporate registry ID number */
-    | "dji_rcs_number"
+     * Argentina corporate registry ID number */
+    | "arg_igj_number"
     /**
-     * Costa Rica natural person ID number */
-    | "cri_cedula_number"
-    /**
-     * Mozambique natural person ID number */
-    | "moz_id_number"
-    /**
-     * Mozambique natural person tax ID number */
-    | "moz_nuit_person"
-    /**
-     * Mozambique legal person tax ID number */
-    | "moz_nuit_co"
-    /**
-     * Mozambique passport number */
-    | "moz_passport"
-    /**
-     * Mozambique foreign resident ID number */
-    | "moz_dire_no"
-    /**
-     * Mozambique voter ID number */
-    | "moz_voter_no"
-    /**
-     * Mozambique corporate registry ID number */
-    | "moz_nuel_no"
-    /**
-     * Iraq voter ID number */
-    | "irq_voter_id"
-    /**
-     * Jordan voter ID number */
-    | "jor_voter_card_no"
-    /**
-     * Deprecated; use jo_national_institution_number */
-    | "jor_id_no"
-    /**
-     * Peru tax ID number */
-    | "per_ruc_no"
-    /**
-     * Ecuador corporate registry ID number */
-    | "ecu_company_id"
-    /**
-     * USA New York corporate registry ID number */
-    | "usa_ny_dos_id"
-    /**
-     * OHADA corporate registry ID number */
-    | "bfa_rccm_number"
-    /**
-     * USA Florida Broward County parcel ID number */
-    | "fl_prop_folio"
-    /**
-     * Unique USA county land and property ID number. Assigned to every parcel and property registered with the Palm Beach County Property Appraiser’s Office. */
-    | "usa_fl_pb_pcn"
-    /**
-     * Qatar corporate registry ID number */
-    | "qat_qfc_number"
-    /**
-     * Greece tax ID number */
-    | "grc_afm_number"
-    /**
-     * Vietnam tax ID number */
-    | "vnm_enterprise_code"
-    /**
-     * Thailand corporate registry ID number */
-    | "tha_registration_no"
-    /**
-     * Vietnam natural person ID number */
-    | "vnm_citizenship_no"
-    /**
-     * Vietnam natural person ID number */
-    | "vnm_person_id_no"
+     * Unique identifier for Argentinian imports and exports */
+    | "arg_import_export_id"
     /**
      * Argentina female natural person ID number */
     | "arg_lib_civica_number"
@@ -451,641 +77,29 @@ export type IdentifierType =
      * Argentina male natural person ID number */
     | "arg_lib_enrolamiento_number"
     /**
-     * New Zealand business registry ID number */
-    | "nzl_nzbn"
-    /**
-     * New Zealand corporate registry ID number */
-    | "nzl_co_no"
-    /**
-     * USA Treasury sanctions list ID number */
-    | "usa_ofac_sdn_number"
-    /**
-     * Unique global ID code. Assigned to financial and non-financial institutions for use addressing messages, routing business transactions, and identifying business parties. */
-    | "swift_bic_code"
-    /**
-     * Unique global ID code. Assigned by Dun & Bradstreet. */
-    | "duns_number"
-    /**
-     * Unique digital currency address */
-    | "bitcoin_address"
-    /**
-     * Unique digital currency address */
-    | "litecoin_address"
-    /**
-     * Russia securities ID code */
-    | "rus_micex_code"
-    /**
-     * USA Texas Bexar County property ID number */
-    | "tx_prop_id"
-    /**
-     * USA Texas Bexar County property owner ID number */
-    | "tx_pacs_id"
-    /**
-     * USA Texas land segment ID number */
-    | "tx_land_id"
-    /**
-     * Papua New Guinea business registry ID number */
-    | "png_ipa_reg_id"
-    /**
-     * Guatemala tax ID number */
-    | "gtm_nit_number"
-    /**
-     * Guatemala natural person ID number */
-    | "gtm_cui_number"
-    /**
-     * Dominican Republic tax ID number */
-    | "dom_rnc"
-    /**
-     * Qatar corporate registry ID number */
-    | "qat_cr_number"
-    /**
-     * Unique global ID code. Assigned to every security issuance for use facilitating the trading, clearing, and settlement of securities transactions. */
-    | "isin"
-    /**
-     * USA Florida corporate registry ID code */
-    | "usa_fl_document_no"
-    /**
-     * USA Florida corporate registry ID code */
-    | "usa_fl_fic_name_reg_no"
-    /**
-     * Brazil federal public servant internal ID number */
-    | "bra_servidor_portal"
-    /**
-     * Brazil federal public servant agency unit ID code */
-    | "bra_codigo_da_unidade_organizacional"
-    /**
-     * USA SEC disclosure filer ID number */
-    | "usa_sec_cik_number"
-    /**
-     * Croatia corporate registry ID number */
-    | "hr_mbs"
-    /**
-     * Croatia natural and legal person ID number */
-    | "hr_oib"
-    /**
-     * El Salvador tax ID number */
-    | "slv_numero_identificacion_tributaria"
-    /**
-     * El Salvador corporate registry ID number */
-    | "slv_mcas"
-    /**
-     * Australia corporate registry ID number */
-    | "aus_company_number"
-    /**
-     * Australia business registry ID number */
-    | "aus_business_number"
-    /**
-     * Germany commercial registry ID number concatenated with registry district court XJustiz ID code */
-    | "deu_registernummer"
-    /**
-     * USA IRS employer ID number */
-    | "usa_irs_ein"
-    /**
-     * Hong Kong case ID number */
-    | "hong_kong_case_number"
-    /**
-     * Iran Tehran chamber of commerce internal ID number */
-    | "irn_coc_internal_id"
-    /**
-     * Panama corporate registry ID number */
-    | "pan_folio_ficha_id"
-    /**
-     * Panama natural person ID number */
-    | "pan_cedula_number"
-    /**
-     * Cedar Rose entity internal ID number */
-    | "xxx_cedar_rose_uid"
-    /**
-     * OHADA corporate registry ID number */
-    | "xxx_rccm"
-    /**
-     * Vietnam business registry internal ID number */
-    | "vnm_dichvuthongtin_internal_id"
-    /**
-     * Sayari Intel entity internal ID number */
-    | "xxx_intel_internal_id"
-    /**
-     * USA Washington business registry ID number */
-    | "usa_washington_state_ubi"
-    /**
-     * Nigeria corporate registry ID code */
-    | "nga_registration_number"
-    /**
-     * NG-Check entity internal ID number */
-    | "ng_check_internal_id"
-    /**
-     * USA New York City real property parcel ID number */
-    | "nyc_bbl"
-    /**
-     * USA New York New York City real property registry ID number */
-    | "nyc_crfn"
-    /**
-     * USA Texas corporate registry ID number */
-    | "tx_corp_file_num"
-    /**
-     * USA Texas tax ID number */
-    | "tx_tax_id"
-    /**
-     * USA Georgia business registry internal ID number */
-    | "usa_ga_business_id"
-    /**
-     * Philippines securities issuer internal ID number */
-    | "phl_pse_id"
-    /**
-     * Philippines business registry ID number */
-    | "phl_sec_id"
-    /**
-     * Philippines tax ID number */
-    | "phl_tin"
-    /**
-     * Afghanistan passport number */
-    | "afg_passport"
-    /**
-     * Iran passport number */
-    | "irn_passport"
-    /**
-     * Kuwait passport number */
-    | "kwt_passport"
-    /**
-     * Libya passport number */
-    | "lby_passport"
-    /**
-     * Pakistan passport number */
-    | "pak_passport"
-    /**
-     * Russia passport number */
-    | "rus_passport"
-    /**
-     * Tunisia passport number */
-    | "tun_passport"
-    /**
-     * Yemen passport number */
-    | "yem_passport"
-    /**
-     * UN Security Council sanctions list ID code */
-    | "un_sanction_prn"
-    /**
-     * EU European Commission sanctions list ID number */
-    | "eu_sanction_rn"
-    /**
-     * USA California business registry ID number */
-    | "ca_lp_file_num"
-    /**
-     * USA Texas corporate registry ID number */
-    | "tx_entity_filing_num"
-    /**
-     * USA social security ID number */
-    | "usa_social_security_number"
-    /**
-     * USA Wyoming business registry ID number */
-    | "usa_wy_party_id"
-    /**
-     * USA Wyoming business registry ID number */
-    | "usa_wy_filing_id"
-    /**
-     * WY internal filing ID (primary key) */
-    | "usa_wy_internal_filing_id"
-    /**
-     * Unique USA state ID number. Assigned to every legal entity registered with Wyoming Secretary of State. */
-    | "usa_wy_filing_num"
-    /**
-     * USA Oregon business registry ID number */
-    | "usa_or_regno"
-    /**
-     * USA Nevada corporate registry ID code */
-    | "usa_nv_corpno"
-    /**
-     * USA Nevada business registry ID code */
-    | "usa_nv_bizid"
-    /**
-     * North Korea-China trade internal ID number */
-    | "prk_internal_trade_id"
-    /**
-     * Lesotho corporate registry ID number */
-    | "lso_corpreg_id"
-    /**
-     * Uzbekistan tax ID number */
-    | "uzb_tin_number"
-    /**
-     * USA California business registry ID number */
-    | "ca_corporate_id_num"
-    /**
-     * UK HM Treasury OFSI sanctions list ID number */
-    | "gbr_hm_treasury_sanction_group_id"
-    /**
-     * Unique UK ID number. Assigned to every registered trademark. */
-    | "gbr_ipo_trademark_reg_no"
-    /**
-     * USA Georgia business registry ID number */
-    | "usa_ga_control_no"
-    /**
-     * Honduras Cortes commercial registry ID number */
-    | "hnd_coc_company_registration_number"
-    /**
-     * Montenegro real property registry internal ID number */
-    | "mne_property_uid"
-    /**
-     * Philippines business registry ID number */
-    | "phl_bnn"
-    /**
-     * Romania tax ID number */
-    | "rou_company_registration_code"
-    /**
-     * Romania natural person ID number */
-    | "rou_identity_card"
-    /**
-     * Romania natural person ID number */
-    | "rou_personal_id_number"
-    /**
-     * Cuba corporate registry ID number */
-    | "cub_cod"
-    /**
-     * USA Florida Miami-Dade County real property parcel ID number */
-    | "fl_prop_folio_dade"
-    /**
-     * Peru natural person ID number */
-    | "per_dni_no"
-    /**
-     * Peru foreign resident ID number */
-    | "per_carne_de_extranjeria"
-    /**
-     * France business directory ID number */
-    | "fra_siren"
-    /**
-     * France legal person establishment ID number */
-    | "fra_siret"
-    /**
-     * Unique France ID number. Assigned to every legal entity registered with National Registry of Associations. */
-    | "fra_rna"
-    /**
-     * Skráseting Føroya Registration Number. Assigned to legal entities registered with the Company Registry of the Faroe Islands. */
-    | "fro_reg_num"
-    /**
-     * Czechia commercial registry ID number */
-    | "cze_file_number"
-    /**
-     * Value taken from datos registrales section used to identify companies in the Borme. Not an official identifier. */
-    | "esp_borme_reg_id"
-    /**
-     * Mexican trademark number */
-    | "mex_tm_no"
-    /**
-     * Mauritius Company File No. */
-    | "mus_file_no"
-    /**
-     * Colombian tax identification number */
-    | "col_nit_no"
-    /**
-     * Japanese corporate number. Learn more [here](https://en.wikipedia.org/wiki/Corporate_Number). */
-    | "jpn_corporate_no"
-    /**
-     * Common Government-wide Accounting Classification (CGAC) agency code assigned by the US Treasury */
-    | "usa_cgac_agency_code"
-    /**
-     * Identifier for a US government agency */
-    | "usa_govt_agency_id"
-    /**
-     * Identifier for a US government agency office */
-    | "usa_govt_office_id"
-    /**
-     * Colombian cedula number */
-    | "col_cedula_no"
-    /**
-     * Colombian SECOP internal ID */
-    | "col_secop_no"
-    /**
-     * Deprecated; use weak identifier jordan_company_no */
-    | "jordan_company_no"
-    /**
-     * Denmark business registration number; learn more [here](https://erhvervsstyrelsen.dk/cvr-numre-p-numre-og-se-numre) */
-    | "dnk_cvr"
-    /**
-     * Denmark business branch number */
-    | "dnk_production_unit_no"
-    /**
-     * Internal ID for Denmark Virk */
-    | "dnk_entity"
-    /**
-     * Norway Organisasjonsnummer */
-    | "nor_org_no"
-    /**
-     * Sweden Organisationsnummer. May have "-" separating last three digits. */
-    | "swe_org_no"
-    /**
-     * USA Colorado Secretary of State registration number */
-    | "usa_co_reg_no"
-    /**
-     * USA Iowa Secretary of State corporation number */
-    | "usa_ia_corp_no"
-    /**
-     * The UEN is a standard, unique identification number for a registered entity in Singapore. It is comparable to the NRIC number, which is an ID number for Singapore citizens. */
-    | "sgp_unqiue_entity_number"
-    /**
-     * USA Alaskan Secretary of State entity number */
-    | "usa_ak_entity_no"
-    /**
-     * USA Ohio business charter number */
-    | "usa_oh_charter_num"
-    /**
-     * Istanbul Chamber of Commerce registration number */
-    | "tur_istanbul_coc_reg_no"
-    /**
-     * Turkish Central Registry Number System (MERSIS) number */
-    | "tur_mersis_number"
-    | "che_ch_id_number"
-    /**
-     * Dubai International Financial Centre registration number */
-    | "are_difc_reg_no"
-    /**
-     * Indonesian tax ID aka NPWP Number; learn more [here](https://wiki.scn.sap.com/wiki/display/CRM/Indonesia) */
-    | "idn_tax_id"
-    /**
-     * USA Vermont Business ID */
-    | "usa_vt_biz_id"
-    /**
-     * USA West Virginia Corporate Registry ID */
-    | "usa_wv_reg_id"
-    /**
-     * USA Mississippi Business ID */
-    | "usa_ms_biz_id"
-    /**
-     * USA Idaho Business Control Number */
-    | "usa_id_control_no"
-    /**
-     * USA Idaho Registered Agent ID */
-    | "usa_id_party_id"
-    | "irn_coc_internal_id_cardno"
-    /**
-     * USA Arizona Corporate Registry Entity Number */
-    | "usa_az_corp_reg_entity_num"
-    /**
-     * USA Oklahoma Business Filing Number */
-    | "usa_ok_filing_no"
-    /**
-     * USA Tennessee Business Control Number */
-    | "usa_tn_control_no"
-    /**
-     * USA Tennessee Registered Agent ID */
-    | "usa_tn_party_id"
-    /**
-     * USA Kansas Business ID */
-    | "usa_ks_biz_id"
-    /**
-     * Identifier made from File Number and File Suffix in Hawaii, USA, corporate registry */
-    | "usa_hi_corporate_registry_id"
-    /**
-     * Identifier for officers in Hawaii, USA, corporate registry */
-    | "usa_hi_corporate_registry_person_id"
-    /**
-     * The National Court Register, or Krajowy Rejestr Sądowy (KRS), number in Poland */
-    | "pol_krs_number"
-    /**
-     * The register REGON fulfils the function of the national official Register of National Economy Entities */
-    | "pol_regon_number"
-    /**
-     * Tax identification number from Poland */
-    | "pol_nip_number"
-    /**
-     * Person identifier from Poland Rejestr data */
-    | "pol_rejestr_person_id"
-    /**
-     * Armenian VAT ID number */
-    | "arm_vat_no"
+     * Single tax identification code in Argentina for any individual that initiates an economic activity (missing control digit) */
+    | "arg_partial_cuit"
     /**
      * Armenian enterprise code */
     | "arm_enterprise_code"
     /**
+     * Armernian passport number */
+    | "arm_passport_number"
+    /**
      * Armenian regsitration number */
     | "arm_registration_no"
     /**
-     * USA Maine corporate ID */
-    | "usa_me_corp_id"
+     * Armenian VAT ID number */
+    | "arm_vat_no"
     /**
-     * Cypriot corporate registration number. Prefix corresponds to company type code. */
-    | "cyp_reg_no"
+     * Aruba chamber of commerce ID code */
+    | "aruba_chamber_of_commerce_id"
     /**
-     * USA North Dakota Secretary of State control ID */
-    | "usa_nd_control_id"
+     * Antigua and Barbuda Business Registry Internal ID */
+    | "atg_business_registry_internal_id"
     /**
-     * USA Michigan corporate ID */
-    | "usa_mi_corp_id"
-    /**
-     * USA Michigan corporate ID (old format) */
-    | "usa_mi_corp_id_old"
-    /**
-     * USA Hawaii Certificate Number */
-    | "usa_hi_trade_name_cert"
-    /**
-     * USA Washington, D.C. CorpOnline entity number */
-    | "usa_dc_entity_no"
-    | "usa_va_old_reg_id"
-    | "usa_consolidated_screening_list_synthetic_id"
-    /**
-     * USA Arkansas Secretary of State Filing No. */
-    | "usa_ar_filing_no"
-    /**
-     * USA North Carolina SOS corporations UID */
-    | "usa_nc_internal_id"
-    /**
-     * USA Nebraska corporate registry account number */
-    | "usa_ne_acct_no"
-    /**
-     * USA Nebraska registered agent ID number */
-    | "usa_ne_agent_id"
-    /**
-     * USA New Mexico Secretary of State business number */
-    | "usa_nm_business_no"
-    /**
-     * USA New Mexico Secretary of State License ID */
-    | "usa_nm_license_id"
-    /**
-     * USA Washington, D.C. corporate registry file number */
-    | "usa_dc_file_no"
-    /**
-     * USA Rhode Island filing entity identification number */
-    | "usa_ri_fei_no"
-    /**
-     * Hex digest of data that should be used for resolution (e.g., name=Sayari&registration_date=2000-01-01) */
-    | "internal_md5"
-    /**
-     * Autoincrement corporation ID from the Missouri Corporate Registry */
-    | "usa_mo_corp_id"
-    /**
-     * USA Wisconsin Department of Financial Institutions ID */
-    | "usa_wi_dfi_id"
-    /**
-     * Identification code from Georgian MyGov companies */
-    | "geo_identification_code"
-    /**
-     * Personal number from Georgian MyGov companies */
-    | "geo_personal_number"
-    /**
-     * Georgian state registration number */
-    | "geo_state_registration_number"
-    /**
-     * Identifier taken from document URL to resolve cases. Is slightly different for HTML vs PDF documents. */
-    | "mac_raem_case_url_id"
-    /**
-     * Romanian tax identification number for companies */
-    | "rou_company_tin"
-    /**
-     * USA Maryland Department of Assessments and Taxation Business ID with prefix */
-    | "usa_md_dpt_tax"
-    /**
-     * USA South Dakota Corporate ID */
-    | "usa_sd_corp_id"
-    /**
-     * Honduras Tegucigalpa Matricula */
-    | "hnd_tegucigalpa_matricula"
-    /**
-     * Identifier for Florida, USA, property parcels. A concatenation of county code and parcel ID. */
-    | "usa_fl_property_id"
-    /**
-     * Code unique to every parcel within the real property file. Used in Florida, USA. */
-    | "usa_fl_property_mp_id"
-    /**
-     * Code assigned to each parcel based on a statewide parcel coding system. Used in Florida, USA. */
-    | "usa_fl_property_state_par_id"
-    /**
-     * Unique Registration Code in the Federal Register of Civil Society Organizations */
-    | "mex_cluni"
-    /**
-     * USA Pennsylvania Department of State Business Entity ID Number */
-    | "usa_pa_corporate_registry_id"
-    /**
-     * Unique Pakistan National Taxpayer Number for Individuals (equivalent to Computerized National Identity Card number) */
-    | "pak_ind_ntn"
-    /**
-     * Unique Pakistan National Taxpayer Number for Companies and Associations of Persons */
-    | "pak_co_ntn"
-    /**
-     * Simple 1-up identifier from the Registro Nacional de Inversiones Extranjeras */
-    | "mex_rnie"
-    /**
-     * Pakistan NGO Registration Number */
-    | "pak_ngo_reg_no"
-    /**
-     * Iraqi Stock Exchange Symbol */
-    | "iraqi_stock_exchange_symbol"
-    /**
-     * Unique Identification Code for all legal and other entities engaged in business activities in Bulgaria */
-    | "bgr_uic"
-    /**
-     * A hashed representation of a Bulgarian citizenship number */
-    | "bgr_egn_hashed"
-    /**
-     * Enterprise number for South African companies */
-    | "south_africa_enterprise_number"
-    /**
-     * South African passport number */
-    | "south_africa_passport_number"
-    /**
-     * Dutch Chamber of Commerce Number */
-    | "nld_kvk_number"
-    /**
-     * Dutch Chamber of Commerce Branch/Location Number */
-    | "nld_kvk_branch_number"
-    /**
-     * Central Registration Depository (CRD) number from the Financial Industry Regulatory Authority (FINRA) in the USA. The CRD number is a company/person identifier. */
-    | "usa_central_registration_depository_number"
-    /**
-     * One format variation of the SEC file number associated with bdSECNumber in USA/finra_barred_relats */
-    | "usa_sec_file_number_bd"
-    /**
-     * China CNIPA Trademark */
-    | "chn_cnipa_tm"
-    /**
-     * Cyprus Passport */
-    | "cyp_passport"
-    /**
-     * Entity ID from Cyprus infocredit */
-    | "cyp_infocredit_entity_id"
-    /**
-     * Cyprus ID Card */
-    | "cyp_id_card"
-    /**
-     * Cyprus SSN */
-    | "cyp_ssn"
-    /**
-     * Austrian Company Register Number */
-    | "aut_firmenbuch_no"
-    /**
-     * Swedish personal identity number (Personnummer) */
-    | "swe_per_id_no"
-    /**
-     * Company code from Shanghai Stock Exchange */
-    | "chn_shanghai_stock_exchange_company_code"
-    /**
-     * One format variation of the SEC file number associated with iaSECNumber in USA/finra_barred_relats */
-    | "usa_sec_file_number_ia"
-    /**
-     * Company SEC code from Shenzen stock exchange */
-    | "chn_shenzen_sec_code"
-    /**
-     * USA Connecticut Business ID */
-    | "usa_ct_business_id"
-    /**
-     * [Ecuador cedula](https://www.jybaro.com/blog/cedula-de-identidad-ecuatoriana/) */
-    | "ecu_cedula_number"
-    /**
-     * Hong Kong Stock Exchange Code */
-    | "hkg_stock_code"
-    /**
-     * Unique Canada province ID number. Assigned to every legal entity in the British Columbia Corporate Registry. */
-    | "can_bc_company_registration_id"
-    /**
-     * British Columbia Extraprovincial Company Registration ID */
-    | "can_bc_extraprovincial_registration_id"
-    /**
-     * Unique Canada ID number. Assigned to every trademark application. */
-    | "can_ipo_trademark_application_no"
-    /**
-     * Lithuanian Company Registration Code */
-    | "ltu_company_registration_code"
-    /**
-     * SEC private fund ID */
-    | "usa_sec_private_fund"
-    /**
-     * Latvian Insolvency Proceedings ID Number */
-    | "lva_insolvency_proceeding_id"
-    /**
-     * Internal identifier for shareholders from CHN cninfo data */
-    | "chn_cninfo_internal_shareholder_id"
-    | "euid"
-    /**
-     * Finnish Business ID */
-    | "fin_business_id"
-    /**
-     * Estonian Business Registry Code */
-    | "est_business_reg_code"
-    /**
-     * Committee on Uniform Securities Identification Procedures (CUSIP) number. Identifies a North American financial security. */
-    | "usa_cusip_number"
-    /**
-     * Slovenian Company Registry ID Number */
-    | "svn_co_reg_no"
-    /**
-     * Israeli Registrar of Companies company number */
-    | "isr_company_number"
-    /**
-     * Unique Israel association registration number. Assigned to every association in the Israel Ministry of Justice Association and Public Benefit Company Registry. */
-    | "isr_association_number"
-    /**
-     * Unique Israel public benefit company registration number. Assigned to every public benefit company in the Israel Ministry of Justice Association and Public Benefit Company Registry. */
-    | "isr_pbc_number"
-    | "rks_business_number"
-    /**
-     * A fiscal number from the Kosovo company registry */
-    | "rks_fiscal_number"
-    /**
-     * Company code from EDINET */
-    | "jpn_edinet_code"
-    /**
-     * Belgium Enterprise Number */
-    | "bel_enterprise_number"
-    /**
-     * Belgium Establishment Number */
-    | "bel_establishment_number"
+     * Australian identifying number allocated to a financial adviser */
+    | "aus_adv_number"
     /**
      * Australian financial services licence number */
     | "aus_afs_licence_number"
@@ -1093,8 +107,14 @@ export type IdentifierType =
      * Australian financial services authorized representative number */
     | "aus_afs_rep_number"
     /**
-     * Australian identifying number allocated to a financial adviser */
-    | "aus_adv_number"
+     * Australia business registry ID number */
+    | "aus_business_number"
+    /**
+     * Australia corporate registry ID number */
+    | "aus_company_number"
+    /**
+     * Australia Consolidated Sanctions Reference ID */
+    | "aus_consolidated_sanctions_reference"
     /**
      * Australian credit licensee number */
     | "aus_credit_licence_number"
@@ -1102,242 +122,72 @@ export type IdentifierType =
      * Australian identifying number allocated to a credit representative */
     | "aus_credit_rep_number"
     /**
-     * Korean DART Central Identity Key */
-    | "dart_cik"
+     * Austrian Company Register Number */
+    | "aut_firmenbuch_no"
     /**
-     * Ticker number for the Korean Stock Exchange */
-    | "krx_ticker_code"
+     * Azerbaijan TIN. Unique number assigned to taxpayers registered with Azerbaijan State Tax Service. */
+    | "aze_tin_number"
     /**
-     * Korean corporate registration number */
-    | "kor_corporate_registration_number"
+     * Unique business Identification number. Assigned to every registered business in Bangladesh. */
+    | "bd_bin"
     /**
-     * Korean TIN for businesses */
-    | "kor_business_tin"
+     * Belgium Enterprise Number */
+    | "bel_enterprise_number"
     /**
-     * Estonian Personal Identification Code */
-    | "est_personal_id"
+     * Belgium Establishment Number */
+    | "bel_establishment_number"
     /**
-     * Belize International Corporate Affairs Registry (BICAR) registration number */
-    | "bze_bicar_reg_no"
+     * Hex digest of FSMA entity name */
+    | "bel_fsma_name_hash"
     /**
-     * Account number for businesses on the Chicago, Illinois, business license registry */
-    | "usa_il_chicago_account_number"
+     * Belgium unique natural person ID number. */
+    | "bel_national_register_no"
     /**
-     * Company number from Cayman Islands Gazette */
-    | "cym_co_no"
+     * Burkina Faso tax ID number */
+    | "bfa_entity_id"
     /**
-     * Guernsey Corporate Registry Number */
-    | "ggy_corporate_reg_number"
+     * OHADA corporate registry ID number */
+    | "bfa_rccm_number"
     /**
-     * Unique Guernsey intellectual property ID number. Assigned to every trademark application submitted to the Guernsey Intellectual Property Office. */
-    | "ggy_trademark_submission_ref"
+     * A hashed representation of a Bulgarian citizenship number */
+    | "bgr_egn_hashed"
     /**
-     * Unique Guernsey intellectual property ID number. Assigned to every trademark registered with the Guernsey Intellectual Property Office. */
-    | "ggy_trademark_no"
+     * Unique Identification Code for all legal and other entities engaged in business activities in Bulgaria */
+    | "bgr_uic"
     /**
-     * Jersey Corporate Registry Number */
-    | "jey_corporate_reg_number"
+     * A Bahraini CR Number */
+    | "bh_cr_number"
     /**
-     * Corp ID used in Cook Islands corporate registry */
-    | "cok_corp_reg_corpid"
+     * A Bahraini CR Number combined with a Bahraini branch number */
+    | "bh_cr_number_and_branch"
     /**
-     * Corp ID used for officers in Cook Islands corporate registry */
-    | "cok_corp_reg_corpofficerid"
+     * Bahamas Tax Identification Number */
+    | "bhs_tin"
+    | "bih_customs_number"
     /**
-     * Registration number from Cook Islands corporate registry */
-    | "cok_corp_reg_number"
+     * Bosnia and Herzegovina legal person ID number */
+    | "bih_jib_number"
     /**
-     * Internal ID from Mexican open contracts data */
-    | "mex_open_contracts_internal_id"
-    /**
-     * Gibraltar Corporate Registration Number */
-    | "gib_corp_reg_number"
-    /**
-     * Dominican Republic ONAPI registry number */
-    | "dom_onapi_num"
-    /**
-     * Russian Tourist Object Serial number in the Federal list */
-    | "rus_tourist_obj"
+     * Bosnia and Herzegovina corporate registry ID number */
+    | "bih_mbs_number"
     /**
      * Bill of lading number for trade data */
     | "bill_of_lading"
     /**
-     * Registration number for Taiwanese factories */
-    | "twn_factory_registration_number"
-    /**
-     * Establishment permit case number for Taiwanese factories */
-    | "twn_factory_establishment_permit_case_number"
-    /**
-     * Kenya Person ID Number */
-    | "ken_personal_id"
-    /**
-     * Unique number assigned by the DIAN for each import/export form */
-    | "col_dian_numero_formulario"
-    /**
-     * Vanuatu Corporate Registry Number */
-    | "vut_corp_reg_number"
-    /**
-     * Legal code from Georgian MyGov companies */
-    | "geo_legal_code"
-    /**
-     * Myanmar corporate registry ID for companies */
-    | "mmr_corp_id"
-    /**
-     * Myanmar Registration Number */
-    | "mmr_reg_no"
-    /**
-     * Myanmar Prior Registration Number */
-    | "mmr_prior_reg_no"
-    /**
-     * Myanmar corporate registry ID for officers */
-    | "mmr_officer_id"
-    /**
-     * Armernian passport number */
-    | "arm_passport_number"
-    /**
-     * Ukrainian Registration Number */
-    | "ukr_reg_num"
-    /**
-     * Validatis identification number */
-    | "validatis_number"
-    /**
-     * Case number for Dubai land cases */
-    | "are_dubai_land_case_no"
-    /**
-     * Angola company registration number */
-    | "ago_matricula_number"
-    /**
-     * Angola taxpayer number */
-    | "ago_nif_number"
-    /**
-     * Myanmar Personal Identification Number */
-    | "mmr_personal_id_no"
+     * Unique digital currency address */
+    | "bitcoin_address"
     /**
      * Belarus Registration Number */
     | "blr_registration_number"
     /**
-     * Primary license number of free zone establishment in Dubai */
-    | "aer_free_zone_license"
+     * Belize Companies & Corporate Affairs Registry (BCCAR) registration number */
+    | "blz_bccar_reg_no"
     /**
-     * Registration number for Dubai free zone */
-    | "aer_free_zone_reg_no"
+     * Bermuda Registrar of Companies Number */
+    | "bmu_registrar_of_companies_number"
     /**
-     * Company number for Canada NL Corporate Registry */
-    | "can_nl_corporate_registry"
-    /**
-     * Hex digest of Data Axle Infogroup ID */
-    | "can_data_axle_hash"
-    /**
-     * ZAPST number used for shareholders and partners in Slovenia Corporate Registry */
-    | "svn_ajpes_zapst_number"
-    /**
-     * CorpWatch Database ID */
-    | "usa_corpwatch_id"
-    /**
-     * USA Delaware File Number */
-    | "usa_de_file_number"
-    /**
-     * Isle of Man Company Number */
-    | "imn_company_number"
-    /**
-     * Slovenian VAT number */
-    | "svn_vat_number"
-    /**
-     * Acuris Unique ID */
-    | "xxx_acuris_id"
-    /**
-     * Pakistan EGM ID */
-    | "pak_egm_id"
-    /**
-     * USA Delaware Registered Agent ID */
-    | "usa_de_registered_agent_id"
-    /**
-     * ICIJ Offshore Database Internal ID */
-    | "icij_offshore_internal_id"
-    /**
-     * ICIJ Offshore Database Node ID */
-    | "icij_offshore_node_id"
-    /**
-     * Ecuador Branch ID */
-    | "ecu_branch_id"
-    /**
-     * Palestine registration ID */
-    | "pse_registration_id"
-    /**
-     * Serbia company registration number (matični broj) */
-    | "srb_mb_number"
-    /**
-     * Serbia tax ID number */
-    | "srb_pib_number"
-    /**
-     * Serbia branch ID */
-    | "srb_branch_id"
-    /**
-     * Russia Bank Identification Code */
-    | "rus_bik_code"
-    /**
-     * Panadata Internal ID */
-    | "panadata_internal_id"
-    /**
-     * San Marino Economic Operator Code */
-    | "smr_economic_operator_code"
-    /**
-     * USA Connecticut Internal ID */
-    | "usa_ct_internal_id"
-    /**
-     * Authoritative legal entity identifier (ALEI), a government-issued registration number that is standardized according to [ISO 8000](https://en.wikipedia.org/wiki/ISO_8000) */
-    | "alei"
-    /**
-     * Unique Canada province ID number. Assigned to every entity in the Nova Scotia Corporate Registry. */
-    | "can_ns_corporate_registry"
-    /**
-     * Somalian UBI Number */
-    | "som_ubi"
-    /**
-     * Bahamas Tax Identification Number */
-    | "bhs_tin"
-    /**
-     * Italy Economic and Administrative Repertory Number */
-    | "ita_rea_number"
-    /**
-     * Mexico DENUE Unique ID */
-    | "mex_denue_clee"
-    /**
-     * IHS Owner Code */
-    | "ihs_owner_code"
-    /**
-     * Australia Consolidated Sanctions Reference ID */
-    | "aus_consolidated_sanctions_reference"
-    /**
-     * Swiss SECO Sanction Number */
-    | "che_seco_sanction_number"
-    /**
-     * United Kingdom VAT Number */
-    | "gbr_vat_no"
-    /**
-     * United Kingdom Confirmation Statement Company Number */
-    | "gbr_company_number"
-    /**
-     * Spain NIF Number */
-    | "esp_nif"
-    /**
-     * Unique Entity Identifier (SAM) */
-    | "usa_sam_uei_number"
-    /**
-     * Identifier for corporations and trademarks in US Virgin Islands */
-    | "usa_usvi_corp_number"
-    /**
-     * Nicaragua Trade Internal Shipment ID */
-    | "nic_trade_internal_shipment_id"
-    /**
-     * Nicaragua RUC Number */
-    | "nic_ruc_number"
-    /**
-     * Nicaragua Numero Unico */
-    | "nic_numero_unico"
-    | "cri_cedula_juridica"
-    | "cri_cedula_citizen_person"
-    | "cri_cedula_foreign_person"
+     * Bermuda corporate registry ID number */
+    | "bmu_registration_number"
     /**
      * Bolivia Matricula Number */
     | "bol_matricula"
@@ -1345,101 +195,114 @@ export type IdentifierType =
      * Bolivia Matricula Number (old format) */
     | "bol_old_matricula"
     /**
-     * Nigerian Corporate Registry Internal ID */
-    | "nga_crp_reg_internal_id"
+     * Brazil litigation case ID number */
+    | "bra_case_number"
     /**
-     * Nigerian Corporate Registry Registration Serial No. */
-    | "nga_registration_sn"
+     * Brazilian corporate ID number */
+    | "bra_cnpj"
     /**
-     * Nigerian National Identification Number */
-    | "nga_nin"
+     * Brazil federal public servant agency unit ID code */
+    | "bra_codigo_da_unidade_organizacional"
     /**
-     * Nigerian Driver's License No. */
-    | "nga_drivers"
+     * Brazil natural person tax ID number */
+    | "bra_cpf_number"
     /**
-     * Nigerian Tax ID number */
-    | "nga_tax_id"
+     * Brazil natural person ID number */
+    | "bra_rg_number"
     /**
-     * Dominica Business Registry Internal ID */
-    | "dma_business_registry_internal_id"
+     * Brazil federal public servant internal ID number */
+    | "bra_servidor_portal"
     /**
-     * The Commercial and Government Entity (CAGE) code is a five-character ID assigned by the US Department of Defense's Defense Logistics Agency (DLA) to refer to a facility at a specific location (includes government suppliers, agencies, and other organizations). CAGE codes for entities outside the USA are called NATO Commercial and Government Entity (NCAGE) codes and are part of the NATO Codification System (NCS). Learn more [here](https://fawiki.fws.gov/display/SAM/Commercial+And+Government+Entity+%28CAGE%29+Code+Information). */
-    | "cage"
+     * Brazil Shipment Number */
+    | "bra_shipment_number"
     /**
-     * Antigua and Barbuda Business Registry Internal ID */
-    | "atg_business_registry_internal_id"
+     * Unique Identification Number. Registration number assigned to companies by the Companies and Intellectual Property Authority. */
+    | "bwa_uin_reg_number"
     /**
-     * St. Lucia Business Registry Internal ID */
-    | "lca_business_registry_internal_id"
+     * Belize International Corporate Affairs Registry (BICAR) registration number */
+    | "bze_bicar_reg_no"
     /**
-     * Portuguese Trust Number */
-    | "prt_trust_number"
+     * USA California business registry ID number */
+    | "ca_corporate_id_num"
     /**
-     * Portuguese VAT Number */
-    | "prt_vat_number"
-    /**
-     * Morocco Passport Number */
-    | "mar_passport"
-    /**
-     * Democratic Republic of the Congo Passport Number */
-    | "cod_passport"
-    /**
-     * North Korea Passport Number */
-    | "prk_passport"
-    /**
-     * Singapore Passport Number */
-    | "sgp_passport"
-    /**
-     * China Passport Number */
-    | "chn_passport"
-    /**
-     * Oman Passport Number */
-    | "omn_passport"
+     * USA California business registry ID number */
+    | "ca_lp_file_num"
     /**
      * Central African Republic Passport Number */
     | "caf_passport"
     /**
-     * South Sudan Passport Number */
-    | "ssd_passport"
+     * The Commercial and Government Entity (CAGE) code is a five-character ID assigned by the US Department of Defense's Defense Logistics Agency (DLA) to refer to a facility at a specific location (includes government suppliers, agencies, and other organizations). CAGE codes for entities outside the USA are called NATO Commercial and Government Entity (NCAGE) codes and are part of the NATO Codification System (NCS). Learn more [here](https://fawiki.fws.gov/display/SAM/Commercial+And+Government+Entity+%28CAGE%29+Code+Information). */
+    | "cage"
     /**
-     * Trinbagonian Business Number */
-    | "tto_biz_number"
+     * Unique Canada province ID number. Assigned to every legal entity in the British Columbia Corporate Registry. */
+    | "can_bc_company_registration_id"
     /**
-     * Turkish Tax Identifier */
-    | "tur_tax_id"
+     * British Columbia Extraprovincial Company Registration ID */
+    | "can_bc_extraprovincial_registration_id"
     /**
-     * Bermuda Registrar of Companies Number */
-    | "bmu_registrar_of_companies_number"
+     * British Columbia Registration Number */
+    | "can_bc_registration_number"
     /**
-     * Democratic Republic of the Congo RCCM Number */
-    | "cod_rccm_number"
+     * The Canada Revenue Agency (CRA) business number is a nine-digit tax ID assigned to organizations to help them engage with federal and provincial government programs. Learn more [here](https://www.liveabout.com/what-is-the-canada-revenue-agency-cra-business-number-2947322). */
+    | "can_business_number"
     /**
-     * Democratic Republic of the Congo RCCM OHADA Number */
-    | "cod_rccm_ohada_number"
+     * Canada federal corporate registry ID number */
+    | "can_corporation_number"
     /**
-     * Abu Dhabi Registration Authority Number */
-    | "are_reg_auth_number"
+     * Canada tax reporting ID code */
+    | "can_cra_program_account_number"
     /**
-     * North Korea Shipment ID */
-    | "prk_shipment_id"
+     * Hex digest of Data Axle Infogroup ID */
+    | "can_data_axle_hash"
     /**
-     * Ecuador Importer ID */
-    | "ecu_importer_id"
+     * Unique Canada ID number. Assigned to every trademark application. */
+    | "can_ipo_trademark_application_no"
     /**
-     * Ecuador Exporter ID */
-    | "ecu_exporter_id"
+     * Unique Canada province ID number. Assigned to every legal entity registered with the Manitoba Companies Office. */
+    | "can_mb_registry"
     /**
-     * Ecuador Shipment Reference Number */
-    | "ecu_shipment_ref_no"
+     * Unique Canada province ID number. Assigned to every legal entity registered with the New Brunswick Corporate Affairs Registry. */
+    | "can_new_brunswick_reference_number"
     /**
-     * Unique identifier for entities in CRB Monitor data */
-    | "xxx_crb_monitor_entity_id"
+     * Company number for Canada NL Corporate Registry */
+    | "can_nl_corporate_registry"
     /**
-     * Unique identifier for issuers in EDI Global data */
-    | "xxx_edi_global_issuer_id"
+     * Unique Canada ID number. Assigned to every entity registered with Canadian Securities Administrators National Registration Database. */
+    | "can_nrd"
     /**
-     * Unique identifier for securities in EDI Global data */
-    | "xxx_edi_global_security_id"
+     * Unique internal ID number assigned to individuals. Assigned to every individual registered with Canadian Securities Administrators National Registration Database. */
+    | "can_nrd_individual_id"
+    /**
+     * Unique Canada province ID number. Assigned to every entity in the Nova Scotia Corporate Registry. */
+    | "can_ns_corporate_registry"
+    /**
+     * Unique Canada province ID number. Assigned to every entity registered with the Prince Edward Island Corporate Registry. */
+    | "can_pe_registration_number"
+    /**
+     * Penalty number assigned by the Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
+    | "can_qc_sap_registry_ref_num"
+    /**
+     * Unique Canada ID number. Assigned to every registered trademark. */
+    | "can_tm_registration_no"
+    /**
+     * CCS Vessel Registration Number */
+    | "ccs_registration"
+    | "che_ch_id_number"
+    /**
+     * Swiss SECO Sanction Number */
+    | "che_seco_sanction_number"
+    /**
+     * Switzerland business registry ID number */
+    | "che_uid_number"
+    /**
+     * China Vessel Inspection Registration Number */
+    | "china_vessel_inspection_registration"
+    /**
+     * China Vessel Registration Number */
+    | "china_vessel_registration"
+    /**
+     * Chile tax ID Number */
+    | "chl_cedula_number"
     /**
      * Unique identifier for imports and exports in Chile */
     | "chl_import_export_control_id"
@@ -1450,20 +313,110 @@ export type IdentifierType =
      * Unique identifier for Chilean importers and exporters */
     | "chl_importer_exporter_id"
     /**
-     * Unique identifier for Argentinian imports and exports */
-    | "arg_import_export_id"
+     * Internal identifier for shareholders from CHN cninfo data */
+    | "chn_cninfo_internal_shareholder_id"
     /**
-     * Single tax identification code in Argentina for any individual that initiates an economic activity (missing control digit) */
-    | "arg_partial_cuit"
+     * China CNIPA Trademark */
+    | "chn_cnipa_tm"
     /**
-     * Unique identifier for Panamanian importers and exporters */
-    | "pan_importer_exporter_id"
+     * China Securities Regulatory Commission Code / 证券代码 */
+    | "chn_csrc_no"
     /**
-     * Declaration number for import and export shipments in Panama */
-    | "pan_declaration_number"
+     * China customs import and export registration code */
+    | "chn_customs_registration_code"
     /**
-     * Mexico Shipment Number */
-    | "mex_shipment_number"
+     * Unique customs registration number. Assigned to all entities registered with China General Administration of Customs. */
+    | "chn_customs_registration_no"
+    /**
+     * China Passport Number */
+    | "chn_passport"
+    /**
+     * China Resident Identity Number */
+    | "chn_resident_id_number"
+    /**
+     * Company code from Shanghai Stock Exchange */
+    | "chn_shanghai_stock_exchange_company_code"
+    /**
+     * Company SEC code from Shenzen stock exchange */
+    | "chn_shenzen_sec_code"
+    /**
+     * Cameroon Tax Registration Number. Unique number assigned to taxpayers in Cameroon and issued by the Directorate General of Tax. */
+    | "cm_nui_tax_reg_num"
+    /**
+     * Unique Hong Kong tax ID number. Assigned to every company registered with the Hong Kong Business Registration Office. */
+    | "cn_hk_br_number"
+    /**
+     * A Hong Kong CR Number */
+    | "cn_hk_cr_number"
+    /**
+     * A Hong Kong document filing number used by ICRIS */
+    | "cn_hk_filing_number"
+    /**
+     * Unique internal company ID number. Assigned to every company in China Xinjiang Department of Housing and Urban-Rural Development Company Database */
+    | "cn_hurd_internal_company_id"
+    /**
+     * China customs code for import and export. May include China USCC; China OC; U.S. SSN; or U.S. EIN. */
+    | "cn_importexport_code"
+    /**
+     * A Chinese company organization code */
+    | "cn_organization_code"
+    /**
+     * Part of a Qichacha URL, used to uniquely identify people within the site */
+    | "cn_qichacha_internal_id"
+    /**
+     * A Chinese company registration number */
+    | "cn_registration_number"
+    /**
+     * China tax ID number */
+    | "cn_tax_identification_number"
+    /**
+     * Internal ID that can be used to link related companies within source */
+    | "cn_tianyancha_company_id"
+    /**
+     * Internal ID that can be used to link related people within source */
+    | "cn_tianyancha_human_id"
+    /**
+     * A Chinese Unified Social Credit Code */
+    | "cn_unified_social_credit_code"
+    /**
+     * Democratic Republic of the Congo Passport Number */
+    | "cod_passport"
+    /**
+     * Democratic Republic of the Congo RCCM Number */
+    | "cod_rccm_number"
+    /**
+     * Democratic Republic of the Congo RCCM OHADA Number */
+    | "cod_rccm_ohada_number"
+    /**
+     * Corp ID used in Cook Islands corporate registry */
+    | "cok_corp_reg_corpid"
+    /**
+     * Corp ID used for officers in Cook Islands corporate registry */
+    | "cok_corp_reg_corpofficerid"
+    /**
+     * Registration number from Cook Islands corporate registry */
+    | "cok_corp_reg_number"
+    /**
+     * Colombian cedula number */
+    | "col_cedula_no"
+    /**
+     * Unique number assigned by the DIAN for each import/export form */
+    | "col_dian_numero_formulario"
+    /**
+     * Colombian tax identification number */
+    | "col_nit_no"
+    /**
+     * Colombia Número Único de Registro */
+    | "col_nur"
+    /**
+     * Colombian SECOP internal ID */
+    | "col_secop_no"
+    | "cri_cedula_citizen_person"
+    | "cri_cedula_foreign_person"
+    | "cri_cedula_juridica"
+    /**
+     * Costa Rica natural person ID number */
+    | "cri_cedula_number"
     /**
      * Internal ID for Costa Rica comexport data (exporter number) */
     | "cri_exp"
@@ -1474,78 +427,258 @@ export type IdentifierType =
      * Internal ID for Costa Rica comexport data (shipping operation number) */
     | "cri_op_no"
     /**
-     * Colombia Número Único de Registro */
-    | "col_nur"
+     * Cuba corporate registry ID number */
+    | "cub_cod"
     /**
-     * Nepali Company Registration No. from National Information Technology Center */
-    | "npl_co_reg_no"
-    | "usa_sam_exclusions_number"
+     * Curacao Registry Number. Unique Identifier issued by the Curacao Chamber of Commerce & Industry to the registered companies. */
+    | "cuw_reg_number"
     /**
-     * The National Provider Identifier (NPI) is a unique number for health care providers in the United States. */
-    | "usa_npi_number"
+     * Company number from Cayman Islands Gazette */
+    | "cym_co_no"
     /**
-     * A Unique Physician Identification Number (UPIN) is a unique six-character alphanumeric identifier for health care providers in the United States that was discontinued in June 2007. */
-    | "usa_upin_number"
+     * Cyprus ID Card */
+    | "cyp_id_card"
     /**
-     * British Columbia Registration Number */
-    | "can_bc_registration_number"
+     * Entity ID from Cyprus infocredit */
+    | "cyp_infocredit_entity_id"
     /**
-     * The Canada Revenue Agency (CRA) business number is a nine-digit tax ID assigned to organizations to help them engage with federal and provincial government programs. Learn more [here](https://www.liveabout.com/what-is-the-canada-revenue-agency-cra-business-number-2947322). */
-    | "can_business_number"
+     * Cyprus Passport */
+    | "cyp_passport"
     /**
-     * China Securities Regulatory Commission Code / 证券代码 */
-    | "chn_csrc_no"
+     * Cypriot corporate registration number. Prefix corresponds to company type code. */
+    | "cyp_reg_no"
     /**
-     * USA Minnesota Secretary of State Unique ID */
-    | "usa_mn_master_id"
+     * Cyprus SSN */
+    | "cyp_ssn"
     /**
-     * USA Minnesota Secretary of State Filing Number */
-    | "usa_mn_filing_number"
+     * Czechia commercial registry ID number */
+    | "cze_file_number"
     /**
-     * Business ID from Indiana, USA, corporate registry */
-    | "usa_in_biz_no"
+     * Czechia legal person ID number */
+    | "cze_ico_number"
     /**
-     * Vessel ID from Lloyd's Maritime Data */
-    | "lloyds_internal_vessel_id"
+     * Korean DART Central Identity Key */
+    | "dart_cik"
     /**
-     * Entity ID from Lloyd's Maritime Data */
-    | "lloyds_internal_entity_id"
+     * Dash address */
+    | "dash_address"
     /**
-     * USA New Hampshire Business ID */
-    | "usa_nh_business_id"
+     * Germany BaFin-ID */
+    | "deu_bafin_id"
+    /**
+     * Germany commercial registry ID number concatenated with registry district court XJustiz ID code */
+    | "deu_registernummer"
+    /**
+     * Djibouti corporate registry ID number */
+    | "dji_rcs_number"
+    /**
+     * Dominica Business Registry Internal ID */
+    | "dma_business_registry_internal_id"
+    /**
+     * Denmark business registration number; learn more [here](https://erhvervsstyrelsen.dk/cvr-numre-p-numre-og-se-numre) */
+    | "dnk_cvr"
+    /**
+     * Internal ID for Denmark Virk */
+    | "dnk_entity"
+    /**
+     * Denmark business branch number */
+    | "dnk_production_unit_no"
+    /**
+     * Dominican Republic ONAPI registry number */
+    | "dom_onapi_num"
+    /**
+     * Dominican Republic tax ID number */
+    | "dom_rnc"
+    /**
+     * Unique global ID code. Assigned by Dun & Bradstreet. */
+    | "duns_number"
+    /**
+     * Ecuador Branch ID */
+    | "ecu_branch_id"
+    /**
+     * [Ecuador cedula](https://www.jybaro.com/blog/cedula-de-identidad-ecuatoriana/) */
+    | "ecu_cedula_number"
+    /**
+     * Ecuador corporate registry ID number */
+    | "ecu_company_id"
+    /**
+     * Ecuador Exporter ID */
+    | "ecu_exporter_id"
+    /**
+     * Ecuador Importer ID */
+    | "ecu_importer_id"
+    /**
+     * Ecuador tax ID number */
+    | "ecu_ruc_number"
+    /**
+     * Ecuador Shipment Reference Number */
+    | "ecu_shipment_ref_no"
+    /**
+     * Unique identification number assigned to every entity registered with the Bank of Spain. */
+    | "esp_be_code"
+    /**
+     * Value taken from datos registrales section used to identify companies in the Borme. Not an official identifier. */
+    | "esp_borme_reg_id"
+    /**
+     * Spain Internal Employee Number */
+    | "esp_internal_employee_number"
+    /**
+     * Spain NIF Number */
+    | "esp_nif"
+    /**
+     * Spain TR Number */
+    | "esp_tr_number"
+    /**
+     * Estonian Business Registry Code */
+    | "est_business_reg_code"
+    /**
+     * Estonian Personal Identification Code */
+    | "est_personal_id"
+    /**
+     * Ethereum address */
+    | "ethereum_address"
+    /**
+     * Unique EU Financial Sanctions Database ID number. Assigned to every entity in the EU Financial Sanctions Database. */
+    | "eu_fsd_id"
+    /**
+     * EU European Commission sanctions list ID number */
+    | "eu_sanction_rn"
+    | "euid"
+    /**
+     * Finnish Business ID */
+    | "fin_business_id"
+    /**
+     * USA Florida Broward County parcel ID number */
+    | "fl_prop_folio"
+    /**
+     * USA Florida Miami-Dade County real property parcel ID number */
+    | "fl_prop_folio_dade"
+    /**
+     * Unique reference number assigned to every entity in the France National Asset Freeze Register. */
+    | "fra_asset_freeze_id"
+    /**
+     * Unique France ID number. Assigned to every legal entity registered with National Registry of Associations. */
+    | "fra_rna"
+    /**
+     * France business directory ID number */
+    | "fra_siren"
+    /**
+     * France legal person establishment ID number */
+    | "fra_siret"
+    /**
+     * Skráseting Føroya Registration Number. Assigned to legal entities registered with the Company Registry of the Faroe Islands. */
+    | "fro_reg_num"
+    /**
+     * Unique UK charity ID number. Assigned to every charity registered with the Charity Commission for England and Wales. */
+    | "gbr_charity_no"
+    /**
+     * United Kingdom Confirmation Statement Company Number */
+    | "gbr_company_number"
+    /**
+     * Action number assigned by the Environment Agency to each enforcement action against offender pursuant to relevant legislation. */
+    | "gbr_enforcement_action_num"
+    /**
+     * Unique UK government organization ID number. Assigned to government organizations in the UK. */
+    | "gbr_go_no"
+    /**
+     * UK HM Treasury OFSI sanctions list ID number */
+    | "gbr_hm_treasury_sanction_group_id"
+    /**
+     * Unique UK ID number. Assigned to every registered trademark. */
+    | "gbr_ipo_trademark_reg_no"
+    /**
+     * Unique UK internal ID number. Assigned to every trustee registered with the Charity Commission for England and Wales. */
+    | "gbr_trustee_id"
     /**
      * UK Sanctions List Unique ID */
     | "gbr_uk_sanctions_id"
     /**
-     * Montana Secretary of State Business Entity Number */
-    | "montana_sos_internal_entity_id"
+     * United Kingdom VAT Number */
+    | "gbr_vat_no"
     /**
-     * USA Massachusetts Secretary of State Company ID */
-    | "usa_mass_sos_company_id"
+     * Identification code from Georgian MyGov companies */
+    | "geo_identification_code"
     /**
-     * China Resident Identity Number */
-    | "chn_resident_id_number"
+     * Legal code from Georgian MyGov companies */
+    | "geo_legal_code"
     /**
-     * USA New Jersey Department of Treasury Business ID */
-    | "usa_nj_business_id"
+     * Personal number from Georgian MyGov companies */
+    | "geo_personal_number"
     /**
-     * Utah Secretary of State Business Entity Number */
-    | "utah_corporate_registry_internal_entity_number"
+     * Georgian state registration number */
+    | "geo_state_registration_number"
     /**
-     * USA Louisiana Secretary of State Business Entity Number */
-    | "usa_la_sos_id"
+     * Guernsey Corporate Registry Number */
+    | "ggy_corporate_reg_number"
     /**
-     * USA Alabama Secretary of State Business Entity ID */
-    | "usa_al_sos_id"
+     * Unique Guernsey intellectual property ID number. Assigned to every trademark registered with the Guernsey Intellectual Property Office. */
+    | "ggy_trademark_no"
     /**
-     * USA South Carolina Secretary of State Corporation ID */
-    | "usa_sc_corp_id"
+     * Unique Guernsey intellectual property ID number. Assigned to every trademark application submitted to the Guernsey Intellectual Property Office. */
+    | "ggy_trademark_submission_ref"
     /**
-     * USA state of Kentucky organization number assigned to businesses */
-    | "usa_ky_org_no"
+     * Gibraltar Corporate Registration Number */
+    | "gib_corp_reg_number"
     /**
-     * USA Illinois Secretary of State File Number */
-    | "usa_il_file_number"
+     * Global Trade Internal Shipment ID */
+    | "global_trade_internal_shipment_id"
+    /**
+     * Greece tax ID number */
+    | "grc_afm_number"
+    /**
+     * General Electronic Commercial Registry (G.E.MI.) number for all legal forms of businesses in Greece */
+    | "grc_gemi_number"
+    /**
+     * Greece tax ID number */
+    | "grc_vat_number"
+    /**
+     * Guatemala natural person ID number */
+    | "gtm_cui_number"
+    /**
+     * Guatemala tax ID number */
+    | "gtm_nit_number"
+    /**
+     * Hong Kong Stock Exchange Code */
+    | "hkg_stock_code"
+    /**
+     * Honduras Cortes commercial registry ID number */
+    | "hnd_coc_company_registration_number"
+    /**
+     * Honduras Tegucigalpa Matricula */
+    | "hnd_tegucigalpa_matricula"
+    /**
+     * Hong Kong case ID number */
+    | "hong_kong_case_number"
+    /**
+     * Croatia corporate registry ID number */
+    | "hr_mbs"
+    /**
+     * Croatia natural and legal person ID number */
+    | "hr_oib"
+    /**
+     * Unique HUN registration number. Assigned to every legal entity registered with the Ministry of Justice of Hungary. */
+    | "hun_company_register_number"
+    /**
+     * Statistical Number for Hungarian companies issued by the Hungarian Central Statistical Office */
+    | "hun_krs_number"
+    /**
+     * Unique TIN. Issued for individuals by Hungarian Tax Authorities. */
+    | "hun_person_tax_id"
+    /**
+     * Unique Hungary Tax ID. Issued to companies registered in Hungary. */
+    | "hun_tax_number"
+    /**
+     * Unique ID number. Assigned to individual bank accounts for use in cross-border financial transactions. */
+    | "iban"
+    /**
+     * ICIJ Offshore Database Internal ID */
+    | "icij_offshore_internal_id"
+    /**
+     * ICIJ Offshore Database Node ID */
+    | "icij_offshore_node_id"
+    /**
+     * Indonesian tax ID aka NPWP Number; learn more [here](https://wiki.scn.sap.com/wiki/display/CRM/Indonesia) */
+    | "idn_tax_id"
     /**
      * Unique identifier used for companies in Indonesia UBO data */
     | "idn_transaction_number"
@@ -1553,284 +686,17 @@ export type IdentifierType =
      * Unique identifier used for owners in Indonesia UBO data */
     | "idn_ubo_owner_id"
     /**
-     * Swedish Organisationnummer with two-digit prefix */
-    | "swe_tax_number"
+     * IHS Owner Code */
+    | "ihs_owner_code"
     /**
-     * Panadata Internal SID */
-    | "panadata_internal_sid"
+     * Isle of Man Company Number */
+    | "imn_company_number"
     /**
-     * Paraguay Company Tax ID */
-    | "pry_tax_id"
-    /**
-     * Paraguay Shipment Number */
-    | "pry_shipment_number"
-    /**
-     * Unique identifier for Tokyo Stock Exchange companies */
-    | "tokyo_stock_exchange_no"
-    /**
-     * Sweden FI Identification Number */
-    | "swe_fi_id"
-    /**
-     * Germany BaFin-ID */
-    | "deu_bafin_id"
-    /**
-     * Global Trade Internal Shipment ID */
-    | "global_trade_internal_shipment_id"
-    /**
-     * China Vessel Inspection Registration Number */
-    | "china_vessel_inspection_registration"
-    /**
-     * China Vessel Registration Number */
-    | "china_vessel_registration"
-    /**
-     * CCS Vessel Registration Number */
-    | "ccs_registration"
-    /**
-     * USA OTI Organization Number */
-    | "usa_oti_id"
-    /**
-     * Stock market ticker */
-    | "stock_ticker"
-    /**
-     * Unique Canada province ID number. Assigned to every legal entity registered with the Manitoba Companies Office. */
-    | "can_mb_registry"
-    /**
-     * Unique Canada province ID number. Assigned to every legal entity in the Quebec Enterprise Register. */
-    | "quebec_enterprise_number"
-    /**
-     * Unique Canada province ID number. Assigned to every legal entity in the Ontario Business Registry. */
-    | "ontario_corporation_number"
-    /**
-     * Unique Canada province ID number. Assigned to every legal entity in the Saskatchewan Corporate Registry. */
-    | "saskatchewan_registry_number"
-    /**
-     * Unique Canada province ID number. Assigned to every legal entity in the Alberta Corporate Registry. */
-    | "alberta_corporation_number"
-    /**
-     * Brazil Shipment Number */
-    | "bra_shipment_number"
-    /**
-     * Ukraine NAZK sanctions company internal ID */
-    | "ukr_sanctions_nazk_company_internal_id"
-    /**
-     * Ukraine NAZK sanctions person internal ID */
-    | "ukr_sanctions_nazk_person_internal_id"
-    /**
-     * Ethereum address */
-    | "ethereum_address"
-    /**
-     * Dash address */
-    | "dash_address"
-    /**
-     * Zcash address */
-    | "zcash_address"
-    /**
-     * Unique USA ID number. Assigned to every trademark application. */
-    | "usa_uspto_serial_number"
-    /**
-     * Unique USA ID number. Assigned to every registered trademark. */
-    | "usa_uspto_reg_no"
-    /**
-     * Unique USA ID number. Assigned to every foreign trademark application. */
-    | "usa_uspto_foreign_application_no"
-    /**
-     * Unique USA ID number. Assigned to every registered foreign trademark. */
-    | "usa_uspto_foreign_reg_no"
-    /**
-     * Unique USA ID number. Assigned to every registered foreign trademark. */
-    | "wipo_intl_reg_no"
-    /**
-     * Unique USA ID number. Assigned to every foreign trademark application. */
-    | "wipo_intl_ref_no"
-    /**
-     * Unique UK charity ID number. Assigned to every charity registered with the Charity Commission for England and Wales. */
-    | "gbr_charity_no"
-    /**
-     * Unique UK internal ID number. Assigned to every trustee registered with the Charity Commission for England and Wales. */
-    | "gbr_trustee_id"
-    /**
-     * Unique UK government organization ID number. Assigned to government organizations in the UK. */
-    | "gbr_go_no"
-    /**
-     * Unique Ireland ID number. Assigned to every legal entity registered with Ireland Companies Registration Office. */
-    | "irl_registration_no"
-    /**
-     * Registered Charity Number (RCN). Unique Identifier issued by the Charities Regulator to the registered charitable organizations awarded with charitable status. */
-    | "irl_rcn"
-    /**
-     * Belize Companies & Corporate Affairs Registry (BCCAR) registration number */
-    | "blz_bccar_reg_no"
-    /**
-     * Unique customs registration number. Assigned to all entities registered with China General Administration of Customs. */
-    | "chn_customs_registration_no"
-    /**
-     * Iceland VAT identification number. Assigned to legal entities registered with Tax Administration. */
-    | "isl_vat_num"
-    /**
-     * Unique Canada ID number. Assigned to every registered trademark. */
-    | "can_tm_registration_no"
-    /**
-     * Azerbaijan TIN. Unique number assigned to taxpayers registered with Azerbaijan State Tax Service. */
-    | "aze_tin_number"
-    /**
-     * Tajikistan TIN. Unique number assigned to taxpayers registered with Tajikistan Tax Authorities. */
-    | "tjk_tin_number"
-    /**
-     * Tajikistan EIN (RYIAM) number. Unique number assigned to taxpayers in Tajikistan. */
-    | "tjk_ein_number"
-    /**
-     * Monaco RCI Trade Register Number. Unique number assigned to entities with activities in Monaco registered with the Directory of Trade and Industry Directory. */
-    | "mco_rci_number"
-    /**
-     * Monaco Statistical Identification Number. Unique identifier assigned by the Institute of Statistics and Economic Studies (Monaco Statistics) for entities with economic activity in Monaco. */
-    | "mco_nis"
-    /**
-     * Unique Canada provincial ID number. Assigned to every business registered with Ontario Ministry of Consumer and Business Services. */
-    | "on_business_id_number"
-    /**
-     * Unique Syria ID number. Assigned to every legal entity registered with the Syria Ministry of Economy and Foreign Trade. */
-    | "syria_commercial_register_number"
-    /**
-     * Unique internal company ID number. Assigned to every company in China Xinjiang Department of Housing and Urban-Rural Development Company Database */
-    | "cn_hurd_internal_company_id"
-    /**
-     * Unique Hungary Tax ID. Issued to companies registered in Hungary. */
-    | "hun_tax_number"
-    /**
-     * Statistical Number for Hungarian companies issued by the Hungarian Central Statistical Office */
-    | "hun_krs_number"
-    /**
-     * Unique HUN registration number. Assigned to every legal entity registered with the Ministry of Justice of Hungary. */
-    | "hun_company_register_number"
-    /**
-     * Unique TIN. Issued for individuals by Hungarian Tax Authorities. */
-    | "hun_person_tax_id"
-    /**
-     * Malawi Tax Payer Identification Number. Unique number assigned to taxpayers in Malawi and issued by the Malawi Revenue Authority. */
-    | "mw_tpin_tax_reg_num"
-    /**
-     * Liberia Tax Identification Number. Unique number assigned to taxpayers in Liberia and issued by the Liberia Revenue Authority. */
-    | "lr_tin"
-    /**
-     * Cameroon Tax Registration Number. Unique number assigned to taxpayers in Cameroon and issued by the Directorate General of Tax. */
-    | "cm_nui_tax_reg_num"
-    /**
-     * Unique EU Financial Sanctions Database ID number. Assigned to every entity in the EU Financial Sanctions Database. */
-    | "eu_fsd_id"
-    /**
-     * Unique Hong Kong tax ID number. Assigned to every company registered with the Hong Kong Business Registration Office. */
-    | "cn_hk_br_number"
-    /**
-     * Unique Identification Number. Registration number assigned to companies by the Companies and Intellectual Property Authority. */
-    | "bwa_uin_reg_number"
-    /**
-     * Unique Canada ID number. Assigned to every entity registered with Canadian Securities Administrators National Registration Database. */
-    | "can_nrd"
-    /**
-     * Global Intermediary Identification Number (GIIN). Unique Identifier issued by the IRS to financial institutions, branches, direct reporting non-financial foreign entities, and sponsored entities. */
-    | "usa_irs_giin"
-    /**
-     * Unique internal ID number assigned to individuals. Assigned to every individual registered with Canadian Securities Administrators National Registration Database. */
-    | "can_nrd_individual_id"
-    /**
-     * Unique Jamaica company registration number. Assigned to every company in the Jamaica Corporate Registry. */
-    | "jam_company_id"
-    /**
-     * Spain Internal Employee Number */
-    | "esp_internal_employee_number"
-    /**
-     * Unique identifier assigned to every entity in the New Zealand Russia Sanctions Register. */
-    | "nzl_russia_sanctions_uid"
-    /**
-     * Unique Canada province ID number. Assigned to every legal entity registered with the New Brunswick Corporate Affairs Registry. */
-    | "can_new_brunswick_reference_number"
-    /**
-     * Unique reference number assigned to every entity in the France National Asset Freeze Register. */
-    | "fra_asset_freeze_id"
-    /**
-     * Unique Serbia ID number. Assigned to every entity registered with the Serbia Business Register Agency's Register of Beneficial Owners. */
-    | "srb_beneficial_owner_id"
-    /**
-     * Unique Canada province ID number. Assigned to every entity registered with the Prince Edward Island Corporate Registry. */
-    | "can_pe_registration_number"
-    /**
-     * Hex digest of FSMA entity name */
-    | "bel_fsma_name_hash"
-    /**
-     * Curacao Registry Number. Unique Identifier issued by the Curacao Chamber of Commerce & Industry to the registered companies. */
-    | "cuw_reg_number"
-    /**
-     * A unique concatenation of bill of lading number, date of customs declaration and Russia customs sequence number. */
-    | "rus_declaration_number"
-    /**
-     * Russia Trade Internal Shipment ID */
-    | "ru_trade_internal_shipment_id"
-    /**
-     * Unique concatenation of bill of lading number and item number for shipments in Turkey. */
-    | "tur_shipment_id"
-    /**
-     * Unique business Identification number. Assigned to every registered business in Bangladesh. */
-    | "bd_bin"
-    /**
-     * Unique registration number. Assigned to every company registered with the UAE National Economic Register. */
-    | "aer_ner_number"
-    /**
-     * Taiwan Passport Number */
-    | "twn_passport_number"
-    /**
-     * Belgium unique natural person ID number. */
-    | "bel_national_register_no"
-    /**
-     * Afghanistan Trade Internal Shipment ID */
-    | "afg_trade_internal_shipment_id"
-    /**
-     * Ukraine SFMS List Identifier. Reference number assigned to all entities listed under Ukraine SFMS List for Terrorism. */
-    | "ukr_fiu_list_number"
-    /**
-     * Unique identification number assigned to every entity registered with the Bank of Spain. */
-    | "esp_be_code"
-    /**
-     * Spain TR Number */
-    | "esp_tr_number"
-    /**
-     * Unique Jersey ID number. Assigned to every registered trademark. */
-    | "jey_trademark_reg_no"
-    /**
-     * Action number assigned by the Environment Agency to each enforcement action against offender pursuant to relevant legislation. */
-    | "gbr_enforcement_action_num"
-    /**
-     * Tanzania Registration Number. Unique identifier issued by the Tanzania Business Registration and Licensing Agency and assigned to the registered entities. */
-    | "tza_brela_reg_num"
-    /**
-     * Unique India identifier code. Assigned to all entities listed on the India National Stock Exchange. */
-    | "ind_nse_ticker_code"
-    /**
-     * Unique Florida county land and property ID number. Assigned to every parcel registered with the Martin County Property Appraiser’s Office. */
-    | "usa_fl_martin_pid"
-    /**
-     * Unique Florida county land and property ID number. Assigned to every parcel registered with the Saint Lucie County Property Appraiser’s Office. */
-    | "usa_fl_sl_pid"
-    /**
-     * Penalty number assigned by the Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
-    | "can_qc_sap_registry_ref_num"
-    /**
-     * Izmir Chamber of Commerce registration number */
-    | "tur_izmir_coc_reg_no"
-    /**
-     * Turkey Trade Registry Number, Ticaret Sicil. Unique registration number for companies in Turkey. */
-    | "tur_ticaret_sicil_no"
-    /**
-     * EU ESMA Sanctions List. Reference number assigned to all entities listed under the European Securities and Markets Authority (ESMA) Sanctions List. */
-    | "xxx_eu_esma_sanctions_id"
-    /**
-     * Unique India ID number. Assigned to every legal entity included in the NITI Aayog Darpan database. */
-    | "ind_darpan_uid"
+     * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
+    | "imo_no"
     /**
      * Unique India registration number. Assigned to every legal entity registered with the India Charity Commissioner. */
     | "ind_charity_registration_number"
-    /**
-     * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Societies. */
-    | "ind_society_registration_number"
     /**
      * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Companies. */
     | "ind_company_registration_number"
@@ -1838,638 +704,1772 @@ export type IdentifierType =
      * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Cooperative Societies */
     | "ind_coopsoc_registration_number"
     /**
+     * A unique identification number assigned by the Registrar of Companies (ROC) in various states under the Indian Ministry of Corporate Affairs (MCA) */
+    | "ind_corporate_id_number"
+    /**
+     * Unique India ID number. Assigned to every legal entity included in the NITI Aayog Darpan database. */
+    | "ind_darpan_uid"
+    /**
+     * A unique eight-digit identification number that is required for any existing or proposed director of a company in India */
+    | "ind_director_id_number"
+    /**
+     * India foreign company registration number */
+    | "ind_fcrn"
+    /**
      * Unique identifiers for each bank branch participating in India's National Electronic Funds Transfer (NEFT), Real Time Gross Settlement (RTGS), and Immediate Payment Service (IMPS) electronic funds transfer systems. */
     | "ind_ifsc"
     /**
+     * India limited liability partnership ID number */
+    | "ind_llpin"
+    /**
+     * Unique India identifier code. Assigned to all entities listed on the India National Stock Exchange. */
+    | "ind_nse_ticker_code"
+    /**
+     * A permanent account number (PAN) is a 10-digit alphanumeric tax ID issued by the Indian Income Tax Department. */
+    | "ind_permanent_account_number"
+    /**
+     * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Societies. */
+    | "ind_society_registration_number"
+    /**
+     * India tax identification number. Unique ID number assigned to every taxpayer by the Commercial Tax Department of each state. */
+    | "ind_tin"
+    /**
      * Unique India intellectual property ID number. Assigned to every trademark application submitted to the Controller General of Patents, Designs and Trademarks of the Ministry of Commerce and Industry, Government of India. */
-    | "ind_trademark_submission_ref";
+    | "ind_trademark_submission_ref"
+    /**
+     * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
+    | "int_maritime_org_id"
+    /**
+     * Hex digest of data that should be used for resolution (e.g., name=Sayari&registration_date=2000-01-01) */
+    | "internal_md5"
+    /**
+     * Iraqi Stock Exchange Symbol */
+    | "iraqi_stock_exchange_symbol"
+    /**
+     * Registered Charity Number (RCN). Unique Identifier issued by the Charities Regulator to the registered charitable organizations awarded with charitable status. */
+    | "irl_rcn"
+    /**
+     * Unique Ireland ID number. Assigned to every legal entity registered with Ireland Companies Registration Office. */
+    | "irl_registration_no"
+    /**
+     * Iran Tehran chamber of commerce internal ID number */
+    | "irn_coc_internal_id"
+    | "irn_coc_internal_id_cardno"
+    /**
+     * Iran natural and legal person ID number */
+    | "irn_national_id"
+    /**
+     * Iran natural person ID number */
+    | "irn_national_number"
+    /**
+     * Iran passport number */
+    | "irn_passport"
+    /**
+     * Iraq voter ID number */
+    | "irq_voter_id"
+    /**
+     * Unique global ID code. Assigned to every security issuance for use facilitating the trading, clearing, and settlement of securities transactions. */
+    | "isin"
+    /**
+     * Iceland natural and legal person ID number */
+    | "isl_tin_number"
+    /**
+     * Iceland VAT identification number. Assigned to legal entities registered with Tax Administration. */
+    | "isl_vat_num"
+    /**
+     * Unique Israel association registration number. Assigned to every association in the Israel Ministry of Justice Association and Public Benefit Company Registry. */
+    | "isr_association_number"
+    /**
+     * Israeli Registrar of Companies company number */
+    | "isr_company_number"
+    /**
+     * Unique Israel public benefit company registration number. Assigned to every public benefit company in the Israel Ministry of Justice Association and Public Benefit Company Registry. */
+    | "isr_pbc_number"
+    /**
+     * Italy tax ID code */
+    | "ita_fiscal_code"
+    /**
+     * Italy Economic and Administrative Repertory Number */
+    | "ita_rea_number"
+    /**
+     * Italy VAT number */
+    | "ita_vat_number"
+    /**
+     * Unique Jamaica company registration number. Assigned to every company in the Jamaica Corporate Registry. */
+    | "jam_company_id"
+    /**
+     * Jersey Corporate Registry Number */
+    | "jey_corporate_reg_number"
+    /**
+     * Unique Jersey ID number. Assigned to every registered trademark. */
+    | "jey_trademark_reg_no"
+    /**
+     * Deprecated; use weak ID jor_sol_prop_institution_number */
+    | "jo_institution_number"
+    /**
+     * Deprecated; use jo_national_institution_number */
+    | "jo_internal_id"
+    /**
+     * A Jordanian National Institution Number */
+    | "jo_national_institution_number"
+    /**
+     * Deprecated; use jo_national_institution_number */
+    | "jor_id_no"
+    /**
+     * Jordan voter ID number */
+    | "jor_voter_card_no"
+    /**
+     * Deprecated; use weak identifier jordan_company_no */
+    | "jordan_company_no"
+    /**
+     * Japanese corporate number. Learn more [here](https://en.wikipedia.org/wiki/Corporate_Number). */
+    | "jpn_corporate_no"
+    /**
+     * Company code from EDINET */
+    | "jpn_edinet_code"
+    /**
+     * A 12-digit Kazakh business identification number */
+    | "kaz_bin"
+    /**
+     * A nine-digit Kazakh identifier */
+    | "kaz_identifier"
+    | "kaz_okpo_num"
+    | "kaz_state_reg_num"
+    /**
+     * A Kazakh tax ID number */
+    | "kaz_tin"
+    /**
+     * Kenya Person ID Number */
+    | "ken_personal_id"
+    /**
+     * Kyrgyzstan company registration number */
+    | "kgz_reg_number"
+    /**
+     * Cambodia tax ID number */
+    | "khm_tin_number"
+    /**
+     * Korean TIN for businesses */
+    | "kor_business_tin"
+    /**
+     * Korean corporate registration number */
+    | "kor_corporate_registration_number"
+    /**
+     * Ticker number for the Korean Stock Exchange */
+    | "krx_ticker_code"
+    /**
+     * Kuwait passport number */
+    | "kwt_passport"
+    /**
+     * Laos corporate registry ID number */
+    | "lao_enterprise_number"
+    /**
+     * Lebanon natural person ID number */
+    | "lbn_national_id"
+    /**
+     * Libya passport number */
+    | "lby_passport"
+    /**
+     * St. Lucia Business Registry Internal ID */
+    | "lca_business_registry_internal_id"
+    /**
+     * Unique global ID code. Assigned to legal entities participating in financial transactions. */
+    | "lei"
+    /**
+     * Liechtenstein corporate registry ID number */
+    | "lie_public_reg_no"
+    /**
+     * Unique digital currency address */
+    | "litecoin_address"
+    /**
+     * Entity ID from Lloyd's Maritime Data */
+    | "lloyds_internal_entity_id"
+    /**
+     * Vessel ID from Lloyd's Maritime Data */
+    | "lloyds_internal_vessel_id"
+    /**
+     * Liberia Tax Identification Number. Unique number assigned to taxpayers in Liberia and issued by the Liberia Revenue Authority. */
+    | "lr_tin"
+    /**
+     * Lesotho corporate registry ID number */
+    | "lso_corpreg_id"
+    /**
+     * Lithuanian Company Registration Code */
+    | "ltu_company_registration_code"
+    /**
+     * Luxembourg corporate registry ID number */
+    | "lux_rcs_number"
+    /**
+     * Latvian Insolvency Proceedings ID Number */
+    | "lva_insolvency_proceeding_id"
+    /**
+     * Latvia natural person ID number */
+    | "lva_personal_code"
+    /**
+     * Latvia corporate registry ID number */
+    | "lva_reg_number"
+    /**
+     * Identifier taken from document URL to resolve cases. Is slightly different for HTML vs PDF documents. */
+    | "mac_raem_case_url_id"
+    /**
+     * Macao corporate registry ID number */
+    | "mac_registration_no"
+    /**
+     * Seems to be tied to accounting/auditing firms */
+    | "malta_accountancy_registration_id"
+    /**
+     * A Malta company number */
+    | "malta_company_number"
+    /**
+     * A number linked to a Maltese national ID card */
+    | "malta_national_id"
+    /**
+     * Morocco Passport Number */
+    | "mar_passport"
+    | "mato_grosso_legal_id"
+    /**
+     * Monaco Statistical Identification Number. Unique identifier assigned by the Institute of Statistics and Economic Studies (Monaco Statistics) for entities with economic activity in Monaco. */
+    | "mco_nis"
+    /**
+     * Monaco RCI Trade Register Number. Unique number assigned to entities with activities in Monaco registered with the Directory of Trade and Industry Directory. */
+    | "mco_rci_number"
+    /**
+     * Moldova legal person ID number */
+    | "mda_idno_number"
+    /**
+     * Madagascar tax ID number */
+    | "mdg_nif_number"
+    /**
+     * Madagascar corporate registry ID number */
+    | "mdg_rcs_number"
+    | "mdg_stat_number"
+    /**
+     * Maldives corporate registration number */
+    | "mdv_registration_number"
+    /**
+     * Unique Registration Code in the Federal Register of Civil Society Organizations */
+    | "mex_cluni"
+    /**
+     * Mexico DENUE Unique ID */
+    | "mex_denue_clee"
+    /**
+     * Internal ID from Mexican open contracts data */
+    | "mex_open_contracts_internal_id"
+    /**
+     * Simple 1-up identifier from the Registro Nacional de Inversiones Extranjeras */
+    | "mex_rnie"
+    /**
+     * Mexico Shipment Number */
+    | "mex_shipment_number"
+    /**
+     * Mexican trademark number */
+    | "mex_tm_no"
+    /**
+     * North Macedonia unique identifier. Assigned to every North Macedonia Corporate Registry Announcement. */
+    | "mkd_archive_number"
+    /**
+     * North Macedonia corporate registry ID number */
+    | "mkd_embs_branch_number"
+    /**
+     * North Macedonia corporate registry ID number */
+    | "mkd_embs_number"
+    /**
+     * Myanmar corporate registry ID for companies */
+    | "mmr_corp_id"
+    /**
+     * Myanmar corporate registry ID for officers */
+    | "mmr_officer_id"
+    /**
+     * Myanmar Personal Identification Number */
+    | "mmr_personal_id_no"
+    /**
+     * Myanmar Prior Registration Number */
+    | "mmr_prior_reg_no"
+    /**
+     * Myanmar Registration Number */
+    | "mmr_reg_no"
+    /**
+     * Montenegro tax ID number */
+    | "mne_pib"
+    /**
+     * Montenegro real property registry internal ID number */
+    | "mne_property_uid"
+    /**
+     * Registration number from the Montenegro corporate registry */
+    | "mne_reg_number"
+    /**
+     * Registration number from the Mongolian corporate registry */
+    | "mng_reg_number"
+    /**
+     * Montana Secretary of State Business Entity Number */
+    | "montana_sos_internal_entity_id"
+    /**
+     * Mozambique foreign resident ID number */
+    | "moz_dire_no"
+    /**
+     * Mozambique natural person ID number */
+    | "moz_id_number"
+    /**
+     * Mozambique corporate registry ID number */
+    | "moz_nuel_no"
+    /**
+     * Mozambique legal person tax ID number */
+    | "moz_nuit_co"
+    /**
+     * Mozambique natural person tax ID number */
+    | "moz_nuit_person"
+    /**
+     * Mozambique passport number */
+    | "moz_passport"
+    /**
+     * Mozambique voter ID number */
+    | "moz_voter_no"
+    /**
+     * Mauritius Company File No. */
+    | "mus_file_no"
+    /**
+     * Mauritius business registration number */
+    | "mus_reg_id"
+    /**
+     * Malawi Tax Payer Identification Number. Unique number assigned to taxpayers in Malawi and issued by the Malawi Revenue Authority. */
+    | "mw_tpin_tax_reg_num"
+    /**
+     * A unique identity code for citizens and residents of Mexico */
+    | "mx_curp"
+    | "mx_office_fme"
+    | "mx_rfc_company"
+    /**
+     * A tax ID issued by the Mexican Tax Administration Service */
+    | "mx_rfc_person"
+    /**
+     * Malaysia corporate registry ID number */
+    | "mys_company_reg_no"
+    /**
+     * Malaysia natural person ID number */
+    | "mys_id_card_no"
+    /**
+     * NG-Check entity internal ID number */
+    | "ng_check_internal_id"
+    /**
+     * Nigerian Corporate Registry Internal ID */
+    | "nga_crp_reg_internal_id"
+    /**
+     * Nigerian Driver's License No. */
+    | "nga_drivers"
+    /**
+     * Nigerian National Identification Number */
+    | "nga_nin"
+    /**
+     * Nigeria corporate registry ID code */
+    | "nga_registration_number"
+    /**
+     * Nigerian Corporate Registry Registration Serial No. */
+    | "nga_registration_sn"
+    /**
+     * Nigerian Tax ID number */
+    | "nga_tax_id"
+    /**
+     * Nicaragua Numero Unico */
+    | "nic_numero_unico"
+    /**
+     * Nicaragua RUC Number */
+    | "nic_ruc_number"
+    /**
+     * Nicaragua Trade Internal Shipment ID */
+    | "nic_trade_internal_shipment_id"
+    /**
+     * Senegal tax ID number */
+    | "ninea_no"
+    /**
+     * Dutch Chamber of Commerce Branch/Location Number */
+    | "nld_kvk_branch_number"
+    /**
+     * Dutch Chamber of Commerce Number */
+    | "nld_kvk_number"
+    /**
+     * Norway Organisasjonsnummer */
+    | "nor_org_no"
+    /**
+     * Nepali Company Registration No. from National Information Technology Center */
+    | "npl_co_reg_no"
+    /**
+     * USA New York City real property parcel ID number */
+    | "nyc_bbl"
+    /**
+     * USA New York New York City real property registry ID number */
+    | "nyc_crfn"
+    /**
+     * New Zealand corporate registry ID number */
+    | "nzl_co_no"
+    /**
+     * New Zealand business registry ID number */
+    | "nzl_nzbn"
+    /**
+     * Unique identifier assigned to every entity in the New Zealand Russia Sanctions Register. */
+    | "nzl_russia_sanctions_uid"
+    /**
+     * Oman Passport Number */
+    | "omn_passport"
+    /**
+     * Unique Canada provincial ID number. Assigned to every business registered with Ontario Ministry of Consumer and Business Services. */
+    | "on_business_id_number"
+    /**
+     * Unique Canada province ID number. Assigned to every legal entity in the Ontario Business Registry. */
+    | "ontario_corporation_number"
+    /**
+     * Unique Pakistan National Taxpayer Number for Companies and Associations of Persons */
+    | "pak_co_ntn"
+    /**
+     * Pakistan EGM ID */
+    | "pak_egm_id"
+    /**
+     * Unique Pakistan National Taxpayer Number for Individuals (equivalent to Computerized National Identity Card number) */
+    | "pak_ind_ntn"
+    /**
+     * Pakistan NGO Registration Number */
+    | "pak_ngo_reg_no"
+    /**
+     * Pakistan passport number */
+    | "pak_passport"
+    /**
+     * Panama natural person ID number */
+    | "pan_cedula_number"
+    /**
+     * Declaration number for import and export shipments in Panama */
+    | "pan_declaration_number"
+    /**
+     * Panama corporate registry ID number */
+    | "pan_folio_ficha_id"
+    /**
+     * Unique identifier for Panamanian importers and exporters */
+    | "pan_importer_exporter_id"
+    /**
+     * Panadata Internal ID */
+    | "panadata_internal_id"
+    /**
+     * Panadata Internal SID */
+    | "panadata_internal_sid"
+    /**
+     * Peru foreign resident ID number */
+    | "per_carne_de_extranjeria"
+    /**
+     * Peru natural person ID number */
+    | "per_dni_no"
+    /**
+     * Peru tax ID number */
+    | "per_ruc_no"
+    /**
+     * Philippines business registry ID number */
+    | "phl_bnn"
+    /**
+     * Philippines securities issuer internal ID number */
+    | "phl_pse_id"
+    /**
+     * Philippines business registry ID number */
+    | "phl_sec_id"
+    /**
+     * Philippines tax ID number */
+    | "phl_tin"
+    /**
+     * Papua New Guinea business registry ID number */
+    | "png_ipa_reg_id"
+    /**
+     * The National Court Register, or Krajowy Rejestr Sądowy (KRS), number in Poland */
+    | "pol_krs_number"
+    /**
+     * Tax identification number from Poland */
+    | "pol_nip_number"
+    /**
+     * The register REGON fulfils the function of the national official Register of National Economy Entities */
+    | "pol_regon_number"
+    /**
+     * Person identifier from Poland Rejestr data */
+    | "pol_rejestr_person_id"
+    /**
+     * North Korea-China trade data ID code */
+    | "prk_entity_id"
+    /**
+     * North Korea-China trade internal ID number */
+    | "prk_internal_trade_id"
+    /**
+     * North Korea Passport Number */
+    | "prk_passport"
+    | "prk_registration_id"
+    /**
+     * North Korea Shipment ID */
+    | "prk_shipment_id"
+    /**
+     * Portuguese Trust Number */
+    | "prt_trust_number"
+    /**
+     * Portuguese VAT Number */
+    | "prt_vat_number"
+    /**
+     * Paraguay natural person ID number */
+    | "pry_cedula_number"
+    /**
+     * Paraguay tax ID number */
+    | "pry_old_ruc_number"
+    /**
+     * Paraguay tax ID number */
+    | "pry_ruc_number"
+    /**
+     * Paraguay Shipment Number */
+    | "pry_shipment_number"
+    /**
+     * Paraguay Company Tax ID */
+    | "pry_tax_id"
+    /**
+     * Palestine registration ID */
+    | "pse_registration_id"
+    /**
+     * Qatar corporate registry ID number */
+    | "qat_cr_number"
+    /**
+     * Qatar corporate registry ID number */
+    | "qat_qfc_number"
+    /**
+     * Unique Canada province ID number. Assigned to every legal entity in the Quebec Enterprise Register. */
+    | "quebec_enterprise_number"
+    /**
+     * OHADA corporate registry ID number */
+    | "rccm_no"
+    | "rio_de_janeiro_legal_id"
+    | "rks_business_number"
+    /**
+     * A fiscal number from the Kosovo company registry */
+    | "rks_fiscal_number"
+    /**
+     * Kosovo registration number */
+    | "rks_registration_number"
+    /**
+     * Romania tax ID number */
+    | "rou_company_registration_code"
+    /**
+     * Romanian tax identification number for companies */
+    | "rou_company_tin"
+    /**
+     * Romania natural person ID number */
+    | "rou_identity_card"
+    /**
+     * Romania natural person ID number */
+    | "rou_personal_id_number"
+    /**
+     * A Russian tax ID. Individuals get a 12-digit number; companies get 10 digits. */
+    | "ru_inn"
+    /**
+     * A Russian company registration number with 12 digits */
+    | "ru_ogrn"
+    /**
+     * Russia vessel registry ID number */
+    | "ru_ship_register_id"
+    /**
+     * Russia Trade Internal Shipment ID */
+    | "ru_trade_internal_shipment_id"
+    /**
+     * Russia Bank Identification Code */
+    | "rus_bik_code"
+    /**
+     * A unique concatenation of bill of lading number, date of customs declaration and Russia customs sequence number. */
+    | "rus_declaration_number"
+    /**
+     * Russia securities ID code */
+    | "rus_micex_code"
+    /**
+     * Russia passport number */
+    | "rus_passport"
+    /**
+     * Russian Tourist Object Serial number in the Federal list */
+    | "rus_tourist_obj"
+    /**
+     * Unique Canada province ID number. Assigned to every legal entity in the Saskatchewan Corporate Registry. */
+    | "saskatchewan_registry_number"
+    /**
+     * UID used to merge entities internally */
+    | "sayari_internal_identifier"
+    /**
+     * Singapore Passport Number */
+    | "sgp_passport"
+    /**
+     * The UEN is a standard, unique identification number for a registered entity in Singapore. It is comparable to the NRIC number, which is an ID number for Singapore citizens. */
+    | "sgp_unqiue_entity_number"
+    /**
+     * Mexico corporate registry internal ID number */
+    | "siger_internal_id"
+    /**
+     * El Salvador commercial registry ID number */
+    | "slv_commercial_reg_number"
+    /**
+     * El Salvador corporate registry ID number */
+    | "slv_mcas"
+    /**
+     * El Salvador tax ID number */
+    | "slv_numero_identificacion_tributaria"
+    /**
+     * El Salvador natural person ID number */
+    | "slv_uid_number"
+    /**
+     * San Marino Economic Operator Code */
+    | "smr_economic_operator_code"
+    /**
+     * Somalian UBI Number */
+    | "som_ubi"
+    /**
+     * Enterprise number for South African companies */
+    | "south_africa_enterprise_number"
+    /**
+     * South African passport number */
+    | "south_africa_passport_number"
+    /**
+     * Unique Serbia ID number. Assigned to every entity registered with the Serbia Business Register Agency's Register of Beneficial Owners. */
+    | "srb_beneficial_owner_id"
+    /**
+     * Serbia branch ID */
+    | "srb_branch_id"
+    /**
+     * Serbia company registration number (matični broj) */
+    | "srb_mb_number"
+    /**
+     * Serbia tax ID number */
+    | "srb_pib_number"
+    /**
+     * South Sudan Passport Number */
+    | "ssd_passport"
+    /**
+     * Stock market ticker */
+    | "stock_ticker"
+    /**
+     * Slovakia legal person ID number */
+    | "svk_ico_number"
+    /**
+     * ZAPST number used for shareholders and partners in Slovenia Corporate Registry */
+    | "svn_ajpes_zapst_number"
+    /**
+     * Slovenian Company Registry ID Number */
+    | "svn_co_reg_no"
+    /**
+     * Slovenian VAT number */
+    | "svn_vat_number"
+    /**
+     * Sweden FI Identification Number */
+    | "swe_fi_id"
+    /**
+     * Sweden Organisationsnummer. May have "-" separating last three digits. */
+    | "swe_org_no"
+    /**
+     * Swedish personal identity number (Personnummer) */
+    | "swe_per_id_no"
+    /**
+     * Swedish Organisationnummer with two-digit prefix */
+    | "swe_tax_number"
+    /**
+     * Unique global ID code. Assigned to financial and non-financial institutions for use addressing messages, routing business transactions, and identifying business parties. */
+    | "swift_bic_code"
+    /**
+     * Unique Syria ID number. Assigned to every legal entity registered with the Syria Ministry of Economy and Foreign Trade. */
+    | "syria_commercial_register_number"
+    /**
+     * Thailand corporate registry ID number */
+    | "tha_registration_no"
+    /**
+     * Tajikistan EIN (RYIAM) number. Unique number assigned to taxpayers in Tajikistan. */
+    | "tjk_ein_number"
+    /**
+     * Tajikistan TIN. Unique number assigned to taxpayers registered with Tajikistan Tax Authorities. */
+    | "tjk_tin_number"
+    /**
+     * Unique identifier for Tokyo Stock Exchange companies */
+    | "tokyo_stock_exchange_no"
+    /**
+     * Trinbagonian Business Number */
+    | "tto_biz_number"
+    /**
+     * Tunisia passport number */
+    | "tun_passport"
+    /**
+     * Istanbul Chamber of Commerce registration number */
+    | "tur_istanbul_coc_reg_no"
+    /**
+     * Izmir Chamber of Commerce registration number */
+    | "tur_izmir_coc_reg_no"
+    /**
+     * Turkish Central Registry Number System (MERSIS) number */
+    | "tur_mersis_number"
+    /**
+     * Unique concatenation of bill of lading number and item number for shipments in Turkey. */
+    | "tur_shipment_id"
+    /**
+     * Turkish Tax Identifier */
+    | "tur_tax_id"
+    /**
+     * Turkey Trade Registry Number, Ticaret Sicil. Unique registration number for companies in Turkey. */
+    | "tur_ticaret_sicil_no"
+    /**
+     * Establishment permit case number for Taiwanese factories */
+    | "twn_factory_establishment_permit_case_number"
+    /**
+     * Registration number for Taiwanese factories */
+    | "twn_factory_registration_number"
+    /**
+     * Taiwan Passport Number */
+    | "twn_passport_number"
+    /**
+     * Taiwan tax ID number */
+    | "twn_unified_number"
+    /**
+     * USA Texas corporate registry ID number */
+    | "tx_corp_file_num"
+    /**
+     * USA Texas corporate registry ID number */
+    | "tx_entity_filing_num"
+    /**
+     * USA Texas land segment ID number */
+    | "tx_land_id"
+    /**
+     * USA Texas Bexar County property owner ID number */
+    | "tx_pacs_id"
+    /**
+     * USA Texas Bexar County property ID number */
+    | "tx_prop_id"
+    /**
+     * USA Texas tax ID number */
+    | "tx_tax_id"
+    /**
+     * Tanzania Registration Number. Unique identifier issued by the Tanzania Business Registration and Licensing Agency and assigned to the registered entities. */
+    | "tza_brela_reg_num"
+    /**
+     * A UK company registration number. The pattern was sourced from the snapshot file documentation provided to us. When the first two characters are not digits, they have a special meaning. */
+    | "uk_company_number"
+    /**
+     * Unique UK ID number. Assigned to every firm in the FCA financial services registry. */
+    | "uk_firm_reference_number"
+    /**
+     * Internal person ID */
+    | "uk_person_number"
+    /**
+     * Title number for a property in the UK */
+    | "uk_title_number"
+    /**
+     * Ukraine SFMS List Identifier. Reference number assigned to all entities listed under Ukraine SFMS List for Terrorism. */
+    | "ukr_fiu_list_number"
+    | "ukr_moj_id"
+    /**
+     * Ukrainian Registration Number */
+    | "ukr_reg_num"
+    /**
+     * Ukraine NAZK sanctions company internal ID */
+    | "ukr_sanctions_nazk_company_internal_id"
+    /**
+     * Ukraine NAZK sanctions person internal ID */
+    | "ukr_sanctions_nazk_person_internal_id"
+    /**
+     * UN Security Council sanctions list ID code */
+    | "un_sanction_prn"
+    /**
+     * Uruguay tax ID number */
+    | "ury_ruc_number"
+    /**
+     * USA Alaskan Secretary of State entity number */
+    | "usa_ak_entity_no"
+    /**
+     * USA Alabama Secretary of State Business Entity ID */
+    | "usa_al_sos_id"
+    /**
+     * USA Arkansas Secretary of State Filing No. */
+    | "usa_ar_filing_no"
+    /**
+     * USA Arizona Corporate Registry Entity Number */
+    | "usa_az_corp_reg_entity_num"
+    /**
+     * Central Registration Depository (CRD) number from the Financial Industry Regulatory Authority (FINRA) in the USA. The CRD number is a company/person identifier. */
+    | "usa_central_registration_depository_number"
+    /**
+     * Common Government-wide Accounting Classification (CGAC) agency code assigned by the US Treasury */
+    | "usa_cgac_agency_code"
+    /**
+     * USA Colorado Secretary of State registration number */
+    | "usa_co_reg_no"
+    | "usa_consolidated_screening_list_synthetic_id"
+    /**
+     * CorpWatch Database ID */
+    | "usa_corpwatch_id"
+    /**
+     * USA Connecticut Business ID */
+    | "usa_ct_business_id"
+    /**
+     * USA Connecticut Internal ID */
+    | "usa_ct_internal_id"
+    /**
+     * Committee on Uniform Securities Identification Procedures (CUSIP) number. Identifies a North American financial security. */
+    | "usa_cusip_number"
+    /**
+     * USA Washington, D.C. CorpOnline entity number */
+    | "usa_dc_entity_no"
+    /**
+     * USA Washington, D.C. corporate registry file number */
+    | "usa_dc_file_no"
+    /**
+     * USA Delaware File Number */
+    | "usa_de_file_number"
+    /**
+     * USA Delaware Registered Agent ID */
+    | "usa_de_registered_agent_id"
+    /**
+     * USA IRS employer ID number */
+    | "usa_fei_number"
+    /**
+     * USA Florida corporate registry ID code */
+    | "usa_fl_document_no"
+    /**
+     * USA Florida corporate registry ID code */
+    | "usa_fl_fic_name_reg_no"
+    /**
+     * Unique Florida county land and property ID number. Assigned to every parcel registered with the Martin County Property Appraiser’s Office. */
+    | "usa_fl_martin_pid"
+    /**
+     * Unique USA county land and property ID number. Assigned to every parcel and property registered with the Palm Beach County Property Appraiser’s Office. */
+    | "usa_fl_pb_pcn"
+    /**
+     * Identifier for Florida, USA, property parcels. A concatenation of county code and parcel ID. */
+    | "usa_fl_property_id"
+    /**
+     * Code unique to every parcel within the real property file. Used in Florida, USA. */
+    | "usa_fl_property_mp_id"
+    /**
+     * Code assigned to each parcel based on a statewide parcel coding system. Used in Florida, USA. */
+    | "usa_fl_property_state_par_id"
+    /**
+     * Unique Florida county land and property ID number. Assigned to every parcel registered with the Saint Lucie County Property Appraiser’s Office. */
+    | "usa_fl_sl_pid"
+    /**
+     * USA Georgia business registry internal ID number */
+    | "usa_ga_business_id"
+    /**
+     * USA Georgia business registry ID number */
+    | "usa_ga_control_no"
+    /**
+     * Identifier for a US government agency */
+    | "usa_govt_agency_id"
+    /**
+     * Identifier for a US government agency office */
+    | "usa_govt_office_id"
+    /**
+     * Identifier made from File Number and File Suffix in Hawaii, USA, corporate registry */
+    | "usa_hi_corporate_registry_id"
+    /**
+     * Identifier for officers in Hawaii, USA, corporate registry */
+    | "usa_hi_corporate_registry_person_id"
+    /**
+     * USA Hawaii Certificate Number */
+    | "usa_hi_trade_name_cert"
+    /**
+     * USA Iowa Secretary of State corporation number */
+    | "usa_ia_corp_no"
+    /**
+     * USA Idaho Business Control Number */
+    | "usa_id_control_no"
+    /**
+     * USA Idaho Registered Agent ID */
+    | "usa_id_party_id"
+    /**
+     * Account number for businesses on the Chicago, Illinois, business license registry */
+    | "usa_il_chicago_account_number"
+    /**
+     * USA Illinois Secretary of State File Number */
+    | "usa_il_file_number"
+    /**
+     * Business ID from Indiana, USA, corporate registry */
+    | "usa_in_biz_no"
+    /**
+     * USA IRS employer ID number */
+    | "usa_irs_ein"
+    /**
+     * Global Intermediary Identification Number (GIIN). Unique Identifier issued by the IRS to financial institutions, branches, direct reporting non-financial foreign entities, and sponsored entities. */
+    | "usa_irs_giin"
+    /**
+     * USA Kansas Business ID */
+    | "usa_ks_biz_id"
+    /**
+     * USA state of Kentucky organization number assigned to businesses */
+    | "usa_ky_org_no"
+    /**
+     * USA Louisiana Secretary of State Business Entity Number */
+    | "usa_la_sos_id"
+    /**
+     * USA Massachusetts Secretary of State Company ID */
+    | "usa_mass_sos_company_id"
+    /**
+     * USA Maryland Department of Assessments and Taxation Business ID with prefix */
+    | "usa_md_dpt_tax"
+    /**
+     * USA Maine corporate ID */
+    | "usa_me_corp_id"
+    /**
+     * USA Michigan corporate ID */
+    | "usa_mi_corp_id"
+    /**
+     * USA Michigan corporate ID (old format) */
+    | "usa_mi_corp_id_old"
+    /**
+     * USA Minnesota Secretary of State Filing Number */
+    | "usa_mn_filing_number"
+    /**
+     * USA Minnesota Secretary of State Unique ID */
+    | "usa_mn_master_id"
+    /**
+     * Autoincrement corporation ID from the Missouri Corporate Registry */
+    | "usa_mo_corp_id"
+    /**
+     * USA Mississippi Business ID */
+    | "usa_ms_biz_id"
+    /**
+     * USA North Carolina SOS corporations UID */
+    | "usa_nc_internal_id"
+    /**
+     * USA North Dakota Secretary of State control ID */
+    | "usa_nd_control_id"
+    /**
+     * USA Nebraska corporate registry account number */
+    | "usa_ne_acct_no"
+    /**
+     * USA Nebraska registered agent ID number */
+    | "usa_ne_agent_id"
+    /**
+     * USA New Hampshire Business ID */
+    | "usa_nh_business_id"
+    /**
+     * USA New Jersey Department of Treasury Business ID */
+    | "usa_nj_business_id"
+    /**
+     * USA New Mexico Secretary of State business number */
+    | "usa_nm_business_no"
+    /**
+     * USA New Mexico Secretary of State License ID */
+    | "usa_nm_license_id"
+    /**
+     * The National Provider Identifier (NPI) is a unique number for health care providers in the United States. */
+    | "usa_npi_number"
+    /**
+     * USA Nevada business registry ID code */
+    | "usa_nv_bizid"
+    /**
+     * USA Nevada corporate registry ID code */
+    | "usa_nv_corpno"
+    /**
+     * USA New York corporate registry ID number */
+    | "usa_ny_dos_id"
+    | "usa_ny_reg_id"
+    /**
+     * USA Treasury sanctions list ID number */
+    | "usa_ofac_sdn_number"
+    /**
+     * USA Ohio business charter number */
+    | "usa_oh_charter_num"
+    /**
+     * USA Oklahoma Business Filing Number */
+    | "usa_ok_filing_no"
+    /**
+     * USA Oregon business registry ID number */
+    | "usa_or_regno"
+    /**
+     * USA OTI Organization Number */
+    | "usa_oti_id"
+    /**
+     * USA Pennsylvania Department of State Business Entity ID Number */
+    | "usa_pa_corporate_registry_id"
+    /**
+     * USA Puerto Rico corporate registry ID number */
+    | "usa_puerto_rico_register_number"
+    /**
+     * USA Rhode Island filing entity identification number */
+    | "usa_ri_fei_no"
+    | "usa_sam_exclusions_number"
+    /**
+     * Unique Entity Identifier (SAM) */
+    | "usa_sam_uei_number"
+    /**
+     * USA South Carolina Secretary of State Corporation ID */
+    | "usa_sc_corp_id"
+    /**
+     * USA South Dakota Corporate ID */
+    | "usa_sd_corp_id"
+    /**
+     * USA SEC disclosure filer ID number */
+    | "usa_sec_cik_number"
+    /**
+     * One format variation of the SEC file number associated with bdSECNumber in USA/finra_barred_relats */
+    | "usa_sec_file_number_bd"
+    /**
+     * One format variation of the SEC file number associated with iaSECNumber in USA/finra_barred_relats */
+    | "usa_sec_file_number_ia"
+    /**
+     * SEC private fund ID */
+    | "usa_sec_private_fund"
+    /**
+     * USA social security ID number */
+    | "usa_social_security_number"
+    /**
+     * USA Tennessee Business Control Number */
+    | "usa_tn_control_no"
+    /**
+     * USA Tennessee Registered Agent ID */
+    | "usa_tn_party_id"
+    /**
+     * A Unique Physician Identification Number (UPIN) is a unique six-character alphanumeric identifier for health care providers in the United States that was discontinued in June 2007. */
+    | "usa_upin_number"
+    /**
+     * Unique USA ID number. Assigned to every foreign trademark application. */
+    | "usa_uspto_foreign_application_no"
+    /**
+     * Unique USA ID number. Assigned to every registered foreign trademark. */
+    | "usa_uspto_foreign_reg_no"
+    /**
+     * Unique USA ID number. Assigned to every registered trademark. */
+    | "usa_uspto_reg_no"
+    /**
+     * Unique USA ID number. Assigned to every trademark application. */
+    | "usa_uspto_serial_number"
+    /**
+     * Identifier for corporations and trademarks in US Virgin Islands */
+    | "usa_usvi_corp_number"
+    | "usa_va_old_reg_id"
+    /**
+     * A Virginia State Corporation Commission entity number */
+    | "usa_va_reg_id"
+    /**
+     * USA Vermont Business ID */
+    | "usa_vt_biz_id"
+    /**
+     * USA Washington business registry ID number */
+    | "usa_washington_state_ubi"
+    /**
+     * USA Wisconsin Department of Financial Institutions ID */
+    | "usa_wi_dfi_id"
+    /**
+     * USA West Virginia Corporate Registry ID */
+    | "usa_wv_reg_id"
+    /**
+     * USA Wyoming business registry ID number */
+    | "usa_wy_filing_id"
+    /**
+     * Unique USA state ID number. Assigned to every legal entity registered with Wyoming Secretary of State. */
+    | "usa_wy_filing_num"
+    /**
+     * WY internal filing ID (primary key) */
+    | "usa_wy_internal_filing_id"
+    /**
+     * USA Wyoming business registry ID number */
+    | "usa_wy_party_id"
+    /**
+     * Utah Secretary of State Business Entity Number */
+    | "utah_corporate_registry_internal_entity_number"
+    /**
+     * Uzbekistan tax ID number */
+    | "uzb_tin_number"
+    /**
+     * Validatis identification number */
+    | "validatis_number"
+    /**
+     * Value-added tax ID number */
+    | "vat"
+    /**
+     * A Venezuelan national ID number for individuals */
+    | "ven_cedula_number"
+    /**
+     * Venezuelan tax ID for companies and individuals */
+    | "ven_rif"
+    /**
+     * A certificate number for the National Registry of Contractors in Venezuela */
+    | "ven_rnc_number"
+    /**
+     * Internal company ID */
+    | "ven_saren_internal_employer_number"
+    /**
+     * British Virgin Islands corporate registry ID number */
+    | "vgb_company_number"
+    /**
+     * Vietnam natural person ID number */
+    | "vnm_citizenship_no"
+    /**
+     * Vietnam business registry internal ID number */
+    | "vnm_dichvuthongtin_internal_id"
+    /**
+     * Vietnam tax ID number */
+    | "vnm_enterprise_code"
+    /**
+     * Vietnam natural person ID number */
+    | "vnm_person_id_no"
+    /**
+     * Vanuatu Corporate Registry Number */
+    | "vut_corp_reg_number"
+    /**
+     * Unique USA ID number. Assigned to every foreign trademark application. */
+    | "wipo_intl_ref_no"
+    /**
+     * Unique USA ID number. Assigned to every registered foreign trademark. */
+    | "wipo_intl_reg_no"
+    /**
+     * Acuris Unique ID */
+    | "xxx_acuris_id"
+    /**
+     * Cedar Rose entity internal ID number */
+    | "xxx_cedar_rose_uid"
+    /**
+     * Unique identifier for entities in CRB Monitor data */
+    | "xxx_crb_monitor_entity_id"
+    /**
+     * Unique identifier for issuers in EDI Global data */
+    | "xxx_edi_global_issuer_id"
+    /**
+     * Unique identifier for securities in EDI Global data */
+    | "xxx_edi_global_security_id"
+    /**
+     * EU ESMA Sanctions List. Reference number assigned to all entities listed under the European Securities and Markets Authority (ESMA) Sanctions List. */
+    | "xxx_eu_esma_sanctions_id"
+    /**
+     * Sayari Intel entity internal ID number */
+    | "xxx_intel_internal_id"
+    /**
+     * OHADA corporate registry ID number */
+    | "xxx_rccm"
+    /**
+     * Yemen chamber of commerce ID number */
+    | "yem_coc_registration_number"
+    /**
+     * Yemen passport number */
+    | "yem_passport"
+    /**
+     * Former Yugoslav republic natural person ID number */
+    | "yugoslav_master_citizen_num"
+    /**
+     * Zcash address */
+    | "zcash_address";
 
 export const IdentifierType = {
-    CnTianyanchaCompanyId: "cn_tianyancha_company_id",
-    CnTianyanchaHumanId: "cn_tianyancha_human_id",
-    CnUnifiedSocialCreditCode: "cn_unified_social_credit_code",
-    CnRegistrationNumber: "cn_registration_number",
-    CnOrganizationCode: "cn_organization_code",
-    CnQichachaInternalId: "cn_qichacha_internal_id",
-    CnHkCrNumber: "cn_hk_cr_number",
-    CnHkFilingNumber: "cn_hk_filing_number",
-    BhCrNumber: "bh_cr_number",
-    BhCrNumberAndBranch: "bh_cr_number_and_branch",
-    JoInternalId: "jo_internal_id",
-    JoNationalInstitutionNumber: "jo_national_institution_number",
-    JoInstitutionNumber: "jo_institution_number",
-    MaltaCompanyNumber: "malta_company_number",
-    MaltaNationalId: "malta_national_id",
-    MaltaAccountancyRegistrationId: "malta_accountancy_registration_id",
-    UkCompanyNumber: "uk_company_number",
-    UkFirmReferenceNumber: "uk_firm_reference_number",
-    UkPersonNumber: "uk_person_number",
-    MxRfcPerson: "mx_rfc_person",
-    MxCurp: "mx_curp",
-    MxRfcCompany: "mx_rfc_company",
-    MxOfficeFme: "mx_office_fme",
-    RuInn: "ru_inn",
-    RuOgrn: "ru_ogrn",
-    VenSarenInternalEmployerNumber: "ven_saren_internal_employer_number",
-    BraCnpj: "bra_cnpj",
-    VenRif: "ven_rif",
-    VenCedulaNumber: "ven_cedula_number",
-    MdvRegistrationNumber: "mdv_registration_number",
-    IndDirectorIdNumber: "ind_director_id_number",
-    IndPermanentAccountNumber: "ind_permanent_account_number",
-    IndTin: "ind_tin",
-    IndCorporateIdNumber: "ind_corporate_id_number",
-    KazTin: "kaz_tin",
-    KazBin: "kaz_bin",
-    KazStateRegNum: "kaz_state_reg_num",
-    KazOkpoNum: "kaz_okpo_num",
-    KazIdentifier: "kaz_identifier",
-    RksRegistrationNumber: "rks_registration_number",
-    GrcGemiNumber: "grc_gemi_number",
-    VenRncNumber: "ven_rnc_number",
-    UsaVaRegId: "usa_va_reg_id",
-    UsaNyRegId: "usa_ny_reg_id",
-    UsaFeiNumber: "usa_fei_number",
-    UkrMojId: "ukr_moj_id",
-    MusRegId: "mus_reg_id",
-    UkTitleNumber: "uk_title_number",
-    MngRegNumber: "mng_reg_number",
-    MneRegNumber: "mne_reg_number",
-    KgzRegNumber: "kgz_reg_number",
-    CnImportexportCode: "cn_importexport_code",
-    PrkEntityId: "prk_entity_id",
-    PrkRegistrationId: "prk_registration_id",
-    YugoslavMasterCitizenNum: "yugoslav_master_citizen_num",
-    BfaEntityId: "bfa_entity_id",
-    AfghanTinNumber: "afghan_tin_number",
-    AfgBusinessLicense: "afg_business_license",
-    MdgNifNumber: "mdg_nif_number",
-    MdgStatNumber: "mdg_stat_number",
-    MdgRcsNumber: "mdg_rcs_number",
-    LvaPersonalCode: "lva_personal_code",
-    Iban: "iban",
-    LvaRegNumber: "lva_reg_number",
-    TwnUnifiedNumber: "twn_unified_number",
-    LuxRcsNumber: "lux_rcs_number",
-    MkdEmbsNumber: "mkd_embs_number",
-    MkdEmbsBranchNumber: "mkd_embs_branch_number",
-    MkdArchiveNumber: "mkd_archive_number",
-    MdaIdnoNumber: "mda_idno_number",
-    UryRucNumber: "ury_ruc_number",
-    CheUidNumber: "che_uid_number",
-    SlvCommercialRegNumber: "slv_commercial_reg_number",
-    SlvUidNumber: "slv_uid_number",
-    MatoGrossoLegalId: "mato_grosso_legal_id",
-    Lei: "lei",
-    Vat: "vat",
-    ItaFiscalCode: "ita_fiscal_code",
-    ItaVatNumber: "ita_vat_number",
-    RioDeJaneiroLegalId: "rio_de_janeiro_legal_id",
-    IslTinNumber: "isl_tin_number",
-    LaoEnterpriseNumber: "lao_enterprise_number",
-    SvkIcoNumber: "svk_ico_number",
-    KhmTinNumber: "khm_tin_number",
-    CzeIcoNumber: "cze_ico_number",
-    IrnNationalId: "irn_national_id",
-    EcuRucNumber: "ecu_ruc_number",
-    GrcVatNumber: "grc_vat_number",
-    CanCorporationNumber: "can_corporation_number",
-    CanCraProgramAccountNumber: "can_cra_program_account_number",
-    MnePib: "mne_pib",
-    ChlCedulaNumber: "chl_cedula_number",
-    BraCaseNumber: "bra_case_number",
-    IndLlpin: "ind_llpin",
-    IndFcrn: "ind_fcrn",
-    BmuRegistrationNumber: "bmu_registration_number",
-    BraCpfNumber: "bra_cpf_number",
-    IrnNationalNumber: "irn_national_number",
-    ChnCustomsRegistrationCode: "chn_customs_registration_code",
-    LiePublicRegNo: "lie_public_reg_no",
-    CnTaxIdentificationNumber: "cn_tax_identification_number",
-    MacRegistrationNo: "mac_registration_no",
-    SigerInternalId: "siger_internal_id",
-    LbnNationalId: "lbn_national_id",
-    IntMaritimeOrgId: "int_maritime_org_id",
-    RuShipRegisterId: "ru_ship_register_id",
-    SayariInternalIdentifier: "sayari_internal_identifier",
-    ArubaChamberOfCommerceId: "aruba_chamber_of_commerce_id",
-    ImoNo: "imo_no",
-    VgbCompanyNumber: "vgb_company_number",
-    YemCocRegistrationNumber: "yem_coc_registration_number",
-    MysIdCardNo: "mys_id_card_no",
-    MysCompanyRegNo: "mys_company_reg_no",
-    PryRucNumber: "pry_ruc_number",
-    PryCedulaNumber: "pry_cedula_number",
-    PryOldRucNumber: "pry_old_ruc_number",
-    RccmNo: "rccm_no",
-    BraRgNumber: "bra_rg_number",
-    NineaNo: "ninea_no",
-    AlbTaxId: "alb_tax_id",
-    AlbRegistrationNumber: "alb_registration_number",
-    ArgIgjNumber: "arg_igj_number",
-    ArgDniNumber: "arg_dni_number",
-    ArgCuitNumber: "arg_cuit_number",
-    ArgCuilNumber: "arg_cuil_number",
-    ArgCdiNumber: "arg_cdi_number",
-    BihMbsNumber: "bih_mbs_number",
-    BihJibNumber: "bih_jib_number",
-    BihCustomsNumber: "bih_customs_number",
-    UsaPuertoRicoRegisterNumber: "usa_puerto_rico_register_number",
-    DjiRcsNumber: "dji_rcs_number",
-    CriCedulaNumber: "cri_cedula_number",
-    MozIdNumber: "moz_id_number",
-    MozNuitPerson: "moz_nuit_person",
-    MozNuitCo: "moz_nuit_co",
-    MozPassport: "moz_passport",
-    MozDireNo: "moz_dire_no",
-    MozVoterNo: "moz_voter_no",
-    MozNuelNo: "moz_nuel_no",
-    IrqVoterId: "irq_voter_id",
-    JorVoterCardNo: "jor_voter_card_no",
-    JorIdNo: "jor_id_no",
-    PerRucNo: "per_ruc_no",
-    EcuCompanyId: "ecu_company_id",
-    UsaNyDosId: "usa_ny_dos_id",
-    BfaRccmNumber: "bfa_rccm_number",
-    FlPropFolio: "fl_prop_folio",
-    UsaFlPbPcn: "usa_fl_pb_pcn",
-    QatQfcNumber: "qat_qfc_number",
-    GrcAfmNumber: "grc_afm_number",
-    VnmEnterpriseCode: "vnm_enterprise_code",
-    ThaRegistrationNo: "tha_registration_no",
-    VnmCitizenshipNo: "vnm_citizenship_no",
-    VnmPersonIdNo: "vnm_person_id_no",
-    ArgLibCivicaNumber: "arg_lib_civica_number",
-    ArgLibEnrolamientoNumber: "arg_lib_enrolamiento_number",
-    NzlNzbn: "nzl_nzbn",
-    NzlCoNo: "nzl_co_no",
-    UsaOfacSdnNumber: "usa_ofac_sdn_number",
-    SwiftBicCode: "swift_bic_code",
-    DunsNumber: "duns_number",
-    BitcoinAddress: "bitcoin_address",
-    LitecoinAddress: "litecoin_address",
-    RusMicexCode: "rus_micex_code",
-    TxPropId: "tx_prop_id",
-    TxPacsId: "tx_pacs_id",
-    TxLandId: "tx_land_id",
-    PngIpaRegId: "png_ipa_reg_id",
-    GtmNitNumber: "gtm_nit_number",
-    GtmCuiNumber: "gtm_cui_number",
-    DomRnc: "dom_rnc",
-    QatCrNumber: "qat_cr_number",
-    Isin: "isin",
-    UsaFlDocumentNo: "usa_fl_document_no",
-    UsaFlFicNameRegNo: "usa_fl_fic_name_reg_no",
-    BraServidorPortal: "bra_servidor_portal",
-    BraCodigoDaUnidadeOrganizacional: "bra_codigo_da_unidade_organizacional",
-    UsaSecCikNumber: "usa_sec_cik_number",
-    HrMbs: "hr_mbs",
-    HrOib: "hr_oib",
-    SlvNumeroIdentificacionTributaria: "slv_numero_identificacion_tributaria",
-    SlvMcas: "slv_mcas",
-    AusCompanyNumber: "aus_company_number",
-    AusBusinessNumber: "aus_business_number",
-    DeuRegisternummer: "deu_registernummer",
-    UsaIrsEin: "usa_irs_ein",
-    HongKongCaseNumber: "hong_kong_case_number",
-    IrnCocInternalId: "irn_coc_internal_id",
-    PanFolioFichaId: "pan_folio_ficha_id",
-    PanCedulaNumber: "pan_cedula_number",
-    XxxCedarRoseUid: "xxx_cedar_rose_uid",
-    XxxRccm: "xxx_rccm",
-    VnmDichvuthongtinInternalId: "vnm_dichvuthongtin_internal_id",
-    XxxIntelInternalId: "xxx_intel_internal_id",
-    UsaWashingtonStateUbi: "usa_washington_state_ubi",
-    NgaRegistrationNumber: "nga_registration_number",
-    NgCheckInternalId: "ng_check_internal_id",
-    NycBbl: "nyc_bbl",
-    NycCrfn: "nyc_crfn",
-    TxCorpFileNum: "tx_corp_file_num",
-    TxTaxId: "tx_tax_id",
-    UsaGaBusinessId: "usa_ga_business_id",
-    PhlPseId: "phl_pse_id",
-    PhlSecId: "phl_sec_id",
-    PhlTin: "phl_tin",
-    AfgPassport: "afg_passport",
-    IrnPassport: "irn_passport",
-    KwtPassport: "kwt_passport",
-    LbyPassport: "lby_passport",
-    PakPassport: "pak_passport",
-    RusPassport: "rus_passport",
-    TunPassport: "tun_passport",
-    YemPassport: "yem_passport",
-    UnSanctionPrn: "un_sanction_prn",
-    EuSanctionRn: "eu_sanction_rn",
-    CaLpFileNum: "ca_lp_file_num",
-    TxEntityFilingNum: "tx_entity_filing_num",
-    UsaSocialSecurityNumber: "usa_social_security_number",
-    UsaWyPartyId: "usa_wy_party_id",
-    UsaWyFilingId: "usa_wy_filing_id",
-    UsaWyInternalFilingId: "usa_wy_internal_filing_id",
-    UsaWyFilingNum: "usa_wy_filing_num",
-    UsaOrRegno: "usa_or_regno",
-    UsaNvCorpno: "usa_nv_corpno",
-    UsaNvBizid: "usa_nv_bizid",
-    PrkInternalTradeId: "prk_internal_trade_id",
-    LsoCorpregId: "lso_corpreg_id",
-    UzbTinNumber: "uzb_tin_number",
-    CaCorporateIdNum: "ca_corporate_id_num",
-    GbrHmTreasurySanctionGroupId: "gbr_hm_treasury_sanction_group_id",
-    GbrIpoTrademarkRegNo: "gbr_ipo_trademark_reg_no",
-    UsaGaControlNo: "usa_ga_control_no",
-    HndCocCompanyRegistrationNumber: "hnd_coc_company_registration_number",
-    MnePropertyUid: "mne_property_uid",
-    PhlBnn: "phl_bnn",
-    RouCompanyRegistrationCode: "rou_company_registration_code",
-    RouIdentityCard: "rou_identity_card",
-    RouPersonalIdNumber: "rou_personal_id_number",
-    CubCod: "cub_cod",
-    FlPropFolioDade: "fl_prop_folio_dade",
-    PerDniNo: "per_dni_no",
-    PerCarneDeExtranjeria: "per_carne_de_extranjeria",
-    FraSiren: "fra_siren",
-    FraSiret: "fra_siret",
-    FraRna: "fra_rna",
-    FroRegNum: "fro_reg_num",
-    CzeFileNumber: "cze_file_number",
-    EspBormeRegId: "esp_borme_reg_id",
-    MexTmNo: "mex_tm_no",
-    MusFileNo: "mus_file_no",
-    ColNitNo: "col_nit_no",
-    JpnCorporateNo: "jpn_corporate_no",
-    UsaCgacAgencyCode: "usa_cgac_agency_code",
-    UsaGovtAgencyId: "usa_govt_agency_id",
-    UsaGovtOfficeId: "usa_govt_office_id",
-    ColCedulaNo: "col_cedula_no",
-    ColSecopNo: "col_secop_no",
-    JordanCompanyNo: "jordan_company_no",
-    DnkCvr: "dnk_cvr",
-    DnkProductionUnitNo: "dnk_production_unit_no",
-    DnkEntity: "dnk_entity",
-    NorOrgNo: "nor_org_no",
-    SweOrgNo: "swe_org_no",
-    UsaCoRegNo: "usa_co_reg_no",
-    UsaIaCorpNo: "usa_ia_corp_no",
-    SgpUnqiueEntityNumber: "sgp_unqiue_entity_number",
-    UsaAkEntityNo: "usa_ak_entity_no",
-    UsaOhCharterNum: "usa_oh_charter_num",
-    TurIstanbulCocRegNo: "tur_istanbul_coc_reg_no",
-    TurMersisNumber: "tur_mersis_number",
-    CheChIdNumber: "che_ch_id_number",
-    AreDifcRegNo: "are_difc_reg_no",
-    IdnTaxId: "idn_tax_id",
-    UsaVtBizId: "usa_vt_biz_id",
-    UsaWvRegId: "usa_wv_reg_id",
-    UsaMsBizId: "usa_ms_biz_id",
-    UsaIdControlNo: "usa_id_control_no",
-    UsaIdPartyId: "usa_id_party_id",
-    IrnCocInternalIdCardno: "irn_coc_internal_id_cardno",
-    UsaAzCorpRegEntityNum: "usa_az_corp_reg_entity_num",
-    UsaOkFilingNo: "usa_ok_filing_no",
-    UsaTnControlNo: "usa_tn_control_no",
-    UsaTnPartyId: "usa_tn_party_id",
-    UsaKsBizId: "usa_ks_biz_id",
-    UsaHiCorporateRegistryId: "usa_hi_corporate_registry_id",
-    UsaHiCorporateRegistryPersonId: "usa_hi_corporate_registry_person_id",
-    PolKrsNumber: "pol_krs_number",
-    PolRegonNumber: "pol_regon_number",
-    PolNipNumber: "pol_nip_number",
-    PolRejestrPersonId: "pol_rejestr_person_id",
-    ArmVatNo: "arm_vat_no",
-    ArmEnterpriseCode: "arm_enterprise_code",
-    ArmRegistrationNo: "arm_registration_no",
-    UsaMeCorpId: "usa_me_corp_id",
-    CypRegNo: "cyp_reg_no",
-    UsaNdControlId: "usa_nd_control_id",
-    UsaMiCorpId: "usa_mi_corp_id",
-    UsaMiCorpIdOld: "usa_mi_corp_id_old",
-    UsaHiTradeNameCert: "usa_hi_trade_name_cert",
-    UsaDcEntityNo: "usa_dc_entity_no",
-    UsaVaOldRegId: "usa_va_old_reg_id",
-    UsaConsolidatedScreeningListSyntheticId: "usa_consolidated_screening_list_synthetic_id",
-    UsaArFilingNo: "usa_ar_filing_no",
-    UsaNcInternalId: "usa_nc_internal_id",
-    UsaNeAcctNo: "usa_ne_acct_no",
-    UsaNeAgentId: "usa_ne_agent_id",
-    UsaNmBusinessNo: "usa_nm_business_no",
-    UsaNmLicenseId: "usa_nm_license_id",
-    UsaDcFileNo: "usa_dc_file_no",
-    UsaRiFeiNo: "usa_ri_fei_no",
-    InternalMd5: "internal_md5",
-    UsaMoCorpId: "usa_mo_corp_id",
-    UsaWiDfiId: "usa_wi_dfi_id",
-    GeoIdentificationCode: "geo_identification_code",
-    GeoPersonalNumber: "geo_personal_number",
-    GeoStateRegistrationNumber: "geo_state_registration_number",
-    MacRaemCaseUrlId: "mac_raem_case_url_id",
-    RouCompanyTin: "rou_company_tin",
-    UsaMdDptTax: "usa_md_dpt_tax",
-    UsaSdCorpId: "usa_sd_corp_id",
-    HndTegucigalpaMatricula: "hnd_tegucigalpa_matricula",
-    UsaFlPropertyId: "usa_fl_property_id",
-    UsaFlPropertyMpId: "usa_fl_property_mp_id",
-    UsaFlPropertyStateParId: "usa_fl_property_state_par_id",
-    MexCluni: "mex_cluni",
-    UsaPaCorporateRegistryId: "usa_pa_corporate_registry_id",
-    PakIndNtn: "pak_ind_ntn",
-    PakCoNtn: "pak_co_ntn",
-    MexRnie: "mex_rnie",
-    PakNgoRegNo: "pak_ngo_reg_no",
-    IraqiStockExchangeSymbol: "iraqi_stock_exchange_symbol",
-    BgrUic: "bgr_uic",
-    BgrEgnHashed: "bgr_egn_hashed",
-    SouthAfricaEnterpriseNumber: "south_africa_enterprise_number",
-    SouthAfricaPassportNumber: "south_africa_passport_number",
-    NldKvkNumber: "nld_kvk_number",
-    NldKvkBranchNumber: "nld_kvk_branch_number",
-    UsaCentralRegistrationDepositoryNumber: "usa_central_registration_depository_number",
-    UsaSecFileNumberBd: "usa_sec_file_number_bd",
-    ChnCnipaTm: "chn_cnipa_tm",
-    CypPassport: "cyp_passport",
-    CypInfocreditEntityId: "cyp_infocredit_entity_id",
-    CypIdCard: "cyp_id_card",
-    CypSsn: "cyp_ssn",
-    AutFirmenbuchNo: "aut_firmenbuch_no",
-    SwePerIdNo: "swe_per_id_no",
-    ChnShanghaiStockExchangeCompanyCode: "chn_shanghai_stock_exchange_company_code",
-    UsaSecFileNumberIa: "usa_sec_file_number_ia",
-    ChnShenzenSecCode: "chn_shenzen_sec_code",
-    UsaCtBusinessId: "usa_ct_business_id",
-    EcuCedulaNumber: "ecu_cedula_number",
-    HkgStockCode: "hkg_stock_code",
-    CanBcCompanyRegistrationId: "can_bc_company_registration_id",
-    CanBcExtraprovincialRegistrationId: "can_bc_extraprovincial_registration_id",
-    CanIpoTrademarkApplicationNo: "can_ipo_trademark_application_no",
-    LtuCompanyRegistrationCode: "ltu_company_registration_code",
-    UsaSecPrivateFund: "usa_sec_private_fund",
-    LvaInsolvencyProceedingId: "lva_insolvency_proceeding_id",
-    ChnCninfoInternalShareholderId: "chn_cninfo_internal_shareholder_id",
-    Euid: "euid",
-    FinBusinessId: "fin_business_id",
-    EstBusinessRegCode: "est_business_reg_code",
-    UsaCusipNumber: "usa_cusip_number",
-    SvnCoRegNo: "svn_co_reg_no",
-    IsrCompanyNumber: "isr_company_number",
-    IsrAssociationNumber: "isr_association_number",
-    IsrPbcNumber: "isr_pbc_number",
-    RksBusinessNumber: "rks_business_number",
-    RksFiscalNumber: "rks_fiscal_number",
-    JpnEdinetCode: "jpn_edinet_code",
-    BelEnterpriseNumber: "bel_enterprise_number",
-    BelEstablishmentNumber: "bel_establishment_number",
-    AusAfsLicenceNumber: "aus_afs_licence_number",
-    AusAfsRepNumber: "aus_afs_rep_number",
-    AusAdvNumber: "aus_adv_number",
-    AusCreditLicenceNumber: "aus_credit_licence_number",
-    AusCreditRepNumber: "aus_credit_rep_number",
-    DartCik: "dart_cik",
-    KrxTickerCode: "krx_ticker_code",
-    KorCorporateRegistrationNumber: "kor_corporate_registration_number",
-    KorBusinessTin: "kor_business_tin",
-    EstPersonalId: "est_personal_id",
-    BzeBicarRegNo: "bze_bicar_reg_no",
-    UsaIlChicagoAccountNumber: "usa_il_chicago_account_number",
-    CymCoNo: "cym_co_no",
-    GgyCorporateRegNumber: "ggy_corporate_reg_number",
-    GgyTrademarkSubmissionRef: "ggy_trademark_submission_ref",
-    GgyTrademarkNo: "ggy_trademark_no",
-    JeyCorporateRegNumber: "jey_corporate_reg_number",
-    CokCorpRegCorpid: "cok_corp_reg_corpid",
-    CokCorpRegCorpofficerid: "cok_corp_reg_corpofficerid",
-    CokCorpRegNumber: "cok_corp_reg_number",
-    MexOpenContractsInternalId: "mex_open_contracts_internal_id",
-    GibCorpRegNumber: "gib_corp_reg_number",
-    DomOnapiNum: "dom_onapi_num",
-    RusTouristObj: "rus_tourist_obj",
-    BillOfLading: "bill_of_lading",
-    TwnFactoryRegistrationNumber: "twn_factory_registration_number",
-    TwnFactoryEstablishmentPermitCaseNumber: "twn_factory_establishment_permit_case_number",
-    KenPersonalId: "ken_personal_id",
-    ColDianNumeroFormulario: "col_dian_numero_formulario",
-    VutCorpRegNumber: "vut_corp_reg_number",
-    GeoLegalCode: "geo_legal_code",
-    MmrCorpId: "mmr_corp_id",
-    MmrRegNo: "mmr_reg_no",
-    MmrPriorRegNo: "mmr_prior_reg_no",
-    MmrOfficerId: "mmr_officer_id",
-    ArmPassportNumber: "arm_passport_number",
-    UkrRegNum: "ukr_reg_num",
-    ValidatisNumber: "validatis_number",
-    AreDubaiLandCaseNo: "are_dubai_land_case_no",
-    AgoMatriculaNumber: "ago_matricula_number",
-    AgoNifNumber: "ago_nif_number",
-    MmrPersonalIdNo: "mmr_personal_id_no",
-    BlrRegistrationNumber: "blr_registration_number",
     AerFreeZoneLicense: "aer_free_zone_license",
     AerFreeZoneRegNo: "aer_free_zone_reg_no",
-    CanNlCorporateRegistry: "can_nl_corporate_registry",
-    CanDataAxleHash: "can_data_axle_hash",
-    SvnAjpesZapstNumber: "svn_ajpes_zapst_number",
-    UsaCorpwatchId: "usa_corpwatch_id",
-    UsaDeFileNumber: "usa_de_file_number",
-    ImnCompanyNumber: "imn_company_number",
-    SvnVatNumber: "svn_vat_number",
-    XxxAcurisId: "xxx_acuris_id",
-    PakEgmId: "pak_egm_id",
-    UsaDeRegisteredAgentId: "usa_de_registered_agent_id",
-    IcijOffshoreInternalId: "icij_offshore_internal_id",
-    IcijOffshoreNodeId: "icij_offshore_node_id",
-    EcuBranchId: "ecu_branch_id",
-    PseRegistrationId: "pse_registration_id",
-    SrbMbNumber: "srb_mb_number",
-    SrbPibNumber: "srb_pib_number",
-    SrbBranchId: "srb_branch_id",
-    RusBikCode: "rus_bik_code",
-    PanadataInternalId: "panadata_internal_id",
-    SmrEconomicOperatorCode: "smr_economic_operator_code",
-    UsaCtInternalId: "usa_ct_internal_id",
+    AerNerNumber: "aer_ner_number",
+    AfgBusinessLicense: "afg_business_license",
+    AfgPassport: "afg_passport",
+    AfgTradeInternalShipmentId: "afg_trade_internal_shipment_id",
+    AfghanTinNumber: "afghan_tin_number",
+    AgoMatriculaNumber: "ago_matricula_number",
+    AgoNifNumber: "ago_nif_number",
+    AlbRegistrationNumber: "alb_registration_number",
+    AlbTaxId: "alb_tax_id",
+    AlbertaCorporationNumber: "alberta_corporation_number",
     Alei: "alei",
-    CanNsCorporateRegistry: "can_ns_corporate_registry",
-    SomUbi: "som_ubi",
-    BhsTin: "bhs_tin",
-    ItaReaNumber: "ita_rea_number",
-    MexDenueClee: "mex_denue_clee",
-    IhsOwnerCode: "ihs_owner_code",
+    AreDifcRegNo: "are_difc_reg_no",
+    AreDubaiLandCaseNo: "are_dubai_land_case_no",
+    AreRegAuthNumber: "are_reg_auth_number",
+    ArgCdiNumber: "arg_cdi_number",
+    ArgCuilNumber: "arg_cuil_number",
+    ArgCuitNumber: "arg_cuit_number",
+    ArgDniNumber: "arg_dni_number",
+    ArgIgjNumber: "arg_igj_number",
+    ArgImportExportId: "arg_import_export_id",
+    ArgLibCivicaNumber: "arg_lib_civica_number",
+    ArgLibEnrolamientoNumber: "arg_lib_enrolamiento_number",
+    ArgPartialCuit: "arg_partial_cuit",
+    ArmEnterpriseCode: "arm_enterprise_code",
+    ArmPassportNumber: "arm_passport_number",
+    ArmRegistrationNo: "arm_registration_no",
+    ArmVatNo: "arm_vat_no",
+    ArubaChamberOfCommerceId: "aruba_chamber_of_commerce_id",
+    AtgBusinessRegistryInternalId: "atg_business_registry_internal_id",
+    AusAdvNumber: "aus_adv_number",
+    AusAfsLicenceNumber: "aus_afs_licence_number",
+    AusAfsRepNumber: "aus_afs_rep_number",
+    AusBusinessNumber: "aus_business_number",
+    AusCompanyNumber: "aus_company_number",
     AusConsolidatedSanctionsReference: "aus_consolidated_sanctions_reference",
-    CheSecoSanctionNumber: "che_seco_sanction_number",
-    GbrVatNo: "gbr_vat_no",
-    GbrCompanyNumber: "gbr_company_number",
-    EspNif: "esp_nif",
-    UsaSamUeiNumber: "usa_sam_uei_number",
-    UsaUsviCorpNumber: "usa_usvi_corp_number",
-    NicTradeInternalShipmentId: "nic_trade_internal_shipment_id",
-    NicRucNumber: "nic_ruc_number",
-    NicNumeroUnico: "nic_numero_unico",
-    CriCedulaJuridica: "cri_cedula_juridica",
-    CriCedulaCitizenPerson: "cri_cedula_citizen_person",
-    CriCedulaForeignPerson: "cri_cedula_foreign_person",
+    AusCreditLicenceNumber: "aus_credit_licence_number",
+    AusCreditRepNumber: "aus_credit_rep_number",
+    AutFirmenbuchNo: "aut_firmenbuch_no",
+    AzeTinNumber: "aze_tin_number",
+    BdBin: "bd_bin",
+    BelEnterpriseNumber: "bel_enterprise_number",
+    BelEstablishmentNumber: "bel_establishment_number",
+    BelFsmaNameHash: "bel_fsma_name_hash",
+    BelNationalRegisterNo: "bel_national_register_no",
+    BfaEntityId: "bfa_entity_id",
+    BfaRccmNumber: "bfa_rccm_number",
+    BgrEgnHashed: "bgr_egn_hashed",
+    BgrUic: "bgr_uic",
+    BhCrNumber: "bh_cr_number",
+    BhCrNumberAndBranch: "bh_cr_number_and_branch",
+    BhsTin: "bhs_tin",
+    BihCustomsNumber: "bih_customs_number",
+    BihJibNumber: "bih_jib_number",
+    BihMbsNumber: "bih_mbs_number",
+    BillOfLading: "bill_of_lading",
+    BitcoinAddress: "bitcoin_address",
+    BlrRegistrationNumber: "blr_registration_number",
+    BlzBccarRegNo: "blz_bccar_reg_no",
+    BmuRegistrarOfCompaniesNumber: "bmu_registrar_of_companies_number",
+    BmuRegistrationNumber: "bmu_registration_number",
     BolMatricula: "bol_matricula",
     BolOldMatricula: "bol_old_matricula",
-    NgaCrpRegInternalId: "nga_crp_reg_internal_id",
-    NgaRegistrationSn: "nga_registration_sn",
-    NgaNin: "nga_nin",
-    NgaDrivers: "nga_drivers",
-    NgaTaxId: "nga_tax_id",
-    DmaBusinessRegistryInternalId: "dma_business_registry_internal_id",
-    Cage: "cage",
-    AtgBusinessRegistryInternalId: "atg_business_registry_internal_id",
-    LcaBusinessRegistryInternalId: "lca_business_registry_internal_id",
-    PrtTrustNumber: "prt_trust_number",
-    PrtVatNumber: "prt_vat_number",
-    MarPassport: "mar_passport",
-    CodPassport: "cod_passport",
-    PrkPassport: "prk_passport",
-    SgpPassport: "sgp_passport",
-    ChnPassport: "chn_passport",
-    OmnPassport: "omn_passport",
+    BraCaseNumber: "bra_case_number",
+    BraCnpj: "bra_cnpj",
+    BraCodigoDaUnidadeOrganizacional: "bra_codigo_da_unidade_organizacional",
+    BraCpfNumber: "bra_cpf_number",
+    BraRgNumber: "bra_rg_number",
+    BraServidorPortal: "bra_servidor_portal",
+    BraShipmentNumber: "bra_shipment_number",
+    BwaUinRegNumber: "bwa_uin_reg_number",
+    BzeBicarRegNo: "bze_bicar_reg_no",
+    CaCorporateIdNum: "ca_corporate_id_num",
+    CaLpFileNum: "ca_lp_file_num",
     CafPassport: "caf_passport",
-    SsdPassport: "ssd_passport",
-    TtoBizNumber: "tto_biz_number",
-    TurTaxId: "tur_tax_id",
-    BmuRegistrarOfCompaniesNumber: "bmu_registrar_of_companies_number",
-    CodRccmNumber: "cod_rccm_number",
-    CodRccmOhadaNumber: "cod_rccm_ohada_number",
-    AreRegAuthNumber: "are_reg_auth_number",
-    PrkShipmentId: "prk_shipment_id",
-    EcuImporterId: "ecu_importer_id",
-    EcuExporterId: "ecu_exporter_id",
-    EcuShipmentRefNo: "ecu_shipment_ref_no",
-    XxxCrbMonitorEntityId: "xxx_crb_monitor_entity_id",
-    XxxEdiGlobalIssuerId: "xxx_edi_global_issuer_id",
-    XxxEdiGlobalSecurityId: "xxx_edi_global_security_id",
+    Cage: "cage",
+    CanBcCompanyRegistrationId: "can_bc_company_registration_id",
+    CanBcExtraprovincialRegistrationId: "can_bc_extraprovincial_registration_id",
+    CanBcRegistrationNumber: "can_bc_registration_number",
+    CanBusinessNumber: "can_business_number",
+    CanCorporationNumber: "can_corporation_number",
+    CanCraProgramAccountNumber: "can_cra_program_account_number",
+    CanDataAxleHash: "can_data_axle_hash",
+    CanIpoTrademarkApplicationNo: "can_ipo_trademark_application_no",
+    CanMbRegistry: "can_mb_registry",
+    CanNewBrunswickReferenceNumber: "can_new_brunswick_reference_number",
+    CanNlCorporateRegistry: "can_nl_corporate_registry",
+    CanNrd: "can_nrd",
+    CanNrdIndividualId: "can_nrd_individual_id",
+    CanNsCorporateRegistry: "can_ns_corporate_registry",
+    CanPeRegistrationNumber: "can_pe_registration_number",
+    CanQcSapRegistryRefNum: "can_qc_sap_registry_ref_num",
+    CanTmRegistrationNo: "can_tm_registration_no",
+    CcsRegistration: "ccs_registration",
+    CheChIdNumber: "che_ch_id_number",
+    CheSecoSanctionNumber: "che_seco_sanction_number",
+    CheUidNumber: "che_uid_number",
+    ChinaVesselInspectionRegistration: "china_vessel_inspection_registration",
+    ChinaVesselRegistration: "china_vessel_registration",
+    ChlCedulaNumber: "chl_cedula_number",
     ChlImportExportControlId: "chl_import_export_control_id",
     ChlImportManifestNumber: "chl_import_manifest_number",
     ChlImporterExporterId: "chl_importer_exporter_id",
-    ArgImportExportId: "arg_import_export_id",
-    ArgPartialCuit: "arg_partial_cuit",
-    PanImporterExporterId: "pan_importer_exporter_id",
-    PanDeclarationNumber: "pan_declaration_number",
-    MexShipmentNumber: "mex_shipment_number",
+    ChnCninfoInternalShareholderId: "chn_cninfo_internal_shareholder_id",
+    ChnCnipaTm: "chn_cnipa_tm",
+    ChnCsrcNo: "chn_csrc_no",
+    ChnCustomsRegistrationCode: "chn_customs_registration_code",
+    ChnCustomsRegistrationNo: "chn_customs_registration_no",
+    ChnPassport: "chn_passport",
+    ChnResidentIdNumber: "chn_resident_id_number",
+    ChnShanghaiStockExchangeCompanyCode: "chn_shanghai_stock_exchange_company_code",
+    ChnShenzenSecCode: "chn_shenzen_sec_code",
+    CmNuiTaxRegNum: "cm_nui_tax_reg_num",
+    CnHkBrNumber: "cn_hk_br_number",
+    CnHkCrNumber: "cn_hk_cr_number",
+    CnHkFilingNumber: "cn_hk_filing_number",
+    CnHurdInternalCompanyId: "cn_hurd_internal_company_id",
+    CnImportexportCode: "cn_importexport_code",
+    CnOrganizationCode: "cn_organization_code",
+    CnQichachaInternalId: "cn_qichacha_internal_id",
+    CnRegistrationNumber: "cn_registration_number",
+    CnTaxIdentificationNumber: "cn_tax_identification_number",
+    CnTianyanchaCompanyId: "cn_tianyancha_company_id",
+    CnTianyanchaHumanId: "cn_tianyancha_human_id",
+    CnUnifiedSocialCreditCode: "cn_unified_social_credit_code",
+    CodPassport: "cod_passport",
+    CodRccmNumber: "cod_rccm_number",
+    CodRccmOhadaNumber: "cod_rccm_ohada_number",
+    CokCorpRegCorpid: "cok_corp_reg_corpid",
+    CokCorpRegCorpofficerid: "cok_corp_reg_corpofficerid",
+    CokCorpRegNumber: "cok_corp_reg_number",
+    ColCedulaNo: "col_cedula_no",
+    ColDianNumeroFormulario: "col_dian_numero_formulario",
+    ColNitNo: "col_nit_no",
+    ColNur: "col_nur",
+    ColSecopNo: "col_secop_no",
+    CriCedulaCitizenPerson: "cri_cedula_citizen_person",
+    CriCedulaForeignPerson: "cri_cedula_foreign_person",
+    CriCedulaJuridica: "cri_cedula_juridica",
+    CriCedulaNumber: "cri_cedula_number",
     CriExp: "cri_exp",
     CriImp: "cri_imp",
     CriOpNo: "cri_op_no",
-    ColNur: "col_nur",
-    NplCoRegNo: "npl_co_reg_no",
-    UsaSamExclusionsNumber: "usa_sam_exclusions_number",
-    UsaNpiNumber: "usa_npi_number",
-    UsaUpinNumber: "usa_upin_number",
-    CanBcRegistrationNumber: "can_bc_registration_number",
-    CanBusinessNumber: "can_business_number",
-    ChnCsrcNo: "chn_csrc_no",
-    UsaMnMasterId: "usa_mn_master_id",
-    UsaMnFilingNumber: "usa_mn_filing_number",
-    UsaInBizNo: "usa_in_biz_no",
-    LloydsInternalVesselId: "lloyds_internal_vessel_id",
-    LloydsInternalEntityId: "lloyds_internal_entity_id",
-    UsaNhBusinessId: "usa_nh_business_id",
+    CubCod: "cub_cod",
+    CuwRegNumber: "cuw_reg_number",
+    CymCoNo: "cym_co_no",
+    CypIdCard: "cyp_id_card",
+    CypInfocreditEntityId: "cyp_infocredit_entity_id",
+    CypPassport: "cyp_passport",
+    CypRegNo: "cyp_reg_no",
+    CypSsn: "cyp_ssn",
+    CzeFileNumber: "cze_file_number",
+    CzeIcoNumber: "cze_ico_number",
+    DartCik: "dart_cik",
+    DashAddress: "dash_address",
+    DeuBafinId: "deu_bafin_id",
+    DeuRegisternummer: "deu_registernummer",
+    DjiRcsNumber: "dji_rcs_number",
+    DmaBusinessRegistryInternalId: "dma_business_registry_internal_id",
+    DnkCvr: "dnk_cvr",
+    DnkEntity: "dnk_entity",
+    DnkProductionUnitNo: "dnk_production_unit_no",
+    DomOnapiNum: "dom_onapi_num",
+    DomRnc: "dom_rnc",
+    DunsNumber: "duns_number",
+    EcuBranchId: "ecu_branch_id",
+    EcuCedulaNumber: "ecu_cedula_number",
+    EcuCompanyId: "ecu_company_id",
+    EcuExporterId: "ecu_exporter_id",
+    EcuImporterId: "ecu_importer_id",
+    EcuRucNumber: "ecu_ruc_number",
+    EcuShipmentRefNo: "ecu_shipment_ref_no",
+    EspBeCode: "esp_be_code",
+    EspBormeRegId: "esp_borme_reg_id",
+    EspInternalEmployeeNumber: "esp_internal_employee_number",
+    EspNif: "esp_nif",
+    EspTrNumber: "esp_tr_number",
+    EstBusinessRegCode: "est_business_reg_code",
+    EstPersonalId: "est_personal_id",
+    EthereumAddress: "ethereum_address",
+    EuFsdId: "eu_fsd_id",
+    EuSanctionRn: "eu_sanction_rn",
+    Euid: "euid",
+    FinBusinessId: "fin_business_id",
+    FlPropFolio: "fl_prop_folio",
+    FlPropFolioDade: "fl_prop_folio_dade",
+    FraAssetFreezeId: "fra_asset_freeze_id",
+    FraRna: "fra_rna",
+    FraSiren: "fra_siren",
+    FraSiret: "fra_siret",
+    FroRegNum: "fro_reg_num",
+    GbrCharityNo: "gbr_charity_no",
+    GbrCompanyNumber: "gbr_company_number",
+    GbrEnforcementActionNum: "gbr_enforcement_action_num",
+    GbrGoNo: "gbr_go_no",
+    GbrHmTreasurySanctionGroupId: "gbr_hm_treasury_sanction_group_id",
+    GbrIpoTrademarkRegNo: "gbr_ipo_trademark_reg_no",
+    GbrTrusteeId: "gbr_trustee_id",
     GbrUkSanctionsId: "gbr_uk_sanctions_id",
-    MontanaSosInternalEntityId: "montana_sos_internal_entity_id",
-    UsaMassSosCompanyId: "usa_mass_sos_company_id",
-    ChnResidentIdNumber: "chn_resident_id_number",
-    UsaNjBusinessId: "usa_nj_business_id",
-    UtahCorporateRegistryInternalEntityNumber: "utah_corporate_registry_internal_entity_number",
-    UsaLaSosId: "usa_la_sos_id",
-    UsaAlSosId: "usa_al_sos_id",
-    UsaScCorpId: "usa_sc_corp_id",
-    UsaKyOrgNo: "usa_ky_org_no",
-    UsaIlFileNumber: "usa_il_file_number",
+    GbrVatNo: "gbr_vat_no",
+    GeoIdentificationCode: "geo_identification_code",
+    GeoLegalCode: "geo_legal_code",
+    GeoPersonalNumber: "geo_personal_number",
+    GeoStateRegistrationNumber: "geo_state_registration_number",
+    GgyCorporateRegNumber: "ggy_corporate_reg_number",
+    GgyTrademarkNo: "ggy_trademark_no",
+    GgyTrademarkSubmissionRef: "ggy_trademark_submission_ref",
+    GibCorpRegNumber: "gib_corp_reg_number",
+    GlobalTradeInternalShipmentId: "global_trade_internal_shipment_id",
+    GrcAfmNumber: "grc_afm_number",
+    GrcGemiNumber: "grc_gemi_number",
+    GrcVatNumber: "grc_vat_number",
+    GtmCuiNumber: "gtm_cui_number",
+    GtmNitNumber: "gtm_nit_number",
+    HkgStockCode: "hkg_stock_code",
+    HndCocCompanyRegistrationNumber: "hnd_coc_company_registration_number",
+    HndTegucigalpaMatricula: "hnd_tegucigalpa_matricula",
+    HongKongCaseNumber: "hong_kong_case_number",
+    HrMbs: "hr_mbs",
+    HrOib: "hr_oib",
+    HunCompanyRegisterNumber: "hun_company_register_number",
+    HunKrsNumber: "hun_krs_number",
+    HunPersonTaxId: "hun_person_tax_id",
+    HunTaxNumber: "hun_tax_number",
+    Iban: "iban",
+    IcijOffshoreInternalId: "icij_offshore_internal_id",
+    IcijOffshoreNodeId: "icij_offshore_node_id",
+    IdnTaxId: "idn_tax_id",
     IdnTransactionNumber: "idn_transaction_number",
     IdnUboOwnerId: "idn_ubo_owner_id",
-    SweTaxNumber: "swe_tax_number",
-    PanadataInternalSid: "panadata_internal_sid",
-    PryTaxId: "pry_tax_id",
-    PryShipmentNumber: "pry_shipment_number",
-    TokyoStockExchangeNo: "tokyo_stock_exchange_no",
-    SweFiId: "swe_fi_id",
-    DeuBafinId: "deu_bafin_id",
-    GlobalTradeInternalShipmentId: "global_trade_internal_shipment_id",
-    ChinaVesselInspectionRegistration: "china_vessel_inspection_registration",
-    ChinaVesselRegistration: "china_vessel_registration",
-    CcsRegistration: "ccs_registration",
-    UsaOtiId: "usa_oti_id",
-    StockTicker: "stock_ticker",
-    CanMbRegistry: "can_mb_registry",
-    QuebecEnterpriseNumber: "quebec_enterprise_number",
-    OntarioCorporationNumber: "ontario_corporation_number",
-    SaskatchewanRegistryNumber: "saskatchewan_registry_number",
-    AlbertaCorporationNumber: "alberta_corporation_number",
-    BraShipmentNumber: "bra_shipment_number",
-    UkrSanctionsNazkCompanyInternalId: "ukr_sanctions_nazk_company_internal_id",
-    UkrSanctionsNazkPersonInternalId: "ukr_sanctions_nazk_person_internal_id",
-    EthereumAddress: "ethereum_address",
-    DashAddress: "dash_address",
-    ZcashAddress: "zcash_address",
-    UsaUsptoSerialNumber: "usa_uspto_serial_number",
-    UsaUsptoRegNo: "usa_uspto_reg_no",
-    UsaUsptoForeignApplicationNo: "usa_uspto_foreign_application_no",
-    UsaUsptoForeignRegNo: "usa_uspto_foreign_reg_no",
-    WipoIntlRegNo: "wipo_intl_reg_no",
-    WipoIntlRefNo: "wipo_intl_ref_no",
-    GbrCharityNo: "gbr_charity_no",
-    GbrTrusteeId: "gbr_trustee_id",
-    GbrGoNo: "gbr_go_no",
-    IrlRegistrationNo: "irl_registration_no",
-    IrlRcn: "irl_rcn",
-    BlzBccarRegNo: "blz_bccar_reg_no",
-    ChnCustomsRegistrationNo: "chn_customs_registration_no",
-    IslVatNum: "isl_vat_num",
-    CanTmRegistrationNo: "can_tm_registration_no",
-    AzeTinNumber: "aze_tin_number",
-    TjkTinNumber: "tjk_tin_number",
-    TjkEinNumber: "tjk_ein_number",
-    McoRciNumber: "mco_rci_number",
-    McoNis: "mco_nis",
-    OnBusinessIdNumber: "on_business_id_number",
-    SyriaCommercialRegisterNumber: "syria_commercial_register_number",
-    CnHurdInternalCompanyId: "cn_hurd_internal_company_id",
-    HunTaxNumber: "hun_tax_number",
-    HunKrsNumber: "hun_krs_number",
-    HunCompanyRegisterNumber: "hun_company_register_number",
-    HunPersonTaxId: "hun_person_tax_id",
-    MwTpinTaxRegNum: "mw_tpin_tax_reg_num",
-    LrTin: "lr_tin",
-    CmNuiTaxRegNum: "cm_nui_tax_reg_num",
-    EuFsdId: "eu_fsd_id",
-    CnHkBrNumber: "cn_hk_br_number",
-    BwaUinRegNumber: "bwa_uin_reg_number",
-    CanNrd: "can_nrd",
-    UsaIrsGiin: "usa_irs_giin",
-    CanNrdIndividualId: "can_nrd_individual_id",
-    JamCompanyId: "jam_company_id",
-    EspInternalEmployeeNumber: "esp_internal_employee_number",
-    NzlRussiaSanctionsUid: "nzl_russia_sanctions_uid",
-    CanNewBrunswickReferenceNumber: "can_new_brunswick_reference_number",
-    FraAssetFreezeId: "fra_asset_freeze_id",
-    SrbBeneficialOwnerId: "srb_beneficial_owner_id",
-    CanPeRegistrationNumber: "can_pe_registration_number",
-    BelFsmaNameHash: "bel_fsma_name_hash",
-    CuwRegNumber: "cuw_reg_number",
-    RusDeclarationNumber: "rus_declaration_number",
-    RuTradeInternalShipmentId: "ru_trade_internal_shipment_id",
-    TurShipmentId: "tur_shipment_id",
-    BdBin: "bd_bin",
-    AerNerNumber: "aer_ner_number",
-    TwnPassportNumber: "twn_passport_number",
-    BelNationalRegisterNo: "bel_national_register_no",
-    AfgTradeInternalShipmentId: "afg_trade_internal_shipment_id",
-    UkrFiuListNumber: "ukr_fiu_list_number",
-    EspBeCode: "esp_be_code",
-    EspTrNumber: "esp_tr_number",
-    JeyTrademarkRegNo: "jey_trademark_reg_no",
-    GbrEnforcementActionNum: "gbr_enforcement_action_num",
-    TzaBrelaRegNum: "tza_brela_reg_num",
-    IndNseTickerCode: "ind_nse_ticker_code",
-    UsaFlMartinPid: "usa_fl_martin_pid",
-    UsaFlSlPid: "usa_fl_sl_pid",
-    CanQcSapRegistryRefNum: "can_qc_sap_registry_ref_num",
-    TurIzmirCocRegNo: "tur_izmir_coc_reg_no",
-    TurTicaretSicilNo: "tur_ticaret_sicil_no",
-    XxxEuEsmaSanctionsId: "xxx_eu_esma_sanctions_id",
-    IndDarpanUid: "ind_darpan_uid",
+    IhsOwnerCode: "ihs_owner_code",
+    ImnCompanyNumber: "imn_company_number",
+    ImoNo: "imo_no",
     IndCharityRegistrationNumber: "ind_charity_registration_number",
-    IndSocietyRegistrationNumber: "ind_society_registration_number",
     IndCompanyRegistrationNumber: "ind_company_registration_number",
     IndCoopsocRegistrationNumber: "ind_coopsoc_registration_number",
+    IndCorporateIdNumber: "ind_corporate_id_number",
+    IndDarpanUid: "ind_darpan_uid",
+    IndDirectorIdNumber: "ind_director_id_number",
+    IndFcrn: "ind_fcrn",
     IndIfsc: "ind_ifsc",
+    IndLlpin: "ind_llpin",
+    IndNseTickerCode: "ind_nse_ticker_code",
+    IndPermanentAccountNumber: "ind_permanent_account_number",
+    IndSocietyRegistrationNumber: "ind_society_registration_number",
+    IndTin: "ind_tin",
     IndTrademarkSubmissionRef: "ind_trademark_submission_ref",
+    IntMaritimeOrgId: "int_maritime_org_id",
+    InternalMd5: "internal_md5",
+    IraqiStockExchangeSymbol: "iraqi_stock_exchange_symbol",
+    IrlRcn: "irl_rcn",
+    IrlRegistrationNo: "irl_registration_no",
+    IrnCocInternalId: "irn_coc_internal_id",
+    IrnCocInternalIdCardno: "irn_coc_internal_id_cardno",
+    IrnNationalId: "irn_national_id",
+    IrnNationalNumber: "irn_national_number",
+    IrnPassport: "irn_passport",
+    IrqVoterId: "irq_voter_id",
+    Isin: "isin",
+    IslTinNumber: "isl_tin_number",
+    IslVatNum: "isl_vat_num",
+    IsrAssociationNumber: "isr_association_number",
+    IsrCompanyNumber: "isr_company_number",
+    IsrPbcNumber: "isr_pbc_number",
+    ItaFiscalCode: "ita_fiscal_code",
+    ItaReaNumber: "ita_rea_number",
+    ItaVatNumber: "ita_vat_number",
+    JamCompanyId: "jam_company_id",
+    JeyCorporateRegNumber: "jey_corporate_reg_number",
+    JeyTrademarkRegNo: "jey_trademark_reg_no",
+    JoInstitutionNumber: "jo_institution_number",
+    JoInternalId: "jo_internal_id",
+    JoNationalInstitutionNumber: "jo_national_institution_number",
+    JorIdNo: "jor_id_no",
+    JorVoterCardNo: "jor_voter_card_no",
+    JordanCompanyNo: "jordan_company_no",
+    JpnCorporateNo: "jpn_corporate_no",
+    JpnEdinetCode: "jpn_edinet_code",
+    KazBin: "kaz_bin",
+    KazIdentifier: "kaz_identifier",
+    KazOkpoNum: "kaz_okpo_num",
+    KazStateRegNum: "kaz_state_reg_num",
+    KazTin: "kaz_tin",
+    KenPersonalId: "ken_personal_id",
+    KgzRegNumber: "kgz_reg_number",
+    KhmTinNumber: "khm_tin_number",
+    KorBusinessTin: "kor_business_tin",
+    KorCorporateRegistrationNumber: "kor_corporate_registration_number",
+    KrxTickerCode: "krx_ticker_code",
+    KwtPassport: "kwt_passport",
+    LaoEnterpriseNumber: "lao_enterprise_number",
+    LbnNationalId: "lbn_national_id",
+    LbyPassport: "lby_passport",
+    LcaBusinessRegistryInternalId: "lca_business_registry_internal_id",
+    Lei: "lei",
+    LiePublicRegNo: "lie_public_reg_no",
+    LitecoinAddress: "litecoin_address",
+    LloydsInternalEntityId: "lloyds_internal_entity_id",
+    LloydsInternalVesselId: "lloyds_internal_vessel_id",
+    LrTin: "lr_tin",
+    LsoCorpregId: "lso_corpreg_id",
+    LtuCompanyRegistrationCode: "ltu_company_registration_code",
+    LuxRcsNumber: "lux_rcs_number",
+    LvaInsolvencyProceedingId: "lva_insolvency_proceeding_id",
+    LvaPersonalCode: "lva_personal_code",
+    LvaRegNumber: "lva_reg_number",
+    MacRaemCaseUrlId: "mac_raem_case_url_id",
+    MacRegistrationNo: "mac_registration_no",
+    MaltaAccountancyRegistrationId: "malta_accountancy_registration_id",
+    MaltaCompanyNumber: "malta_company_number",
+    MaltaNationalId: "malta_national_id",
+    MarPassport: "mar_passport",
+    MatoGrossoLegalId: "mato_grosso_legal_id",
+    McoNis: "mco_nis",
+    McoRciNumber: "mco_rci_number",
+    MdaIdnoNumber: "mda_idno_number",
+    MdgNifNumber: "mdg_nif_number",
+    MdgRcsNumber: "mdg_rcs_number",
+    MdgStatNumber: "mdg_stat_number",
+    MdvRegistrationNumber: "mdv_registration_number",
+    MexCluni: "mex_cluni",
+    MexDenueClee: "mex_denue_clee",
+    MexOpenContractsInternalId: "mex_open_contracts_internal_id",
+    MexRnie: "mex_rnie",
+    MexShipmentNumber: "mex_shipment_number",
+    MexTmNo: "mex_tm_no",
+    MkdArchiveNumber: "mkd_archive_number",
+    MkdEmbsBranchNumber: "mkd_embs_branch_number",
+    MkdEmbsNumber: "mkd_embs_number",
+    MmrCorpId: "mmr_corp_id",
+    MmrOfficerId: "mmr_officer_id",
+    MmrPersonalIdNo: "mmr_personal_id_no",
+    MmrPriorRegNo: "mmr_prior_reg_no",
+    MmrRegNo: "mmr_reg_no",
+    MnePib: "mne_pib",
+    MnePropertyUid: "mne_property_uid",
+    MneRegNumber: "mne_reg_number",
+    MngRegNumber: "mng_reg_number",
+    MontanaSosInternalEntityId: "montana_sos_internal_entity_id",
+    MozDireNo: "moz_dire_no",
+    MozIdNumber: "moz_id_number",
+    MozNuelNo: "moz_nuel_no",
+    MozNuitCo: "moz_nuit_co",
+    MozNuitPerson: "moz_nuit_person",
+    MozPassport: "moz_passport",
+    MozVoterNo: "moz_voter_no",
+    MusFileNo: "mus_file_no",
+    MusRegId: "mus_reg_id",
+    MwTpinTaxRegNum: "mw_tpin_tax_reg_num",
+    MxCurp: "mx_curp",
+    MxOfficeFme: "mx_office_fme",
+    MxRfcCompany: "mx_rfc_company",
+    MxRfcPerson: "mx_rfc_person",
+    MysCompanyRegNo: "mys_company_reg_no",
+    MysIdCardNo: "mys_id_card_no",
+    NgCheckInternalId: "ng_check_internal_id",
+    NgaCrpRegInternalId: "nga_crp_reg_internal_id",
+    NgaDrivers: "nga_drivers",
+    NgaNin: "nga_nin",
+    NgaRegistrationNumber: "nga_registration_number",
+    NgaRegistrationSn: "nga_registration_sn",
+    NgaTaxId: "nga_tax_id",
+    NicNumeroUnico: "nic_numero_unico",
+    NicRucNumber: "nic_ruc_number",
+    NicTradeInternalShipmentId: "nic_trade_internal_shipment_id",
+    NineaNo: "ninea_no",
+    NldKvkBranchNumber: "nld_kvk_branch_number",
+    NldKvkNumber: "nld_kvk_number",
+    NorOrgNo: "nor_org_no",
+    NplCoRegNo: "npl_co_reg_no",
+    NycBbl: "nyc_bbl",
+    NycCrfn: "nyc_crfn",
+    NzlCoNo: "nzl_co_no",
+    NzlNzbn: "nzl_nzbn",
+    NzlRussiaSanctionsUid: "nzl_russia_sanctions_uid",
+    OmnPassport: "omn_passport",
+    OnBusinessIdNumber: "on_business_id_number",
+    OntarioCorporationNumber: "ontario_corporation_number",
+    PakCoNtn: "pak_co_ntn",
+    PakEgmId: "pak_egm_id",
+    PakIndNtn: "pak_ind_ntn",
+    PakNgoRegNo: "pak_ngo_reg_no",
+    PakPassport: "pak_passport",
+    PanCedulaNumber: "pan_cedula_number",
+    PanDeclarationNumber: "pan_declaration_number",
+    PanFolioFichaId: "pan_folio_ficha_id",
+    PanImporterExporterId: "pan_importer_exporter_id",
+    PanadataInternalId: "panadata_internal_id",
+    PanadataInternalSid: "panadata_internal_sid",
+    PerCarneDeExtranjeria: "per_carne_de_extranjeria",
+    PerDniNo: "per_dni_no",
+    PerRucNo: "per_ruc_no",
+    PhlBnn: "phl_bnn",
+    PhlPseId: "phl_pse_id",
+    PhlSecId: "phl_sec_id",
+    PhlTin: "phl_tin",
+    PngIpaRegId: "png_ipa_reg_id",
+    PolKrsNumber: "pol_krs_number",
+    PolNipNumber: "pol_nip_number",
+    PolRegonNumber: "pol_regon_number",
+    PolRejestrPersonId: "pol_rejestr_person_id",
+    PrkEntityId: "prk_entity_id",
+    PrkInternalTradeId: "prk_internal_trade_id",
+    PrkPassport: "prk_passport",
+    PrkRegistrationId: "prk_registration_id",
+    PrkShipmentId: "prk_shipment_id",
+    PrtTrustNumber: "prt_trust_number",
+    PrtVatNumber: "prt_vat_number",
+    PryCedulaNumber: "pry_cedula_number",
+    PryOldRucNumber: "pry_old_ruc_number",
+    PryRucNumber: "pry_ruc_number",
+    PryShipmentNumber: "pry_shipment_number",
+    PryTaxId: "pry_tax_id",
+    PseRegistrationId: "pse_registration_id",
+    QatCrNumber: "qat_cr_number",
+    QatQfcNumber: "qat_qfc_number",
+    QuebecEnterpriseNumber: "quebec_enterprise_number",
+    RccmNo: "rccm_no",
+    RioDeJaneiroLegalId: "rio_de_janeiro_legal_id",
+    RksBusinessNumber: "rks_business_number",
+    RksFiscalNumber: "rks_fiscal_number",
+    RksRegistrationNumber: "rks_registration_number",
+    RouCompanyRegistrationCode: "rou_company_registration_code",
+    RouCompanyTin: "rou_company_tin",
+    RouIdentityCard: "rou_identity_card",
+    RouPersonalIdNumber: "rou_personal_id_number",
+    RuInn: "ru_inn",
+    RuOgrn: "ru_ogrn",
+    RuShipRegisterId: "ru_ship_register_id",
+    RuTradeInternalShipmentId: "ru_trade_internal_shipment_id",
+    RusBikCode: "rus_bik_code",
+    RusDeclarationNumber: "rus_declaration_number",
+    RusMicexCode: "rus_micex_code",
+    RusPassport: "rus_passport",
+    RusTouristObj: "rus_tourist_obj",
+    SaskatchewanRegistryNumber: "saskatchewan_registry_number",
+    SayariInternalIdentifier: "sayari_internal_identifier",
+    SgpPassport: "sgp_passport",
+    SgpUnqiueEntityNumber: "sgp_unqiue_entity_number",
+    SigerInternalId: "siger_internal_id",
+    SlvCommercialRegNumber: "slv_commercial_reg_number",
+    SlvMcas: "slv_mcas",
+    SlvNumeroIdentificacionTributaria: "slv_numero_identificacion_tributaria",
+    SlvUidNumber: "slv_uid_number",
+    SmrEconomicOperatorCode: "smr_economic_operator_code",
+    SomUbi: "som_ubi",
+    SouthAfricaEnterpriseNumber: "south_africa_enterprise_number",
+    SouthAfricaPassportNumber: "south_africa_passport_number",
+    SrbBeneficialOwnerId: "srb_beneficial_owner_id",
+    SrbBranchId: "srb_branch_id",
+    SrbMbNumber: "srb_mb_number",
+    SrbPibNumber: "srb_pib_number",
+    SsdPassport: "ssd_passport",
+    StockTicker: "stock_ticker",
+    SvkIcoNumber: "svk_ico_number",
+    SvnAjpesZapstNumber: "svn_ajpes_zapst_number",
+    SvnCoRegNo: "svn_co_reg_no",
+    SvnVatNumber: "svn_vat_number",
+    SweFiId: "swe_fi_id",
+    SweOrgNo: "swe_org_no",
+    SwePerIdNo: "swe_per_id_no",
+    SweTaxNumber: "swe_tax_number",
+    SwiftBicCode: "swift_bic_code",
+    SyriaCommercialRegisterNumber: "syria_commercial_register_number",
+    ThaRegistrationNo: "tha_registration_no",
+    TjkEinNumber: "tjk_ein_number",
+    TjkTinNumber: "tjk_tin_number",
+    TokyoStockExchangeNo: "tokyo_stock_exchange_no",
+    TtoBizNumber: "tto_biz_number",
+    TunPassport: "tun_passport",
+    TurIstanbulCocRegNo: "tur_istanbul_coc_reg_no",
+    TurIzmirCocRegNo: "tur_izmir_coc_reg_no",
+    TurMersisNumber: "tur_mersis_number",
+    TurShipmentId: "tur_shipment_id",
+    TurTaxId: "tur_tax_id",
+    TurTicaretSicilNo: "tur_ticaret_sicil_no",
+    TwnFactoryEstablishmentPermitCaseNumber: "twn_factory_establishment_permit_case_number",
+    TwnFactoryRegistrationNumber: "twn_factory_registration_number",
+    TwnPassportNumber: "twn_passport_number",
+    TwnUnifiedNumber: "twn_unified_number",
+    TxCorpFileNum: "tx_corp_file_num",
+    TxEntityFilingNum: "tx_entity_filing_num",
+    TxLandId: "tx_land_id",
+    TxPacsId: "tx_pacs_id",
+    TxPropId: "tx_prop_id",
+    TxTaxId: "tx_tax_id",
+    TzaBrelaRegNum: "tza_brela_reg_num",
+    UkCompanyNumber: "uk_company_number",
+    UkFirmReferenceNumber: "uk_firm_reference_number",
+    UkPersonNumber: "uk_person_number",
+    UkTitleNumber: "uk_title_number",
+    UkrFiuListNumber: "ukr_fiu_list_number",
+    UkrMojId: "ukr_moj_id",
+    UkrRegNum: "ukr_reg_num",
+    UkrSanctionsNazkCompanyInternalId: "ukr_sanctions_nazk_company_internal_id",
+    UkrSanctionsNazkPersonInternalId: "ukr_sanctions_nazk_person_internal_id",
+    UnSanctionPrn: "un_sanction_prn",
+    UryRucNumber: "ury_ruc_number",
+    UsaAkEntityNo: "usa_ak_entity_no",
+    UsaAlSosId: "usa_al_sos_id",
+    UsaArFilingNo: "usa_ar_filing_no",
+    UsaAzCorpRegEntityNum: "usa_az_corp_reg_entity_num",
+    UsaCentralRegistrationDepositoryNumber: "usa_central_registration_depository_number",
+    UsaCgacAgencyCode: "usa_cgac_agency_code",
+    UsaCoRegNo: "usa_co_reg_no",
+    UsaConsolidatedScreeningListSyntheticId: "usa_consolidated_screening_list_synthetic_id",
+    UsaCorpwatchId: "usa_corpwatch_id",
+    UsaCtBusinessId: "usa_ct_business_id",
+    UsaCtInternalId: "usa_ct_internal_id",
+    UsaCusipNumber: "usa_cusip_number",
+    UsaDcEntityNo: "usa_dc_entity_no",
+    UsaDcFileNo: "usa_dc_file_no",
+    UsaDeFileNumber: "usa_de_file_number",
+    UsaDeRegisteredAgentId: "usa_de_registered_agent_id",
+    UsaFeiNumber: "usa_fei_number",
+    UsaFlDocumentNo: "usa_fl_document_no",
+    UsaFlFicNameRegNo: "usa_fl_fic_name_reg_no",
+    UsaFlMartinPid: "usa_fl_martin_pid",
+    UsaFlPbPcn: "usa_fl_pb_pcn",
+    UsaFlPropertyId: "usa_fl_property_id",
+    UsaFlPropertyMpId: "usa_fl_property_mp_id",
+    UsaFlPropertyStateParId: "usa_fl_property_state_par_id",
+    UsaFlSlPid: "usa_fl_sl_pid",
+    UsaGaBusinessId: "usa_ga_business_id",
+    UsaGaControlNo: "usa_ga_control_no",
+    UsaGovtAgencyId: "usa_govt_agency_id",
+    UsaGovtOfficeId: "usa_govt_office_id",
+    UsaHiCorporateRegistryId: "usa_hi_corporate_registry_id",
+    UsaHiCorporateRegistryPersonId: "usa_hi_corporate_registry_person_id",
+    UsaHiTradeNameCert: "usa_hi_trade_name_cert",
+    UsaIaCorpNo: "usa_ia_corp_no",
+    UsaIdControlNo: "usa_id_control_no",
+    UsaIdPartyId: "usa_id_party_id",
+    UsaIlChicagoAccountNumber: "usa_il_chicago_account_number",
+    UsaIlFileNumber: "usa_il_file_number",
+    UsaInBizNo: "usa_in_biz_no",
+    UsaIrsEin: "usa_irs_ein",
+    UsaIrsGiin: "usa_irs_giin",
+    UsaKsBizId: "usa_ks_biz_id",
+    UsaKyOrgNo: "usa_ky_org_no",
+    UsaLaSosId: "usa_la_sos_id",
+    UsaMassSosCompanyId: "usa_mass_sos_company_id",
+    UsaMdDptTax: "usa_md_dpt_tax",
+    UsaMeCorpId: "usa_me_corp_id",
+    UsaMiCorpId: "usa_mi_corp_id",
+    UsaMiCorpIdOld: "usa_mi_corp_id_old",
+    UsaMnFilingNumber: "usa_mn_filing_number",
+    UsaMnMasterId: "usa_mn_master_id",
+    UsaMoCorpId: "usa_mo_corp_id",
+    UsaMsBizId: "usa_ms_biz_id",
+    UsaNcInternalId: "usa_nc_internal_id",
+    UsaNdControlId: "usa_nd_control_id",
+    UsaNeAcctNo: "usa_ne_acct_no",
+    UsaNeAgentId: "usa_ne_agent_id",
+    UsaNhBusinessId: "usa_nh_business_id",
+    UsaNjBusinessId: "usa_nj_business_id",
+    UsaNmBusinessNo: "usa_nm_business_no",
+    UsaNmLicenseId: "usa_nm_license_id",
+    UsaNpiNumber: "usa_npi_number",
+    UsaNvBizid: "usa_nv_bizid",
+    UsaNvCorpno: "usa_nv_corpno",
+    UsaNyDosId: "usa_ny_dos_id",
+    UsaNyRegId: "usa_ny_reg_id",
+    UsaOfacSdnNumber: "usa_ofac_sdn_number",
+    UsaOhCharterNum: "usa_oh_charter_num",
+    UsaOkFilingNo: "usa_ok_filing_no",
+    UsaOrRegno: "usa_or_regno",
+    UsaOtiId: "usa_oti_id",
+    UsaPaCorporateRegistryId: "usa_pa_corporate_registry_id",
+    UsaPuertoRicoRegisterNumber: "usa_puerto_rico_register_number",
+    UsaRiFeiNo: "usa_ri_fei_no",
+    UsaSamExclusionsNumber: "usa_sam_exclusions_number",
+    UsaSamUeiNumber: "usa_sam_uei_number",
+    UsaScCorpId: "usa_sc_corp_id",
+    UsaSdCorpId: "usa_sd_corp_id",
+    UsaSecCikNumber: "usa_sec_cik_number",
+    UsaSecFileNumberBd: "usa_sec_file_number_bd",
+    UsaSecFileNumberIa: "usa_sec_file_number_ia",
+    UsaSecPrivateFund: "usa_sec_private_fund",
+    UsaSocialSecurityNumber: "usa_social_security_number",
+    UsaTnControlNo: "usa_tn_control_no",
+    UsaTnPartyId: "usa_tn_party_id",
+    UsaUpinNumber: "usa_upin_number",
+    UsaUsptoForeignApplicationNo: "usa_uspto_foreign_application_no",
+    UsaUsptoForeignRegNo: "usa_uspto_foreign_reg_no",
+    UsaUsptoRegNo: "usa_uspto_reg_no",
+    UsaUsptoSerialNumber: "usa_uspto_serial_number",
+    UsaUsviCorpNumber: "usa_usvi_corp_number",
+    UsaVaOldRegId: "usa_va_old_reg_id",
+    UsaVaRegId: "usa_va_reg_id",
+    UsaVtBizId: "usa_vt_biz_id",
+    UsaWashingtonStateUbi: "usa_washington_state_ubi",
+    UsaWiDfiId: "usa_wi_dfi_id",
+    UsaWvRegId: "usa_wv_reg_id",
+    UsaWyFilingId: "usa_wy_filing_id",
+    UsaWyFilingNum: "usa_wy_filing_num",
+    UsaWyInternalFilingId: "usa_wy_internal_filing_id",
+    UsaWyPartyId: "usa_wy_party_id",
+    UtahCorporateRegistryInternalEntityNumber: "utah_corporate_registry_internal_entity_number",
+    UzbTinNumber: "uzb_tin_number",
+    ValidatisNumber: "validatis_number",
+    Vat: "vat",
+    VenCedulaNumber: "ven_cedula_number",
+    VenRif: "ven_rif",
+    VenRncNumber: "ven_rnc_number",
+    VenSarenInternalEmployerNumber: "ven_saren_internal_employer_number",
+    VgbCompanyNumber: "vgb_company_number",
+    VnmCitizenshipNo: "vnm_citizenship_no",
+    VnmDichvuthongtinInternalId: "vnm_dichvuthongtin_internal_id",
+    VnmEnterpriseCode: "vnm_enterprise_code",
+    VnmPersonIdNo: "vnm_person_id_no",
+    VutCorpRegNumber: "vut_corp_reg_number",
+    WipoIntlRefNo: "wipo_intl_ref_no",
+    WipoIntlRegNo: "wipo_intl_reg_no",
+    XxxAcurisId: "xxx_acuris_id",
+    XxxCedarRoseUid: "xxx_cedar_rose_uid",
+    XxxCrbMonitorEntityId: "xxx_crb_monitor_entity_id",
+    XxxEdiGlobalIssuerId: "xxx_edi_global_issuer_id",
+    XxxEdiGlobalSecurityId: "xxx_edi_global_security_id",
+    XxxEuEsmaSanctionsId: "xxx_eu_esma_sanctions_id",
+    XxxIntelInternalId: "xxx_intel_internal_id",
+    XxxRccm: "xxx_rccm",
+    YemCocRegistrationNumber: "yem_coc_registration_number",
+    YemPassport: "yem_passport",
+    YugoslavMasterCitizenNum: "yugoslav_master_citizen_num",
+    ZcashAddress: "zcash_address",
 } as const;

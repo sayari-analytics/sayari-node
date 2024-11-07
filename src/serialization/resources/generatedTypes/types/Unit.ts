@@ -7,11 +7,11 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const Unit: core.serialization.Schema<serializers.Unit.Raw, Sayari.Unit> = core.serialization.enum_([
-    "metre",
     "kilogram",
+    "metre",
     "unit",
 ]);
 
 export declare namespace Unit {
-    type Raw = "metre" | "kilogram" | "unit";
+    type Raw = "kilogram" | "metre" | "unit";
 }

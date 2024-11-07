@@ -67,6 +67,9 @@ export type Country =
      * Benin */
     | "BEN"
     /**
+     * Caribbean Netherlands */
+    | "BES"
+    /**
      * Burkina Faso */
     | "BFA"
     /**
@@ -88,9 +91,6 @@ export type Country =
      * Saint Barthélemy */
     | "BLM"
     /**
-     * Saint Helena, Ascension and Tristan da Cunha */
-    | "SHN"
-    /**
      * Belarus */
     | "BLR"
     /**
@@ -102,9 +102,6 @@ export type Country =
     /**
      * Bolivia */
     | "BOL"
-    /**
-     * Caribbean Netherlands */
-    | "BES"
     /**
      * Brazil */
     | "BRA"
@@ -379,9 +376,6 @@ export type Country =
      * South Korea */
     | "KOR"
     /**
-     * Kosovo */
-    | "UNK"
-    /**
      * Kuwait */
     | "KWT"
     /**
@@ -577,6 +571,9 @@ export type Country =
      * Réunion */
     | "REU"
     /**
+     * Kosovo */
+    | "RKS"
+    /**
      * Romania */
     | "ROU"
     /**
@@ -600,6 +597,9 @@ export type Country =
     /**
      * South Georgia */
     | "SGS"
+    /**
+     * Saint Helena, Ascension and Tristan da Cunha */
+    | "SHN"
     /**
      * Svalbard and Jan Mayen */
     | "SJM"
@@ -709,6 +709,9 @@ export type Country =
      * United States Minor Outlying Islands */
     | "UMI"
     /**
+     * Kosovo */
+    | "UNK"
+    /**
      * Uruguay */
     | "URY"
     /**
@@ -745,6 +748,9 @@ export type Country =
      * Samoa */
     | "WSM"
     /**
+     * International */
+    | "XXX"
+    /**
      * Yemen */
     | "YEM"
     /**
@@ -755,13 +761,7 @@ export type Country =
     | "ZMB"
     /**
      * Zimbabwe */
-    | "ZWE"
-    /**
-     * International */
-    | "XXX"
-    /**
-     * Kosovo */
-    | "RKS";
+    | "ZWE";
 
 export const Country = {
     Abw: "ABW",
@@ -784,6 +784,7 @@ export const Country = {
     Bdi: "BDI",
     Bel: "BEL",
     Ben: "BEN",
+    Bes: "BES",
     Bfa: "BFA",
     Bgd: "BGD",
     Bgr: "BGR",
@@ -791,12 +792,10 @@ export const Country = {
     Bhs: "BHS",
     Bih: "BIH",
     Blm: "BLM",
-    Shn: "SHN",
     Blr: "BLR",
     Blz: "BLZ",
     Bmu: "BMU",
     Bol: "BOL",
-    Bes: "BES",
     Bra: "BRA",
     Brb: "BRB",
     Brn: "BRN",
@@ -888,7 +887,6 @@ export const Country = {
     Kir: "KIR",
     Kna: "KNA",
     Kor: "KOR",
-    Unk: "UNK",
     Kwt: "KWT",
     Lao: "LAO",
     Lbn: "LBN",
@@ -954,6 +952,7 @@ export const Country = {
     Pyf: "PYF",
     Qat: "QAT",
     Reu: "REU",
+    Rks: "RKS",
     Rou: "ROU",
     Rus: "RUS",
     Rwa: "RWA",
@@ -962,6 +961,7 @@ export const Country = {
     Sen: "SEN",
     Sgp: "SGP",
     Sgs: "SGS",
+    Shn: "SHN",
     Sjm: "SJM",
     Slb: "SLB",
     Sle: "SLE",
@@ -998,6 +998,7 @@ export const Country = {
     Uga: "UGA",
     Ukr: "UKR",
     Umi: "UMI",
+    Unk: "UNK",
     Ury: "URY",
     Usa: "USA",
     Uzb: "UZB",
@@ -1010,10 +1011,9 @@ export const Country = {
     Vut: "VUT",
     Wlf: "WLF",
     Wsm: "WSM",
+    Xxx: "XXX",
     Yem: "YEM",
     Zaf: "ZAF",
     Zmb: "ZMB",
     Zwe: "ZWE",
-    Xxx: "XXX",
-    Rks: "RKS",
 } as const;
