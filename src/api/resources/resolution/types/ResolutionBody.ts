@@ -33,4 +33,8 @@ export interface ResolutionBody {
     minimumScoreThreshold?: number;
     /** Enables a name search fallback when either the corporate or supplier profiles fails to find a match. When invoked, the fallback will make a call similar to /search/entity on name only. By default set to true. */
     searchFallback?: boolean;
+    /** Specifies the window of similar results returned in the match group. Increase for fewer multiple matches, decrease to open the aperture and allow for more matches. Default is .8 */
+    cutoffThreshold?: number;
+    /** Bypasses the post-processing setps and re-ranking. Useful for debugging. By default set to false, set to true to enable. */
+    skipPostProcess?: boolean;
 }
