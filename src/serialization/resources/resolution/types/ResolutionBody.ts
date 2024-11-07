@@ -32,8 +32,6 @@ export const ResolutionBody: core.serialization.ObjectSchema<serializers.Resolut
             core.serialization.number().optional()
         ),
         searchFallback: core.serialization.property("search_fallback", core.serialization.boolean().optional()),
-        cutoffThreshold: core.serialization.property("cutoff_threshold", core.serialization.number().optional()),
-        skipPostProcess: core.serialization.property("skip_post_process", core.serialization.boolean().optional()),
     });
 
 export declare namespace ResolutionBody {
@@ -52,7 +50,5 @@ export declare namespace ResolutionBody {
         name_min_tokens?: number | null;
         minimum_score_threshold?: number | null;
         search_fallback?: boolean | null;
-        cutoff_threshold?: number | null;
-        skip_post_process?: boolean | null;
     }
 }

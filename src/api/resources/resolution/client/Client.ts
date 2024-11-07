@@ -75,8 +75,6 @@ export class Resolution {
             nameMinTokens,
             minimumScoreThreshold,
             searchFallback,
-            cutoffThreshold,
-            skipPostProcess,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (limit != null) {
@@ -179,14 +177,6 @@ export class Resolution {
 
         if (searchFallback != null) {
             _queryParams["search_fallback"] = searchFallback.toString();
-        }
-
-        if (cutoffThreshold != null) {
-            _queryParams["cutoff_threshold"] = cutoffThreshold.toString();
-        }
-
-        if (skipPostProcess != null) {
-            _queryParams["skip_post_process"] = skipPostProcess.toString();
         }
 
         const _response = await core.fetcher({
