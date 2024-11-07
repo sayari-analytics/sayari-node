@@ -1,24 +1,54 @@
-import * as dotenv from "dotenv";
+// trade-search.mjs
 import { SayariClient } from "../dist/index.js";
+import config from "./config.mjs";
 
-// Pull Client creds from ENV file
-dotenv.config({ path: '../.env' });
-dotenv.config();
-const clientID = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
-const baseURL = process.env.BASE_URL ||  'https://api.sayari.com'
+// Initialize the Sayari client
+const client = new SayariClient({
+    clientId: config.clientID,
+    clientSecret: config.clientSecret,
+    environment: config.baseURL,
+});
 
-// Create an authenticated sayari client
-const client = new SayariClient({ clientId: clientID, clientSecret: clientSecret, environment: baseURL })
+// Search functions with error handling and logging
+async function searchShipments(query) {
+    try {
+        const shipments = await client.trade.searchShipments({ q: query });
+        config.logInfo(`Found ${shipments.data.length} shipments for query:`, query);
+        return shipments.data;
+    } catch (error) {
+        config.logError("Error searching shipments", error);
+    }
+}
 
-// Search for shipments
-const shipments = await client.trade.searchShipments({q:"microcenter"})
-console.log(`Found ${shipments.data.length} shipments.`)
+async function searchSuppliers(query) {
+    try {
+        const suppliers = await client.trade.searchSuppliers({ q: query });
+        config.logInfo(`Found ${suppliers.data.length} suppliers for query:`, query);
+        return suppliers.data;
+    } catch (error) {
+        config.logError("Error searching suppliers", error);
+    }
+}
 
-// Search for suppliers
-const suppliers = await client.trade.searchSuppliers({q:"microcenter"})
-console.log(`Found ${suppliers.data.length} suppliers.`)
+async function searchBuyers(query) {
+    try {
+        const buyers = await client.trade.searchBuyers({ q: query });
+        config.logInfo(`Found ${buyers.data.length} buyers for query:`, query);
+        return buyers.data;
+    } catch (error) {
+        config.logError("Error searching buyers", error);
+    }
+}
 
-// Search for buyers
-const buyers = await client.trade.searchBuyers({q:"microcenter"})
-console.log(`Found ${buyers.data.length} buyers.`)
+// Main execution function
+async function main() {
+    const query = "microcenter";
+
+    // Execute searches and log results
+    await searchShipments(query);
+    await searchSuppliers(query);
+    await searchBuyers(query);
+}
+
+// Run the main function and catch any unhandled errors
+main().catch((error) => config.logError("Fatal error during execution", error));
