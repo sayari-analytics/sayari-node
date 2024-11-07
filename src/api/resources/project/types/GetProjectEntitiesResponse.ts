@@ -30,6 +30,7 @@ import * as Sayari from "../../../index";
  *                 },
  *                 receivedHsCodes: ["271290", "271220"],
  *                 shippedHsCodes: [],
+ *                 combinedHsCodes: ["271290", "271220"],
  *                 tradeCountInclMg: {
  *                     receiverOf: 5,
  *                     shipperOf: 0
@@ -48,7 +49,13 @@ import * as Sayari from "../../../index";
  *                 upstream: {
  *                     risk: [],
  *                     countries: [],
- *                     entities: 0
+ *                     entities: 0,
+ *                     matchHasUpstream: {
+ *                         "FyI9lrlmA-7z_3enlTOhlw": false
+ *                     },
+ *                     matchProducts: {
+ *                         "FyI9lrlmA-7z_3enlTOhlw": []
+ *                     }
  *                 },
  *                 psa: {
  *                     risk: [Sayari.Risk.EuHighRiskThird, Sayari.Risk.BaselAml, Sayari.Risk.CpiScore, Sayari.Risk.OwnerOfRegulatoryActionEntity],
@@ -331,6 +338,26 @@ import * as Sayari from "../../../index";
  *                     docCountErrorUpperBound: 0,
  *                     sumOtherDocCount: 0,
  *                     buckets: []
+ *                 }
+ *             },
+ *             combinedHsCodes: {
+ *                 docCount: 2,
+ *                 hsCodeTerms: {
+ *                     docCountErrorUpperBound: 0,
+ *                     sumOtherDocCount: 0,
+ *                     buckets: [{
+ *                             key: "271290",
+ *                             docCount: 1,
+ *                             hsCodeSums: {
+ *                                 value: 4
+ *                             }
+ *                         }, {
+ *                             key: "271220",
+ *                             docCount: 1,
+ *                             hsCodeSums: {
+ *                                 value: 1
+ *                             }
+ *                         }]
  *                 }
  *             }
  *         }

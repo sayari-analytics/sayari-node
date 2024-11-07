@@ -60,8 +60,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.22",
-                "User-Agent": "@sayari/sdk/0.1.22",
+                "X-Fern-SDK-Version": "0.1.23",
+                "User-Agent": "@sayari/sdk/0.1.23",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -217,8 +217,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.22",
-                "User-Agent": "@sayari/sdk/0.1.22",
+                "X-Fern-SDK-Version": "0.1.23",
+                "User-Agent": "@sayari/sdk/0.1.23",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -350,6 +350,7 @@ export class Project {
             hsCodes,
             receivedHsCodes,
             shippedHsCodes,
+            combinedHsCodes,
             translation,
             sort,
             filters,
@@ -405,6 +406,14 @@ export class Project {
             }
         }
 
+        if (combinedHsCodes != null) {
+            if (Array.isArray(combinedHsCodes)) {
+                _queryParams["combined_hs_codes"] = combinedHsCodes.map((item) => item);
+            } else {
+                _queryParams["combined_hs_codes"] = combinedHsCodes;
+            }
+        }
+
         if (translation != null) {
             _queryParams["translation"] = translation;
         }
@@ -453,8 +462,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.22",
-                "User-Agent": "@sayari/sdk/0.1.22",
+                "X-Fern-SDK-Version": "0.1.23",
+                "User-Agent": "@sayari/sdk/0.1.23",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 Accept: accept,
@@ -584,8 +593,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.22",
-                "User-Agent": "@sayari/sdk/0.1.22",
+                "X-Fern-SDK-Version": "0.1.23",
+                "User-Agent": "@sayari/sdk/0.1.23",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

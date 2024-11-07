@@ -33,6 +33,10 @@ export const ProjectEntity: core.serialization.ObjectSchema<serializers.ProjectE
             "received_hs_codes",
             core.serialization.list(core.serialization.string())
         ),
+        combinedHsCodes: core.serialization.property(
+            "combined_hs_codes",
+            core.serialization.list(core.serialization.string())
+        ),
         tradeCountInclMg: core.serialization.property("trade_count_incl_mg", TradeCount),
         upstream: ProjectEntityUpstream,
         summary: CoreEntity,
@@ -56,6 +60,7 @@ export declare namespace ProjectEntity {
         match_strength?: unknown;
         shipped_hs_codes: string[];
         received_hs_codes: string[];
+        combined_hs_codes: string[];
         trade_count_incl_mg: TradeCount.Raw;
         upstream: ProjectEntityUpstream.Raw;
         summary: CoreEntity.Raw;

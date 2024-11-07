@@ -280,12 +280,13 @@ import * as Sayari from "../../../index";
  *                                 "value": "JAPON E5 107 Y AV AMAZONAS"
  *                             }]
  *                     }],
- *                 arrivalDate: "2024-05-14",
- *                 arrivalCountry: [Sayari.Country.Rus],
- *                 departureCountry: [Sayari.Country.Deu],
  *                 arrivalAddress: {
- *                     country: "RUS"
+ *                     country: "RUS - BRB"
  *                 },
+ *                 arrivalDate: "2022-05-25",
+ *                 arrivalCountry: [],
+ *                 departureDate: "2022-05",
+ *                 departureCountry: [Sayari.Country.Usa],
  *                 departureAddress: {
  *                     country: "DEU"
  *                 },

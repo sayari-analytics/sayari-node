@@ -15,6 +15,14 @@ export const ProjectEntityUpstream: core.serialization.ObjectSchema<
     risk: core.serialization.list(Risk),
     countries: core.serialization.list(Country),
     entities: core.serialization.number(),
+    matchHasUpstream: core.serialization.property(
+        "match_has_upstream",
+        core.serialization.record(core.serialization.string(), core.serialization.boolean())
+    ),
+    matchProducts: core.serialization.property(
+        "match_products",
+        core.serialization.record(core.serialization.string(), core.serialization.list(core.serialization.string()))
+    ),
 });
 
 export declare namespace ProjectEntityUpstream {
@@ -22,5 +30,7 @@ export declare namespace ProjectEntityUpstream {
         risk: Risk.Raw[];
         countries: Country.Raw[];
         entities: number;
+        match_has_upstream: Record<string, boolean>;
+        match_products: Record<string, string[]>;
     }
 }

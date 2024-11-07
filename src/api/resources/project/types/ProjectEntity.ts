@@ -26,6 +26,8 @@ export interface ProjectEntity {
     shippedHsCodes: string[];
     /** HS codes received by the entity. */
     receivedHsCodes: string[];
+    /** HS codes shipped or received by the entity. */
+    combinedHsCodes: string[];
     /** Counts of sent and received shipments for this entity and its match group. */
     tradeCountInclMg: Sayari.TradeCount;
     upstream: Sayari.ProjectEntityUpstream;
