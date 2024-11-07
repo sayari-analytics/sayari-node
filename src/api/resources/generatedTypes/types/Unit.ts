@@ -7,17 +7,17 @@
  */
 export type Unit =
     /**
-     * Indicates kilograms (kg) */
-    | "kilogram"
-    /**
      * Indicates meters (m) */
     | "metre"
+    /**
+     * Indicates kilograms (kg) */
+    | "kilogram"
     /**
      * Used to show the number of units of a product */
     | "unit";
 
 export const Unit = {
-    Kilogram: "kilogram",
     Metre: "metre",
+    Kilogram: "kilogram",
     Unit: "unit",
 } as const;

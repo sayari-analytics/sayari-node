@@ -6,56 +6,56 @@
  * Company status enums describe a normalized set of statuses to which we map specific terms describing a company's status in a source document.
  */
 export type CompanyStatus =
+    | "seized"
+    | "in_receivership"
+    | "registration_revoked"
+    | "opening"
+    | "dissolved"
     /**
      * e.g., "Active", "Operating," "In good standing" */
     | "active"
+    /**
+     * e.g., "Inactive", "Administratively dissolved". Used when the company still exists but is not operating normally. */
+    | "inactive"
     /**
      * e.g., "Closed", "Struck from the register", "Registration canceled". Used when the company no longer legally exists. */
     | "closed"
     /**
      * e.g., "In liquidation", "Dissolved". Used when the company is on track to close. */
     | "closing"
-    | "dissolved"
+    /**
+     * e.g., "Registration date" */
+    | "registered"
+    /**
+     * e.g., "Date of incorporation" */
+    | "incorporated"
+    /**
+     * e.g., "In receivership", "Bankruptcy trustee appointed", "Seized". Used when an exernal party is granted legal/operational control over the company, typically to steer it through a bankruptcy or winding-up process. */
+    | "under_external_control"
+    /**
+     * e.g., "Expired", "Inactive". Used when the business license is no longer active and up to date. */
+    | "expired"
     /**
      * e.g., "Expanded", "Barred". Used when a broker has been involved in one or more disclosure events involving certain final criminal matters, regulatory actions, civil judgment proceedings, or arbitrations or civil litigations. */
     | "expanded"
     /**
-     * e.g., "Expired", "Inactive". Used when the business license is no longer active and up to date. */
-    | "expired"
-    | "in_receivership"
-    /**
-     * e.g., "Inactive", "Administratively dissolved". Used when the company still exists but is not operating normally. */
-    | "inactive"
-    /**
-     * e.g., "Date of incorporation" */
-    | "incorporated"
-    | "opening"
-    /**
-     * e.g., "Registration date" */
-    | "registered"
-    | "registration_revoked"
-    | "seized"
-    /**
      * e.g., "Terminated", "Closed". Used when the licensing organization terminates a business license, barring the individual and/or company from performing business activities with the association of the organization. */
-    | "terminated"
-    /**
-     * e.g., "In receivership", "Bankruptcy trustee appointed", "Seized". Used when an exernal party is granted legal/operational control over the company, typically to steer it through a bankruptcy or winding-up process. */
-    | "under_external_control";
+    | "terminated";
 
 export const CompanyStatus = {
+    Seized: "seized",
+    InReceivership: "in_receivership",
+    RegistrationRevoked: "registration_revoked",
+    Opening: "opening",
+    Dissolved: "dissolved",
     Active: "active",
+    Inactive: "inactive",
     Closed: "closed",
     Closing: "closing",
-    Dissolved: "dissolved",
-    Expanded: "expanded",
-    Expired: "expired",
-    InReceivership: "in_receivership",
-    Inactive: "inactive",
-    Incorporated: "incorporated",
-    Opening: "opening",
     Registered: "registered",
-    RegistrationRevoked: "registration_revoked",
-    Seized: "seized",
-    Terminated: "terminated",
+    Incorporated: "incorporated",
     UnderExternalControl: "under_external_control",
+    Expired: "expired",
+    Expanded: "expanded",
+    Terminated: "terminated",
 } as const;

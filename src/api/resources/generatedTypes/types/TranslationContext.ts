@@ -7,17 +7,17 @@
  */
 export type TranslationContext =
     /**
-     * A translation made using Google Translate API */
-    | "google_translate"
+     * A translation made using a Sayari machine learning model */
+    | "sayari_machine_translation"
     /**
      * A Pinyin transliteration */
     | "pinyin"
     /**
-     * A translation made using a Sayari machine learning model */
-    | "sayari_machine_translation";
+     * A translation made using Google Translate API */
+    | "google_translate";
 
 export const TranslationContext = {
-    GoogleTranslate: "google_translate",
-    Pinyin: "pinyin",
     SayariMachineTranslation: "sayari_machine_translation",
+    Pinyin: "pinyin",
+    GoogleTranslate: "google_translate",
 } as const;

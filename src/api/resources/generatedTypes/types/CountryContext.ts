@@ -7,57 +7,57 @@
  */
 export type CountryContext =
     /**
-     * The entity is the principal entity in a record originating from this country */
-    | "activity_in"
-    /**
-     * The country of an entity address */
-    | "address"
-    /**
      * The reported citizenship of a person */
     | "citizenship"
-    /**
-     * e.g., "Country of incorporation", "Jurisdiction of formation", "Organized under the laws of". A company can operate in multiple countries, but can only have one domicile at a time. */
-    | "domicile"
     /**
      * Rarely used. Converted to "domicile". */
     | "incorporation"
     /**
-     * The entity is mentioned in a record originating from this country */
-    | "mentioned_in"
+     * The reported country of residence of a person */
+    | "residence"
     /**
      * The reported nationality of a person */
     | "nationality"
     /**
-     * The country of origin of a product */
-    | "product_origin"
+     * The country of an entity address */
+    | "address"
     /**
-     * The reported country of residence of a person */
-    | "residence"
+     * The flag state of a vessel. Often changes over time. */
+    | "vessel_flag"
     /**
-     * The country of the consignee/recipient of a shipment */
-    | "shipment_arrival"
+     * e.g., "Country of incorporation", "Jurisdiction of formation", "Organized under the laws of". A company can operate in multiple countries, but can only have one domicile at a time. */
+    | "domicile"
     /**
      * The country a shipment starts in */
     | "shipment_departure"
     /**
+     * The country of the consignee/recipient of a shipment */
+    | "shipment_arrival"
+    /**
      * Any country a shipment moves through between its departure and arrival */
     | "shipment_transit"
     /**
-     * The flag state of a vessel. Often changes over time. */
-    | "vessel_flag";
+     * The entity is the principal entity in a record originating from this country */
+    | "activity_in"
+    /**
+     * The entity is mentioned in a record originating from this country */
+    | "mentioned_in"
+    /**
+     * The country of origin of a product */
+    | "product_origin";
 
 export const CountryContext = {
-    ActivityIn: "activity_in",
-    Address: "address",
     Citizenship: "citizenship",
-    Domicile: "domicile",
     Incorporation: "incorporation",
-    MentionedIn: "mentioned_in",
-    Nationality: "nationality",
-    ProductOrigin: "product_origin",
     Residence: "residence",
-    ShipmentArrival: "shipment_arrival",
-    ShipmentDeparture: "shipment_departure",
-    ShipmentTransit: "shipment_transit",
+    Nationality: "nationality",
+    Address: "address",
     VesselFlag: "vessel_flag",
+    Domicile: "domicile",
+    ShipmentDeparture: "shipment_departure",
+    ShipmentArrival: "shipment_arrival",
+    ShipmentTransit: "shipment_transit",
+    ActivityIn: "activity_in",
+    MentionedIn: "mentioned_in",
+    ProductOrigin: "product_origin",
 } as const;

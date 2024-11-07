@@ -27,7 +27,6 @@ export const Country: core.serialization.Schema<serializers.Country.Raw, Sayari.
     "BDI",
     "BEL",
     "BEN",
-    "BES",
     "BFA",
     "BGD",
     "BGR",
@@ -35,10 +34,12 @@ export const Country: core.serialization.Schema<serializers.Country.Raw, Sayari.
     "BHS",
     "BIH",
     "BLM",
+    "SHN",
     "BLR",
     "BLZ",
     "BMU",
     "BOL",
+    "BES",
     "BRA",
     "BRB",
     "BRN",
@@ -130,6 +131,7 @@ export const Country: core.serialization.Schema<serializers.Country.Raw, Sayari.
     "KIR",
     "KNA",
     "KOR",
+    "UNK",
     "KWT",
     "LAO",
     "LBN",
@@ -195,7 +197,6 @@ export const Country: core.serialization.Schema<serializers.Country.Raw, Sayari.
     "PYF",
     "QAT",
     "REU",
-    "RKS",
     "ROU",
     "RUS",
     "RWA",
@@ -204,7 +205,6 @@ export const Country: core.serialization.Schema<serializers.Country.Raw, Sayari.
     "SEN",
     "SGP",
     "SGS",
-    "SHN",
     "SJM",
     "SLB",
     "SLE",
@@ -241,7 +241,6 @@ export const Country: core.serialization.Schema<serializers.Country.Raw, Sayari.
     "UGA",
     "UKR",
     "UMI",
-    "UNK",
     "URY",
     "USA",
     "UZB",
@@ -254,11 +253,12 @@ export const Country: core.serialization.Schema<serializers.Country.Raw, Sayari.
     "VUT",
     "WLF",
     "WSM",
-    "XXX",
     "YEM",
     "ZAF",
     "ZMB",
     "ZWE",
+    "XXX",
+    "RKS",
 ]);
 
 export declare namespace Country {
@@ -283,7 +283,6 @@ export declare namespace Country {
         | "BDI"
         | "BEL"
         | "BEN"
-        | "BES"
         | "BFA"
         | "BGD"
         | "BGR"
@@ -291,10 +290,12 @@ export declare namespace Country {
         | "BHS"
         | "BIH"
         | "BLM"
+        | "SHN"
         | "BLR"
         | "BLZ"
         | "BMU"
         | "BOL"
+        | "BES"
         | "BRA"
         | "BRB"
         | "BRN"
@@ -386,6 +387,7 @@ export declare namespace Country {
         | "KIR"
         | "KNA"
         | "KOR"
+        | "UNK"
         | "KWT"
         | "LAO"
         | "LBN"
@@ -451,7 +453,6 @@ export declare namespace Country {
         | "PYF"
         | "QAT"
         | "REU"
-        | "RKS"
         | "ROU"
         | "RUS"
         | "RWA"
@@ -460,7 +461,6 @@ export declare namespace Country {
         | "SEN"
         | "SGP"
         | "SGS"
-        | "SHN"
         | "SJM"
         | "SLB"
         | "SLE"
@@ -497,7 +497,6 @@ export declare namespace Country {
         | "UGA"
         | "UKR"
         | "UMI"
-        | "UNK"
         | "URY"
         | "USA"
         | "UZB"
@@ -510,9 +509,10 @@ export declare namespace Country {
         | "VUT"
         | "WLF"
         | "WSM"
-        | "XXX"
         | "YEM"
         | "ZAF"
         | "ZMB"
-        | "ZWE";
+        | "ZWE"
+        | "XXX"
+        | "RKS";
 }
