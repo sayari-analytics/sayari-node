@@ -12,6 +12,9 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "basel_aml",
     "bis_boycott_requester_list",
     "cmic_entity",
+    "controlled_by_eu_sanctioned",
+    "controlled_by_ofac_sdn",
+    "controlled_by_uk_sanctioned",
     "cpi_score",
     "entity_licensed_with_fsb_rf",
     "eu_50_percent_rule",
@@ -56,6 +59,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "law_enforcement_action",
     "meu_list_contractors",
     "military_civil_fusion",
+    "military_civil_fusion_50_percent_rule",
     "ofac_50_percent_rule",
     "ofac_sdn",
     "owned_by_aspi_forced_labor_entity",
@@ -129,6 +133,9 @@ export declare namespace Risk {
         | "basel_aml"
         | "bis_boycott_requester_list"
         | "cmic_entity"
+        | "controlled_by_eu_sanctioned"
+        | "controlled_by_ofac_sdn"
+        | "controlled_by_uk_sanctioned"
         | "cpi_score"
         | "entity_licensed_with_fsb_rf"
         | "eu_50_percent_rule"
@@ -173,6 +180,7 @@ export declare namespace Risk {
         | "law_enforcement_action"
         | "meu_list_contractors"
         | "military_civil_fusion"
+        | "military_civil_fusion_50_percent_rule"
         | "ofac_50_percent_rule"
         | "ofac_sdn"
         | "owned_by_aspi_forced_labor_entity"
