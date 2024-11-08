@@ -8,6 +8,9 @@ export type Risk =
     | "basel_aml"
     | "bis_boycott_requester_list"
     | "cmic_entity"
+    | "controlled_by_eu_sanctioned"
+    | "controlled_by_ofac_sdn"
+    | "controlled_by_uk_sanctioned"
     | "cpi_score"
     | "entity_licensed_with_fsb_rf"
     | "eu_50_percent_rule"
@@ -52,6 +55,7 @@ export type Risk =
     | "law_enforcement_action"
     | "meu_list_contractors"
     | "military_civil_fusion"
+    | "military_civil_fusion_50_percent_rule"
     | "ofac_50_percent_rule"
     | "ofac_sdn"
     | "owned_by_aspi_forced_labor_entity"
@@ -123,6 +127,9 @@ export const Risk = {
     BaselAml: "basel_aml",
     BisBoycottRequesterList: "bis_boycott_requester_list",
     CmicEntity: "cmic_entity",
+    ControlledByEuSanctioned: "controlled_by_eu_sanctioned",
+    ControlledByOfacSdn: "controlled_by_ofac_sdn",
+    ControlledByUkSanctioned: "controlled_by_uk_sanctioned",
     CpiScore: "cpi_score",
     EntityLicensedWithFsbRf: "entity_licensed_with_fsb_rf",
     Eu50PercentRule: "eu_50_percent_rule",
@@ -170,6 +177,7 @@ export const Risk = {
     LawEnforcementAction: "law_enforcement_action",
     MeuListContractors: "meu_list_contractors",
     MilitaryCivilFusion: "military_civil_fusion",
+    MilitaryCivilFusion50PercentRule: "military_civil_fusion_50_percent_rule",
     Ofac50PercentRule: "ofac_50_percent_rule",
     OfacSdn: "ofac_sdn",
     OwnedByAspiForcedLaborEntity: "owned_by_aspi_forced_labor_entity",
