@@ -9,8 +9,8 @@ export interface Shipment {
     type: string;
     buyer: Sayari.SourceOrDestinationEntity[];
     supplier: Sayari.SourceOrDestinationEntity[];
-    arrivalDate?: string;
-    departureDate?: string;
+    arrivalDate?: string[];
+    departureDate?: string[];
     departureAddress?: Sayari.ShipmentAddress;
     arrivalAddress?: Sayari.ShipmentAddress;
     arrivalCountry: Sayari.Country[];

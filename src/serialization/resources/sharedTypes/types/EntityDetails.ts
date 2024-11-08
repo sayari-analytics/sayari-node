@@ -35,8 +35,6 @@ export const EntityDetails: core.serialization.ObjectSchema<serializers.EntityDe
             relationships: core.serialization.lazyObject(() => serializers.EntityRelationships).optional(),
             possiblySameAs: core.serialization.property("possibly_same_as", PossiblySameAs.optional()),
             referencedBy: core.serialization.property("referenced_by", ReferencedBy.optional()),
-            attributeCounts: core.serialization.property("attribute_counts", core.serialization.unknown()),
-            userAttributeCounts: core.serialization.property("user_attribute_counts", core.serialization.unknown()),
         })
         .extend(EmbeddedEntity);
 
@@ -54,7 +52,5 @@ export declare namespace EntityDetails {
         relationships?: serializers.EntityRelationships.Raw | null;
         possibly_same_as?: PossiblySameAs.Raw | null;
         referenced_by?: ReferencedBy.Raw | null;
-        attribute_counts?: unknown;
-        user_attribute_counts?: unknown;
     }
 }

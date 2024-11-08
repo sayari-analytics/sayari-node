@@ -283,9 +283,9 @@ import * as Sayari from "../../../index";
  *                 arrivalAddress: {
  *                     country: "RUS - BRB"
  *                 },
- *                 arrivalDate: "2022-05-25",
+ *                 arrivalDate: ["2022-05-25"],
  *                 arrivalCountry: [],
- *                 departureDate: "2022-05",
+ *                 departureDate: ["2022-05"],
  *                 departureCountry: [Sayari.Country.Usa],
  *                 departureAddress: {
  *                     country: "DEU"

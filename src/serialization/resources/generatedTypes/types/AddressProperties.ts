@@ -27,7 +27,7 @@ export const AddressProperties: core.serialization.ObjectSchema<
     level: core.serialization.string().optional(),
     metroStation: core.serialization.property("metro_station", core.serialization.string().optional()),
     near: core.serialization.string().optional(),
-    normalized: core.serialization.string(),
+    normalized: core.serialization.string().optional(),
     poBox: core.serialization.property("po_box", core.serialization.string().optional()),
     postcode: core.serialization.string().optional(),
     precisionCode: core.serialization.property("precision_code", core.serialization.string().optional()),
@@ -65,7 +65,7 @@ export declare namespace AddressProperties {
         level?: string | null;
         metro_station?: string | null;
         near?: string | null;
-        normalized: string;
+        normalized?: string | null;
         po_box?: string | null;
         postcode?: string | null;
         precision_code?: string | null;

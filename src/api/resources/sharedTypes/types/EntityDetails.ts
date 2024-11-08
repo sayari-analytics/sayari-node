@@ -23,6 +23,4 @@ export interface EntityDetails extends Sayari.EmbeddedEntity {
     relationships?: Sayari.EntityRelationships;
     possiblySameAs?: Sayari.PossiblySameAs;
     referencedBy?: Sayari.ReferencedBy;
-    attributeCounts?: unknown;
-    userAttributeCounts?: unknown;
 }

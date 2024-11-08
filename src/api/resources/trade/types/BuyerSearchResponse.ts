@@ -108,15 +108,15 @@ import * as Sayari from "../../../index";
  *                 userRelationshipCount: {},
  *                 relatedEntitiesCount: 195,
  *                 attributeCounts: {
- *                     "name": 3,
- *                     "business_purpose": 10,
- *                     "identifier": 7,
- *                     "additional_information": 2,
- *                     "country": 2,
- *                     "shares": 1,
- *                     "status": 1,
- *                     "address": 4,
- *                     "financials": 3
+ *                     [Sayari.Attributes.Name]: 3,
+ *                     [Sayari.Attributes.BusinessPurpose]: 10,
+ *                     [Sayari.Attributes.Identifier]: 7,
+ *                     [Sayari.Attributes.AdditionalInformation]: 2,
+ *                     [Sayari.Attributes.Country]: 2,
+ *                     [Sayari.Attributes.Shares]: 1,
+ *                     [Sayari.Attributes.Status]: 1,
+ *                     [Sayari.Attributes.Address]: 4,
+ *                     [Sayari.Attributes.Financials]: 3
  *                 },
  *                 attributeCount: {
  *                     [Sayari.Attributes.Name]: 3,

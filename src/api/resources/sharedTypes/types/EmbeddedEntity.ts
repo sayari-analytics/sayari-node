@@ -43,6 +43,10 @@ export interface EmbeddedEntity {
     attributeCount: Record<Sayari.Attributes, number | undefined>;
     /** Count of user-created attributes for a given [attribute type](/sayari-library/ontology/attributes) */
     userAttributeCount: Record<Sayari.Attributes, number | undefined>;
+    /** Count of attributes for a given [attribute type](/sayari-library/ontology/attributes) */
+    attributeCounts?: Record<Sayari.Attributes, number | undefined>;
+    /** Count of user-created attributes for a given [attribute type](/sayari-library/ontology/attributes) */
+    userAttributeCounts?: Record<Sayari.Attributes, number | undefined>;
     relatedEntitiesCount: number;
     userRelatedEntitiesCount: number;
     userRecordCount: number;

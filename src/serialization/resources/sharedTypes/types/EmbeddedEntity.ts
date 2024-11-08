@@ -47,6 +47,14 @@ export const EmbeddedEntity: core.serialization.ObjectSchema<serializers.Embedde
             "user_attribute_count",
             core.serialization.record(Attributes, core.serialization.number().optional())
         ),
+        attributeCounts: core.serialization.property(
+            "attribute_counts",
+            core.serialization.record(Attributes, core.serialization.number().optional()).optional()
+        ),
+        userAttributeCounts: core.serialization.property(
+            "user_attribute_counts",
+            core.serialization.record(Attributes, core.serialization.number().optional()).optional()
+        ),
         relatedEntitiesCount: core.serialization.property("related_entities_count", core.serialization.number()),
         userRelatedEntitiesCount: core.serialization.property(
             "user_related_entities_count",
@@ -78,6 +86,8 @@ export declare namespace EmbeddedEntity {
         user_relationship_count: RelationshipCount.Raw;
         attribute_count: Record<Attributes.Raw, number | null | undefined>;
         user_attribute_count: Record<Attributes.Raw, number | null | undefined>;
+        attribute_counts?: Record<Attributes.Raw, number | null | undefined> | null;
+        user_attribute_counts?: Record<Attributes.Raw, number | null | undefined> | null;
         related_entities_count: number;
         user_related_entities_count: number;
         user_record_count: number;
