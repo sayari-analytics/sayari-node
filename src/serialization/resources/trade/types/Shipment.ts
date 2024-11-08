@@ -20,8 +20,14 @@ export const Shipment: core.serialization.ObjectSchema<serializers.Shipment.Raw,
         type: core.serialization.string(),
         buyer: core.serialization.list(SourceOrDestinationEntity),
         supplier: core.serialization.list(SourceOrDestinationEntity),
-        arrivalDate: core.serialization.property("arrival_date", core.serialization.string().optional()),
-        departureDate: core.serialization.property("departure_date", core.serialization.string().optional()),
+        arrivalDate: core.serialization.property(
+            "arrival_date",
+            core.serialization.list(core.serialization.string()).optional()
+        ),
+        departureDate: core.serialization.property(
+            "departure_date",
+            core.serialization.list(core.serialization.string()).optional()
+        ),
         departureAddress: core.serialization.property("departure_address", ShipmentAddress.optional()),
         arrivalAddress: core.serialization.property("arrival_address", ShipmentAddress.optional()),
         arrivalCountry: core.serialization.property("arrival_country", core.serialization.list(Country)),
@@ -47,8 +53,8 @@ export declare namespace Shipment {
         type: string;
         buyer: SourceOrDestinationEntity.Raw[];
         supplier: SourceOrDestinationEntity.Raw[];
-        arrival_date?: string | null;
-        departure_date?: string | null;
+        arrival_date?: string[] | null;
+        departure_date?: string[] | null;
         departure_address?: ShipmentAddress.Raw | null;
         arrival_address?: ShipmentAddress.Raw | null;
         arrival_country: Country.Raw[];

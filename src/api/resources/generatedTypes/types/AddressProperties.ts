@@ -35,7 +35,7 @@ export interface AddressProperties {
     metroStation?: string;
     /** Phrases like "in", "near", etc. used after a category phrase, to help with parsing queries like "restaurants in Brooklyn" */
     near?: string;
-    normalized: string;
+    normalized?: string;
     /** Typically found in non-physical (mail-only) addresses */
     poBox?: string;
     /** Postal codes used for mail sorting */

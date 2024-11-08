@@ -8,15 +8,15 @@ import * as core from "../../../../core";
 
 export const Coordinates: core.serialization.ObjectSchema<serializers.Coordinates.Raw, Sayari.Coordinates> =
     core.serialization.object({
-        lat: core.serialization.number(),
-        lng: core.serialization.number(),
+        lat: core.serialization.number().optional(),
+        lng: core.serialization.number().optional(),
         address: core.serialization.string(),
     });
 
 export declare namespace Coordinates {
     interface Raw {
-        lat: number;
-        lng: number;
+        lat?: number | null;
+        lng?: number | null;
         address: string;
     }
 }

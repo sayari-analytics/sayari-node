@@ -12,29 +12,29 @@ import * as Sayari from "../../../index";
  *         offset: 0,
  *         limit: 1,
  *         size: {
- *             count: 64,
+ *             count: 41,
  *             qualifier: Sayari.CountQualifier.Eq
  *         },
  *         next: true,
  *         data: [{
  *                 id: "mGq1lpuqKssNWTjIokuPeA",
  *                 label: "VICTORIA BECKHAM LIMITED",
- *                 degree: 67,
+ *                 degree: 114,
  *                 entityUrl: "/v1/entity/mGq1lpuqKssNWTjIokuPeA",
  *                 pep: false,
- *                 psaId: "695785012897",
- *                 psaCount: 3,
+ *                 psaId: "65455301594691",
+ *                 psaCount: 4,
  *                 sanctioned: false,
  *                 closed: false,
- *                 companyType: "Stock Corporation - Out of State - Stock",
+ *                 companyType: "LADIES FASHION",
  *                 registrationDate: "Incorporated 2008-02-28",
  *                 latestStatus: {
  *                     status: "active",
  *                     date: "2023-08-29"
  *                 },
  *                 tradeCount: {
- *                     "sent": 41,
- *                     "received": 0
+ *                     "sent": 82,
+ *                     "received": 2
  *                 },
  *                 type: Sayari.Entities.Company,
  *                 identifiers: [{
@@ -50,7 +50,7 @@ import * as Sayari from "../../../index";
  *                         type: Sayari.IdentifierType.CaCorporateIdNum,
  *                         label: "Ca Corporate Id Num"
  *                     }],
- *                 addresses: ["202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB", "Unit 33, Ransomes Dock Business Centre, 35-37 Parkgate Road, London SW11 4NP", "SAUNDERS BUILDING, 202 HAMMERSMITH ROAD, HAMMERSMITH, LONDON"],
+ *                 addresses: ["202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB", "Unit 33, Ransomes Dock Business Centre, 35-37 Parkgate Road, London SW11 4NP", "Hammersmith Road, London, W6 7DN"],
  *                 countries: [Sayari.Country.Gbr, Sayari.Country.Usa],
  *                 relationshipCount: {
  *                     [Sayari.Relationships.LinkedTo]: 3,
@@ -58,11 +58,11 @@ import * as Sayari from "../../../index";
  *                     [Sayari.Relationships.ShareholderOf]: 1,
  *                     [Sayari.Relationships.HasShareholder]: 2,
  *                     [Sayari.Relationships.HasRegisteredAgent]: 5,
- *                     [Sayari.Relationships.ShipperOf]: 41,
  *                     [Sayari.Relationships.HasDirector]: 11,
  *                     [Sayari.Relationships.OwnerOf]: 3,
  *                     [Sayari.Relationships.HasFounder]: 1,
- *                     [Sayari.Relationships.ShipsTo]: 1
+ *                     [Sayari.Relationships.ShipsTo]: 5,
+ *                     [Sayari.Relationships.ReceivesFrom]: 1
  *                 },
  *                 sourceCount: {
  *                     "2b618f1996252fe537a6d998ae14c9b2": {
@@ -70,15 +70,19 @@ import * as Sayari from "../../../index";
  *                         label: "UK Corporate Registry Confirmation Statements"
  *                     },
  *                     "2b788dbdf9194ed5a5c309386a6516b1": {
- *                         count: 28,
+ *                         count: 37,
  *                         label: "UK HM Revenue & Customs Traders Database"
  *                     },
  *                     "a447a7b622c4ead6e1caf94983dc2337": {
- *                         count: 6,
+ *                         count: 8,
  *                         label: "USA California Secretary of State"
  *                     },
+ *                     "a7829d9c8999fcaa78af55886da9be06": {
+ *                         count: 43,
+ *                         label: "Turkey Imports & Exports (January 2024 - Present)"
+ *                     },
  *                     "ecdfb3f2ecc8c3797e77d5795a8066ef": {
- *                         count: 35,
+ *                         count: 40,
  *                         label: "UK Corporate Registry"
  *                     },
  *                     "e5de7b52cc88ef4cd1a10e201bdf46ee": {
@@ -86,17 +90,17 @@ import * as Sayari from "../../../index";
  *                         label: "Vietnam Imports & Exports (January 2023 - Present)"
  *                     },
  *                     "2a4fe9a14e332c8f9ded1f8a457c2b89": {
- *                         count: 36,
+ *                         count: 42,
  *                         label: "UK Land Commercial and Corporate Ownership Data (CCOD)"
  *                     },
  *                     "4ea8bac1bed868e1510ffd21842e9551": {
- *                         count: 69,
+ *                         count: 86,
  *                         label: "UK Persons with Significant Control"
  *                     }
  *                 },
  *                 risk: {
  *                     [Sayari.Risk.BaselAml]: {
- *                         value: 4.63,
+ *                         value: 4.28,
  *                         metadata: {
  *                             "country": [
  *                                 "USA"
@@ -105,7 +109,7 @@ import * as Sayari from "../../../index";
  *                         level: Sayari.RiskLevel.Relevant
  *                     },
  *                     [Sayari.Risk.CpiScore]: {
- *                         value: 67,
+ *                         value: 69,
  *                         metadata: {
  *                             "country": [
  *                                 "USA"
@@ -114,46 +118,55 @@ import * as Sayari from "../../../index";
  *                         level: Sayari.RiskLevel.Relevant
  *                     }
  *                 },
+ *                 userAttributeCounts: {},
  *                 userAttributeCount: {},
  *                 userRecordCount: 0,
  *                 userRelatedEntitiesCount: 0,
  *                 userRelationshipCount: {},
- *                 relatedEntitiesCount: 67,
- *                 attributeCount: {
- *                     [Sayari.Attributes.CompanyType]: 2,
+ *                 relatedEntitiesCount: 114,
+ *                 attributeCounts: {
+ *                     [Sayari.Attributes.CompanyType]: 3,
  *                     [Sayari.Attributes.Name]: 2,
  *                     [Sayari.Attributes.BusinessPurpose]: 4,
  *                     [Sayari.Attributes.Identifier]: 3,
  *                     [Sayari.Attributes.AdditionalInformation]: 106,
- *                     [Sayari.Attributes.Country]: 8,
+ *                     [Sayari.Attributes.Country]: 7,
  *                     [Sayari.Attributes.Status]: 5,
- *                     [Sayari.Attributes.Address]: 7
+ *                     [Sayari.Attributes.Address]: 6
+ *                 },
+ *                 attributeCount: {
+ *                     [Sayari.Attributes.CompanyType]: 3,
+ *                     [Sayari.Attributes.Name]: 2,
+ *                     [Sayari.Attributes.BusinessPurpose]: 4,
+ *                     [Sayari.Attributes.Identifier]: 3,
+ *                     [Sayari.Attributes.AdditionalInformation]: 106,
+ *                     [Sayari.Attributes.Country]: 7,
+ *                     [Sayari.Attributes.Status]: 5,
+ *                     [Sayari.Attributes.Address]: 6
  *                 },
  *                 referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1540252800000:4a34442eccf1622995130b194a5d50e7",
  *                 coordinates: [{
- *                         lat: 51.49323,
- *                         lng: -0.22207,
+ *                         lat: 51.49322001798694,
+ *                         lng: -0.2220315859755715,
  *                         address: "202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB"
  *                     }, {
- *                         lat: 51.47943,
- *                         lng: -0.16859,
+ *                         lat: 51.47911101182882,
+ *                         lng: -0.16811097048599777,
  *                         address: "Unit 33, Ransomes Dock Business Centre, 35-37 Parkgate Road, London SW11 4NP"
  *                     }, {
- *                         lat: 51.49323,
- *                         lng: -0.22207,
- *                         address: "SAUNDERS BUILDING, 202 HAMMERSMITH ROAD, HAMMERSMITH, LONDON"
- *                     }, {
- *                         lat: 51.47898,
- *                         lng: -0.16784,
- *                         address: "Ransome's Dock, 35-37 Parkgate Road, London, SW11 4NP"
- *                     }, {
- *                         lat: 51.493080000000006,
- *                         lng: -0.22138000000000002,
+ *                         lat: 51.493835014595135,
+ *                         lng: -0.21932487497451175,
  *                         address: "Hammersmith Road, London, W6 7DN"
  *                     }, {
- *                         lat: 51.49291,
- *                         lng: -0.22579,
+ *                         lat: 53.06030545100003,
+ *                         lng: -1.4104778399999418,
  *                         address: "202 HAMMERSMITH ROAD UNITED KINGDOM"
+ *                     }, {
+ *                         address: "202 HAMMERSMITH ROAD"
+ *                     }, {
+ *                         lat: 51.490490045109766,
+ *                         lng: -0.2455951217808129,
+ *                         address: "202 HAMMERSMITH ROAD BRITISH ISLES"
  *                     }],
  *                 matches: {
  *                     "name": ["<em>VICTORIA</em> <em>BECKHAM</em> <em>LIMITED</em>", "<em>BECKHAM</em> VENTURES <em>LIMITED</em>", "<em>VICTORIA</em> <em>BECKHAM</em> LIMITED", "<em>BECKHAM</em> VENTURES LIMITED"]

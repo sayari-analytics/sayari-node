@@ -11,22 +11,22 @@ import * as Sayari from "../../../index";
  *     {
  *         id: "mGq1lpuqKssNWTjIokuPeA",
  *         label: "VICTORIA BECKHAM LIMITED",
- *         degree: 67,
+ *         degree: 114,
  *         entityUrl: "/entity/mGq1lpuqKssNWTjIokuPeA",
  *         pep: false,
- *         psaId: "695785012897",
- *         psaCount: 3,
+ *         psaId: "65455301594691",
+ *         psaCount: 4,
  *         sanctioned: false,
  *         closed: false,
- *         companyType: "Stock Corporation - Out of State - Stock",
+ *         companyType: "LADIES FASHION",
  *         registrationDate: "Incorporated 2008-02-28",
  *         latestStatus: {
  *             status: "active",
  *             date: "2023-08-29"
  *         },
  *         tradeCount: {
- *             "sent": 41,
- *             "received": 0
+ *             "sent": 82,
+ *             "received": 2
  *         },
  *         type: Sayari.Entities.Company,
  *         identifiers: [{
@@ -42,7 +42,7 @@ import * as Sayari from "../../../index";
  *                 type: Sayari.IdentifierType.CaCorporateIdNum,
  *                 label: "Ca Corporate Id Num"
  *             }],
- *         addresses: ["202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB", "Unit 33, Ransomes Dock Business Centre, 35-37 Parkgate Road, London SW11 4NP", "SAUNDERS BUILDING, 202 HAMMERSMITH ROAD, HAMMERSMITH, LONDON"],
+ *         addresses: ["202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB", "Unit 33, Ransomes Dock Business Centre, 35-37 Parkgate Road, London SW11 4NP", "Hammersmith Road, London, W6 7DN"],
  *         countries: [Sayari.Country.Gbr, Sayari.Country.Usa],
  *         relationshipCount: {
  *             [Sayari.Relationships.LinkedTo]: 3,
@@ -50,11 +50,11 @@ import * as Sayari from "../../../index";
  *             [Sayari.Relationships.ShareholderOf]: 1,
  *             [Sayari.Relationships.HasShareholder]: 2,
  *             [Sayari.Relationships.HasRegisteredAgent]: 5,
- *             [Sayari.Relationships.ShipperOf]: 41,
  *             [Sayari.Relationships.HasDirector]: 11,
  *             [Sayari.Relationships.OwnerOf]: 3,
  *             [Sayari.Relationships.HasFounder]: 1,
- *             [Sayari.Relationships.ShipsTo]: 1
+ *             [Sayari.Relationships.ShipsTo]: 5,
+ *             [Sayari.Relationships.ReceivesFrom]: 1
  *         },
  *         sourceCount: {
  *             "2b618f1996252fe537a6d998ae14c9b2": {
@@ -62,15 +62,19 @@ import * as Sayari from "../../../index";
  *                 label: "UK Corporate Registry Confirmation Statements"
  *             },
  *             "2b788dbdf9194ed5a5c309386a6516b1": {
- *                 count: 28,
+ *                 count: 37,
  *                 label: "UK HM Revenue & Customs Traders Database"
  *             },
  *             "a447a7b622c4ead6e1caf94983dc2337": {
- *                 count: 6,
+ *                 count: 8,
  *                 label: "USA California Secretary of State"
  *             },
+ *             "a7829d9c8999fcaa78af55886da9be06": {
+ *                 count: 43,
+ *                 label: "Turkey Imports & Exports (January 2024 - Present)"
+ *             },
  *             "ecdfb3f2ecc8c3797e77d5795a8066ef": {
- *                 count: 35,
+ *                 count: 40,
  *                 label: "UK Corporate Registry"
  *             },
  *             "e5de7b52cc88ef4cd1a10e201bdf46ee": {
@@ -78,17 +82,17 @@ import * as Sayari from "../../../index";
  *                 label: "Vietnam Imports & Exports (January 2023 - Present)"
  *             },
  *             "2a4fe9a14e332c8f9ded1f8a457c2b89": {
- *                 count: 36,
+ *                 count: 42,
  *                 label: "UK Land Commercial and Corporate Ownership Data (CCOD)"
  *             },
  *             "4ea8bac1bed868e1510ffd21842e9551": {
- *                 count: 69,
+ *                 count: 86,
  *                 label: "UK Persons with Significant Control"
  *             }
  *         },
  *         risk: {
  *             [Sayari.Risk.BaselAml]: {
- *                 value: 4.63,
+ *                 value: 4.28,
  *                 metadata: {
  *                     "country": [
  *                         "USA"
@@ -97,7 +101,7 @@ import * as Sayari from "../../../index";
  *                 level: Sayari.RiskLevel.Relevant
  *             },
  *             [Sayari.Risk.CpiScore]: {
- *                 value: 67,
+ *                 value: 69,
  *                 metadata: {
  *                     "country": [
  *                         "USA"
@@ -106,20 +110,31 @@ import * as Sayari from "../../../index";
  *                 level: Sayari.RiskLevel.Relevant
  *             }
  *         },
+ *         userAttributeCounts: {},
  *         userAttributeCount: {},
  *         userRecordCount: 0,
  *         userRelatedEntitiesCount: 0,
  *         userRelationshipCount: {},
- *         relatedEntitiesCount: 67,
- *         attributeCount: {
- *             [Sayari.Attributes.CompanyType]: 2,
+ *         relatedEntitiesCount: 114,
+ *         attributeCounts: {
+ *             [Sayari.Attributes.CompanyType]: 3,
  *             [Sayari.Attributes.Name]: 2,
  *             [Sayari.Attributes.BusinessPurpose]: 4,
  *             [Sayari.Attributes.Identifier]: 3,
  *             [Sayari.Attributes.AdditionalInformation]: 106,
- *             [Sayari.Attributes.Country]: 8,
+ *             [Sayari.Attributes.Country]: 7,
  *             [Sayari.Attributes.Status]: 5,
- *             [Sayari.Attributes.Address]: 7
+ *             [Sayari.Attributes.Address]: 6
+ *         },
+ *         attributeCount: {
+ *             [Sayari.Attributes.CompanyType]: 3,
+ *             [Sayari.Attributes.Name]: 2,
+ *             [Sayari.Attributes.BusinessPurpose]: 4,
+ *             [Sayari.Attributes.Identifier]: 3,
+ *             [Sayari.Attributes.AdditionalInformation]: 106,
+ *             [Sayari.Attributes.Country]: 7,
+ *             [Sayari.Attributes.Status]: 5,
+ *             [Sayari.Attributes.Address]: 6
  *         },
  *         referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1540252800000:4a34442eccf1622995130b194a5d50e7",
  *         attributes: {
@@ -138,14 +153,14 @@ import * as Sayari from "../../../index";
  *                             toDate: "2014-09-03"
  *                         },
  *                         record: ["2a4fe9a14e332c8f9ded1f8a457c2b89/NGL944625/1560779151522"],
- *                         recordCount: 30
+ *                         recordCount: 34
  *                     }, {
  *                         properties: {
  *                             value: "VICTORIA BECKHAM LIMITED",
  *                             context: "primary"
  *                         },
  *                         record: ["ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1540252800000"],
- *                         recordCount: 157
+ *                         recordCount: 226
  *                     }]
  *             },
  *             address: {
@@ -153,22 +168,37 @@ import * as Sayari from "../../../index";
  *                 limit: 50,
  *                 next: false,
  *                 size: {
- *                     count: 7,
+ *                     count: 6,
  *                     qualifier: Sayari.CountQualifier.Eq
  *                 },
  *                 data: [{
  *                         properties: {
- *                             value: "202 HAMMERSMITH ROAD UNITED KINGDOM",
+ *                             value: "202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB",
+ *                             house: "Saunders Building",
  *                             houseNumber: "202",
  *                             road: "Hammersmith Road",
- *                             country: "United Kingdom",
- *                             x: -0.22579,
- *                             y: 51.49291,
- *                             precisionCode: "G3",
- *                             normalized: "202 HAMMERSMITH KINGDOM RD UNITED"
+ *                             suburb: "Hammersmith",
+ *                             city: "London",
+ *                             postcode: "W6 7DN",
+ *                             country: "GBR",
+ *                             x: -0.2220315859755715,
+ *                             y: 51.49322001798694,
+ *                             precisionCode: "1"
  *                         },
- *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1678752000000"],
- *                         recordCount: 5
+ *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
+ *                         recordCount: 98
+ *                     }, {
+ *                         properties: {
+ *                             value: "202 HAMMERSMITH ROAD BRITISH ISLES",
+ *                             houseNumber: "202",
+ *                             road: "Hammersmith Road British Isles",
+ *                             country: "GBR",
+ *                             x: -0.2455951217808129,
+ *                             y: 51.490490045109766,
+ *                             precisionCode: "5"
+ *                         },
+ *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
+ *                         recordCount: 1
  *                     }, {
  *                         properties: {
  *                             value: "Unit 33, Ransomes Dock Business Centre, 35-37 Parkgate Road, London SW11 4NP",
@@ -178,81 +208,46 @@ import * as Sayari from "../../../index";
  *                             road: "Parkgate Road",
  *                             city: "London",
  *                             postcode: "Sw11 4np",
- *                             x: -0.16859,
- *                             y: 51.47943,
- *                             precisionCode: "S8HPNTSCZA",
- *                             normalized: "33 35 37 4NP BUSINESS CTR DOCK LONDON PARKGATE RANSOMES RD SW11 UNIT"
- *                         },
- *                         record: ["2a4fe9a14e332c8f9ded1f8a457c2b89/BGL137643/1560779151522"],
- *                         recordCount: 36
- *                     }, {
- *                         properties: {
- *                             value: "202 HAMMERSMITH ROAD BRITISH ISLES",
- *                             houseNumber: "202",
- *                             road: "Hammersmith Road British Isles",
- *                             normalized: "202 BRITISH HAMMERSMITH ISLE RD"
- *                         },
- *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
- *                         recordCount: 1
- *                     }, {
- *                         properties: {
- *                             value: "SAUNDERS BUILDING, 202 HAMMERSMITH ROAD, HAMMERSMITH, LONDON",
- *                             house: "Saunders Building",
- *                             houseNumber: "202",
- *                             road: "Hammersmith Road",
- *                             suburb: "Hammersmith",
- *                             city: "London",
- *                             postcode: "W6 7DN",
- *                             x: -0.22207,
- *                             y: 51.49323,
- *                             precisionCode: "S8HPNTSC-A",
- *                             normalized: "202 BUILDING HAMMERSMITH HAMMERSMITH LONDON RD SAUNDERS"
- *                         },
- *                         record: ["2b788dbdf9194ed5a5c309386a6516b1/213bcb98d1409787c3b3f668794fd233/1672444800000"],
- *                         recordCount: 28
- *                     }, {
- *                         properties: {
- *                             value: "Ransome's Dock, 35-37 Parkgate Road, London, SW11 4NP",
- *                             house: "Ransome's Dock",
- *                             houseNumber: "35-37",
- *                             road: "Parkgate Road",
- *                             city: "London",
- *                             postcode: "SW11 4NP",
- *                             x: -0.16784,
- *                             y: 51.47898,
- *                             precisionCode: "S8HPNTSC-A",
- *                             normalized: "35 37 4NP DOCK LONDON PARKGATE RANSOMES RD SW11"
+ *                             country: "GBR",
+ *                             x: -0.16811097048599777,
+ *                             y: 51.47911101182882,
+ *                             precisionCode: "1"
  *                         },
  *                         record: ["4ea8bac1bed868e1510ffd21842e9551/08661308/1560176240192"],
- *                         recordCount: 15
+ *                         recordCount: 57
  *                     }, {
  *                         properties: {
- *                             value: "202 HAMMERSMITH ROAD , LONDON , , UNITED KINGDOM , W6 7DN , GB",
+ *                             value: "202 HAMMERSMITH ROAD UNITED KINGDOM",
  *                             houseNumber: "202",
  *                             road: "Hammersmith Road",
- *                             city: "London",
- *                             postcode: "W6 7dn",
- *                             country: "Gb",
- *                             x: -0.22207,
- *                             y: 51.49323,
- *                             precisionCode: "S8HPNTSCZA",
- *                             normalized: "202 7DN GB HAMMERSMITH KINGDOM LONDON RD UNITED W6"
+ *                             country: "GBR",
+ *                             x: -1.4104778399999418,
+ *                             y: 53.06030545100003,
+ *                             precisionCode: "10"
  *                         },
- *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
- *                         recordCount: 59
+ *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1678752000000"],
+ *                         recordCount: 5
+ *                     }, {
+ *                         properties: {
+ *                             value: "202 HAMMERSMITH ROAD",
+ *                             houseNumber: "202",
+ *                             road: "Hammersmith Road"
+ *                         },
+ *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1717545600000"],
+ *                         recordCount: 2
  *                     }, {
  *                         properties: {
  *                             value: "Hammersmith Road, London, W6 7DN",
  *                             road: "Hammersmith Road",
  *                             city: "London",
  *                             postcode: "W6 7DN",
- *                             x: -0.22138000000000002,
- *                             y: 51.493080000000006,
- *                             precisionCode: "S4-PNTSCZA",
- *                             normalized: "7DN HAMMERSMITH LONDON RD W6"
+ *                             country: "GBR",
+ *                             x: -0.21932487497451175,
+ *                             y: 51.493835014595135,
+ *                             precisionCode: "5"
  *                         },
  *                         record: ["4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1694476800000"],
- *                         recordCount: 8
+ *                         recordCount: 14
  *                     }]
  *             },
  *             identifier: {
@@ -269,14 +264,14 @@ import * as Sayari from "../../../index";
  *                             type: Sayari.IdentifierType.CaCorporateIdNum
  *                         },
  *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
- *                         recordCount: 6
+ *                         recordCount: 8
  *                     }, {
  *                         properties: {
  *                             value: "06517802",
  *                             type: Sayari.IdentifierType.UkCompanyNumber
  *                         },
  *                         record: ["ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1540252800000"],
- *                         recordCount: 126
+ *                         recordCount: 154
  *                     }, {
  *                         properties: {
  *                             value: "6517802",
@@ -299,20 +294,20 @@ import * as Sayari from "../../../index";
  *                             text: "Good"
  *                         },
  *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
- *                         recordCount: 6
+ *                         recordCount: 8
  *                     }, {
  *                         properties: {
  *                             value: Sayari.CompanyStatus.Incorporated,
  *                             date: "2008-02-28"
  *                         },
  *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
- *                         recordCount: 18
+ *                         recordCount: 20
  *                     }, {
  *                         properties: {
  *                             text: "Good"
  *                         },
  *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
- *                         recordCount: 6
+ *                         recordCount: 8
  *                     }, {
  *                         properties: {
  *                             value: Sayari.CompanyStatus.Active,
@@ -320,7 +315,7 @@ import * as Sayari from "../../../index";
  *                             date: "2023-08-29"
  *                         },
  *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
- *                         recordCount: 24
+ *                         recordCount: 28
  *                     }, {
  *                         properties: {
  *                             value: Sayari.CompanyStatus.Registered,
@@ -328,7 +323,7 @@ import * as Sayari from "../../../index";
  *                             date: "2021-08-24"
  *                         },
  *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
- *                         recordCount: 6
+ *                         recordCount: 8
  *                     }]
  *             },
  *             companyType: {
@@ -336,21 +331,27 @@ import * as Sayari from "../../../index";
  *                 limit: 50,
  *                 next: false,
  *                 size: {
- *                     count: 2,
+ *                     count: 3,
  *                     qualifier: Sayari.CountQualifier.Eq
  *                 },
  *                 data: [{
  *                         properties: {
+ *                             value: "LADIES FASHION"
+ *                         },
+ *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1717545600000"],
+ *                         recordCount: 2
+ *                     }, {
+ *                         properties: {
  *                             value: "Stock Corporation - Out of State - Stock"
  *                         },
  *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
- *                         recordCount: 6
+ *                         recordCount: 8
  *                     }, {
  *                         properties: {
  *                             value: "Private Limited Company"
  *                         },
  *                         record: ["4ea8bac1bed868e1510ffd21842e9551/08661308/1560176240192"],
- *                         recordCount: 41
+ *                         recordCount: 49
  *                     }]
  *             },
  *             businessPurpose: {
@@ -368,7 +369,7 @@ import * as Sayari from "../../../index";
  *                             standard: Sayari.BusinessPurposeStandard.Isic4
  *                         },
  *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
- *                         recordCount: 18
+ *                         recordCount: 20
  *                     }, {
  *                         properties: {
  *                             value: "LADIES FASHION"
@@ -381,7 +382,7 @@ import * as Sayari from "../../../index";
  *                             code: "93290"
  *                         },
  *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
- *                         recordCount: 18
+ *                         recordCount: 20
  *                     }, {
  *                         properties: {
  *                             value: "Other amusement and recreation activities",
@@ -389,7 +390,7 @@ import * as Sayari from "../../../index";
  *                             standard: Sayari.BusinessPurposeStandard.Nace2
  *                         },
  *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
- *                         recordCount: 18
+ *                         recordCount: 20
  *                     }]
  *             },
  *             country: {
@@ -397,7 +398,7 @@ import * as Sayari from "../../../index";
  *                 limit: 50,
  *                 next: false,
  *                 size: {
- *                     count: 8,
+ *                     count: 7,
  *                     qualifier: Sayari.CountQualifier.Eq
  *                 },
  *                 data: [{
@@ -405,22 +406,22 @@ import * as Sayari from "../../../index";
  *                             value: Sayari.Country.Gbr,
  *                             context: Sayari.CountryContext.Address
  *                         },
- *                         record: ["9aef3a56aa0ea25404b498dbd8bb447f/06517802/1579014552807"],
- *                         recordCount: 23
+ *                         record: ["4ea8bac1bed868e1510ffd21842e9551/08661308/1560176240192"],
+ *                         recordCount: 195
  *                     }, {
  *                         properties: {
  *                             value: Sayari.Country.Gbr,
  *                             context: Sayari.CountryContext.ActivityIn
  *                         },
  *                         record: ["ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1540252800000"],
- *                         recordCount: 82
+ *                         recordCount: 139
  *                     }, {
  *                         properties: {
  *                             value: Sayari.Country.Gbr,
  *                             context: Sayari.CountryContext.Domicile
  *                         },
  *                         record: ["4ea8bac1bed868e1510ffd21842e9551/ef8cbb3fcc71d09f098f00728df231e8/1694476800000"],
- *                         recordCount: 8
+ *                         recordCount: 14
  *                     }, {
  *                         properties: {
  *                             value: Sayari.Country.Usa,
@@ -428,55 +429,112 @@ import * as Sayari from "../../../index";
  *                             state: "US-DE"
  *                         },
  *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
- *                         recordCount: 6
- *                     }, {
- *                         properties: {
- *                             value: Sayari.Country.Gbr,
- *                             context: Sayari.CountryContext.Address
- *                         },
- *                         record: ["e5de7b52cc88ef4cd1a10e201bdf46ee/{4DC73DBC-FC75-42F3-8A4AAED3254239E1}/1690329600000"],
- *                         recordCount: 41
+ *                         recordCount: 8
  *                     }, {
  *                         properties: {
  *                             value: Sayari.Country.Usa,
  *                             context: Sayari.CountryContext.ActivityIn
  *                         },
  *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
- *                         recordCount: 6
+ *                         recordCount: 8
  *                     }, {
  *                         properties: {
  *                             value: Sayari.Country.Gbr,
  *                             context: Sayari.CountryContext.MentionedIn
  *                         },
  *                         record: ["ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1540252800000"],
- *                         recordCount: 141
+ *                         recordCount: 169
  *                     }, {
  *                         properties: {
  *                             value: Sayari.Country.Usa,
  *                             context: Sayari.CountryContext.MentionedIn
  *                         },
  *                         record: ["9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000"],
- *                         recordCount: 6
+ *                         recordCount: 8
  *                     }]
  *             }
  *         },
  *         possiblySameAs: {
  *             limit: 50,
  *             size: {
- *                 count: 3,
+ *                 count: 4,
  *                 qualifier: Sayari.CountQualifier.Eq
  *             },
  *             offset: 0,
  *             next: false,
  *             data: [{
  *                     entity: {
+ *                         id: "N_TYxQ9tFgAkcQ1GFA9x6Q",
+ *                         label: "VICTORIA BECKHAM",
+ *                         degree: 1,
+ *                         entityUrl: "/entity/N_TYxQ9tFgAkcQ1GFA9x6Q",
+ *                         pep: false,
+ *                         psaId: "~Yw2PEg",
+ *                         psaCount: 10,
+ *                         sanctioned: false,
+ *                         closed: false,
+ *                         tradeCount: {
+ *                             "sent": 0,
+ *                             "received": 0
+ *                         },
+ *                         type: Sayari.Entities.IntellectualProperty,
+ *                         identifiers: [{
+ *                                 value: "RM201601838935",
+ *                                 type: Sayari.IdentifierType.MexTmNo,
+ *                                 label: "Mex Tm No"
+ *                             }, {
+ *                                 value: "1838935",
+ *                                 type: Sayari.WeakIdentifierType.MexTmAppNo,
+ *                                 label: "Mex Tm App No"
+ *                             }, {
+ *                                 value: "1932015",
+ *                                 type: Sayari.WeakIdentifierType.MexTmRegNo,
+ *                                 label: "Mex Tm Reg No"
+ *                             }],
+ *                         addresses: [],
+ *                         countries: [Sayari.Country.Mex],
+ *                         relationshipCount: {
+ *                             [Sayari.Relationships.HasOwner]: 1
+ *                         },
+ *                         sourceCount: {
+ *                             "b9d809b02049993ba8dc2e4c5f7cceca": {
+ *                                 count: 5,
+ *                                 label: "Mexico Industrial Property Trademark Registry (MARCIA)"
+ *                             }
+ *                         },
+ *                         risk: {},
+ *                         userAttributeCounts: {},
+ *                         userAttributeCount: {},
+ *                         userRecordCount: 0,
+ *                         userRelatedEntitiesCount: 0,
+ *                         userRelationshipCount: {},
+ *                         relatedEntitiesCount: 1,
+ *                         attributeCounts: {
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Identifier]: 3,
+ *                             [Sayari.Attributes.AdditionalInformation]: 3,
+ *                             [Sayari.Attributes.Country]: 2,
+ *                             [Sayari.Attributes.Status]: 1
+ *                         },
+ *                         attributeCount: {
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Identifier]: 3,
+ *                             [Sayari.Attributes.AdditionalInformation]: 3,
+ *                             [Sayari.Attributes.Country]: 2,
+ *                             [Sayari.Attributes.Status]: 1
+ *                         },
+ *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201601838935/1590327027286:74e256656669aa44a5671d4f8898917b"
+ *                     },
+ *                     matches: {}
+ *                 }, {
+ *                     entity: {
  *                         id: "NGUTEUTI4YZ6R5d56vgNIw",
  *                         label: "BECKHAM VENTURES INC.",
  *                         degree: 3,
  *                         entityUrl: "/entity/NGUTEUTI4YZ6R5d56vgNIw",
  *                         pep: false,
- *                         psaId: "695785012897",
- *                         psaCount: 3,
+ *                         psaId: "~Yw2PEg",
+ *                         psaCount: 14,
  *                         sanctioned: false,
  *                         closed: false,
  *                         companyType: "FOREIGN BUSINESS CORPORATION",
@@ -498,19 +556,19 @@ import * as Sayari from "../../../index";
  *                         addresses: ["99 WASHINGTON AVE., SUITE 805A, ALBANY, NY, 12201", "511 WEST 25TH STREET, SUITE # 701/7TH FLOOR, NEW YORK, NEW YORK, 10001", "80 STATE STREET, ALBANY, NEW YORK, 12207-2543"],
  *                         countries: [Sayari.Country.Usa],
  *                         relationshipCount: {
+ *                             [Sayari.Relationships.LinkedTo]: 2,
  *                             [Sayari.Relationships.HasOfficer]: 1,
- *                             [Sayari.Relationships.HasRegisteredAgent]: 2,
- *                             [Sayari.Relationships.LinkedTo]: 2
+ *                             [Sayari.Relationships.HasRegisteredAgent]: 2
  *                         },
  *                         sourceCount: {
  *                             "b4d06d4b77f51fab3c77c9653aabdda4": {
- *                                 count: 8,
+ *                                 count: 10,
  *                                 label: "USA New York Corporate Registry (Active Entities)"
  *                             }
  *                         },
  *                         risk: {
  *                             [Sayari.Risk.BaselAml]: {
- *                                 value: 4.63,
+ *                                 value: 4.28,
  *                                 metadata: {
  *                                     "country": [
  *                                         "USA"
@@ -519,7 +577,7 @@ import * as Sayari from "../../../index";
  *                                 level: Sayari.RiskLevel.Relevant
  *                             },
  *                             [Sayari.Risk.CpiScore]: {
- *                                 value: 67,
+ *                                 value: 69,
  *                                 metadata: {
  *                                     "country": [
  *                                         "USA"
@@ -528,20 +586,114 @@ import * as Sayari from "../../../index";
  *                                 level: Sayari.RiskLevel.Relevant
  *                             }
  *                         },
+ *                         userAttributeCounts: {},
  *                         userAttributeCount: {},
  *                         userRecordCount: 0,
  *                         userRelatedEntitiesCount: 0,
  *                         userRelationshipCount: {},
  *                         relatedEntitiesCount: 3,
+ *                         attributeCounts: {
+ *                             [Sayari.Attributes.CompanyType]: 1,
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Identifier]: 1,
+ *                             [Sayari.Attributes.Country]: 4,
+ *                             [Sayari.Attributes.Status]: 1,
+ *                             [Sayari.Attributes.Address]: 4
+ *                         },
  *                         attributeCount: {
  *                             [Sayari.Attributes.CompanyType]: 1,
  *                             [Sayari.Attributes.Name]: 1,
  *                             [Sayari.Attributes.Identifier]: 1,
- *                             [Sayari.Attributes.Country]: 3,
+ *                             [Sayari.Attributes.Country]: 4,
  *                             [Sayari.Attributes.Status]: 1,
- *                             [Sayari.Attributes.Address]: 3
+ *                             [Sayari.Attributes.Address]: 4
  *                         },
  *                         referenceId: "b4d06d4b77f51fab3c77c9653aabdda4/a80e7f4c-c219-437b-9941-32d89ea5885a/1560542045043:15d813b260619393762864f22d3c5b2d"
+ *                     },
+ *                     matches: {}
+ *                 }, {
+ *                     entity: {
+ *                         id: "j0jZ36AOCjyAEu2_6wbETw",
+ *                         label: "VICTORIA BECKHAM LTD",
+ *                         degree: 0,
+ *                         entityUrl: "/entity/j0jZ36AOCjyAEu2_6wbETw",
+ *                         pep: false,
+ *                         psaId: "~Yw2PEg",
+ *                         psaCount: 14,
+ *                         sanctioned: false,
+ *                         closed: false,
+ *                         companyType: "Soci\u00E9t\u00E9 \u00E9trang\u00E8re non immatricul\u00E9e au RCS ",
+ *                         registrationDate: " 2017-04-01",
+ *                         latestStatus: {
+ *                             status: "active",
+ *                             date: "2017-04-01"
+ *                         },
+ *                         tradeCount: {
+ *                             "sent": 0,
+ *                             "received": 0
+ *                         },
+ *                         type: Sayari.Entities.Company,
+ *                         identifiers: [{
+ *                                 value: "829 099 316",
+ *                                 type: Sayari.IdentifierType.FraSiren,
+ *                                 label: "Fra Siren"
+ *                             }],
+ *                         addresses: ["35-37 PARKGATE ROAD"],
+ *                         countries: [Sayari.Country.Fra, Sayari.Country.Gbr],
+ *                         relationshipCount: {},
+ *                         sourceCount: {
+ *                             "b67ab545f3ddc960d272d11ec5952665": {
+ *                                 count: 4,
+ *                                 label: "France Sirene/Infogreffe Commercial Registries"
+ *                             }
+ *                         },
+ *                         risk: {
+ *                             [Sayari.Risk.BaselAml]: {
+ *                                 value: 3.67,
+ *                                 metadata: {
+ *                                     "country": [
+ *                                         "GBR"
+ *                                     ]
+ *                                 },
+ *                                 level: Sayari.RiskLevel.Relevant
+ *                             },
+ *                             [Sayari.Risk.CpiScore]: {
+ *                                 value: 71,
+ *                                 metadata: {
+ *                                     "country": [
+ *                                         "GBR"
+ *                                     ]
+ *                                 },
+ *                                 level: Sayari.RiskLevel.Relevant
+ *                             }
+ *                         },
+ *                         userAttributeCounts: {},
+ *                         userAttributeCount: {},
+ *                         userRecordCount: 0,
+ *                         userRelatedEntitiesCount: 0,
+ *                         userRelationshipCount: {},
+ *                         relatedEntitiesCount: 0,
+ *                         attributeCounts: {
+ *                             [Sayari.Attributes.CompanyType]: 1,
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.BusinessPurpose]: 2,
+ *                             [Sayari.Attributes.Identifier]: 1,
+ *                             [Sayari.Attributes.AdditionalInformation]: 1,
+ *                             [Sayari.Attributes.Country]: 3,
+ *                             [Sayari.Attributes.Status]: 2,
+ *                             [Sayari.Attributes.Address]: 1
+ *                         },
+ *                         attributeCount: {
+ *                             [Sayari.Attributes.CompanyType]: 1,
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.BusinessPurpose]: 2,
+ *                             [Sayari.Attributes.Identifier]: 1,
+ *                             [Sayari.Attributes.AdditionalInformation]: 1,
+ *                             [Sayari.Attributes.Country]: 3,
+ *                             [Sayari.Attributes.Status]: 2,
+ *                             [Sayari.Attributes.Address]: 1
+ *                         },
+ *                         referenceId: "b67ab545f3ddc960d272d11ec5952665/829099316/1591105044949:7d86f50bb976ee542fcfac7bd17b6cca"
  *                     },
  *                     matches: {}
  *                 }, {
@@ -551,8 +703,8 @@ import * as Sayari from "../../../index";
  *                         degree: 1,
  *                         entityUrl: "/entity/Fv6k3Wmcq8fKdLoDLQM_Xw",
  *                         pep: false,
- *                         psaId: "695785012897",
- *                         psaCount: 3,
+ *                         psaId: "~Yw2PEg",
+ *                         psaCount: 14,
  *                         sanctioned: false,
  *                         closed: false,
  *                         companyType: "GENERAL",
@@ -580,7 +732,7 @@ import * as Sayari from "../../../index";
  *                         },
  *                         risk: {
  *                             [Sayari.Risk.BaselAml]: {
- *                                 value: 4.63,
+ *                                 value: 4.28,
  *                                 metadata: {
  *                                     "country": [
  *                                         "USA"
@@ -589,7 +741,7 @@ import * as Sayari from "../../../index";
  *                                 level: Sayari.RiskLevel.Relevant
  *                             },
  *                             [Sayari.Risk.CpiScore]: {
- *                                 value: 67,
+ *                                 value: 69,
  *                                 metadata: {
  *                                     "country": [
  *                                         "USA"
@@ -598,11 +750,19 @@ import * as Sayari from "../../../index";
  *                                 level: Sayari.RiskLevel.Relevant
  *                             }
  *                         },
+ *                         userAttributeCounts: {},
  *                         userAttributeCount: {},
  *                         userRecordCount: 0,
  *                         userRelatedEntitiesCount: 0,
  *                         userRelationshipCount: {},
  *                         relatedEntitiesCount: 1,
+ *                         attributeCounts: {
+ *                             [Sayari.Attributes.CompanyType]: 1,
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Identifier]: 1,
+ *                             [Sayari.Attributes.Country]: 2,
+ *                             [Sayari.Attributes.Status]: 1
+ *                         },
  *                         attributeCount: {
  *                             [Sayari.Attributes.CompanyType]: 1,
  *                             [Sayari.Attributes.Name]: 1,
@@ -615,13 +775,202 @@ import * as Sayari from "../../../index";
  *                     matches: {}
  *                 }, {
  *                     entity: {
- *                         id: "EINtsur0kjyyS7w7ObvhBA",
- *                         label: "VICTORIA BECKHAM LIMITED",
- *                         degree: 1,
- *                         entityUrl: "/entity/EINtsur0kjyyS7w7ObvhBA",
+ *                         id: "ds5rQ3rMIeoN3xZUzVyVNQ",
+ *                         label: "VICTORIA BECKHAM",
+ *                         degree: 3,
+ *                         entityUrl: "/entity/ds5rQ3rMIeoN3xZUzVyVNQ",
  *                         pep: false,
- *                         psaId: "695785012897",
- *                         psaCount: 3,
+ *                         psaId: "~Yw2PEg",
+ *                         psaCount: 10,
+ *                         sanctioned: false,
+ *                         closed: false,
+ *                         tradeCount: {
+ *                             "sent": 0,
+ *                             "received": 0
+ *                         },
+ *                         type: Sayari.Entities.Person,
+ *                         identifiers: [],
+ *                         addresses: ["C/O LEE & THOMPSON LLP, 4 GEE'S COURT, ST-CHRISTOPHER'S PLACE"],
+ *                         countries: [Sayari.Country.Mex, Sayari.Country.Usa],
+ *                         relationshipCount: {
+ *                             [Sayari.Relationships.OwnerOf]: 3
+ *                         },
+ *                         sourceCount: {
+ *                             "b9d809b02049993ba8dc2e4c5f7cceca": {
+ *                                 count: 8,
+ *                                 label: "Mexico Industrial Property Trademark Registry (MARCIA)"
+ *                             }
+ *                         },
+ *                         risk: {
+ *                             [Sayari.Risk.BaselAml]: {
+ *                                 value: 4.28,
+ *                                 metadata: {
+ *                                     "country": [
+ *                                         "USA"
+ *                                     ]
+ *                                 },
+ *                                 level: Sayari.RiskLevel.Relevant
+ *                             },
+ *                             [Sayari.Risk.CpiScore]: {
+ *                                 value: 69,
+ *                                 metadata: {
+ *                                     "country": [
+ *                                         "USA"
+ *                                     ]
+ *                                 },
+ *                                 level: Sayari.RiskLevel.Relevant
+ *                             }
+ *                         },
+ *                         userAttributeCounts: {},
+ *                         userAttributeCount: {},
+ *                         userRecordCount: 0,
+ *                         userRelatedEntitiesCount: 0,
+ *                         userRelationshipCount: {},
+ *                         relatedEntitiesCount: 3,
+ *                         attributeCounts: {
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Country]: 2,
+ *                             [Sayari.Attributes.Address]: 1
+ *                         },
+ *                         attributeCount: {
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Country]: 2,
+ *                             [Sayari.Attributes.Address]: 1
+ *                         },
+ *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201601838933/1590326996292:e8a8042f374e3dc41f62621f66357db2"
+ *                     },
+ *                     matches: {}
+ *                 }, {
+ *                     entity: {
+ *                         id: "cEvJAm9mwH9QICXrkx_Cdg",
+ *                         label: "VICTORIA BECKHAM",
+ *                         degree: 1,
+ *                         entityUrl: "/entity/cEvJAm9mwH9QICXrkx_Cdg",
+ *                         pep: false,
+ *                         psaId: "~Yw2PEg",
+ *                         psaCount: 10,
+ *                         sanctioned: false,
+ *                         closed: false,
+ *                         tradeCount: {
+ *                             "sent": 0,
+ *                             "received": 0
+ *                         },
+ *                         type: Sayari.Entities.IntellectualProperty,
+ *                         identifiers: [{
+ *                                 value: "RM200901021433",
+ *                                 type: Sayari.IdentifierType.MexTmNo,
+ *                                 label: "Mex Tm No"
+ *                             }, {
+ *                                 value: "1021433",
+ *                                 type: Sayari.WeakIdentifierType.MexTmAppNo,
+ *                                 label: "Mex Tm App No"
+ *                             }],
+ *                         addresses: [],
+ *                         countries: [Sayari.Country.Mex],
+ *                         relationshipCount: {
+ *                             [Sayari.Relationships.HasOwner]: 1
+ *                         },
+ *                         sourceCount: {
+ *                             "b9d809b02049993ba8dc2e4c5f7cceca": {
+ *                                 count: 4,
+ *                                 label: "Mexico Industrial Property Trademark Registry (MARCIA)"
+ *                             }
+ *                         },
+ *                         risk: {},
+ *                         userAttributeCounts: {},
+ *                         userAttributeCount: {},
+ *                         userRecordCount: 0,
+ *                         userRelatedEntitiesCount: 0,
+ *                         userRelationshipCount: {},
+ *                         relatedEntitiesCount: 1,
+ *                         attributeCounts: {
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Country]: 2,
+ *                             [Sayari.Attributes.Identifier]: 2,
+ *                             [Sayari.Attributes.AdditionalInformation]: 3
+ *                         },
+ *                         attributeCount: {
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Country]: 2,
+ *                             [Sayari.Attributes.Identifier]: 2,
+ *                             [Sayari.Attributes.AdditionalInformation]: 3
+ *                         },
+ *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM200901021433/1589580993652:90376816c6039ba02628d4db100fc79f"
+ *                     },
+ *                     matches: {}
+ *                 }, {
+ *                     entity: {
+ *                         id: "b7MxKFvXVzwmGsRiCtbpyA",
+ *                         label: "VICTORIA BECKHAM",
+ *                         degree: 1,
+ *                         entityUrl: "/entity/b7MxKFvXVzwmGsRiCtbpyA",
+ *                         pep: false,
+ *                         psaId: "~Yw2PEg",
+ *                         psaCount: 10,
+ *                         sanctioned: false,
+ *                         closed: false,
+ *                         tradeCount: {
+ *                             "sent": 0,
+ *                             "received": 0
+ *                         },
+ *                         type: Sayari.Entities.IntellectualProperty,
+ *                         identifiers: [{
+ *                                 value: "RM201601838934",
+ *                                 type: Sayari.IdentifierType.MexTmNo,
+ *                                 label: "Mex Tm No"
+ *                             }, {
+ *                                 value: "1838934",
+ *                                 type: Sayari.WeakIdentifierType.MexTmAppNo,
+ *                                 label: "Mex Tm App No"
+ *                             }, {
+ *                                 value: "1932014",
+ *                                 type: Sayari.WeakIdentifierType.MexTmRegNo,
+ *                                 label: "Mex Tm Reg No"
+ *                             }],
+ *                         addresses: [],
+ *                         countries: [Sayari.Country.Mex],
+ *                         relationshipCount: {
+ *                             [Sayari.Relationships.HasOwner]: 1
+ *                         },
+ *                         sourceCount: {
+ *                             "b9d809b02049993ba8dc2e4c5f7cceca": {
+ *                                 count: 5,
+ *                                 label: "Mexico Industrial Property Trademark Registry (MARCIA)"
+ *                             }
+ *                         },
+ *                         risk: {},
+ *                         userAttributeCounts: {},
+ *                         userAttributeCount: {},
+ *                         userRecordCount: 0,
+ *                         userRelatedEntitiesCount: 0,
+ *                         userRelationshipCount: {},
+ *                         relatedEntitiesCount: 1,
+ *                         attributeCounts: {
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Identifier]: 3,
+ *                             [Sayari.Attributes.AdditionalInformation]: 3,
+ *                             [Sayari.Attributes.Country]: 2,
+ *                             [Sayari.Attributes.Status]: 1
+ *                         },
+ *                         attributeCount: {
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Identifier]: 3,
+ *                             [Sayari.Attributes.AdditionalInformation]: 3,
+ *                             [Sayari.Attributes.Country]: 2,
+ *                             [Sayari.Attributes.Status]: 1
+ *                         },
+ *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201601838934/1590327029874:8bbf00ad8adcb3f371a01e15dea7a1ff"
+ *                     },
+ *                     matches: {}
+ *                 }, {
+ *                     entity: {
+ *                         id: "4xZqQ4O_vwd8eP-CmRA8XA",
+ *                         label: "Victoria Beckham Limited",
+ *                         degree: 3,
+ *                         entityUrl: "/entity/4xZqQ4O_vwd8eP-CmRA8XA",
+ *                         pep: false,
+ *                         psaId: "~Yw2PEg",
+ *                         psaCount: 14,
  *                         sanctioned: false,
  *                         closed: false,
  *                         tradeCount: {
@@ -630,48 +979,34 @@ import * as Sayari from "../../../index";
  *                         },
  *                         type: Sayari.Entities.Company,
  *                         identifiers: [],
- *                         addresses: ["ST CHRISTOPHER'S PLACE   NUM. EXT. 4 GEE'S COURT NUM. INT. C/O LEE & THOMPSON LLP"],
- *                         countries: [Sayari.Country.Gbr, Sayari.Country.Mex],
+ *                         addresses: [],
+ *                         countries: [Sayari.Country.Gbr],
  *                         relationshipCount: {
- *                             [Sayari.Relationships.OwnerOf]: 1
+ *                             [Sayari.Relationships.HasLegalRepresentative]: 1,
+ *                             [Sayari.Relationships.OwnerOf]: 2
  *                         },
  *                         sourceCount: {
- *                             "b9d809b02049993ba8dc2e4c5f7cceca": {
- *                                 count: 16,
- *                                 label: "Mexico Industrial Property Trademark Registry (MARCIA)"
+ *                             "542ad2352af9ce07202a2f34d402d5bf": {
+ *                                 count: 2,
+ *                                 label: "UK Intellectual Property Office Trademark Journal"
  *                             }
  *                         },
- *                         risk: {
- *                             [Sayari.Risk.BaselAml]: {
- *                                 value: 3.99,
- *                                 metadata: {
- *                                     "country": [
- *                                         "GBR"
- *                                     ]
- *                                 },
- *                                 level: Sayari.RiskLevel.Relevant
- *                             },
- *                             [Sayari.Risk.CpiScore]: {
- *                                 value: 78,
- *                                 metadata: {
- *                                     "country": [
- *                                         "GBR"
- *                                     ]
- *                                 },
- *                                 level: Sayari.RiskLevel.Relevant
- *                             }
- *                         },
+ *                         risk: {},
+ *                         userAttributeCounts: {},
  *                         userAttributeCount: {},
  *                         userRecordCount: 0,
  *                         userRelatedEntitiesCount: 0,
  *                         userRelationshipCount: {},
- *                         relatedEntitiesCount: 1,
+ *                         relatedEntitiesCount: 3,
+ *                         attributeCounts: {
+ *                             [Sayari.Attributes.Name]: 1,
+ *                             [Sayari.Attributes.Country]: 1
+ *                         },
  *                         attributeCount: {
  *                             [Sayari.Attributes.Name]: 1,
- *                             [Sayari.Attributes.Address]: 1,
- *                             [Sayari.Attributes.Country]: 2
+ *                             [Sayari.Attributes.Country]: 1
  *                         },
- *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201902324751/1590507065822:5289443ba2cdf59a7c656b77584a49fc"
+ *                         referenceId: "542ad2352af9ce07202a2f34d402d5bf/UK00004079756/1723420800000:b2ae9158c53ea711278ce72cccb2c8b2"
  *                     },
  *                     matches: {}
  *                 }]
@@ -679,462 +1014,486 @@ import * as Sayari from "../../../index";
  *         referencedBy: {
  *             limit: 50,
  *             size: {
- *                 count: 216,
+ *                 count: 298,
  *                 qualifier: Sayari.CountQualifier.Eq
  *             },
  *             offset: 0,
  *             next: true,
  *             data: [{
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{D634B9B1-39E2-4273-8F35AE81130E18D7}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{D634B9B1-39E2-4273-8F35AE81130E18D7}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BD634B9B1-39E2-4273-8F35AE81130E18D7%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BD634B9B1-39E2-4273-8F35AE81130E18D7%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{BFC9056E-9711-49CC-AC6B4F3D19809ABC}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{BFC9056E-9711-49CC-AC6B4F3D19809ABC}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BBFC9056E-9711-49CC-AC6B4F3D19809ABC%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BBFC9056E-9711-49CC-AC6B4F3D19809ABC%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{B6BE3A73-D320-44B8-875BC573F54210FD}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{B6BE3A73-D320-44B8-875BC573F54210FD}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BB6BE3A73-D320-44B8-875BC573F54210FD%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BB6BE3A73-D320-44B8-875BC573F54210FD%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{8A7A08E2-123B-4FAE-94BF66C6F3BA6BEA}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{8A7A08E2-123B-4FAE-94BF66C6F3BA6BEA}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B8A7A08E2-123B-4FAE-94BF66C6F3BA6BEA%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B8A7A08E2-123B-4FAE-94BF66C6F3BA6BEA%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{5A8089A5-891D-43C4-BEA50DCB4D32401E}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{5A8089A5-891D-43C4-BEA50DCB4D32401E}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B5A8089A5-891D-43C4-BEA50DCB4D32401E%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B5A8089A5-891D-43C4-BEA50DCB4D32401E%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{596910C7-D648-4A2C-BFFA77F966A8962D}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{596910C7-D648-4A2C-BFFA77F966A8962D}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B596910C7-D648-4A2C-BFFA77F966A8962D%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B596910C7-D648-4A2C-BFFA77F966A8962D%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{4756305B-2033-40A4-9BD867B6EFA8C9B2}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{4756305B-2033-40A4-9BD867B6EFA8C9B2}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B4756305B-2033-40A4-9BD867B6EFA8C9B2%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B4756305B-2033-40A4-9BD867B6EFA8C9B2%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{32A66456-B070-4F55-8D117D740BED2ECF}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{32A66456-B070-4F55-8D117D740BED2ECF}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B32A66456-B070-4F55-8D117D740BED2ECF%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B32A66456-B070-4F55-8D117D740BED2ECF%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{22B19094-CEDF-4100-BDC2CA091A4FF5A9}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{22B19094-CEDF-4100-BDC2CA091A4FF5A9}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B22B19094-CEDF-4100-BDC2CA091A4FF5A9%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B22B19094-CEDF-4100-BDC2CA091A4FF5A9%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{1AD11C10-D7D6-4504-B5CC9E6177795A0E}/1704240000000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{1AD11C10-D7D6-4504-B5CC9E6177795A0E}/1696118400000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2024-01-03",
- *                         acquisitionDate: "2024-01-03",
+ *                         publicationDate: "2023-10-01",
+ *                         acquisitionDate: "2023-10-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B1AD11C10-D7D6-4504-B5CC9E6177795A0E%7D%2F1704240000000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B1AD11C10-D7D6-4504-B5CC9E6177795A0E%7D%2F1696118400000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{F71CAC67-4F08-48D5-A15EFCA682205705}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{F71CAC67-4F08-48D5-A15EFCA682205705}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BF71CAC67-4F08-48D5-A15EFCA682205705%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BF71CAC67-4F08-48D5-A15EFCA682205705%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{F450EB48-AF31-44EC-92D47886A3CEB625}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{F450EB48-AF31-44EC-92D47886A3CEB625}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BF450EB48-AF31-44EC-92D47886A3CEB625%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BF450EB48-AF31-44EC-92D47886A3CEB625%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{B7F7DA58-63AF-461B-B708FC2C7514355F}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{B7F7DA58-63AF-461B-B708FC2C7514355F}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BB7F7DA58-63AF-461B-B708FC2C7514355F%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BB7F7DA58-63AF-461B-B708FC2C7514355F%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{968CEF6C-F2CA-4298-9D33475268924C3A}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{968CEF6C-F2CA-4298-9D33475268924C3A}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B968CEF6C-F2CA-4298-9D33475268924C3A%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B968CEF6C-F2CA-4298-9D33475268924C3A%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{952E6357-B36F-4802-A5B3E84AAA42CE8E}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{952E6357-B36F-4802-A5B3E84AAA42CE8E}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B952E6357-B36F-4802-A5B3E84AAA42CE8E%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B952E6357-B36F-4802-A5B3E84AAA42CE8E%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{72007C6B-740B-451A-BD4C61114679B8EF}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{72007C6B-740B-451A-BD4C61114679B8EF}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B72007C6B-740B-451A-BD4C61114679B8EF%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B72007C6B-740B-451A-BD4C61114679B8EF%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{70EEEDF9-BD5C-4770-8EF76D52CB6DC0EE}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{70EEEDF9-BD5C-4770-8EF76D52CB6DC0EE}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B70EEEDF9-BD5C-4770-8EF76D52CB6DC0EE%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B70EEEDF9-BD5C-4770-8EF76D52CB6DC0EE%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{5EBBA4A9-153C-4243-86675561CE321275}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{5EBBA4A9-153C-4243-86675561CE321275}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B5EBBA4A9-153C-4243-86675561CE321275%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B5EBBA4A9-153C-4243-86675561CE321275%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{4D2F724B-B98C-4D5D-A98E8ADC8C2C46FF}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{4D2F724B-B98C-4D5D-A98E8ADC8C2C46FF}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B4D2F724B-B98C-4D5D-A98E8ADC8C2C46FF%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B4D2F724B-B98C-4D5D-A98E8ADC8C2C46FF%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{4B4E435B-3975-4345-8177CF444DCF7324}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{4B4E435B-3975-4345-8177CF444DCF7324}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B4B4E435B-3975-4345-8177CF444DCF7324%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B4B4E435B-3975-4345-8177CF444DCF7324%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{44A3E2B5-901D-4360-9DEB8EF35019ED15}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{44A3E2B5-901D-4360-9DEB8EF35019ED15}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B44A3E2B5-901D-4360-9DEB8EF35019ED15%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B44A3E2B5-901D-4360-9DEB8EF35019ED15%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{428CEE8F-F33B-4598-97CE9C6CCDFBF8DD}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{428CEE8F-F33B-4598-97CE9C6CCDFBF8DD}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B428CEE8F-F33B-4598-97CE9C6CCDFBF8DD%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B428CEE8F-F33B-4598-97CE9C6CCDFBF8DD%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{2F726716-BED1-4AE0-A1A616900B61F1E3}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{2F726716-BED1-4AE0-A1A616900B61F1E3}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B2F726716-BED1-4AE0-A1A616900B61F1E3%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B2F726716-BED1-4AE0-A1A616900B61F1E3%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{247A2589-CDBF-47CD-9067FB972808C874}/1698969600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{247A2589-CDBF-47CD-9067FB972808C874}/1688169600000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-11-03",
- *                         acquisitionDate: "2023-11-03",
+ *                         publicationDate: "2023-07-01",
+ *                         acquisitionDate: "2023-07-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B247A2589-CDBF-47CD-9067FB972808C874%7D%2F1698969600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B247A2589-CDBF-47CD-9067FB972808C874%7D%2F1688169600000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{F5C41EC6-EE88-4121-BCAD5AA81E93C00B}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{F5C41EC6-EE88-4121-BCAD5AA81E93C00B}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BF5C41EC6-EE88-4121-BCAD5AA81E93C00B%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BF5C41EC6-EE88-4121-BCAD5AA81E93C00B%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{D6757BC6-2BCF-4D87-A3F53F99025121E8}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{D6757BC6-2BCF-4D87-A3F53F99025121E8}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BD6757BC6-2BCF-4D87-A3F53F99025121E8%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BD6757BC6-2BCF-4D87-A3F53F99025121E8%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{D0885822-D92D-42BE-8CDB4FA889F1E2B4}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{D0885822-D92D-42BE-8CDB4FA889F1E2B4}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BD0885822-D92D-42BE-8CDB4FA889F1E2B4%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BD0885822-D92D-42BE-8CDB4FA889F1E2B4%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{C117BC85-81E6-40D1-A61DF66FD04694AF}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{C117BC85-81E6-40D1-A61DF66FD04694AF}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BC117BC85-81E6-40D1-A61DF66FD04694AF%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BC117BC85-81E6-40D1-A61DF66FD04694AF%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{AD48A141-FA80-4F09-B97229C9DBA3367D}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{AD48A141-FA80-4F09-B97229C9DBA3367D}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BAD48A141-FA80-4F09-B97229C9DBA3367D%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BAD48A141-FA80-4F09-B97229C9DBA3367D%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{A98A356D-E3EE-427D-9FE5E8481C2D5890}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{A98A356D-E3EE-427D-9FE5E8481C2D5890}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BA98A356D-E3EE-427D-9FE5E8481C2D5890%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7BA98A356D-E3EE-427D-9FE5E8481C2D5890%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{988597F4-E258-4342-983E7D7B38C539CB}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{988597F4-E258-4342-983E7D7B38C539CB}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B988597F4-E258-4342-983E7D7B38C539CB%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B988597F4-E258-4342-983E7D7B38C539CB%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{82552661-B818-48A7-BE6962B7C6E89DD2}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{82552661-B818-48A7-BE6962B7C6E89DD2}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B82552661-B818-48A7-BE6962B7C6E89DD2%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B82552661-B818-48A7-BE6962B7C6E89DD2%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{575FEE26-922F-401D-AE815061380066BB}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{575FEE26-922F-401D-AE815061380066BB}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B575FEE26-922F-401D-AE815061380066BB%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B575FEE26-922F-401D-AE815061380066BB%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{4DC73DBC-FC75-42F3-8A4AAED3254239E1}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{4DC73DBC-FC75-42F3-8A4AAED3254239E1}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B4DC73DBC-FC75-42F3-8A4AAED3254239E1%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B4DC73DBC-FC75-42F3-8A4AAED3254239E1%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{3E4B4DE7-CFF4-43B2-831C9CE5D2B21D94}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{3E4B4DE7-CFF4-43B2-831C9CE5D2B21D94}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B3E4B4DE7-CFF4-43B2-831C9CE5D2B21D94%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B3E4B4DE7-CFF4-43B2-831C9CE5D2B21D94%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{3B5D2BEC-8F38-4DC0-86C2C4C20A37176E}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{3B5D2BEC-8F38-4DC0-86C2C4C20A37176E}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B3B5D2BEC-8F38-4DC0-86C2C4C20A37176E%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B3B5D2BEC-8F38-4DC0-86C2C4C20A37176E%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{3059B414-F15D-4D7C-A85D09A31FA0D600}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{3059B414-F15D-4D7C-A85D09A31FA0D600}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B3059B414-F15D-4D7C-A85D09A31FA0D600%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B3059B414-F15D-4D7C-A85D09A31FA0D600%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{2D68218F-1C6A-4809-98AA6B06BB09EF74}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{2D68218F-1C6A-4809-98AA6B06BB09EF74}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B2D68218F-1C6A-4809-98AA6B06BB09EF74%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B2D68218F-1C6A-4809-98AA6B06BB09EF74%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{24036F32-7BD0-4E22-8DB93CAFDD940917}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{24036F32-7BD0-4E22-8DB93CAFDD940917}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B24036F32-7BD0-4E22-8DB93CAFDD940917%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B24036F32-7BD0-4E22-8DB93CAFDD940917%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{186A7E83-88B9-4D9D-B9B7B5E2E41FF046}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{186A7E83-88B9-4D9D-B9B7B5E2E41FF046}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B186A7E83-88B9-4D9D-B9B7B5E2E41FF046%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B186A7E83-88B9-4D9D-B9B7B5E2E41FF046%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }, {
  *                     record: {
- *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{1263162D-9752-4A73-86224B2242C245F5}/1690329600000",
+ *                         id: "e5de7b52cc88ef4cd1a10e201bdf46ee/{1263162D-9752-4A73-86224B2242C245F5}/1680307200000",
  *                         label: "Trade Record from Vietnam Imports & Exports (January 2023 - Present)",
  *                         source: "e5de7b52cc88ef4cd1a10e201bdf46ee",
- *                         publicationDate: "2023-07-26",
- *                         acquisitionDate: "2023-07-26",
+ *                         publicationDate: "2023-04-01",
+ *                         acquisitionDate: "2023-04-01",
  *                         referencesCount: 3,
- *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B1263162D-9752-4A73-86224B2242C245F5%7D%2F1690329600000"
+ *                         recordUrl: "/record/e5de7b52cc88ef4cd1a10e201bdf46ee%2F%7B1263162D-9752-4A73-86224B2242C245F5%7D%2F1680307200000"
  *                     },
  *                     type: Sayari.ReferencedByDataType.Mentions
+ *                 }, {
+ *                     record: {
+ *                         id: "9139b58de1bdb0157a1a1e54e56df6d3/4781466/1725408000000",
+ *                         label: "Company Record from USA California Secretary of State",
+ *                         source: "a447a7b622c4ead6e1caf94983dc2337",
+ *                         publicationDate: "2024-09-04",
+ *                         acquisitionDate: "2024-09-04",
+ *                         referencesCount: 5,
+ *                         recordUrl: "/record/9139b58de1bdb0157a1a1e54e56df6d3%2F4781466%2F1725408000000",
+ *                         sourceUrl: "https://bizfileonline.sos.ca.gov/search/business"
+ *                     },
+ *                     type: Sayari.ReferencedByDataType.About
+ *                 }, {
+ *                     record: {
+ *                         id: "9139b58de1bdb0157a1a1e54e56df6d3/4781466/1717545600000",
+ *                         label: "Company Record from USA California Secretary of State",
+ *                         source: "a447a7b622c4ead6e1caf94983dc2337",
+ *                         publicationDate: "2024-06-05",
+ *                         acquisitionDate: "2024-06-05",
+ *                         referencesCount: 5,
+ *                         recordUrl: "/record/9139b58de1bdb0157a1a1e54e56df6d3%2F4781466%2F1717545600000",
+ *                         sourceUrl: "https://bizfileonline.sos.ca.gov/search/business"
+ *                     },
+ *                     type: Sayari.ReferencedByDataType.About
  *                 }, {
  *                     record: {
  *                         id: "9139b58de1bdb0157a1a1e54e56df6d3/4781466/1709769600000",
@@ -1209,40 +1568,14 @@ import * as Sayari from "../../../index";
  *                     type: Sayari.ReferencedByDataType.About
  *                 }, {
  *                     record: {
- *                         id: "ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1706054400000",
- *                         label: "Company Record from UK Corporate Registry",
- *                         source: "ecdfb3f2ecc8c3797e77d5795a8066ef",
- *                         publicationDate: "2024-01-24",
- *                         acquisitionDate: "2024-01-24",
- *                         referencesCount: 16,
- *                         recordUrl: "/record/ecdfb3f2ecc8c3797e77d5795a8066ef%2F06517802%2F1706054400000",
- *                         sourceUrl: "https://beta.companieshouse.gov.uk/company/"
+ *                         id: "a7829d9c8999fcaa78af55886da9be06/24341453IM001784101/1721606400000",
+ *                         label: "Trade Record from Turkey Imports & Exports (January 2024 - Present)",
+ *                         source: "a7829d9c8999fcaa78af55886da9be06",
+ *                         acquisitionDate: "2024-07-22",
+ *                         referencesCount: 3,
+ *                         recordUrl: "/record/a7829d9c8999fcaa78af55886da9be06%2F24341453IM001784101%2F1721606400000"
  *                     },
- *                     type: Sayari.ReferencedByDataType.About
- *                 }, {
- *                     record: {
- *                         id: "ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1680566400000",
- *                         label: "Company Record from UK Corporate Registry",
- *                         source: "ecdfb3f2ecc8c3797e77d5795a8066ef",
- *                         publicationDate: "2023-04-04",
- *                         acquisitionDate: "2023-04-04",
- *                         referencesCount: 9,
- *                         recordUrl: "/record/ecdfb3f2ecc8c3797e77d5795a8066ef%2F06517802%2F1680566400000",
- *                         sourceUrl: "https://beta.companieshouse.gov.uk/company/"
- *                     },
- *                     type: Sayari.ReferencedByDataType.About
- *                 }, {
- *                     record: {
- *                         id: "ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1677542400000",
- *                         label: "Company Record from UK Corporate Registry",
- *                         source: "ecdfb3f2ecc8c3797e77d5795a8066ef",
- *                         publicationDate: "2023-02-28",
- *                         acquisitionDate: "2023-02-28",
- *                         referencesCount: 9,
- *                         recordUrl: "/record/ecdfb3f2ecc8c3797e77d5795a8066ef%2F06517802%2F1677542400000",
- *                         sourceUrl: "https://beta.companieshouse.gov.uk/company/"
- *                     },
- *                     type: Sayari.ReferencedByDataType.About
+ *                     type: Sayari.ReferencedByDataType.Mentions
  *                 }]
  *         }
  *     }

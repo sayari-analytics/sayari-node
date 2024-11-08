@@ -262,16 +262,16 @@ import * as Sayari from "../../../index";
  *                 userRelationshipCount: {},
  *                 relatedEntitiesCount: 6349,
  *                 attributeCounts: {
- *                     "company_type": 6,
- *                     "name": 2,
- *                     "business_purpose": 11,
- *                     "identifier": 8,
- *                     "additional_information": 2,
- *                     "country": 22,
- *                     "contact": 3,
- *                     "status": 5,
- *                     "address": 20,
- *                     "financials": 1
+ *                     [Sayari.Attributes.CompanyType]: 6,
+ *                     [Sayari.Attributes.Name]: 2,
+ *                     [Sayari.Attributes.BusinessPurpose]: 11,
+ *                     [Sayari.Attributes.Identifier]: 8,
+ *                     [Sayari.Attributes.AdditionalInformation]: 2,
+ *                     [Sayari.Attributes.Country]: 22,
+ *                     [Sayari.Attributes.Contact]: 3,
+ *                     [Sayari.Attributes.Status]: 5,
+ *                     [Sayari.Attributes.Address]: 20,
+ *                     [Sayari.Attributes.Financials]: 1
  *                 },
  *                 attributeCount: {
  *                     [Sayari.Attributes.CompanyType]: 6,
