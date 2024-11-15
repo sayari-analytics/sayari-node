@@ -31,7 +31,7 @@ export interface ResolutionBody {
     nameMinTokens?: number;
     /** Specifies the minimum score required to pass, which controls the strictness of the matching threshold. The default value is 77, and tuned for general use-case accuracy. Increase the value for stricter matching, reduce to loosen. */
     minimumScoreThreshold?: number;
-    /** Enables a name search fallback when either the corporate or supplier profiles fails to find a match. When invoked, the fallback will make a call similar to /search/entity on name only. By default set to true. */
+    /** Enables a name search fallback when either the corporate or supplier profiles fails to find a match. When invoked, the fallback will make a call similar to /search/entity on name only. By default set to false. */
     searchFallback?: boolean;
     /** Specifies the window of similar results returned in the match group. Increase for fewer multiple matches, decrease to open the aperture and allow for more matches. Default is .8 */
     cutoffThreshold?: number;
