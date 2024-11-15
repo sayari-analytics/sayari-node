@@ -80,7 +80,7 @@ export interface Resolution {
      */
     minimumScoreThreshold?: number;
     /**
-     * Enables a name search fallback when either the corporate or supplier profiles fails to find a match. When invoked, the fallback will make a call similar to /search/entity on name only. By default set to true.
+     * Enables a name search fallback when either the corporate or supplier profiles fails to find a match. When invoked, the fallback will make a call similar to /search/entity on name only. By default set to false.
      */
     searchFallback?: boolean;
     /**

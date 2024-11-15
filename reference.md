@@ -310,7 +310,7 @@ await client.auth.getToken({
 <dl>
 <dd>
 
-Retrieve an entity from the database based on the ID
+<Note>To retrieve a L1 Due Dilligence PDF Report. Include 'Accept: application/pdf' in request headers.</Note> Retrieve an entity profile from the database based on the entity ID. This endpoint returns the full profile, entity_summary returns the same payload minus relationships.
 
 </dd>
 </dl>
@@ -393,7 +393,7 @@ await client.entity.getEntity("mGq1lpuqKssNWTjIokuPeA", {
 <dl>
 <dd>
 
-The Entity Summary endpoint returns a smaller entity payload
+The Entity Summary endpoint returns a similar payload, minus relationships.
 
 </dd>
 </dl>

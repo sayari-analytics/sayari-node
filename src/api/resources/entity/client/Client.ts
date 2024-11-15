@@ -29,7 +29,7 @@ export class Entity {
     constructor(protected readonly _options: Entity.Options = {}) {}
 
     /**
-     * Retrieve an entity from the database based on the ID
+     * <Note>To retrieve a L1 Due Dilligence PDF Report. Include 'Accept: application/pdf' in request headers.</Note> Retrieve an entity profile from the database based on the entity ID. This endpoint returns the full profile, entity_summary returns the same payload minus relationships.
      *
      * @param {string} id - Unique identifier of the entity
      * @param {Sayari.GetEntity} request
@@ -331,8 +331,8 @@ export class Entity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.23",
-                "User-Agent": "@sayari/sdk/0.1.23",
+                "X-Fern-SDK-Version": "0.1.24",
+                "User-Agent": "@sayari/sdk/0.1.24",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -432,7 +432,7 @@ export class Entity {
     }
 
     /**
-     * The Entity Summary endpoint returns a smaller entity payload
+     * The Entity Summary endpoint returns a similar payload, minus relationships.
      *
      * @param {string} id - Unique identifier of the entity
      * @param {Entity.RequestOptions} requestOptions - Request-specific configuration.
@@ -461,8 +461,8 @@ export class Entity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.23",
-                "User-Agent": "@sayari/sdk/0.1.23",
+                "X-Fern-SDK-Version": "0.1.24",
+                "User-Agent": "@sayari/sdk/0.1.24",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
