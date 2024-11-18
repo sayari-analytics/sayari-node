@@ -24,7 +24,7 @@ jobs:
       - name: Notify Slack - Compile
         if: always()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Compile* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Compile* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
 
   test:
     runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
       - name: Notify Slack - Test
         if: always()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Test* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Test* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
 
   run-examples:
     name: Run examples (to look for regressions)
@@ -66,7 +66,7 @@ jobs:
       - name: Notify Slack - Run Examples
         if: always()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Run Examples* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Run Examples* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
 
   publish:
     needs: [ compile, test, run-examples ]
@@ -90,4 +90,4 @@ jobs:
       - name: Notify Slack - Publish
         if: always()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Publish* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Publish* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
