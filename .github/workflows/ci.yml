@@ -4,6 +4,10 @@ env:
   CLIENT_ID: ${{ secrets.CLIENT_ID }}
   CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
 
+permissions:
+  contents: read       # Allows read access to the code in the repository
+  secrets: read         # Allows access to repository secrets for the webhook and tokens
+
 on:
   push:
     branches:
