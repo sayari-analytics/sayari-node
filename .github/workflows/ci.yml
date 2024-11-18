@@ -86,8 +86,14 @@ jobs:
     steps:
       - name: Check for PR on the branch
         id: pr_check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_NUMBER=$(gh pr list --head "${{ github.ref_name }}" --state open --json number --jq '.[0].number')
+          # Fetch open PRs for the branch using GitHub API
+          PR_NUMBER=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls?head=${{ github.repository_owner }}:${{ github.ref_name }}&state=open" \
+            | jq '.[0].number // empty')
+
           if [ -n "$PR_NUMBER" ]; then
             echo "This branch has an open pull request: #$PR_NUMBER"
             echo "::set-output name=pr_number::$PR_NUMBER"
@@ -123,9 +129,6 @@ jobs:
 
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
-
-
-
 
   notify-slack-publish:
     name: Notify Slack - Publish Job Completed
