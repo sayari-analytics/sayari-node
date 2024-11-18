@@ -89,23 +89,31 @@ jobs:
           WEBHOOK_URL: ${{ secrets.GH_ACTION_WEBHOOK_URL }}
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          COMMIT_AUTHOR=$(echo "${{ github.event.head_commit.author.name }}")
-          BRANCH=${{ github.ref_name }}
-          JOB_URL="$GITHUB_RUN_URL"
-
-          # Check if there's an associated pull request and get reviewers if available
+          # Use pull request context if available
           if [ "${{ github.event_name }}" == "pull_request" ]; then
+            BRANCH=${{ github.head_ref }}
             PR_NUMBER=${{ github.event.pull_request.number }}
-            REVIEWERS=$(echo "${{ github.event.pull_request.requested_reviewers[*].login }}" | sed 's/ /, @/g')
-            PULL_REQUEST_INFO="Pull-Request-if-any: @${REVIEWERS}"
+            PR_URL=${{ github.event.pull_request.html_url }}
+
+            # Get reviewers if any
+            if [ -n "${{ github.event.pull_request.requested_reviewers }}" ]; then
+              REVIEWERS=$(echo "${{ github.event.pull_request.requested_reviewers[*].login }}" | sed 's/ /, @/g')
+              PULL_REQUEST_INFO="Pull-Request-if-any: @${REVIEWERS} (#${PR_NUMBER})"
+            else
+              PULL_REQUEST_INFO="Pull-Request: #${PR_NUMBER}"
+            fi
           else
+            # Fallback for branch pushes not associated with a PR
+            BRANCH=${{ github.ref_name }}
             PULL_REQUEST_INFO="No Pull Request associated"
           fi
 
-          MESSAGE="CI Build for Branch : *${BRANCH}*\nCommit Author : @${COMMIT_AUTHOR}\nClick [here](${JOB_URL}) for the job URL\n${PULL_REQUEST_INFO}"
+          # Message format
+          MESSAGE="CI Build for Branch : *${BRANCH}*\nCommit Author : @${{ github.actor }}\nClick <${GITHUB_RUN_URL}|here> for the job URL\n${PULL_REQUEST_INFO}"
 
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
+
 
 
   notify-slack-publish:
