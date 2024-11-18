@@ -733,6 +733,9 @@ export type IdentifierType =
      * Mauritius Company File No. */
     | "mus_file_no"
     /**
+     * Mexico Yucatan parcel ID number. Assigned to every parcel and property registered by the Government of the State of Yucatan. */
+    | "mex_yucatan_folio"
+    /**
      * Colombian tax identification number */
     | "col_nit_no"
     /**
@@ -1842,7 +1845,10 @@ export type IdentifierType =
     | "ind_ifsc"
     /**
      * Unique India intellectual property ID number. Assigned to every trademark application submitted to the Controller General of Patents, Designs and Trademarks of the Ministry of Commerce and Industry, Government of India. */
-    | "ind_trademark_submission_ref";
+    | "ind_trademark_submission_ref"
+    /**
+     * Indonesia Trade Internal Shipment ID */
+    | "idn_trade_internal_shipment_id";
 
 export const IdentifierType = {
     CnTianyanchaCompanyId: "cn_tianyancha_company_id",
@@ -2095,6 +2101,7 @@ export const IdentifierType = {
     EspBormeRegId: "esp_borme_reg_id",
     MexTmNo: "mex_tm_no",
     MusFileNo: "mus_file_no",
+    MexYucatanFolio: "mex_yucatan_folio",
     ColNitNo: "col_nit_no",
     JpnCorporateNo: "jpn_corporate_no",
     UsaCgacAgencyCode: "usa_cgac_agency_code",
@@ -2472,4 +2479,5 @@ export const IdentifierType = {
     IndCoopsocRegistrationNumber: "ind_coopsoc_registration_number",
     IndIfsc: "ind_ifsc",
     IndTrademarkSubmissionRef: "ind_trademark_submission_ref",
+    IdnTradeInternalShipmentId: "idn_trade_internal_shipment_id",
 } as const;
