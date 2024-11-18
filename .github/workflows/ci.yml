@@ -89,6 +89,9 @@ jobs:
           WEBHOOK_URL: ${{ secrets.GH_ACTION_WEBHOOK_URL }}
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
+          # Repository name
+          REPOSITORY=${{ github.repository }}
+
           # Use pull request context if available
           if [ "${{ github.event_name }}" == "pull_request" ]; then
             BRANCH=${{ github.head_ref }}
@@ -105,11 +108,16 @@ jobs:
           else
             # Fallback for branch pushes not associated with a PR
             BRANCH=${{ github.ref_name }}
-            PULL_REQUEST_INFO="No Pull Request associated"
+            PULL_REQUEST_INFO=""
           fi
 
           # Message format
-          MESSAGE="CI Build for Branch : *${BRANCH}*\nCommit Author : @${{ github.actor }}\nClick <${GITHUB_RUN_URL}|here> for the job URL\n${PULL_REQUEST_INFO}"
+          MESSAGE="CI Build for Branch : *${BRANCH}* (${REPOSITORY})\nCommit Author : @${{ github.actor }}\nClick <${GITHUB_RUN_URL}|here> for the job URL"
+
+          # Append pull request info only if it exists
+          if [ -n "$PULL_REQUEST_INFO" ]; then
+            MESSAGE="$MESSAGE\n${PULL_REQUEST_INFO}"
+          fi
 
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
