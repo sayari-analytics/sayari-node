@@ -4,7 +4,12 @@ env:
   CLIENT_ID: ${{ secrets.CLIENT_ID }}
   CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *' # Runs every midnight (00:00 UTC)
 
 jobs:
   compile:
@@ -16,6 +21,10 @@ jobs:
         uses: actions/setup-node@v4
       - name: Compile
         run: yarn && yarn build
+      - name: Notify Slack - Compile
+        if: always()
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Compile* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
 
   test:
     runs-on: ubuntu-latest
@@ -25,7 +34,11 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v4
       - name: Compile & Test
-        run: yarn && yarn test    
+        run: yarn && yarn test
+      - name: Notify Slack - Test
+        if: always()
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Test* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
 
   run-examples:
     name: Run examples (to look for regressions)
@@ -39,7 +52,7 @@ jobs:
           node-version: 21
       - name: Build
         run: yarn && yarn build
-      - name: test examples
+      - name: Test examples
         run: |
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running hello world"
@@ -50,6 +63,10 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running trade search"
           node examples/trade-search.mjs
+      - name: Notify Slack - Run Examples
+        if: always()
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Run Examples* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
 
   publish:
     needs: [ compile, test, run-examples ]
@@ -70,3 +87,7 @@ jobs:
           npm publish --access public
         env:
           NPM_TOKEN: ${{ secrets.SDK_NPM_TOKEN }}
+      - name: Notify Slack - Publish
+        if: always()
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Publish* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
