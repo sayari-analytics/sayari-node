@@ -8,6 +8,7 @@ export type Risk =
     | "basel_aml"
     | "bis_boycott_requester_list"
     | "cmic_entity"
+    | "cmic_entity_50_percent_rule"
     | "controlled_by_eu_sanctioned"
     | "controlled_by_ofac_sdn"
     | "controlled_by_uk_sanctioned"
@@ -15,9 +16,18 @@ export type Risk =
     | "entity_licensed_with_fsb_rf"
     | "eu_50_percent_rule"
     | "eu_high_risk_third"
+    | "eu_minority_ownership"
     | "eu_sanctioned"
     | "export_controls"
     | "export_controls_adjacent"
+    | "export_controls_bis_entity"
+    | "export_controls_bis_entity_50_percent_rule"
+    | "export_controls_bis_meu"
+    | "export_controls_bis_meu_50_percent_rule"
+    | "export_controls_section_1260h"
+    | "export_controls_section_1260h_50_percent_rule"
+    | "export_controls_unverified_list"
+    | "export_controls_unverified_list_50_percent_rule"
     | "export_to_sanctioned"
     | "export_to_soe"
     | "exports_bis_high_priority_items"
@@ -57,6 +67,7 @@ export type Risk =
     | "military_civil_fusion"
     | "military_civil_fusion_50_percent_rule"
     | "ofac_50_percent_rule"
+    | "ofac_minority_ownership"
     | "ofac_sdn"
     | "owned_by_aspi_forced_labor_entity"
     | "owned_by_bis_meu_entity"
@@ -117,6 +128,7 @@ export type Risk =
     | "soe_adjacent"
     | "state_owned"
     | "uk_50_percent_rule"
+    | "uk_minority_ownership"
     | "uk_sanctioned"
     | "wro_entity"
     | "wro_entity_adjacent";
@@ -127,6 +139,7 @@ export const Risk = {
     BaselAml: "basel_aml",
     BisBoycottRequesterList: "bis_boycott_requester_list",
     CmicEntity: "cmic_entity",
+    CmicEntity50PercentRule: "cmic_entity_50_percent_rule",
     ControlledByEuSanctioned: "controlled_by_eu_sanctioned",
     ControlledByOfacSdn: "controlled_by_ofac_sdn",
     ControlledByUkSanctioned: "controlled_by_uk_sanctioned",
@@ -134,9 +147,18 @@ export const Risk = {
     EntityLicensedWithFsbRf: "entity_licensed_with_fsb_rf",
     Eu50PercentRule: "eu_50_percent_rule",
     EuHighRiskThird: "eu_high_risk_third",
+    EuMinorityOwnership: "eu_minority_ownership",
     EuSanctioned: "eu_sanctioned",
     ExportControls: "export_controls",
     ExportControlsAdjacent: "export_controls_adjacent",
+    ExportControlsBisEntity: "export_controls_bis_entity",
+    ExportControlsBisEntity50PercentRule: "export_controls_bis_entity_50_percent_rule",
+    ExportControlsBisMeu: "export_controls_bis_meu",
+    ExportControlsBisMeu50PercentRule: "export_controls_bis_meu_50_percent_rule",
+    ExportControlsSection1260H: "export_controls_section_1260h",
+    ExportControlsSection1260H50PercentRule: "export_controls_section_1260h_50_percent_rule",
+    ExportControlsUnverifiedList: "export_controls_unverified_list",
+    ExportControlsUnverifiedList50PercentRule: "export_controls_unverified_list_50_percent_rule",
     ExportToSanctioned: "export_to_sanctioned",
     ExportToSoe: "export_to_soe",
     ExportsBisHighPriorityItems: "exports_bis_high_priority_items",
@@ -179,6 +201,7 @@ export const Risk = {
     MilitaryCivilFusion: "military_civil_fusion",
     MilitaryCivilFusion50PercentRule: "military_civil_fusion_50_percent_rule",
     Ofac50PercentRule: "ofac_50_percent_rule",
+    OfacMinorityOwnership: "ofac_minority_ownership",
     OfacSdn: "ofac_sdn",
     OwnedByAspiForcedLaborEntity: "owned_by_aspi_forced_labor_entity",
     OwnedByBisMeuEntity: "owned_by_bis_meu_entity",
@@ -243,6 +266,7 @@ export const Risk = {
     SoeAdjacent: "soe_adjacent",
     StateOwned: "state_owned",
     Uk50PercentRule: "uk_50_percent_rule",
+    UkMinorityOwnership: "uk_minority_ownership",
     UkSanctioned: "uk_sanctioned",
     WroEntity: "wro_entity",
     WroEntityAdjacent: "wro_entity_adjacent",

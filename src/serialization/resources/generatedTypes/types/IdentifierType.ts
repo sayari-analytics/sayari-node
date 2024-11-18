@@ -258,6 +258,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "esp_borme_reg_id",
         "mex_tm_no",
         "mus_file_no",
+        "mex_yucatan_folio",
         "col_nit_no",
         "jpn_corporate_no",
         "usa_cgac_agency_code",
@@ -635,6 +636,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "ind_coopsoc_registration_number",
         "ind_ifsc",
         "ind_trademark_submission_ref",
+        "idn_trade_internal_shipment_id",
     ]);
 
 export declare namespace IdentifierType {
@@ -889,6 +891,7 @@ export declare namespace IdentifierType {
         | "esp_borme_reg_id"
         | "mex_tm_no"
         | "mus_file_no"
+        | "mex_yucatan_folio"
         | "col_nit_no"
         | "jpn_corporate_no"
         | "usa_cgac_agency_code"
@@ -1265,5 +1268,6 @@ export declare namespace IdentifierType {
         | "ind_company_registration_number"
         | "ind_coopsoc_registration_number"
         | "ind_ifsc"
-        | "ind_trademark_submission_ref";
+        | "ind_trademark_submission_ref"
+        | "idn_trade_internal_shipment_id";
 }
