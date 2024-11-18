@@ -83,11 +83,14 @@ jobs:
     needs: [compile, test, run-examples]
     runs-on: ubuntu-latest
     if: success()
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      WEBHOOK_URL: ${{ secrets.GH_ACTION_WEBHOOK_URL }}
+      GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      REPOSITORY: ${{ github.repository }}
     steps:
       - name: Check for PR on the branch and get reviewers
         id: pr_check
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Fetch open PRs for the branch using GitHub API
           PR_NUMBER=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
@@ -111,10 +114,6 @@ jobs:
           fi
 
       - name: Send Slack Notification
-        env:
-          WEBHOOK_URL: ${{ secrets.GH_ACTION_WEBHOOK_URL }}
-          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          REPOSITORY: ${{ github.repository }}
         run: |
           # Branch, PR, and reviewers info
           BRANCH=${{ github.ref_name }}
@@ -149,20 +148,19 @@ jobs:
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
 
-
   notify-slack-publish:
     name: Notify Slack - Publish Job Completed
     needs: [publish]
     runs-on: ubuntu-latest
     if: success()
+    env:
+      WEBHOOK_URL: ${{ secrets.GH_ACTION_WEBHOOK_URL }}
+      GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - name: Send Slack Notification
-        env:
-          WEBHOOK_URL: ${{ secrets.GH_ACTION_WEBHOOK_URL }}
-          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           BRANCH=${{ github.ref_name }}
-          MESSAGE="Publish job for branch *${BRANCH}* completed successfully. Package is now available. See details here: $GITHUB_RUN_URL"
+          MESSAGE="Publish job for branch *${BRANCH}* completed successfully. Package is now available. See details here: <${GITHUB_RUN_URL}|Click here>"
 
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
