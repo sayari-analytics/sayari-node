@@ -84,7 +84,7 @@ jobs:
     runs-on: ubuntu-latest
     if: success()
     steps:
-      - name: Check for PR on the branch
+      - name: Check for PR on the branch and get reviewers
         id: pr_check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -97,9 +97,17 @@ jobs:
           if [ -n "$PR_NUMBER" ]; then
             echo "This branch has an open pull request: #$PR_NUMBER"
             echo "::set-output name=pr_number::$PR_NUMBER"
+
+            # Fetch reviewers for the PR
+            REVIEWERS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+              "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers" \
+              | jq -r '.users[].login' | sed 's/^/@/g' | paste -sd ", ")
+
+            echo "::set-output name=reviewers::$REVIEWERS"
           else
             echo "No open pull requests for this branch."
             echo "::set-output name=pr_number::"
+            echo "::set-output name=reviewers::"
           fi
 
       - name: Send Slack Notification
@@ -108,9 +116,10 @@ jobs:
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           REPOSITORY: ${{ github.repository }}
         run: |
-          # Branch and PR link information
+          # Branch, PR, and reviewers info
           BRANCH=${{ github.ref_name }}
           PR_NUMBER="${{ steps.pr_check.outputs.pr_number }}"
+          REVIEWERS="${{ steps.pr_check.outputs.reviewers }}"
 
           # Construct PR link if PR_NUMBER is set
           if [ -n "$PR_NUMBER" ]; then
@@ -119,16 +128,27 @@ jobs:
             PULL_REQUEST_INFO=""
           fi
 
+          # Include reviewers if available
+          if [ -n "$REVIEWERS" ]; then
+            REVIEWERS_INFO="Reviewers: $REVIEWERS"
+          else
+            REVIEWERS_INFO=""
+          fi
+
           # Slack message format
           MESSAGE="CI Build for Branch : *${BRANCH}* (${REPOSITORY})\nCommit Author : @${{ github.actor }}\n*Click <${GITHUB_RUN_URL}|here> for the job URL*"
 
-          # Append pull request info only if it exists
+          # Append pull request info and reviewers if they exist
           if [ -n "$PULL_REQUEST_INFO" ]; then
             MESSAGE="$MESSAGE\n${PULL_REQUEST_INFO}"
+          fi
+          if [ -n "$REVIEWERS_INFO" ]; then
+            MESSAGE="$MESSAGE\n${REVIEWERS_INFO}"
           fi
 
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
+
 
   notify-slack-publish:
     name: Notify Slack - Publish Job Completed
