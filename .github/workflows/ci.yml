@@ -84,35 +84,37 @@ jobs:
     runs-on: ubuntu-latest
     if: success()
     steps:
+      - name: Check for PR on the branch
+        id: pr_check
+        run: |
+          PR_NUMBER=$(gh pr list --head "${{ github.ref_name }}" --state open --json number --jq '.[0].number')
+          if [ -n "$PR_NUMBER" ]; then
+            echo "This branch has an open pull request: #$PR_NUMBER"
+            echo "::set-output name=pr_number::$PR_NUMBER"
+          else
+            echo "No open pull requests for this branch."
+            echo "::set-output name=pr_number::"
+          fi
+
       - name: Send Slack Notification
         env:
           WEBHOOK_URL: ${{ secrets.GH_ACTION_WEBHOOK_URL }}
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          REPOSITORY: ${{ github.repository }}
         run: |
-          # Repository name
-          REPOSITORY=${{ github.repository }}
+          # Branch and PR link information
+          BRANCH=${{ github.ref_name }}
+          PR_NUMBER="${{ steps.pr_check.outputs.pr_number }}"
 
-          # Use pull request context if available
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
-            BRANCH=${{ github.head_ref }}
-            PR_NUMBER=${{ github.event.pull_request.number }}
-            PR_URL=${{ github.event.pull_request.html_url }}
-
-            # Get reviewers if any
-            if [ -n "${{ github.event.pull_request.requested_reviewers }}" ]; then
-              REVIEWERS=$(echo "${{ github.event.pull_request.requested_reviewers[*].login }}" | sed 's/ /, @/g')
-              PULL_REQUEST_INFO="Pull-Request-if-any: @${REVIEWERS} (#${PR_NUMBER})"
-            else
-              PULL_REQUEST_INFO="Pull-Request: #${PR_NUMBER}"
-            fi
+          # Construct PR link if PR_NUMBER is set
+          if [ -n "$PR_NUMBER" ]; then
+            PULL_REQUEST_INFO="Pull-Request: <https://github.com/${REPOSITORY}/pull/${PR_NUMBER}|#${PR_NUMBER}>"
           else
-            # Fallback for branch pushes not associated with a PR
-            BRANCH=${{ github.ref_name }}
             PULL_REQUEST_INFO=""
           fi
 
-          # Message format
-          MESSAGE="CI Build for Branch : *${BRANCH}* (${REPOSITORY})\nCommit Author : @${{ github.actor }}\nClick <${GITHUB_RUN_URL}|here> for the job URL"
+          # Slack message format
+          MESSAGE="CI Build for Branch : *${BRANCH}* (${REPOSITORY})\nCommit Author : @${{ github.actor }}\n*Click <${GITHUB_RUN_URL}|here> for the job URL*"
 
           # Append pull request info only if it exists
           if [ -n "$PULL_REQUEST_INFO" ]; then
@@ -121,6 +123,7 @@ jobs:
 
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
+
 
 
 
