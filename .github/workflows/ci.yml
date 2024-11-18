@@ -59,7 +59,7 @@ jobs:
           node examples/trade-search.mjs
 
   publish:
-    needs: [ compile, test, run-examples ]
+    needs: [compile, test, run-examples]
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
@@ -78,9 +78,9 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.SDK_NPM_TOKEN }}
 
-  notify-slack:
-    name: Notify Slack
-    needs: [compile, test, run-examples, publish]
+  notify-slack-ci:
+    name: Notify Slack - CI Jobs Completed
+    needs: [compile, test, run-examples]
     runs-on: ubuntu-latest
     if: success()
     steps:
@@ -97,6 +97,23 @@ jobs:
           else
             MESSAGE="CI Build for branch *${BRANCH}* by *${COMMIT_AUTHOR}* completed successfully. See details here: $GITHUB_RUN_URL"
           fi
+
+          curl -X POST -H 'Content-type: application/json' \
+          --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
+
+  notify-slack-publish:
+    name: Notify Slack - Publish Job Completed
+    needs: [publish]
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Send Slack Notification
+        env:
+          WEBHOOK_URL: ${{ secrets.GH_ACTION_WEBHOOK_URL }}
+          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          BRANCH=${{ github.ref_name }}
+          MESSAGE="Publish job for branch *${BRANCH}* completed successfully. Package is now available. See details here: $GITHUB_RUN_URL"
 
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
