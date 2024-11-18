@@ -10,8 +10,6 @@ permissions:
 
 on:
   push:
-    branches:
-      - main
   schedule:
     - cron: '0 0 * * *' # Runs every midnight (00:00 UTC)
   workflow_dispatch: # Allows manual triggering
@@ -42,12 +40,12 @@ jobs:
         uses: actions/setup-node@v4
       - name: Compile & Test
         run: yarn && yarn test
-      # - name: Notify Slack - Test Job Completed
-      #   if: success()
-      #   run: |
-      #     curl -X POST -H 'Content-type: application/json' \
-      #     --data '{"text":"Test job completed successfully!"}' \
-      #     ${{ secrets.GH_ACTION_WEBHOOK_URL }}
+      - name: Notify Slack - Test Job Completed
+        if: success()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"Test job completed successfully!"}' \
+          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
 
   run-examples:
     name: Run examples (to look for regressions)
@@ -72,12 +70,12 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running trade search"
           node examples/trade-search.mjs
-      # - name: Notify Slack - Run Examples Job Completed
-      #   if: success()
-      #   run: |
-      #     curl -X POST -H 'Content-type: application/json' \
-      #     --data '{"text":"Run examples job completed successfully!"}' \
-      #     ${{ secrets.GH_ACTION_WEBHOOK_URL }}
+      - name: Notify Slack - Run Examples Job Completed
+        if: success()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"Run examples job completed successfully!"}' \
+          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
 
   publish:
     needs: [ compile, test, run-examples ]
@@ -98,9 +96,9 @@ jobs:
           npm publish --access public
         env:
           NPM_TOKEN: ${{ secrets.SDK_NPM_TOKEN }}
-      # - name: Notify Slack - Publish Job Completed
-      #   if: success()
-      #   run: |
-      #     curl -X POST -H 'Content-type: application/json' \
-      #     --data '{"text":"Publish job completed successfully!"}' \
-      #     ${{ secrets.GH_ACTION_WEBHOOK_URL }}
+      - name: Notify Slack - Publish Job Completed
+        if: success()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"Publish job completed successfully!"}' \
+          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
