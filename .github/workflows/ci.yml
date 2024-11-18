@@ -21,10 +21,12 @@ jobs:
         uses: actions/setup-node@v4
       - name: Compile
         run: yarn && yarn build
-      - name: Notify Slack - Compile
-        if: always()
+      - name: Notify Slack - Compile Job Completed
+        if: success()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Compile* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"Compile job completed successfully!"}' \
+          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
 
   test:
     runs-on: ubuntu-latest
@@ -35,10 +37,12 @@ jobs:
         uses: actions/setup-node@v4
       - name: Compile & Test
         run: yarn && yarn test
-      - name: Notify Slack - Test
-        if: always()
+      - name: Notify Slack - Test Job Completed
+        if: success()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Test* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"Test job completed successfully!"}' \
+          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
 
   run-examples:
     name: Run examples (to look for regressions)
@@ -63,10 +67,12 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running trade search"
           node examples/trade-search.mjs
-      - name: Notify Slack - Run Examples
-        if: always()
+      - name: Notify Slack - Run Examples Job Completed
+        if: success()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Run Examples* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"Run examples job completed successfully!"}' \
+          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
 
   publish:
     needs: [ compile, test, run-examples ]
@@ -87,7 +93,9 @@ jobs:
           npm publish --access public
         env:
           NPM_TOKEN: ${{ secrets.SDK_NPM_TOKEN }}
-      - name: Notify Slack - Publish
-        if: always()
+      - name: Notify Slack - Publish Job Completed
+        if: success()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"CI Job *Publish* completed on `${{ github.ref }}` branch with status `${{ job.status }}`"}' https://hooks.slack.com/services/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
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"Publish job completed successfully!"}' \
+          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
