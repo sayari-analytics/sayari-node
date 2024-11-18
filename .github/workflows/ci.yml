@@ -23,12 +23,6 @@ jobs:
         uses: actions/setup-node@v4
       - name: Compile
         run: yarn && yarn build
-      - name: Notify Slack - Compile Job Completed
-        if: success()
-        run: |
-          curl -X POST -H 'Content-type: application/json' \
-          --data '{"text":"Compile job completed successfully!"}' \
-          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
 
   test:
     runs-on: ubuntu-latest
@@ -39,12 +33,6 @@ jobs:
         uses: actions/setup-node@v4
       - name: Compile & Test
         run: yarn && yarn test
-      - name: Notify Slack - Test Job Completed
-        if: success()
-        run: |
-          curl -X POST -H 'Content-type: application/json' \
-          --data '{"text":"Test job completed successfully!"}' \
-          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
 
   run-examples:
     name: Run examples (to look for regressions)
@@ -69,12 +57,6 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "Running trade search"
           node examples/trade-search.mjs
-      - name: Notify Slack - Run Examples Job Completed
-        if: success()
-        run: |
-          curl -X POST -H 'Content-type: application/json' \
-          --data '{"text":"Run examples job completed successfully!"}' \
-          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
 
   publish:
     needs: [ compile, test, run-examples ]
@@ -95,9 +77,26 @@ jobs:
           npm publish --access public
         env:
           NPM_TOKEN: ${{ secrets.SDK_NPM_TOKEN }}
-      - name: Notify Slack - Publish Job Completed
-        if: success()
+
+  notify-slack:
+    name: Notify Slack
+    needs: [compile, test, run-examples, publish]
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Send Slack Notification
+        env:
+          WEBHOOK_URL: ${{ secrets.GH_ACTION_WEBHOOK_URL }}
+          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
+          COMMIT_AUTHOR=$(echo "${{ github.event.head_commit.author.name }}")
+          BRANCH=${{ github.ref_name }}
+
+          if [ "${{ github.event_name }}" == "schedule" ]; then
+            MESSAGE="CI-Nightly-Build completed successfully. See details here: $GITHUB_RUN_URL"
+          else
+            MESSAGE="CI Build for branch *${BRANCH}* by *${COMMIT_AUTHOR}* completed successfully. See details here: $GITHUB_RUN_URL"
+          fi
+
           curl -X POST -H 'Content-type: application/json' \
-          --data '{"text":"Publish job completed successfully!"}' \
-          ${{ secrets.GH_ACTION_WEBHOOK_URL }}
+          --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
