@@ -6,7 +6,7 @@ env:
 
 permissions:
   contents: read       # Allows read access to the code in the repository
-  secrets: read         # Allows access to repository secrets for the webhook and tokens
+  secrets: read        # Allows access to repository secrets for the webhook and tokens
 
 on:
   push:
