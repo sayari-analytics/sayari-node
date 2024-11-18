@@ -91,15 +91,22 @@ jobs:
         run: |
           COMMIT_AUTHOR=$(echo "${{ github.event.head_commit.author.name }}")
           BRANCH=${{ github.ref_name }}
+          JOB_URL="$GITHUB_RUN_URL"
 
-          if [ "${{ github.event_name }}" == "schedule" ]; then
-            MESSAGE="CI-Nightly-Build completed successfully. See details here: $GITHUB_RUN_URL"
+          # Check if there's an associated pull request and get reviewers if available
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            PR_NUMBER=${{ github.event.pull_request.number }}
+            REVIEWERS=$(echo "${{ github.event.pull_request.requested_reviewers[*].login }}" | sed 's/ /, @/g')
+            PULL_REQUEST_INFO="Pull-Request-if-any: @${REVIEWERS}"
           else
-            MESSAGE="CI Build for branch *${BRANCH}* by *${COMMIT_AUTHOR}* completed successfully. See details here: $GITHUB_RUN_URL"
+            PULL_REQUEST_INFO="No Pull Request associated"
           fi
+
+          MESSAGE="CI Build for Branch : *${BRANCH}*\nCommit Author : @${COMMIT_AUTHOR}\nClick [here](${JOB_URL}) for the job URL\n${PULL_REQUEST_INFO}"
 
           curl -X POST -H 'Content-type: application/json' \
           --data "{\"text\":\"$MESSAGE\"}" $WEBHOOK_URL
+
 
   notify-slack-publish:
     name: Notify Slack - Publish Job Completed
