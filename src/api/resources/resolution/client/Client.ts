@@ -76,6 +76,7 @@ export class Resolution {
             minimumScoreThreshold,
             searchFallback,
             cutoffThreshold,
+            candidatePoolSize,
             skipPostProcess,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
@@ -183,6 +184,10 @@ export class Resolution {
 
         if (cutoffThreshold != null) {
             _queryParams["cutoff_threshold"] = cutoffThreshold.toString();
+        }
+
+        if (candidatePoolSize != null) {
+            _queryParams["candidate_pool_size"] = candidatePoolSize.toString();
         }
 
         if (skipPostProcess != null) {

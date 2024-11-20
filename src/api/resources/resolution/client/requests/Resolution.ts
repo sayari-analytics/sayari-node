@@ -88,6 +88,10 @@ export interface Resolution {
      */
     cutoffThreshold?: number;
     /**
+     * Specifies the maximum number of entity candidates considered during search. Default is 50. Higher values increase match pool size but also increase latency.
+     */
+    candidatePoolSize?: number;
+    /**
      * Bypasses the post-processing setps and re-ranking. Useful for debugging. By default set to false, set to true to enable.
      */
     skipPostProcess?: boolean;
