@@ -13,35 +13,29 @@ export type Language =
      * Abkhazian */
     | "ab"
     /**
+     * Avestan */
+    | "ae"
+    /**
      * Afrikaans */
     | "af"
     /**
      * Akan */
     | "ak"
     /**
-     * Albanian */
-    | "sq"
-    /**
      * Amharic */
     | "am"
-    /**
-     * Arabic */
-    | "ar"
     /**
      * Aragonese */
     | "an"
     /**
-     * Armenian */
-    | "hy"
+     * Arabic */
+    | "ar"
     /**
      * Assamese */
     | "as"
     /**
      * Avaric */
     | "av"
-    /**
-     * Avestan */
-    | "ae"
     /**
      * Aymara */
     | "ay"
@@ -52,17 +46,11 @@ export type Language =
      * Bashkir */
     | "ba"
     /**
-     * Bambara */
-    | "bm"
-    /**
-     * Basque */
-    | "eu"
-    /**
      * Belarusian */
     | "be"
     /**
-     * Bengali */
-    | "bn"
+     * Bulgarian */
+    | "bg"
     /**
      * Bihari languages */
     | "bh"
@@ -70,38 +58,29 @@ export type Language =
      * Bislama */
     | "bi"
     /**
-     * Bosnian */
-    | "bs"
+     * Bambara */
+    | "bm"
+    /**
+     * Bengali */
+    | "bn"
+    /**
+     * Tibetan */
+    | "bo"
     /**
      * Breton */
     | "br"
     /**
-     * Bulgarian */
-    | "bg"
-    /**
-     * Burmese */
-    | "my"
+     * Bosnian */
+    | "bs"
     /**
      * Catalan; Valencian */
     | "ca"
     /**
-     * Chamorro */
-    | "ch"
-    /**
      * Chechen */
     | "ce"
     /**
-     * Chinese */
-    | "zh"
-    /**
-     * Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic */
-    | "cu"
-    /**
-     * Chuvash */
-    | "cv"
-    /**
-     * Cornish */
-    | "kw"
+     * Chamorro */
+    | "ch"
     /**
      * Corsican */
     | "co"
@@ -112,17 +91,32 @@ export type Language =
      * Czech */
     | "cs"
     /**
+     * Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic */
+    | "cu"
+    /**
+     * Chuvash */
+    | "cv"
+    /**
+     * Welsh */
+    | "cy"
+    /**
      * Danish */
     | "da"
+    /**
+     * German */
+    | "de"
     /**
      * Divehi; Dhivehi; Maldivian */
     | "dv"
     /**
-     * Dutch; Flemish */
-    | "nl"
-    /**
      * Dzongkha */
     | "dz"
+    /**
+     * Ewe */
+    | "ee"
+    /**
+     * Greek, Modern (1453-) */
+    | "el"
     /**
      * English */
     | "en"
@@ -130,20 +124,29 @@ export type Language =
      * Esperanto */
     | "eo"
     /**
+     * Spanish; Castilian */
+    | "es"
+    /**
      * Estonian */
     | "et"
     /**
-     * Ewe */
-    | "ee"
+     * Basque */
+    | "eu"
     /**
-     * Faroese */
-    | "fo"
+     * Persian */
+    | "fa"
+    /**
+     * Fulah */
+    | "ff"
+    /**
+     * Finnish */
+    | "fi"
     /**
      * Fijian */
     | "fj"
     /**
-     * Finnish */
-    | "fi"
+     * Faroese */
+    | "fo"
     /**
      * French */
     | "fr"
@@ -151,29 +154,14 @@ export type Language =
      * Western Frisian */
     | "fy"
     /**
-     * Fulah */
-    | "ff"
-    /**
-     * Georgian */
-    | "ka"
-    /**
-     * German */
-    | "de"
+     * Irish */
+    | "ga"
     /**
      * Gaelic; Scottish Gaelic */
     | "gd"
     /**
-     * Irish */
-    | "ga"
-    /**
      * Galician */
     | "gl"
-    /**
-     * Manx */
-    | "gv"
-    /**
-     * Greek, Modern (1453-) */
-    | "el"
     /**
      * Guarani */
     | "gn"
@@ -181,17 +169,14 @@ export type Language =
      * Gujarati */
     | "gu"
     /**
-     * Haitian; Haitian Creole */
-    | "ht"
+     * Manx */
+    | "gv"
     /**
      * Hausa */
     | "ha"
     /**
      * Hebrew */
     | "he"
-    /**
-     * Herero */
-    | "hz"
     /**
      * Hindi */
     | "hi"
@@ -202,26 +187,17 @@ export type Language =
      * Croatian */
     | "hr"
     /**
+     * Haitian; Haitian Creole */
+    | "ht"
+    /**
      * Hungarian */
     | "hu"
     /**
-     * Igbo */
-    | "ig"
+     * Armenian */
+    | "hy"
     /**
-     * Icelandic */
-    | "is"
-    /**
-     * Ido */
-    | "io"
-    /**
-     * Sichuan Yi; Nuosu */
-    | "ii"
-    /**
-     * Inuktitut */
-    | "iu"
-    /**
-     * Interlingue; Occidental */
-    | "ie"
+     * Herero */
+    | "hz"
     /**
      * Interlingua (International Auxiliary Language Association) */
     | "ia"
@@ -229,68 +205,89 @@ export type Language =
      * Indonesian */
     | "id"
     /**
+     * Interlingue; Occidental */
+    | "ie"
+    /**
+     * Igbo */
+    | "ig"
+    /**
+     * Sichuan Yi; Nuosu */
+    | "ii"
+    /**
      * Inupiaq */
     | "ik"
+    /**
+     * Ido */
+    | "io"
+    /**
+     * Icelandic */
+    | "is"
     /**
      * Italian */
     | "it"
     /**
-     * Javanese */
-    | "jv"
+     * Inuktitut */
+    | "iu"
     /**
      * Japanese */
     | "ja"
     /**
-     * Kalaallisut; Greenlandic */
-    | "kl"
+     * Javanese */
+    | "jv"
     /**
-     * Kannada */
-    | "kn"
-    /**
-     * Kashmiri */
-    | "ks"
-    /**
-     * Kanuri */
-    | "kr"
-    /**
-     * Kazakh */
-    | "kk"
-    /**
-     * Central Khmer */
-    | "km"
-    /**
-     * Kikuyu; Gikuyu */
-    | "ki"
-    /**
-     * Kinyarwanda */
-    | "rw"
-    /**
-     * Kirghiz; Kyrgyz */
-    | "ky"
-    /**
-     * Komi */
-    | "kv"
+     * Georgian */
+    | "ka"
     /**
      * Kongo */
     | "kg"
     /**
-     * Korean */
-    | "ko"
+     * Kikuyu; Gikuyu */
+    | "ki"
     /**
      * Kuanyama; Kwanyama */
     | "kj"
     /**
+     * Kazakh */
+    | "kk"
+    /**
+     * Kalaallisut; Greenlandic */
+    | "kl"
+    /**
+     * Central Khmer */
+    | "km"
+    /**
+     * Kannada */
+    | "kn"
+    /**
+     * Korean */
+    | "ko"
+    /**
+     * Kanuri */
+    | "kr"
+    /**
+     * Kashmiri */
+    | "ks"
+    /**
      * Kurdish */
     | "ku"
     /**
-     * Lao */
-    | "lo"
+     * Komi */
+    | "kv"
+    /**
+     * Cornish */
+    | "kw"
+    /**
+     * Kirghiz; Kyrgyz */
+    | "ky"
     /**
      * Latin */
     | "la"
     /**
-     * Latvian */
-    | "lv"
+     * Luxembourgish; Letzeburgesch */
+    | "lb"
+    /**
+     * Ganda */
+    | "lg"
     /**
      * Limburgan; Limburger; Limburgish */
     | "li"
@@ -298,29 +295,35 @@ export type Language =
      * Lingala */
     | "ln"
     /**
+     * Lao */
+    | "lo"
+    /**
      * Lithuanian */
     | "lt"
-    /**
-     * Luxembourgish; Letzeburgesch */
-    | "lb"
     /**
      * Luba-Katanga */
     | "lu"
     /**
-     * Ganda */
-    | "lg"
+     * Latvian */
+    | "lv"
     /**
-     * Macedonian */
-    | "mk"
+     * Malagasy */
+    | "mg"
     /**
      * Marshallese */
     | "mh"
     /**
+     * Maori */
+    | "mi"
+    /**
+     * Macedonian */
+    | "mk"
+    /**
      * Malayalam */
     | "ml"
     /**
-     * Maori */
-    | "mi"
+     * Mongolian */
+    | "mn"
     /**
      * Marathi */
     | "mr"
@@ -328,41 +331,41 @@ export type Language =
      * Malay */
     | "ms"
     /**
-     * Malagasy */
-    | "mg"
-    /**
      * Maltese */
     | "mt"
     /**
-     * Mongolian */
-    | "mn"
+     * Burmese */
+    | "my"
     /**
      * Nauru */
     | "na"
     /**
-     * Navajo; Navaho */
-    | "nv"
-    /**
-     * Ndebele, South; South Ndebele */
-    | "nr"
+     * Bokmål, Norwegian; Norwegian Bokmål */
+    | "nb"
     /**
      * Ndebele, North; North Ndebele */
     | "nd"
     /**
+     * Nepali */
+    | "ne"
+    /**
      * Ndonga */
     | "ng"
     /**
-     * Nepali */
-    | "ne"
+     * Dutch; Flemish */
+    | "nl"
     /**
      * Norwegian Nynorsk; Nynorsk, Norwegian */
     | "nn"
     /**
-     * Bokmål, Norwegian; Norwegian Bokmål */
-    | "nb"
-    /**
      * Norwegian */
     | "no"
+    /**
+     * Ndebele, South; South Ndebele */
+    | "nr"
+    /**
+     * Navajo; Navaho */
+    | "nv"
     /**
      * Chichewa; Chewa; Nyanja */
     | "ny"
@@ -373,11 +376,11 @@ export type Language =
      * Ojibwa */
     | "oj"
     /**
-     * Oriya */
-    | "or"
-    /**
      * Oromo */
     | "om"
+    /**
+     * Oriya */
+    | "or"
     /**
      * Ossetian; Ossetic */
     | "os"
@@ -385,20 +388,17 @@ export type Language =
      * Panjabi; Punjabi */
     | "pa"
     /**
-     * Persian */
-    | "fa"
-    /**
      * Pali */
     | "pi"
     /**
      * Polish */
     | "pl"
     /**
-     * Portuguese */
-    | "pt"
-    /**
      * Pushto; Pashto */
     | "ps"
+    /**
+     * Portuguese */
+    | "pt"
     /**
      * Quechua */
     | "qu"
@@ -406,20 +406,32 @@ export type Language =
      * Romansh */
     | "rm"
     /**
-     * Romanian; Moldavian; Moldovan */
-    | "ro"
-    /**
      * Rundi */
     | "rn"
+    /**
+     * Romanian; Moldavian; Moldovan */
+    | "ro"
     /**
      * Russian */
     | "ru"
     /**
-     * Sango */
-    | "sg"
+     * Kinyarwanda */
+    | "rw"
     /**
      * Sanskrit */
     | "sa"
+    /**
+     * Sardinian */
+    | "sc"
+    /**
+     * Sindhi */
+    | "sd"
+    /**
+     * Northern Sami */
+    | "se"
+    /**
+     * Sango */
+    | "sg"
     /**
      * Sinhala; Sinhalese */
     | "si"
@@ -430,29 +442,17 @@ export type Language =
      * Slovenian */
     | "sl"
     /**
-     * Northern Sami */
-    | "se"
-    /**
      * Samoan */
     | "sm"
     /**
      * Shona */
     | "sn"
     /**
-     * Sindhi */
-    | "sd"
-    /**
      * Somali */
     | "so"
     /**
-     * Sotho, Southern */
-    | "st"
-    /**
-     * Spanish; Castilian */
-    | "es"
-    /**
-     * Sardinian */
-    | "sc"
+     * Albanian */
+    | "sq"
     /**
      * Serbian */
     | "sr"
@@ -460,23 +460,20 @@ export type Language =
      * Swati */
     | "ss"
     /**
+     * Sotho, Southern */
+    | "st"
+    /**
      * Sundanese */
     | "su"
-    /**
-     * Swahili */
-    | "sw"
     /**
      * Swedish */
     | "sv"
     /**
-     * Tahitian */
-    | "ty"
+     * Swahili */
+    | "sw"
     /**
      * Tamil */
     | "ta"
-    /**
-     * Tatar */
-    | "tt"
     /**
      * Telugu */
     | "te"
@@ -484,35 +481,38 @@ export type Language =
      * Tajik */
     | "tg"
     /**
-     * Tagalog */
-    | "tl"
-    /**
      * Thai */
     | "th"
-    /**
-     * Tibetan */
-    | "bo"
     /**
      * Tigrinya */
     | "ti"
     /**
-     * Tonga (Tonga Islands) */
-    | "to"
+     * Turkmen */
+    | "tk"
+    /**
+     * Tagalog */
+    | "tl"
     /**
      * Tswana */
     | "tn"
     /**
-     * Tsonga */
-    | "ts"
-    /**
-     * Turkmen */
-    | "tk"
+     * Tonga (Tonga Islands) */
+    | "to"
     /**
      * Turkish */
     | "tr"
     /**
+     * Tsonga */
+    | "ts"
+    /**
+     * Tatar */
+    | "tt"
+    /**
      * Twi */
     | "tw"
+    /**
+     * Tahitian */
+    | "ty"
     /**
      * Uighur; Uyghur */
     | "ug"
@@ -535,9 +535,6 @@ export type Language =
      * Volapük */
     | "vo"
     /**
-     * Welsh */
-    | "cy"
-    /**
      * Walloon */
     | "wa"
     /**
@@ -556,179 +553,182 @@ export type Language =
      * Zhuang; Chuang */
     | "za"
     /**
+     * Chinese */
+    | "zh"
+    /**
      * Zulu */
     | "zu";
 
 export const Language = {
     Aa: "aa",
     Ab: "ab",
+    Ae: "ae",
     Af: "af",
     Ak: "ak",
-    Sq: "sq",
     Am: "am",
-    Ar: "ar",
     An: "an",
-    Hy: "hy",
+    Ar: "ar",
     As: "as",
     Av: "av",
-    Ae: "ae",
     Ay: "ay",
     Az: "az",
     Ba: "ba",
-    Bm: "bm",
-    Eu: "eu",
     Be: "be",
-    Bn: "bn",
+    Bg: "bg",
     Bh: "bh",
     Bi: "bi",
-    Bs: "bs",
+    Bm: "bm",
+    Bn: "bn",
+    Bo: "bo",
     Br: "br",
-    Bg: "bg",
-    My: "my",
+    Bs: "bs",
     Ca: "ca",
-    Ch: "ch",
     Ce: "ce",
-    Zh: "zh",
-    Cu: "cu",
-    Cv: "cv",
-    Kw: "kw",
+    Ch: "ch",
     Co: "co",
     Cr: "cr",
     Cs: "cs",
+    Cu: "cu",
+    Cv: "cv",
+    Cy: "cy",
     Da: "da",
+    De: "de",
     Dv: "dv",
-    Nl: "nl",
     Dz: "dz",
+    Ee: "ee",
+    El: "el",
     En: "en",
     Eo: "eo",
+    Es: "es",
     Et: "et",
-    Ee: "ee",
-    Fo: "fo",
-    Fj: "fj",
+    Eu: "eu",
+    Fa: "fa",
+    Ff: "ff",
     Fi: "fi",
+    Fj: "fj",
+    Fo: "fo",
     Fr: "fr",
     Fy: "fy",
-    Ff: "ff",
-    Ka: "ka",
-    De: "de",
-    Gd: "gd",
     Ga: "ga",
+    Gd: "gd",
     Gl: "gl",
-    Gv: "gv",
-    El: "el",
     Gn: "gn",
     Gu: "gu",
-    Ht: "ht",
+    Gv: "gv",
     Ha: "ha",
     He: "he",
-    Hz: "hz",
     Hi: "hi",
     Ho: "ho",
     Hr: "hr",
+    Ht: "ht",
     Hu: "hu",
-    Ig: "ig",
-    Is: "is",
-    Io: "io",
-    Ii: "ii",
-    Iu: "iu",
-    Ie: "ie",
+    Hy: "hy",
+    Hz: "hz",
     Ia: "ia",
     Id: "id",
+    Ie: "ie",
+    Ig: "ig",
+    Ii: "ii",
     Ik: "ik",
+    Io: "io",
+    Is: "is",
     It: "it",
-    Jv: "jv",
+    Iu: "iu",
     Ja: "ja",
-    Kl: "kl",
-    Kn: "kn",
-    Ks: "ks",
-    Kr: "kr",
-    Kk: "kk",
-    Km: "km",
-    Ki: "ki",
-    Rw: "rw",
-    Ky: "ky",
-    Kv: "kv",
+    Jv: "jv",
+    Ka: "ka",
     Kg: "kg",
-    Ko: "ko",
+    Ki: "ki",
     Kj: "kj",
+    Kk: "kk",
+    Kl: "kl",
+    Km: "km",
+    Kn: "kn",
+    Ko: "ko",
+    Kr: "kr",
+    Ks: "ks",
     Ku: "ku",
-    Lo: "lo",
+    Kv: "kv",
+    Kw: "kw",
+    Ky: "ky",
     La: "la",
-    Lv: "lv",
+    Lb: "lb",
+    Lg: "lg",
     Li: "li",
     Ln: "ln",
+    Lo: "lo",
     Lt: "lt",
-    Lb: "lb",
     Lu: "lu",
-    Lg: "lg",
-    Mk: "mk",
+    Lv: "lv",
+    Mg: "mg",
     Mh: "mh",
-    Ml: "ml",
     Mi: "mi",
+    Mk: "mk",
+    Ml: "ml",
+    Mn: "mn",
     Mr: "mr",
     Ms: "ms",
-    Mg: "mg",
     Mt: "mt",
-    Mn: "mn",
+    My: "my",
     Na: "na",
-    Nv: "nv",
-    Nr: "nr",
-    Nd: "nd",
-    Ng: "ng",
-    Ne: "ne",
-    Nn: "nn",
     Nb: "nb",
+    Nd: "nd",
+    Ne: "ne",
+    Ng: "ng",
+    Nl: "nl",
+    Nn: "nn",
     No: "no",
+    Nr: "nr",
+    Nv: "nv",
     Ny: "ny",
     Oc: "oc",
     Oj: "oj",
-    Or: "or",
     Om: "om",
+    Or: "or",
     Os: "os",
     Pa: "pa",
-    Fa: "fa",
     Pi: "pi",
     Pl: "pl",
-    Pt: "pt",
     Ps: "ps",
+    Pt: "pt",
     Qu: "qu",
     Rm: "rm",
-    Ro: "ro",
     Rn: "rn",
+    Ro: "ro",
     Ru: "ru",
-    Sg: "sg",
+    Rw: "rw",
     Sa: "sa",
+    Sc: "sc",
+    Sd: "sd",
+    Se: "se",
+    Sg: "sg",
     Si: "si",
     Sk: "sk",
     Sl: "sl",
-    Se: "se",
     Sm: "sm",
     Sn: "sn",
-    Sd: "sd",
     So: "so",
-    St: "st",
-    Es: "es",
-    Sc: "sc",
+    Sq: "sq",
     Sr: "sr",
     Ss: "ss",
+    St: "st",
     Su: "su",
-    Sw: "sw",
     Sv: "sv",
-    Ty: "ty",
+    Sw: "sw",
     Ta: "ta",
-    Tt: "tt",
     Te: "te",
     Tg: "tg",
-    Tl: "tl",
     Th: "th",
-    Bo: "bo",
     Ti: "ti",
-    To: "to",
-    Tn: "tn",
-    Ts: "ts",
     Tk: "tk",
+    Tl: "tl",
+    Tn: "tn",
+    To: "to",
     Tr: "tr",
+    Ts: "ts",
+    Tt: "tt",
     Tw: "tw",
+    Ty: "ty",
     Ug: "ug",
     Uk: "uk",
     Ur: "ur",
@@ -736,12 +736,12 @@ export const Language = {
     Ve: "ve",
     Vi: "vi",
     Vo: "vo",
-    Cy: "cy",
     Wa: "wa",
     Wo: "wo",
     Xh: "xh",
     Yi: "yi",
     Yo: "yo",
     Za: "za",
+    Zh: "zh",
     Zu: "zu",
 } as const;

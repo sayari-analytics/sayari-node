@@ -7,8 +7,8 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const AddressType: core.serialization.Schema<serializers.AddressType.Raw, Sayari.AddressType> =
-    core.serialization.enum_(["arrival", "departure", "mailing", "physical", "registered", "business"]);
+    core.serialization.enum_(["arrival", "business", "departure", "mailing", "physical", "registered"]);
 
 export declare namespace AddressType {
-    type Raw = "arrival" | "departure" | "mailing" | "physical" | "registered" | "business";
+    type Raw = "arrival" | "business" | "departure" | "mailing" | "physical" | "registered";
 }

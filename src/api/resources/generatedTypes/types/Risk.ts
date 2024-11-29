@@ -66,6 +66,7 @@ export type Risk =
     | "meu_list_contractors"
     | "military_civil_fusion"
     | "military_civil_fusion_50_percent_rule"
+    | "ndaa_889_covered_entities"
     | "ofac_50_percent_rule"
     | "ofac_minority_ownership"
     | "ofac_sdn"
@@ -200,6 +201,7 @@ export const Risk = {
     MeuListContractors: "meu_list_contractors",
     MilitaryCivilFusion: "military_civil_fusion",
     MilitaryCivilFusion50PercentRule: "military_civil_fusion_50_percent_rule",
+    Ndaa889CoveredEntities: "ndaa_889_covered_entities",
     Ofac50PercentRule: "ofac_50_percent_rule",
     OfacMinorityOwnership: "ofac_minority_ownership",
     OfacSdn: "ofac_sdn",
