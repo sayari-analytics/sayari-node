@@ -7,21 +7,21 @@
  */
 export type ContactType =
     /**
-     * Any kind of phone number */
-    | "phone_number"
+     * An email address */
+    | "email"
     /**
      * A fax number */
     | "fax"
     /**
-     * An email address */
-    | "email"
+     * Any kind of phone number */
+    | "phone_number"
     /**
      * A URL */
     | "url";
 
 export const ContactType = {
-    PhoneNumber: "phone_number",
-    Fax: "fax",
     Email: "email",
+    Fax: "fax",
+    PhoneNumber: "phone_number",
     Url: "url",
 } as const;
