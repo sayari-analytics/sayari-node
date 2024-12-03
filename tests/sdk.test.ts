@@ -257,9 +257,11 @@ describe("SDK", () => {
             expect(usage.usage.entity).toBeGreaterThan(0)
             expect(usage.usage.record).toBeGreaterThan(0)
             expect(usage.usage.resolve).toBeGreaterThan(0)
+            expect(usage.usage.search).toBeGreaterThan(0)
             expect(usage.usage.searchEntities).toBeGreaterThan(0)
             expect(usage.usage.searchRecords).toBeGreaterThan(0)
             expect(usage.usage.searchTrade).toBeGreaterThan(0)
+            expect(usage.usage.tradeTraversal).toBeGreaterThan(0)
             expect(usage.usage.traversal).toBeGreaterThan(0)
         }
     }, longTimeout);
