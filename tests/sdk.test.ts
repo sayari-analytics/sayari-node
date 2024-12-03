@@ -255,7 +255,6 @@ describe("SDK", () => {
         if (baseURL == 'https://api.sayari.com') {
             const usage = await client.info.getUsage()
             expect(usage.usage.entity).toBeGreaterThan(0)
-            expect(usage.usage.entitySummary).toBeGreaterThan(0)
             expect(usage.usage.record).toBeGreaterThan(0)
             expect(usage.usage.resolve).toBeGreaterThan(0)
             expect(usage.usage.searchEntities).toBeGreaterThan(0)

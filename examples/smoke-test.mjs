@@ -82,7 +82,7 @@ console.log("Found path with", shortestPath.data[0].path.length, "hops")
 
 // Usage
 const usage = await client.info.getUsage()
-console.log("Entity summary usage: ", usage.usage.entitySummary)
+console.log("Entity summary usage: ", usage.usage.entity)
 
 // History
 const history = await client.info.getHistory({size: 10000, from_: "2024-04-20", to: "2024-04-21"})
