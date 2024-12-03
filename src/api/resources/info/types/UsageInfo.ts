@@ -4,11 +4,12 @@
 
 export interface UsageInfo {
     entity?: number;
-    entitySummary?: number;
     record?: number;
     resolve?: number;
+    search?: number;
     searchEntities?: number;
     searchRecords?: number;
     searchTrade?: number;
+    tradeTraversal?: number;
     traversal?: number;
 }
