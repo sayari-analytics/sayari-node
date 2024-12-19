@@ -1456,6 +1456,161 @@ await client.resolution.resolutionPost({
 </dl>
 </details>
 
+<details><summary><code>client.resolution.<a href="/src/api/resources/resolution/client/Client.ts">resolutionPersisted</a>(projectId, { ...params }) -> Sayari.ResolutionPersistedResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.resolution.resolutionPersisted("V03eYM", {
+    limit: 1,
+    body: {
+        name: ["victoria beckham limited"],
+    },
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string` — Unique identifier of the project
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.ResolutionPersisted`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Resolution.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resolution.<a href="/src/api/resources/resolution/client/Client.ts">resolutionUpload</a>(projectId, { ...params }) -> Sayari.ResolutionUploadResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> This endpoint allows you to upload entities in bulk.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.resolution.resolutionUpload("V03eYM", {
+    filename: "vbeck.json",
+    data: [
+        {
+            name: ["victoria beckham limited"],
+            tags: ["spice girls"],
+        },
+    ],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string` — Unique identifier of the project
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.ResolutionUploadBody`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Resolution.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## Resource
 
 <details><summary><code>client.resource.<a href="/src/api/resources/resource/client/Client.ts">saveEntity</a>({ ...params }) -> Sayari.SaveEntityResponse</code></summary>

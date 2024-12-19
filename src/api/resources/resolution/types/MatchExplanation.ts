@@ -7,6 +7,7 @@ import * as Sayari from "../../../index";
 export interface MatchExplanation {
     matched?: string;
     uploaded?: string;
+    nameCustomTfIdfScore?: number;
     highQualityMatchName?: boolean;
     scores?: Record<string, number>;
     nCommonTermMatches?: number;

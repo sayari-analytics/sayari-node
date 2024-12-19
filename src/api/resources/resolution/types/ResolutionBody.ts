@@ -29,6 +29,8 @@ export interface ResolutionBody {
     nameMinPercentage?: number;
     /** Adding this param enables an alternative matching logic. It sets the minimum number of matching tokens the resolved hits need to have in common with the user input to be considered a "hit". Accepts non-negative integers. */
     nameMinTokens?: number;
+    /** An array of tag labels to associate with each resolved entity */
+    tags?: string[];
     /** Specifies the minimum score required to pass, which controls the strictness of the matching threshold. The default value is 77, and tuned for general use-case accuracy. Increase the value for stricter matching, reduce to loosen. */
     minimumScoreThreshold?: number;
     /** Enables a name search fallback when either the corporate or supplier profiles fails to find a match. When invoked, the fallback will make a call similar to /search/entity on name only. By default set to false. */
