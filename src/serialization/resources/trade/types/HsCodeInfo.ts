@@ -10,11 +10,13 @@ export const HsCodeInfo: core.serialization.ObjectSchema<serializers.HsCodeInfo.
     core.serialization.object({
         code: core.serialization.string(),
         description: core.serialization.string(),
+        imputed: core.serialization.boolean().optional(),
     });
 
 export declare namespace HsCodeInfo {
     interface Raw {
         code: string;
         description: string;
+        imputed?: boolean | null;
     }
 }

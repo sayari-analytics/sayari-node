@@ -27,6 +27,7 @@ export const ResolutionBody: core.serialization.ObjectSchema<serializers.Resolut
         profile: ProfileEnum.optional(),
         nameMinPercentage: core.serialization.property("name_min_percentage", core.serialization.number().optional()),
         nameMinTokens: core.serialization.property("name_min_tokens", core.serialization.number().optional()),
+        tags: core.serialization.list(core.serialization.string()).optional(),
         minimumScoreThreshold: core.serialization.property(
             "minimum_score_threshold",
             core.serialization.number().optional()
@@ -51,6 +52,7 @@ export declare namespace ResolutionBody {
         profile?: ProfileEnum.Raw | null;
         name_min_percentage?: number | null;
         name_min_tokens?: number | null;
+        tags?: string[] | null;
         minimum_score_threshold?: number | null;
         search_fallback?: boolean | null;
         cutoff_threshold?: number | null;

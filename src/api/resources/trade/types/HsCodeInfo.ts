@@ -5,4 +5,5 @@
 export interface HsCodeInfo {
     code: string;
     description: string;
+    imputed?: boolean;
 }

@@ -51,6 +51,10 @@ export const ProjectEntitiesFilter: core.serialization.ObjectSchema<
         core.serialization.list(core.serialization.string()).optional()
     ),
     statusExact: core.serialization.property("status.exact", core.serialization.list(CompanyStatus).optional()),
+    riskCategory: core.serialization.property(
+        "risk_category",
+        core.serialization.list(core.serialization.string()).optional()
+    ),
     bounds: core.serialization.string().optional(),
     customFieldName: core.serialization.property(
         "custom_{field name}",
@@ -73,6 +77,7 @@ export declare namespace ProjectEntitiesFilter {
         "identifier.fuzzy"?: string[] | null;
         "source.exact"?: string[] | null;
         "status.exact"?: CompanyStatus.Raw[] | null;
+        risk_category?: string[] | null;
         bounds?: string | null;
         "custom_{field name}"?: string[] | null;
     }
