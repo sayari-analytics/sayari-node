@@ -3,7 +3,13 @@
  */
 
 export const SayariEnvironment = {
+    /**
+     * Sayari production - the default environment
+     */
     Production: "https://api.sayari.com",
+    /**
+     * Sayari development - utilized for internal testing before promotion to production
+     */
     Dev: "https://api.internal.sayari.com",
 } as const;
 

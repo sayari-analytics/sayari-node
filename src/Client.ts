@@ -9,6 +9,7 @@ import { Attributes } from "./api/resources/attributes/client/Client";
 import { Entity } from "./api/resources/entity/client/Client";
 import { Info } from "./api/resources/info/client/Client";
 import { Metadata } from "./api/resources/metadata/client/Client";
+import { NegativeNews } from "./api/resources/negativeNews/client/Client";
 import { Notifications } from "./api/resources/notifications/client/Client";
 import { Project } from "./api/resources/project/client/Client";
 import { Record_ } from "./api/resources/record/client/Client";
@@ -46,6 +47,7 @@ export class SayariClient {
     protected _entity: Entity | undefined;
     protected _info: Info | undefined;
     protected _metadata: Metadata | undefined;
+    protected _negativeNews: NegativeNews | undefined;
     protected _notifications: Notifications | undefined;
     protected _project: Project | undefined;
     protected _record: Record_ | undefined;
@@ -97,6 +99,13 @@ export class SayariClient {
 
     public get metadata(): Metadata {
         return (this._metadata ??= new Metadata({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    public get negativeNews(): NegativeNews {
+        return (this._negativeNews ??= new NegativeNews({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));
