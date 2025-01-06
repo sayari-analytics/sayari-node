@@ -76,6 +76,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "bra_cnpj",
         "bra_codigo_da_unidade_organizacional",
         "bra_cpf_number",
+        "bra_foreigner_reg_num",
         "bra_rg_number",
         "bra_servidor_portal",
         "bra_shipment_number",
@@ -236,6 +237,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "iban",
         "icij_offshore_internal_id",
         "icij_offshore_node_id",
+        "idn_passport",
         "idn_tax_id",
         "idn_trade_internal_shipment_id",
         "idn_transaction_number",
@@ -253,6 +255,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "ind_ifsc",
         "ind_llpin",
         "ind_nse_ticker_code",
+        "ind_passport",
         "ind_permanent_account_number",
         "ind_society_registration_number",
         "ind_tin",
@@ -267,6 +270,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "irn_national_id",
         "irn_national_number",
         "irn_passport",
+        "irq_passport",
         "irq_voter_id",
         "isin",
         "isl_tin_number",
@@ -427,6 +431,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "pry_tax_id",
         "pse_registration_id",
         "qat_cr_number",
+        "qat_passport",
         "qat_qfc_number",
         "quebec_enterprise_number",
         "rccm_no",
@@ -448,6 +453,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "rus_passport",
         "rus_tourist_obj",
         "saskatchewan_registry_number",
+        "sau_passport",
         "sayari_internal_identifier",
         "sgp_passport",
         "sgp_unqiue_entity_number",
@@ -501,6 +507,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "tza_brela_reg_num",
         "uk_company_number",
         "uk_firm_reference_number",
+        "uk_passport",
         "uk_person_number",
         "uk_title_number",
         "ukr_fiu_list_number",
@@ -710,6 +717,7 @@ export declare namespace IdentifierType {
         | "bra_cnpj"
         | "bra_codigo_da_unidade_organizacional"
         | "bra_cpf_number"
+        | "bra_foreigner_reg_num"
         | "bra_rg_number"
         | "bra_servidor_portal"
         | "bra_shipment_number"
@@ -870,6 +878,7 @@ export declare namespace IdentifierType {
         | "iban"
         | "icij_offshore_internal_id"
         | "icij_offshore_node_id"
+        | "idn_passport"
         | "idn_tax_id"
         | "idn_trade_internal_shipment_id"
         | "idn_transaction_number"
@@ -887,6 +896,7 @@ export declare namespace IdentifierType {
         | "ind_ifsc"
         | "ind_llpin"
         | "ind_nse_ticker_code"
+        | "ind_passport"
         | "ind_permanent_account_number"
         | "ind_society_registration_number"
         | "ind_tin"
@@ -901,6 +911,7 @@ export declare namespace IdentifierType {
         | "irn_national_id"
         | "irn_national_number"
         | "irn_passport"
+        | "irq_passport"
         | "irq_voter_id"
         | "isin"
         | "isl_tin_number"
@@ -1061,6 +1072,7 @@ export declare namespace IdentifierType {
         | "pry_tax_id"
         | "pse_registration_id"
         | "qat_cr_number"
+        | "qat_passport"
         | "qat_qfc_number"
         | "quebec_enterprise_number"
         | "rccm_no"
@@ -1082,6 +1094,7 @@ export declare namespace IdentifierType {
         | "rus_passport"
         | "rus_tourist_obj"
         | "saskatchewan_registry_number"
+        | "sau_passport"
         | "sayari_internal_identifier"
         | "sgp_passport"
         | "sgp_unqiue_entity_number"
@@ -1135,6 +1148,7 @@ export declare namespace IdentifierType {
         | "tza_brela_reg_num"
         | "uk_company_number"
         | "uk_firm_reference_number"
+        | "uk_passport"
         | "uk_person_number"
         | "uk_title_number"
         | "ukr_fiu_list_number"

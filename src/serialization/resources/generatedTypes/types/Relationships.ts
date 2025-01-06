@@ -20,6 +20,10 @@ export const Relationships: core.serialization.Schema<serializers.Relationships.
         "has_carrier",
         "client_of",
         "has_client",
+        "credits_to",
+        "credited_by",
+        "debits_from",
+        "debited_by",
         "director_of",
         "has_director",
         "employee_of",
@@ -79,6 +83,8 @@ export const Relationships: core.serialization.Schema<serializers.Relationships.
         "has_subsidiary",
         "supervisor_of",
         "has_supervisor",
+        "transfers_to",
+        "transfers_from",
         "possibly_same_as",
     ]);
 
@@ -96,6 +102,10 @@ export declare namespace Relationships {
         | "has_carrier"
         | "client_of"
         | "has_client"
+        | "credits_to"
+        | "credited_by"
+        | "debits_from"
+        | "debited_by"
         | "director_of"
         | "has_director"
         | "employee_of"
@@ -155,5 +165,7 @@ export declare namespace Relationships {
         | "has_subsidiary"
         | "supervisor_of"
         | "has_supervisor"
+        | "transfers_to"
+        | "transfers_from"
         | "possibly_same_as";
 }

@@ -40,6 +40,18 @@ export type Relationships =
      * Deprecated and converted to linked_to */
     | "has_client"
     /**
+     * The transaction credits to the entity */
+    | "credits_to"
+    /**
+     * The entity receives a credit from the transaction */
+    | "credited_by"
+    /**
+     * The transaction debits from the entity */
+    | "debits_from"
+    /**
+     * The entity is debited by the transaction */
+    | "debited_by"
+    /**
      * Companies of which this entity is a Director */
     | "director_of"
     /**
@@ -145,7 +157,7 @@ export type Relationships =
      * CEOs, Treasurers, etc. of this company */
     | "has_officer"
     /**
-     * Non-corporate entities (trade name, security, intellectual property, etc.) directly owned by this entity */
+     * Non-corporate entities (trade name, security, intellectual property, account, etc.) directly owned by this entity */
     | "owner_of"
     /**
      * Direct owners of this entity */
@@ -216,6 +228,12 @@ export type Relationships =
     /**
      * Supervisors of this company, typically in East Asia */
     | "has_supervisor"
+    /**
+     * The entity transfers to another entity */
+    | "transfers_to"
+    /**
+     * The entity transfers from another entity */
+    | "transfers_from"
     | "possibly_same_as";
 export const Relationships = {
     AssociateOf: "associate_of",
@@ -230,6 +248,10 @@ export const Relationships = {
     HasCarrier: "has_carrier",
     ClientOf: "client_of",
     HasClient: "has_client",
+    CreditsTo: "credits_to",
+    CreditedBy: "credited_by",
+    DebitsFrom: "debits_from",
+    DebitedBy: "debited_by",
     DirectorOf: "director_of",
     HasDirector: "has_director",
     EmployeeOf: "employee_of",
@@ -289,5 +311,7 @@ export const Relationships = {
     HasSubsidiary: "has_subsidiary",
     SupervisorOf: "supervisor_of",
     HasSupervisor: "has_supervisor",
+    TransfersTo: "transfers_to",
+    TransfersFrom: "transfers_from",
     PossiblySameAs: "possibly_same_as",
 } as const;

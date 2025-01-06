@@ -207,6 +207,9 @@ export type IdentifierType =
      * Brazil natural person tax ID number */
     | "bra_cpf_number"
     /**
+     * Registration ID Number for foreigners registered with Brazil National Migratory Registry (RNM). Strong ID. */
+    | "bra_foreigner_reg_num"
+    /**
      * Brazil natural person ID number */
     | "bra_rg_number"
     /**
@@ -677,6 +680,9 @@ export type IdentifierType =
      * ICIJ Offshore Database Node ID */
     | "icij_offshore_node_id"
     /**
+     * Indonesian passport number */
+    | "idn_passport"
+    /**
      * Indonesian tax ID aka NPWP Number; learn more [here](https://wiki.scn.sap.com/wiki/display/CRM/Indonesia) */
     | "idn_tax_id"
     /**
@@ -728,6 +734,9 @@ export type IdentifierType =
      * Unique India identifier code. Assigned to all entities listed on the India National Stock Exchange. */
     | "ind_nse_ticker_code"
     /**
+     * Indian passport number */
+    | "ind_passport"
+    /**
      * A permanent account number (PAN) is a 10-digit alphanumeric tax ID issued by the Indian Income Tax Department. */
     | "ind_permanent_account_number"
     /**
@@ -767,6 +776,9 @@ export type IdentifierType =
     /**
      * Iran passport number */
     | "irn_passport"
+    /**
+     * Iraqi passport number */
+    | "irq_passport"
     /**
      * Iraq voter ID number */
     | "irq_voter_id"
@@ -1234,6 +1246,9 @@ export type IdentifierType =
      * Qatar corporate registry ID number */
     | "qat_cr_number"
     /**
+     * Qatar Passport Number */
+    | "qat_passport"
+    /**
      * Qatar corporate registry ID number */
     | "qat_qfc_number"
     /**
@@ -1292,6 +1307,9 @@ export type IdentifierType =
     /**
      * Unique Canada province ID number. Assigned to every legal entity in the Saskatchewan Corporate Registry. */
     | "saskatchewan_registry_number"
+    /**
+     * Saudi Arabian passport number */
+    | "sau_passport"
     /**
      * UID used to merge entities internally */
     | "sayari_internal_identifier"
@@ -1451,6 +1469,9 @@ export type IdentifierType =
     /**
      * Unique UK ID number. Assigned to every firm in the FCA financial services registry. */
     | "uk_firm_reference_number"
+    /**
+     * Passport Number issued by the United Kingdom. */
+    | "uk_passport"
     /**
      * Internal person ID */
     | "uk_person_number"
@@ -1921,6 +1942,7 @@ export const IdentifierType = {
     BraCnpj: "bra_cnpj",
     BraCodigoDaUnidadeOrganizacional: "bra_codigo_da_unidade_organizacional",
     BraCpfNumber: "bra_cpf_number",
+    BraForeignerRegNum: "bra_foreigner_reg_num",
     BraRgNumber: "bra_rg_number",
     BraServidorPortal: "bra_servidor_portal",
     BraShipmentNumber: "bra_shipment_number",
@@ -2081,6 +2103,7 @@ export const IdentifierType = {
     Iban: "iban",
     IcijOffshoreInternalId: "icij_offshore_internal_id",
     IcijOffshoreNodeId: "icij_offshore_node_id",
+    IdnPassport: "idn_passport",
     IdnTaxId: "idn_tax_id",
     IdnTradeInternalShipmentId: "idn_trade_internal_shipment_id",
     IdnTransactionNumber: "idn_transaction_number",
@@ -2098,6 +2121,7 @@ export const IdentifierType = {
     IndIfsc: "ind_ifsc",
     IndLlpin: "ind_llpin",
     IndNseTickerCode: "ind_nse_ticker_code",
+    IndPassport: "ind_passport",
     IndPermanentAccountNumber: "ind_permanent_account_number",
     IndSocietyRegistrationNumber: "ind_society_registration_number",
     IndTin: "ind_tin",
@@ -2112,6 +2136,7 @@ export const IdentifierType = {
     IrnNationalId: "irn_national_id",
     IrnNationalNumber: "irn_national_number",
     IrnPassport: "irn_passport",
+    IrqPassport: "irq_passport",
     IrqVoterId: "irq_voter_id",
     Isin: "isin",
     IslTinNumber: "isl_tin_number",
@@ -2272,6 +2297,7 @@ export const IdentifierType = {
     PryTaxId: "pry_tax_id",
     PseRegistrationId: "pse_registration_id",
     QatCrNumber: "qat_cr_number",
+    QatPassport: "qat_passport",
     QatQfcNumber: "qat_qfc_number",
     QuebecEnterpriseNumber: "quebec_enterprise_number",
     RccmNo: "rccm_no",
@@ -2293,6 +2319,7 @@ export const IdentifierType = {
     RusPassport: "rus_passport",
     RusTouristObj: "rus_tourist_obj",
     SaskatchewanRegistryNumber: "saskatchewan_registry_number",
+    SauPassport: "sau_passport",
     SayariInternalIdentifier: "sayari_internal_identifier",
     SgpPassport: "sgp_passport",
     SgpUnqiueEntityNumber: "sgp_unqiue_entity_number",
@@ -2346,6 +2373,7 @@ export const IdentifierType = {
     TzaBrelaRegNum: "tza_brela_reg_num",
     UkCompanyNumber: "uk_company_number",
     UkFirmReferenceNumber: "uk_firm_reference_number",
+    UkPassport: "uk_passport",
     UkPersonNumber: "uk_person_number",
     UkTitleNumber: "uk_title_number",
     UkrFiuListNumber: "ukr_fiu_list_number",
