@@ -629,6 +629,78 @@ await client.metadata.metadata();
 </dl>
 </details>
 
+## NegativeNews
+
+<details><summary><code>client.negativeNews.<a href="/src/api/resources/negativeNews/client/Client.ts">negativeNews</a>({ ...params }) -> Sayari.NegativeNewsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+<Warning>This endpoint is in beta and subject to change</Warning>
+Screens entities against news articles and public records to identify risk-relevant content.
+Leverages machine learning to detect and classify risks across various domains.
+Provides detailed article metadata with risk assessments and direct source references.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.negativeNews.negativeNews({
+    name: "Gazprom",
+    topic: "sanctions",
+    until: "2024-10-01",
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.NegativeNews`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `NegativeNews.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## Notifications
 
 <details><summary><code>client.notifications.<a href="/src/api/resources/notifications/client/Client.ts">projectNotifications</a>(id, { ...params }) -> Sayari.ProjectNotificationsResponse</code></summary>

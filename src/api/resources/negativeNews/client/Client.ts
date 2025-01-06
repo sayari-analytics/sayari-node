@@ -9,7 +9,7 @@ import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
-export declare namespace Record_ {
+export declare namespace NegativeNews {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
@@ -27,45 +27,62 @@ export declare namespace Record_ {
     }
 }
 
-export class Record_ {
-    constructor(protected readonly _options: Record_.Options = {}) {}
+export class NegativeNews {
+    constructor(protected readonly _options: NegativeNews.Options = {}) {}
 
     /**
-     * Retrieve a record from the database based on the ID
+     * <Warning>This endpoint is in beta and subject to change</Warning>
+     * Screens entities against news articles and public records to identify risk-relevant content.
+     * Leverages machine learning to detect and classify risks across various domains.
+     * Provides detailed article metadata with risk assessments and direct source references.
      *
-     * @param {string} id - The unique identifier for a record in the database
-     * @param {Sayari.GetRecord} request
-     * @param {Record_.RequestOptions} requestOptions - Request-specific configuration.
+     * @param {Sayari.NegativeNews} request
+     * @param {NegativeNews.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Sayari.BadRequest}
      * @throws {@link Sayari.Unauthorized}
      * @throws {@link Sayari.NotFound}
-     * @throws {@link Sayari.MethodNotAllowed}
      * @throws {@link Sayari.RateLimitExceeded}
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await client.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F1682970471254")
+     *     await client.negativeNews.negativeNews({
+     *         name: "Gazprom",
+     *         topic: "sanctions",
+     *         until: "2024-10-01"
+     *     })
+     *
+     * @example
+     *     await client.negativeNews.negativeNews({
+     *         name: "JBS",
+     *         topic: "environmental"
+     *     })
+     *
+     * @example
+     *     await client.negativeNews.negativeNews({
+     *         name: "Alameda Research",
+     *         topic: "financial"
+     *     })
      */
-    public async getRecord(
-        id: string,
-        request: Sayari.GetRecord = {},
-        requestOptions?: Record_.RequestOptions,
-    ): Promise<Sayari.GetRecordResponse> {
-        const { referencesLimit, referencesOffset } = request;
+    public async negativeNews(
+        request: Sayari.NegativeNews,
+        requestOptions?: NegativeNews.RequestOptions,
+    ): Promise<Sayari.NegativeNewsResponse> {
+        const { name, topic, until } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
-        if (referencesLimit != null) {
-            _queryParams["references.limit"] = referencesLimit.toString();
+        _queryParams["name"] = name;
+        if (topic != null) {
+            _queryParams["topic"] = topic;
         }
 
-        if (referencesOffset != null) {
-            _queryParams["references.offset"] = referencesOffset.toString();
+        if (until != null) {
+            _queryParams["until"] = until;
         }
 
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                `/v1/record/${encodeURIComponent(id)}`,
+                "/v1/negative_news",
             ),
             method: "GET",
             headers: {
@@ -86,7 +103,7 @@ export class Record_ {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return serializers.GetRecordResponse.parseOrThrow(_response.body, {
+            return serializers.NegativeNewsResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -117,15 +134,6 @@ export class Record_ {
                 case 404:
                     throw new Sayari.NotFound(
                         serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        }),
-                    );
-                case 405:
-                    throw new Sayari.MethodNotAllowed(
-                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -165,7 +173,7 @@ export class Record_ {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError("Timeout exceeded when calling GET /v1/record/{id}.");
+                throw new errors.SayariTimeoutError("Timeout exceeded when calling GET /v1/negative_news.");
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,
