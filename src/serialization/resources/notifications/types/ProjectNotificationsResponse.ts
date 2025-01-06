@@ -20,7 +20,7 @@ export const ProjectNotificationsResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace ProjectNotificationsResponse {
-    interface Raw {
+    export interface Raw {
         offset: number;
         limit: number;
         next: boolean;

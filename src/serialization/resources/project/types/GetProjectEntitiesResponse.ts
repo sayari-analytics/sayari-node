@@ -22,7 +22,7 @@ export const GetProjectEntitiesResponse: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace GetProjectEntitiesResponse {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         next?: string | null;
         prev?: string | null;
         data: ProjectEntity.Raw[];

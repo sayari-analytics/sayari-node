@@ -12,7 +12,6 @@ export type RoleMemberType =
     /**
      * The access is granted to a group. */
     | "group";
-
 export const RoleMemberType = {
     User: "user",
     Group: "group",

@@ -16,7 +16,7 @@ export const GenderData: core.serialization.ObjectSchema<serializers.GenderData.
         .extend(AttributeData);
 
 export declare namespace GenderData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: GenderProperties.Raw;
     }
 }

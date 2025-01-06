@@ -10,5 +10,5 @@ export const MeasurementType: core.serialization.Schema<serializers.MeasurementT
     core.serialization.enum_(["gross_weight", "net_weight", "quantity"]);
 
 export declare namespace MeasurementType {
-    type Raw = "gross_weight" | "net_weight" | "quantity";
+    export type Raw = "gross_weight" | "net_weight" | "quantity";
 }

@@ -18,7 +18,7 @@ export const SaveEntityRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace SaveEntityRequest {
-    interface Raw {
+    export interface Raw {
         type: ResourceType.Raw;
         project: string;
         entity_id: string;

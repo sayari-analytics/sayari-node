@@ -42,7 +42,6 @@ export type Entities =
     /**
      * A cargo ship, oil tanker, fishing trawler, or other type of watercraft */
     | "vessel";
-
 export const Entities = {
     Aircraft: "aircraft",
     Company: "company",

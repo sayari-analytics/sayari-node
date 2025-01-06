@@ -18,7 +18,7 @@ export const CountryInfo: core.serialization.ObjectSchema<serializers.CountryInf
         .extend(PaginatedResponse);
 
 export declare namespace CountryInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: CountryData.Raw[];
         next?: unknown | null;
         offset?: number | null;

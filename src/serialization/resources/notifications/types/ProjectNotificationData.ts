@@ -21,7 +21,7 @@ export const ProjectNotificationData: core.serialization.ObjectSchema<
 });
 
 export declare namespace ProjectNotificationData {
-    interface Raw {
+    export interface Raw {
         id: string;
         resource_id: string;
         entity_id: string;

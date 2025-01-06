@@ -13,5 +13,5 @@ export const Gender: core.serialization.Schema<serializers.Gender.Raw, Sayari.Ge
 ]);
 
 export declare namespace Gender {
-    type Raw = "female" | "male" | "other";
+    export type Raw = "female" | "male" | "other";
 }

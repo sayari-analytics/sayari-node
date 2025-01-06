@@ -14,7 +14,7 @@ export const PsaMatchKeys: core.serialization.ObjectSchema<serializers.PsaMatchK
     });
 
 export declare namespace PsaMatchKeys {
-    interface Raw {
+    export interface Raw {
         key: string;
         normalized: string;
         original: string;

@@ -14,5 +14,5 @@ export const BothIdentifierTypes: core.serialization.Schema<
 > = core.serialization.undiscriminatedUnion([IdentifierType, WeakIdentifierType]);
 
 export declare namespace BothIdentifierTypes {
-    type Raw = IdentifierType.Raw | WeakIdentifierType.Raw;
+    export type Raw = IdentifierType.Raw | WeakIdentifierType.Raw;
 }

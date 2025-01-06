@@ -45,7 +45,6 @@ export type CountryContext =
     /**
      * The flag state of a vessel. Often changes over time. */
     | "vessel_flag";
-
 export const CountryContext = {
     ActivityIn: "activity_in",
     Address: "address",

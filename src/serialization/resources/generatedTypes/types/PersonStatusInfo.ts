@@ -20,7 +20,7 @@ export const PersonStatusInfo: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace PersonStatusInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: PersonStatusData.Raw[];
         next?: unknown | null;
         offset?: number | null;

@@ -21,11 +21,11 @@ export const Source: core.serialization.ObjectSchema<serializers.Source.Raw, Say
         sourceUrl: core.serialization.property("source_url", core.serialization.string().optional()),
         pep: core.serialization.boolean(),
         watchlist: core.serialization.boolean(),
-    }
+    },
 );
 
 export declare namespace Source {
-    interface Raw {
+    export interface Raw {
         id: string;
         label: string;
         description: string;

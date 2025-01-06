@@ -83,7 +83,7 @@ export const Relationships: core.serialization.Schema<serializers.Relationships.
     ]);
 
 export declare namespace Relationships {
-    type Raw =
+    export type Raw =
         | "associate_of"
         | "has_associate"
         | "auditor_of"

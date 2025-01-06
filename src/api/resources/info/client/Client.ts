@@ -10,18 +10,20 @@ import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Info {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -41,14 +43,11 @@ export class Info {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await client.info.getUsage({
-     *         from: "2023-01-15",
-     *         to: "2023-01-15"
-     *     })
+     *     await client.info.getUsage()
      */
     public async getUsage(
         request: Sayari.GetUsage = {},
-        requestOptions?: Info.RequestOptions
+        requestOptions?: Info.RequestOptions,
     ): Promise<Sayari.UsageResponse> {
         const { from: from_, to } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
@@ -63,7 +62,7 @@ export class Info {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                "/v1/usage"
+                "/v1/usage",
             ),
             method: "GET",
             headers: {
@@ -74,6 +73,7 @@ export class Info {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -100,7 +100,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -109,7 +109,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 404:
                     throw new Sayari.NotFound(
@@ -118,7 +118,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -127,7 +127,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -136,7 +136,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -153,7 +153,7 @@ export class Info {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError("Timeout exceeded when calling GET /v1/usage.");
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,
@@ -174,17 +174,11 @@ export class Info {
      * @throws {@link Sayari.InternalServerError}
      *
      * @example
-     *     await client.info.getHistory({
-     *         events: "string",
-     *         from: "2023-01-15",
-     *         to: "2023-01-15",
-     *         size: 1,
-     *         token: "string"
-     *     })
+     *     await client.info.getHistory()
      */
     public async getHistory(
         request: Sayari.GetHistory = {},
-        requestOptions?: Info.RequestOptions
+        requestOptions?: Info.RequestOptions,
     ): Promise<Sayari.HistoryResponse> {
         const { events, from: from_, to, size, token } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
@@ -215,7 +209,7 @@ export class Info {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                "/v1/history"
+                "/v1/history",
             ),
             method: "GET",
             headers: {
@@ -226,6 +220,7 @@ export class Info {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -252,7 +247,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -261,7 +256,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 404:
                     throw new Sayari.NotFound(
@@ -270,7 +265,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -279,7 +274,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -288,7 +283,7 @@ export class Info {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -305,7 +300,7 @@ export class Info {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError("Timeout exceeded when calling GET /v1/history.");
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,

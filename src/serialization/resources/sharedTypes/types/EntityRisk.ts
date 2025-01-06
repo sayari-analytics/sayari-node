@@ -12,5 +12,5 @@ export const EntityRisk: core.serialization.Schema<serializers.EntityRisk.Raw, S
     core.serialization.record(Risk, RiskData.optional());
 
 export declare namespace EntityRisk {
-    type Raw = Record<Risk.Raw, RiskData.Raw | null | undefined>;
+    export type Raw = Record<Risk.Raw, RiskData.Raw | null | undefined>;
 }

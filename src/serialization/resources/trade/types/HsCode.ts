@@ -12,11 +12,11 @@ export const HsCode: core.serialization.ObjectSchema<serializers.HsCode.Raw, Say
         docCount: core.serialization.property("doc_count", core.serialization.number()),
         value: core.serialization.string(),
         valueSimple: core.serialization.property("value_simple", core.serialization.string().optional()),
-    }
+    },
 );
 
 export declare namespace HsCode {
-    interface Raw {
+    export interface Raw {
         key: string;
         doc_count: number;
         value: string;

@@ -15,7 +15,7 @@ export const DeleteResourceResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace DeleteResourceResponse {
-    interface Raw {
+    export interface Raw {
         data: EntityResponseData.Raw;
     }
 }

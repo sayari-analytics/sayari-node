@@ -140,7 +140,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
 ]);
 
 export declare namespace Risk {
-    type Raw =
+    export type Raw =
         | "aspi_uyghur_forced_labor_report_entity"
         | "aspi_uyghur_forced_labor_report_entity_adjacent"
         | "basel_aml"

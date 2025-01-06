@@ -10,5 +10,5 @@ export const CountQualifier: core.serialization.Schema<serializers.CountQualifie
     core.serialization.enum_(["eq", "gte"]);
 
 export declare namespace CountQualifier {
-    type Raw = "eq" | "gte";
+    export type Raw = "eq" | "gte";
 }

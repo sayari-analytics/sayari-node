@@ -18,7 +18,7 @@ export const PositionInfo: core.serialization.ObjectSchema<serializers.PositionI
         .extend(PaginatedResponse);
 
 export declare namespace PositionInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: PositionData.Raw[];
         next?: unknown | null;
         offset?: number | null;

@@ -10,18 +10,20 @@ import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
 export declare namespace SupplyChain {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -52,7 +54,7 @@ export class SupplyChain {
     public async upstreamTradeTraversal(
         id: string,
         request: Sayari.UpstreamTradeTraversalRequest = {},
-        requestOptions?: SupplyChain.RequestOptions
+        requestOptions?: SupplyChain.RequestOptions,
     ): Promise<Sayari.UpstreamTradeTraversalResponse> {
         const {
             risk,
@@ -120,7 +122,7 @@ export class SupplyChain {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                `/v1/supply_chain/upstream/${encodeURIComponent(id)}`
+                `/v1/supply_chain/upstream/${encodeURIComponent(id)}`,
             ),
             method: "GET",
             headers: {
@@ -131,6 +133,7 @@ export class SupplyChain {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -157,7 +160,7 @@ export class SupplyChain {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -166,7 +169,7 @@ export class SupplyChain {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 404:
                     throw new Sayari.NotFound(
@@ -175,7 +178,7 @@ export class SupplyChain {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
@@ -184,7 +187,7 @@ export class SupplyChain {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -193,7 +196,7 @@ export class SupplyChain {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -202,7 +205,7 @@ export class SupplyChain {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -219,7 +222,9 @@ export class SupplyChain {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError(
+                    "Timeout exceeded when calling GET /v1/supply_chain/upstream/{id}.",
+                );
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,

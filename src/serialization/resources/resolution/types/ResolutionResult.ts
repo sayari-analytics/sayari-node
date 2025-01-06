@@ -27,22 +27,22 @@ export const ResolutionResult: core.serialization.ObjectSchema<
     sources: core.serialization.list(core.serialization.string()),
     typedMatchedQueries: core.serialization.property(
         "typed_matched_queries",
-        core.serialization.list(core.serialization.string())
+        core.serialization.list(core.serialization.string()),
     ),
     matchedQueries: core.serialization.property(
         "matched_queries",
-        core.serialization.list(core.serialization.string())
+        core.serialization.list(core.serialization.string()),
     ),
     highlight: core.serialization.record(
         core.serialization.string(),
-        core.serialization.list(core.serialization.string())
+        core.serialization.list(core.serialization.string()),
     ),
     explanation: core.serialization.record(core.serialization.string(), core.serialization.list(MatchExplanation)),
     matchStrength: core.serialization.property("match_strength", MatchStrength),
 });
 
 export declare namespace ResolutionResult {
-    interface Raw {
+    export interface Raw {
         profile: string;
         score: number;
         entity_id: string;

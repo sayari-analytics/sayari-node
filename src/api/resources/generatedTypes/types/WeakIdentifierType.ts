@@ -334,7 +334,6 @@ export type WeakIdentifierType =
     /**
      * A temporary malformed type */
     | "malformed mmr_prior_reg_no";
-
 export const WeakIdentifierType = {
     ArgIgjNumber: "arg_igj_number",
     ArgImportExportId: "arg_import_export_id",

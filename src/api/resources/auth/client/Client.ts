@@ -10,18 +10,20 @@ import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Auth {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -46,12 +48,12 @@ export class Auth {
      */
     public async getToken(
         request: Sayari.GetToken,
-        requestOptions?: Auth.RequestOptions
+        requestOptions?: Auth.RequestOptions,
     ): Promise<Sayari.AuthResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                "oauth/token"
+                "oauth/token",
             ),
             method: "POST",
             headers: {
@@ -62,6 +64,7 @@ export class Auth {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -92,7 +95,7 @@ export class Auth {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -101,7 +104,7 @@ export class Auth {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -110,7 +113,7 @@ export class Auth {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -127,7 +130,7 @@ export class Auth {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError("Timeout exceeded when calling POST /oauth/token.");
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,

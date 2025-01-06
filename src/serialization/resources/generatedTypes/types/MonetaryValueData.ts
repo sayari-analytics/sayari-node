@@ -18,7 +18,7 @@ export const MonetaryValueData: core.serialization.ObjectSchema<
     .extend(AttributeData);
 
 export declare namespace MonetaryValueData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: MonetaryValueProperties.Raw;
     }
 }

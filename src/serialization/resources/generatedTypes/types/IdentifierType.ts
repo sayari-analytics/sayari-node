@@ -641,7 +641,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
     ]);
 
 export declare namespace IdentifierType {
-    type Raw =
+    export type Raw =
         | "aer_free_zone_license"
         | "aer_free_zone_reg_no"
         | "aer_ner_number"

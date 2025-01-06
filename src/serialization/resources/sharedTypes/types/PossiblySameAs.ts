@@ -18,7 +18,7 @@ export const PossiblySameAs: core.serialization.ObjectSchema<serializers.Possibl
         .extend(PaginatedResponse);
 
 export declare namespace PossiblySameAs {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         offset?: number | null;
         next?: unknown | null;
         data: PossiblySameAsData.Raw[];

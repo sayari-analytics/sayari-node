@@ -119,7 +119,7 @@ await client.attributes.patchAttribute(
         toDate: "2024-04-30",
         fromDate: "2024-01-01",
         date: "2024-02-15",
-    }
+    },
 );
 ```
 
@@ -192,7 +192,7 @@ await client.attributes.patchAttribute(
 
 ```typescript
 await client.attributes.deleteAttribute(
-    "enEwNGF4WDJkTG45dEU2VzZROFFoZ3xhZGRyZXNzfDBwbEVCMHxVNzhzN21yOUVFTThIZ3pwREM3UDFB"
+    "enEwNGF4WDJkTG45dEU2VzZROFFoZ3xhZGRyZXNzfDBwbEVCMHxVNzhzN21yOUVFTThIZ3pwREM3UDFB",
 );
 ```
 
@@ -474,10 +474,7 @@ The usage endpoint provides a simple interface to retrieve information on usage 
 <dd>
 
 ```typescript
-await client.info.getUsage({
-    from: "2023-01-15",
-    to: "2023-01-15",
-});
+await client.info.getUsage();
 ```
 
 </dd>
@@ -540,13 +537,7 @@ The history endpoint return a user's event history.
 <dd>
 
 ```typescript
-await client.info.getHistory({
-    events: "string",
-    from: "2023-01-15",
-    to: "2023-01-15",
-    size: 1,
-    token: "string",
-});
+await client.info.getHistory();
 ```
 
 </dd>
@@ -1685,7 +1676,7 @@ await client.resource.saveEntity({
 </dl>
 </details>
 
-<details><summary><code>client.resource.<a href="/src/api/resources/resource/client/Client.ts">deleteResource</a>(type, resourceId) -> Sayari.DeleteResourceResponse</code></summary>
+<details><summary><code>client.resource.<a href="/src/api/resources/resource/client/Client.ts">deleteResource</a>(type_, resourceId) -> Sayari.DeleteResourceResponse</code></summary>
 <dl>
 <dd>
 
@@ -1729,7 +1720,7 @@ await client.resource.deleteResource("entity", "YWmNKV");
 <dl>
 <dd>
 
-**type:** `Sayari.ResourceType`
+**type\_:** `Sayari.ResourceType`
 
 </dd>
 </dl>

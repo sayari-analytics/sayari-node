@@ -10,5 +10,5 @@ export const ShipmentArrival: core.serialization.Schema<serializers.ShipmentArri
     core.serialization.string();
 
 export declare namespace ShipmentArrival {
-    type Raw = string;
+    export type Raw = string;
 }

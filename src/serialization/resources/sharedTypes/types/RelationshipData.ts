@@ -23,7 +23,7 @@ export const RelationshipData: core.serialization.ObjectSchema<
 });
 
 export declare namespace RelationshipData {
-    interface Raw {
+    export interface Raw {
         target: serializers.EntityDetails.Raw;
         types: Record<Relationships.Raw, RelationshipInfo.Raw[] | null | undefined>;
         dates: string[];

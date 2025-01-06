@@ -10,18 +10,20 @@ import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Source {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -47,7 +49,7 @@ export class Source {
      */
     public async listSources(
         request: Sayari.ListSources = {},
-        requestOptions?: Source.RequestOptions
+        requestOptions?: Source.RequestOptions,
     ): Promise<Sayari.ListSourcesResponse> {
         const { limit, offset } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
@@ -62,7 +64,7 @@ export class Source {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                "/v1/sources"
+                "/v1/sources",
             ),
             method: "GET",
             headers: {
@@ -73,6 +75,7 @@ export class Source {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -99,7 +102,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -108,7 +111,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
@@ -117,7 +120,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -126,7 +129,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -135,7 +138,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -152,7 +155,7 @@ export class Source {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError("Timeout exceeded when calling GET /v1/sources.");
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,
@@ -180,7 +183,7 @@ export class Source {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                `/v1/source/${encodeURIComponent(id)}`
+                `/v1/source/${encodeURIComponent(id)}`,
             ),
             method: "GET",
             headers: {
@@ -191,6 +194,7 @@ export class Source {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -216,7 +220,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -225,7 +229,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 404:
                     throw new Sayari.NotFound(
@@ -234,7 +238,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
@@ -243,7 +247,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -252,7 +256,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -261,7 +265,7 @@ export class Source {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -278,7 +282,7 @@ export class Source {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError("Timeout exceeded when calling GET /v1/source/{id}.");
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,

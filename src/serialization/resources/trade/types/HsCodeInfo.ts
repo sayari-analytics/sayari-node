@@ -14,7 +14,7 @@ export const HsCodeInfo: core.serialization.ObjectSchema<serializers.HsCodeInfo.
     });
 
 export declare namespace HsCodeInfo {
-    interface Raw {
+    export interface Raw {
         code: string;
         description: string;
         imputed?: boolean | null;

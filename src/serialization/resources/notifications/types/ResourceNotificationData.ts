@@ -23,7 +23,7 @@ export const ResourceNotificationData: core.serialization.ObjectSchema<
 });
 
 export declare namespace ResourceNotificationData {
-    interface Raw {
+    export interface Raw {
         saved_resource_id: string;
         project_id: string;
         entity_id: string;

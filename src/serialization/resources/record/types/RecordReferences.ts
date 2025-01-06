@@ -19,7 +19,7 @@ export const RecordReferences: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace RecordReferences {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         next: boolean;
         offset: number;
         data?: unknown;

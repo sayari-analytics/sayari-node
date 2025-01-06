@@ -19,7 +19,7 @@ export const TraversalRelationshipData: core.serialization.ObjectSchema<
 });
 
 export declare namespace TraversalRelationshipData {
-    interface Raw {
+    export interface Raw {
         values: RelationshipInfo.Raw[];
         former?: boolean | null;
         start_date?: string | null;

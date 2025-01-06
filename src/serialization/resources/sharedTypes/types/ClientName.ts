@@ -10,5 +10,5 @@ export const ClientName: core.serialization.Schema<serializers.ClientName.Raw, S
     core.serialization.enum_(["sayari-go", "sayari-python", "sayari-java", "sayari-node"]);
 
 export declare namespace ClientName {
-    type Raw = "sayari-go" | "sayari-python" | "sayari-java" | "sayari-node";
+    export type Raw = "sayari-go" | "sayari-python" | "sayari-java" | "sayari-node";
 }

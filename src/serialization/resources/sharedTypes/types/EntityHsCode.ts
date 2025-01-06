@@ -10,5 +10,5 @@ export const EntityHsCode: core.serialization.Schema<serializers.EntityHsCode.Ra
     core.serialization.string();
 
 export declare namespace EntityHsCode {
-    type Raw = string;
+    export type Raw = string;
 }

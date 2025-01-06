@@ -15,7 +15,7 @@ export const UsageResponse: core.serialization.ObjectSchema<serializers.UsageRes
     });
 
 export declare namespace UsageResponse {
-    interface Raw {
+    export interface Raw {
         usage: UsageInfo.Raw;
         from: string;
         to: string;

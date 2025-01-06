@@ -10,5 +10,5 @@ export const RoleMemberType: core.serialization.Schema<serializers.RoleMemberTyp
     core.serialization.enum_(["user", "group"]);
 
 export declare namespace RoleMemberType {
-    type Raw = "user" | "group";
+    export type Raw = "user" | "group";
 }

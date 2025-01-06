@@ -14,7 +14,7 @@ export const AttributeData: core.serialization.ObjectSchema<serializers.Attribut
     });
 
 export declare namespace AttributeData {
-    interface Raw {
+    export interface Raw {
         editable?: boolean | null;
         record: string[];
         record_count: number;

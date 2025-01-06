@@ -13,7 +13,7 @@ export const DataSource: core.serialization.ObjectSchema<serializers.DataSource.
     });
 
 export declare namespace DataSource {
-    interface Raw {
+    export interface Raw {
         id: string;
         label: string;
     }

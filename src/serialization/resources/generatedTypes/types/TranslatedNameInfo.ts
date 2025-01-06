@@ -20,7 +20,7 @@ export const TranslatedNameInfo: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace TranslatedNameInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: TranslatedNameData.Raw[];
         next?: unknown | null;
         offset?: number | null;

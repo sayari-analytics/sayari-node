@@ -17,7 +17,7 @@ export const TradeTraversalPathSegment: core.serialization.ObjectSchema<
 });
 
 export declare namespace TradeTraversalPathSegment {
-    interface Raw {
+    export interface Raw {
         entity: TradeTraversalEntity.Raw;
         products: TradeTraversalProduct.Raw[];
     }

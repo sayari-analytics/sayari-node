@@ -12,7 +12,7 @@ export const IntKeyValue: core.serialization.ObjectSchema<serializers.IntKeyValu
     });
 
 export declare namespace IntKeyValue {
-    interface Raw {
+    export interface Raw {
         value: number;
     }
 }

@@ -15,7 +15,6 @@ export type Gender =
     /**
      * Indicates a gender other than male or female */
     | "other";
-
 export const Gender = {
     Female: "female",
     Male: "male",

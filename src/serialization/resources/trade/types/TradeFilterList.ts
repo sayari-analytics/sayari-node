@@ -12,83 +12,83 @@ export const TradeFilterList: core.serialization.ObjectSchema<serializers.TradeF
     core.serialization.object({
         buyerId: core.serialization.property(
             "buyer_id",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         supplierId: core.serialization.property(
             "supplier_id",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         buyerName: core.serialization.property(
             "buyer_name",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         supplierName: core.serialization.property(
             "supplier_name",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         buyerRisk: core.serialization.property("buyer_risk", core.serialization.list(Risk).optional()),
         supplierRisk: core.serialization.property("supplier_risk", core.serialization.list(Risk).optional()),
         buyerCountry: core.serialization.property("buyer_country", core.serialization.list(Country).optional()),
         buyerCity: core.serialization.property(
             "buyer_city",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         buyerState: core.serialization.property(
             "buyer_state",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         supplierCountry: core.serialization.property("supplier_country", core.serialization.list(Country).optional()),
         supplierCity: core.serialization.property(
             "supplier_city",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         supplierState: core.serialization.property(
             "supplier_state",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         departureCountry: core.serialization.property("departure_country", core.serialization.list(Country).optional()),
         departureState: core.serialization.property(
             "departure_state",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         departureCity: core.serialization.property(
             "departure_city",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         arrivalCountry: core.serialization.property("arrival_country", core.serialization.list(Country).optional()),
         arrivalState: core.serialization.property(
             "arrival_state",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         arrivalCity: core.serialization.property(
             "arrival_city",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         hsCode: core.serialization.property("hs_code", core.serialization.list(core.serialization.string()).optional()),
         hsDescription: core.serialization.property(
             "hs_description",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         productOrigin: core.serialization.property("product_origin", core.serialization.list(Country).optional()),
         supplierPurpose: core.serialization.property(
             "supplier_purpose",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         buyerPurpose: core.serialization.property(
             "buyer_purpose",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         arrivalDate: core.serialization.property(
             "arrival_date",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         departureDate: core.serialization.property(
             "departure_date",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         shipmentIdentifier: core.serialization.property(
             "shipment_identifier",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         transitCountry: core.serialization.property("transit_country", core.serialization.list(Country).optional()),
         weight: core.serialization.list(core.serialization.string()).optional(),
@@ -96,7 +96,7 @@ export const TradeFilterList: core.serialization.ObjectSchema<serializers.TradeF
     });
 
 export declare namespace TradeFilterList {
-    interface Raw {
+    export interface Raw {
         buyer_id?: string[] | null;
         supplier_id?: string[] | null;
         buyer_name?: string[] | null;

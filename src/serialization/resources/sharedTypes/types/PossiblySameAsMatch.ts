@@ -15,7 +15,7 @@ export const PossiblySameAsMatch: core.serialization.ObjectSchema<
 });
 
 export declare namespace PossiblySameAsMatch {
-    interface Raw {
+    export interface Raw {
         source: string;
         target: string;
     }

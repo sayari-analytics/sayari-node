@@ -18,7 +18,7 @@ export const IdentifierInfo: core.serialization.ObjectSchema<serializers.Identif
         .extend(PaginatedResponse);
 
 export declare namespace IdentifierInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: IdentifierData.Raw[];
         next?: unknown | null;
         offset?: number | null;

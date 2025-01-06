@@ -21,24 +21,41 @@ import { Trade } from "./api/resources/trade/client/Client";
 import { Traversal } from "./api/resources/traversal/client/Client";
 
 export declare namespace SayariClient {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
         clientId: core.Supplier<string>;
         clientSecret: core.Supplier<string>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
 export class SayariClient {
     private readonly _oauthTokenProvider: core.OAuthTokenProvider;
+    protected _attributes: Attributes | undefined;
+    protected _auth: Auth | undefined;
+    protected _entity: Entity | undefined;
+    protected _info: Info | undefined;
+    protected _metadata: Metadata | undefined;
+    protected _notifications: Notifications | undefined;
+    protected _project: Project | undefined;
+    protected _record: Record_ | undefined;
+    protected _resolution: Resolution | undefined;
+    protected _resource: Resource | undefined;
+    protected _search: Search | undefined;
+    protected _source: Source | undefined;
+    protected _supplyChain: SupplyChain | undefined;
+    protected _trade: Trade | undefined;
+    protected _traversal: Traversal | undefined;
 
     constructor(protected readonly _options: SayariClient.Options) {
         this._oauthTokenProvider = new core.OAuthTokenProvider({
@@ -50,16 +67,12 @@ export class SayariClient {
         });
     }
 
-    protected _attributes: Attributes | undefined;
-
     public get attributes(): Attributes {
         return (this._attributes ??= new Attributes({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));
     }
-
-    protected _auth: Auth | undefined;
 
     public get auth(): Auth {
         return (this._auth ??= new Auth({
@@ -68,16 +81,12 @@ export class SayariClient {
         }));
     }
 
-    protected _entity: Entity | undefined;
-
     public get entity(): Entity {
         return (this._entity ??= new Entity({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));
     }
-
-    protected _info: Info | undefined;
 
     public get info(): Info {
         return (this._info ??= new Info({
@@ -86,16 +95,12 @@ export class SayariClient {
         }));
     }
 
-    protected _metadata: Metadata | undefined;
-
     public get metadata(): Metadata {
         return (this._metadata ??= new Metadata({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));
     }
-
-    protected _notifications: Notifications | undefined;
 
     public get notifications(): Notifications {
         return (this._notifications ??= new Notifications({
@@ -104,16 +109,12 @@ export class SayariClient {
         }));
     }
 
-    protected _project: Project | undefined;
-
     public get project(): Project {
         return (this._project ??= new Project({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));
     }
-
-    protected _record: Record_ | undefined;
 
     public get record(): Record_ {
         return (this._record ??= new Record_({
@@ -122,16 +123,12 @@ export class SayariClient {
         }));
     }
 
-    protected _resolution: Resolution | undefined;
-
     public get resolution(): Resolution {
         return (this._resolution ??= new Resolution({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));
     }
-
-    protected _resource: Resource | undefined;
 
     public get resource(): Resource {
         return (this._resource ??= new Resource({
@@ -140,16 +137,12 @@ export class SayariClient {
         }));
     }
 
-    protected _search: Search | undefined;
-
     public get search(): Search {
         return (this._search ??= new Search({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));
     }
-
-    protected _source: Source | undefined;
 
     public get source(): Source {
         return (this._source ??= new Source({
@@ -158,8 +151,6 @@ export class SayariClient {
         }));
     }
 
-    protected _supplyChain: SupplyChain | undefined;
-
     public get supplyChain(): SupplyChain {
         return (this._supplyChain ??= new SupplyChain({
             ...this._options,
@@ -167,16 +158,12 @@ export class SayariClient {
         }));
     }
 
-    protected _trade: Trade | undefined;
-
     public get trade(): Trade {
         return (this._trade ??= new Trade({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));
     }
-
-    protected _traversal: Traversal | undefined;
 
     public get traversal(): Traversal {
         return (this._traversal ??= new Traversal({

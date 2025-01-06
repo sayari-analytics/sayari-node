@@ -15,7 +15,7 @@ export const MonetaryValue: core.serialization.ObjectSchema<serializers.Monetary
     });
 
 export declare namespace MonetaryValue {
-    interface Raw {
+    export interface Raw {
         value: number;
         currency?: Currency.Raw | null;
         context?: string | null;

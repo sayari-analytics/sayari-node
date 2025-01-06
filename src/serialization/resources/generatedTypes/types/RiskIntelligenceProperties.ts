@@ -22,7 +22,7 @@ export const RiskIntelligenceProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace RiskIntelligenceProperties {
-    interface Raw {
+    export interface Raw {
         authority?: string | null;
         date?: string | null;
         from_date?: string | null;

@@ -16,7 +16,7 @@ export const PaginatedResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace PaginatedResponse {
-    interface Raw {
+    export interface Raw {
         limit: number;
         size: QualifiedCount.Raw;
     }

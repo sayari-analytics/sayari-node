@@ -20,7 +20,7 @@ export const AdditionalInformationInfo: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace AdditionalInformationInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: AdditionalInformationData.Raw[];
         next?: unknown | null;
         offset?: number | null;

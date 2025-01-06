@@ -18,7 +18,7 @@ export const SharesInfo: core.serialization.ObjectSchema<serializers.SharesInfo.
         .extend(PaginatedResponse);
 
 export declare namespace SharesInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: SharesData.Raw[];
         next?: unknown | null;
         offset?: number | null;

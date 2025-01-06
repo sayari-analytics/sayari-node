@@ -11,12 +11,12 @@ export const EntitySummary: core.serialization.ObjectSchema<serializers.EntitySu
     core.serialization.object({
         attributes: core.serialization.record(
             Attributes,
-            core.serialization.list(core.serialization.unknown()).optional()
+            core.serialization.list(core.serialization.unknown()).optional(),
         ),
     });
 
 export declare namespace EntitySummary {
-    interface Raw {
+    export interface Raw {
         attributes: Record<Attributes.Raw, unknown[] | null | undefined>;
     }
 }

@@ -20,7 +20,7 @@ export const TranslatedNameProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace TranslatedNameProperties {
-    interface Raw {
+    export interface Raw {
         context?: TranslationContext.Raw | null;
         date?: string | null;
         from_date?: string | null;

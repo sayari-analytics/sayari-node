@@ -24,7 +24,7 @@ export const CountryContext: core.serialization.Schema<serializers.CountryContex
     ]);
 
 export declare namespace CountryContext {
-    type Raw =
+    export type Raw =
         | "activity_in"
         | "address"
         | "citizenship"

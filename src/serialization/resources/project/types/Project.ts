@@ -18,7 +18,7 @@ export const Project: core.serialization.ObjectSchema<serializers.Project.Raw, S
     });
 
 export declare namespace Project {
-    interface Raw {
+    export interface Raw {
         id: string;
         label: string;
         archived: boolean;

@@ -16,7 +16,7 @@ export const CountryData: core.serialization.ObjectSchema<serializers.CountryDat
         .extend(AttributeData);
 
 export declare namespace CountryData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: CountryProperties.Raw;
     }
 }

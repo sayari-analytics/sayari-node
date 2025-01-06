@@ -18,7 +18,7 @@ export const GenericInfo: core.serialization.ObjectSchema<serializers.GenericInf
         .extend(PaginatedResponse);
 
 export declare namespace GenericInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: GenericData.Raw[];
         next?: unknown | null;
         offset?: number | null;

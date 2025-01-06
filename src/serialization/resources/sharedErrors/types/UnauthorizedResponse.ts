@@ -12,5 +12,5 @@ export const UnauthorizedResponse: core.serialization.Schema<
 > = core.serialization.unknown();
 
 export declare namespace UnauthorizedResponse {
-    type Raw = unknown;
+    export type Raw = unknown;
 }

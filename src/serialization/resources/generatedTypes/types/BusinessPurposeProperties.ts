@@ -20,7 +20,7 @@ export const BusinessPurposeProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace BusinessPurposeProperties {
-    interface Raw {
+    export interface Raw {
         code?: string | null;
         date?: string | null;
         from_date?: string | null;

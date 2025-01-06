@@ -12,5 +12,5 @@ export const MonetaryValueContext: core.serialization.Schema<
 > = core.serialization.enum_(["assessed_value", "cost_insurance_and_freight", "free_on_board"]);
 
 export declare namespace MonetaryValueContext {
-    type Raw = "assessed_value" | "cost_insurance_and_freight" | "free_on_board";
+    export type Raw = "assessed_value" | "cost_insurance_and_freight" | "free_on_board";
 }

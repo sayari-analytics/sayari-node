@@ -3,7 +3,6 @@
  */
 
 export type NotificationType = "risk";
-
 export const NotificationType = {
     Risk: "risk",
 } as const;

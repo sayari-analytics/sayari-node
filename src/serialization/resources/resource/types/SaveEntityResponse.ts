@@ -15,7 +15,7 @@ export const SaveEntityResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace SaveEntityResponse {
-    interface Raw {
+    export interface Raw {
         data: EntityResponseData.Raw;
     }
 }

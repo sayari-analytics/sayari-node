@@ -10,5 +10,5 @@ export const ContactType: core.serialization.Schema<serializers.ContactType.Raw,
     core.serialization.enum_(["email", "fax", "phone_number", "url"]);
 
 export declare namespace ContactType {
-    type Raw = "email" | "fax" | "phone_number" | "url";
+    export type Raw = "email" | "fax" | "phone_number" | "url";
 }

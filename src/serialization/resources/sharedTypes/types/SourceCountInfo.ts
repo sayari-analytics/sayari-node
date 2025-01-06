@@ -13,7 +13,7 @@ export const SourceCountInfo: core.serialization.ObjectSchema<serializers.Source
     });
 
 export declare namespace SourceCountInfo {
-    interface Raw {
+    export interface Raw {
         count: number;
         label: string;
     }

@@ -10,18 +10,20 @@ import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Resource {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -55,12 +57,12 @@ export class Resource {
      */
     public async saveEntity(
         request: Sayari.SaveEntityRequest,
-        requestOptions?: Resource.RequestOptions
+        requestOptions?: Resource.RequestOptions,
     ): Promise<Sayari.SaveEntityResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                "/v1/resource/entity"
+                "/v1/resource/entity",
             ),
             method: "POST",
             headers: {
@@ -71,6 +73,7 @@ export class Resource {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -97,7 +100,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -106,7 +109,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 404:
                     throw new Sayari.NotFound(
@@ -115,7 +118,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
@@ -124,7 +127,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -133,7 +136,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -142,7 +145,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -159,7 +162,7 @@ export class Resource {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError("Timeout exceeded when calling POST /v1/resource/entity.");
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,
@@ -170,7 +173,7 @@ export class Resource {
     /**
      * Deletes an existing saved resource from a project.
      *
-     * @param {Sayari.ResourceType} type
+     * @param {Sayari.ResourceType} type_
      * @param {string} resourceId
      * @param {Resource.RequestOptions} requestOptions - Request-specific configuration.
      *
@@ -185,16 +188,14 @@ export class Resource {
      *     await client.resource.deleteResource("entity", "YWmNKV")
      */
     public async deleteResource(
-        type: Sayari.ResourceType,
+        type_: Sayari.ResourceType,
         resourceId: string,
-        requestOptions?: Resource.RequestOptions
+        requestOptions?: Resource.RequestOptions,
     ): Promise<Sayari.DeleteResourceResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                `/v1/resource/${encodeURIComponent(serializers.ResourceType.jsonOrThrow(type))}/${encodeURIComponent(
-                    resourceId
-                )}`
+                `/v1/resource/${encodeURIComponent(serializers.ResourceType.jsonOrThrow(type_))}/${encodeURIComponent(resourceId)}`,
             ),
             method: "DELETE",
             headers: {
@@ -205,6 +206,7 @@ export class Resource {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -230,7 +232,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -239,7 +241,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 404:
                     throw new Sayari.NotFound(
@@ -248,7 +250,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
@@ -257,7 +259,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -266,7 +268,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -275,7 +277,7 @@ export class Resource {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -292,7 +294,9 @@ export class Resource {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError(
+                    "Timeout exceeded when calling DELETE /v1/resource/{type}/{resourceId}.",
+                );
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,

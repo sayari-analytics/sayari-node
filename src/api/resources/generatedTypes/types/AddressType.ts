@@ -24,7 +24,6 @@ export type AddressType =
     /**
      * An address an entity has listed for its registration */
     | "registered";
-
 export const AddressType = {
     Arrival: "arrival",
     Business: "business",

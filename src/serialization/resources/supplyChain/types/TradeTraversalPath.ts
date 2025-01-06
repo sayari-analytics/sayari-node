@@ -18,7 +18,7 @@ export const TradeTraversalPath: core.serialization.ObjectSchema<
 });
 
 export declare namespace TradeTraversalPath {
-    interface Raw {
+    export interface Raw {
         source: string;
         target: TradeTraversalEntity.Raw;
         path: TradeTraversalPathSegment.Raw[];

@@ -14,5 +14,5 @@ export const RiskValue: core.serialization.Schema<serializers.RiskValue.Raw, Say
     ]);
 
 export declare namespace RiskValue {
-    type Raw = string | number | boolean;
+    export type Raw = string | number | boolean;
 }

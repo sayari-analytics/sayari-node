@@ -14,7 +14,7 @@ export const QualifiedCount: core.serialization.ObjectSchema<serializers.Qualifi
     });
 
 export declare namespace QualifiedCount {
-    interface Raw {
+    export interface Raw {
         count: number;
         qualifier: CountQualifier.Raw;
     }

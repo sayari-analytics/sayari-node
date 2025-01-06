@@ -32,7 +32,7 @@ export const Tag: core.serialization.Schema<serializers.Tag.Raw, Sayari.Tag> = c
 ]);
 
 export declare namespace Tag {
-    type Raw =
+    export type Raw =
         | "aspi_uyghur_forced_labor_report_entity"
         | "bis_boycott_requester_list"
         | "export_controls"

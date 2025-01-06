@@ -21,7 +21,7 @@ export const StatusProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace StatusProperties {
-    interface Raw {
+    export interface Raw {
         context?: StatusContext.Raw | null;
         date?: string | null;
         from_date?: string | null;

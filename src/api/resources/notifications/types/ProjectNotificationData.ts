@@ -12,7 +12,7 @@ export interface ProjectNotificationData {
     /** The ID of the entity */
     entityId: string;
     notifications: Sayari.Notification[];
-    /** <Warning>This property is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> custom user key/value pairs (key must be prefixed with "custom\_" and value must be "string" type) */
+    /** <Warning>This property is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> custom user key/value pairs (key must be prefixed with "custom_" and value must be "string" type) */
     customFields?: unknown;
     /** Aggregated risk notifications */
     riskNotifications: Sayari.ProjectNotificationRiskData;

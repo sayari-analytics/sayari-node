@@ -15,7 +15,6 @@ export type MeasurementType =
     /**
      * Describes the number of units of product */
     | "quantity";
-
 export const MeasurementType = {
     GrossWeight: "gross_weight",
     NetWeight: "net_weight",

@@ -12,5 +12,5 @@ export const GetProjectEntitiesAcceptHeader: core.serialization.Schema<
 > = core.serialization.enum_(["application/json", "text/csv", "application/vnd.ms-excel"]);
 
 export declare namespace GetProjectEntitiesAcceptHeader {
-    type Raw = "application/json" | "text/csv" | "application/vnd.ms-excel";
+    export type Raw = "application/json" | "text/csv" | "application/vnd.ms-excel";
 }

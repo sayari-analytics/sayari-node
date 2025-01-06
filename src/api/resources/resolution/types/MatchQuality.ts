@@ -6,7 +6,6 @@
  * Represents the quality of the field match
  */
 export type MatchQuality = "high" | "medium" | "low";
-
 export const MatchQuality = {
     High: "high",
     Medium: "medium",

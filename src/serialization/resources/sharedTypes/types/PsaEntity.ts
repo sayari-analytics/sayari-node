@@ -24,7 +24,7 @@ export const PsaEntity: core.serialization.ObjectSchema<serializers.PsaEntity.Ra
         .extend(EmbeddedEntity);
 
 export declare namespace PsaEntity {
-    interface Raw extends EmbeddedEntity.Raw {
+    export interface Raw extends EmbeddedEntity.Raw {
         risk: EntityRisk.Raw;
         registration_date?: EntityRegistrationDate.Raw | null;
         company_type?: CompanyType.Raw | null;

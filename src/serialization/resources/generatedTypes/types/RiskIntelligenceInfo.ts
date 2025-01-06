@@ -20,7 +20,7 @@ export const RiskIntelligenceInfo: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace RiskIntelligenceInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: RiskIntelligenceData.Raw[];
         next?: unknown | null;
         offset?: number | null;

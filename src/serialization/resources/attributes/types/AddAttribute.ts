@@ -17,7 +17,7 @@ export const AddAttribute: core.serialization.ObjectSchema<serializers.AddAttrib
     });
 
 export declare namespace AddAttribute {
-    interface Raw {
+    export interface Raw {
         entity: string;
         type: string;
         value?: unknown;

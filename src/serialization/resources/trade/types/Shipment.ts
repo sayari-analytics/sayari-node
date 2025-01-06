@@ -22,11 +22,11 @@ export const Shipment: core.serialization.ObjectSchema<serializers.Shipment.Raw,
         supplier: core.serialization.list(SourceOrDestinationEntity),
         arrivalDate: core.serialization.property(
             "arrival_date",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         departureDate: core.serialization.property(
             "departure_date",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         departureAddress: core.serialization.property("departure_address", ShipmentAddress.optional()),
         arrivalAddress: core.serialization.property("arrival_address", ShipmentAddress.optional()),
@@ -42,13 +42,13 @@ export const Shipment: core.serialization.ObjectSchema<serializers.Shipment.Raw,
         hsCodes: core.serialization.property("hs_codes", core.serialization.list(HsCodeInfo)),
         productDescriptions: core.serialization.property(
             "product_descriptions",
-            core.serialization.list(core.serialization.string())
+            core.serialization.list(core.serialization.string()),
         ),
         record: core.serialization.string(),
     });
 
 export declare namespace Shipment {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: string;
         buyer: SourceOrDestinationEntity.Raw[];

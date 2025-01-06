@@ -18,7 +18,7 @@ export const WeakIdentifierData: core.serialization.ObjectSchema<
     .extend(AttributeData);
 
 export declare namespace WeakIdentifierData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: WeakIdentifierProperties.Raw;
     }
 }

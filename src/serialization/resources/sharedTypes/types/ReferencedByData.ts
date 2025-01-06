@@ -17,7 +17,7 @@ export const ReferencedByData: core.serialization.ObjectSchema<
 });
 
 export declare namespace ReferencedByData {
-    interface Raw {
+    export interface Raw {
         record: RecordDetails.Raw;
         type: ReferencedByDataType.Raw;
     }

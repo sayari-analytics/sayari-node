@@ -15,7 +15,7 @@ export const NameData: core.serialization.ObjectSchema<serializers.NameData.Raw,
     .extend(AttributeData);
 
 export declare namespace NameData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: NameProperties.Raw;
     }
 }

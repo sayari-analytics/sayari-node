@@ -20,7 +20,7 @@ export const UsageInfo: core.serialization.ObjectSchema<serializers.UsageInfo.Ra
     });
 
 export declare namespace UsageInfo {
-    interface Raw {
+    export interface Raw {
         entity?: number | null;
         record?: number | null;
         resolve?: number | null;

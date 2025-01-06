@@ -15,7 +15,7 @@ export const SupplierOrBuyer: core.serialization.ObjectSchema<serializers.Suppli
         .extend(core.serialization.lazyObject(() => serializers.EntityDetails));
 
 export declare namespace SupplierOrBuyer {
-    interface Raw extends serializers.EntityDetails.Raw {
+    export interface Raw extends serializers.EntityDetails.Raw {
         metadata: SupplierMetadata.Raw;
     }
 }

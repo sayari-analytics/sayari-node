@@ -16,7 +16,7 @@ export const MethodNotAllowedResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace MethodNotAllowedResponse {
-    interface Raw {
+    export interface Raw {
         status: number;
         message: string[];
         success: boolean;

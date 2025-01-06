@@ -18,7 +18,7 @@ export const StatusInfo: core.serialization.ObjectSchema<serializers.StatusInfo.
         .extend(PaginatedResponse);
 
 export declare namespace StatusInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: StatusData.Raw[];
         next?: unknown | null;
         offset?: number | null;

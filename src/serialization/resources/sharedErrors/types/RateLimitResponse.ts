@@ -10,5 +10,5 @@ export const RateLimitResponse: core.serialization.Schema<serializers.RateLimitR
     core.serialization.unknown();
 
 export declare namespace RateLimitResponse {
-    type Raw = unknown;
+    export type Raw = unknown;
 }

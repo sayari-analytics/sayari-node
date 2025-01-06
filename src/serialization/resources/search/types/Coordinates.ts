@@ -14,7 +14,7 @@ export const Coordinates: core.serialization.ObjectSchema<serializers.Coordinate
     });
 
 export declare namespace Coordinates {
-    interface Raw {
+    export interface Raw {
         lat?: number | null;
         lng?: number | null;
         address: string;

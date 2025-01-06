@@ -10,5 +10,5 @@ export const RiskLevel: core.serialization.Schema<serializers.RiskLevel.Raw, Say
     core.serialization.enum_(["critical", "high", "elevated", "relevant"]);
 
 export declare namespace RiskLevel {
-    type Raw = "critical" | "high" | "elevated" | "relevant";
+    export type Raw = "critical" | "high" | "elevated" | "relevant";
 }

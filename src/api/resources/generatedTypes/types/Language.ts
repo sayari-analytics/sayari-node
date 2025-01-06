@@ -558,7 +558,6 @@ export type Language =
     /**
      * Zulu */
     | "zu";
-
 export const Language = {
     Aa: "aa",
     Ab: "ab",

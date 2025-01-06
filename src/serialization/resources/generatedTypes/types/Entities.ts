@@ -22,7 +22,7 @@ export const Entities: core.serialization.Schema<serializers.Entities.Raw, Sayar
 ]);
 
 export declare namespace Entities {
-    type Raw =
+    export type Raw =
         | "aircraft"
         | "company"
         | "generic"

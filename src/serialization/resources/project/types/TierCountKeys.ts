@@ -11,5 +11,5 @@ export const TierCountKeys: core.serialization.Schema<serializers.TierCountKeys.
     core.serialization.undiscriminatedUnion([UpstreamTiers, core.serialization.stringLiteral("totalCount")]);
 
 export declare namespace TierCountKeys {
-    type Raw = UpstreamTiers.Raw | "totalCount";
+    export type Raw = UpstreamTiers.Raw | "totalCount";
 }

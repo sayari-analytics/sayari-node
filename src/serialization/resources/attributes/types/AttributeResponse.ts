@@ -15,7 +15,7 @@ export const AttributeResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace AttributeResponse {
-    interface Raw {
+    export interface Raw {
         data: AttributeResponseData.Raw;
     }
 }

@@ -16,7 +16,7 @@ export const AddressData: core.serialization.ObjectSchema<serializers.AddressDat
         .extend(AttributeData);
 
 export declare namespace AddressData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: AddressProperties.Raw;
     }
 }

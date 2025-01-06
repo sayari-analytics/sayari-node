@@ -10,5 +10,5 @@ export const EntityId: core.serialization.Schema<serializers.EntityId.Raw, Sayar
     core.serialization.string();
 
 export declare namespace EntityId {
-    type Raw = string;
+    export type Raw = string;
 }

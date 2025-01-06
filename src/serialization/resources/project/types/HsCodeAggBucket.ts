@@ -15,7 +15,7 @@ export const HsCodeAggBucket: core.serialization.ObjectSchema<serializers.HsCode
     });
 
 export declare namespace HsCodeAggBucket {
-    interface Raw {
+    export interface Raw {
         key: string;
         doc_count: number;
         hs_code_sums?: IntKeyValue.Raw | null;

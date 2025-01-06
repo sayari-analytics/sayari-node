@@ -16,7 +16,7 @@ export const NotificationAdditionalInformation: core.serialization.ObjectSchema<
 });
 
 export declare namespace NotificationAdditionalInformation {
-    interface Raw {
+    export interface Raw {
         value?: Record<string, unknown> | null;
         properties: AdditionalInformationProperties.Raw[];
     }

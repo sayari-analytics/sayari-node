@@ -18,7 +18,7 @@ export const ReferencedBy: core.serialization.ObjectSchema<serializers.Reference
         .extend(PaginatedResponse);
 
 export declare namespace ReferencedBy {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         offset?: number | null;
         next?: unknown | null;
         data: ReferencedByData.Raw[];

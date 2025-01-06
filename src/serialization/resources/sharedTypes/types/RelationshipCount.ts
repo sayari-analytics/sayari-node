@@ -11,5 +11,5 @@ export const RelationshipCount: core.serialization.Schema<serializers.Relationsh
     core.serialization.record(Relationships, core.serialization.number().optional());
 
 export declare namespace RelationshipCount {
-    type Raw = Record<Relationships.Raw, number | null | undefined>;
+    export type Raw = Record<Relationships.Raw, number | null | undefined>;
 }

@@ -44,7 +44,7 @@ export const BusinessPurposeStandard: core.serialization.Schema<
 ]);
 
 export declare namespace BusinessPurposeStandard {
-    type Raw =
+    export type Raw =
         | "ADGM"
         | "ATECO"
         | "CAE"

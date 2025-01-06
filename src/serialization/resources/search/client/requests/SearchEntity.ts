@@ -21,7 +21,7 @@ export const SearchEntity: core.serialization.Schema<
 });
 
 export declare namespace SearchEntity {
-    interface Raw {
+    export interface Raw {
         q: string;
         fields?: SearchField.Raw[] | null;
         filter?: FilterList.Raw | null;

@@ -16,7 +16,7 @@ export const ContactData: core.serialization.ObjectSchema<serializers.ContactDat
         .extend(AttributeData);
 
 export declare namespace ContactData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: ContactProperties.Raw;
     }
 }

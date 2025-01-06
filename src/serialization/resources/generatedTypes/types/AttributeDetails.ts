@@ -57,7 +57,7 @@ export const AttributeDetails: core.serialization.ObjectSchema<
 });
 
 export declare namespace AttributeDetails {
-    interface Raw {
+    export interface Raw {
         additional_information?: AdditionalInformationInfo.Raw | null;
         address?: AddressInfo.Raw | null;
         business_purpose?: BusinessPurposeInfo.Raw | null;

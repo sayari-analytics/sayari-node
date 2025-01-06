@@ -13,5 +13,5 @@ export const Role: core.serialization.Schema<serializers.Role.Raw, Sayari.Role> 
 ]);
 
 export declare namespace Role {
-    type Raw = "viewer" | "editor" | "admin";
+    export type Raw = "viewer" | "editor" | "admin";
 }

@@ -33,7 +33,7 @@ export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, S
     ]);
 
 export declare namespace Attributes {
-    type Raw =
+    export type Raw =
         | "additional_information"
         | "address"
         | "business_purpose"

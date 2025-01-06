@@ -18,7 +18,7 @@ export const GenericProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace GenericProperties {
-    interface Raw {
+    export interface Raw {
         date?: string | null;
         from_date?: string | null;
         to_date?: string | null;

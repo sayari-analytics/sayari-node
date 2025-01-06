@@ -196,7 +196,7 @@ export const Currency: core.serialization.Schema<serializers.Currency.Raw, Sayar
 ]);
 
 export declare namespace Currency {
-    type Raw =
+    export type Raw =
         | "AED"
         | "AFN"
         | "ALL"

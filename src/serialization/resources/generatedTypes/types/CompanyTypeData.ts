@@ -16,7 +16,7 @@ export const CompanyTypeData: core.serialization.ObjectSchema<serializers.Compan
         .extend(AttributeData);
 
 export declare namespace CompanyTypeData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: CompanyTypeProperties.Raw;
     }
 }

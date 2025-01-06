@@ -16,7 +16,7 @@ export const FinancesData: core.serialization.ObjectSchema<serializers.FinancesD
         .extend(AttributeData);
 
 export declare namespace FinancesData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: FinancesProperties.Raw;
     }
 }

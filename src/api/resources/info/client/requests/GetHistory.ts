@@ -4,13 +4,7 @@
 
 /**
  * @example
- *     {
- *         events: "string",
- *         from: "2023-01-15",
- *         to: "2023-01-15",
- *         size: 1,
- *         token: "string"
- *     }
+ *     {}
  */
 export interface GetHistory {
     /**

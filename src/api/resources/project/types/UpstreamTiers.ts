@@ -3,7 +3,6 @@
  */
 
 export type UpstreamTiers = "tier1" | "tier2" | "tier3" | "tier4";
-
 export const UpstreamTiers = {
     Tier1: "tier1",
     Tier2: "tier2",

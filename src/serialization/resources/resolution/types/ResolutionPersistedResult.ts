@@ -17,7 +17,7 @@ export const ResolutionPersistedResult: core.serialization.ObjectSchema<
     .extend(ResolutionResult);
 
 export declare namespace ResolutionPersistedResult {
-    interface Raw extends ResolutionResult.Raw {
+    export interface Raw extends ResolutionResult.Raw {
         saved_entity_id: string;
     }
 }

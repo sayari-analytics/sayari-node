@@ -16,7 +16,7 @@ export const GenericData: core.serialization.ObjectSchema<serializers.GenericDat
         .extend(AttributeData);
 
 export declare namespace GenericData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: GenericProperties.Raw;
     }
 }

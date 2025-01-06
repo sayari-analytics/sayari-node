@@ -16,7 +16,7 @@ export const ResolutionUploadResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace ResolutionUploadResponse {
-    interface Raw {
+    export interface Raw {
         file: string;
         uploaded: string;
         count: number;

@@ -17,7 +17,7 @@ export const PositionProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace PositionProperties {
-    interface Raw {
+    export interface Raw {
         date?: string | null;
         from_date?: string | null;
         to_date?: string | null;

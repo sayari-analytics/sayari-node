@@ -12,5 +12,5 @@ export const ReferencedByDataType: core.serialization.Schema<
 > = core.serialization.enum_(["about", "mentions"]);
 
 export declare namespace ReferencedByDataType {
-    type Raw = "about" | "mentions";
+    export type Raw = "about" | "mentions";
 }

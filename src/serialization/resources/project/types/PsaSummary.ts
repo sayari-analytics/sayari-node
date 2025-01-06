@@ -16,7 +16,7 @@ export const PsaSummary: core.serialization.ObjectSchema<serializers.PsaSummary.
     });
 
 export declare namespace PsaSummary {
-    interface Raw {
+    export interface Raw {
         risk: Risk.Raw[];
         countries: Country.Raw[];
         count: number;

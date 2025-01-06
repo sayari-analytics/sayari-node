@@ -15,7 +15,7 @@ export const ProjectCounts: core.serialization.ObjectSchema<serializers.ProjectC
     });
 
 export declare namespace ProjectCounts {
-    interface Raw {
+    export interface Raw {
         entity?: number | null;
         graph?: number | null;
         search?: number | null;

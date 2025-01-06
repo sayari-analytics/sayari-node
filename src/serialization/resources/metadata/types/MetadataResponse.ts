@@ -18,7 +18,7 @@ export const MetadataResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace MetadataResponse {
-    interface Raw {
+    export interface Raw {
         version: string;
         master_release: string;
         watchlist_release: string;

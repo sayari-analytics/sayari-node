@@ -11,5 +11,5 @@ export const TierCount: core.serialization.Schema<serializers.TierCount.Raw, Say
     core.serialization.record(TierCountKeys, core.serialization.number());
 
 export declare namespace TierCount {
-    type Raw = Record<TierCountKeys.Raw, number>;
+    export type Raw = Record<TierCountKeys.Raw, number>;
 }

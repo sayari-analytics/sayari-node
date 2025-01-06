@@ -15,7 +15,7 @@ export const HistoryResponse: core.serialization.ObjectSchema<serializers.Histor
     });
 
 export declare namespace HistoryResponse {
-    interface Raw {
+    export interface Raw {
         size: number;
         next_token: string;
         events: HistoryInfo.Raw[];

@@ -10,5 +10,5 @@ export const NotificationType: core.serialization.Schema<serializers.Notificatio
     core.serialization.enum_(["risk"]);
 
 export declare namespace NotificationType {
-    type Raw = "risk";
+    export type Raw = "risk";
 }

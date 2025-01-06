@@ -48,7 +48,7 @@ export const AddressProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace AddressProperties {
-    interface Raw {
+    export interface Raw {
         building?: string | null;
         category?: string | null;
         city?: string | null;

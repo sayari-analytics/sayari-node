@@ -11,11 +11,11 @@ export const Weight: core.serialization.ObjectSchema<serializers.Weight.Raw, Say
         value: core.serialization.number(),
         unit: core.serialization.string(),
         type: core.serialization.string(),
-    }
+    },
 );
 
 export declare namespace Weight {
-    interface Raw {
+    export interface Raw {
         value: number;
         unit: string;
         type: string;

@@ -18,7 +18,6 @@ export type ContactType =
     /**
      * A URL */
     | "url";
-
 export const ContactType = {
     Email: "email",
     Fax: "fax",

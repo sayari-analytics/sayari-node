@@ -3,7 +3,6 @@
  */
 
 export type ClientName = "sayari-go" | "sayari-python" | "sayari-java" | "sayari-node";
-
 export const ClientName = {
     Go: "sayari-go",
     Python: "sayari-python",

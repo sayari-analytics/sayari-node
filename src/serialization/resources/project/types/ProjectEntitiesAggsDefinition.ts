@@ -12,5 +12,5 @@ export const ProjectEntitiesAggsDefinition: core.serialization.Schema<
 > = core.serialization.string();
 
 export declare namespace ProjectEntitiesAggsDefinition {
-    type Raw = string;
+    export type Raw = string;
 }

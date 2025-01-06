@@ -23,7 +23,7 @@ export const RelationshipInfo: core.serialization.ObjectSchema<
 });
 
 export declare namespace RelationshipInfo {
-    interface Raw {
+    export interface Raw {
         editable?: boolean | null;
         record: string;
         attributes: Record<Attributes.Raw, unknown[] | null | undefined>;

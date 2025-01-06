@@ -29,43 +29,43 @@ export const EmbeddedEntity: core.serialization.ObjectSchema<serializers.Embedde
         countries: core.serialization.list(Country),
         sourceCount: core.serialization.property(
             "source_count",
-            core.serialization.record(core.serialization.string(), SourceCountInfo)
+            core.serialization.record(core.serialization.string(), SourceCountInfo),
         ),
         addresses: core.serialization.list(core.serialization.string()),
         tradeCount: core.serialization.property(
             "trade_count",
-            core.serialization.record(core.serialization.string(), core.serialization.number())
+            core.serialization.record(core.serialization.string(), core.serialization.number()),
         ),
         dateOfBirth: core.serialization.property("date_of_birth", core.serialization.string().optional()),
         relationshipCount: core.serialization.property("relationship_count", RelationshipCount),
         userRelationshipCount: core.serialization.property("user_relationship_count", RelationshipCount),
         attributeCount: core.serialization.property(
             "attribute_count",
-            core.serialization.record(Attributes, core.serialization.number().optional())
+            core.serialization.record(Attributes, core.serialization.number().optional()),
         ),
         userAttributeCount: core.serialization.property(
             "user_attribute_count",
-            core.serialization.record(Attributes, core.serialization.number().optional())
+            core.serialization.record(Attributes, core.serialization.number().optional()),
         ),
         attributeCounts: core.serialization.property(
             "attribute_counts",
-            core.serialization.record(Attributes, core.serialization.number().optional()).optional()
+            core.serialization.record(Attributes, core.serialization.number().optional()).optional(),
         ),
         userAttributeCounts: core.serialization.property(
             "user_attribute_counts",
-            core.serialization.record(Attributes, core.serialization.number().optional()).optional()
+            core.serialization.record(Attributes, core.serialization.number().optional()).optional(),
         ),
         relatedEntitiesCount: core.serialization.property("related_entities_count", core.serialization.number()),
         userRelatedEntitiesCount: core.serialization.property(
             "user_related_entities_count",
-            core.serialization.number()
+            core.serialization.number(),
         ),
         userRecordCount: core.serialization.property("user_record_count", core.serialization.number()),
         referenceId: core.serialization.property("reference_id", core.serialization.string().optional()),
     });
 
 export declare namespace EmbeddedEntity {
-    interface Raw {
+    export interface Raw {
         id: string;
         label: string;
         degree: number;
