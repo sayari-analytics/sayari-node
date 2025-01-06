@@ -6,6 +6,7 @@ export type Risk =
     | "aspi_uyghur_forced_labor_report_entity"
     | "aspi_uyghur_forced_labor_report_entity_adjacent"
     | "basel_aml"
+    | "bis_addresses_high_diversion_risk"
     | "bis_boycott_requester_list"
     | "cmic_entity"
     | "cmic_entity_50_percent_rule"
@@ -32,6 +33,20 @@ export type Risk =
     | "export_to_soe"
     | "exports_bis_high_priority_items"
     | "exports_bis_high_priority_items_critical_components"
+    | "exports_eudr_shipment_cattle"
+    | "exports_eudr_shipment_cocoa"
+    | "exports_eudr_shipment_coffee"
+    | "exports_eudr_shipment_palm_oil"
+    | "exports_eudr_shipment_rubber"
+    | "exports_eudr_shipment_soya"
+    | "exports_eudr_shipment_wood"
+    | "exports_ilab_child_labor"
+    | "exports_ilab_forced_labor"
+    | "exports_russian_coal"
+    | "exports_russian_gold"
+    | "exports_russian_important_good"
+    | "exports_russian_oil"
+    | "exports_to_bis_addresses_high_diversion_risk"
     | "exports_to_entity_licensed_with_fsb_rf"
     | "forced_labor_aspi_origin_direct"
     | "forced_labor_aspi_origin_subtier"
@@ -62,6 +77,21 @@ export type Risk =
     | "formerly_sanctioned"
     | "imports_bis_high_priority_items"
     | "imports_bis_high_priority_items_critical_components"
+    | "imports_eudr_shipment_cattle"
+    | "imports_eudr_shipment_cocoa"
+    | "imports_eudr_shipment_coffee"
+    | "imports_eudr_shipment_palm_oil"
+    | "imports_eudr_shipment_rubber"
+    | "imports_eudr_shipment_soya"
+    | "imports_eudr_shipment_wood"
+    | "imports_from_bis_addresses_high_diversion_risk"
+    | "imports_ilab_child_labor"
+    | "imports_ilab_forced_labor"
+    | "imports_ndaa_889_telecom_equipment"
+    | "imports_russian_coal"
+    | "imports_russian_gold"
+    | "imports_russian_important_good"
+    | "imports_russian_oil"
     | "law_enforcement_action"
     | "meu_list_contractors"
     | "military_civil_fusion"
@@ -128,15 +158,19 @@ export type Risk =
     | "sheffield_hallam_university_useful_resources"
     | "soe_adjacent"
     | "state_owned"
+    | "state_owned_ven"
+    | "subsidiary_of_ndaa_889_covered_entities"
     | "uk_50_percent_rule"
     | "uk_minority_ownership"
     | "uk_sanctioned"
+    | "ven_soe_50_percent"
     | "wro_entity"
     | "wro_entity_adjacent";
 export const Risk = {
     AspiUyghurForcedLaborReportEntity: "aspi_uyghur_forced_labor_report_entity",
     AspiUyghurForcedLaborReportEntityAdjacent: "aspi_uyghur_forced_labor_report_entity_adjacent",
     BaselAml: "basel_aml",
+    BisAddressesHighDiversionRisk: "bis_addresses_high_diversion_risk",
     BisBoycottRequesterList: "bis_boycott_requester_list",
     CmicEntity: "cmic_entity",
     CmicEntity50PercentRule: "cmic_entity_50_percent_rule",
@@ -163,6 +197,20 @@ export const Risk = {
     ExportToSoe: "export_to_soe",
     ExportsBisHighPriorityItems: "exports_bis_high_priority_items",
     ExportsBisHighPriorityItemsCriticalComponents: "exports_bis_high_priority_items_critical_components",
+    ExportsEudrShipmentCattle: "exports_eudr_shipment_cattle",
+    ExportsEudrShipmentCocoa: "exports_eudr_shipment_cocoa",
+    ExportsEudrShipmentCoffee: "exports_eudr_shipment_coffee",
+    ExportsEudrShipmentPalmOil: "exports_eudr_shipment_palm_oil",
+    ExportsEudrShipmentRubber: "exports_eudr_shipment_rubber",
+    ExportsEudrShipmentSoya: "exports_eudr_shipment_soya",
+    ExportsEudrShipmentWood: "exports_eudr_shipment_wood",
+    ExportsIlabChildLabor: "exports_ilab_child_labor",
+    ExportsIlabForcedLabor: "exports_ilab_forced_labor",
+    ExportsRussianCoal: "exports_russian_coal",
+    ExportsRussianGold: "exports_russian_gold",
+    ExportsRussianImportantGood: "exports_russian_important_good",
+    ExportsRussianOil: "exports_russian_oil",
+    ExportsToBisAddressesHighDiversionRisk: "exports_to_bis_addresses_high_diversion_risk",
     ExportsToEntityLicensedWithFsbRf: "exports_to_entity_licensed_with_fsb_rf",
     ForcedLaborAspiOriginDirect: "forced_labor_aspi_origin_direct",
     ForcedLaborAspiOriginSubtier: "forced_labor_aspi_origin_subtier",
@@ -196,6 +244,21 @@ export const Risk = {
     FormerlySanctioned: "formerly_sanctioned",
     ImportsBisHighPriorityItems: "imports_bis_high_priority_items",
     ImportsBisHighPriorityItemsCriticalComponents: "imports_bis_high_priority_items_critical_components",
+    ImportsEudrShipmentCattle: "imports_eudr_shipment_cattle",
+    ImportsEudrShipmentCocoa: "imports_eudr_shipment_cocoa",
+    ImportsEudrShipmentCoffee: "imports_eudr_shipment_coffee",
+    ImportsEudrShipmentPalmOil: "imports_eudr_shipment_palm_oil",
+    ImportsEudrShipmentRubber: "imports_eudr_shipment_rubber",
+    ImportsEudrShipmentSoya: "imports_eudr_shipment_soya",
+    ImportsEudrShipmentWood: "imports_eudr_shipment_wood",
+    ImportsFromBisAddressesHighDiversionRisk: "imports_from_bis_addresses_high_diversion_risk",
+    ImportsIlabChildLabor: "imports_ilab_child_labor",
+    ImportsIlabForcedLabor: "imports_ilab_forced_labor",
+    ImportsNdaa889TelecomEquipment: "imports_ndaa_889_telecom_equipment",
+    ImportsRussianCoal: "imports_russian_coal",
+    ImportsRussianGold: "imports_russian_gold",
+    ImportsRussianImportantGood: "imports_russian_important_good",
+    ImportsRussianOil: "imports_russian_oil",
     LawEnforcementAction: "law_enforcement_action",
     MeuListContractors: "meu_list_contractors",
     MilitaryCivilFusion: "military_civil_fusion",
@@ -266,9 +329,12 @@ export const Risk = {
     SheffieldHallamUniversityUsefulResources: "sheffield_hallam_university_useful_resources",
     SoeAdjacent: "soe_adjacent",
     StateOwned: "state_owned",
+    StateOwnedVen: "state_owned_ven",
+    SubsidiaryOfNdaa889CoveredEntities: "subsidiary_of_ndaa_889_covered_entities",
     Uk50PercentRule: "uk_50_percent_rule",
     UkMinorityOwnership: "uk_minority_ownership",
     UkSanctioned: "uk_sanctioned",
+    VenSoe50Percent: "ven_soe_50_percent",
     WroEntity: "wro_entity",
     WroEntityAdjacent: "wro_entity_adjacent",
 } as const;

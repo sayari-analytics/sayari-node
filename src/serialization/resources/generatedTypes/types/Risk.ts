@@ -10,6 +10,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "aspi_uyghur_forced_labor_report_entity",
     "aspi_uyghur_forced_labor_report_entity_adjacent",
     "basel_aml",
+    "bis_addresses_high_diversion_risk",
     "bis_boycott_requester_list",
     "cmic_entity",
     "cmic_entity_50_percent_rule",
@@ -36,6 +37,20 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "export_to_soe",
     "exports_bis_high_priority_items",
     "exports_bis_high_priority_items_critical_components",
+    "exports_eudr_shipment_cattle",
+    "exports_eudr_shipment_cocoa",
+    "exports_eudr_shipment_coffee",
+    "exports_eudr_shipment_palm_oil",
+    "exports_eudr_shipment_rubber",
+    "exports_eudr_shipment_soya",
+    "exports_eudr_shipment_wood",
+    "exports_ilab_child_labor",
+    "exports_ilab_forced_labor",
+    "exports_russian_coal",
+    "exports_russian_gold",
+    "exports_russian_important_good",
+    "exports_russian_oil",
+    "exports_to_bis_addresses_high_diversion_risk",
     "exports_to_entity_licensed_with_fsb_rf",
     "forced_labor_aspi_origin_direct",
     "forced_labor_aspi_origin_subtier",
@@ -66,6 +81,21 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "formerly_sanctioned",
     "imports_bis_high_priority_items",
     "imports_bis_high_priority_items_critical_components",
+    "imports_eudr_shipment_cattle",
+    "imports_eudr_shipment_cocoa",
+    "imports_eudr_shipment_coffee",
+    "imports_eudr_shipment_palm_oil",
+    "imports_eudr_shipment_rubber",
+    "imports_eudr_shipment_soya",
+    "imports_eudr_shipment_wood",
+    "imports_from_bis_addresses_high_diversion_risk",
+    "imports_ilab_child_labor",
+    "imports_ilab_forced_labor",
+    "imports_ndaa_889_telecom_equipment",
+    "imports_russian_coal",
+    "imports_russian_gold",
+    "imports_russian_important_good",
+    "imports_russian_oil",
     "law_enforcement_action",
     "meu_list_contractors",
     "military_civil_fusion",
@@ -132,9 +162,12 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "sheffield_hallam_university_useful_resources",
     "soe_adjacent",
     "state_owned",
+    "state_owned_ven",
+    "subsidiary_of_ndaa_889_covered_entities",
     "uk_50_percent_rule",
     "uk_minority_ownership",
     "uk_sanctioned",
+    "ven_soe_50_percent",
     "wro_entity",
     "wro_entity_adjacent",
 ]);
@@ -144,6 +177,7 @@ export declare namespace Risk {
         | "aspi_uyghur_forced_labor_report_entity"
         | "aspi_uyghur_forced_labor_report_entity_adjacent"
         | "basel_aml"
+        | "bis_addresses_high_diversion_risk"
         | "bis_boycott_requester_list"
         | "cmic_entity"
         | "cmic_entity_50_percent_rule"
@@ -170,6 +204,20 @@ export declare namespace Risk {
         | "export_to_soe"
         | "exports_bis_high_priority_items"
         | "exports_bis_high_priority_items_critical_components"
+        | "exports_eudr_shipment_cattle"
+        | "exports_eudr_shipment_cocoa"
+        | "exports_eudr_shipment_coffee"
+        | "exports_eudr_shipment_palm_oil"
+        | "exports_eudr_shipment_rubber"
+        | "exports_eudr_shipment_soya"
+        | "exports_eudr_shipment_wood"
+        | "exports_ilab_child_labor"
+        | "exports_ilab_forced_labor"
+        | "exports_russian_coal"
+        | "exports_russian_gold"
+        | "exports_russian_important_good"
+        | "exports_russian_oil"
+        | "exports_to_bis_addresses_high_diversion_risk"
         | "exports_to_entity_licensed_with_fsb_rf"
         | "forced_labor_aspi_origin_direct"
         | "forced_labor_aspi_origin_subtier"
@@ -200,6 +248,21 @@ export declare namespace Risk {
         | "formerly_sanctioned"
         | "imports_bis_high_priority_items"
         | "imports_bis_high_priority_items_critical_components"
+        | "imports_eudr_shipment_cattle"
+        | "imports_eudr_shipment_cocoa"
+        | "imports_eudr_shipment_coffee"
+        | "imports_eudr_shipment_palm_oil"
+        | "imports_eudr_shipment_rubber"
+        | "imports_eudr_shipment_soya"
+        | "imports_eudr_shipment_wood"
+        | "imports_from_bis_addresses_high_diversion_risk"
+        | "imports_ilab_child_labor"
+        | "imports_ilab_forced_labor"
+        | "imports_ndaa_889_telecom_equipment"
+        | "imports_russian_coal"
+        | "imports_russian_gold"
+        | "imports_russian_important_good"
+        | "imports_russian_oil"
         | "law_enforcement_action"
         | "meu_list_contractors"
         | "military_civil_fusion"
@@ -266,9 +329,12 @@ export declare namespace Risk {
         | "sheffield_hallam_university_useful_resources"
         | "soe_adjacent"
         | "state_owned"
+        | "state_owned_ven"
+        | "subsidiary_of_ndaa_889_covered_entities"
         | "uk_50_percent_rule"
         | "uk_minority_ownership"
         | "uk_sanctioned"
+        | "ven_soe_50_percent"
         | "wro_entity"
         | "wro_entity_adjacent";
 }

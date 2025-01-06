@@ -16,6 +16,9 @@ export type WeakIdentifierType =
      * Antigua and Barbuda Business Registry Entity Number */
     | "atg_corporate_registry_entity_num"
     /**
+     * ASIC's internal document number used to identify the document containing the ban or disqualification notice/order in the Australia ASIC Banned and Disqualified Persons Register. */
+    | "aus_asic_disqualified_persons_number"
+    /**
      * Weak AUS state registration number. Registration number assigned when legal entity is originally registered by the Australian State. */
     | "aus_state_reg_number"
     /**
@@ -338,6 +341,7 @@ export const WeakIdentifierType = {
     ArgIgjNumber: "arg_igj_number",
     ArgImportExportId: "arg_import_export_id",
     AtgCorporateRegistryEntityNum: "atg_corporate_registry_entity_num",
+    AusAsicDisqualifiedPersonsNumber: "aus_asic_disqualified_persons_number",
     AusStateRegNumber: "aus_state_reg_number",
     AutFormerCrNo: "aut_former_cr_no",
     AutNatlBankNo: "aut_natl_bank_no",
