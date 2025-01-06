@@ -17,7 +17,7 @@ export const CompanyTypeProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace CompanyTypeProperties {
-    interface Raw {
+    export interface Raw {
         date?: string | null;
         from_date?: string | null;
         to_date?: string | null;

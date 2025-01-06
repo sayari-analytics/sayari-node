@@ -16,7 +16,7 @@ export const ShortestPathResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace ShortestPathResponse {
-    interface Raw {
+    export interface Raw {
         entities: string[];
         data: ShortestPathData.Raw[];
     }

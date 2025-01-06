@@ -16,7 +16,7 @@ export const AttributeProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace AttributeProperties {
-    interface Raw {
+    export interface Raw {
         editable: boolean;
         record_count: number;
         id: string;

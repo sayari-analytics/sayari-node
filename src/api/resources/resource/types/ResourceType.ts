@@ -3,7 +3,6 @@
  */
 
 export type ResourceType = "entity";
-
 export const ResourceType = {
     Entity: "entity",
 } as const;

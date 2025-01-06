@@ -23,7 +23,7 @@ export const ShipmentMetadata: core.serialization.ObjectSchema<
 });
 
 export declare namespace ShipmentMetadata {
-    interface Raw {
+    export interface Raw {
         arrival_country: Country.Raw[];
         jurisdiction: Country.Raw[];
         reference_id: string;

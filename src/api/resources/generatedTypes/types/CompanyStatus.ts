@@ -41,7 +41,6 @@ export type CompanyStatus =
     /**
      * e.g., "In receivership", "Bankruptcy trustee appointed", "Seized". Used when an exernal party is granted legal/operational control over the company, typically to steer it through a bankruptcy or winding-up process. */
     | "under_external_control";
-
 export const CompanyStatus = {
     Active: "active",
     Closed: "closed",

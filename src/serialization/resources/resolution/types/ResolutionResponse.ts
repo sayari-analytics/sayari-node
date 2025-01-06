@@ -17,7 +17,7 @@ export const ResolutionResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace ResolutionResponse {
-    interface Raw {
+    export interface Raw {
         fields: ResolutionResponseFields.Raw;
         data: ResolutionResult.Raw[];
     }

@@ -16,7 +16,7 @@ export const StatusContext: core.serialization.Schema<serializers.StatusContext.
     ]);
 
 export declare namespace StatusContext {
-    type Raw =
+    export type Raw =
         | "broker_license"
         | "general_partnership_status"
         | "investment_advisor_license"

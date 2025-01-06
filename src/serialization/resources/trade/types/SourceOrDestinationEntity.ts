@@ -19,14 +19,14 @@ export const SourceOrDestinationEntity: core.serialization.ObjectSchema<
     risks: core.serialization.record(Risk, core.serialization.unknown()),
     businessPurpose: core.serialization.property(
         "business_purpose",
-        core.serialization.list(BusinessPurposeProperties)
+        core.serialization.list(BusinessPurposeProperties),
     ),
     address: core.serialization.list(core.serialization.unknown()),
     countries: core.serialization.list(Country),
 });
 
 export declare namespace SourceOrDestinationEntity {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: string;
         names: string[];

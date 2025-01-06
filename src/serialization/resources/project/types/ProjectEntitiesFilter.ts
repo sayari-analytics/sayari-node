@@ -18,52 +18,52 @@ export const ProjectEntitiesFilter: core.serialization.ObjectSchema<
     upstreamRisk: core.serialization.property("upstream_risk", core.serialization.list(Risk).optional()),
     upstreamRiskTiers: core.serialization.property(
         "upstream_risk_tiers",
-        core.serialization.list(UpstreamTiers).optional()
+        core.serialization.list(UpstreamTiers).optional(),
     ),
     country: core.serialization.list(Country).optional(),
     upstreamCountry: core.serialization.property("upstream_country", core.serialization.list(Country).optional()),
     upstreamCountryTiers: core.serialization.property(
         "upstream_country_tiers",
-        core.serialization.list(UpstreamTiers).optional()
+        core.serialization.list(UpstreamTiers).optional(),
     ),
     businessPurpose: core.serialization.property(
         "business_purpose",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     labelFuzzy: core.serialization.property(
         "label.fuzzy",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     cityFuzzy: core.serialization.property(
         "city.fuzzy",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     stateFuzzy: core.serialization.property(
         "state.fuzzy",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     identifierFuzzy: core.serialization.property(
         "identifier.fuzzy",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     sourceExact: core.serialization.property(
         "source.exact",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     statusExact: core.serialization.property("status.exact", core.serialization.list(CompanyStatus).optional()),
     riskCategory: core.serialization.property(
         "risk_category",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     bounds: core.serialization.string().optional(),
     customFieldName: core.serialization.property(
         "custom_{field name}",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
 });
 
 export declare namespace ProjectEntitiesFilter {
-    interface Raw {
+    export interface Raw {
         risk?: Risk.Raw[] | null;
         upstream_risk?: Risk.Raw[] | null;
         upstream_risk_tiers?: UpstreamTiers.Raw[] | null;

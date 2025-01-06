@@ -15,7 +15,7 @@ export const Psa: core.serialization.ObjectSchema<serializers.Psa.Raw, Sayari.Ps
 });
 
 export declare namespace Psa {
-    interface Raw {
+    export interface Raw {
         psa_id: string;
         label: string;
         count?: number | null;

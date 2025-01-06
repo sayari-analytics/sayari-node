@@ -12,5 +12,5 @@ export const InternalServerErrorResponse: core.serialization.Schema<
 > = core.serialization.unknown();
 
 export declare namespace InternalServerErrorResponse {
-    type Raw = unknown;
+    export type Raw = unknown;
 }

@@ -19,7 +19,7 @@ export const ResolutionPersistedResponseFields: core.serialization.ObjectSchema<
     .extend(ResolutionResponseFields);
 
 export declare namespace ResolutionPersistedResponseFields {
-    interface Raw extends ResolutionResponseFields.Raw {
+    export interface Raw extends ResolutionResponseFields.Raw {
         "custom_{field name}"?: string | null;
         custom_name?: string | null;
         custom_identifier?: string | null;

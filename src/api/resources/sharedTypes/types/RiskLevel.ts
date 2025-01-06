@@ -3,7 +3,6 @@
  */
 
 export type RiskLevel = "critical" | "high" | "elevated" | "relevant";
-
 export const RiskLevel = {
     Critical: "critical",
     High: "high",

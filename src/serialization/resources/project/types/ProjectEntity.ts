@@ -27,15 +27,15 @@ export const ProjectEntity: core.serialization.ObjectSchema<serializers.ProjectE
         matchStrength: core.serialization.property("match_strength", core.serialization.unknown()),
         shippedHsCodes: core.serialization.property(
             "shipped_hs_codes",
-            core.serialization.list(core.serialization.string())
+            core.serialization.list(core.serialization.string()),
         ),
         receivedHsCodes: core.serialization.property(
             "received_hs_codes",
-            core.serialization.list(core.serialization.string())
+            core.serialization.list(core.serialization.string()),
         ),
         combinedHsCodes: core.serialization.property(
             "combined_hs_codes",
-            core.serialization.list(core.serialization.string())
+            core.serialization.list(core.serialization.string()),
         ),
         tradeCountInclMg: core.serialization.property("trade_count_incl_mg", TradeCount),
         upstream: ProjectEntityUpstream,
@@ -44,7 +44,7 @@ export const ProjectEntity: core.serialization.ObjectSchema<serializers.ProjectE
     });
 
 export declare namespace ProjectEntity {
-    interface Raw {
+    export interface Raw {
         id: string;
         project: string;
         label: string;

@@ -24,7 +24,6 @@ export type FinanceType =
     /**
      * Cumulative monetary value of the share capital held by shareholders of a given company */
     | "subscribed_capital";
-
 export const FinanceType = {
     AuthorizedCapital: "authorized_capital",
     PaidUpCapital: "paid_up_capital",

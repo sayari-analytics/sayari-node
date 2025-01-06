@@ -16,7 +16,7 @@ export const DateOfBirthData: core.serialization.ObjectSchema<serializers.DateOf
         .extend(AttributeData);
 
 export declare namespace DateOfBirthData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: DateOfBirthProperties.Raw;
     }
 }

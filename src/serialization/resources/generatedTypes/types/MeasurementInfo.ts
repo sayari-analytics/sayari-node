@@ -18,7 +18,7 @@ export const MeasurementInfo: core.serialization.ObjectSchema<serializers.Measur
         .extend(PaginatedResponse);
 
 export declare namespace MeasurementInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: MeasurementData.Raw[];
         next?: unknown | null;
         offset?: number | null;

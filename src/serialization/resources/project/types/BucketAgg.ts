@@ -17,7 +17,7 @@ export const BucketAgg: core.serialization.ObjectSchema<serializers.BucketAgg.Ra
     });
 
 export declare namespace BucketAgg {
-    interface Raw {
+    export interface Raw {
         key: string;
         doc_count: number;
         label?: string | null;

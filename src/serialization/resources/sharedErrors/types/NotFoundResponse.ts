@@ -16,7 +16,7 @@ export const NotFoundResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace NotFoundResponse {
-    interface Raw {
+    export interface Raw {
         status: number;
         message: string[];
         success: boolean;

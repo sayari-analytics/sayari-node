@@ -3,7 +3,6 @@
  */
 
 export type CountQualifier = "eq" | "gte";
-
 export const CountQualifier = {
     Eq: "eq",
     Gte: "gte",

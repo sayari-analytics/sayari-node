@@ -17,7 +17,7 @@ export const ShipmentAddress: core.serialization.ObjectSchema<serializers.Shipme
     });
 
 export declare namespace ShipmentAddress {
-    interface Raw {
+    export interface Raw {
         x?: number | null;
         y?: number | null;
         city?: string | null;

@@ -10,5 +10,5 @@ export const AddressType: core.serialization.Schema<serializers.AddressType.Raw,
     core.serialization.enum_(["arrival", "business", "departure", "mailing", "physical", "registered"]);
 
 export declare namespace AddressType {
-    type Raw = "arrival" | "business" | "departure" | "mailing" | "physical" | "registered";
+    export type Raw = "arrival" | "business" | "departure" | "mailing" | "physical" | "registered";
 }

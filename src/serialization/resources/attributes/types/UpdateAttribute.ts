@@ -15,7 +15,7 @@ export const UpdateAttribute: core.serialization.ObjectSchema<serializers.Update
     });
 
 export declare namespace UpdateAttribute {
-    interface Raw {
+    export interface Raw {
         value?: unknown;
         date?: string | null;
         from_date?: string | null;

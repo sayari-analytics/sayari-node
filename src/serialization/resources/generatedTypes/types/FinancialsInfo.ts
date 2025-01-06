@@ -18,7 +18,7 @@ export const FinancialsInfo: core.serialization.ObjectSchema<serializers.Financi
         .extend(PaginatedResponse);
 
 export declare namespace FinancialsInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: FinancialsData.Raw[];
         next?: unknown | null;
         offset?: number | null;

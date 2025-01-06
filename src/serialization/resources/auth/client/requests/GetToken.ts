@@ -10,11 +10,11 @@ export const GetToken: core.serialization.Schema<serializers.GetToken.Raw, Sayar
     {
         clientId: core.serialization.property("client_id", core.serialization.string()),
         clientSecret: core.serialization.property("client_secret", core.serialization.string()),
-    }
+    },
 );
 
 export declare namespace GetToken {
-    interface Raw {
+    export interface Raw {
         client_id: string;
         client_secret: string;
     }

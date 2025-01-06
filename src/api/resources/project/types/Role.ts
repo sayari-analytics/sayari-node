@@ -15,7 +15,6 @@ export type Role =
     /**
      * The user can view, edit, and delete the project and its contents. */
     | "admin";
-
 export const Role = {
     Viewer: "viewer",
     Editor: "editor",

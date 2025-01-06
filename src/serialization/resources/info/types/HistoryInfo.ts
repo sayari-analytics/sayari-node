@@ -17,7 +17,7 @@ export const HistoryInfo: core.serialization.ObjectSchema<serializers.HistoryInf
     });
 
 export declare namespace HistoryInfo {
-    interface Raw {
+    export interface Raw {
         user: string;
         environment: string;
         event: string;

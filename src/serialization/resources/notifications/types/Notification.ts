@@ -18,12 +18,12 @@ export const Notification: core.serialization.ObjectSchema<serializers.Notificat
         date: core.serialization.string(),
         additionalInformation: core.serialization.property(
             "additional_information",
-            NotificationAdditionalInformation.optional()
+            NotificationAdditionalInformation.optional(),
         ),
     });
 
 export declare namespace Notification {
-    interface Raw {
+    export interface Raw {
         type: NotificationType.Raw;
         field: Risk.Raw;
         values: RiskValue.Raw[];

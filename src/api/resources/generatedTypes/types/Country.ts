@@ -762,7 +762,6 @@ export type Country =
     /**
      * Zimbabwe */
     | "ZWE";
-
 export const Country = {
     Abw: "ABW",
     Afg: "AFG",

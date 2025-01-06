@@ -32,7 +32,7 @@ export const TraversalResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace TraversalResponse {
-    interface Raw {
+    export interface Raw {
         min_depth: number;
         max_depth: number;
         relationships: Relationships.Raw[];

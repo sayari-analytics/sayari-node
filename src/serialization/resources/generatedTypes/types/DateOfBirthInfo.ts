@@ -18,7 +18,7 @@ export const DateOfBirthInfo: core.serialization.ObjectSchema<serializers.DateOf
         .extend(PaginatedResponse);
 
 export declare namespace DateOfBirthInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: DateOfBirthData.Raw[];
         next?: unknown | null;
         offset?: number | null;

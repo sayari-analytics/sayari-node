@@ -21,7 +21,6 @@ export type StatusContext =
     /**
      * e.g., "Sole proprietor", "Sole proprietorship", "Individual entrepreneurship", "Sole trader". */
     | "sole_proprietorship_status";
-
 export const StatusContext = {
     BrokerLicense: "broker_license",
     GeneralPartnershipStatus: "general_partnership_status",

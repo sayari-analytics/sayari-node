@@ -22,7 +22,7 @@ export const FilterList: core.serialization.ObjectSchema<serializers.FilterList.
     });
 
 export declare namespace FilterList {
-    interface Raw {
+    export interface Raw {
         source?: SourceId.Raw[] | null;
         country?: Country.Raw[] | null;
         state?: string[] | null;

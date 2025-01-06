@@ -15,7 +15,6 @@ export type Unit =
     /**
      * Used to show the number of units of a product */
     | "unit";
-
 export const Unit = {
     Kilogram: "kilogram",
     Metre: "metre",

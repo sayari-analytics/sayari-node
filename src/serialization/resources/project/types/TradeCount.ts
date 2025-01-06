@@ -13,7 +13,7 @@ export const TradeCount: core.serialization.ObjectSchema<serializers.TradeCount.
     });
 
 export declare namespace TradeCount {
-    interface Raw {
+    export interface Raw {
         receiver_of: number;
         shipper_of: number;
     }

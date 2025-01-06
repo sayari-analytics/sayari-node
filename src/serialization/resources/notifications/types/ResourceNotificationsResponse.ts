@@ -18,7 +18,7 @@ export const ResourceNotificationsResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace ResourceNotificationsResponse {
-    interface Raw {
+    export interface Raw {
         offset: number;
         limit: number;
         next: boolean;

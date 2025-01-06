@@ -10,18 +10,20 @@ import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Resolution {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -56,7 +58,7 @@ export class Resolution {
      */
     public async resolution(
         request: Sayari.Resolution = {},
-        requestOptions?: Resolution.RequestOptions
+        requestOptions?: Resolution.RequestOptions,
     ): Promise<Sayari.ResolutionResponse> {
         const {
             limit,
@@ -131,7 +133,7 @@ export class Resolution {
         if (identifier != null) {
             if (Array.isArray(identifier)) {
                 _queryParams["identifier"] = identifier.map((item) =>
-                    typeof item === "string" ? item : JSON.stringify(item)
+                    typeof item === "string" ? item : JSON.stringify(item),
                 );
             } else {
                 _queryParams["identifier"] = typeof identifier === "string" ? identifier : JSON.stringify(identifier);
@@ -197,7 +199,7 @@ export class Resolution {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                "/v1/resolution"
+                "/v1/resolution",
             ),
             method: "GET",
             headers: {
@@ -208,6 +210,7 @@ export class Resolution {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -234,7 +237,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -243,7 +246,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
@@ -252,7 +255,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 406:
                     throw new Sayari.NotAcceptable(
@@ -261,7 +264,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -270,7 +273,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -279,7 +282,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -296,7 +299,7 @@ export class Resolution {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError("Timeout exceeded when calling GET /v1/resolution.");
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,
@@ -338,7 +341,7 @@ export class Resolution {
      */
     public async resolutionPost(
         request: Sayari.ResolutionPost,
-        requestOptions?: Resolution.RequestOptions
+        requestOptions?: Resolution.RequestOptions,
     ): Promise<Sayari.ResolutionResponse> {
         const { limit, offset, body: _body } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
@@ -353,7 +356,7 @@ export class Resolution {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                "/v1/resolution"
+                "/v1/resolution",
             ),
             method: "POST",
             headers: {
@@ -364,6 +367,7 @@ export class Resolution {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -391,7 +395,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -400,7 +404,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
@@ -409,7 +413,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 406:
                     throw new Sayari.NotAcceptable(
@@ -418,7 +422,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -427,7 +431,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -436,7 +440,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -453,7 +457,7 @@ export class Resolution {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError("Timeout exceeded when calling POST /v1/resolution.");
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,
@@ -495,7 +499,7 @@ export class Resolution {
     public async resolutionPersisted(
         projectId: string,
         request: Sayari.ResolutionPersisted,
-        requestOptions?: Resolution.RequestOptions
+        requestOptions?: Resolution.RequestOptions,
     ): Promise<Sayari.ResolutionPersistedResponse> {
         const { limit, offset, body: _body } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
@@ -510,7 +514,7 @@ export class Resolution {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                `/v1/resolution/persisted/${encodeURIComponent(projectId)}`
+                `/v1/resolution/persisted/${encodeURIComponent(projectId)}`,
             ),
             method: "POST",
             headers: {
@@ -521,6 +525,7 @@ export class Resolution {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -548,7 +553,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -557,7 +562,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
@@ -566,7 +571,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 406:
                     throw new Sayari.NotAcceptable(
@@ -575,7 +580,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -584,7 +589,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -593,7 +598,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -610,7 +615,9 @@ export class Resolution {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError(
+                    "Timeout exceeded when calling POST /v1/resolution/persisted/{projectId}.",
+                );
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,
@@ -644,12 +651,12 @@ export class Resolution {
     public async resolutionUpload(
         projectId: string,
         request: Sayari.ResolutionUploadBody,
-        requestOptions?: Resolution.RequestOptions
+        requestOptions?: Resolution.RequestOptions,
     ): Promise<Sayari.ResolutionUploadResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                `/v1/v1/projects/${encodeURIComponent(projectId)}/resolutions`
+                `/v1/v1/projects/${encodeURIComponent(projectId)}/resolutions`,
             ),
             method: "POST",
             headers: {
@@ -660,6 +667,7 @@ export class Resolution {
                 "User-Agent": "@sayari/sdk/0.1.30",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -686,7 +694,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 401:
                     throw new Sayari.Unauthorized(
@@ -695,7 +703,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 405:
                     throw new Sayari.MethodNotAllowed(
@@ -704,7 +712,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 406:
                     throw new Sayari.NotAcceptable(
@@ -713,7 +721,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 429:
                     throw new Sayari.RateLimitExceeded(
@@ -722,7 +730,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 case 500:
                     throw new Sayari.InternalServerError(
@@ -731,7 +739,7 @@ export class Resolution {
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
-                        })
+                        }),
                     );
                 default:
                     throw new errors.SayariError({
@@ -748,7 +756,9 @@ export class Resolution {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.SayariTimeoutError();
+                throw new errors.SayariTimeoutError(
+                    "Timeout exceeded when calling POST /v1/v1/projects/{projectId}/resolutions.",
+                );
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,

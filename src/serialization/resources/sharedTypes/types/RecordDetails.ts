@@ -19,7 +19,7 @@ export const RecordDetails: core.serialization.ObjectSchema<serializers.RecordDe
         sourceUrl: core.serialization.property("source_url", core.serialization.string().optional()),
         documentUrls: core.serialization.property(
             "document_urls",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         matches: core.serialization
             .record(core.serialization.string(), core.serialization.list(core.serialization.string()))
@@ -30,7 +30,7 @@ export const RecordDetails: core.serialization.ObjectSchema<serializers.RecordDe
     });
 
 export declare namespace RecordDetails {
-    interface Raw {
+    export interface Raw {
         id: string;
         label: string;
         source: string;

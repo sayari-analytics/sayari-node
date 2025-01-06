@@ -18,7 +18,7 @@ export const GetRecordResponse: core.serialization.ObjectSchema<
     .extend(RecordDetails);
 
 export declare namespace GetRecordResponse {
-    interface Raw extends RecordDetails.Raw {
+    export interface Raw extends RecordDetails.Raw {
         references: RecordReferences.Raw;
     }
 }

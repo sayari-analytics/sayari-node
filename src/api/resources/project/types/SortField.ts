@@ -66,7 +66,6 @@ export type SortField =
     /**
      * The number of upstream entities in the supply chain of the entity, descending. */
     | "-upstream_entities";
-
 export const SortField = {
     CreatedAsc: "created",
     CreatedDesc: "-created",

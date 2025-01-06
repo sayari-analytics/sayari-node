@@ -28,7 +28,6 @@ export type Tag =
     | "state_owned"
     | "uflpa_entity"
     | "wro_entity";
-
 export const Tag = {
     AspiUyghurForcedLaborReportEntity: "aspi_uyghur_forced_labor_report_entity",
     BisBoycottRequesterList: "bis_boycott_requester_list",

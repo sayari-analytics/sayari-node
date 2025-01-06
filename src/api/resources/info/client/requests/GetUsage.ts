@@ -4,10 +4,7 @@
 
 /**
  * @example
- *     {
- *         from: "2023-01-15",
- *         to: "2023-01-15"
- *     }
+ *     {}
  */
 export interface GetUsage {
     /**

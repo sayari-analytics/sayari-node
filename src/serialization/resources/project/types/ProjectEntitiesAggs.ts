@@ -39,7 +39,7 @@ export const ProjectEntitiesAggs: core.serialization.ObjectSchema<
 });
 
 export declare namespace ProjectEntitiesAggs {
-    interface Raw {
+    export interface Raw {
         hit_count?: BucketAgg.Raw[] | null;
         country?: BucketAgg.Raw[] | null;
         upstream_country?: BucketAgg.Raw[] | null;

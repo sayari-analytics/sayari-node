@@ -20,7 +20,7 @@ export const WeakIdentifierInfo: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace WeakIdentifierInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: WeakIdentifierData.Raw[];
         next?: unknown | null;
         offset?: number | null;

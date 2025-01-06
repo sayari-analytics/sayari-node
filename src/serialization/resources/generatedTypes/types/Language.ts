@@ -194,7 +194,7 @@ export const Language: core.serialization.Schema<serializers.Language.Raw, Sayar
 ]);
 
 export declare namespace Language {
-    type Raw =
+    export type Raw =
         | "aa"
         | "ab"
         | "ae"

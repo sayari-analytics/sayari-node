@@ -12,5 +12,5 @@ export const EntityRegistrationDate: core.serialization.Schema<
 > = core.serialization.string();
 
 export declare namespace EntityRegistrationDate {
-    type Raw = string;
+    export type Raw = string;
 }

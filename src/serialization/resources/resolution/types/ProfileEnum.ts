@@ -10,5 +10,5 @@ export const ProfileEnum: core.serialization.Schema<serializers.ProfileEnum.Raw,
     core.serialization.enum_(["corporate", "suppliers", "search", "screen"]);
 
 export declare namespace ProfileEnum {
-    type Raw = "corporate" | "suppliers" | "search" | "screen";
+    export type Raw = "corporate" | "suppliers" | "search" | "screen";
 }

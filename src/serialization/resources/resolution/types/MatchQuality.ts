@@ -10,5 +10,5 @@ export const MatchQuality: core.serialization.Schema<serializers.MatchQuality.Ra
     core.serialization.enum_(["high", "medium", "low"]);
 
 export declare namespace MatchQuality {
-    type Raw = "high" | "medium" | "low";
+    export type Raw = "high" | "medium" | "low";
 }

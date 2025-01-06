@@ -20,7 +20,7 @@ export const SearchRecord: core.serialization.Schema<
 });
 
 export declare namespace SearchRecord {
-    interface Raw {
+    export interface Raw {
         q: string;
         fields?: SearchField.Raw[] | null;
         filter?: FilterList.Raw | null;

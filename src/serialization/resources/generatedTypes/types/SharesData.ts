@@ -16,7 +16,7 @@ export const SharesData: core.serialization.ObjectSchema<serializers.SharesData.
         .extend(AttributeData);
 
 export declare namespace SharesData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: SharesProperties.Raw;
     }
 }

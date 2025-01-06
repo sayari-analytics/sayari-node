@@ -12,5 +12,5 @@ export const TranslationContext: core.serialization.Schema<
 > = core.serialization.enum_(["google_translate", "pinyin", "sayari_machine_translation"]);
 
 export declare namespace TranslationContext {
-    type Raw = "google_translate" | "pinyin" | "sayari_machine_translation";
+    export type Raw = "google_translate" | "pinyin" | "sayari_machine_translation";
 }

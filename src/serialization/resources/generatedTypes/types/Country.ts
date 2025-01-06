@@ -262,7 +262,7 @@ export const Country: core.serialization.Schema<serializers.Country.Raw, Sayari.
 ]);
 
 export declare namespace Country {
-    type Raw =
+    export type Raw =
         | "ABW"
         | "AFG"
         | "AGO"

@@ -15,7 +15,7 @@ export const TraversalData: core.serialization.ObjectSchema<serializers.Traversa
     });
 
 export declare namespace TraversalData {
-    interface Raw {
+    export interface Raw {
         source: string;
         target: serializers.EntityDetails.Raw;
         path: TraversalPath.Raw[];

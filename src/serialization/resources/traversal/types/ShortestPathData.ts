@@ -17,7 +17,7 @@ export const ShortestPathData: core.serialization.ObjectSchema<
 });
 
 export declare namespace ShortestPathData {
-    interface Raw {
+    export interface Raw {
         source: string;
         target: serializers.EntityDetails.Raw;
         path: TraversalPath.Raw[];

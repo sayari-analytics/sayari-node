@@ -18,7 +18,7 @@ export const GenderInfo: core.serialization.ObjectSchema<serializers.GenderInfo.
         .extend(PaginatedResponse);
 
 export declare namespace GenderInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: GenderData.Raw[];
         next?: unknown | null;
         offset?: number | null;

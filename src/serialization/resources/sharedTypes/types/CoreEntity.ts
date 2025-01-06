@@ -47,7 +47,7 @@ export const CoreEntity: core.serialization.ObjectSchema<serializers.CoreEntity.
             relatedEntitiesCount: core.serialization.property("related_entities_count", core.serialization.number()),
             userRelatedEntitiesCount: core.serialization.property(
                 "user_related_entities_count",
-                core.serialization.number()
+                core.serialization.number(),
             ),
             relationshipCounts: core.serialization.property("relationship_counts", RelationshipCount),
             userRelationshipCounts: core.serialization.property("user_relationship_counts", RelationshipCount),
@@ -55,13 +55,13 @@ export const CoreEntity: core.serialization.ObjectSchema<serializers.CoreEntity.
             userAttributeCounts: core.serialization.property("user_attribute_counts", core.serialization.unknown()),
             tradeCount: core.serialization.property(
                 "trade_count",
-                core.serialization.record(core.serialization.string(), core.serialization.number())
+                core.serialization.record(core.serialization.string(), core.serialization.number()),
             ),
             recordCount: core.serialization.property("record_count", core.serialization.number()),
             userRecordCount: core.serialization.property("user_record_count", core.serialization.number()),
             sourceCounts: core.serialization.property(
                 "source_counts",
-                core.serialization.record(core.serialization.string(), SourceCountInfo)
+                core.serialization.record(core.serialization.string(), SourceCountInfo),
             ),
             psa: Psa.optional(),
             risk: EntityRisk,
@@ -74,7 +74,7 @@ export const CoreEntity: core.serialization.ObjectSchema<serializers.CoreEntity.
         .extend(EntitySummary);
 
 export declare namespace CoreEntity {
-    interface Raw extends EntitySummary.Raw {
+    export interface Raw extends EntitySummary.Raw {
         id: string;
         owner?: string | null;
         type: Entities.Raw;

@@ -15,7 +15,7 @@ export const ProjectShareOnCreate: core.serialization.ObjectSchema<
 });
 
 export declare namespace ProjectShareOnCreate {
-    interface Raw {
+    export interface Raw {
         org: Role.Raw;
     }
 }

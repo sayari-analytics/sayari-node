@@ -16,16 +16,16 @@ export const TradeTraversalProduct: core.serialization.ObjectSchema<
     maxDate: core.serialization.property("max_date", core.serialization.string()),
     arrivalCountries: core.serialization.property(
         "arrival_countries",
-        core.serialization.list(core.serialization.string())
+        core.serialization.list(core.serialization.string()),
     ),
     departureCountries: core.serialization.property(
         "departure_countries",
-        core.serialization.list(core.serialization.string())
+        core.serialization.list(core.serialization.string()),
     ),
 });
 
 export declare namespace TradeTraversalProduct {
-    interface Raw {
+    export interface Raw {
         hs_code: HsCodeWithDescription.Raw;
         min_date: string;
         max_date: string;

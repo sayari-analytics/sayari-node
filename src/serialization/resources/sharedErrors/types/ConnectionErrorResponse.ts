@@ -12,5 +12,5 @@ export const ConnectionErrorResponse: core.serialization.Schema<
 > = core.serialization.unknown();
 
 export declare namespace ConnectionErrorResponse {
-    type Raw = unknown;
+    export type Raw = unknown;
 }

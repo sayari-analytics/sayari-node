@@ -18,7 +18,7 @@ export const EntityRelationships: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace EntityRelationships {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         next?: unknown | null;
         data: serializers.RelationshipData.Raw[];
     }

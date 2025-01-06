@@ -20,7 +20,7 @@ export const NameProperties: core.serialization.ObjectSchema<serializers.NamePro
     });
 
 export declare namespace NameProperties {
-    interface Raw {
+    export interface Raw {
         context?: string | null;
         date?: string | null;
         from_date?: string | null;

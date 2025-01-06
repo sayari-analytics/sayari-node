@@ -25,7 +25,6 @@ export type Attributes =
     | "status"
     | "translated_name"
     | "weak_identifier";
-
 export const Attributes = {
     AdditionalInformation: "additional_information",
     Address: "address",

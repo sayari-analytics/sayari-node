@@ -17,7 +17,7 @@ export const NameInfo: core.serialization.ObjectSchema<serializers.NameInfo.Raw,
     .extend(PaginatedResponse);
 
 export declare namespace NameInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: NameData.Raw[];
         next?: unknown | null;
         offset?: number | null;

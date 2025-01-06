@@ -18,5 +18,12 @@ export const NameContext: core.serialization.Schema<serializers.NameContext.Raw,
     ]);
 
 export declare namespace NameContext {
-    type Raw = "alias" | "family" | "given" | "machine_translation" | "primary" | "trade_name" | "transliteration";
+    export type Raw =
+        | "alias"
+        | "family"
+        | "given"
+        | "machine_translation"
+        | "primary"
+        | "trade_name"
+        | "transliteration";
 }

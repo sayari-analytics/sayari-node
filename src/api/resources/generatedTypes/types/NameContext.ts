@@ -27,7 +27,6 @@ export type NameContext =
     /**
      * A machine transliteration of a name using a specific system (e.g., Pinyin, ISO, UNGEGN) */
     | "transliteration";
-
 export const NameContext = {
     Alias: "alias",
     Family: "family",

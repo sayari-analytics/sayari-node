@@ -17,7 +17,7 @@ export const FinanceType: core.serialization.Schema<serializers.FinanceType.Raw,
     ]);
 
 export declare namespace FinanceType {
-    type Raw =
+    export type Raw =
         | "authorized_capital"
         | "paid_up_capital"
         | "registered_capital"

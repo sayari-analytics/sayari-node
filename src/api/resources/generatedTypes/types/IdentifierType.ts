@@ -279,7 +279,7 @@ export type IdentifierType =
      * Unique Canada province ID number. Assigned to every entity registered with the Prince Edward Island Corporate Registry. */
     | "can_pe_registration_number"
     /**
-     * Penalty number assigned by the Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
+     * Penalty number assigned by the  Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
     | "can_qc_sap_registry_ref_num"
     /**
      * Unique Canada ID number. Assigned to every registered trademark. */
@@ -575,7 +575,7 @@ export type IdentifierType =
      * United Kingdom Confirmation Statement Company Number */
     | "gbr_company_number"
     /**
-     * Action number assigned by the Environment Agency to each enforcement action against offender pursuant to relevant legislation. */
+     * Action number assigned by the  Environment Agency to each enforcement action against offender pursuant to relevant legislation. */
     | "gbr_enforcement_action_num"
     /**
      * Unique UK government organization ID number. Assigned to government organizations in the UK. */
@@ -1161,7 +1161,7 @@ export type IdentifierType =
      * Peru foreign resident ID number */
     | "per_carne_de_extranjeria"
     /**
-     * Peru natural person ID number */
+     * Peru  natural person ID number */
     | "per_dni_no"
     /**
      * Peru tax ID number */
@@ -1852,7 +1852,6 @@ export type IdentifierType =
     /**
      * Zcash address */
     | "zcash_address";
-
 export const IdentifierType = {
     AerFreeZoneLicense: "aer_free_zone_license",
     AerFreeZoneRegNo: "aer_free_zone_reg_no",

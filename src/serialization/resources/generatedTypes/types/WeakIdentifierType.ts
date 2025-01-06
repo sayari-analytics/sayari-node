@@ -123,7 +123,7 @@ export const WeakIdentifierType: core.serialization.Schema<
 ]);
 
 export declare namespace WeakIdentifierType {
-    type Raw =
+    export type Raw =
         | "arg_igj_number"
         | "arg_import_export_id"
         | "atg_corporate_registry_entity_num"

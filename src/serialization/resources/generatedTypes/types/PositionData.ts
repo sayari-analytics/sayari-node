@@ -16,7 +16,7 @@ export const PositionData: core.serialization.ObjectSchema<serializers.PositionD
         .extend(AttributeData);
 
 export declare namespace PositionData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: PositionProperties.Raw;
     }
 }

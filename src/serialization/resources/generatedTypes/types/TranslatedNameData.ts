@@ -18,7 +18,7 @@ export const TranslatedNameData: core.serialization.ObjectSchema<
     .extend(AttributeData);
 
 export declare namespace TranslatedNameData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: TranslatedNameProperties.Raw;
     }
 }

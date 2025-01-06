@@ -133,7 +133,6 @@ export type Risk =
     | "uk_sanctioned"
     | "wro_entity"
     | "wro_entity_adjacent";
-
 export const Risk = {
     AspiUyghurForcedLaborReportEntity: "aspi_uyghur_forced_labor_report_entity",
     AspiUyghurForcedLaborReportEntityAdjacent: "aspi_uyghur_forced_labor_report_entity_adjacent",

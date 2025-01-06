@@ -12,7 +12,7 @@ export const MatchStrength: core.serialization.ObjectSchema<serializers.MatchStr
     });
 
 export declare namespace MatchStrength {
-    interface Raw {
+    export interface Raw {
         value: string;
     }
 }

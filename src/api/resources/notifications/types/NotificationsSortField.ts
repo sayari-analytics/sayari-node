@@ -9,7 +9,6 @@ export type NotificationsSortField =
     /**
      * The date the notification was generated, descending. */
     "-date";
-
 export const NotificationsSortField = {
     DateDesc: "-date",
 } as const;

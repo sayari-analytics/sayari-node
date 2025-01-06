@@ -16,7 +16,7 @@ export const StatusData: core.serialization.ObjectSchema<serializers.StatusData.
         .extend(AttributeData);
 
 export declare namespace StatusData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: StatusProperties.Raw;
     }
 }

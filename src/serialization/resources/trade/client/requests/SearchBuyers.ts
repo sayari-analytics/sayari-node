@@ -17,7 +17,7 @@ export const SearchBuyers: core.serialization.Schema<
 });
 
 export declare namespace SearchBuyers {
-    interface Raw {
+    export interface Raw {
         q?: string | null;
         filter?: TradeFilterList.Raw | null;
         facets?: boolean | null;

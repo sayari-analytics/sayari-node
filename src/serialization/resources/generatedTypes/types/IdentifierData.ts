@@ -16,7 +16,7 @@ export const IdentifierData: core.serialization.ObjectSchema<serializers.Identif
         .extend(AttributeData);
 
 export declare namespace IdentifierData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: IdentifierProperties.Raw;
     }
 }

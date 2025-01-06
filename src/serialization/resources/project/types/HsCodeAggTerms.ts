@@ -11,14 +11,14 @@ export const HsCodeAggTerms: core.serialization.ObjectSchema<serializers.HsCodeA
     core.serialization.object({
         docCountErrorUpperBound: core.serialization.property(
             "doc_count_error_upper_bound",
-            core.serialization.number()
+            core.serialization.number(),
         ),
         sumOtherDocCount: core.serialization.property("sum_other_doc_count", core.serialization.number()),
         buckets: core.serialization.list(HsCodeAggBucket),
     });
 
 export declare namespace HsCodeAggTerms {
-    interface Raw {
+    export interface Raw {
         doc_count_error_upper_bound: number;
         sum_other_doc_count: number;
         buckets: HsCodeAggBucket.Raw[];

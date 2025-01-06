@@ -20,7 +20,7 @@ export const BusinessPurposeInfo: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace BusinessPurposeInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: BusinessPurposeData.Raw[];
         next?: unknown | null;
         offset?: number | null;

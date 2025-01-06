@@ -16,7 +16,7 @@ export const NotAcceptableResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace NotAcceptableResponse {
-    interface Raw {
+    export interface Raw {
         status: number;
         message: string[];
         success: boolean;

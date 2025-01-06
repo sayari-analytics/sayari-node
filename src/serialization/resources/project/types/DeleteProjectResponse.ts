@@ -15,7 +15,7 @@ export const DeleteProjectResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace DeleteProjectResponse {
-    interface Raw {
+    export interface Raw {
         data: Project.Raw;
     }
 }

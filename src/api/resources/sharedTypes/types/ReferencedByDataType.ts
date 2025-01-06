@@ -3,7 +3,6 @@
  */
 
 export type ReferencedByDataType = "about" | "mentions";
-
 export const ReferencedByDataType = {
     About: "about",
     Mentions: "mentions",

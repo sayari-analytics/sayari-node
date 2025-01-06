@@ -12,5 +12,5 @@ export const EntitySummaryResponse: core.serialization.ObjectSchema<
 > = core.serialization.object({}).extend(core.serialization.lazyObject(() => serializers.EntityDetails));
 
 export declare namespace EntitySummaryResponse {
-    interface Raw extends serializers.EntityDetails.Raw {}
+    export interface Raw extends serializers.EntityDetails.Raw {}
 }

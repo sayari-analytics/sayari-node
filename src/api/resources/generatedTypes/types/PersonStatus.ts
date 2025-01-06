@@ -15,7 +15,6 @@ export type PersonStatus =
     /**
      * Indicates a marriage */
     | "married";
-
 export const PersonStatus = {
     Born: "born",
     Died: "died",

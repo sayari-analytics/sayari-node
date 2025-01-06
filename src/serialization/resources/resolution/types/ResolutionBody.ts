@@ -20,7 +20,7 @@ export const ResolutionBody: core.serialization.ObjectSchema<serializers.Resolut
         country: core.serialization.list(Country).optional(),
         dateOfBirth: core.serialization.property(
             "date_of_birth",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
         contact: core.serialization.list(core.serialization.string()).optional(),
         type: core.serialization.list(Entities).optional(),
@@ -30,7 +30,7 @@ export const ResolutionBody: core.serialization.ObjectSchema<serializers.Resolut
         tags: core.serialization.list(core.serialization.string()).optional(),
         minimumScoreThreshold: core.serialization.property(
             "minimum_score_threshold",
-            core.serialization.number().optional()
+            core.serialization.number().optional(),
         ),
         searchFallback: core.serialization.property("search_fallback", core.serialization.boolean().optional()),
         cutoffThreshold: core.serialization.property("cutoff_threshold", core.serialization.number().optional()),
@@ -39,7 +39,7 @@ export const ResolutionBody: core.serialization.ObjectSchema<serializers.Resolut
     });
 
 export declare namespace ResolutionBody {
-    interface Raw {
+    export interface Raw {
         name?: string[] | null;
         identifier?: BothIdentifierTypes.Raw | null;
         address?: string[] | null;

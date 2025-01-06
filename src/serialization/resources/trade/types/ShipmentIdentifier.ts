@@ -16,7 +16,7 @@ export const ShipmentIdentifier: core.serialization.ObjectSchema<
 });
 
 export declare namespace ShipmentIdentifier {
-    interface Raw {
+    export interface Raw {
         value: string;
         type: BothIdentifierTypes.Raw;
     }

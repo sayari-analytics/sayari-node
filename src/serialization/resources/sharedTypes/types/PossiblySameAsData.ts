@@ -18,7 +18,7 @@ export const PossiblySameAsData: core.serialization.ObjectSchema<
 });
 
 export declare namespace PossiblySameAsData {
-    interface Raw {
+    export interface Raw {
         editable?: boolean | null;
         entity: PsaEntity.Raw;
         matches: Record<string, PossiblySameAsMatch.Raw[]>;

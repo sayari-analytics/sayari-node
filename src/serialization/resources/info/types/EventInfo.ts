@@ -10,5 +10,5 @@ export const EventInfo: core.serialization.Schema<serializers.EventInfo.Raw, Say
     core.serialization.record(core.serialization.string(), core.serialization.unknown());
 
 export declare namespace EventInfo {
-    type Raw = Record<string, unknown>;
+    export type Raw = Record<string, unknown>;
 }

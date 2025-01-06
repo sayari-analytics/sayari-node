@@ -21,7 +21,7 @@ export const CountryProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace CountryProperties {
-    interface Raw {
+    export interface Raw {
         context?: CountryContext.Raw | null;
         date?: string | null;
         from_date?: string | null;

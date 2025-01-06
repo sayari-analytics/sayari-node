@@ -16,7 +16,7 @@ export const ProjectNotificationRiskData: core.serialization.ObjectSchema<
 });
 
 export declare namespace ProjectNotificationRiskData {
-    interface Raw {
+    export interface Raw {
         added: string[];
         removed: string[];
         date: string;

@@ -19,14 +19,14 @@ export const ResolutionResponseFields: core.serialization.ObjectSchema<
     address: core.serialization.list(core.serialization.string()).optional(),
     dateOfBirth: core.serialization.property(
         "date_of_birth",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     contact: core.serialization.list(core.serialization.string()).optional(),
     type: core.serialization.list(Entities).optional(),
 });
 
 export declare namespace ResolutionResponseFields {
-    interface Raw {
+    export interface Raw {
         name?: string[] | null;
         identifier?: string[] | null;
         profile?: string | null;

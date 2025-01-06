@@ -12,5 +12,5 @@ export const NotificationsSortField: core.serialization.Schema<
 > = core.serialization.enum_(["-date"]);
 
 export declare namespace NotificationsSortField {
-    type Raw = "-date";
+    export type Raw = "-date";
 }

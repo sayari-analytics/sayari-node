@@ -12,5 +12,5 @@ export const TierCountAgg: core.serialization.Schema<serializers.TierCountAgg.Ra
     core.serialization.record(core.serialization.string(), TierCount);
 
 export declare namespace TierCountAgg {
-    type Raw = Record<string, TierCount.Raw>;
+    export type Raw = Record<string, TierCount.Raw>;
 }

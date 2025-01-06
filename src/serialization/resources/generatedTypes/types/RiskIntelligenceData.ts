@@ -18,7 +18,7 @@ export const RiskIntelligenceData: core.serialization.ObjectSchema<
     .extend(AttributeData);
 
 export declare namespace RiskIntelligenceData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: RiskIntelligenceProperties.Raw;
     }
 }

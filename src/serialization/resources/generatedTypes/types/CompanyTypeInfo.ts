@@ -18,7 +18,7 @@ export const CompanyTypeInfo: core.serialization.ObjectSchema<serializers.Compan
         .extend(PaginatedResponse);
 
 export declare namespace CompanyTypeInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: CompanyTypeData.Raw[];
         next?: unknown | null;
         offset?: number | null;

@@ -10,11 +10,11 @@ export const Status: core.serialization.ObjectSchema<serializers.Status.Raw, Say
     {
         status: core.serialization.string(),
         date: core.serialization.string().optional(),
-    }
+    },
 );
 
 export declare namespace Status {
-    interface Raw {
+    export interface Raw {
         status: string;
         date?: string | null;
     }

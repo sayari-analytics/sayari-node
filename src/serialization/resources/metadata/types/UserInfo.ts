@@ -14,7 +14,7 @@ export const UserInfo: core.serialization.ObjectSchema<serializers.UserInfo.Raw,
     });
 
 export declare namespace UserInfo {
-    interface Raw {
+    export interface Raw {
         id: string;
         groupDisplayNames?: string | null;
         roles?: string | null;

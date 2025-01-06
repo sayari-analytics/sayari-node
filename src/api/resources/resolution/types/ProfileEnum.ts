@@ -3,7 +3,6 @@
  */
 
 export type ProfileEnum = "corporate" | "suppliers" | "search" | "screen";
-
 export const ProfileEnum = {
     Corporate: "corporate",
     Suppliers: "suppliers",

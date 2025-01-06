@@ -13,7 +13,7 @@ export const ShipmentCountry: core.serialization.ObjectSchema<serializers.Shipme
     });
 
 export declare namespace ShipmentCountry {
-    interface Raw {
+    export interface Raw {
         value: Country.Raw;
     }
 }

@@ -12,7 +12,7 @@ export const DocCount: core.serialization.ObjectSchema<serializers.DocCount.Raw,
     });
 
 export declare namespace DocCount {
-    interface Raw {
+    export interface Raw {
         doc_count: number;
     }
 }

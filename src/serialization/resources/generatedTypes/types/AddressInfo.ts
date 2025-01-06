@@ -18,7 +18,7 @@ export const AddressInfo: core.serialization.ObjectSchema<serializers.AddressInf
         .extend(PaginatedResponse);
 
 export declare namespace AddressInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: AddressData.Raw[];
         next?: unknown | null;
         offset?: number | null;

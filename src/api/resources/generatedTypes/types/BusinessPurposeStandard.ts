@@ -99,7 +99,6 @@ export type BusinessPurposeStandard =
     /**
      * การจัดประเภทมาตรฐานอุตสาหกรรมประเทศไทย ปี 2552 - Thailand Standard Industrial Classification, Rev. 2009 */
     | "TSIC2552";
-
 export const BusinessPurposeStandard = {
     Adgm: "ADGM",
     Ateco: "ATECO",

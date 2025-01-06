@@ -16,7 +16,7 @@ export const MeasurementData: core.serialization.ObjectSchema<serializers.Measur
         .extend(AttributeData);
 
 export declare namespace MeasurementData {
-    interface Raw extends AttributeData.Raw {
+    export interface Raw extends AttributeData.Raw {
         properties: MeasurementProperties.Raw;
     }
 }

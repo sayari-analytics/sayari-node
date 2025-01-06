@@ -16,7 +16,7 @@ export const CreateProjectRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace CreateProjectRequest {
-    interface Raw {
+    export interface Raw {
         label: string;
         share?: ProjectShareOnCreate.Raw | null;
     }

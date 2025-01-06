@@ -16,7 +16,7 @@ export const ResolutionUploadBody: core.serialization.ObjectSchema<
 });
 
 export declare namespace ResolutionUploadBody {
-    interface Raw {
+    export interface Raw {
         filename: string;
         data: ResolutionBody.Raw[];
     }

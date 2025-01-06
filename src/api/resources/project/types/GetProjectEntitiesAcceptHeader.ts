@@ -3,7 +3,6 @@
  */
 
 export type GetProjectEntitiesAcceptHeader = "application/json" | "text/csv" | "application/vnd.ms-excel";
-
 export const GetProjectEntitiesAcceptHeader = {
     Json: "application/json",
     Csv: "text/csv",

@@ -10,5 +10,5 @@ export const SourceId: core.serialization.Schema<serializers.SourceId.Raw, Sayar
     core.serialization.string();
 
 export declare namespace SourceId {
-    type Raw = string;
+    export type Raw = string;
 }

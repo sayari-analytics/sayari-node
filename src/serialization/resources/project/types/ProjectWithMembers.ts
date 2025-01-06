@@ -18,7 +18,7 @@ export const ProjectWithMembers: core.serialization.ObjectSchema<
     .extend(Project);
 
 export declare namespace ProjectWithMembers {
-    interface Raw extends Project.Raw {
+    export interface Raw extends Project.Raw {
         members: RoleMember.Raw[];
     }
 }

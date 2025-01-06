@@ -20,7 +20,7 @@ export const GetProjectsResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace GetProjectsResponse {
-    interface Raw {
+    export interface Raw {
         next?: string | null;
         prev?: string | null;
         first?: boolean | null;

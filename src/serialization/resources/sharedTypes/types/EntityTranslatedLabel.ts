@@ -12,5 +12,5 @@ export const EntityTranslatedLabel: core.serialization.Schema<
 > = core.serialization.string();
 
 export declare namespace EntityTranslatedLabel {
-    type Raw = string;
+    export type Raw = string;
 }

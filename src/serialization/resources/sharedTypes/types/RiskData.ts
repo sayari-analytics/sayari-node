@@ -16,7 +16,7 @@ export const RiskData: core.serialization.ObjectSchema<serializers.RiskData.Raw,
     });
 
 export declare namespace RiskData {
-    interface Raw {
+    export interface Raw {
         value: RiskValue.Raw;
         metadata: Record<string, unknown>;
         level: RiskLevel.Raw;

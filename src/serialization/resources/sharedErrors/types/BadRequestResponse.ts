@@ -12,5 +12,5 @@ export const BadRequestResponse: core.serialization.Schema<
 > = core.serialization.unknown();
 
 export declare namespace BadRequestResponse {
-    type Raw = unknown;
+    export type Raw = unknown;
 }

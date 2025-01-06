@@ -18,7 +18,7 @@ export const UpstreamTradeTraversalResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace UpstreamTradeTraversalResponse {
-    interface Raw {
+    export interface Raw {
         status?: number | null;
         success?: boolean | null;
         message?: string | null;

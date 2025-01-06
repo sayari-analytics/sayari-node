@@ -10,5 +10,5 @@ export const EntityMatches: core.serialization.Schema<serializers.EntityMatches.
     core.serialization.record(core.serialization.string(), core.serialization.list(core.serialization.string()));
 
 export declare namespace EntityMatches {
-    type Raw = Record<string, string[]>;
+    export type Raw = Record<string, string[]>;
 }

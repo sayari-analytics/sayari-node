@@ -22,7 +22,7 @@ export const SharesProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace SharesProperties {
-    interface Raw {
+    export interface Raw {
         currency?: Currency.Raw | null;
         date?: string | null;
         from_date?: string | null;

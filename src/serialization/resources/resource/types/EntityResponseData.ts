@@ -25,7 +25,7 @@ export const EntityResponseData: core.serialization.ObjectSchema<
 });
 
 export declare namespace EntityResponseData {
-    interface Raw {
+    export interface Raw {
         type: ResourceType.Raw;
         id: string;
         project: string;

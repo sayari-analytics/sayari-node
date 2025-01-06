@@ -13,5 +13,5 @@ export const Unit: core.serialization.Schema<serializers.Unit.Raw, Sayari.Unit> 
 ]);
 
 export declare namespace Unit {
-    type Raw = "kilogram" | "metre" | "unit";
+    export type Raw = "kilogram" | "metre" | "unit";
 }

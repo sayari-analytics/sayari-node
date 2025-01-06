@@ -10,5 +10,5 @@ export const SearchField: core.serialization.Schema<serializers.SearchField.Raw,
     core.serialization.enum_(["name", "identifier", "address", "business_purpose", "date_of_birth", "contact"]);
 
 export declare namespace SearchField {
-    type Raw = "name" | "identifier" | "address" | "business_purpose" | "date_of_birth" | "contact";
+    export type Raw = "name" | "identifier" | "address" | "business_purpose" | "date_of_birth" | "contact";
 }

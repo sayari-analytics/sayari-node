@@ -26,7 +26,7 @@ export const CompanyStatus: core.serialization.Schema<serializers.CompanyStatus.
     ]);
 
 export declare namespace CompanyStatus {
-    type Raw =
+    export type Raw =
         | "active"
         | "closed"
         | "closing"

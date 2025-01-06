@@ -564,7 +564,6 @@ export type Currency =
     /**
      * Zimbabwe Dollar/932/2 */
     | "ZWL";
-
 export const Currency = {
     Aed: "AED",
     Afn: "AFN",

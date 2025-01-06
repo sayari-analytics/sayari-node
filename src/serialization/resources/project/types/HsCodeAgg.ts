@@ -14,7 +14,7 @@ export const HsCodeAgg: core.serialization.ObjectSchema<serializers.HsCodeAgg.Ra
     });
 
 export declare namespace HsCodeAgg {
-    interface Raw {
+    export interface Raw {
         doc_count: number;
         hs_code_terms: HsCodeAggTerms.Raw;
     }

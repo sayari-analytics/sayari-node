@@ -39,7 +39,7 @@ export const EntityDetails: core.serialization.ObjectSchema<serializers.EntityDe
         .extend(EmbeddedEntity);
 
 export declare namespace EntityDetails {
-    interface Raw extends EmbeddedEntity.Raw {
+    export interface Raw extends EmbeddedEntity.Raw {
         registration_date?: EntityRegistrationDate.Raw | null;
         translated_label?: EntityTranslatedLabel.Raw | null;
         hs_code?: EntityHsCode.Raw | null;

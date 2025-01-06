@@ -20,7 +20,7 @@ export const ShipmentSearchResponse: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace ShipmentSearchResponse {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         offset: number;
         next: boolean;
         data: Shipment.Raw[];

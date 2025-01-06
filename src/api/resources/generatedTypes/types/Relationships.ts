@@ -217,7 +217,6 @@ export type Relationships =
      * Supervisors of this company, typically in East Asia */
     | "has_supervisor"
     | "possibly_same_as";
-
 export const Relationships = {
     AssociateOf: "associate_of",
     HasAssociate: "has_associate",

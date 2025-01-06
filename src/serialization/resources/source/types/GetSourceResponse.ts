@@ -13,5 +13,5 @@ export const GetSourceResponse: core.serialization.ObjectSchema<
 > = core.serialization.object({}).extend(Source);
 
 export declare namespace GetSourceResponse {
-    interface Raw extends Source.Raw {}
+    export interface Raw extends Source.Raw {}
 }

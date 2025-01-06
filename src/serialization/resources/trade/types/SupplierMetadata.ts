@@ -17,7 +17,7 @@ export const SupplierMetadata: core.serialization.ObjectSchema<
 });
 
 export declare namespace SupplierMetadata {
-    interface Raw {
+    export interface Raw {
         latestShipmentDate?: string | null;
         shipments: number;
         hsCodes: HsCode.Raw[];

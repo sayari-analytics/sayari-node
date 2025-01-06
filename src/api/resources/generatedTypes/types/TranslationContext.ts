@@ -15,7 +15,6 @@ export type TranslationContext =
     /**
      * A translation made using a Sayari machine learning model */
     | "sayari_machine_translation";
-
 export const TranslationContext = {
     GoogleTranslate: "google_translate",
     Pinyin: "pinyin",

@@ -10,5 +10,5 @@ export const PersonStatus: core.serialization.Schema<serializers.PersonStatus.Ra
     core.serialization.enum_(["born", "died", "married"]);
 
 export declare namespace PersonStatus {
-    type Raw = "born" | "died" | "married";
+    export type Raw = "born" | "died" | "married";
 }

@@ -18,7 +18,7 @@ export const ContactInfo: core.serialization.ObjectSchema<serializers.ContactInf
         .extend(PaginatedResponse);
 
 export declare namespace ContactInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: ContactData.Raw[];
         next?: unknown | null;
         offset?: number | null;

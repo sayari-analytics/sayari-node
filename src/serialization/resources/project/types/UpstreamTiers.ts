@@ -10,5 +10,5 @@ export const UpstreamTiers: core.serialization.Schema<serializers.UpstreamTiers.
     core.serialization.enum_(["tier1", "tier2", "tier3", "tier4"]);
 
 export declare namespace UpstreamTiers {
-    type Raw = "tier1" | "tier2" | "tier3" | "tier4";
+    export type Raw = "tier1" | "tier2" | "tier3" | "tier4";
 }

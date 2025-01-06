@@ -10,5 +10,5 @@ export const CompanyType: core.serialization.Schema<serializers.CompanyType.Raw,
     core.serialization.string();
 
 export declare namespace CompanyType {
-    type Raw = string;
+    export type Raw = string;
 }

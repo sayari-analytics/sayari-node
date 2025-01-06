@@ -20,7 +20,7 @@ export const MonetaryValueInfo: core.serialization.ObjectSchema<
     .extend(PaginatedResponse);
 
 export declare namespace MonetaryValueInfo {
-    interface Raw extends PaginatedResponse.Raw {
+    export interface Raw extends PaginatedResponse.Raw {
         data: MonetaryValueData.Raw[];
         next?: unknown | null;
         offset?: number | null;

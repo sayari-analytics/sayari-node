@@ -10,5 +10,5 @@ export const ResourceType: core.serialization.Schema<serializers.ResourceType.Ra
     core.serialization.enum_(["entity"]);
 
 export declare namespace ResourceType {
-    type Raw = "entity";
+    export type Raw = "entity";
 }

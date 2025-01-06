@@ -25,7 +25,7 @@ export const FinancialsProperties: core.serialization.ObjectSchema<
 });
 
 export declare namespace FinancialsProperties {
-    interface Raw {
+    export interface Raw {
         assets?: number | null;
         currency?: Currency.Raw | null;
         date?: string | null;

@@ -17,7 +17,7 @@ export const SearchShipments: core.serialization.Schema<
 });
 
 export declare namespace SearchShipments {
-    interface Raw {
+    export interface Raw {
         q?: string | null;
         filter?: TradeFilterList.Raw | null;
         facets?: boolean | null;

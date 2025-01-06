@@ -31,7 +31,7 @@ export const SortField: core.serialization.Schema<serializers.SortField.Raw, Say
     ]);
 
 export declare namespace SortField {
-    type Raw =
+    export type Raw =
         | "created"
         | "-created"
         | "saved_resource_id"

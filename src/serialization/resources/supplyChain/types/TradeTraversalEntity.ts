@@ -18,7 +18,7 @@ export const TradeTraversalEntity: core.serialization.ObjectSchema<
 });
 
 export declare namespace TradeTraversalEntity {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: string;
         label: string;
