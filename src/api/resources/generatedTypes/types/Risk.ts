@@ -10,9 +10,13 @@ export type Risk =
     | "bis_boycott_requester_list"
     | "cmic_entity"
     | "cmic_entity_50_percent_rule"
+    | "controlled_by_aus_sanctioned"
     | "controlled_by_eu_sanctioned"
+    | "controlled_by_jpn_sanctioned"
     | "controlled_by_ofac_sdn"
     | "controlled_by_uk_sanctioned"
+    | "controlled_by_ukr_sanctioned"
+    | "controlled_by_un_sanctioned"
     | "cpi_score"
     | "entity_licensed_with_fsb_rf"
     | "eu_50_percent_rule"
@@ -174,9 +178,13 @@ export const Risk = {
     BisBoycottRequesterList: "bis_boycott_requester_list",
     CmicEntity: "cmic_entity",
     CmicEntity50PercentRule: "cmic_entity_50_percent_rule",
+    ControlledByAusSanctioned: "controlled_by_aus_sanctioned",
     ControlledByEuSanctioned: "controlled_by_eu_sanctioned",
+    ControlledByJpnSanctioned: "controlled_by_jpn_sanctioned",
     ControlledByOfacSdn: "controlled_by_ofac_sdn",
     ControlledByUkSanctioned: "controlled_by_uk_sanctioned",
+    ControlledByUkrSanctioned: "controlled_by_ukr_sanctioned",
+    ControlledByUnSanctioned: "controlled_by_un_sanctioned",
     CpiScore: "cpi_score",
     EntityLicensedWithFsbRf: "entity_licensed_with_fsb_rf",
     Eu50PercentRule: "eu_50_percent_rule",
