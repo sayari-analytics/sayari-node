@@ -31,7 +31,7 @@ export class Project {
     constructor(protected readonly _options: Project.Options = {}) {}
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Create a new project.
+     * Create a new project
      *
      * @param {Sayari.CreateProjectRequest} request
      * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
@@ -62,8 +62,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -164,7 +164,7 @@ export class Project {
     }
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Retrieve a list of projects including upload progress info.
+     * Retrieve a list of projects including upload progress info.
      *
      * @param {Sayari.GetProjects} request
      * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
@@ -220,8 +220,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -322,7 +322,7 @@ export class Project {
     }
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Retrieve a list of entities in a project.
+     * Retrieve a list of entities in a project.
      *
      * @param {string} id - The project identifier.
      * @param {Sayari.GetProjectEntities} request
@@ -466,8 +466,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 Accept: accept,
@@ -600,8 +600,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,

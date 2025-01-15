@@ -31,7 +31,7 @@ export class Attributes {
     constructor(protected readonly _options: Attributes.Options = {}) {}
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Adds a new Attribute
+     * Adds a new attribute to an entity in the project
      *
      * @param {Sayari.AddAttribute} request
      * @param {Attributes.RequestOptions} requestOptions - Request-specific configuration.
@@ -74,8 +74,8 @@ export class Attributes {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -229,8 +229,8 @@ export class Attributes {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -380,8 +380,8 @@ export class Attributes {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,

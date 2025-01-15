@@ -206,8 +206,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -363,8 +363,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -466,7 +466,7 @@ export class Resolution {
     }
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
+     * The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
      *
      * @param {string} projectId - Unique identifier of the project
      * @param {Sayari.ResolutionPersisted} request
@@ -521,8 +521,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -626,7 +626,7 @@ export class Resolution {
     }
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> This endpoint allows you to upload entities in bulk.
+     * <Warning>This endpoint is in beta and subject to change</Warning> This endpoint allows you to upload entities in bulk.
      *
      * @param {string} projectId - Unique identifier of the project
      * @param {Sayari.ResolutionUploadBody} request
@@ -663,8 +663,8 @@ export class Resolution {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,

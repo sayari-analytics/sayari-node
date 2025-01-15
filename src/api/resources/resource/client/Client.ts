@@ -31,7 +31,7 @@ export class Resource {
     constructor(protected readonly _options: Resource.Options = {}) {}
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Save an entity to a project.
+     * Save an entity to a project.
      *
      * @param {Sayari.SaveEntityRequest} request
      * @param {Resource.RequestOptions} requestOptions - Request-specific configuration.
@@ -69,8 +69,8 @@ export class Resource {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -202,8 +202,8 @@ export class Resource {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.32",
-                "User-Agent": "@sayari/sdk/0.1.32",
+                "X-Fern-SDK-Version": "0.1.33",
+                "User-Agent": "@sayari/sdk/0.1.33",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
