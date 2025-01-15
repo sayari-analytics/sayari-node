@@ -14,7 +14,7 @@
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Adds a new Attribute
+Adds a new attribute to an entity in the project
 
 </dd>
 </dl>
@@ -715,7 +715,7 @@ await client.negativeNews.negativeNews({
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
+The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
 
 </dd>
 </dl>
@@ -1052,7 +1052,7 @@ await client.notifications.deleteResourceNotifications("oGxxqG");
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Create a new project.
+Create a new project
 
 </dd>
 </dl>
@@ -1117,7 +1117,7 @@ await client.project.createProject({
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Retrieve a list of projects including upload progress info.
+Retrieve a list of projects including upload progress info.
 
 </dd>
 </dl>
@@ -1183,7 +1183,7 @@ await client.project.getProjects({
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Retrieve a list of entities in a project.
+Retrieve a list of entities in a project.
 
 </dd>
 </dl>
@@ -1531,7 +1531,7 @@ await client.resolution.resolutionPost({
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
+The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
 
 </dd>
 </dl>
@@ -1607,7 +1607,7 @@ await client.resolution.resolutionPersisted("V03eYM", {
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> This endpoint allows you to upload entities in bulk.
+<Warning>This endpoint is in beta and subject to change</Warning> This endpoint allows you to upload entities in bulk.
 
 </dd>
 </dl>
@@ -1688,7 +1688,7 @@ await client.resolution.resolutionUpload("V03eYM", {
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Save an entity to a project.
+Save an entity to a project.
 
 </dd>
 </dl>
@@ -2229,7 +2229,7 @@ await client.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
+Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them
 
 </dd>
 </dl>
