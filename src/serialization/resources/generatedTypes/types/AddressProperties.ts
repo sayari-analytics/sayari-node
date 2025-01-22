@@ -19,6 +19,7 @@ export const AddressProperties: core.serialization.ObjectSchema<
     countryRegion: core.serialization.property("country_region", core.serialization.string().optional()),
     date: core.serialization.string().optional(),
     entrance: core.serialization.string().optional(),
+    extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     house: core.serialization.string().optional(),
     houseNumber: core.serialization.property("house_number", core.serialization.string().optional()),
@@ -57,6 +58,7 @@ export declare namespace AddressProperties {
         country_region?: string | null;
         date?: string | null;
         entrance?: string | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         house?: string | null;
         house_number?: string | null;

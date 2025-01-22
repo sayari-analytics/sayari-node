@@ -47,6 +47,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "aus_consolidated_sanctions_reference",
         "aus_credit_licence_number",
         "aus_credit_rep_number",
+        "aus_passport",
         "aut_firmenbuch_no",
         "aze_tin_number",
         "bd_bin",
@@ -56,6 +57,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "bel_national_register_no",
         "bfa_entity_id",
         "bfa_rccm_number",
+        "bgd_passport",
         "bgr_egn_hashed",
         "bgr_uic",
         "bh_cr_number",
@@ -182,6 +184,8 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "ecu_importer_id",
         "ecu_ruc_number",
         "ecu_shipment_ref_no",
+        "egy_id",
+        "egy_passport",
         "esp_be_code",
         "esp_borme_reg_id",
         "esp_internal_employee_number",
@@ -237,6 +241,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "iban",
         "icij_offshore_internal_id",
         "icij_offshore_node_id",
+        "idn_nik_id",
         "idn_passport",
         "idn_tax_id",
         "idn_trade_internal_shipment_id",
@@ -371,6 +376,8 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "mx_rfc_person",
         "mys_company_reg_no",
         "mys_id_card_no",
+        "mys_moha_list_number",
+        "mys_passport",
         "ng_check_internal_id",
         "nga_crp_reg_internal_id",
         "nga_drivers",
@@ -409,6 +416,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "per_dni_no",
         "per_ruc_no",
         "phl_bnn",
+        "phl_passport",
         "phl_pse_id",
         "phl_sec_id",
         "phl_tin",
@@ -453,6 +461,9 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "rus_passport",
         "rus_tourist_obj",
         "saskatchewan_registry_number",
+        "sau_cr_number",
+        "sau_establishment_num",
+        "sau_id",
         "sau_passport",
         "sayari_internal_identifier",
         "sgp_passport",
@@ -481,6 +492,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "swe_per_id_no",
         "swe_tax_number",
         "swift_bic_code",
+        "syr_passport",
         "syria_commercial_register_number",
         "tha_registration_no",
         "tjk_ein_number",
@@ -488,9 +500,11 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "tokyo_stock_exchange_no",
         "tto_biz_number",
         "tun_passport",
+        "tur_id",
         "tur_istanbul_coc_reg_no",
         "tur_izmir_coc_reg_no",
         "tur_mersis_number",
+        "tur_passport",
         "tur_shipment_id",
         "tur_tax_id",
         "tur_ticaret_sicil_no",
@@ -688,6 +702,7 @@ export declare namespace IdentifierType {
         | "aus_consolidated_sanctions_reference"
         | "aus_credit_licence_number"
         | "aus_credit_rep_number"
+        | "aus_passport"
         | "aut_firmenbuch_no"
         | "aze_tin_number"
         | "bd_bin"
@@ -697,6 +712,7 @@ export declare namespace IdentifierType {
         | "bel_national_register_no"
         | "bfa_entity_id"
         | "bfa_rccm_number"
+        | "bgd_passport"
         | "bgr_egn_hashed"
         | "bgr_uic"
         | "bh_cr_number"
@@ -823,6 +839,8 @@ export declare namespace IdentifierType {
         | "ecu_importer_id"
         | "ecu_ruc_number"
         | "ecu_shipment_ref_no"
+        | "egy_id"
+        | "egy_passport"
         | "esp_be_code"
         | "esp_borme_reg_id"
         | "esp_internal_employee_number"
@@ -878,6 +896,7 @@ export declare namespace IdentifierType {
         | "iban"
         | "icij_offshore_internal_id"
         | "icij_offshore_node_id"
+        | "idn_nik_id"
         | "idn_passport"
         | "idn_tax_id"
         | "idn_trade_internal_shipment_id"
@@ -1012,6 +1031,8 @@ export declare namespace IdentifierType {
         | "mx_rfc_person"
         | "mys_company_reg_no"
         | "mys_id_card_no"
+        | "mys_moha_list_number"
+        | "mys_passport"
         | "ng_check_internal_id"
         | "nga_crp_reg_internal_id"
         | "nga_drivers"
@@ -1050,6 +1071,7 @@ export declare namespace IdentifierType {
         | "per_dni_no"
         | "per_ruc_no"
         | "phl_bnn"
+        | "phl_passport"
         | "phl_pse_id"
         | "phl_sec_id"
         | "phl_tin"
@@ -1094,6 +1116,9 @@ export declare namespace IdentifierType {
         | "rus_passport"
         | "rus_tourist_obj"
         | "saskatchewan_registry_number"
+        | "sau_cr_number"
+        | "sau_establishment_num"
+        | "sau_id"
         | "sau_passport"
         | "sayari_internal_identifier"
         | "sgp_passport"
@@ -1122,6 +1147,7 @@ export declare namespace IdentifierType {
         | "swe_per_id_no"
         | "swe_tax_number"
         | "swift_bic_code"
+        | "syr_passport"
         | "syria_commercial_register_number"
         | "tha_registration_no"
         | "tjk_ein_number"
@@ -1129,9 +1155,11 @@ export declare namespace IdentifierType {
         | "tokyo_stock_exchange_no"
         | "tto_biz_number"
         | "tun_passport"
+        | "tur_id"
         | "tur_istanbul_coc_reg_no"
         | "tur_izmir_coc_reg_no"
         | "tur_mersis_number"
+        | "tur_passport"
         | "tur_shipment_id"
         | "tur_tax_id"
         | "tur_ticaret_sicil_no"

@@ -11,6 +11,7 @@ export const NameProperties: core.serialization.ObjectSchema<serializers.NamePro
     core.serialization.object({
         context: core.serialization.string().optional(),
         date: core.serialization.string().optional(),
+        extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
         fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
         language: Language.optional(),
         toDate: core.serialization.property("to_date", core.serialization.string().optional()),
@@ -23,6 +24,7 @@ export declare namespace NameProperties {
     export interface Raw {
         context?: string | null;
         date?: string | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         language?: Language.Raw | null;
         to_date?: string | null;

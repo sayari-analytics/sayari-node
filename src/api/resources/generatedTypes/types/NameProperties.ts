@@ -6,13 +6,15 @@ import * as Sayari from "../../../index";
 
 export interface NameProperties {
     context?: string;
-    /** as-of date */
+    /** as-of date of attribute */
     date?: string;
-    /** start date */
+    /** extra information of attribute */
+    extra?: Record<string, unknown>;
+    /** start date of attribute */
     fromDate?: string;
     /** The language that the name is in */
     language?: Sayari.Language;
-    /** end date */
+    /** end date of attribute */
     toDate?: string;
     /** The name value translated to English */
     translated?: string;

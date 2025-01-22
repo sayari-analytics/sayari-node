@@ -13,6 +13,7 @@ export const TranslatedNameProperties: core.serialization.ObjectSchema<
 > = core.serialization.object({
     context: TranslationContext.optional(),
     date: core.serialization.string().optional(),
+    extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     original: core.serialization.string().optional(),
     toDate: core.serialization.property("to_date", core.serialization.string().optional()),
@@ -23,6 +24,7 @@ export declare namespace TranslatedNameProperties {
     export interface Raw {
         context?: TranslationContext.Raw | null;
         date?: string | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         original?: string | null;
         to_date?: string | null;

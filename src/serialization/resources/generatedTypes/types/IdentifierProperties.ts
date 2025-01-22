@@ -12,6 +12,7 @@ export const IdentifierProperties: core.serialization.ObjectSchema<
     Sayari.IdentifierProperties
 > = core.serialization.object({
     date: core.serialization.string().optional(),
+    extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     toDate: core.serialization.property("to_date", core.serialization.string().optional()),
     type: BothIdentifierTypes,
@@ -21,6 +22,7 @@ export const IdentifierProperties: core.serialization.ObjectSchema<
 export declare namespace IdentifierProperties {
     export interface Raw {
         date?: string | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         to_date?: string | null;
         type: BothIdentifierTypes.Raw;

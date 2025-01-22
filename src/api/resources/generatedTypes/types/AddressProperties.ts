@@ -16,11 +16,13 @@ export interface AddressProperties {
     country?: string;
     /** Informal subdivision of a country without any political status */
     countryRegion?: string;
-    /** as-of date */
+    /** as-of date of attribute */
     date?: string;
     /** Numbered/lettered entrance */
     entrance?: string;
-    /** start date */
+    /** extra information of attribute */
+    extra?: Record<string, unknown>;
+    /** start date of attribute */
     fromDate?: string;
     /** Building/site name (e.g., "Brooklyn Academy of Music", "Empire State Building") */
     house?: string;
@@ -52,7 +54,7 @@ export interface AddressProperties {
     stateDistrict?: string;
     /** Usually an unofficial neighborhood name, like "Harlem", "South Bronx", or "Crown Heights" */
     suburb?: string;
-    /** end date */
+    /** end date of attribute */
     toDate?: string;
     /** The address value translated to English */
     translated?: string;

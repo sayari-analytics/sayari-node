@@ -13,6 +13,7 @@ export const BusinessPurposeProperties: core.serialization.ObjectSchema<
 > = core.serialization.object({
     code: core.serialization.string().optional(),
     date: core.serialization.string().optional(),
+    extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     standard: BusinessPurposeStandard.optional(),
     toDate: core.serialization.property("to_date", core.serialization.string().optional()),
@@ -23,6 +24,7 @@ export declare namespace BusinessPurposeProperties {
     export interface Raw {
         code?: string | null;
         date?: string | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         standard?: BusinessPurposeStandard.Raw | null;
         to_date?: string | null;
