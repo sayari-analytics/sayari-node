@@ -122,6 +122,9 @@ export type IdentifierType =
      * Australian identifying number allocated to a credit representative */
     | "aus_credit_rep_number"
     /**
+     * Australia Passport Number */
+    | "aus_passport"
+    /**
      * Austrian Company Register Number */
     | "aut_firmenbuch_no"
     /**
@@ -148,6 +151,9 @@ export type IdentifierType =
     /**
      * OHADA corporate registry ID number */
     | "bfa_rccm_number"
+    /**
+     * Bangladesh Passport Number */
+    | "bgd_passport"
     /**
      * A hashed representation of a Bulgarian citizenship number */
     | "bgr_egn_hashed"
@@ -517,6 +523,12 @@ export type IdentifierType =
      * Ecuador Shipment Reference Number */
     | "ecu_shipment_ref_no"
     /**
+     * Egypt National Identity Card Number. The national number is a unique 14-digit identifier assigned to each citizen. */
+    | "egy_id"
+    /**
+     * Egypt passport number */
+    | "egy_passport"
+    /**
      * Unique identification number assigned to every entity registered with the Bank of Spain. */
     | "esp_be_code"
     /**
@@ -679,6 +691,9 @@ export type IdentifierType =
     /**
      * ICIJ Offshore Database Node ID */
     | "icij_offshore_node_id"
+    /**
+     * Indonesia National identification number issued to all Indonesian citizens. This ID represents a unique 16-digit number known as a Nomor Induk Kependudukan (NIK). */
+    | "idn_nik_id"
     /**
      * Indonesian passport number */
     | "idn_passport"
@@ -1068,6 +1083,12 @@ export type IdentifierType =
      * Malaysia natural person ID number */
     | "mys_id_card_no"
     /**
+     * Malaysia MOHA Sanctions List Identifier. Reference number assigned to all entities listed under the Malaysia Ministry of Home Affairs Sanctions List. */
+    | "mys_moha_list_number"
+    /**
+     * Malaysia passport number */
+    | "mys_passport"
+    /**
      * NG-Check entity internal ID number */
     | "ng_check_internal_id"
     /**
@@ -1181,6 +1202,9 @@ export type IdentifierType =
     /**
      * Philippines business registry ID number */
     | "phl_bnn"
+    /**
+     * Philippines passport number */
+    | "phl_passport"
     /**
      * Philippines securities issuer internal ID number */
     | "phl_pse_id"
@@ -1308,6 +1332,15 @@ export type IdentifierType =
      * Unique Canada province ID number. Assigned to every legal entity in the Saskatchewan Corporate Registry. */
     | "saskatchewan_registry_number"
     /**
+     * Saudi Arabia Commercial Registration ID Number. Issued by Ministry of Commerce of Saudi Arabia. */
+    | "sau_cr_number"
+    /**
+     * Unified Saudi Arabia National Number of the Establishment. Issued by the Ministry of Commerce of Saudi Arabia via the National Information Center. This ID may also be issued through the Saudi Arabia Ministry of Human Resources and Social Development for establishments that do not require a commercial registration to practice business activity. It normally consists of ten digits. */
+    | "sau_establishment_num"
+    /**
+     * Saudi Arabia National Identity Card Number. The identification card number in Saudi Arabia is a 10-digit numerical sequence called the Iqama number. */
+    | "sau_id"
+    /**
      * Saudi Arabian passport number */
     | "sau_passport"
     /**
@@ -1392,6 +1425,9 @@ export type IdentifierType =
      * Unique global ID code. Assigned to financial and non-financial institutions for use addressing messages, routing business transactions, and identifying business parties. */
     | "swift_bic_code"
     /**
+     * Syria passport number */
+    | "syr_passport"
+    /**
      * Unique Syria ID number. Assigned to every legal entity registered with the Syria Ministry of Economy and Foreign Trade. */
     | "syria_commercial_register_number"
     /**
@@ -1413,6 +1449,9 @@ export type IdentifierType =
      * Tunisia passport number */
     | "tun_passport"
     /**
+     * Türkiye Identification Number. This ID number is a unique 11-digit personal identification number assigned to citizens of Turkey. */
+    | "tur_id"
+    /**
      * Istanbul Chamber of Commerce registration number */
     | "tur_istanbul_coc_reg_no"
     /**
@@ -1421,6 +1460,9 @@ export type IdentifierType =
     /**
      * Turkish Central Registry Number System (MERSIS) number */
     | "tur_mersis_number"
+    /**
+     * Türkiye passport number */
+    | "tur_passport"
     /**
      * Unique concatenation of bill of lading number and item number for shipments in Turkey. */
     | "tur_shipment_id"
@@ -1913,6 +1955,7 @@ export const IdentifierType = {
     AusConsolidatedSanctionsReference: "aus_consolidated_sanctions_reference",
     AusCreditLicenceNumber: "aus_credit_licence_number",
     AusCreditRepNumber: "aus_credit_rep_number",
+    AusPassport: "aus_passport",
     AutFirmenbuchNo: "aut_firmenbuch_no",
     AzeTinNumber: "aze_tin_number",
     BdBin: "bd_bin",
@@ -1922,6 +1965,7 @@ export const IdentifierType = {
     BelNationalRegisterNo: "bel_national_register_no",
     BfaEntityId: "bfa_entity_id",
     BfaRccmNumber: "bfa_rccm_number",
+    BgdPassport: "bgd_passport",
     BgrEgnHashed: "bgr_egn_hashed",
     BgrUic: "bgr_uic",
     BhCrNumber: "bh_cr_number",
@@ -2048,6 +2092,8 @@ export const IdentifierType = {
     EcuImporterId: "ecu_importer_id",
     EcuRucNumber: "ecu_ruc_number",
     EcuShipmentRefNo: "ecu_shipment_ref_no",
+    EgyId: "egy_id",
+    EgyPassport: "egy_passport",
     EspBeCode: "esp_be_code",
     EspBormeRegId: "esp_borme_reg_id",
     EspInternalEmployeeNumber: "esp_internal_employee_number",
@@ -2103,6 +2149,7 @@ export const IdentifierType = {
     Iban: "iban",
     IcijOffshoreInternalId: "icij_offshore_internal_id",
     IcijOffshoreNodeId: "icij_offshore_node_id",
+    IdnNikId: "idn_nik_id",
     IdnPassport: "idn_passport",
     IdnTaxId: "idn_tax_id",
     IdnTradeInternalShipmentId: "idn_trade_internal_shipment_id",
@@ -2237,6 +2284,8 @@ export const IdentifierType = {
     MxRfcPerson: "mx_rfc_person",
     MysCompanyRegNo: "mys_company_reg_no",
     MysIdCardNo: "mys_id_card_no",
+    MysMohaListNumber: "mys_moha_list_number",
+    MysPassport: "mys_passport",
     NgCheckInternalId: "ng_check_internal_id",
     NgaCrpRegInternalId: "nga_crp_reg_internal_id",
     NgaDrivers: "nga_drivers",
@@ -2275,6 +2324,7 @@ export const IdentifierType = {
     PerDniNo: "per_dni_no",
     PerRucNo: "per_ruc_no",
     PhlBnn: "phl_bnn",
+    PhlPassport: "phl_passport",
     PhlPseId: "phl_pse_id",
     PhlSecId: "phl_sec_id",
     PhlTin: "phl_tin",
@@ -2319,6 +2369,9 @@ export const IdentifierType = {
     RusPassport: "rus_passport",
     RusTouristObj: "rus_tourist_obj",
     SaskatchewanRegistryNumber: "saskatchewan_registry_number",
+    SauCrNumber: "sau_cr_number",
+    SauEstablishmentNum: "sau_establishment_num",
+    SauId: "sau_id",
     SauPassport: "sau_passport",
     SayariInternalIdentifier: "sayari_internal_identifier",
     SgpPassport: "sgp_passport",
@@ -2347,6 +2400,7 @@ export const IdentifierType = {
     SwePerIdNo: "swe_per_id_no",
     SweTaxNumber: "swe_tax_number",
     SwiftBicCode: "swift_bic_code",
+    SyrPassport: "syr_passport",
     SyriaCommercialRegisterNumber: "syria_commercial_register_number",
     ThaRegistrationNo: "tha_registration_no",
     TjkEinNumber: "tjk_ein_number",
@@ -2354,9 +2408,11 @@ export const IdentifierType = {
     TokyoStockExchangeNo: "tokyo_stock_exchange_no",
     TtoBizNumber: "tto_biz_number",
     TunPassport: "tun_passport",
+    TurId: "tur_id",
     TurIstanbulCocRegNo: "tur_istanbul_coc_reg_no",
     TurIzmirCocRegNo: "tur_izmir_coc_reg_no",
     TurMersisNumber: "tur_mersis_number",
+    TurPassport: "tur_passport",
     TurShipmentId: "tur_shipment_id",
     TurTaxId: "tur_tax_id",
     TurTicaretSicilNo: "tur_ticaret_sicil_no",

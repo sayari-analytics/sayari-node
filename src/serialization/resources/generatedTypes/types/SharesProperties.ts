@@ -13,6 +13,7 @@ export const SharesProperties: core.serialization.ObjectSchema<
 > = core.serialization.object({
     currency: Currency.optional(),
     date: core.serialization.string().optional(),
+    extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     monetaryValue: core.serialization.property("monetary_value", core.serialization.number().optional()),
     numShares: core.serialization.property("num_shares", core.serialization.number().optional()),
@@ -25,6 +26,7 @@ export declare namespace SharesProperties {
     export interface Raw {
         currency?: Currency.Raw | null;
         date?: string | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         monetary_value?: number | null;
         num_shares?: number | null;

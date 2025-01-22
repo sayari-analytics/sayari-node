@@ -15,6 +15,7 @@ export const FinancialsProperties: core.serialization.ObjectSchema<
     currency: Currency.optional(),
     date: core.serialization.string().optional(),
     employees: core.serialization.number().optional(),
+    extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     liabilities: core.serialization.number().optional(),
     netIncome: core.serialization.property("net_income", core.serialization.number().optional()),
@@ -30,6 +31,7 @@ export declare namespace FinancialsProperties {
         currency?: Currency.Raw | null;
         date?: string | null;
         employees?: number | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         liabilities?: number | null;
         net_income?: number | null;

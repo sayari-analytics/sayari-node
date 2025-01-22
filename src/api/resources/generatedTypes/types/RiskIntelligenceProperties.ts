@@ -7,9 +7,11 @@ import * as Sayari from "../../../index";
 export interface RiskIntelligenceProperties {
     /** Government authority issuing the enforcement or risk intelligence action */
     authority?: string;
-    /** as-of date */
+    /** as-of date of attribute */
     date?: string;
-    /** start date */
+    /** extra information of attribute */
+    extra?: Record<string, unknown>;
+    /** start date of attribute */
     fromDate?: string;
     /** Official list where the entity's risk information or enforcement action is recorded */
     list?: string;
@@ -17,7 +19,7 @@ export interface RiskIntelligenceProperties {
     program?: string;
     /** Explanation or legal basis for the risk intelligence */
     reason?: string;
-    /** end date */
+    /** end date of attribute */
     toDate?: string;
     /** Type of risk intelligence */
     type: Sayari.Tag;

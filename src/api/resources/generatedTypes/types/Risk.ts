@@ -145,6 +145,7 @@ export type Risk =
     | "psa_sheffield_hallam_university_intermediary_entity"
     | "psa_sheffield_hallam_university_useful_resources"
     | "psa_state_owned"
+    | "psa_state_owned_ven"
     | "psa_wro_entity"
     | "regulatory_action"
     | "reputational_risk_bribery_and_corruption"
@@ -318,6 +319,7 @@ export const Risk = {
     PsaSheffieldHallamUniversityIntermediaryEntity: "psa_sheffield_hallam_university_intermediary_entity",
     PsaSheffieldHallamUniversityUsefulResources: "psa_sheffield_hallam_university_useful_resources",
     PsaStateOwned: "psa_state_owned",
+    PsaStateOwnedVen: "psa_state_owned_ven",
     PsaWroEntity: "psa_wro_entity",
     RegulatoryAction: "regulatory_action",
     ReputationalRiskBriberyAndCorruption: "reputational_risk_bribery_and_corruption",

@@ -9,11 +9,13 @@ export interface MonetaryValueProperties {
     context: Sayari.MonetaryValueContext;
     /** The ISO 4217 currency code */
     currency?: Sayari.Currency;
-    /** as-of date */
+    /** as-of date of attribute */
     date?: string;
-    /** start date */
+    /** extra information of attribute */
+    extra?: Record<string, unknown>;
+    /** start date of attribute */
     fromDate?: string;
-    /** end date */
+    /** end date of attribute */
     toDate?: string;
     /** The financial value of the asset */
     value: number;

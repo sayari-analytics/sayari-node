@@ -7,13 +7,15 @@ import * as Sayari from "../../../index";
 export interface CountryProperties {
     /** The type of affiliation */
     context?: Sayari.CountryContext;
-    /** as-of date */
+    /** as-of date of attribute */
     date?: string;
-    /** start date */
+    /** extra information of attribute */
+    extra?: Record<string, unknown>;
+    /** start date of attribute */
     fromDate?: string;
     /** The subnational state, province, region, etc. */
     state?: string;
-    /** end date */
+    /** end date of attribute */
     toDate?: string;
     /** The country, ideally normalized to an ISO trigram */
     value: Sayari.Country;

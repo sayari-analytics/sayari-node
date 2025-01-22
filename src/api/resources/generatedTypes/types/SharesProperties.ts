@@ -7,9 +7,11 @@ import * as Sayari from "../../../index";
 export interface SharesProperties {
     /** The currency of the monetary_value */
     currency?: Sayari.Currency;
-    /** as-of date */
+    /** as-of date of attribute */
     date?: string;
-    /** start date */
+    /** extra information of attribute */
+    extra?: Record<string, unknown>;
+    /** start date of attribute */
     fromDate?: string;
     /** The total monetary value of the shares */
     monetaryValue?: number;
@@ -17,7 +19,7 @@ export interface SharesProperties {
     numShares?: number;
     /** The percentage of shares owned */
     percentage?: number;
-    /** end date */
+    /** end date of attribute */
     toDate?: string;
     /** A string describing the type of shares (e.g., "Class B", "Protected cell shares") */
     type?: string;

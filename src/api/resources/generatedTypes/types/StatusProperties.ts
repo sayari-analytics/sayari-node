@@ -7,13 +7,15 @@ import * as Sayari from "../../../index";
 export interface StatusProperties {
     /** The type of status, such as license or partnership type */
     context?: Sayari.StatusContext;
-    /** as-of date */
+    /** as-of date of attribute */
     date?: string;
-    /** start date */
+    /** extra information of attribute */
+    extra?: Record<string, unknown>;
+    /** start date of attribute */
     fromDate?: string;
     /** The raw status text */
     text?: string;
-    /** end date */
+    /** end date of attribute */
     toDate?: string;
     /** The status, normalized to one of the status enums */
     value?: Sayari.CompanyStatus;

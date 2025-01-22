@@ -13,6 +13,7 @@ export const RiskIntelligenceProperties: core.serialization.ObjectSchema<
 > = core.serialization.object({
     authority: core.serialization.string().optional(),
     date: core.serialization.string().optional(),
+    extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     list: core.serialization.string().optional(),
     program: core.serialization.string().optional(),
@@ -25,6 +26,7 @@ export declare namespace RiskIntelligenceProperties {
     export interface Raw {
         authority?: string | null;
         date?: string | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         list?: string | null;
         program?: string | null;

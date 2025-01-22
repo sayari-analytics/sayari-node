@@ -11,6 +11,7 @@ export const CompanyTypeProperties: core.serialization.ObjectSchema<
     Sayari.CompanyTypeProperties
 > = core.serialization.object({
     date: core.serialization.string().optional(),
+    extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     toDate: core.serialization.property("to_date", core.serialization.string().optional()),
     value: core.serialization.string().optional(),
@@ -19,6 +20,7 @@ export const CompanyTypeProperties: core.serialization.ObjectSchema<
 export declare namespace CompanyTypeProperties {
     export interface Raw {
         date?: string | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         to_date?: string | null;
         value?: string | null;

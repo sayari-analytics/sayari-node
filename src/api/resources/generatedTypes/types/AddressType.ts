@@ -23,7 +23,10 @@ export type AddressType =
     | "physical"
     /**
      * An address an entity has listed for its registration */
-    | "registered";
+    | "registered"
+    /**
+     * The port at which a shipment is temporarily located or moved between vessels in the course of shipment. */
+    | "transit";
 export const AddressType = {
     Arrival: "arrival",
     Business: "business",
@@ -31,4 +34,5 @@ export const AddressType = {
     Mailing: "mailing",
     Physical: "physical",
     Registered: "registered",
+    Transit: "transit",
 } as const;

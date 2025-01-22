@@ -7,13 +7,15 @@ import * as Sayari from "../../../index";
 export interface BusinessPurposeProperties {
     /** A code */
     code?: string;
-    /** as-of date */
+    /** as-of date of attribute */
     date?: string;
-    /** start date */
+    /** extra information of attribute */
+    extra?: Record<string, unknown>;
+    /** start date of attribute */
     fromDate?: string;
     /** The type of code (e.g., "ISIC4", "NACE1") */
     standard?: Sayari.BusinessPurposeStandard;
-    /** end date */
+    /** end date of attribute */
     toDate?: string;
     /** A text description */
     value?: string;

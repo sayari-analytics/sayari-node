@@ -14,6 +14,7 @@ export const StatusProperties: core.serialization.ObjectSchema<
 > = core.serialization.object({
     context: StatusContext.optional(),
     date: core.serialization.string().optional(),
+    extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
     text: core.serialization.string().optional(),
     toDate: core.serialization.property("to_date", core.serialization.string().optional()),
@@ -24,6 +25,7 @@ export declare namespace StatusProperties {
     export interface Raw {
         context?: StatusContext.Raw | null;
         date?: string | null;
+        extra?: Record<string, unknown> | null;
         from_date?: string | null;
         text?: string | null;
         to_date?: string | null;
