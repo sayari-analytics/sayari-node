@@ -656,7 +656,7 @@ export class Resolution {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
-                `/v1/v1/projects/${encodeURIComponent(projectId)}/resolutions`,
+                `/v1/projects/${encodeURIComponent(projectId)}/resolutions`,
             ),
             method: "POST",
             headers: {
@@ -757,7 +757,7 @@ export class Resolution {
                 });
             case "timeout":
                 throw new errors.SayariTimeoutError(
-                    "Timeout exceeded when calling POST /v1/v1/projects/{projectId}/resolutions.",
+                    "Timeout exceeded when calling POST /v1/projects/{projectId}/resolutions.",
                 );
             case "unknown":
                 throw new errors.SayariError({

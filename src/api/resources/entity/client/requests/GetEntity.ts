@@ -126,7 +126,7 @@ export interface GetEntity {
      */
     relationshipsPrev?: string;
     /**
-     * Limit total relationship values. Defaults to 200.
+     * Limit total relationship values. Defaults to 50.
      */
     relationshipsLimit?: number;
     /**
