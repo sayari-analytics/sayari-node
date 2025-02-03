@@ -77,7 +77,8 @@ const watchlist = await client.traversal.watchlist(putinResult.data[0].id)
 console.log("Found", watchlist.data.length, "watchlist results for entity", putinResult.data[0].id)
 
 // shortest path
-const shortestPath = await client.traversal.shortestPath({entities: [firstEntityResult, ubo.data[0].target.id]})
+// TODO: revert reversal once bug is fixed
+const shortestPath = await client.traversal.shortestPath({entities: [ubo.data[0].target.id, firstEntityResult]})
 console.log("Found path with", shortestPath.data[0].path.length, "hops")
 
 // Usage
