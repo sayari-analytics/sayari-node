@@ -709,7 +709,7 @@ export type Country =
      * United States Minor Outlying Islands */
     | "UMI"
     /**
-     * Kosovo */
+     * United Nations Interim Administration in Kosovo (UNMIK) */
     | "UNK"
     /**
      * Uruguay */
