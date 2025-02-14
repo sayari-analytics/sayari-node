@@ -8,7 +8,7 @@ import * as core from "../../../../core";
 import { SourceId } from "./SourceId";
 import { Country } from "../../generatedTypes/types/Country";
 import { Entities } from "../../generatedTypes/types/Entities";
-import { Risk } from "../../generatedTypes/types/Risk";
+import { RiskFactor } from "./RiskFactor";
 
 export const FilterList: core.serialization.ObjectSchema<serializers.FilterList.Raw, Sayari.FilterList> =
     core.serialization.object({
@@ -18,7 +18,7 @@ export const FilterList: core.serialization.ObjectSchema<serializers.FilterList.
         city: core.serialization.list(core.serialization.string()).optional(),
         entityType: core.serialization.property("entity_type", core.serialization.list(Entities).optional()),
         bounds: core.serialization.list(core.serialization.string()).optional(),
-        risk: core.serialization.list(Risk).optional(),
+        risk: RiskFactor.optional(),
     });
 
 export declare namespace FilterList {
@@ -29,6 +29,6 @@ export declare namespace FilterList {
         city?: string[] | null;
         entity_type?: Entities.Raw[] | null;
         bounds?: string[] | null;
-        risk?: Risk.Raw[] | null;
+        risk?: RiskFactor.Raw | null;
     }
 }
