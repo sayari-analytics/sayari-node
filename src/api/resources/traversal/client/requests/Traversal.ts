@@ -68,55 +68,59 @@ export interface Traversal {
      */
     excludeClosedEntities?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with any risk factor of these categories
+     */
+    riskCategories?: Sayari.TraversalRiskCategory;
+    /**
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     euHighRiskThird?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     reputationalRiskModernSlavery?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     stateOwned?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     formerlySanctioned?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     reputationalRiskTerrorism?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     reputationalRiskOrganizedCrime?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     reputationalRiskFinancialCrime?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     reputationalRiskBriberyAndCorruption?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     reputationalRiskOther?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     reputationalRiskCybercrime?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     regulatoryAction?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     lawEnforcementAction?: boolean;
     /**
-     * Filter paths to only those that entity with an entity that we have flagged with this risk factor
+     * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */
     xinjiangGeospatial?: boolean;
 }
