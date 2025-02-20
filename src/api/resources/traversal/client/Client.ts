@@ -71,6 +71,7 @@ export class Traversal {
             includeUnknownShares,
             excludeFormerRelationships,
             excludeClosedEntities,
+            riskCategories,
             euHighRiskThird,
             reputationalRiskModernSlavery,
             stateOwned,
@@ -152,6 +153,11 @@ export class Traversal {
 
         if (excludeClosedEntities != null) {
             _queryParams["exclude_closed_entities"] = excludeClosedEntities.toString();
+        }
+
+        if (riskCategories != null) {
+            _queryParams["risk_categories"] =
+                typeof riskCategories === "string" ? riskCategories : JSON.stringify(riskCategories);
         }
 
         if (euHighRiskThird != null) {
@@ -376,6 +382,7 @@ export class Traversal {
             includeUnknownShares,
             excludeFormerRelationships,
             excludeClosedEntities,
+            riskCategories,
             euHighRiskThird,
             reputationalRiskModernSlavery,
             stateOwned,
@@ -457,6 +464,11 @@ export class Traversal {
 
         if (excludeClosedEntities != null) {
             _queryParams["exclude_closed_entities"] = excludeClosedEntities.toString();
+        }
+
+        if (riskCategories != null) {
+            _queryParams["risk_categories"] =
+                typeof riskCategories === "string" ? riskCategories : JSON.stringify(riskCategories);
         }
 
         if (euHighRiskThird != null) {
@@ -681,6 +693,7 @@ export class Traversal {
             includeUnknownShares,
             excludeFormerRelationships,
             excludeClosedEntities,
+            riskCategories,
             euHighRiskThird,
             reputationalRiskModernSlavery,
             stateOwned,
@@ -762,6 +775,11 @@ export class Traversal {
 
         if (excludeClosedEntities != null) {
             _queryParams["exclude_closed_entities"] = excludeClosedEntities.toString();
+        }
+
+        if (riskCategories != null) {
+            _queryParams["risk_categories"] =
+                typeof riskCategories === "string" ? riskCategories : JSON.stringify(riskCategories);
         }
 
         if (euHighRiskThird != null) {
@@ -986,6 +1004,7 @@ export class Traversal {
             includeUnknownShares,
             excludeFormerRelationships,
             excludeClosedEntities,
+            riskCategories,
             euHighRiskThird,
             reputationalRiskModernSlavery,
             stateOwned,
@@ -1067,6 +1086,11 @@ export class Traversal {
 
         if (excludeClosedEntities != null) {
             _queryParams["exclude_closed_entities"] = excludeClosedEntities.toString();
+        }
+
+        if (riskCategories != null) {
+            _queryParams["risk_categories"] =
+                typeof riskCategories === "string" ? riskCategories : JSON.stringify(riskCategories);
         }
 
         if (euHighRiskThird != null) {
