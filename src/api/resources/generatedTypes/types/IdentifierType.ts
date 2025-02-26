@@ -291,6 +291,9 @@ export type IdentifierType =
      * Penalty number assigned by the  Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
     | "can_qc_sap_registry_ref_num"
     /**
+     * Internal Identifier used by Techsalerator to identify published companies */
+    | "can_techsalerator_id"
+    /**
      * Unique Canada ID number. Assigned to every registered trademark. */
     | "can_tm_registration_no"
     /**
@@ -2012,6 +2015,7 @@ export const IdentifierType = {
     CanNsCorporateRegistry: "can_ns_corporate_registry",
     CanPeRegistrationNumber: "can_pe_registration_number",
     CanQcSapRegistryRefNum: "can_qc_sap_registry_ref_num",
+    CanTechsaleratorId: "can_techsalerator_id",
     CanTmRegistrationNo: "can_tm_registration_no",
     CcsRegistration: "ccs_registration",
     CheChIdNumber: "che_ch_id_number",

@@ -41,6 +41,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "export_to_soe",
     "exports_bis_high_priority_items",
     "exports_bis_high_priority_items_critical_components",
+    "exports_conflict_minerals",
     "exports_eudr_shipment_cattle",
     "exports_eudr_shipment_cocoa",
     "exports_eudr_shipment_coffee",
@@ -85,6 +86,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "formerly_sanctioned",
     "imports_bis_high_priority_items",
     "imports_bis_high_priority_items_critical_components",
+    "imports_conflict_minerals",
     "imports_eudr_shipment_cattle",
     "imports_eudr_shipment_cocoa",
     "imports_eudr_shipment_coffee",
@@ -213,6 +215,7 @@ export declare namespace Risk {
         | "export_to_soe"
         | "exports_bis_high_priority_items"
         | "exports_bis_high_priority_items_critical_components"
+        | "exports_conflict_minerals"
         | "exports_eudr_shipment_cattle"
         | "exports_eudr_shipment_cocoa"
         | "exports_eudr_shipment_coffee"
@@ -257,6 +260,7 @@ export declare namespace Risk {
         | "formerly_sanctioned"
         | "imports_bis_high_priority_items"
         | "imports_bis_high_priority_items_critical_components"
+        | "imports_conflict_minerals"
         | "imports_eudr_shipment_cattle"
         | "imports_eudr_shipment_cocoa"
         | "imports_eudr_shipment_coffee"

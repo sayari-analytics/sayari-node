@@ -248,6 +248,9 @@ export type WeakIdentifierType =
      * Partial South African ID number for individuals */
     | "south_africa_partial_id_number"
     /**
+     * Tokyo Shoko Research Business Identifier. Identification code, assigned by credit reporting company, Tokyo Shoko Research, for businesses in Japan. */
+    | "tokyo_shoko_id"
+    /**
      * Turkey municipal trade registry ID number. Assigned by municipal chambers of commerce in Turkey. */
     | "tur_office_registration_number"
     /**
@@ -419,6 +422,7 @@ export const WeakIdentifierType = {
     RuOktmo: "ru_oktmo",
     RusCbrId: "rus_cbr_id",
     SouthAfricaPartialIdNumber: "south_africa_partial_id_number",
+    TokyoShokoId: "tokyo_shoko_id",
     TurOfficeRegistrationNumber: "tur_office_registration_number",
     TurPartialMersisNumber: "tur_partial_mersis_number",
     TxBexarPropertyGeoId: "tx_bexar_property_geo_id",

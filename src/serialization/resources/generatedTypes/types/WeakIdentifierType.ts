@@ -91,6 +91,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "ru_oktmo",
     "rus_cbr_id",
     "south_africa_partial_id_number",
+    "tokyo_shoko_id",
     "tur_office_registration_number",
     "tur_partial_mersis_number",
     "tx_bexar_property_geo_id",
@@ -206,6 +207,7 @@ export declare namespace WeakIdentifierType {
         | "ru_oktmo"
         | "rus_cbr_id"
         | "south_africa_partial_id_number"
+        | "tokyo_shoko_id"
         | "tur_office_registration_number"
         | "tur_partial_mersis_number"
         | "tx_bexar_property_geo_id"

@@ -37,6 +37,7 @@ export type Risk =
     | "export_to_soe"
     | "exports_bis_high_priority_items"
     | "exports_bis_high_priority_items_critical_components"
+    | "exports_conflict_minerals"
     | "exports_eudr_shipment_cattle"
     | "exports_eudr_shipment_cocoa"
     | "exports_eudr_shipment_coffee"
@@ -81,6 +82,7 @@ export type Risk =
     | "formerly_sanctioned"
     | "imports_bis_high_priority_items"
     | "imports_bis_high_priority_items_critical_components"
+    | "imports_conflict_minerals"
     | "imports_eudr_shipment_cattle"
     | "imports_eudr_shipment_cocoa"
     | "imports_eudr_shipment_coffee"
@@ -206,6 +208,7 @@ export const Risk = {
     ExportToSoe: "export_to_soe",
     ExportsBisHighPriorityItems: "exports_bis_high_priority_items",
     ExportsBisHighPriorityItemsCriticalComponents: "exports_bis_high_priority_items_critical_components",
+    ExportsConflictMinerals: "exports_conflict_minerals",
     ExportsEudrShipmentCattle: "exports_eudr_shipment_cattle",
     ExportsEudrShipmentCocoa: "exports_eudr_shipment_cocoa",
     ExportsEudrShipmentCoffee: "exports_eudr_shipment_coffee",
@@ -253,6 +256,7 @@ export const Risk = {
     FormerlySanctioned: "formerly_sanctioned",
     ImportsBisHighPriorityItems: "imports_bis_high_priority_items",
     ImportsBisHighPriorityItemsCriticalComponents: "imports_bis_high_priority_items_critical_components",
+    ImportsConflictMinerals: "imports_conflict_minerals",
     ImportsEudrShipmentCattle: "imports_eudr_shipment_cattle",
     ImportsEudrShipmentCocoa: "imports_eudr_shipment_cocoa",
     ImportsEudrShipmentCoffee: "imports_eudr_shipment_coffee",

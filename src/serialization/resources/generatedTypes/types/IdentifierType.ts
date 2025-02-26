@@ -104,6 +104,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "can_ns_corporate_registry",
         "can_pe_registration_number",
         "can_qc_sap_registry_ref_num",
+        "can_techsalerator_id",
         "can_tm_registration_no",
         "ccs_registration",
         "che_ch_id_number",
@@ -759,6 +760,7 @@ export declare namespace IdentifierType {
         | "can_ns_corporate_registry"
         | "can_pe_registration_number"
         | "can_qc_sap_registry_ref_num"
+        | "can_techsalerator_id"
         | "can_tm_registration_no"
         | "ccs_registration"
         | "che_ch_id_number"
