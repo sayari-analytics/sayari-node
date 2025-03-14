@@ -5,13 +5,15 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Sayari from "../../../index";
-import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
+import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
 export declare namespace NegativeNews {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -69,10 +71,10 @@ export class NegativeNews {
         requestOptions?: NegativeNews.RequestOptions,
     ): Promise<Sayari.NegativeNewsResponse> {
         const { name, topic, until } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         _queryParams["name"] = name;
         if (topic != null) {
-            _queryParams["topic"] = topic;
+            _queryParams["topic"] = serializers.Topics.jsonOrThrow(topic, { unrecognizedObjectKeys: "strip" });
         }
 
         if (until != null) {
@@ -81,7 +83,9 @@ export class NegativeNews {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/negative_news",
             ),
             method: "GET",

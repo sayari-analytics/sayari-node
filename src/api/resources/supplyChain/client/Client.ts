@@ -5,6 +5,7 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Sayari from "../../../index";
+import { toJson } from "../../../../core/json";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
@@ -12,6 +13,8 @@ import * as errors from "../../../../errors/index";
 export declare namespace SupplyChain {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -70,37 +73,37 @@ export class SupplyChain {
             maxDepth,
             limit,
         } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (risk != null) {
-            _queryParams["risk"] = JSON.stringify(risk);
+            _queryParams["risk"] = toJson(risk);
         }
 
         if (notRisk != null) {
-            _queryParams["-risk"] = JSON.stringify(notRisk);
+            _queryParams["-risk"] = toJson(notRisk);
         }
 
         if (countries != null) {
-            _queryParams["countries"] = JSON.stringify(countries);
+            _queryParams["countries"] = toJson(countries);
         }
 
         if (notCountries != null) {
-            _queryParams["-countries"] = JSON.stringify(notCountries);
+            _queryParams["-countries"] = toJson(notCountries);
         }
 
         if (product != null) {
-            _queryParams["product"] = JSON.stringify(product);
+            _queryParams["product"] = toJson(product);
         }
 
         if (notProduct != null) {
-            _queryParams["-product"] = JSON.stringify(notProduct);
+            _queryParams["-product"] = toJson(notProduct);
         }
 
         if (component != null) {
-            _queryParams["component"] = JSON.stringify(component);
+            _queryParams["component"] = toJson(component);
         }
 
         if (notComponent != null) {
-            _queryParams["-component"] = JSON.stringify(notComponent);
+            _queryParams["-component"] = toJson(notComponent);
         }
 
         if (minDate != null) {
@@ -121,7 +124,9 @@ export class SupplyChain {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/supply_chain/upstream/${encodeURIComponent(id)}`,
             ),
             method: "GET",

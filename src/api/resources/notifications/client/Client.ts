@@ -5,13 +5,15 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Sayari from "../../../index";
-import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
+import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Notifications {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -63,7 +65,7 @@ export class Notifications {
         requestOptions?: Notifications.RequestOptions,
     ): Promise<Sayari.ProjectNotificationsResponse> {
         const { limit, offset, sort } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -73,12 +75,16 @@ export class Notifications {
         }
 
         if (sort != null) {
-            _queryParams["sort"] = sort;
+            _queryParams["sort"] = serializers.NotificationsSortField.jsonOrThrow(sort, {
+                unrecognizedObjectKeys: "strip",
+            });
         }
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/notifications/projects/${encodeURIComponent(id)}`,
             ),
             method: "GET",
@@ -234,7 +240,7 @@ export class Notifications {
         requestOptions?: Notifications.RequestOptions,
     ): Promise<Sayari.ResourceNotificationsResponse> {
         const { limit, offset } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -245,7 +251,9 @@ export class Notifications {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/notifications/resources/${encodeURIComponent(id)}`,
             ),
             method: "GET",
@@ -396,7 +404,9 @@ export class Notifications {
     ): Promise<void> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/notifications/projects/${encodeURIComponent(projectId)}`,
             ),
             method: "DELETE",
@@ -523,7 +533,9 @@ export class Notifications {
     ): Promise<void> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/notifications/entity/${encodeURIComponent(entityId)}`,
             ),
             method: "DELETE",
@@ -650,7 +662,9 @@ export class Notifications {
     ): Promise<void> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/notifications/resources/${encodeURIComponent(resourceId)}`,
             ),
             method: "DELETE",
