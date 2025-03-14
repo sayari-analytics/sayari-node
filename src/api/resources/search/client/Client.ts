@@ -12,6 +12,8 @@ import * as errors from "../../../../errors/index";
 export declare namespace Search {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -54,7 +56,7 @@ export class Search {
         requestOptions?: Search.RequestOptions,
     ): Promise<Sayari.EntitySearchResponse> {
         const { limit, offset, ..._body } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -65,7 +67,9 @@ export class Search {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/search/entity",
             ),
             method: "POST",
@@ -199,7 +203,7 @@ export class Search {
         requestOptions?: Search.RequestOptions,
     ): Promise<Sayari.EntitySearchResponse> {
         const { limit, offset, q, fields, facets, geoFacets, advanced } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -211,9 +215,13 @@ export class Search {
         _queryParams["q"] = q;
         if (fields != null) {
             if (Array.isArray(fields)) {
-                _queryParams["fields"] = fields.map((item) => item);
+                _queryParams["fields"] = fields.map((item) =>
+                    serializers.SearchField.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["fields"] = fields;
+                _queryParams["fields"] = serializers.SearchField.jsonOrThrow(fields, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
@@ -231,7 +239,9 @@ export class Search {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/search/entity",
             ),
             method: "GET",
@@ -364,7 +374,7 @@ export class Search {
         requestOptions?: Search.RequestOptions,
     ): Promise<Sayari.RecordSearchResponse> {
         const { limit, offset, ..._body } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -375,7 +385,9 @@ export class Search {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/search/record",
             ),
             method: "POST",
@@ -509,7 +521,7 @@ export class Search {
         requestOptions?: Search.RequestOptions,
     ): Promise<Sayari.RecordSearchResponse> {
         const { limit, offset, q, fields, facets, advanced } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -521,9 +533,13 @@ export class Search {
         _queryParams["q"] = q;
         if (fields != null) {
             if (Array.isArray(fields)) {
-                _queryParams["fields"] = fields.map((item) => item);
+                _queryParams["fields"] = fields.map((item) =>
+                    serializers.SearchField.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["fields"] = fields;
+                _queryParams["fields"] = serializers.SearchField.jsonOrThrow(fields, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
@@ -537,7 +553,9 @@ export class Search {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/search/record",
             ),
             method: "GET",

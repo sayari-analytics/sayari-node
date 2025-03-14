@@ -12,6 +12,8 @@ import * as errors from "../../../../errors/index";
 export declare namespace Metadata {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -46,7 +48,9 @@ export class Metadata {
     public async metadata(requestOptions?: Metadata.RequestOptions): Promise<Sayari.MetadataResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "metadata",
             ),
             method: "GET",

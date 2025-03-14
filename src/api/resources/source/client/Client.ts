@@ -12,6 +12,8 @@ import * as errors from "../../../../errors/index";
 export declare namespace Source {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -52,7 +54,7 @@ export class Source {
         requestOptions?: Source.RequestOptions,
     ): Promise<Sayari.ListSourcesResponse> {
         const { limit, offset } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -63,7 +65,9 @@ export class Source {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/sources",
             ),
             method: "GET",
@@ -182,7 +186,9 @@ export class Source {
     public async getSource(id: string, requestOptions?: Source.RequestOptions): Promise<Sayari.GetSourceResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/source/${encodeURIComponent(id)}`,
             ),
             method: "GET",

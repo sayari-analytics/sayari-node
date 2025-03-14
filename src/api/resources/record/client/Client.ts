@@ -12,6 +12,8 @@ import * as errors from "../../../../errors/index";
 export declare namespace Record_ {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -53,7 +55,7 @@ export class Record_ {
         requestOptions?: Record_.RequestOptions,
     ): Promise<Sayari.GetRecordResponse> {
         const { referencesLimit, referencesOffset } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (referencesLimit != null) {
             _queryParams["references.limit"] = referencesLimit.toString();
         }
@@ -64,7 +66,9 @@ export class Record_ {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/record/${encodeURIComponent(id)}`,
             ),
             method: "GET",

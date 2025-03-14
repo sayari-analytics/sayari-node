@@ -24,6 +24,8 @@ import { Traversal } from "./api/resources/traversal/client/Client";
 export declare namespace SayariClient {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         clientId: core.Supplier<string>;
         clientSecret: core.Supplier<string>;
     }

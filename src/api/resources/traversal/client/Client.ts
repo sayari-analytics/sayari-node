@@ -5,13 +5,16 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Sayari from "../../../index";
-import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
+import { toJson } from "../../../../core/json";
+import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Traversal {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -86,7 +89,7 @@ export class Traversal {
             lawEnforcementAction,
             xinjiangGeospatial,
         } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -105,9 +108,13 @@ export class Traversal {
 
         if (relationships != null) {
             if (Array.isArray(relationships)) {
-                _queryParams["relationships"] = relationships.map((item) => item);
+                _queryParams["relationships"] = relationships.map((item) =>
+                    serializers.Relationships.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["relationships"] = relationships;
+                _queryParams["relationships"] = serializers.Relationships.jsonOrThrow(relationships, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
@@ -117,17 +124,23 @@ export class Traversal {
 
         if (countries != null) {
             if (Array.isArray(countries)) {
-                _queryParams["countries"] = countries.map((item) => item);
+                _queryParams["countries"] = countries.map((item) =>
+                    serializers.Country.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["countries"] = countries;
+                _queryParams["countries"] = serializers.Country.jsonOrThrow(countries, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
         if (types != null) {
             if (Array.isArray(types)) {
-                _queryParams["types"] = types.map((item) => item);
+                _queryParams["types"] = types.map((item) =>
+                    serializers.Entities.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["types"] = types;
+                _queryParams["types"] = serializers.Entities.jsonOrThrow(types, { unrecognizedObjectKeys: "strip" });
             }
         }
 
@@ -156,8 +169,12 @@ export class Traversal {
         }
 
         if (riskCategories != null) {
-            _queryParams["risk_categories"] =
-                typeof riskCategories === "string" ? riskCategories : JSON.stringify(riskCategories);
+            _queryParams["risk_categories"] = (() => {
+                const mapped = serializers.TraversalRiskCategory.jsonOrThrow(riskCategories, {
+                    unrecognizedObjectKeys: "strip",
+                });
+                return typeof mapped === "string" ? mapped : toJson(mapped);
+            })();
         }
 
         if (euHighRiskThird != null) {
@@ -214,7 +231,9 @@ export class Traversal {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/traversal/${encodeURIComponent(id)}`,
             ),
             method: "GET",
@@ -397,7 +416,7 @@ export class Traversal {
             lawEnforcementAction,
             xinjiangGeospatial,
         } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -416,9 +435,13 @@ export class Traversal {
 
         if (relationships != null) {
             if (Array.isArray(relationships)) {
-                _queryParams["relationships"] = relationships.map((item) => item);
+                _queryParams["relationships"] = relationships.map((item) =>
+                    serializers.Relationships.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["relationships"] = relationships;
+                _queryParams["relationships"] = serializers.Relationships.jsonOrThrow(relationships, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
@@ -428,17 +451,23 @@ export class Traversal {
 
         if (countries != null) {
             if (Array.isArray(countries)) {
-                _queryParams["countries"] = countries.map((item) => item);
+                _queryParams["countries"] = countries.map((item) =>
+                    serializers.Country.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["countries"] = countries;
+                _queryParams["countries"] = serializers.Country.jsonOrThrow(countries, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
         if (types != null) {
             if (Array.isArray(types)) {
-                _queryParams["types"] = types.map((item) => item);
+                _queryParams["types"] = types.map((item) =>
+                    serializers.Entities.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["types"] = types;
+                _queryParams["types"] = serializers.Entities.jsonOrThrow(types, { unrecognizedObjectKeys: "strip" });
             }
         }
 
@@ -467,8 +496,12 @@ export class Traversal {
         }
 
         if (riskCategories != null) {
-            _queryParams["risk_categories"] =
-                typeof riskCategories === "string" ? riskCategories : JSON.stringify(riskCategories);
+            _queryParams["risk_categories"] = (() => {
+                const mapped = serializers.TraversalRiskCategory.jsonOrThrow(riskCategories, {
+                    unrecognizedObjectKeys: "strip",
+                });
+                return typeof mapped === "string" ? mapped : toJson(mapped);
+            })();
         }
 
         if (euHighRiskThird != null) {
@@ -525,7 +558,9 @@ export class Traversal {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/ubo/${encodeURIComponent(id)}`,
             ),
             method: "GET",
@@ -708,7 +743,7 @@ export class Traversal {
             lawEnforcementAction,
             xinjiangGeospatial,
         } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -727,9 +762,13 @@ export class Traversal {
 
         if (relationships != null) {
             if (Array.isArray(relationships)) {
-                _queryParams["relationships"] = relationships.map((item) => item);
+                _queryParams["relationships"] = relationships.map((item) =>
+                    serializers.Relationships.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["relationships"] = relationships;
+                _queryParams["relationships"] = serializers.Relationships.jsonOrThrow(relationships, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
@@ -739,17 +778,23 @@ export class Traversal {
 
         if (countries != null) {
             if (Array.isArray(countries)) {
-                _queryParams["countries"] = countries.map((item) => item);
+                _queryParams["countries"] = countries.map((item) =>
+                    serializers.Country.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["countries"] = countries;
+                _queryParams["countries"] = serializers.Country.jsonOrThrow(countries, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
         if (types != null) {
             if (Array.isArray(types)) {
-                _queryParams["types"] = types.map((item) => item);
+                _queryParams["types"] = types.map((item) =>
+                    serializers.Entities.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["types"] = types;
+                _queryParams["types"] = serializers.Entities.jsonOrThrow(types, { unrecognizedObjectKeys: "strip" });
             }
         }
 
@@ -778,8 +823,12 @@ export class Traversal {
         }
 
         if (riskCategories != null) {
-            _queryParams["risk_categories"] =
-                typeof riskCategories === "string" ? riskCategories : JSON.stringify(riskCategories);
+            _queryParams["risk_categories"] = (() => {
+                const mapped = serializers.TraversalRiskCategory.jsonOrThrow(riskCategories, {
+                    unrecognizedObjectKeys: "strip",
+                });
+                return typeof mapped === "string" ? mapped : toJson(mapped);
+            })();
         }
 
         if (euHighRiskThird != null) {
@@ -836,7 +885,9 @@ export class Traversal {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/downstream/${encodeURIComponent(id)}`,
             ),
             method: "GET",
@@ -1019,7 +1070,7 @@ export class Traversal {
             lawEnforcementAction,
             xinjiangGeospatial,
         } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -1038,9 +1089,13 @@ export class Traversal {
 
         if (relationships != null) {
             if (Array.isArray(relationships)) {
-                _queryParams["relationships"] = relationships.map((item) => item);
+                _queryParams["relationships"] = relationships.map((item) =>
+                    serializers.Relationships.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["relationships"] = relationships;
+                _queryParams["relationships"] = serializers.Relationships.jsonOrThrow(relationships, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
@@ -1050,17 +1105,23 @@ export class Traversal {
 
         if (countries != null) {
             if (Array.isArray(countries)) {
-                _queryParams["countries"] = countries.map((item) => item);
+                _queryParams["countries"] = countries.map((item) =>
+                    serializers.Country.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["countries"] = countries;
+                _queryParams["countries"] = serializers.Country.jsonOrThrow(countries, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
         if (types != null) {
             if (Array.isArray(types)) {
-                _queryParams["types"] = types.map((item) => item);
+                _queryParams["types"] = types.map((item) =>
+                    serializers.Entities.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["types"] = types;
+                _queryParams["types"] = serializers.Entities.jsonOrThrow(types, { unrecognizedObjectKeys: "strip" });
             }
         }
 
@@ -1089,8 +1150,12 @@ export class Traversal {
         }
 
         if (riskCategories != null) {
-            _queryParams["risk_categories"] =
-                typeof riskCategories === "string" ? riskCategories : JSON.stringify(riskCategories);
+            _queryParams["risk_categories"] = (() => {
+                const mapped = serializers.TraversalRiskCategory.jsonOrThrow(riskCategories, {
+                    unrecognizedObjectKeys: "strip",
+                });
+                return typeof mapped === "string" ? mapped : toJson(mapped);
+            })();
         }
 
         if (euHighRiskThird != null) {
@@ -1147,7 +1212,9 @@ export class Traversal {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/watchlist/${encodeURIComponent(id)}`,
             ),
             method: "GET",
@@ -1299,7 +1366,7 @@ export class Traversal {
         requestOptions?: Traversal.RequestOptions,
     ): Promise<Sayari.ShortestPathResponse> {
         const { entities } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (Array.isArray(entities)) {
             _queryParams["entities"] = entities.map((item) => item);
         } else {
@@ -1308,7 +1375,9 @@ export class Traversal {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/shortest_path",
             ),
             method: "GET",

@@ -5,13 +5,15 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Sayari from "../../../index";
-import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
+import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Entity {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -114,7 +116,7 @@ export class Entity {
             referencedByPrev,
             referencedByLimit,
         } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (attributesAdditionalInformationNext != null) {
             _queryParams["attributes.additional_information.next"] = attributesAdditionalInformationNext;
         }
@@ -224,7 +226,9 @@ export class Entity {
         }
 
         if (relationshipsType != null) {
-            _queryParams["relationships.type"] = relationshipsType;
+            _queryParams["relationships.type"] = serializers.Relationships.jsonOrThrow(relationshipsType, {
+                unrecognizedObjectKeys: "strip",
+            });
         }
 
         if (relationshipsSort != null) {
@@ -245,17 +249,26 @@ export class Entity {
 
         if (relationshipsCountry != null) {
             if (Array.isArray(relationshipsCountry)) {
-                _queryParams["relationships.country"] = relationshipsCountry.map((item) => item);
+                _queryParams["relationships.country"] = relationshipsCountry.map((item) =>
+                    serializers.Country.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["relationships.country"] = relationshipsCountry;
+                _queryParams["relationships.country"] = serializers.Country.jsonOrThrow(relationshipsCountry, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
         if (relationshipsArrivalCountry != null) {
             if (Array.isArray(relationshipsArrivalCountry)) {
-                _queryParams["relationships.arrivalCountry"] = relationshipsArrivalCountry.map((item) => item);
+                _queryParams["relationships.arrivalCountry"] = relationshipsArrivalCountry.map((item) =>
+                    serializers.Country.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["relationships.arrivalCountry"] = relationshipsArrivalCountry;
+                _queryParams["relationships.arrivalCountry"] = serializers.Country.jsonOrThrow(
+                    relationshipsArrivalCountry,
+                    { unrecognizedObjectKeys: "strip" },
+                );
             }
         }
 
@@ -269,9 +282,14 @@ export class Entity {
 
         if (relationshipsDepartureCountry != null) {
             if (Array.isArray(relationshipsDepartureCountry)) {
-                _queryParams["relationships.departureCountry"] = relationshipsDepartureCountry.map((item) => item);
+                _queryParams["relationships.departureCountry"] = relationshipsDepartureCountry.map((item) =>
+                    serializers.Country.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["relationships.departureCountry"] = relationshipsDepartureCountry;
+                _queryParams["relationships.departureCountry"] = serializers.Country.jsonOrThrow(
+                    relationshipsDepartureCountry,
+                    { unrecognizedObjectKeys: "strip" },
+                );
             }
         }
 
@@ -289,9 +307,13 @@ export class Entity {
 
         if (relationshipsPartnerRisk != null) {
             if (Array.isArray(relationshipsPartnerRisk)) {
-                _queryParams["relationships.partnerRisk"] = relationshipsPartnerRisk.map((item) => item);
+                _queryParams["relationships.partnerRisk"] = relationshipsPartnerRisk.map((item) =>
+                    serializers.Risk.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["relationships.partnerRisk"] = relationshipsPartnerRisk;
+                _queryParams["relationships.partnerRisk"] = serializers.Risk.jsonOrThrow(relationshipsPartnerRisk, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
@@ -325,7 +347,9 @@ export class Entity {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/entity/${encodeURIComponent(id)}`,
             ),
             method: "GET",
@@ -456,7 +480,9 @@ export class Entity {
     ): Promise<Sayari.EntitySummaryResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/entity_summary/${encodeURIComponent(id)}`,
             ),
             method: "GET",

@@ -12,6 +12,8 @@ import * as errors from "../../../../errors/index";
 export declare namespace Info {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -50,7 +52,7 @@ export class Info {
         requestOptions?: Info.RequestOptions,
     ): Promise<Sayari.UsageResponse> {
         const { from: from_, to } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (from_ != null) {
             _queryParams["from"] = from_;
         }
@@ -61,7 +63,9 @@ export class Info {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/usage",
             ),
             method: "GET",
@@ -181,7 +185,7 @@ export class Info {
         requestOptions?: Info.RequestOptions,
     ): Promise<Sayari.HistoryResponse> {
         const { events, from: from_, to, size, token } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (events != null) {
             if (Array.isArray(events)) {
                 _queryParams["events"] = events.map((item) => item);
@@ -208,7 +212,9 @@ export class Info {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/history",
             ),
             method: "GET",

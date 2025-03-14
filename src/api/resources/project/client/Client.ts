@@ -12,6 +12,8 @@ import * as errors from "../../../../errors/index";
 export declare namespace Project {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -54,7 +56,9 @@ export class Project {
     ): Promise<Sayari.CreateProjectResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/projects",
             ),
             method: "POST",
@@ -193,7 +197,7 @@ export class Project {
         requestOptions?: Project.RequestOptions,
     ): Promise<Sayari.GetProjectsResponse> {
         const { next, prev, limit, archived } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (next != null) {
             _queryParams["next"] = next;
         }
@@ -212,7 +216,9 @@ export class Project {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/projects",
             ),
             method: "GET",
@@ -361,7 +367,7 @@ export class Project {
             aggregations,
             accept,
         } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (next != null) {
             _queryParams["next"] = next;
         }
@@ -376,9 +382,13 @@ export class Project {
 
         if (entityTypes != null) {
             if (Array.isArray(entityTypes)) {
-                _queryParams["entity_types"] = entityTypes.map((item) => item);
+                _queryParams["entity_types"] = entityTypes.map((item) =>
+                    serializers.Entities.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["entity_types"] = entityTypes;
+                _queryParams["entity_types"] = serializers.Entities.jsonOrThrow(entityTypes, {
+                    unrecognizedObjectKeys: "strip",
+                });
             }
         }
 
@@ -423,7 +433,7 @@ export class Project {
         }
 
         if (sort != null) {
-            _queryParams["sort"] = sort;
+            _queryParams["sort"] = serializers.SortField.jsonOrThrow(sort, { unrecognizedObjectKeys: "strip" });
         }
 
         if (filters != null) {
@@ -450,7 +460,9 @@ export class Project {
 
         if (aggregations != null) {
             if (Array.isArray(aggregations)) {
-                _queryParams["aggregations"] = aggregations.map((item) => item);
+                _queryParams["aggregations"] = aggregations.map((item) =>
+                    serializers.ProjectEntitiesAggsDefinition.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
                 _queryParams["aggregations"] = aggregations;
             }
@@ -458,7 +470,9 @@ export class Project {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/projects/${encodeURIComponent(id)}/contents/entity`,
             ),
             method: "GET",
@@ -470,7 +484,9 @@ export class Project {
                 "User-Agent": "@sayari/sdk/0.1.39",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
-                Accept: accept,
+                Accept: serializers.GetProjectEntitiesAcceptHeader.jsonOrThrow(accept, {
+                    unrecognizedObjectKeys: "strip",
+                }),
                 ...requestOptions?.headers,
             },
             contentType: "application/json",
@@ -592,7 +608,9 @@ export class Project {
     ): Promise<Sayari.DeleteProjectResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/projects/${encodeURIComponent(projectId)}`,
             ),
             method: "DELETE",

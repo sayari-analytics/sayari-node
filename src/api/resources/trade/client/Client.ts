@@ -12,6 +12,8 @@ import * as errors from "../../../../errors/index";
 export declare namespace Trade {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -58,7 +60,7 @@ export class Trade {
         requestOptions?: Trade.RequestOptions,
     ): Promise<Sayari.ShipmentSearchResponse> {
         const { limit, offset, ..._body } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -69,7 +71,9 @@ export class Trade {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/trade/search/shipments",
             ),
             method: "POST",
@@ -198,7 +202,7 @@ export class Trade {
         requestOptions?: Trade.RequestOptions,
     ): Promise<Sayari.SupplierSearchResponse> {
         const { limit, offset, ..._body } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -209,7 +213,9 @@ export class Trade {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/trade/search/suppliers",
             ),
             method: "POST",
@@ -338,7 +344,7 @@ export class Trade {
         requestOptions?: Trade.RequestOptions,
     ): Promise<Sayari.BuyerSearchResponse> {
         const { limit, offset, ..._body } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -349,7 +355,9 @@ export class Trade {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/trade/search/buyers",
             ),
             method: "POST",

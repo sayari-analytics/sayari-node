@@ -12,6 +12,8 @@ import * as errors from "../../../../errors/index";
 export declare namespace Attributes {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -66,7 +68,9 @@ export class Attributes {
     ): Promise<Sayari.AttributeResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/attribute",
             ),
             method: "POST",
@@ -221,7 +225,9 @@ export class Attributes {
     ): Promise<Sayari.AttributeResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/attribute/${encodeURIComponent(attributeId)}`,
             ),
             method: "PATCH",
@@ -372,7 +378,9 @@ export class Attributes {
     ): Promise<Sayari.AttributeResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/attribute/${encodeURIComponent(attributeId)}`,
             ),
             method: "DELETE",

@@ -5,13 +5,16 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Sayari from "../../../index";
-import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
+import { toJson } from "../../../../core/json";
+import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
 export declare namespace Resolution {
     export interface Options {
         environment?: core.Supplier<environments.SayariEnvironment | string>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         token?: core.Supplier<core.BearerToken | undefined>;
     }
 
@@ -81,7 +84,7 @@ export class Resolution {
             candidatePoolSize,
             skipPostProcess,
         } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -124,19 +127,31 @@ export class Resolution {
 
         if (country != null) {
             if (Array.isArray(country)) {
-                _queryParams["country"] = country.map((item) => item);
+                _queryParams["country"] = country.map((item) =>
+                    serializers.Country.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["country"] = country;
+                _queryParams["country"] = serializers.Country.jsonOrThrow(country, { unrecognizedObjectKeys: "strip" });
             }
         }
 
         if (identifier != null) {
             if (Array.isArray(identifier)) {
                 _queryParams["identifier"] = identifier.map((item) =>
-                    typeof item === "string" ? item : JSON.stringify(item),
+                    (() => {
+                        const mapped = serializers.BothIdentifierTypes.jsonOrThrow(item, {
+                            unrecognizedObjectKeys: "strip",
+                        });
+                        return typeof mapped === "string" ? mapped : toJson(mapped);
+                    })(),
                 );
             } else {
-                _queryParams["identifier"] = typeof identifier === "string" ? identifier : JSON.stringify(identifier);
+                _queryParams["identifier"] = (() => {
+                    const mapped = serializers.BothIdentifierTypes.jsonOrThrow(identifier, {
+                        unrecognizedObjectKeys: "strip",
+                    });
+                    return typeof mapped === "string" ? mapped : toJson(mapped);
+                })();
             }
         }
 
@@ -158,14 +173,16 @@ export class Resolution {
 
         if (type_ != null) {
             if (Array.isArray(type_)) {
-                _queryParams["type"] = type_.map((item) => item);
+                _queryParams["type"] = type_.map((item) =>
+                    serializers.Entities.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
+                );
             } else {
-                _queryParams["type"] = type_;
+                _queryParams["type"] = serializers.Entities.jsonOrThrow(type_, { unrecognizedObjectKeys: "strip" });
             }
         }
 
         if (profile != null) {
-            _queryParams["profile"] = profile;
+            _queryParams["profile"] = serializers.ProfileEnum.jsonOrThrow(profile, { unrecognizedObjectKeys: "strip" });
         }
 
         if (nameMinPercentage != null) {
@@ -198,7 +215,9 @@ export class Resolution {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/resolution",
             ),
             method: "GET",
@@ -344,7 +363,7 @@ export class Resolution {
         requestOptions?: Resolution.RequestOptions,
     ): Promise<Sayari.ResolutionResponse> {
         const { limit, offset, body: _body } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -355,7 +374,9 @@ export class Resolution {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 "/v1/resolution",
             ),
             method: "POST",
@@ -502,7 +523,7 @@ export class Resolution {
         requestOptions?: Resolution.RequestOptions,
     ): Promise<Sayari.ResolutionPersistedResponse> {
         const { limit, offset, body: _body } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
@@ -513,7 +534,9 @@ export class Resolution {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/resolution/persisted/${encodeURIComponent(projectId)}`,
             ),
             method: "POST",
@@ -655,7 +678,9 @@ export class Resolution {
     ): Promise<Sayari.ResolutionUploadResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.SayariEnvironment.Production,
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
                 `/v1/projects/${encodeURIComponent(projectId)}/resolutions`,
             ),
             method: "POST",
