@@ -12,6 +12,8 @@ export const CountryContext: core.serialization.Schema<serializers.CountryContex
         "address",
         "citizenship",
         "domicile",
+        "export_activity_in",
+        "import_activity_in",
         "incorporation",
         "mentioned_in",
         "nationality",
@@ -29,6 +31,8 @@ export declare namespace CountryContext {
         | "address"
         | "citizenship"
         | "domicile"
+        | "export_activity_in"
+        | "import_activity_in"
         | "incorporation"
         | "mentioned_in"
         | "nationality"

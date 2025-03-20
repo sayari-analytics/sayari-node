@@ -584,6 +584,9 @@ export type IdentifierType =
      * France legal person establishment ID number */
     | "fra_siret"
     /**
+     * Value added tax identification number / Intra-community VAT number. */
+    | "fra_vat_number"
+    /**
      * Skráseting Føroya Registration Number. Assigned to legal entities registered with the Company Registry of the Faroe Islands. */
     | "fro_reg_num"
     /**
@@ -592,6 +595,9 @@ export type IdentifierType =
     /**
      * United Kingdom Confirmation Statement Company Number */
     | "gbr_company_number"
+    /**
+     * Unique reference number for a disqualification case in the UK. Can contain alphanumeric characters. */
+    | "gbr_disqualification_case_num"
     /**
      * Action number assigned by the  Environment Agency to each enforcement action against offender pursuant to relevant legislation. */
     | "gbr_enforcement_action_num"
@@ -2116,9 +2122,11 @@ export const IdentifierType = {
     FraRna: "fra_rna",
     FraSiren: "fra_siren",
     FraSiret: "fra_siret",
+    FraVatNumber: "fra_vat_number",
     FroRegNum: "fro_reg_num",
     GbrCharityNo: "gbr_charity_no",
     GbrCompanyNumber: "gbr_company_number",
+    GbrDisqualificationCaseNum: "gbr_disqualification_case_num",
     GbrEnforcementActionNum: "gbr_enforcement_action_num",
     GbrGoNo: "gbr_go_no",
     GbrHmTreasurySanctionGroupId: "gbr_hm_treasury_sanction_group_id",

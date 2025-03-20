@@ -19,6 +19,12 @@ export type CountryContext =
      * e.g., "Country of incorporation", "Jurisdiction of formation", "Organized under the laws of". A company can operate in multiple countries, but can only have one domicile at a time. */
     | "domicile"
     /**
+     * A country where the entity carries out export operations. */
+    | "export_activity_in"
+    /**
+     * A country where the entity carries out import operations. */
+    | "import_activity_in"
+    /**
      * Rarely used. Converted to "domicile". */
     | "incorporation"
     /**
@@ -50,6 +56,8 @@ export const CountryContext = {
     Address: "address",
     Citizenship: "citizenship",
     Domicile: "domicile",
+    ExportActivityIn: "export_activity_in",
+    ImportActivityIn: "import_activity_in",
     Incorporation: "incorporation",
     MentionedIn: "mentioned_in",
     Nationality: "nationality",

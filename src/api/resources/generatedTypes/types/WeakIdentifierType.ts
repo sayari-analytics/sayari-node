@@ -82,6 +82,9 @@ export type WeakIdentifierType =
      * Dominica Business Registry Entity Number */
     | "dma_corporate_registry_entity_num"
     /**
+     * UK Bankruptcy and Insolvency Court Case Number linked to an individual subject to bankruptcies and insolvencies in England and Wales. */
+    | "gbr_bankruptcy_case_num"
+    /**
      * UK entity ID number assigned to entities registered in the UK Government Grants Information System */
     | "gbr_grant_info_number"
     /**
@@ -296,14 +299,41 @@ export type WeakIdentifierType =
      * A residency number whose country of origin is not known */
     | "unknown_residency_num"
     /**
+     * Clean Air Markets Division Business Systems (CAMDBS) permit identifier */
+    | "usa_camdbs_id"
+    /**
      * USA Customs and Border Protection Withhold Release Order ID */
     | "usa_cbp_wro_id"
+    /**
+     * Compliance and Emissions Data Reporting Interface (CEDRI) permit identifier */
+    | "usa_cedri_id"
+    /**
+     * Emissions Inventory System (EIS) permit identifier */
+    | "usa_eis_id"
+    /**
+     * USA EPA Facility Registry System */
+    | "usa_epa_facility_registry_system"
     /**
      * Former USA/IRS FEI/EIN Number */
     | "usa_former_fein"
     /**
+     * Facility Registry Service (FRS) permit identifier */
+    | "usa_frs_id"
+    /**
      * Ticker symbol for securities without exchange information */
     | "usa_generic_ticker"
+    /**
+     * Greenhouse Gas Reporting Program (GHGRP) permit identifier */
+    | "usa_ghgrp_id"
+    /**
+     * Integrated Compliance Information System for Air (ICIS-Air) permit identifier */
+    | "usa_icis_air_id"
+    /**
+     * Integrated Compliance Information System (ICIS) permit identifier */
+    | "usa_icis_id"
+    /**
+     * Integrated Compliance Information System (ICIS) National Pollutant Discharge Elimination System (NPDES) permit identifier */
+    | "usa_icis_npdes_id"
     /**
      * Site number of business registered in Chicago, Illinois, business license registry (unique to account number) */
     | "usa_il_chicago_site_number"
@@ -325,6 +355,24 @@ export type WeakIdentifierType =
     /**
      * USA New Mexico Secretary of State License ID */
     | "usa_nm_license_id"
+    /**
+     * Resource Conservation and Recovery Act (RCRA) permit identifier */
+    | "usa_rcra_info_id"
+    /**
+     * Risk Management Program (RMP) permit identifier */
+    | "usa_rmp_id"
+    /**
+     * Safe Drinking Water Information System (SDWIS) permit identifier */
+    | "usa_sdwis_id"
+    /**
+     * Superfund Enterprise Management System (SEMS) permit identifier */
+    | "usa_sems_id"
+    /**
+     * Toxic Release Inventory (TRI) permit identifier */
+    | "usa_tri_id"
+    /**
+     * Toxic Substances Control Act (TSCA) permit identifier */
+    | "usa_tsca_id"
     /**
      * Value-added tax ID number */
     | "vat"
@@ -366,6 +414,7 @@ export const WeakIdentifierType = {
     CzeFileNumber: "cze_file_number",
     DeuRegisternummer: "deu_registernummer",
     DmaCorporateRegistryEntityNum: "dma_corporate_registry_entity_num",
+    GbrBankruptcyCaseNum: "gbr_bankruptcy_case_num",
     GbrGrantInfoNumber: "gbr_grant_info_number",
     GeoStateRegistrationNumber: "geo_state_registration_number",
     HndTegucigalpaNotary: "hnd_tegucigalpa_notary",
@@ -438,9 +487,18 @@ export const WeakIdentifierType = {
     UnknownNationalIdNum: "unknown_national_id_num",
     UnknownPassport: "unknown_passport",
     UnknownResidencyNum: "unknown_residency_num",
+    UsaCamdbsId: "usa_camdbs_id",
     UsaCbpWroId: "usa_cbp_wro_id",
+    UsaCedriId: "usa_cedri_id",
+    UsaEisId: "usa_eis_id",
+    UsaEpaFacilityRegistrySystem: "usa_epa_facility_registry_system",
     UsaFormerFein: "usa_former_fein",
+    UsaFrsId: "usa_frs_id",
     UsaGenericTicker: "usa_generic_ticker",
+    UsaGhgrpId: "usa_ghgrp_id",
+    UsaIcisAirId: "usa_icis_air_id",
+    UsaIcisId: "usa_icis_id",
+    UsaIcisNpdesId: "usa_icis_npdes_id",
     UsaIlChicagoSiteNumber: "usa_il_chicago_site_number",
     UsaImportsSystemIdentityId: "usa_imports_system_identity_id",
     UsaMnFilingNumber: "usa_mn_filing_number",
@@ -448,6 +506,12 @@ export const WeakIdentifierType = {
     UsaMoEntityId: "usa_mo_entity_id",
     UsaNcCorpNo: "usa_nc_corp_no",
     UsaNmLicenseId: "usa_nm_license_id",
+    UsaRcraInfoId: "usa_rcra_info_id",
+    UsaRmpId: "usa_rmp_id",
+    UsaSdwisId: "usa_sdwis_id",
+    UsaSemsId: "usa_sems_id",
+    UsaTriId: "usa_tri_id",
+    UsaTscaId: "usa_tsca_id",
     Vat: "vat",
     VenColegiadoNumber: "ven_colegiado_number",
     VenManifiestoNumber: "ven_manifiesto_number",
