@@ -35,6 +35,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "cze_file_number",
     "deu_registernummer",
     "dma_corporate_registry_entity_num",
+    "gbr_bankruptcy_case_num",
     "gbr_grant_info_number",
     "geo_state_registration_number",
     "hnd_tegucigalpa_notary",
@@ -107,9 +108,18 @@ export const WeakIdentifierType: core.serialization.Schema<
     "unknown_national_id_num",
     "unknown_passport",
     "unknown_residency_num",
+    "usa_camdbs_id",
     "usa_cbp_wro_id",
+    "usa_cedri_id",
+    "usa_eis_id",
+    "usa_epa_facility_registry_system",
     "usa_former_fein",
+    "usa_frs_id",
     "usa_generic_ticker",
+    "usa_ghgrp_id",
+    "usa_icis_air_id",
+    "usa_icis_id",
+    "usa_icis_npdes_id",
     "usa_il_chicago_site_number",
     "usa_imports_system_identity_id",
     "usa_mn_filing_number",
@@ -117,6 +127,12 @@ export const WeakIdentifierType: core.serialization.Schema<
     "usa_mo_entity_id",
     "usa_nc_corp_no",
     "usa_nm_license_id",
+    "usa_rcra_info_id",
+    "usa_rmp_id",
+    "usa_sdwis_id",
+    "usa_sems_id",
+    "usa_tri_id",
+    "usa_tsca_id",
     "vat",
     "ven_colegiado_number",
     "ven_manifiesto_number",
@@ -151,6 +167,7 @@ export declare namespace WeakIdentifierType {
         | "cze_file_number"
         | "deu_registernummer"
         | "dma_corporate_registry_entity_num"
+        | "gbr_bankruptcy_case_num"
         | "gbr_grant_info_number"
         | "geo_state_registration_number"
         | "hnd_tegucigalpa_notary"
@@ -223,9 +240,18 @@ export declare namespace WeakIdentifierType {
         | "unknown_national_id_num"
         | "unknown_passport"
         | "unknown_residency_num"
+        | "usa_camdbs_id"
         | "usa_cbp_wro_id"
+        | "usa_cedri_id"
+        | "usa_eis_id"
+        | "usa_epa_facility_registry_system"
         | "usa_former_fein"
+        | "usa_frs_id"
         | "usa_generic_ticker"
+        | "usa_ghgrp_id"
+        | "usa_icis_air_id"
+        | "usa_icis_id"
+        | "usa_icis_npdes_id"
         | "usa_il_chicago_site_number"
         | "usa_imports_system_identity_id"
         | "usa_mn_filing_number"
@@ -233,6 +259,12 @@ export declare namespace WeakIdentifierType {
         | "usa_mo_entity_id"
         | "usa_nc_corp_no"
         | "usa_nm_license_id"
+        | "usa_rcra_info_id"
+        | "usa_rmp_id"
+        | "usa_sdwis_id"
+        | "usa_sems_id"
+        | "usa_tri_id"
+        | "usa_tsca_id"
         | "vat"
         | "ven_colegiado_number"
         | "ven_manifiesto_number"

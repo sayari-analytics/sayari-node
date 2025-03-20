@@ -205,9 +205,11 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "fra_rna",
         "fra_siren",
         "fra_siret",
+        "fra_vat_number",
         "fro_reg_num",
         "gbr_charity_no",
         "gbr_company_number",
+        "gbr_disqualification_case_num",
         "gbr_enforcement_action_num",
         "gbr_go_no",
         "gbr_hm_treasury_sanction_group_id",
@@ -861,9 +863,11 @@ export declare namespace IdentifierType {
         | "fra_rna"
         | "fra_siren"
         | "fra_siret"
+        | "fra_vat_number"
         | "fro_reg_num"
         | "gbr_charity_no"
         | "gbr_company_number"
+        | "gbr_disqualification_case_num"
         | "gbr_enforcement_action_num"
         | "gbr_go_no"
         | "gbr_hm_treasury_sanction_group_id"

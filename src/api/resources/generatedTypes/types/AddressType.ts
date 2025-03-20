@@ -19,11 +19,20 @@ export type AddressType =
      * An address at which an entity receives mail */
     | "mailing"
     /**
+     * An address associated with importer and/or exporter parties involved in trade transactions */
+    | "operations"
+    /**
      * An address at which an entity has a physical presence */
     | "physical"
     /**
+     * The address reported by the importer for where a shipment is received */
+    | "receiver_address"
+    /**
      * An address an entity has listed for its registration */
     | "registered"
+    /**
+     * The address reported by the exporter for where a shipment is sent */
+    | "shipper_address"
     /**
      * The port at which a shipment is temporarily located or moved between vessels in the course of shipment. */
     | "transit";
@@ -32,7 +41,10 @@ export const AddressType = {
     Business: "business",
     Departure: "departure",
     Mailing: "mailing",
+    Operations: "operations",
     Physical: "physical",
+    ReceiverAddress: "receiver_address",
     Registered: "registered",
+    ShipperAddress: "shipper_address",
     Transit: "transit",
 } as const;
