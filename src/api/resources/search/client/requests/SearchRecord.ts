@@ -22,8 +22,6 @@ export interface SearchRecord {
     offset?: number;
     /** Query term. The syntax for the query parameter follows elasticsearch simple query string syntax. The includes the ability to use search operators and to perform nested queries. Must be url encoded. */
     q: string;
-    /** Record or entity fields to search against. */
-    fields?: Sayari.SearchField[];
     /** Filters to be applied to search query to limit the result-set. */
     filter?: Sayari.FilterList;
     /** Whether or not to return search facets in results giving counts by field. Defaults to false. */

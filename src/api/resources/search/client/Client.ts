@@ -77,8 +77,8 @@ export class Search {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.40",
-                "User-Agent": "@sayari/sdk/0.1.40",
+                "X-Fern-SDK-Version": "0.1.41",
+                "User-Agent": "@sayari/sdk/0.1.41",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -249,8 +249,8 @@ export class Search {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.40",
-                "User-Agent": "@sayari/sdk/0.1.40",
+                "X-Fern-SDK-Version": "0.1.41",
+                "User-Agent": "@sayari/sdk/0.1.41",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -395,8 +395,8 @@ export class Search {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.40",
-                "User-Agent": "@sayari/sdk/0.1.40",
+                "X-Fern-SDK-Version": "0.1.41",
+                "User-Agent": "@sayari/sdk/0.1.41",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -520,7 +520,7 @@ export class Search {
         request: Sayari.SearchRecordGet,
         requestOptions?: Search.RequestOptions,
     ): Promise<Sayari.RecordSearchResponse> {
-        const { limit, offset, q, fields, facets, advanced } = request;
+        const { limit, offset, q, facets, advanced } = request;
         const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
@@ -531,18 +531,6 @@ export class Search {
         }
 
         _queryParams["q"] = q;
-        if (fields != null) {
-            if (Array.isArray(fields)) {
-                _queryParams["fields"] = fields.map((item) =>
-                    serializers.SearchField.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
-                );
-            } else {
-                _queryParams["fields"] = serializers.SearchField.jsonOrThrow(fields, {
-                    unrecognizedObjectKeys: "strip",
-                });
-            }
-        }
-
         if (facets != null) {
             _queryParams["facets"] = facets.toString();
         }
@@ -563,8 +551,8 @@ export class Search {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.40",
-                "User-Agent": "@sayari/sdk/0.1.40",
+                "X-Fern-SDK-Version": "0.1.41",
+                "User-Agent": "@sayari/sdk/0.1.41",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,

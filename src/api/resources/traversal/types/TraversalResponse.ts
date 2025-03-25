@@ -2655,6 +2655,7 @@ export interface TraversalResponse {
     countries: Sayari.Country[];
     types: string[];
     name: string;
+    /** <Warning>This field is deprecated.</Warning> */
     watchlist: boolean;
     psa: boolean;
     offset: number;
