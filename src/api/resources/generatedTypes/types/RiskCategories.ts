@@ -9,7 +9,8 @@ export type RiskCategories =
     | "political_exposure"
     | "environmental_risk"
     | "regulatory_action"
-    | "adverse_media";
+    | "adverse_media"
+    | "possibly_same_as_network_risk";
 export const RiskCategories = {
     ForcedLabor: "forced_labor",
     ExportControls: "export_controls",
@@ -18,4 +19,5 @@ export const RiskCategories = {
     EnvironmentalRisk: "environmental_risk",
     RegulatoryAction: "regulatory_action",
     AdverseMedia: "adverse_media",
+    PossiblySameAsNetworkRisk: "possibly_same_as_network_risk",
 } as const;

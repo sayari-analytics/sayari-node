@@ -17,7 +17,12 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "controlled_by_aus_sanctioned",
     "controlled_by_eu_sanctioned",
     "controlled_by_jpn_sanctioned",
+    "controlled_by_ofac_fto_sanctioned",
+    "controlled_by_ofac_illicit_drugs_eo14059_sanctioned",
+    "controlled_by_ofac_sdgt_sanctioned",
     "controlled_by_ofac_sdn",
+    "controlled_by_ofac_sdnt_sanctioned",
+    "controlled_by_ofac_sdntk_sanctioned",
     "controlled_by_uk_sanctioned",
     "controlled_by_ukr_sanctioned",
     "controlled_by_un_sanctioned",
@@ -108,14 +113,24 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "military_civil_fusion_50_percent_rule",
     "ndaa_889_covered_entities",
     "ofac_50_percent_rule",
+    "ofac_fto_sanctioned",
+    "ofac_illicit_drugs_eo14059_sanctioned",
     "ofac_minority_ownership",
+    "ofac_sdgt_sanctioned",
     "ofac_sdn",
+    "ofac_sdnt_sanctioned",
+    "ofac_sdntk_sanctioned",
     "owned_by_aspi_forced_labor_entity",
     "owned_by_bis_meu_entity",
     "owned_by_cmic_entity",
     "owned_by_entity_in_export_controls",
     "owned_by_forced_labor_xinjiang_uflpa",
     "owned_by_military_civil_fusion",
+    "owned_by_ofac_fto_sanctioned",
+    "owned_by_ofac_illicit_drugs_eo14059_sanctioned",
+    "owned_by_ofac_sdgt_sanctioned",
+    "owned_by_ofac_sdnt_sanctioned",
+    "owned_by_ofac_sdntk_sanctioned",
     "owned_by_sanctioned_entity",
     "owned_by_section_1260h_entity",
     "owned_by_sheffield_hallam_university_reports_forced_labor_entity",
@@ -126,6 +141,11 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owner_of_export_controls_entity",
     "owner_of_forced_labor_xinjiang_entity",
     "owner_of_forced_labor_xinjiang_uflpa",
+    "owner_of_ofac_fto_sanctioned",
+    "owner_of_ofac_illicit_drugs_eo14059_sanctioned",
+    "owner_of_ofac_sdgt_sanctioned",
+    "owner_of_ofac_sdnt_sanctioned",
+    "owner_of_ofac_sdntk_sanctioned",
     "owner_of_regulatory_action_entity",
     "owner_of_sanctioned_entity",
     "owner_of_sheffield_hallam_university_reports_forced_labor_entity",
@@ -134,16 +154,105 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "pep",
     "pep_adjacent",
     "psa_bis_boycott_requester_list",
+    "psa_cmic_entity_50_percent_rule",
     "psa_entity_licensed_with_fsb_rf",
+    "psa_eu_50_percent_rule",
+    "psa_eu_minority_ownership",
     "psa_export_controls",
+    "psa_export_controls_bis_entity_50_percent_rule",
+    "psa_export_controls_bis_meu_50_percent_rule",
+    "psa_export_controls_section_1260h_50_percent_rule",
+    "psa_export_controls_unverified_list_50_percent_rule",
+    "psa_export_to_sanctioned",
+    "psa_export_to_soe",
+    "psa_exports_bis_high_priority_items",
+    "psa_exports_bis_high_priority_items_critical_components",
+    "psa_exports_conflict_minerals",
+    "psa_exports_eudr_shipment_cattle",
+    "psa_exports_eudr_shipment_cocoa",
+    "psa_exports_eudr_shipment_coffee",
+    "psa_exports_eudr_shipment_palm_oil",
+    "psa_exports_eudr_shipment_rubber",
+    "psa_exports_eudr_shipment_soya",
+    "psa_exports_eudr_shipment_wood",
+    "psa_exports_ilab_child_labor",
+    "psa_exports_ilab_forced_labor",
+    "psa_exports_russian_coal",
+    "psa_exports_russian_gold",
+    "psa_exports_russian_important_good",
+    "psa_exports_russian_oil",
+    "psa_exports_to_bis_addresses_high_diversion_risk",
+    "psa_exports_to_entity_licensed_with_fsb_rf",
+    "psa_forced_labor_aspi_origin_direct",
+    "psa_forced_labor_aspi_origin_subtier",
     "psa_forced_labor_aspi_uyghur",
+    "psa_forced_labor_sheffield_hallam_university_reports_origin_direct",
+    "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier",
+    "psa_forced_labor_uflpa_origin_direct",
+    "psa_forced_labor_uflpa_origin_subtier",
+    "psa_forced_labor_wro_origin_direct",
+    "psa_forced_labor_wro_origin_subtier",
     "psa_forced_labor_xinjiang_cotton_entity",
     "psa_forced_labor_xinjiang_geospatial",
     "psa_forced_labor_xinjiang_name",
     "psa_forced_labor_xinjiang_operations",
+    "psa_forced_labor_xinjiang_origin_direct",
+    "psa_forced_labor_xinjiang_origin_subtier",
     "psa_forced_labor_xinjiang_registration",
     "psa_forced_labor_xinjiang_uflpa",
+    "psa_imports_bis_high_priority_items",
+    "psa_imports_bis_high_priority_items_critical_components",
+    "psa_imports_conflict_minerals",
+    "psa_imports_eudr_shipment_cattle",
+    "psa_imports_eudr_shipment_cocoa",
+    "psa_imports_eudr_shipment_coffee",
+    "psa_imports_eudr_shipment_palm_oil",
+    "psa_imports_eudr_shipment_rubber",
+    "psa_imports_eudr_shipment_soya",
+    "psa_imports_eudr_shipment_wood",
+    "psa_imports_from_bis_addresses_high_diversion_risk",
+    "psa_imports_ilab_child_labor",
+    "psa_imports_ilab_forced_labor",
+    "psa_imports_ndaa_889_telecom_equipment",
+    "psa_imports_russian_coal",
+    "psa_imports_russian_gold",
+    "psa_imports_russian_important_good",
+    "psa_imports_russian_oil",
     "psa_military_civil_fusion",
+    "psa_military_civil_fusion_50_percent_rule",
+    "psa_ofac_50_percent_rule",
+    "psa_ofac_minority_ownership",
+    "psa_owned_by_aspi_forced_labor_entity",
+    "psa_owned_by_bis_meu_entity",
+    "psa_owned_by_cmic_entity",
+    "psa_owned_by_entity_in_export_controls",
+    "psa_owned_by_forced_labor_xinjiang_uflpa",
+    "psa_owned_by_military_civil_fusion",
+    "psa_owned_by_ofac_fto_sanctioned",
+    "psa_owned_by_ofac_illicit_drugs_eo14059_sanctioned",
+    "psa_owned_by_ofac_sdgt_sanctioned",
+    "psa_owned_by_ofac_sdnt_sanctioned",
+    "psa_owned_by_ofac_sdntk_sanctioned",
+    "psa_owned_by_sanctioned_entity",
+    "psa_owned_by_section_1260h_entity",
+    "psa_owned_by_sheffield_hallam_university_reports_forced_labor_entity",
+    "psa_owned_by_soe",
+    "psa_owned_by_wro_entity",
+    "psa_owned_by_xinjiang_entity",
+    "psa_owner_of_aspi_forced_labor_entity",
+    "psa_owner_of_export_controls_entity",
+    "psa_owner_of_forced_labor_xinjiang_entity",
+    "psa_owner_of_forced_labor_xinjiang_uflpa",
+    "psa_owner_of_ofac_fto_sanctioned",
+    "psa_owner_of_ofac_illicit_drugs_eo14059_sanctioned",
+    "psa_owner_of_ofac_sdgt_sanctioned",
+    "psa_owner_of_ofac_sdnt_sanctioned",
+    "psa_owner_of_ofac_sdntk_sanctioned",
+    "psa_owner_of_regulatory_action_entity",
+    "psa_owner_of_sanctioned_entity",
+    "psa_owner_of_sheffield_hallam_university_reports_forced_labor_entity",
+    "psa_owner_of_soe",
+    "psa_owner_of_wro_entity",
     "psa_pep",
     "psa_regulatory_action",
     "psa_sanctioned",
@@ -152,6 +261,9 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_sheffield_hallam_university_useful_resources",
     "psa_state_owned",
     "psa_state_owned_ven",
+    "psa_uk_50_percent_rule",
+    "psa_uk_minority_ownership",
+    "psa_ven_soe_50_percent",
     "psa_wro_entity",
     "regulatory_action",
     "reputational_risk_bribery_and_corruption",
@@ -191,7 +303,12 @@ export declare namespace Risk {
         | "controlled_by_aus_sanctioned"
         | "controlled_by_eu_sanctioned"
         | "controlled_by_jpn_sanctioned"
+        | "controlled_by_ofac_fto_sanctioned"
+        | "controlled_by_ofac_illicit_drugs_eo14059_sanctioned"
+        | "controlled_by_ofac_sdgt_sanctioned"
         | "controlled_by_ofac_sdn"
+        | "controlled_by_ofac_sdnt_sanctioned"
+        | "controlled_by_ofac_sdntk_sanctioned"
         | "controlled_by_uk_sanctioned"
         | "controlled_by_ukr_sanctioned"
         | "controlled_by_un_sanctioned"
@@ -282,14 +399,24 @@ export declare namespace Risk {
         | "military_civil_fusion_50_percent_rule"
         | "ndaa_889_covered_entities"
         | "ofac_50_percent_rule"
+        | "ofac_fto_sanctioned"
+        | "ofac_illicit_drugs_eo14059_sanctioned"
         | "ofac_minority_ownership"
+        | "ofac_sdgt_sanctioned"
         | "ofac_sdn"
+        | "ofac_sdnt_sanctioned"
+        | "ofac_sdntk_sanctioned"
         | "owned_by_aspi_forced_labor_entity"
         | "owned_by_bis_meu_entity"
         | "owned_by_cmic_entity"
         | "owned_by_entity_in_export_controls"
         | "owned_by_forced_labor_xinjiang_uflpa"
         | "owned_by_military_civil_fusion"
+        | "owned_by_ofac_fto_sanctioned"
+        | "owned_by_ofac_illicit_drugs_eo14059_sanctioned"
+        | "owned_by_ofac_sdgt_sanctioned"
+        | "owned_by_ofac_sdnt_sanctioned"
+        | "owned_by_ofac_sdntk_sanctioned"
         | "owned_by_sanctioned_entity"
         | "owned_by_section_1260h_entity"
         | "owned_by_sheffield_hallam_university_reports_forced_labor_entity"
@@ -300,6 +427,11 @@ export declare namespace Risk {
         | "owner_of_export_controls_entity"
         | "owner_of_forced_labor_xinjiang_entity"
         | "owner_of_forced_labor_xinjiang_uflpa"
+        | "owner_of_ofac_fto_sanctioned"
+        | "owner_of_ofac_illicit_drugs_eo14059_sanctioned"
+        | "owner_of_ofac_sdgt_sanctioned"
+        | "owner_of_ofac_sdnt_sanctioned"
+        | "owner_of_ofac_sdntk_sanctioned"
         | "owner_of_regulatory_action_entity"
         | "owner_of_sanctioned_entity"
         | "owner_of_sheffield_hallam_university_reports_forced_labor_entity"
@@ -308,16 +440,105 @@ export declare namespace Risk {
         | "pep"
         | "pep_adjacent"
         | "psa_bis_boycott_requester_list"
+        | "psa_cmic_entity_50_percent_rule"
         | "psa_entity_licensed_with_fsb_rf"
+        | "psa_eu_50_percent_rule"
+        | "psa_eu_minority_ownership"
         | "psa_export_controls"
+        | "psa_export_controls_bis_entity_50_percent_rule"
+        | "psa_export_controls_bis_meu_50_percent_rule"
+        | "psa_export_controls_section_1260h_50_percent_rule"
+        | "psa_export_controls_unverified_list_50_percent_rule"
+        | "psa_export_to_sanctioned"
+        | "psa_export_to_soe"
+        | "psa_exports_bis_high_priority_items"
+        | "psa_exports_bis_high_priority_items_critical_components"
+        | "psa_exports_conflict_minerals"
+        | "psa_exports_eudr_shipment_cattle"
+        | "psa_exports_eudr_shipment_cocoa"
+        | "psa_exports_eudr_shipment_coffee"
+        | "psa_exports_eudr_shipment_palm_oil"
+        | "psa_exports_eudr_shipment_rubber"
+        | "psa_exports_eudr_shipment_soya"
+        | "psa_exports_eudr_shipment_wood"
+        | "psa_exports_ilab_child_labor"
+        | "psa_exports_ilab_forced_labor"
+        | "psa_exports_russian_coal"
+        | "psa_exports_russian_gold"
+        | "psa_exports_russian_important_good"
+        | "psa_exports_russian_oil"
+        | "psa_exports_to_bis_addresses_high_diversion_risk"
+        | "psa_exports_to_entity_licensed_with_fsb_rf"
+        | "psa_forced_labor_aspi_origin_direct"
+        | "psa_forced_labor_aspi_origin_subtier"
         | "psa_forced_labor_aspi_uyghur"
+        | "psa_forced_labor_sheffield_hallam_university_reports_origin_direct"
+        | "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier"
+        | "psa_forced_labor_uflpa_origin_direct"
+        | "psa_forced_labor_uflpa_origin_subtier"
+        | "psa_forced_labor_wro_origin_direct"
+        | "psa_forced_labor_wro_origin_subtier"
         | "psa_forced_labor_xinjiang_cotton_entity"
         | "psa_forced_labor_xinjiang_geospatial"
         | "psa_forced_labor_xinjiang_name"
         | "psa_forced_labor_xinjiang_operations"
+        | "psa_forced_labor_xinjiang_origin_direct"
+        | "psa_forced_labor_xinjiang_origin_subtier"
         | "psa_forced_labor_xinjiang_registration"
         | "psa_forced_labor_xinjiang_uflpa"
+        | "psa_imports_bis_high_priority_items"
+        | "psa_imports_bis_high_priority_items_critical_components"
+        | "psa_imports_conflict_minerals"
+        | "psa_imports_eudr_shipment_cattle"
+        | "psa_imports_eudr_shipment_cocoa"
+        | "psa_imports_eudr_shipment_coffee"
+        | "psa_imports_eudr_shipment_palm_oil"
+        | "psa_imports_eudr_shipment_rubber"
+        | "psa_imports_eudr_shipment_soya"
+        | "psa_imports_eudr_shipment_wood"
+        | "psa_imports_from_bis_addresses_high_diversion_risk"
+        | "psa_imports_ilab_child_labor"
+        | "psa_imports_ilab_forced_labor"
+        | "psa_imports_ndaa_889_telecom_equipment"
+        | "psa_imports_russian_coal"
+        | "psa_imports_russian_gold"
+        | "psa_imports_russian_important_good"
+        | "psa_imports_russian_oil"
         | "psa_military_civil_fusion"
+        | "psa_military_civil_fusion_50_percent_rule"
+        | "psa_ofac_50_percent_rule"
+        | "psa_ofac_minority_ownership"
+        | "psa_owned_by_aspi_forced_labor_entity"
+        | "psa_owned_by_bis_meu_entity"
+        | "psa_owned_by_cmic_entity"
+        | "psa_owned_by_entity_in_export_controls"
+        | "psa_owned_by_forced_labor_xinjiang_uflpa"
+        | "psa_owned_by_military_civil_fusion"
+        | "psa_owned_by_ofac_fto_sanctioned"
+        | "psa_owned_by_ofac_illicit_drugs_eo14059_sanctioned"
+        | "psa_owned_by_ofac_sdgt_sanctioned"
+        | "psa_owned_by_ofac_sdnt_sanctioned"
+        | "psa_owned_by_ofac_sdntk_sanctioned"
+        | "psa_owned_by_sanctioned_entity"
+        | "psa_owned_by_section_1260h_entity"
+        | "psa_owned_by_sheffield_hallam_university_reports_forced_labor_entity"
+        | "psa_owned_by_soe"
+        | "psa_owned_by_wro_entity"
+        | "psa_owned_by_xinjiang_entity"
+        | "psa_owner_of_aspi_forced_labor_entity"
+        | "psa_owner_of_export_controls_entity"
+        | "psa_owner_of_forced_labor_xinjiang_entity"
+        | "psa_owner_of_forced_labor_xinjiang_uflpa"
+        | "psa_owner_of_ofac_fto_sanctioned"
+        | "psa_owner_of_ofac_illicit_drugs_eo14059_sanctioned"
+        | "psa_owner_of_ofac_sdgt_sanctioned"
+        | "psa_owner_of_ofac_sdnt_sanctioned"
+        | "psa_owner_of_ofac_sdntk_sanctioned"
+        | "psa_owner_of_regulatory_action_entity"
+        | "psa_owner_of_sanctioned_entity"
+        | "psa_owner_of_sheffield_hallam_university_reports_forced_labor_entity"
+        | "psa_owner_of_soe"
+        | "psa_owner_of_wro_entity"
         | "psa_pep"
         | "psa_regulatory_action"
         | "psa_sanctioned"
@@ -326,6 +547,9 @@ export declare namespace Risk {
         | "psa_sheffield_hallam_university_useful_resources"
         | "psa_state_owned"
         | "psa_state_owned_ven"
+        | "psa_uk_50_percent_rule"
+        | "psa_uk_minority_ownership"
+        | "psa_ven_soe_50_percent"
         | "psa_wro_entity"
         | "regulatory_action"
         | "reputational_risk_bribery_and_corruption"
