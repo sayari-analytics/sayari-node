@@ -13,7 +13,12 @@ export type Risk =
     | "controlled_by_aus_sanctioned"
     | "controlled_by_eu_sanctioned"
     | "controlled_by_jpn_sanctioned"
+    | "controlled_by_ofac_fto_sanctioned"
+    | "controlled_by_ofac_illicit_drugs_eo14059_sanctioned"
+    | "controlled_by_ofac_sdgt_sanctioned"
     | "controlled_by_ofac_sdn"
+    | "controlled_by_ofac_sdnt_sanctioned"
+    | "controlled_by_ofac_sdntk_sanctioned"
     | "controlled_by_uk_sanctioned"
     | "controlled_by_ukr_sanctioned"
     | "controlled_by_un_sanctioned"
@@ -104,14 +109,24 @@ export type Risk =
     | "military_civil_fusion_50_percent_rule"
     | "ndaa_889_covered_entities"
     | "ofac_50_percent_rule"
+    | "ofac_fto_sanctioned"
+    | "ofac_illicit_drugs_eo14059_sanctioned"
     | "ofac_minority_ownership"
+    | "ofac_sdgt_sanctioned"
     | "ofac_sdn"
+    | "ofac_sdnt_sanctioned"
+    | "ofac_sdntk_sanctioned"
     | "owned_by_aspi_forced_labor_entity"
     | "owned_by_bis_meu_entity"
     | "owned_by_cmic_entity"
     | "owned_by_entity_in_export_controls"
     | "owned_by_forced_labor_xinjiang_uflpa"
     | "owned_by_military_civil_fusion"
+    | "owned_by_ofac_fto_sanctioned"
+    | "owned_by_ofac_illicit_drugs_eo14059_sanctioned"
+    | "owned_by_ofac_sdgt_sanctioned"
+    | "owned_by_ofac_sdnt_sanctioned"
+    | "owned_by_ofac_sdntk_sanctioned"
     | "owned_by_sanctioned_entity"
     | "owned_by_section_1260h_entity"
     | "owned_by_sheffield_hallam_university_reports_forced_labor_entity"
@@ -122,6 +137,11 @@ export type Risk =
     | "owner_of_export_controls_entity"
     | "owner_of_forced_labor_xinjiang_entity"
     | "owner_of_forced_labor_xinjiang_uflpa"
+    | "owner_of_ofac_fto_sanctioned"
+    | "owner_of_ofac_illicit_drugs_eo14059_sanctioned"
+    | "owner_of_ofac_sdgt_sanctioned"
+    | "owner_of_ofac_sdnt_sanctioned"
+    | "owner_of_ofac_sdntk_sanctioned"
     | "owner_of_regulatory_action_entity"
     | "owner_of_sanctioned_entity"
     | "owner_of_sheffield_hallam_university_reports_forced_labor_entity"
@@ -130,16 +150,105 @@ export type Risk =
     | "pep"
     | "pep_adjacent"
     | "psa_bis_boycott_requester_list"
+    | "psa_cmic_entity_50_percent_rule"
     | "psa_entity_licensed_with_fsb_rf"
+    | "psa_eu_50_percent_rule"
+    | "psa_eu_minority_ownership"
     | "psa_export_controls"
+    | "psa_export_controls_bis_entity_50_percent_rule"
+    | "psa_export_controls_bis_meu_50_percent_rule"
+    | "psa_export_controls_section_1260h_50_percent_rule"
+    | "psa_export_controls_unverified_list_50_percent_rule"
+    | "psa_export_to_sanctioned"
+    | "psa_export_to_soe"
+    | "psa_exports_bis_high_priority_items"
+    | "psa_exports_bis_high_priority_items_critical_components"
+    | "psa_exports_conflict_minerals"
+    | "psa_exports_eudr_shipment_cattle"
+    | "psa_exports_eudr_shipment_cocoa"
+    | "psa_exports_eudr_shipment_coffee"
+    | "psa_exports_eudr_shipment_palm_oil"
+    | "psa_exports_eudr_shipment_rubber"
+    | "psa_exports_eudr_shipment_soya"
+    | "psa_exports_eudr_shipment_wood"
+    | "psa_exports_ilab_child_labor"
+    | "psa_exports_ilab_forced_labor"
+    | "psa_exports_russian_coal"
+    | "psa_exports_russian_gold"
+    | "psa_exports_russian_important_good"
+    | "psa_exports_russian_oil"
+    | "psa_exports_to_bis_addresses_high_diversion_risk"
+    | "psa_exports_to_entity_licensed_with_fsb_rf"
+    | "psa_forced_labor_aspi_origin_direct"
+    | "psa_forced_labor_aspi_origin_subtier"
     | "psa_forced_labor_aspi_uyghur"
+    | "psa_forced_labor_sheffield_hallam_university_reports_origin_direct"
+    | "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier"
+    | "psa_forced_labor_uflpa_origin_direct"
+    | "psa_forced_labor_uflpa_origin_subtier"
+    | "psa_forced_labor_wro_origin_direct"
+    | "psa_forced_labor_wro_origin_subtier"
     | "psa_forced_labor_xinjiang_cotton_entity"
     | "psa_forced_labor_xinjiang_geospatial"
     | "psa_forced_labor_xinjiang_name"
     | "psa_forced_labor_xinjiang_operations"
+    | "psa_forced_labor_xinjiang_origin_direct"
+    | "psa_forced_labor_xinjiang_origin_subtier"
     | "psa_forced_labor_xinjiang_registration"
     | "psa_forced_labor_xinjiang_uflpa"
+    | "psa_imports_bis_high_priority_items"
+    | "psa_imports_bis_high_priority_items_critical_components"
+    | "psa_imports_conflict_minerals"
+    | "psa_imports_eudr_shipment_cattle"
+    | "psa_imports_eudr_shipment_cocoa"
+    | "psa_imports_eudr_shipment_coffee"
+    | "psa_imports_eudr_shipment_palm_oil"
+    | "psa_imports_eudr_shipment_rubber"
+    | "psa_imports_eudr_shipment_soya"
+    | "psa_imports_eudr_shipment_wood"
+    | "psa_imports_from_bis_addresses_high_diversion_risk"
+    | "psa_imports_ilab_child_labor"
+    | "psa_imports_ilab_forced_labor"
+    | "psa_imports_ndaa_889_telecom_equipment"
+    | "psa_imports_russian_coal"
+    | "psa_imports_russian_gold"
+    | "psa_imports_russian_important_good"
+    | "psa_imports_russian_oil"
     | "psa_military_civil_fusion"
+    | "psa_military_civil_fusion_50_percent_rule"
+    | "psa_ofac_50_percent_rule"
+    | "psa_ofac_minority_ownership"
+    | "psa_owned_by_aspi_forced_labor_entity"
+    | "psa_owned_by_bis_meu_entity"
+    | "psa_owned_by_cmic_entity"
+    | "psa_owned_by_entity_in_export_controls"
+    | "psa_owned_by_forced_labor_xinjiang_uflpa"
+    | "psa_owned_by_military_civil_fusion"
+    | "psa_owned_by_ofac_fto_sanctioned"
+    | "psa_owned_by_ofac_illicit_drugs_eo14059_sanctioned"
+    | "psa_owned_by_ofac_sdgt_sanctioned"
+    | "psa_owned_by_ofac_sdnt_sanctioned"
+    | "psa_owned_by_ofac_sdntk_sanctioned"
+    | "psa_owned_by_sanctioned_entity"
+    | "psa_owned_by_section_1260h_entity"
+    | "psa_owned_by_sheffield_hallam_university_reports_forced_labor_entity"
+    | "psa_owned_by_soe"
+    | "psa_owned_by_wro_entity"
+    | "psa_owned_by_xinjiang_entity"
+    | "psa_owner_of_aspi_forced_labor_entity"
+    | "psa_owner_of_export_controls_entity"
+    | "psa_owner_of_forced_labor_xinjiang_entity"
+    | "psa_owner_of_forced_labor_xinjiang_uflpa"
+    | "psa_owner_of_ofac_fto_sanctioned"
+    | "psa_owner_of_ofac_illicit_drugs_eo14059_sanctioned"
+    | "psa_owner_of_ofac_sdgt_sanctioned"
+    | "psa_owner_of_ofac_sdnt_sanctioned"
+    | "psa_owner_of_ofac_sdntk_sanctioned"
+    | "psa_owner_of_regulatory_action_entity"
+    | "psa_owner_of_sanctioned_entity"
+    | "psa_owner_of_sheffield_hallam_university_reports_forced_labor_entity"
+    | "psa_owner_of_soe"
+    | "psa_owner_of_wro_entity"
     | "psa_pep"
     | "psa_regulatory_action"
     | "psa_sanctioned"
@@ -148,6 +257,9 @@ export type Risk =
     | "psa_sheffield_hallam_university_useful_resources"
     | "psa_state_owned"
     | "psa_state_owned_ven"
+    | "psa_uk_50_percent_rule"
+    | "psa_uk_minority_ownership"
+    | "psa_ven_soe_50_percent"
     | "psa_wro_entity"
     | "regulatory_action"
     | "reputational_risk_bribery_and_corruption"
@@ -184,7 +296,12 @@ export const Risk = {
     ControlledByAusSanctioned: "controlled_by_aus_sanctioned",
     ControlledByEuSanctioned: "controlled_by_eu_sanctioned",
     ControlledByJpnSanctioned: "controlled_by_jpn_sanctioned",
+    ControlledByOfacFtoSanctioned: "controlled_by_ofac_fto_sanctioned",
+    ControlledByOfacIllicitDrugsEo14059Sanctioned: "controlled_by_ofac_illicit_drugs_eo14059_sanctioned",
+    ControlledByOfacSdgtSanctioned: "controlled_by_ofac_sdgt_sanctioned",
     ControlledByOfacSdn: "controlled_by_ofac_sdn",
+    ControlledByOfacSdntSanctioned: "controlled_by_ofac_sdnt_sanctioned",
+    ControlledByOfacSdntkSanctioned: "controlled_by_ofac_sdntk_sanctioned",
     ControlledByUkSanctioned: "controlled_by_uk_sanctioned",
     ControlledByUkrSanctioned: "controlled_by_ukr_sanctioned",
     ControlledByUnSanctioned: "controlled_by_un_sanctioned",
@@ -278,14 +395,24 @@ export const Risk = {
     MilitaryCivilFusion50PercentRule: "military_civil_fusion_50_percent_rule",
     Ndaa889CoveredEntities: "ndaa_889_covered_entities",
     Ofac50PercentRule: "ofac_50_percent_rule",
+    OfacFtoSanctioned: "ofac_fto_sanctioned",
+    OfacIllicitDrugsEo14059Sanctioned: "ofac_illicit_drugs_eo14059_sanctioned",
     OfacMinorityOwnership: "ofac_minority_ownership",
+    OfacSdgtSanctioned: "ofac_sdgt_sanctioned",
     OfacSdn: "ofac_sdn",
+    OfacSdntSanctioned: "ofac_sdnt_sanctioned",
+    OfacSdntkSanctioned: "ofac_sdntk_sanctioned",
     OwnedByAspiForcedLaborEntity: "owned_by_aspi_forced_labor_entity",
     OwnedByBisMeuEntity: "owned_by_bis_meu_entity",
     OwnedByCmicEntity: "owned_by_cmic_entity",
     OwnedByEntityInExportControls: "owned_by_entity_in_export_controls",
     OwnedByForcedLaborXinjiangUflpa: "owned_by_forced_labor_xinjiang_uflpa",
     OwnedByMilitaryCivilFusion: "owned_by_military_civil_fusion",
+    OwnedByOfacFtoSanctioned: "owned_by_ofac_fto_sanctioned",
+    OwnedByOfacIllicitDrugsEo14059Sanctioned: "owned_by_ofac_illicit_drugs_eo14059_sanctioned",
+    OwnedByOfacSdgtSanctioned: "owned_by_ofac_sdgt_sanctioned",
+    OwnedByOfacSdntSanctioned: "owned_by_ofac_sdnt_sanctioned",
+    OwnedByOfacSdntkSanctioned: "owned_by_ofac_sdntk_sanctioned",
     OwnedBySanctionedEntity: "owned_by_sanctioned_entity",
     OwnedBySection1260HEntity: "owned_by_section_1260h_entity",
     OwnedBySheffieldHallamUniversityReportsForcedLaborEntity:
@@ -297,6 +424,11 @@ export const Risk = {
     OwnerOfExportControlsEntity: "owner_of_export_controls_entity",
     OwnerOfForcedLaborXinjiangEntity: "owner_of_forced_labor_xinjiang_entity",
     OwnerOfForcedLaborXinjiangUflpa: "owner_of_forced_labor_xinjiang_uflpa",
+    OwnerOfOfacFtoSanctioned: "owner_of_ofac_fto_sanctioned",
+    OwnerOfOfacIllicitDrugsEo14059Sanctioned: "owner_of_ofac_illicit_drugs_eo14059_sanctioned",
+    OwnerOfOfacSdgtSanctioned: "owner_of_ofac_sdgt_sanctioned",
+    OwnerOfOfacSdntSanctioned: "owner_of_ofac_sdnt_sanctioned",
+    OwnerOfOfacSdntkSanctioned: "owner_of_ofac_sdntk_sanctioned",
     OwnerOfRegulatoryActionEntity: "owner_of_regulatory_action_entity",
     OwnerOfSanctionedEntity: "owner_of_sanctioned_entity",
     OwnerOfSheffieldHallamUniversityReportsForcedLaborEntity:
@@ -306,16 +438,109 @@ export const Risk = {
     Pep: "pep",
     PepAdjacent: "pep_adjacent",
     PsaBisBoycottRequesterList: "psa_bis_boycott_requester_list",
+    PsaCmicEntity50PercentRule: "psa_cmic_entity_50_percent_rule",
     PsaEntityLicensedWithFsbRf: "psa_entity_licensed_with_fsb_rf",
+    PsaEu50PercentRule: "psa_eu_50_percent_rule",
+    PsaEuMinorityOwnership: "psa_eu_minority_ownership",
     PsaExportControls: "psa_export_controls",
+    PsaExportControlsBisEntity50PercentRule: "psa_export_controls_bis_entity_50_percent_rule",
+    PsaExportControlsBisMeu50PercentRule: "psa_export_controls_bis_meu_50_percent_rule",
+    PsaExportControlsSection1260H50PercentRule: "psa_export_controls_section_1260h_50_percent_rule",
+    PsaExportControlsUnverifiedList50PercentRule: "psa_export_controls_unverified_list_50_percent_rule",
+    PsaExportToSanctioned: "psa_export_to_sanctioned",
+    PsaExportToSoe: "psa_export_to_soe",
+    PsaExportsBisHighPriorityItems: "psa_exports_bis_high_priority_items",
+    PsaExportsBisHighPriorityItemsCriticalComponents: "psa_exports_bis_high_priority_items_critical_components",
+    PsaExportsConflictMinerals: "psa_exports_conflict_minerals",
+    PsaExportsEudrShipmentCattle: "psa_exports_eudr_shipment_cattle",
+    PsaExportsEudrShipmentCocoa: "psa_exports_eudr_shipment_cocoa",
+    PsaExportsEudrShipmentCoffee: "psa_exports_eudr_shipment_coffee",
+    PsaExportsEudrShipmentPalmOil: "psa_exports_eudr_shipment_palm_oil",
+    PsaExportsEudrShipmentRubber: "psa_exports_eudr_shipment_rubber",
+    PsaExportsEudrShipmentSoya: "psa_exports_eudr_shipment_soya",
+    PsaExportsEudrShipmentWood: "psa_exports_eudr_shipment_wood",
+    PsaExportsIlabChildLabor: "psa_exports_ilab_child_labor",
+    PsaExportsIlabForcedLabor: "psa_exports_ilab_forced_labor",
+    PsaExportsRussianCoal: "psa_exports_russian_coal",
+    PsaExportsRussianGold: "psa_exports_russian_gold",
+    PsaExportsRussianImportantGood: "psa_exports_russian_important_good",
+    PsaExportsRussianOil: "psa_exports_russian_oil",
+    PsaExportsToBisAddressesHighDiversionRisk: "psa_exports_to_bis_addresses_high_diversion_risk",
+    PsaExportsToEntityLicensedWithFsbRf: "psa_exports_to_entity_licensed_with_fsb_rf",
+    PsaForcedLaborAspiOriginDirect: "psa_forced_labor_aspi_origin_direct",
+    PsaForcedLaborAspiOriginSubtier: "psa_forced_labor_aspi_origin_subtier",
     PsaForcedLaborAspiUyghur: "psa_forced_labor_aspi_uyghur",
+    PsaForcedLaborSheffieldHallamUniversityReportsOriginDirect:
+        "psa_forced_labor_sheffield_hallam_university_reports_origin_direct",
+    PsaForcedLaborSheffieldHallamUniversityReportsOriginSubtier:
+        "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier",
+    PsaForcedLaborUflpaOriginDirect: "psa_forced_labor_uflpa_origin_direct",
+    PsaForcedLaborUflpaOriginSubtier: "psa_forced_labor_uflpa_origin_subtier",
+    PsaForcedLaborWroOriginDirect: "psa_forced_labor_wro_origin_direct",
+    PsaForcedLaborWroOriginSubtier: "psa_forced_labor_wro_origin_subtier",
     PsaForcedLaborXinjiangCottonEntity: "psa_forced_labor_xinjiang_cotton_entity",
     PsaForcedLaborXinjiangGeospatial: "psa_forced_labor_xinjiang_geospatial",
     PsaForcedLaborXinjiangName: "psa_forced_labor_xinjiang_name",
     PsaForcedLaborXinjiangOperations: "psa_forced_labor_xinjiang_operations",
+    PsaForcedLaborXinjiangOriginDirect: "psa_forced_labor_xinjiang_origin_direct",
+    PsaForcedLaborXinjiangOriginSubtier: "psa_forced_labor_xinjiang_origin_subtier",
     PsaForcedLaborXinjiangRegistration: "psa_forced_labor_xinjiang_registration",
     PsaForcedLaborXinjiangUflpa: "psa_forced_labor_xinjiang_uflpa",
+    PsaImportsBisHighPriorityItems: "psa_imports_bis_high_priority_items",
+    PsaImportsBisHighPriorityItemsCriticalComponents: "psa_imports_bis_high_priority_items_critical_components",
+    PsaImportsConflictMinerals: "psa_imports_conflict_minerals",
+    PsaImportsEudrShipmentCattle: "psa_imports_eudr_shipment_cattle",
+    PsaImportsEudrShipmentCocoa: "psa_imports_eudr_shipment_cocoa",
+    PsaImportsEudrShipmentCoffee: "psa_imports_eudr_shipment_coffee",
+    PsaImportsEudrShipmentPalmOil: "psa_imports_eudr_shipment_palm_oil",
+    PsaImportsEudrShipmentRubber: "psa_imports_eudr_shipment_rubber",
+    PsaImportsEudrShipmentSoya: "psa_imports_eudr_shipment_soya",
+    PsaImportsEudrShipmentWood: "psa_imports_eudr_shipment_wood",
+    PsaImportsFromBisAddressesHighDiversionRisk: "psa_imports_from_bis_addresses_high_diversion_risk",
+    PsaImportsIlabChildLabor: "psa_imports_ilab_child_labor",
+    PsaImportsIlabForcedLabor: "psa_imports_ilab_forced_labor",
+    PsaImportsNdaa889TelecomEquipment: "psa_imports_ndaa_889_telecom_equipment",
+    PsaImportsRussianCoal: "psa_imports_russian_coal",
+    PsaImportsRussianGold: "psa_imports_russian_gold",
+    PsaImportsRussianImportantGood: "psa_imports_russian_important_good",
+    PsaImportsRussianOil: "psa_imports_russian_oil",
     PsaMilitaryCivilFusion: "psa_military_civil_fusion",
+    PsaMilitaryCivilFusion50PercentRule: "psa_military_civil_fusion_50_percent_rule",
+    PsaOfac50PercentRule: "psa_ofac_50_percent_rule",
+    PsaOfacMinorityOwnership: "psa_ofac_minority_ownership",
+    PsaOwnedByAspiForcedLaborEntity: "psa_owned_by_aspi_forced_labor_entity",
+    PsaOwnedByBisMeuEntity: "psa_owned_by_bis_meu_entity",
+    PsaOwnedByCmicEntity: "psa_owned_by_cmic_entity",
+    PsaOwnedByEntityInExportControls: "psa_owned_by_entity_in_export_controls",
+    PsaOwnedByForcedLaborXinjiangUflpa: "psa_owned_by_forced_labor_xinjiang_uflpa",
+    PsaOwnedByMilitaryCivilFusion: "psa_owned_by_military_civil_fusion",
+    PsaOwnedByOfacFtoSanctioned: "psa_owned_by_ofac_fto_sanctioned",
+    PsaOwnedByOfacIllicitDrugsEo14059Sanctioned: "psa_owned_by_ofac_illicit_drugs_eo14059_sanctioned",
+    PsaOwnedByOfacSdgtSanctioned: "psa_owned_by_ofac_sdgt_sanctioned",
+    PsaOwnedByOfacSdntSanctioned: "psa_owned_by_ofac_sdnt_sanctioned",
+    PsaOwnedByOfacSdntkSanctioned: "psa_owned_by_ofac_sdntk_sanctioned",
+    PsaOwnedBySanctionedEntity: "psa_owned_by_sanctioned_entity",
+    PsaOwnedBySection1260HEntity: "psa_owned_by_section_1260h_entity",
+    PsaOwnedBySheffieldHallamUniversityReportsForcedLaborEntity:
+        "psa_owned_by_sheffield_hallam_university_reports_forced_labor_entity",
+    PsaOwnedBySoe: "psa_owned_by_soe",
+    PsaOwnedByWroEntity: "psa_owned_by_wro_entity",
+    PsaOwnedByXinjiangEntity: "psa_owned_by_xinjiang_entity",
+    PsaOwnerOfAspiForcedLaborEntity: "psa_owner_of_aspi_forced_labor_entity",
+    PsaOwnerOfExportControlsEntity: "psa_owner_of_export_controls_entity",
+    PsaOwnerOfForcedLaborXinjiangEntity: "psa_owner_of_forced_labor_xinjiang_entity",
+    PsaOwnerOfForcedLaborXinjiangUflpa: "psa_owner_of_forced_labor_xinjiang_uflpa",
+    PsaOwnerOfOfacFtoSanctioned: "psa_owner_of_ofac_fto_sanctioned",
+    PsaOwnerOfOfacIllicitDrugsEo14059Sanctioned: "psa_owner_of_ofac_illicit_drugs_eo14059_sanctioned",
+    PsaOwnerOfOfacSdgtSanctioned: "psa_owner_of_ofac_sdgt_sanctioned",
+    PsaOwnerOfOfacSdntSanctioned: "psa_owner_of_ofac_sdnt_sanctioned",
+    PsaOwnerOfOfacSdntkSanctioned: "psa_owner_of_ofac_sdntk_sanctioned",
+    PsaOwnerOfRegulatoryActionEntity: "psa_owner_of_regulatory_action_entity",
+    PsaOwnerOfSanctionedEntity: "psa_owner_of_sanctioned_entity",
+    PsaOwnerOfSheffieldHallamUniversityReportsForcedLaborEntity:
+        "psa_owner_of_sheffield_hallam_university_reports_forced_labor_entity",
+    PsaOwnerOfSoe: "psa_owner_of_soe",
+    PsaOwnerOfWroEntity: "psa_owner_of_wro_entity",
     PsaPep: "psa_pep",
     PsaRegulatoryAction: "psa_regulatory_action",
     PsaSanctioned: "psa_sanctioned",
@@ -324,6 +549,9 @@ export const Risk = {
     PsaSheffieldHallamUniversityUsefulResources: "psa_sheffield_hallam_university_useful_resources",
     PsaStateOwned: "psa_state_owned",
     PsaStateOwnedVen: "psa_state_owned_ven",
+    PsaUk50PercentRule: "psa_uk_50_percent_rule",
+    PsaUkMinorityOwnership: "psa_uk_minority_ownership",
+    PsaVenSoe50Percent: "psa_ven_soe_50_percent",
     PsaWroEntity: "psa_wro_entity",
     RegulatoryAction: "regulatory_action",
     ReputationalRiskBriberyAndCorruption: "reputational_risk_bribery_and_corruption",
