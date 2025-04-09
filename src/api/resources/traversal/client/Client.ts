@@ -169,12 +169,7 @@ export class Traversal {
         }
 
         if (riskCategories != null) {
-            _queryParams["risk_categories"] = (() => {
-                const mapped = serializers.TraversalRiskCategory.jsonOrThrow(riskCategories, {
-                    unrecognizedObjectKeys: "strip",
-                });
-                return typeof mapped === "string" ? mapped : toJson(mapped);
-            })();
+            _queryParams["risk_categories"] = toJson(riskCategories);
         }
 
         if (euHighRiskThird != null) {
