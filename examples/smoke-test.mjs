@@ -86,6 +86,15 @@ const usage = await client.info.getUsage()
 console.log("Entity summary usage: ", usage.usage.entity)
 
 // History
-const history = await client.info.getHistory({size: 10000, from_: "2024-04-20", to: "2024-04-21"})
-console.log("Found", history.events.length, "events from 2024-04-20 to 2024-04-21")
+const now = new Date()
+const fromDate = new Date(now)
+fromDate.setDate(now.getDate() - 30)
+const endDate = new Date(now)
+endDate.setDate(now.getDate() - 29)
+
+const fromDateStr = fromDate.toISOString().split('T')[0]
+const endDateStr = endDate.toISOString().split('T')[0]
+
+const history = await client.info.getHistory({ size: 10000, from_: fromDateStr, to: endDateStr })
+console.log("Found", history.events.length, "events from", fromDateStr, "to", endDateStr)
 
