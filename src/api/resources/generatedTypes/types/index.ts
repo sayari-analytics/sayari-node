@@ -71,7 +71,7 @@ export * from "./PositionInfo";
 export * from "./PositionProperties";
 export * from "./Relationships";
 export * from "./Risk";
-export * from "./RiskCategories";
+export * from "./RiskCategory";
 export * from "./RiskIntelligenceData";
 export * from "./RiskIntelligenceInfo";
 export * from "./RiskIntelligenceProperties";

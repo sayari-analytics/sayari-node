@@ -6,8 +6,8 @@ import * as Sayari from "../../../index";
 
 export type TraversalRiskCategory =
     /**
-     * Matches specific risk category */
-    | Sayari.RiskCategories[]
+     * Filter paths to only those that include an entity associated with any risk factor belonging to one of the specified categories. */
+    | Sayari.RiskCategory[]
     /**
      * Matches a custom risk category */
     | string;
