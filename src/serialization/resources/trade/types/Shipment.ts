@@ -30,6 +30,8 @@ export const Shipment: core.serialization.ObjectSchema<serializers.Shipment.Raw,
         ),
         departureAddress: core.serialization.property("departure_address", ShipmentAddress.optional()),
         arrivalAddress: core.serialization.property("arrival_address", ShipmentAddress.optional()),
+        shipperAddress: core.serialization.property("shipper_address", ShipmentAddress.optional()),
+        receiverAddress: core.serialization.property("receiver_address", ShipmentAddress.optional()),
         arrivalCountry: core.serialization.property("arrival_country", core.serialization.list(Country)),
         departureCountry: core.serialization.property("departure_country", core.serialization.list(Country)),
         transitCountry: core.serialization.property("transit_country", core.serialization.list(Country)),
@@ -57,6 +59,8 @@ export declare namespace Shipment {
         departure_date?: string[] | null;
         departure_address?: ShipmentAddress.Raw | null;
         arrival_address?: ShipmentAddress.Raw | null;
+        shipper_address?: ShipmentAddress.Raw | null;
+        receiver_address?: ShipmentAddress.Raw | null;
         arrival_country: Country.Raw[];
         departure_country: Country.Raw[];
         transit_country: Country.Raw[];

@@ -290,6 +290,16 @@ import * as Sayari from "../../../index";
  *                 departureAddress: {
  *                     country: "DEU"
  *                 },
+ *                 shipperAddress: {
+ *                     country: "CAN",
+ *                     state: "ON",
+ *                     city: "Toronto"
+ *                 },
+ *                 receiverAddress: {
+ *                     country: "RUS",
+ *                     state: "Moscow",
+ *                     city: "Moscow"
+ *                 },
  *                 productOrigin: [Sayari.Country.Deu],
  *                 transitCountry: [],
  *                 countries: [Sayari.Country.Deu, Sayari.Country.Rus],
