@@ -21,5 +21,7 @@ export interface FilterList {
     /** Pipe-delimited bounding box coordinates (north,west,south,east). E.g., '"46.12|-76|45|-75"'. */
     bounds?: string[];
     /** List of risk factors to filter by. */
-    risk?: Sayari.RiskFactor;
+    risk?: Sayari.Risk[];
+    /** List of risk categories to filter by. An entity matches if it has any risk factor belonging to one of the specified categories. */
+    riskCategory?: Sayari.RiskCategory[];
 }
