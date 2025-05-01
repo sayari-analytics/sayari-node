@@ -11,6 +11,8 @@ export interface ShipmentMetadata {
     /** Unique identifier of the entity */
     entityId: string;
     departureAddress?: Sayari.AddressProperties;
+    shipperAddress?: Sayari.AddressProperties;
+    receiverAddress?: Sayari.AddressProperties;
     type: string;
     sources: string[];
     departureCountry: Sayari.Country[];
