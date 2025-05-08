@@ -5,13 +5,13 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { RiskCategories } from "../../generatedTypes/types/RiskCategories";
+import { RiskCategory } from "../../generatedTypes/types/RiskCategory";
 
 export const TraversalRiskCategory: core.serialization.Schema<
     serializers.TraversalRiskCategory.Raw,
     Sayari.TraversalRiskCategory
-> = core.serialization.undiscriminatedUnion([core.serialization.list(RiskCategories), core.serialization.string()]);
+> = core.serialization.undiscriminatedUnion([core.serialization.list(RiskCategory), core.serialization.string()]);
 
 export declare namespace TraversalRiskCategory {
-    export type Raw = RiskCategories.Raw[] | string;
+    export type Raw = RiskCategory.Raw[] | string;
 }
