@@ -33,7 +33,7 @@ export class Project {
     constructor(protected readonly _options: Project.Options = {}) {}
 
     /**
-     * Create a new project
+     * Create a new project.
      *
      * @param {Sayari.CreateProjectRequest} request
      * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
@@ -328,7 +328,7 @@ export class Project {
     }
 
     /**
-     * Retrieve a list of entities in a project.
+     * <Warning>This endpoint is deprecated.</Warning> Retrieve a list of entities in a project.
      *
      * @param {string} id - The project identifier.
      * @param {Sayari.GetProjectEntities} request
