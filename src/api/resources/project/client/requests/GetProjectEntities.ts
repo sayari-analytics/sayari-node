@@ -32,7 +32,7 @@ export interface GetProjectEntities {
      */
     geoFacets?: boolean;
     /**
-     * Only return entities with the specified HS code(s).
+     * Only return entities with the specified HS code(s) in their supply chain.
      */
     hsCodes?: string | string[];
     /**

@@ -58,7 +58,7 @@ export interface UpstreamTradeTraversalRequest {
      */
     maxDepth?: number;
     /**
-     * The maximum number of results to return. Default and maximum values are 25,000.
+     * The maximum number of results to return. Default is no limit.
      */
     limit?: number;
 }
