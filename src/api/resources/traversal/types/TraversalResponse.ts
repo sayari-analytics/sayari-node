@@ -15,13 +15,12 @@ import * as Sayari from "../../../index";
  *         countries: [],
  *         types: [],
  *         name: "",
- *         watchlist: false,
  *         psa: true,
  *         offset: 0,
  *         limit: 1,
  *         partialResults: false,
  *         next: true,
- *         exploredCount: 9999999,
+ *         exploredCount: 7022,
  *         data: [{
  *                 source: "mGq1lpuqKssNWTjIokuPeA",
  *                 target: {
@@ -188,13 +187,12 @@ import * as Sayari from "../../../index";
  *         countries: [],
  *         types: [],
  *         name: "",
- *         watchlist: false,
  *         psa: true,
  *         offset: 0,
  *         limit: 1,
  *         partialResults: false,
  *         next: true,
- *         exploredCount: 9999999,
+ *         exploredCount: 66201,
  *         data: [{
  *                 source: "mGq1lpuqKssNWTjIokuPeA",
  *                 target: {
@@ -1125,13 +1123,12 @@ import * as Sayari from "../../../index";
  *         countries: [],
  *         types: [],
  *         name: "",
- *         watchlist: false,
  *         psa: true,
  *         offset: 0,
  *         limit: 1,
  *         partialResults: false,
  *         next: true,
- *         exploredCount: 9999999,
+ *         exploredCount: 37653,
  *         data: [{
  *                 source: "mGq1lpuqKssNWTjIokuPeA",
  *                 target: {
@@ -1487,14 +1484,13 @@ import * as Sayari from "../../../index";
  *         countries: [],
  *         types: [],
  *         name: "",
- *         watchlist: true,
  *         psa: true,
  *         offset: 0,
  *         limit: 1,
- *         partialResults: false,
+ *         partialResults: true,
  *         next: true,
  *         sanctioned: true,
- *         exploredCount: 9999999,
+ *         exploredCount: 5000000,
  *         data: [{
  *                 source: "mGq1lpuqKssNWTjIokuPeA",
  *                 target: {
@@ -2655,15 +2651,13 @@ export interface TraversalResponse {
     countries: Sayari.Country[];
     types: string[];
     name: string;
-    /** <Warning>This field is deprecated.</Warning> */
-    watchlist: boolean;
     psa: boolean;
     offset: number;
     limit: number;
     next: boolean;
-    partialResults: boolean;
     data: Sayari.TraversalData[];
     sanctioned?: boolean;
     pep?: boolean;
     exploredCount: number;
+    partialResults: boolean;
 }

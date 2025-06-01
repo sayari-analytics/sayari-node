@@ -5,6 +5,7 @@ export * from "./CreateProjectResponse";
 export * from "./GetProjectEntitiesAcceptHeader";
 export * from "./GetProjectEntitiesResponse";
 export * from "./DeleteProjectResponse";
+export * from "./ProjectEntitySupplyChainResponse";
 export * from "./ProjectEntity";
 export * from "./TradeCount";
 export * from "./PsaSummary";
