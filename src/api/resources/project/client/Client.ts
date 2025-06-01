@@ -8,6 +8,7 @@ import * as Sayari from "../../../index";
 import * as serializers from "../../../../serialization/index";
 import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
+import { toJson } from "../../../../core/json";
 
 export declare namespace Project {
     export interface Options {
@@ -33,7 +34,7 @@ export class Project {
     constructor(protected readonly _options: Project.Options = {}) {}
 
     /**
-     * Create a new project
+     * Create a new project.
      *
      * @param {Sayari.CreateProjectRequest} request
      * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
@@ -328,7 +329,7 @@ export class Project {
     }
 
     /**
-     * Retrieve a list of entities in a project.
+     * <Warning>This endpoint is deprecated.</Warning> Retrieve a list of entities in a project.
      *
      * @param {string} id - The project identifier.
      * @param {Sayari.GetProjectEntities} request
@@ -711,6 +712,212 @@ export class Project {
                 });
             case "timeout":
                 throw new errors.SayariTimeoutError("Timeout exceeded when calling DELETE /v1/projects/{projectId}.");
+            case "unknown":
+                throw new errors.SayariError({
+                    message: _response.error.errorMessage,
+                });
+        }
+    }
+
+    /**
+     * Execute a traversal of the upstream trade network (supply chain) for all matched entities of a project entity, returning a set of entities and edges between them.
+     *
+     * @param {string} projectId - The project Identifier
+     * @param {string} projectEntityId - The project entity Identifier
+     * @param {Sayari.ProjectEntitySupplyChainRequest} request
+     * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
+     *
+     * @example
+     *     await client.project.projectEntitySupplyChain("Gam5qG", "GOeOE8", {
+     *         minDate: "2023-03-15",
+     *         product: ["3204"],
+     *         risk: ["forced_labor_xinjiang_origin_subtier"]
+     *     })
+     */
+    public async projectEntitySupplyChain(
+        projectId: string,
+        projectEntityId: string,
+        request: Sayari.ProjectEntitySupplyChainRequest = {},
+        requestOptions?: Project.RequestOptions,
+    ): Promise<Sayari.ProjectEntitySupplyChainResponse> {
+        const {
+            risk,
+            notRisk,
+            countries,
+            notCountries,
+            product,
+            notProduct,
+            component,
+            notComponent,
+            minDate,
+            maxDate,
+            maxDepth,
+            limit,
+        } = request;
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
+        if (risk != null) {
+            _queryParams["risk"] = toJson(risk);
+        }
+
+        if (notRisk != null) {
+            _queryParams["-risk"] = toJson(notRisk);
+        }
+
+        if (countries != null) {
+            _queryParams["countries"] = toJson(countries);
+        }
+
+        if (notCountries != null) {
+            _queryParams["-countries"] = toJson(notCountries);
+        }
+
+        if (product != null) {
+            _queryParams["product"] = toJson(product);
+        }
+
+        if (notProduct != null) {
+            _queryParams["-product"] = toJson(notProduct);
+        }
+
+        if (component != null) {
+            _queryParams["component"] = toJson(component);
+        }
+
+        if (notComponent != null) {
+            _queryParams["-component"] = toJson(notComponent);
+        }
+
+        if (minDate != null) {
+            _queryParams["min_date"] = minDate;
+        }
+
+        if (maxDate != null) {
+            _queryParams["max_date"] = maxDate;
+        }
+
+        if (maxDepth != null) {
+            _queryParams["max_depth"] = maxDepth.toString();
+        }
+
+        if (limit != null) {
+            _queryParams["limit"] = limit.toString();
+        }
+
+        const _response = await core.fetcher({
+            url: urlJoin(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
+                `/v1/projects/${encodeURIComponent(projectId)}/entities/${encodeURIComponent(projectEntityId)}/supply_chain/upstream`,
+            ),
+            method: "GET",
+            headers: {
+                Authorization: await this._getAuthorizationHeader(),
+                "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "@sayari/sdk",
+                "X-Fern-SDK-Version": "0.1.42",
+                "User-Agent": "@sayari/sdk/0.1.42",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
+            },
+            contentType: "application/json",
+            queryParameters: _queryParams,
+            requestType: "json",
+            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+            maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+        });
+        if (_response.ok) {
+            return serializers.ProjectEntitySupplyChainResponse.parseOrThrow(_response.body, {
+                unrecognizedObjectKeys: "passthrough",
+                allowUnrecognizedUnionMembers: true,
+                allowUnrecognizedEnumValues: true,
+                breadcrumbsPrefix: ["response"],
+            });
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 400:
+                    throw new Sayari.BadRequest(
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 401:
+                    throw new Sayari.Unauthorized(
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 404:
+                    throw new Sayari.NotFound(
+                        serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 405:
+                    throw new Sayari.MethodNotAllowed(
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 429:
+                    throw new Sayari.RateLimitExceeded(
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 500:
+                    throw new Sayari.InternalServerError(
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                default:
+                    throw new errors.SayariError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                    });
+            }
+        }
+
+        switch (_response.error.reason) {
+            case "non-json":
+                throw new errors.SayariError({
+                    statusCode: _response.error.statusCode,
+                    body: _response.error.rawBody,
+                });
+            case "timeout":
+                throw new errors.SayariTimeoutError(
+                    "Timeout exceeded when calling GET /v1/projects/{projectId}/entities/{projectEntityId}/supply_chain/upstream.",
+                );
             case "unknown":
                 throw new errors.SayariError({
                     message: _response.error.errorMessage,

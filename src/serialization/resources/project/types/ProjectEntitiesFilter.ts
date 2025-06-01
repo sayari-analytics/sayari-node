@@ -26,6 +26,27 @@ export const ProjectEntitiesFilter: core.serialization.ObjectSchema<
         "upstream_country_tiers",
         core.serialization.list(UpstreamTiers).optional(),
     ),
+    shipmentCountry: core.serialization.property("shipment_country", core.serialization.list(Country).optional()),
+    tier0ShipmentCountry: core.serialization.property(
+        "tier0_shipment_country",
+        core.serialization.list(Country).optional(),
+    ),
+    tier1ShipmentCountry: core.serialization.property(
+        "tier1_shipment_country",
+        core.serialization.list(Country).optional(),
+    ),
+    tier2ShipmentCountry: core.serialization.property(
+        "tier2_shipment_country",
+        core.serialization.list(Country).optional(),
+    ),
+    tier3ShipmentCountry: core.serialization.property(
+        "tier3_shipment_country",
+        core.serialization.list(Country).optional(),
+    ),
+    tier4ShipmentCountry: core.serialization.property(
+        "tier4_shipment_country",
+        core.serialization.list(Country).optional(),
+    ),
     businessPurpose: core.serialization.property(
         "business_purpose",
         core.serialization.list(core.serialization.string()).optional(),
@@ -70,6 +91,12 @@ export declare namespace ProjectEntitiesFilter {
         country?: Country.Raw[] | null;
         upstream_country?: Country.Raw[] | null;
         upstream_country_tiers?: UpstreamTiers.Raw[] | null;
+        shipment_country?: Country.Raw[] | null;
+        tier0_shipment_country?: Country.Raw[] | null;
+        tier1_shipment_country?: Country.Raw[] | null;
+        tier2_shipment_country?: Country.Raw[] | null;
+        tier3_shipment_country?: Country.Raw[] | null;
+        tier4_shipment_country?: Country.Raw[] | null;
         business_purpose?: string[] | null;
         "label.fuzzy"?: string[] | null;
         "city.fuzzy"?: string[] | null;

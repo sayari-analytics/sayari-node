@@ -487,7 +487,7 @@ export class Resolution {
     }
 
     /**
-     * The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
+     * <Warning>This endpoint is deprecated.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
      *
      * @param {string} projectId - Unique identifier of the project
      * @param {Sayari.ResolutionPersisted} request
@@ -649,7 +649,7 @@ export class Resolution {
     }
 
     /**
-     * <Warning>This endpoint is in beta and subject to change</Warning> This endpoint allows you to upload entities in bulk.
+     * <Warning>This endpoint is deprecated.</Warning> This endpoint allows you to upload entities in bulk.
      *
      * @param {string} projectId - Unique identifier of the project
      * @param {Sayari.ResolutionUploadBody} request

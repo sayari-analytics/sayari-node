@@ -17,6 +17,18 @@ export interface ProjectEntitiesFilter {
     upstreamCountry?: Sayari.Country[];
     /** Filter by upstream (supply chain) tiers that has one or more countries */
     upstreamCountryTiers?: Sayari.UpstreamTiers[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at any tier. */
+    shipmentCountry?: Sayari.Country[];
+    /** Filter by [country](/sayari-library/ontology/enumerated-types#country) at tier 0. */
+    tier0ShipmentCountry?: Sayari.Country[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at tier 1. */
+    tier1ShipmentCountry?: Sayari.Country[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at tier 2. */
+    tier2ShipmentCountry?: Sayari.Country[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at tier 3. */
+    tier3ShipmentCountry?: Sayari.Country[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at tier 4. */
+    tier4ShipmentCountry?: Sayari.Country[];
     /** Filter by HS code, HS code description, or business description. */
     businessPurpose?: string[];
     /** Filter by entity label with fuzzy matching. */
