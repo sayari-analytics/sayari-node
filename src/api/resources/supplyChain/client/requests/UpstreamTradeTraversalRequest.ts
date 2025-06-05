@@ -14,11 +14,11 @@ import * as Sayari from "../../../../index";
  */
 export interface UpstreamTradeTraversalRequest {
     /**
-     * Risk leaf node filter. Only return supply chains that end with a supplier that has 1+ of the specified [risk factors](/sayari-library/ontology/risk-factors).
+     * Risk leaf node filter. Only return supply chains that end with a supplier that has 1+ of the specified risk factors.
      */
     risk?: Sayari.Risk[];
     /**
-     * Risk leaf node filter. Only return supply chains that end with a supplier that has none of the specified [risk factors](/sayari-library/ontology/risk-factors).
+     * Risk leaf node filter. Only return supply chains that end with a supplier that has none of the specified risk factors.
      */
     notRisk?: Sayari.Risk[];
     /**
@@ -38,19 +38,19 @@ export interface UpstreamTradeTraversalRequest {
      */
     notProduct?: string[];
     /**
-     * Component node filter. Only return supply chains that contain at least one edge with 1+ of the specified HS codes.
+     * Component edge filter. Only return supply chains that contain at least one edge with 1+ of the specified HS codes.
      */
     component?: string[];
     /**
-     * Component node filter. Only return supply chains that contain no edges with any of the specified HS codes.
+     * Component edge filter. Only return supply chains that contain no edges with any of the specified HS codes.
      */
     notComponent?: string[];
     /**
-     * Minimum date edge filter. Only return supply chains with edge dates that are greater than or equal to this date.
+     * Minimum date edge filter in <YYYY-MM-DD> format. Only return supply chains with edge dates that are greater than or equal to this date.
      */
     minDate?: string;
     /**
-     * Maximum date edge filter. Only return supply chains with edge dates that are less than or equal to this date.
+     * Maximum date edge filter in <YYYY-MM-DD> format. Only return supply chains with edge dates that are less than or equal to this date.
      */
     maxDate?: string;
     /**
@@ -58,7 +58,7 @@ export interface UpstreamTradeTraversalRequest {
      */
     maxDepth?: number;
     /**
-     * The maximum number of results to return. Default and maximum values are 25,000.
+     * The maximum number of results to return. Default is no limit.
      */
     limit?: number;
 }

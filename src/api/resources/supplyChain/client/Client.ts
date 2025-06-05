@@ -34,7 +34,7 @@ export class SupplyChain {
     constructor(protected readonly _options: SupplyChain.Options = {}) {}
 
     /**
-     * Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them
+     * Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
      *
      * @param {string} id - The root entity identifier.
      * @param {Sayari.UpstreamTradeTraversalRequest} request
