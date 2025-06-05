@@ -19,16 +19,15 @@ export const TraversalResponse: core.serialization.ObjectSchema<
     countries: core.serialization.list(Country),
     types: core.serialization.list(core.serialization.string()),
     name: core.serialization.string(),
-    watchlist: core.serialization.boolean(),
     psa: core.serialization.boolean(),
     offset: core.serialization.number(),
     limit: core.serialization.number(),
     next: core.serialization.boolean(),
-    partialResults: core.serialization.property("partial_results", core.serialization.boolean()),
     data: core.serialization.list(TraversalData),
     sanctioned: core.serialization.boolean().optional(),
     pep: core.serialization.boolean().optional(),
     exploredCount: core.serialization.property("explored_count", core.serialization.number()),
+    partialResults: core.serialization.property("partial_results", core.serialization.boolean()),
 });
 
 export declare namespace TraversalResponse {
@@ -39,15 +38,14 @@ export declare namespace TraversalResponse {
         countries: Country.Raw[];
         types: string[];
         name: string;
-        watchlist: boolean;
         psa: boolean;
         offset: number;
         limit: number;
         next: boolean;
-        partial_results: boolean;
         data: TraversalData.Raw[];
         sanctioned?: boolean | null;
         pep?: boolean | null;
         explored_count: number;
+        partial_results: boolean;
     }
 }
