@@ -17,6 +17,8 @@ export const ShipmentMetadata: core.serialization.ObjectSchema<
     referenceId: core.serialization.property("reference_id", core.serialization.string()),
     entityId: core.serialization.property("entity_id", core.serialization.string()),
     departureAddress: core.serialization.property("departure_address", AddressProperties.optional()),
+    shipperAddress: core.serialization.property("shipper_address", AddressProperties.optional()),
+    receiverAddress: core.serialization.property("receiver_address", AddressProperties.optional()),
     type: core.serialization.string(),
     sources: core.serialization.list(core.serialization.string()),
     departureCountry: core.serialization.property("departure_country", core.serialization.list(Country)),
@@ -29,6 +31,8 @@ export declare namespace ShipmentMetadata {
         reference_id: string;
         entity_id: string;
         departure_address?: AddressProperties.Raw | null;
+        shipper_address?: AddressProperties.Raw | null;
+        receiver_address?: AddressProperties.Raw | null;
         type: string;
         sources: string[];
         departure_country: Country.Raw[];
