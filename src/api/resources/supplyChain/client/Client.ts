@@ -34,7 +34,7 @@ export class SupplyChain {
     constructor(protected readonly _options: SupplyChain.Options = {}) {}
 
     /**
-     * Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them
+     * Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
      *
      * @param {string} id - The root entity identifier.
      * @param {Sayari.UpstreamTradeTraversalRequest} request
@@ -64,6 +64,13 @@ export class SupplyChain {
             notRisk,
             countries,
             notCountries,
+            shipmentCountry,
+            notShipmentCountry,
+            tier1ShipmentCountry,
+            tier2ShipmentCountry,
+            tier3ShipmentCountry,
+            tier4ShipmentCountry,
+            tier5ShipmentCountry,
             product,
             notProduct,
             component,
@@ -88,6 +95,34 @@ export class SupplyChain {
 
         if (notCountries != null) {
             _queryParams["-countries"] = toJson(notCountries);
+        }
+
+        if (shipmentCountry != null) {
+            _queryParams["shipment_country"] = toJson(shipmentCountry);
+        }
+
+        if (notShipmentCountry != null) {
+            _queryParams["-shipment_country"] = toJson(notShipmentCountry);
+        }
+
+        if (tier1ShipmentCountry != null) {
+            _queryParams["tier1_shipment_country"] = toJson(tier1ShipmentCountry);
+        }
+
+        if (tier2ShipmentCountry != null) {
+            _queryParams["tier2_shipment_country"] = toJson(tier2ShipmentCountry);
+        }
+
+        if (tier3ShipmentCountry != null) {
+            _queryParams["tier3_shipment_country"] = toJson(tier3ShipmentCountry);
+        }
+
+        if (tier4ShipmentCountry != null) {
+            _queryParams["tier4_shipment_country"] = toJson(tier4ShipmentCountry);
+        }
+
+        if (tier5ShipmentCountry != null) {
+            _queryParams["tier5_shipment_country"] = toJson(tier5ShipmentCountry);
         }
 
         if (product != null) {

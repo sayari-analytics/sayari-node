@@ -33,7 +33,7 @@ export class Notifications {
     constructor(protected readonly _options: Notifications.Options = {}) {}
 
     /**
-     * The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
+     * <Warning>This endpoint is deprecated.</Warning> The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
      *
      * @param {string} id - Unique identifier of the project
      * @param {Sayari.ProjectNotifications} request
@@ -214,7 +214,7 @@ export class Notifications {
     }
 
     /**
-     * <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The Resource Notifications endpoint returns a list of notifications for a saved entity.
+     * <Warning>This endpoint is deprecated.</Warning> The Resource Notifications endpoint returns a list of notifications for a saved entity.
      *
      * @param {string} id - Unique identifier of the resource
      * @param {Sayari.ResourceNotifications} request
@@ -383,7 +383,7 @@ export class Notifications {
     }
 
     /**
-     * Deletes all notifications from a project.
+     * <Warning>This endpoint is deprecated.</Warning> Deletes all notifications from a project.
      *
      * @param {string} projectId
      * @param {Notifications.RequestOptions} requestOptions - Request-specific configuration.
@@ -512,7 +512,7 @@ export class Notifications {
     }
 
     /**
-     * Deletes notifications for saved resources of an entity.
+     * <Warning>This endpoint is deprecated.</Warning> Deletes notifications for saved resources of an entity.
      *
      * @param {string} entityId
      * @param {Notifications.RequestOptions} requestOptions - Request-specific configuration.
@@ -641,7 +641,7 @@ export class Notifications {
     }
 
     /**
-     * Deletes notifications for a saved resource.
+     * <Warning>This endpoint is deprecated.</Warning> Deletes notifications for a saved resource.
      *
      * @param {string} resourceId
      * @param {Notifications.RequestOptions} requestOptions - Request-specific configuration.
