@@ -13,8 +13,8 @@ export const TradeTraversalEntity: core.serialization.ObjectSchema<
     id: core.serialization.string(),
     type: core.serialization.string(),
     label: core.serialization.string(),
+    riskFactors: core.serialization.property("risk_factors", core.serialization.list(core.serialization.string())),
     countries: core.serialization.list(core.serialization.string()),
-    risk: core.serialization.list(core.serialization.string()),
 });
 
 export declare namespace TradeTraversalEntity {
@@ -22,7 +22,7 @@ export declare namespace TradeTraversalEntity {
         id: string;
         type: string;
         label: string;
+        risk_factors: string[];
         countries: string[];
-        risk: string[];
     }
 }

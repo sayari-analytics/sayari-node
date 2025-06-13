@@ -16,6 +16,8 @@ export * as negativeNews from "./negativeNews";
 export * from "./negativeNews/types";
 export * as notifications from "./notifications";
 export * from "./notifications/types";
+export * as projectEntity from "./projectEntity";
+export * from "./projectEntity/types";
 export * as project from "./project";
 export * from "./project/types";
 export * as record from "./record";

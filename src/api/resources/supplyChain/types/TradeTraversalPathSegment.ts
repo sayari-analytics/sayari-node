@@ -5,6 +5,10 @@
 import * as Sayari from "../../../index";
 
 export interface TradeTraversalPathSegment {
-    entity: Sayari.TradeTraversalEntity;
-    products: Sayari.TradeTraversalProduct[];
+    /** Associated tier for that path segment (1-5) */
+    tier: number;
+    /** Supplier entity ID */
+    entityId: string;
+    /** Components shipped by the supplier */
+    components: Sayari.TradeTraversalComponent[];
 }

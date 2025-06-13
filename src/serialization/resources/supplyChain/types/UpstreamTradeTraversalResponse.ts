@@ -5,7 +5,8 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { TradeTraversalPath } from "./TradeTraversalPath";
+import { TradeTraversalFilters } from "./TradeTraversalFilters";
+import { TradeTraversalData } from "./TradeTraversalData";
 
 export const UpstreamTradeTraversalResponse: core.serialization.ObjectSchema<
     serializers.UpstreamTradeTraversalResponse.Raw,
@@ -14,7 +15,10 @@ export const UpstreamTradeTraversalResponse: core.serialization.ObjectSchema<
     status: core.serialization.number().optional(),
     success: core.serialization.boolean().optional(),
     message: core.serialization.string().optional(),
-    data: core.serialization.list(TradeTraversalPath),
+    filters: TradeTraversalFilters,
+    data: TradeTraversalData,
+    exploredCount: core.serialization.property("explored_count", core.serialization.number()),
+    partialResults: core.serialization.property("partial_results", core.serialization.boolean()),
 });
 
 export declare namespace UpstreamTradeTraversalResponse {
@@ -22,6 +26,9 @@ export declare namespace UpstreamTradeTraversalResponse {
         status?: number | null;
         success?: boolean | null;
         message?: string | null;
-        data: TradeTraversalPath.Raw[];
+        filters: TradeTraversalFilters.Raw;
+        data: TradeTraversalData.Raw;
+        explored_count: number;
+        partial_results: boolean;
     }
 }
