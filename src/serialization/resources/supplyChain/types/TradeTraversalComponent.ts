@@ -5,15 +5,12 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { HsCodeWithDescription } from "./HsCodeWithDescription";
 
-export const TradeTraversalProduct: core.serialization.ObjectSchema<
-    serializers.TradeTraversalProduct.Raw,
-    Sayari.TradeTraversalProduct
+export const TradeTraversalComponent: core.serialization.ObjectSchema<
+    serializers.TradeTraversalComponent.Raw,
+    Sayari.TradeTraversalComponent
 > = core.serialization.object({
-    hsCode: core.serialization.property("hs_code", HsCodeWithDescription),
-    minDate: core.serialization.property("min_date", core.serialization.string()),
-    maxDate: core.serialization.property("max_date", core.serialization.string()),
+    hsCode: core.serialization.property("hs_code", core.serialization.string()),
     arrivalCountries: core.serialization.property(
         "arrival_countries",
         core.serialization.list(core.serialization.string()),
@@ -22,14 +19,16 @@ export const TradeTraversalProduct: core.serialization.ObjectSchema<
         "departure_countries",
         core.serialization.list(core.serialization.string()),
     ),
+    minDate: core.serialization.property("min_date", core.serialization.string().optional()),
+    maxDate: core.serialization.property("max_date", core.serialization.string().optional()),
 });
 
-export declare namespace TradeTraversalProduct {
+export declare namespace TradeTraversalComponent {
     export interface Raw {
-        hs_code: HsCodeWithDescription.Raw;
-        min_date: string;
-        max_date: string;
+        hs_code: string;
         arrival_countries: string[];
         departure_countries: string[];
+        min_date?: string | null;
+        max_date?: string | null;
     }
 }
