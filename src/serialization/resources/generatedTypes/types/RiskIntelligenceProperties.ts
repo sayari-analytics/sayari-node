@@ -18,6 +18,7 @@ export const RiskIntelligenceProperties: core.serialization.ObjectSchema<
     list: core.serialization.string().optional(),
     program: core.serialization.string().optional(),
     reason: core.serialization.string().optional(),
+    score: core.serialization.number().optional(),
     toDate: core.serialization.property("to_date", core.serialization.string().optional()),
     type: Tag,
 });
@@ -31,6 +32,7 @@ export declare namespace RiskIntelligenceProperties {
         list?: string | null;
         program?: string | null;
         reason?: string | null;
+        score?: number | null;
         to_date?: string | null;
         type: Tag.Raw;
     }

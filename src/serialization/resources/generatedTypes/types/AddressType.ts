@@ -14,6 +14,7 @@ export const AddressType: core.serialization.Schema<serializers.AddressType.Raw,
         "mailing",
         "operations",
         "physical",
+        "place_of_birth",
         "receiver_address",
         "registered",
         "shipper_address",
@@ -28,6 +29,7 @@ export declare namespace AddressType {
         | "mailing"
         | "operations"
         | "physical"
+        | "place_of_birth"
         | "receiver_address"
         | "registered"
         | "shipper_address"

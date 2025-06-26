@@ -41,6 +41,14 @@ export const BusinessPurposeStandard: core.serialization.Schema<
     "SSIC2020",
     "TOL2008",
     "TSIC2552",
+    "can_gsin",
+    "can_object_code",
+    "eu_cpv",
+    "gbr_grant_programme_code",
+    "rus_okdp",
+    "rus_okpd2",
+    "rus_okved",
+    "usa_psc",
 ]);
 
 export declare namespace BusinessPurposeStandard {
@@ -75,5 +83,13 @@ export declare namespace BusinessPurposeStandard {
         | "SKD2008"
         | "SSIC2020"
         | "TOL2008"
-        | "TSIC2552";
+        | "TSIC2552"
+        | "can_gsin"
+        | "can_object_code"
+        | "eu_cpv"
+        | "gbr_grant_programme_code"
+        | "rus_okdp"
+        | "rus_okpd2"
+        | "rus_okved"
+        | "usa_psc";
 }

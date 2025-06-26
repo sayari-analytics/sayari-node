@@ -98,7 +98,31 @@ export type BusinessPurposeStandard =
     | "TOL2008"
     /**
      * การจัดประเภทมาตรฐานอุตสาหกรรมประเทศไทย ปี 2552 - Thailand Standard Industrial Classification, Rev. 2009 */
-    | "TSIC2552";
+    | "TSIC2552"
+    /**
+     * Canada Goods and Services Identification Number */
+    | "can_gsin"
+    /**
+     * Canada Economic Object Classification */
+    | "can_object_code"
+    /**
+     * European Union Common Procurement Vocabulary */
+    | "eu_cpv"
+    /**
+     * UK Grant Program Code */
+    | "gbr_grant_programme_code"
+    /**
+     * Russia Classification of Products by Economic Activity */
+    | "rus_okdp"
+    /**
+     * Russia Classification of Products by Economic Activity, Rev. 2014 */
+    | "rus_okpd2"
+    /**
+     * Russia Classification of Types of Economic Activity */
+    | "rus_okved"
+    /**
+     * USA Product or Service Code */
+    | "usa_psc";
 export const BusinessPurposeStandard = {
     Adgm: "ADGM",
     Ateco: "ATECO",
@@ -131,4 +155,12 @@ export const BusinessPurposeStandard = {
     Ssic2020: "SSIC2020",
     Tol2008: "TOL2008",
     Tsic2552: "TSIC2552",
+    CanGsin: "can_gsin",
+    CanObjectCode: "can_object_code",
+    EuCpv: "eu_cpv",
+    GbrGrantProgrammeCode: "gbr_grant_programme_code",
+    RusOkdp: "rus_okdp",
+    RusOkpd2: "rus_okpd2",
+    RusOkved: "rus_okved",
+    UsaPsc: "usa_psc",
 } as const;

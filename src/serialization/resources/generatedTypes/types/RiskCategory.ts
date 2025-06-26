@@ -6,26 +6,26 @@ import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
-export const RiskCategories: core.serialization.Schema<serializers.RiskCategories.Raw, Sayari.RiskCategories> =
+export const RiskCategory: core.serialization.Schema<serializers.RiskCategory.Raw, Sayari.RiskCategory> =
     core.serialization.enum_([
-        "forced_labor",
-        "export_controls",
-        "sanctions",
-        "political_exposure",
-        "environmental_risk",
-        "regulatory_action",
         "adverse_media",
-        "possibly_same_as_network_risk",
+        "environmental_risk",
+        "export_controls",
+        "forced_labor",
+        "political_exposure",
+        "regulatory_action",
+        "sanctions",
+        "sanctions_and_export_control_lists",
     ]);
 
-export declare namespace RiskCategories {
+export declare namespace RiskCategory {
     export type Raw =
-        | "forced_labor"
-        | "export_controls"
-        | "sanctions"
-        | "political_exposure"
-        | "environmental_risk"
-        | "regulatory_action"
         | "adverse_media"
-        | "possibly_same_as_network_risk";
+        | "environmental_risk"
+        | "export_controls"
+        | "forced_labor"
+        | "political_exposure"
+        | "regulatory_action"
+        | "sanctions"
+        | "sanctions_and_export_control_lists";
 }

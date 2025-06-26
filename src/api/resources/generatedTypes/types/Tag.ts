@@ -8,6 +8,7 @@
 export type Tag =
     | "aspi_uyghur_forced_labor_report_entity"
     | "bis_boycott_requester_list"
+    | "esg_score"
     | "export_controls"
     | "export_controls_bis_entity"
     | "forced_labor_xinjiang_contractors"
@@ -31,6 +32,7 @@ export type Tag =
 export const Tag = {
     AspiUyghurForcedLaborReportEntity: "aspi_uyghur_forced_labor_report_entity",
     BisBoycottRequesterList: "bis_boycott_requester_list",
+    EsgScore: "esg_score",
     ExportControls: "export_controls",
     ExportControlsBisEntity: "export_controls_bis_entity",
     ForcedLaborXinjiangContractors: "forced_labor_xinjiang_contractors",
