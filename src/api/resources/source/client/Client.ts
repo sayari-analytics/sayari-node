@@ -33,7 +33,7 @@ export class Source {
     constructor(protected readonly _options: Source.Options = {}) {}
 
     /**
-     * Returns metadata for all sources that Sayari collects data from
+     * <Warning>This endpoint is deprecated. Use /v1/ontology/sources instead.</Warning> Returns metadata for all sources that Sayari collects data from
      *
      * @param {Sayari.ListSources} request
      * @param {Source.RequestOptions} requestOptions - Request-specific configuration.
@@ -168,7 +168,7 @@ export class Source {
     }
 
     /**
-     * Returns metadata for a source that Sayari collects data from
+     * <Warning>This endpoint is deprecated. Use /v1/ontology/sources instead.</Warning> Returns metadata for a source that Sayari collects data from
      *
      * @param {string} id - The unique identifier for a source in the database
      * @param {Source.RequestOptions} requestOptions - Request-specific configuration.

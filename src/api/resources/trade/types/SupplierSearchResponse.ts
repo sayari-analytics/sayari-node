@@ -227,7 +227,7 @@ import * as Sayari from "../../../index";
  *                         },
  *                         level: Sayari.RiskLevel.Relevant
  *                     },
- *                     [Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponents]: {
+ *                     [Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponentsDirect]: {
  *                         value: 1,
  *                         metadata: {
  *                             "origin_shipment_product": [
@@ -245,7 +245,7 @@ import * as Sayari from "../../../index";
  *                         },
  *                         level: Sayari.RiskLevel.Relevant
  *                     },
- *                     [Sayari.Risk.ExportsBisHighPriorityItems]: {
+ *                     [Sayari.Risk.ExportsBisHighPriorityItemsIndirect]: {
  *                         value: 1,
  *                         metadata: {
  *                             "origin_shipment_product": [

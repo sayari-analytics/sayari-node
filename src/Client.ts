@@ -11,6 +11,8 @@ import { Info } from "./api/resources/info/client/Client";
 import { Metadata } from "./api/resources/metadata/client/Client";
 import { NegativeNews } from "./api/resources/negativeNews/client/Client";
 import { Notifications } from "./api/resources/notifications/client/Client";
+import { Ontology } from "./api/resources/ontology/client/Client";
+import { ProjectEntity } from "./api/resources/projectEntity/client/Client";
 import { Project } from "./api/resources/project/client/Client";
 import { Record_ } from "./api/resources/record/client/Client";
 import { Resolution } from "./api/resources/resolution/client/Client";
@@ -51,6 +53,8 @@ export class SayariClient {
     protected _metadata: Metadata | undefined;
     protected _negativeNews: NegativeNews | undefined;
     protected _notifications: Notifications | undefined;
+    protected _ontology: Ontology | undefined;
+    protected _projectEntity: ProjectEntity | undefined;
     protected _project: Project | undefined;
     protected _record: Record_ | undefined;
     protected _resolution: Resolution | undefined;
@@ -115,6 +119,20 @@ export class SayariClient {
 
     public get notifications(): Notifications {
         return (this._notifications ??= new Notifications({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    public get ontology(): Ontology {
+        return (this._ontology ??= new Ontology({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    public get projectEntity(): ProjectEntity {
+        return (this._projectEntity ??= new ProjectEntity({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));

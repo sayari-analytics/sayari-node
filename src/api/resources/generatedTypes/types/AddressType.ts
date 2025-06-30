@@ -25,6 +25,9 @@ export type AddressType =
      * An address at which an entity has a physical presence */
     | "physical"
     /**
+     * An address at which an individual was born */
+    | "place_of_birth"
+    /**
      * The address reported by the importer for where a shipment is received */
     | "receiver_address"
     /**
@@ -43,6 +46,7 @@ export const AddressType = {
     Mailing: "mailing",
     Operations: "operations",
     Physical: "physical",
+    PlaceOfBirth: "place_of_birth",
     ReceiverAddress: "receiver_address",
     Registered: "registered",
     ShipperAddress: "shipper_address",

@@ -9,8 +9,8 @@ import * as core from "../../../../core";
 export const MonetaryValueContext: core.serialization.Schema<
     serializers.MonetaryValueContext.Raw,
     Sayari.MonetaryValueContext
-> = core.serialization.enum_(["assessed_value", "cost_insurance_and_freight", "free_on_board"]);
+> = core.serialization.enum_(["assessed_value", "contract_value", "cost_insurance_and_freight", "free_on_board"]);
 
 export declare namespace MonetaryValueContext {
-    export type Raw = "assessed_value" | "cost_insurance_and_freight" | "free_on_board";
+    export type Raw = "assessed_value" | "contract_value" | "cost_insurance_and_freight" | "free_on_board";
 }

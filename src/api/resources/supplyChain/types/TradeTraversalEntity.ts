@@ -6,6 +6,6 @@ export interface TradeTraversalEntity {
     id: string;
     type: string;
     label: string;
+    riskFactors: string[];
     countries: string[];
-    risk: string[];
 }

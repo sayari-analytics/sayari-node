@@ -19,6 +19,8 @@ export interface RiskIntelligenceProperties {
     program?: string;
     /** Explanation or legal basis for the risk intelligence */
     reason?: string;
+    /** A value indicating the assessed level of a certain risk tied to an entity. Meaning and scale depend on the specific scoring model used. */
+    score?: number;
     /** end date of attribute */
     toDate?: string;
     /** Type of risk intelligence */
