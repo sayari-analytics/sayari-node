@@ -128,6 +128,9 @@ export type IdentifierType =
      * Austrian Company Register Number */
     | "aut_firmenbuch_no"
     /**
+     * Austria VAT Identification Number -  Tax Identification Number. 11-digit ID, starting with 'ATU'+8 digits. For businesses, the structure of the Austrian VAT number (UID-Nummer) starts with the prefix “AT” (country code), followed by the letter “U” (Umsatzsteuer) and by 8 unique digits. */
+    | "aut_uid"
+    /**
      * Azerbaijan TIN. Unique number assigned to taxpayers registered with Azerbaijan State Tax Service. */
     | "aze_tin_number"
     /**
@@ -146,6 +149,9 @@ export type IdentifierType =
      * Belgium unique natural person ID number. */
     | "bel_national_register_no"
     /**
+     * Value-added tax identification number in Belgium. */
+    | "bel_vat_number"
+    /**
      * Burkina Faso tax ID number */
     | "bfa_entity_id"
     /**
@@ -154,6 +160,9 @@ export type IdentifierType =
     /**
      * Bangladesh Passport Number */
     | "bgd_passport"
+    /**
+     * Bangladesh TIN (Tax Identification Number) - a 12-digit number assigned to individuals and entities by the National Board of Revenue (NBR) for tax purposes. */
+    | "bgd_tin"
     /**
      * A hashed representation of a Bulgarian citizenship number */
     | "bgr_egn_hashed"
@@ -288,6 +297,9 @@ export type IdentifierType =
      * Unique Canada province ID number. Assigned to every entity registered with the Prince Edward Island Corporate Registry. */
     | "can_pe_registration_number"
     /**
+     * Canada Québec Register of Money Services Businesses license number assigned to entities authorized to conduct money services in Québec. */
+    | "can_qc_mbs_num"
+    /**
      * Penalty number assigned by the  Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
     | "can_qc_sap_registry_ref_num"
     /**
@@ -296,6 +308,9 @@ export type IdentifierType =
     /**
      * Unique Canada ID number. Assigned to every registered trademark. */
     | "can_tm_registration_no"
+    /**
+     * Unique identifier assigned to entities registered with the CCAMLR for fishing activities in the Southern Ocean. */
+    | "ccamlr_rfmo_id"
     /**
      * CCS Vessel Registration Number */
     | "ccs_registration"
@@ -355,6 +370,9 @@ export type IdentifierType =
      * Cameroon Tax Registration Number. Unique number assigned to taxpayers in Cameroon and issued by the Directorate General of Tax. */
     | "cm_nui_tax_reg_num"
     /**
+     * A unique identifier representing an Entity in the CMA universe for Credit Default Swaps (CDS) data. */
+    | "cma_id"
+    /**
      * Unique Hong Kong tax ID number. Assigned to every company registered with the Hong Kong Business Registration Office. */
     | "cn_hk_br_number"
     /**
@@ -369,6 +387,9 @@ export type IdentifierType =
     /**
      * China customs code for import and export. May include China USCC; China OC; U.S. SSN; or U.S. EIN. */
     | "cn_importexport_code"
+    /**
+     * Identifier assigned to investment funds in the People's Republic of China for regulatory, tracking, and reporting purposes. */
+    | "cn_invest_code"
     /**
      * A Chinese company organization code */
     | "cn_organization_code"
@@ -481,6 +502,9 @@ export type IdentifierType =
      * Germany commercial registry ID number concatenated with registry district court XJustiz ID code */
     | "deu_registernummer"
     /**
+     * Value-added tax identification number in Germany (Umsatzsteuer-Identifikationsnummer). Unique identification of a legal entity that participates in the VAT trade in goods or services. */
+    | "deu_vat_number"
+    /**
      * Djibouti corporate registry ID number */
     | "dji_rcs_number"
     /**
@@ -538,6 +562,9 @@ export type IdentifierType =
      * Value taken from datos registrales section used to identify companies in the Borme. Not an official identifier. */
     | "esp_borme_reg_id"
     /**
+     * Spain company national registration and tax ID number (certificado de identificación fiscal). CIF is the tax identification number that identifies a company or legal entity in Spain. */
+    | "esp_cif"
+    /**
      * Spain Internal Employee Number */
     | "esp_internal_employee_number"
     /**
@@ -563,8 +590,20 @@ export type IdentifierType =
     | "eu_sanction_rn"
     | "euid"
     /**
+     * The FDIC Certificate ID is a unique numeric value that of to 5 digits. It is assigned to each depository institution by the Federal Deposit Insurance Corporation (FDIC). */
+    | "fdic_num"
+    /**
+     * The Fed Financial Institution ID (or RSSD ID) is a unique identifier assigned to financial institutions by the Federal Reserve. While the length of the RSSD ID varies by institution, it cannot exceed 10 numerical digits. */
+    | "fed_fin_id"
+    /**
+     * Unique identifier assigned to entities registered with the FFA for fishing activities in the Pacific Islands region. */
+    | "ffa_rfmo_id"
+    /**
      * Finnish Business ID */
     | "fin_business_id"
+    /**
+     * Value-added tax identification number in Finland (ALV nro Momsnummer). */
+    | "fin_vat_number"
     /**
      * USA Florida Broward County parcel ID number */
     | "fl_prop_folio"
@@ -596,6 +635,9 @@ export type IdentifierType =
      * United Kingdom Confirmation Statement Company Number */
     | "gbr_company_number"
     /**
+     * UK Contract Identifier Code */
+    | "gbr_contract_id"
+    /**
      * Unique reference number for a disqualification case in the UK. Can contain alphanumeric characters. */
     | "gbr_disqualification_case_num"
     /**
@@ -605,11 +647,17 @@ export type IdentifierType =
      * Unique UK government organization ID number. Assigned to government organizations in the UK. */
     | "gbr_go_no"
     /**
+     * UK Grant Identifier Code */
+    | "gbr_grant_id"
+    /**
      * UK HM Treasury OFSI sanctions list ID number */
     | "gbr_hm_treasury_sanction_group_id"
     /**
      * Unique UK ID number. Assigned to every registered trademark. */
     | "gbr_ipo_trademark_reg_no"
+    /**
+     * United Kingdom Trade Internal Shipment ID */
+    | "gbr_trade_internal_shipment_id"
     /**
      * Unique UK internal ID number. Assigned to every trustee registered with the Charity Commission for England and Wales. */
     | "gbr_trustee_id"
@@ -631,6 +679,9 @@ export type IdentifierType =
     /**
      * Georgian state registration number */
     | "geo_state_registration_number"
+    /**
+     * Unique identifier assigned to entities registered with the GFCM for fishing activities in the Mediterranean and Black Seas. */
+    | "gfcm_rfmo_id"
     /**
      * Guernsey Corporate Registry Number */
     | "ggy_corporate_reg_number"
@@ -665,6 +716,9 @@ export type IdentifierType =
      * Hong Kong Stock Exchange Code */
     | "hkg_stock_code"
     /**
+     * Hong Kong Reference Code */
+    | "hkg_tender_ref_code"
+    /**
      * Honduras Cortes commercial registry ID number */
     | "hnd_coc_company_registration_number"
     /**
@@ -692,6 +746,9 @@ export type IdentifierType =
      * Unique Hungary Tax ID. Issued to companies registered in Hungary. */
     | "hun_tax_number"
     /**
+     * Unique identifier assigned to entities registered with the IATTC for fishing activities in the Eastern Pacific Ocean. */
+    | "iattc_rfmo_id"
+    /**
      * Unique ID number. Assigned to individual bank accounts for use in cross-border financial transactions. */
     | "iban"
     /**
@@ -703,6 +760,9 @@ export type IdentifierType =
     /**
      * Indonesia National identification number issued to all Indonesian citizens. This ID represents a unique 16-digit number known as a Nomor Induk Kependudukan (NIK). */
     | "idn_nik_id"
+    /**
+     * Deed of Establishment (SK) Number, a document required to establish a company in Indonesia. */
+    | "idn_no_sk"
     /**
      * Indonesian passport number */
     | "idn_passport"
@@ -749,6 +809,9 @@ export type IdentifierType =
      * India foreign company registration number */
     | "ind_fcrn"
     /**
+     * GSTIN, Goods and Services Tax Identification Number, represents a unique 15-digit identification number assigned to every taxpayer (primarily dealer or supplier or any business entity) registered under the GST regime in India. Alpha numeric. */
+    | "ind_gstin"
+    /**
      * Unique identifiers for each bank branch participating in India's National Electronic Funds Transfer (NEFT), Real Time Gross Settlement (RTGS), and Immediate Payment Service (IMPS) electronic funds transfer systems. */
     | "ind_ifsc"
     /**
@@ -776,8 +839,17 @@ export type IdentifierType =
      * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
     | "int_maritime_org_id"
     /**
+     * Internal ID type used to represent curated entity resolution merge rules. Only added in enrichment. */
+    | "internal_curated_merge_id"
+    /**
+     * Internal ID type used to represent curated entity split rules. Only added in enrichment, not used to merge. */
+    | "internal_curated_split_id"
+    /**
      * Hex digest of data that should be used for resolution (e.g., name=Sayari&registration_date=2000-01-01) */
     | "internal_md5"
+    /**
+     * Unique identifier assigned to entities registered with the IOTC for fishing activities in the Indian Ocean. */
+    | "iotc_rfmo_id"
     /**
      * Iraqi Stock Exchange Symbol */
     | "iraqi_stock_exchange_symbol"
@@ -870,6 +942,9 @@ export type IdentifierType =
      * Company code from EDINET */
     | "jpn_edinet_code"
     /**
+     * Japan Trade Internal Shipment ID */
+    | "jpn_trade_internal_shipment_id"
+    /**
      * A 12-digit Kazakh business identification number */
     | "kaz_bin"
     /**
@@ -895,6 +970,9 @@ export type IdentifierType =
     /**
      * Korean corporate registration number */
     | "kor_corporate_registration_number"
+    /**
+     * South Korea Trade Internal Shipment ID */
+    | "kor_trade_internal_shipment_id"
     /**
      * Ticker number for the Korean Stock Exchange */
     | "krx_ticker_code"
@@ -1018,6 +1096,9 @@ export type IdentifierType =
      * North Macedonia corporate registry ID number */
     | "mkd_embs_number"
     /**
+     * This package contains the Money Market Directories ID (MMD) with daily delivery. */
+    | "mmm_id"
+    /**
      * Myanmar corporate registry ID for companies */
     | "mmr_corp_id"
     /**
@@ -1098,6 +1179,9 @@ export type IdentifierType =
      * Malaysia passport number */
     | "mys_passport"
     /**
+     * The NCUA Charter ID is a numeric value that can be up to 5 digits. It is assigned to credit unions, including corporate credit unions, by the National Credit Union Administration for all NCUA-insured credit unions and some non-federally insured credit unions. */
+    | "ncua_num"
+    /**
      * NG-Check entity internal ID number */
     | "ng_check_internal_id"
     /**
@@ -1139,6 +1223,9 @@ export type IdentifierType =
     /**
      * Norway Organisasjonsnummer */
     | "nor_org_no"
+    /**
+     * Unique identifier assigned to entities registered with the North Pacific Fisheries Commission (NPFC) for fishing activities in the North Pacific Ocean. */
+    | "npfc_rfmo_id"
     /**
      * Nepali Company Registration No. from National Information Technology Center */
     | "npl_co_reg_no"
@@ -1252,6 +1339,9 @@ export type IdentifierType =
      * North Korea Shipment ID */
     | "prk_shipment_id"
     /**
+     * Portugal corporate identification number (NIPC). The number of legal person identification (NIPC) generally corresponds to the tax identification number (TIN) and the Social Security identification number (NISS). */
+    | "prt_nipc"
+    /**
      * Portuguese Trust Number */
     | "prt_trust_number"
     /**
@@ -1299,6 +1389,9 @@ export type IdentifierType =
      * Kosovo registration number */
     | "rks_registration_number"
     /**
+     * Romanian Commercial Register ID (concatenated from jud_com, nr_com, and an_com from ROU/taxpayers) */
+    | "rou_commercial_register_id"
+    /**
      * Romania tax ID number */
     | "rou_company_registration_code"
     /**
@@ -1317,14 +1410,23 @@ export type IdentifierType =
      * A Russian company registration number with 12 digits */
     | "ru_ogrn"
     /**
+     * Russian registration number that is not specified specifically as an OGRN in source data */
+    | "ru_registration_number"
+    /**
      * Russia vessel registry ID number */
     | "ru_ship_register_id"
+    /**
+     * Russian tax identification number that is not specified specifically as an INN in source data */
+    | "ru_tin"
     /**
      * Russia Trade Internal Shipment ID */
     | "ru_trade_internal_shipment_id"
     /**
      * Russia Bank Identification Code */
     | "rus_bik_code"
+    /**
+     * Russia Contract Number */
+    | "rus_contract_number"
     /**
      * A unique concatenation of bill of lading number, date of customs declaration and Russia customs sequence number. */
     | "rus_declaration_number"
@@ -1356,6 +1458,9 @@ export type IdentifierType =
      * UID used to merge entities internally */
     | "sayari_internal_identifier"
     /**
+     * Internal Identifier used by SESAMm to label companies listed in their dataset. */
+    | "sesamm_company_id"
+    /**
      * Singapore Passport Number */
     | "sgp_passport"
     /**
@@ -1380,6 +1485,9 @@ export type IdentifierType =
      * San Marino Economic Operator Code */
     | "smr_economic_operator_code"
     /**
+     * A unique identifier implemented by SNL to identify companies in the SNL universe - SNL Financial Institutions Regulatory datase. */
+    | "snl_internal_id"
+    /**
      * Somalian UBI Number */
     | "som_ubi"
     /**
@@ -1388,6 +1496,12 @@ export type IdentifierType =
     /**
      * South African passport number */
     | "south_africa_passport_number"
+    /**
+     * S&P Global Company Identifier */
+    | "sp_company_id"
+    /**
+     * A unique identifier for companies in the Compustat database (Compustat Global Company Key). */
+    | "sp_key"
     /**
      * Unique Serbia ID number. Assigned to every entity registered with the Serbia Business Register Agency's Register of Beneficial Owners. */
     | "srb_beneficial_owner_id"
@@ -1409,6 +1523,9 @@ export type IdentifierType =
     /**
      * Slovakia legal person ID number */
     | "svk_ico_number"
+    /**
+     * Slovakia Value-Added Tax (VAT) Identification number used by entities. */
+    | "svk_vat_num"
     /**
      * ZAPST number used for shareholders and partners in Slovenia Corporate Registry */
     | "svn_ajpes_zapst_number"
@@ -1439,6 +1556,9 @@ export type IdentifierType =
     /**
      * Unique Syria ID number. Assigned to every legal entity registered with the Syria Ministry of Economy and Foreign Trade. */
     | "syria_commercial_register_number"
+    /**
+     * The Trucost Unique ID (TCUID) is an integer which is autogenerated whenever a new company is analyzed by Trucost.  The Trucost Unique Identifier is typically 5 to 6 digits in length, but may increase to 7 or more digits in length over time with extended coverage of companies by Trucost.  Both publicly traded companies and companies in private ownership are issued Trucost Unique IDs. */
+    | "tcu_id"
     /**
      * Thailand corporate registry ID number */
     | "tha_registration_no"
@@ -1514,6 +1634,12 @@ export type IdentifierType =
     /**
      * Tanzania Registration Number. Unique identifier issued by the Tanzania Business Registration and Licensing Agency and assigned to the registered entities. */
     | "tza_brela_reg_num"
+    /**
+     * Tanzania Single Administrative Document (TANSAD). Official customs declaration. This document is used to declare goods being imported or exported. */
+    | "tza_tansad_number"
+    /**
+     * Taxpayer Identification Number (TIN) is a unique identification number assigned to individuals and entities in Tanzania, largely for tax purposes. A TIN is issued by the Tanzania Revenue Authority (TRA) - the governing body responsible for tax administration in the country. */
+    | "tza_tin"
     /**
      * A UK company registration number. The pattern was sourced from the snapshot file documentation provided to us. When the first two characters are not digits, they have a special meaning. */
     | "uk_company_number"
@@ -1758,6 +1884,9 @@ export type IdentifierType =
      * USA Pennsylvania Department of State Business Entity ID Number */
     | "usa_pa_corporate_registry_id"
     /**
+     * USA Procurement Instrument Identifier */
+    | "usa_piid"
+    /**
      * USA Puerto Rico corporate registry ID number */
     | "usa_puerto_rico_register_number"
     /**
@@ -1846,6 +1975,9 @@ export type IdentifierType =
     /**
      * Uzbekistan tax ID number */
     | "uzb_tin_number"
+    /**
+     * Uzbekistan VAT number */
+    | "uzb_vat_number"
     /**
      * Validatis identification number */
     | "validatis_number"
@@ -1966,15 +2098,18 @@ export const IdentifierType = {
     AusCreditRepNumber: "aus_credit_rep_number",
     AusPassport: "aus_passport",
     AutFirmenbuchNo: "aut_firmenbuch_no",
+    AutUid: "aut_uid",
     AzeTinNumber: "aze_tin_number",
     BdBin: "bd_bin",
     BelEnterpriseNumber: "bel_enterprise_number",
     BelEstablishmentNumber: "bel_establishment_number",
     BelFsmaNameHash: "bel_fsma_name_hash",
     BelNationalRegisterNo: "bel_national_register_no",
+    BelVatNumber: "bel_vat_number",
     BfaEntityId: "bfa_entity_id",
     BfaRccmNumber: "bfa_rccm_number",
     BgdPassport: "bgd_passport",
+    BgdTin: "bgd_tin",
     BgrEgnHashed: "bgr_egn_hashed",
     BgrUic: "bgr_uic",
     BhCrNumber: "bh_cr_number",
@@ -2020,9 +2155,11 @@ export const IdentifierType = {
     CanNrdIndividualId: "can_nrd_individual_id",
     CanNsCorporateRegistry: "can_ns_corporate_registry",
     CanPeRegistrationNumber: "can_pe_registration_number",
+    CanQcMbsNum: "can_qc_mbs_num",
     CanQcSapRegistryRefNum: "can_qc_sap_registry_ref_num",
     CanTechsaleratorId: "can_techsalerator_id",
     CanTmRegistrationNo: "can_tm_registration_no",
+    CcamlrRfmoId: "ccamlr_rfmo_id",
     CcsRegistration: "ccs_registration",
     CheChIdNumber: "che_ch_id_number",
     CheSecoSanctionNumber: "che_seco_sanction_number",
@@ -2043,11 +2180,13 @@ export const IdentifierType = {
     ChnShanghaiStockExchangeCompanyCode: "chn_shanghai_stock_exchange_company_code",
     ChnShenzenSecCode: "chn_shenzen_sec_code",
     CmNuiTaxRegNum: "cm_nui_tax_reg_num",
+    CmaId: "cma_id",
     CnHkBrNumber: "cn_hk_br_number",
     CnHkCrNumber: "cn_hk_cr_number",
     CnHkFilingNumber: "cn_hk_filing_number",
     CnHurdInternalCompanyId: "cn_hurd_internal_company_id",
     CnImportexportCode: "cn_importexport_code",
+    CnInvestCode: "cn_invest_code",
     CnOrganizationCode: "cn_organization_code",
     CnQichachaInternalId: "cn_qichacha_internal_id",
     CnRegistrationNumber: "cn_registration_number",
@@ -2087,6 +2226,7 @@ export const IdentifierType = {
     DashAddress: "dash_address",
     DeuBafinId: "deu_bafin_id",
     DeuRegisternummer: "deu_registernummer",
+    DeuVatNumber: "deu_vat_number",
     DjiRcsNumber: "dji_rcs_number",
     DmaBusinessRegistryInternalId: "dma_business_registry_internal_id",
     DnkCvr: "dnk_cvr",
@@ -2106,6 +2246,7 @@ export const IdentifierType = {
     EgyPassport: "egy_passport",
     EspBeCode: "esp_be_code",
     EspBormeRegId: "esp_borme_reg_id",
+    EspCif: "esp_cif",
     EspInternalEmployeeNumber: "esp_internal_employee_number",
     EspNif: "esp_nif",
     EspTrNumber: "esp_tr_number",
@@ -2115,7 +2256,11 @@ export const IdentifierType = {
     EuFsdId: "eu_fsd_id",
     EuSanctionRn: "eu_sanction_rn",
     Euid: "euid",
+    FdicNum: "fdic_num",
+    FedFinId: "fed_fin_id",
+    FfaRfmoId: "ffa_rfmo_id",
     FinBusinessId: "fin_business_id",
+    FinVatNumber: "fin_vat_number",
     FlPropFolio: "fl_prop_folio",
     FlPropFolioDade: "fl_prop_folio_dade",
     FraAssetFreezeId: "fra_asset_freeze_id",
@@ -2126,11 +2271,14 @@ export const IdentifierType = {
     FroRegNum: "fro_reg_num",
     GbrCharityNo: "gbr_charity_no",
     GbrCompanyNumber: "gbr_company_number",
+    GbrContractId: "gbr_contract_id",
     GbrDisqualificationCaseNum: "gbr_disqualification_case_num",
     GbrEnforcementActionNum: "gbr_enforcement_action_num",
     GbrGoNo: "gbr_go_no",
+    GbrGrantId: "gbr_grant_id",
     GbrHmTreasurySanctionGroupId: "gbr_hm_treasury_sanction_group_id",
     GbrIpoTrademarkRegNo: "gbr_ipo_trademark_reg_no",
+    GbrTradeInternalShipmentId: "gbr_trade_internal_shipment_id",
     GbrTrusteeId: "gbr_trustee_id",
     GbrUkSanctionsId: "gbr_uk_sanctions_id",
     GbrVatNo: "gbr_vat_no",
@@ -2138,6 +2286,7 @@ export const IdentifierType = {
     GeoLegalCode: "geo_legal_code",
     GeoPersonalNumber: "geo_personal_number",
     GeoStateRegistrationNumber: "geo_state_registration_number",
+    GfcmRfmoId: "gfcm_rfmo_id",
     GgyCorporateRegNumber: "ggy_corporate_reg_number",
     GgyTrademarkNo: "ggy_trademark_no",
     GgyTrademarkSubmissionRef: "ggy_trademark_submission_ref",
@@ -2149,6 +2298,7 @@ export const IdentifierType = {
     GtmCuiNumber: "gtm_cui_number",
     GtmNitNumber: "gtm_nit_number",
     HkgStockCode: "hkg_stock_code",
+    HkgTenderRefCode: "hkg_tender_ref_code",
     HndCocCompanyRegistrationNumber: "hnd_coc_company_registration_number",
     HndTegucigalpaMatricula: "hnd_tegucigalpa_matricula",
     HongKongCaseNumber: "hong_kong_case_number",
@@ -2158,10 +2308,12 @@ export const IdentifierType = {
     HunKrsNumber: "hun_krs_number",
     HunPersonTaxId: "hun_person_tax_id",
     HunTaxNumber: "hun_tax_number",
+    IattcRfmoId: "iattc_rfmo_id",
     Iban: "iban",
     IcijOffshoreInternalId: "icij_offshore_internal_id",
     IcijOffshoreNodeId: "icij_offshore_node_id",
     IdnNikId: "idn_nik_id",
+    IdnNoSk: "idn_no_sk",
     IdnPassport: "idn_passport",
     IdnTaxId: "idn_tax_id",
     IdnTradeInternalShipmentId: "idn_trade_internal_shipment_id",
@@ -2177,6 +2329,7 @@ export const IdentifierType = {
     IndDarpanUid: "ind_darpan_uid",
     IndDirectorIdNumber: "ind_director_id_number",
     IndFcrn: "ind_fcrn",
+    IndGstin: "ind_gstin",
     IndIfsc: "ind_ifsc",
     IndLlpin: "ind_llpin",
     IndNseTickerCode: "ind_nse_ticker_code",
@@ -2186,7 +2339,10 @@ export const IdentifierType = {
     IndTin: "ind_tin",
     IndTrademarkSubmissionRef: "ind_trademark_submission_ref",
     IntMaritimeOrgId: "int_maritime_org_id",
+    InternalCuratedMergeId: "internal_curated_merge_id",
+    InternalCuratedSplitId: "internal_curated_split_id",
     InternalMd5: "internal_md5",
+    IotcRfmoId: "iotc_rfmo_id",
     IraqiStockExchangeSymbol: "iraqi_stock_exchange_symbol",
     IrlRcn: "irl_rcn",
     IrlRegistrationNo: "irl_registration_no",
@@ -2218,6 +2374,7 @@ export const IdentifierType = {
     JordanCompanyNo: "jordan_company_no",
     JpnCorporateNo: "jpn_corporate_no",
     JpnEdinetCode: "jpn_edinet_code",
+    JpnTradeInternalShipmentId: "jpn_trade_internal_shipment_id",
     KazBin: "kaz_bin",
     KazIdentifier: "kaz_identifier",
     KazOkpoNum: "kaz_okpo_num",
@@ -2228,6 +2385,7 @@ export const IdentifierType = {
     KhmTinNumber: "khm_tin_number",
     KorBusinessTin: "kor_business_tin",
     KorCorporateRegistrationNumber: "kor_corporate_registration_number",
+    KorTradeInternalShipmentId: "kor_trade_internal_shipment_id",
     KrxTickerCode: "krx_ticker_code",
     KwtPassport: "kwt_passport",
     LaoEnterpriseNumber: "lao_enterprise_number",
@@ -2270,6 +2428,7 @@ export const IdentifierType = {
     MkdArchiveNumber: "mkd_archive_number",
     MkdEmbsBranchNumber: "mkd_embs_branch_number",
     MkdEmbsNumber: "mkd_embs_number",
+    MmmId: "mmm_id",
     MmrCorpId: "mmr_corp_id",
     MmrOfficerId: "mmr_officer_id",
     MmrPersonalIdNo: "mmr_personal_id_no",
@@ -2298,6 +2457,7 @@ export const IdentifierType = {
     MysIdCardNo: "mys_id_card_no",
     MysMohaListNumber: "mys_moha_list_number",
     MysPassport: "mys_passport",
+    NcuaNum: "ncua_num",
     NgCheckInternalId: "ng_check_internal_id",
     NgaCrpRegInternalId: "nga_crp_reg_internal_id",
     NgaDrivers: "nga_drivers",
@@ -2312,6 +2472,7 @@ export const IdentifierType = {
     NldKvkBranchNumber: "nld_kvk_branch_number",
     NldKvkNumber: "nld_kvk_number",
     NorOrgNo: "nor_org_no",
+    NpfcRfmoId: "npfc_rfmo_id",
     NplCoRegNo: "npl_co_reg_no",
     NycBbl: "nyc_bbl",
     NycCrfn: "nyc_crfn",
@@ -2350,6 +2511,7 @@ export const IdentifierType = {
     PrkPassport: "prk_passport",
     PrkRegistrationId: "prk_registration_id",
     PrkShipmentId: "prk_shipment_id",
+    PrtNipc: "prt_nipc",
     PrtTrustNumber: "prt_trust_number",
     PrtVatNumber: "prt_vat_number",
     PryCedulaNumber: "pry_cedula_number",
@@ -2367,15 +2529,19 @@ export const IdentifierType = {
     RksBusinessNumber: "rks_business_number",
     RksFiscalNumber: "rks_fiscal_number",
     RksRegistrationNumber: "rks_registration_number",
+    RouCommercialRegisterId: "rou_commercial_register_id",
     RouCompanyRegistrationCode: "rou_company_registration_code",
     RouCompanyTin: "rou_company_tin",
     RouIdentityCard: "rou_identity_card",
     RouPersonalIdNumber: "rou_personal_id_number",
     RuInn: "ru_inn",
     RuOgrn: "ru_ogrn",
+    RuRegistrationNumber: "ru_registration_number",
     RuShipRegisterId: "ru_ship_register_id",
+    RuTin: "ru_tin",
     RuTradeInternalShipmentId: "ru_trade_internal_shipment_id",
     RusBikCode: "rus_bik_code",
+    RusContractNumber: "rus_contract_number",
     RusDeclarationNumber: "rus_declaration_number",
     RusMicexCode: "rus_micex_code",
     RusPassport: "rus_passport",
@@ -2386,6 +2552,7 @@ export const IdentifierType = {
     SauId: "sau_id",
     SauPassport: "sau_passport",
     SayariInternalIdentifier: "sayari_internal_identifier",
+    SesammCompanyId: "sesamm_company_id",
     SgpPassport: "sgp_passport",
     SgpUnqiueEntityNumber: "sgp_unqiue_entity_number",
     SigerInternalId: "siger_internal_id",
@@ -2394,9 +2561,12 @@ export const IdentifierType = {
     SlvNumeroIdentificacionTributaria: "slv_numero_identificacion_tributaria",
     SlvUidNumber: "slv_uid_number",
     SmrEconomicOperatorCode: "smr_economic_operator_code",
+    SnlInternalId: "snl_internal_id",
     SomUbi: "som_ubi",
     SouthAfricaEnterpriseNumber: "south_africa_enterprise_number",
     SouthAfricaPassportNumber: "south_africa_passport_number",
+    SpCompanyId: "sp_company_id",
+    SpKey: "sp_key",
     SrbBeneficialOwnerId: "srb_beneficial_owner_id",
     SrbBranchId: "srb_branch_id",
     SrbMbNumber: "srb_mb_number",
@@ -2404,6 +2574,7 @@ export const IdentifierType = {
     SsdPassport: "ssd_passport",
     StockTicker: "stock_ticker",
     SvkIcoNumber: "svk_ico_number",
+    SvkVatNum: "svk_vat_num",
     SvnAjpesZapstNumber: "svn_ajpes_zapst_number",
     SvnCoRegNo: "svn_co_reg_no",
     SvnVatNumber: "svn_vat_number",
@@ -2414,6 +2585,7 @@ export const IdentifierType = {
     SwiftBicCode: "swift_bic_code",
     SyrPassport: "syr_passport",
     SyriaCommercialRegisterNumber: "syria_commercial_register_number",
+    TcuId: "tcu_id",
     ThaRegistrationNo: "tha_registration_no",
     TjkEinNumber: "tjk_ein_number",
     TjkTinNumber: "tjk_tin_number",
@@ -2439,6 +2611,8 @@ export const IdentifierType = {
     TxPropId: "tx_prop_id",
     TxTaxId: "tx_tax_id",
     TzaBrelaRegNum: "tza_brela_reg_num",
+    TzaTansadNumber: "tza_tansad_number",
+    TzaTin: "tza_tin",
     UkCompanyNumber: "uk_company_number",
     UkFirmReferenceNumber: "uk_firm_reference_number",
     UkPassport: "uk_passport",
@@ -2522,6 +2696,7 @@ export const IdentifierType = {
     UsaOrRegno: "usa_or_regno",
     UsaOtiId: "usa_oti_id",
     UsaPaCorporateRegistryId: "usa_pa_corporate_registry_id",
+    UsaPiid: "usa_piid",
     UsaPuertoRicoRegisterNumber: "usa_puerto_rico_register_number",
     UsaRiFeiNo: "usa_ri_fei_no",
     UsaSamExclusionsNumber: "usa_sam_exclusions_number",
@@ -2553,6 +2728,7 @@ export const IdentifierType = {
     UsaWyPartyId: "usa_wy_party_id",
     UtahCorporateRegistryInternalEntityNumber: "utah_corporate_registry_internal_entity_number",
     UzbTinNumber: "uzb_tin_number",
+    UzbVatNumber: "uzb_vat_number",
     ValidatisNumber: "validatis_number",
     Vat: "vat",
     VenCedulaNumber: "ven_cedula_number",

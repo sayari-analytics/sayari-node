@@ -9,6 +9,7 @@ import * as core from "../../../../core";
 export const Tag: core.serialization.Schema<serializers.Tag.Raw, Sayari.Tag> = core.serialization.enum_([
     "aspi_uyghur_forced_labor_report_entity",
     "bis_boycott_requester_list",
+    "esg_score",
     "export_controls",
     "export_controls_bis_entity",
     "forced_labor_xinjiang_contractors",
@@ -35,6 +36,7 @@ export declare namespace Tag {
     export type Raw =
         | "aspi_uyghur_forced_labor_report_entity"
         | "bis_boycott_requester_list"
+        | "esg_score"
         | "export_controls"
         | "export_controls_bis_entity"
         | "forced_labor_xinjiang_contractors"

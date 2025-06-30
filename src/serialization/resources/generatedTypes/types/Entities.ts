@@ -10,7 +10,9 @@ export const Entities: core.serialization.Schema<serializers.Entities.Raw, Sayar
     "account",
     "aircraft",
     "company",
+    "contract",
     "generic",
+    "government_organization",
     "intellectual_property",
     "legal_matter",
     "person",
@@ -28,7 +30,9 @@ export declare namespace Entities {
         | "account"
         | "aircraft"
         | "company"
+        | "contract"
         | "generic"
+        | "government_organization"
         | "intellectual_property"
         | "legal_matter"
         | "person"

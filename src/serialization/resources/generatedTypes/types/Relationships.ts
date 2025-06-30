@@ -12,6 +12,8 @@ export const Relationships: core.serialization.Schema<serializers.Relationships.
         "has_associate",
         "auditor_of",
         "has_auditor",
+        "awarder_of",
+        "awarded_by",
         "beneficial_owner_of",
         "has_beneficial_owner",
         "branch_of",
@@ -65,8 +67,12 @@ export const Relationships: core.serialization.Schema<serializers.Relationships.
         "has_partner",
         "party_to",
         "has_party",
+        "procures_from",
+        "contracted_by",
         "receiver_of",
         "received_by",
+        "recipient_of",
+        "awarded_to",
         "registered_agent_of",
         "has_registered_agent",
         "secretary_of",
@@ -94,6 +100,8 @@ export declare namespace Relationships {
         | "has_associate"
         | "auditor_of"
         | "has_auditor"
+        | "awarder_of"
+        | "awarded_by"
         | "beneficial_owner_of"
         | "has_beneficial_owner"
         | "branch_of"
@@ -147,8 +155,12 @@ export declare namespace Relationships {
         | "has_partner"
         | "party_to"
         | "has_party"
+        | "procures_from"
+        | "contracted_by"
         | "receiver_of"
         | "received_by"
+        | "recipient_of"
+        | "awarded_to"
         | "registered_agent_of"
         | "has_registered_agent"
         | "secretary_of"

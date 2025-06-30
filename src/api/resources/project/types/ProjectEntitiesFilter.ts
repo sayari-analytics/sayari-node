@@ -13,10 +13,22 @@ export interface ProjectEntitiesFilter {
     upstreamRiskTiers?: Sayari.UpstreamTiers[];
     /** Filter by [country](/sayari-library/ontology/enumerated-types#country). */
     country?: Sayari.Country[];
-    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country). */
+    /** <Warning>This filter is deprecated.</Warning> Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country). */
     upstreamCountry?: Sayari.Country[];
-    /** Filter by upstream (supply chain) tiers that has one or more countries */
+    /** <Warning>This filter is deprecated.</Warning> Filter by upstream (supply chain) tiers that has one or more countries */
     upstreamCountryTiers?: Sayari.UpstreamTiers[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at any tier. */
+    shipmentCountry?: Sayari.Country[];
+    /** Filter by [country](/sayari-library/ontology/enumerated-types#country) at tier 0. */
+    tier0ShipmentCountry?: Sayari.Country[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at tier 1. */
+    tier1ShipmentCountry?: Sayari.Country[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at tier 2. */
+    tier2ShipmentCountry?: Sayari.Country[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at tier 3. */
+    tier3ShipmentCountry?: Sayari.Country[];
+    /** Filter by upstream (supply chain) [country](/sayari-library/ontology/enumerated-types#country) at tier 4. */
+    tier4ShipmentCountry?: Sayari.Country[];
     /** Filter by HS code, HS code description, or business description. */
     businessPurpose?: string[];
     /** Filter by entity label with fuzzy matching. */
@@ -35,6 +47,5 @@ export interface ProjectEntitiesFilter {
     riskCategory?: string[];
     /** Filter by a geographical bounding box. The value is a pipe-delimited set of four values representing the top, left, bottom, and right sides of the bounding box, in that order. The pipes should be URL-encoded as `%7C`. The top coordinate must greater than the bottom coordinate, and the left coordinate must be less than the right coordinate. A sample is `55.680357237879136|-71.53607290158526|41.10876347746233|-40.963927098414736` */
     bounds?: string;
-    /** <Warning>This property is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> custom user key/value pairs (key must be prefixed with "custom_" and value must be "string" type) */
-    customFieldName?: string[];
+    customFieldName?: Sayari.CustomFieldValue | undefined;
 }
