@@ -16,8 +16,14 @@ export type Entities =
      * A legal entity or organization */
     | "company"
     /**
+     * The formal acceptance of a supplier's bid, proposal or application by a government agency or authorized representative. */
+    | "contract"
+    /**
      * A generic placeholder entity. Rarely used. A generic entity typically does not fit any other entity type. */
     | "generic"
+    /**
+     * Government agency and or authorized representative engaged in public procurement. */
+    | "government_organization"
     /**
      * A trademark, patent, copyright, or similar type of intangible property */
     | "intellectual_property"
@@ -52,7 +58,9 @@ export const Entities = {
     Account: "account",
     Aircraft: "aircraft",
     Company: "company",
+    Contract: "contract",
     Generic: "generic",
+    GovernmentOrganization: "government_organization",
     IntellectualProperty: "intellectual_property",
     LegalMatter: "legal_matter",
     Person: "person",

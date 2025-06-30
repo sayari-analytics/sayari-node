@@ -10,6 +10,7 @@ export const CountryContext: core.serialization.Schema<serializers.CountryContex
     core.serialization.enum_([
         "activity_in",
         "address",
+        "awarding_country",
         "citizenship",
         "domicile",
         "export_activity_in",
@@ -29,6 +30,7 @@ export declare namespace CountryContext {
     export type Raw =
         | "activity_in"
         | "address"
+        | "awarding_country"
         | "citizenship"
         | "domicile"
         | "export_activity_in"

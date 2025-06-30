@@ -54,9 +54,15 @@ export interface TradeFilterList {
     supplierPurpose?: string[];
     /** The buyer purpose contains the provided string. */
     buyerPurpose?: string[];
-    /** The arrival date is within the provided range. */
+    /**
+     * The arrival date is within the provided range. Supports exact dates (YYYY-MM-DD)
+     * or date ranges (YYYY-MM TO YYYY-MM). Example: ["2024-01 TO 2024-10"] or ["2024-01-30"].
+     */
     arrivalDate?: string[];
-    /** The departure date is within the provided range. */
+    /**
+     * The departure date is within the provided range. Supports exact dates (YYYY-MM-DD)
+     * or date ranges (YYYY-MM TO YYYY-MM). Example: ["2024-01 TO 2024-10"] or ["2024-01-30"].
+     */
     departureDate?: string[];
     /** The shipment identifier starts with the provided string. */
     shipmentIdentifier?: string[];

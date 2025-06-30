@@ -6,38 +6,115 @@ import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { Currency } from "./Currency";
+import { ReportingPeriodType } from "./ReportingPeriodType";
 
 export const FinancialsProperties: core.serialization.ObjectSchema<
     serializers.FinancialsProperties.Raw,
     Sayari.FinancialsProperties
 > = core.serialization.object({
+    accountsPayable: core.serialization.property("accounts_payable", core.serialization.number().optional()),
+    assetWriteoff: core.serialization.property("asset_writeoff", core.serialization.number().optional()),
     assets: core.serialization.number().optional(),
+    basicEps: core.serialization.property("basic_eps", core.serialization.number().optional()),
+    cashAndEquivalent: core.serialization.property("cash_and_equivalent", core.serialization.number().optional()),
+    cashFinancing: core.serialization.property("cash_financing", core.serialization.number().optional()),
+    cashInvesting: core.serialization.property("cash_investing", core.serialization.number().optional()),
+    cashOperations: core.serialization.property("cash_operations", core.serialization.number().optional()),
+    changeAccountsPayable: core.serialization.property(
+        "change_accounts_payable",
+        core.serialization.number().optional(),
+    ),
+    changeAccountsReceivable: core.serialization.property(
+        "change_accounts_receivable",
+        core.serialization.number().optional(),
+    ),
+    changeInventory: core.serialization.property("change_inventory", core.serialization.number().optional()),
+    commonStock: core.serialization.property("common_stock", core.serialization.number().optional()),
     currency: Currency.optional(),
     date: core.serialization.string().optional(),
     employees: core.serialization.number().optional(),
     extra: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     fromDate: core.serialization.property("from_date", core.serialization.string().optional()),
+    grossProfit: core.serialization.property("gross_profit", core.serialization.number().optional()),
+    interestExpense: core.serialization.property("interest_expense", core.serialization.number().optional()),
+    inventory: core.serialization.number().optional(),
+    issuedCommonStock: core.serialization.property("issued_common_stock", core.serialization.number().optional()),
+    legalSettlements: core.serialization.property("legal_settlements", core.serialization.number().optional()),
     liabilities: core.serialization.number().optional(),
+    netChangeCash: core.serialization.property("net_change_cash", core.serialization.number().optional()),
     netIncome: core.serialization.property("net_income", core.serialization.number().optional()),
+    operatingIncome: core.serialization.property("operating_income", core.serialization.number().optional()),
     paidUpCapital: core.serialization.property("paid_up_capital", core.serialization.number().optional()),
+    rdExpenses: core.serialization.property("rd_expenses", core.serialization.number().optional()),
     registeredCapital: core.serialization.property("registered_capital", core.serialization.number().optional()),
+    reportingPeriodType: core.serialization.property("reporting_period_type", ReportingPeriodType.optional()),
     revenue: core.serialization.number().optional(),
+    salePpe: core.serialization.property("sale_ppe", core.serialization.number().optional()),
     toDate: core.serialization.property("to_date", core.serialization.string().optional()),
+    totalCapitalization: core.serialization.property("total_capitalization", core.serialization.number().optional()),
+    totalCurrentAssets: core.serialization.property("total_current_assets", core.serialization.number().optional()),
+    totalCurrentLiabilities: core.serialization.property(
+        "total_current_liabilities",
+        core.serialization.number().optional(),
+    ),
+    totalDebt: core.serialization.property("total_debt", core.serialization.number().optional()),
+    totalDebtIssued: core.serialization.property("total_debt_issued", core.serialization.number().optional()),
+    totalDividends: core.serialization.property("total_dividends", core.serialization.number().optional()),
+    totalEquity: core.serialization.property("total_equity", core.serialization.number().optional()),
+    totalLiabilities: core.serialization.property("total_liabilities", core.serialization.number().optional()),
+    totalOperatingExpenses: core.serialization.property(
+        "total_operating_expenses",
+        core.serialization.number().optional(),
+    ),
+    totalReceivables: core.serialization.property("total_receivables", core.serialization.number().optional()),
+    unusualItems: core.serialization.property("unusual_items", core.serialization.number().optional()),
 });
 
 export declare namespace FinancialsProperties {
     export interface Raw {
+        accounts_payable?: number | null;
+        asset_writeoff?: number | null;
         assets?: number | null;
+        basic_eps?: number | null;
+        cash_and_equivalent?: number | null;
+        cash_financing?: number | null;
+        cash_investing?: number | null;
+        cash_operations?: number | null;
+        change_accounts_payable?: number | null;
+        change_accounts_receivable?: number | null;
+        change_inventory?: number | null;
+        common_stock?: number | null;
         currency?: Currency.Raw | null;
         date?: string | null;
         employees?: number | null;
         extra?: Record<string, unknown> | null;
         from_date?: string | null;
+        gross_profit?: number | null;
+        interest_expense?: number | null;
+        inventory?: number | null;
+        issued_common_stock?: number | null;
+        legal_settlements?: number | null;
         liabilities?: number | null;
+        net_change_cash?: number | null;
         net_income?: number | null;
+        operating_income?: number | null;
         paid_up_capital?: number | null;
+        rd_expenses?: number | null;
         registered_capital?: number | null;
+        reporting_period_type?: ReportingPeriodType.Raw | null;
         revenue?: number | null;
+        sale_ppe?: number | null;
         to_date?: string | null;
+        total_capitalization?: number | null;
+        total_current_assets?: number | null;
+        total_current_liabilities?: number | null;
+        total_debt?: number | null;
+        total_debt_issued?: number | null;
+        total_dividends?: number | null;
+        total_equity?: number | null;
+        total_liabilities?: number | null;
+        total_operating_expenses?: number | null;
+        total_receivables?: number | null;
+        unusual_items?: number | null;
     }
 }

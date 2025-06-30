@@ -117,8 +117,8 @@ import * as Sayari from "../../../index";
  *                         type: "shipper_of",
  *                         names: ["ERBE ELEKTROMEDIZIN GMBH", "ERBE ELEKTROMED"],
  *                         risks: {
- *                             [Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponents]: 1,
- *                             [Sayari.Risk.ExportsBisHighPriorityItems]: 1
+ *                             [Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponentsDirect]: 1,
+ *                             [Sayari.Risk.ExportsBisHighPriorityItemsIndirect]: 1
  *                         },
  *                         countries: [Sayari.Country.Deu, Sayari.Country.Usa, Sayari.Country.Mex, Sayari.Country.Bra, Sayari.Country.Bel, Sayari.Country.Ecu, Sayari.Country.Ita, Sayari.Country.Sgp, Sayari.Country.Can, Sayari.Country.Swe, Sayari.Country.Zaf],
  *                         businessPurpose: [{
@@ -283,12 +283,22 @@ import * as Sayari from "../../../index";
  *                 arrivalAddress: {
  *                     country: "RUS - BRB"
  *                 },
- *                 arrivalDate: ["2022-05-25"],
+ *                 arrivalDate: ["2024-01-30"],
  *                 arrivalCountry: [],
  *                 departureDate: ["2022-05"],
  *                 departureCountry: [Sayari.Country.Usa],
  *                 departureAddress: {
  *                     country: "DEU"
+ *                 },
+ *                 shipperAddress: {
+ *                     country: "CAN",
+ *                     state: "ON",
+ *                     city: "Toronto"
+ *                 },
+ *                 receiverAddress: {
+ *                     country: "RUS",
+ *                     state: "Moscow",
+ *                     city: "Moscow"
  *                 },
  *                 productOrigin: [Sayari.Country.Deu],
  *                 transitCountry: [],
