@@ -13,6 +13,9 @@ export type CountryContext =
      * The country of an entity address */
     | "address"
     /**
+     * Award Country */
+    | "awarding_country"
+    /**
      * The reported citizenship of a person */
     | "citizenship"
     /**
@@ -54,6 +57,7 @@ export type CountryContext =
 export const CountryContext = {
     ActivityIn: "activity_in",
     Address: "address",
+    AwardingCountry: "awarding_country",
     Citizenship: "citizenship",
     Domicile: "domicile",
     ExportActivityIn: "export_activity_in",

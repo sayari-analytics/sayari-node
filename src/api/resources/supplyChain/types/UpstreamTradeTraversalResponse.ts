@@ -7,58 +7,106 @@ import * as Sayari from "../../../index";
 /**
  * @example
  *     {
- *         data: [{
- *                 source: "ESkH7J-UCRfY5t0_JXIH3w",
- *                 target: {
- *                     id: "BAQGiWn9riAG10h4NuK_9w",
+ *         filters: {
+ *             product: ["7616"]
+ *         },
+ *         data: {
+ *             paths: [{
+ *                     sourceEntityId: "aGhVqFtVmSjbXqH6oBX6IA",
+ *                     path: [{
+ *                             tier: 2,
+ *                             entityId: "Tdge30S7idW8cJHRaTABtg",
+ *                             components: [{
+ *                                     hsCode: "2818",
+ *                                     arrivalCountries: ["VNM"],
+ *                                     departureCountries: ["TWN"],
+ *                                     minDate: undefined,
+ *                                     maxDate: "2023-03-01"
+ *                                 }]
+ *                         }]
+ *                 }, {
+ *                     sourceEntityId: "aGhVqFtVmSjbXqH6oBX6IA",
+ *                     path: [{
+ *                             tier: 2,
+ *                             entityId: "s7rRJAvSAW8YWuGPGzDb_w",
+ *                             components: [{
+ *                                     hsCode: "7609",
+ *                                     arrivalCountries: ["VNM"],
+ *                                     departureCountries: ["CHN"],
+ *                                     minDate: undefined,
+ *                                     maxDate: "2023-06-01"
+ *                                 }]
+ *                         }]
+ *                 }, {
+ *                     sourceEntityId: "aGhVqFtVmSjbXqH6oBX6IA",
+ *                     path: [{
+ *                             tier: 2,
+ *                             entityId: "9QIh3SU3TDipp80ibWMYfg",
+ *                             components: [{
+ *                                     hsCode: "7616",
+ *                                     arrivalCountries: ["VNM"],
+ *                                     departureCountries: ["TWN"],
+ *                                     minDate: undefined,
+ *                                     maxDate: "2023-12-01"
+ *                                 }]
+ *                         }]
+ *                 }, {
+ *                     sourceEntityId: "aGhVqFtVmSjbXqH6oBX6IA",
+ *                     path: [{
+ *                             tier: 2,
+ *                             entityId: "s7rRJAvSAW8YWuGPGzDb_w",
+ *                             components: [{
+ *                                     hsCode: "7616",
+ *                                     arrivalCountries: ["VNM"],
+ *                                     departureCountries: ["CHN"],
+ *                                     minDate: undefined,
+ *                                     maxDate: "2023-06-01"
+ *                                 }]
+ *                         }]
+ *                 }],
+ *             entities: {
+ *                 "9QIh3SU3TDipp80ibWMYfg": {
+ *                     id: "9QIh3SU3TDipp80ibWMYfg",
  *                     type: "company",
- *                     label: "TEXMARK CHEMICALS INC",
- *                     countries: ["USA"],
- *                     risk: ["forced_labor_xinjiang_origin_subtier"]
+ *                     label: "ZITAI PRECISION MACHINERY CO LTD",
+ *                     riskFactors: [],
+ *                     countries: ["BRA", "CHN", "DEU", "GBR", "JPN", "MEX", "TWN"]
  *                 },
- *                 path: [{
- *                         entity: {
- *                             id: "ESkH7J-UCRfY5t0_JXIH3w",
- *                             type: "company",
- *                             label: "ACUMEN HOUSEWARE INDUSTRY VIETNAM CO LTD",
- *                             countries: ["VNM"],
- *                             risk: []
- *                         },
- *                         products: [{
- *                                 hsCode: {
- *                                     code: "3204",
- *                                     description: "Synthetic dyes & agents"
- *                                 },
- *                                 minDate: "2023-04-01",
- *                                 maxDate: "2024-03-27",
- *                                 arrivalCountries: ["VNM"],
- *                                 departureCountries: ["IND"]
- *                             }]
- *                     }, {
- *                         entity: {
- *                             id: "A84F35yJ_3FT_hVzD9EzAw",
- *                             type: "company",
- *                             label: "TOYO INK INDIA PRIVATE LIMITED",
- *                             countries: ["IND"],
- *                             risk: ["forced_labor_sheffield_hallam_university_reports_origin_subtier", "forced_labor_uflpa_origin_subtier", "forced_labor_xinjiang_origin_subtier"]
- *                         },
- *                         products: [{
- *                                 hsCode: {
- *                                     code: "3206",
- *                                     description: "Other dyes & colorants"
- *                                 },
- *                                 minDate: "2023-03-01",
- *                                 maxDate: "2024-02-12",
- *                                 arrivalCountries: ["IND"],
- *                                 departureCountries: ["CHN"]
- *                             }]
- *                     }]
- *             }]
+ *                 "s7rRJAvSAW8YWuGPGzDb_w": {
+ *                     id: "s7rRJAvSAW8YWuGPGzDb_w",
+ *                     type: "company",
+ *                     label: "EQUIPMENT AND MACHINE CO LTD",
+ *                     riskFactors: ["exports_ilab_forced_labor", "psa_imports_ilab_forced_labor", "psa_exports_ilab_child_labor", "exports_ilab_child_labor", "psa_exports_ilab_forced_labor", "imports_ilab_forced_labor"],
+ *                     countries: ["AUS", "BLZ", "CHE", "CHN", "CZE", "DEU", "DNK", "GBR", "HKG", "ISR", "ITA", "JPN", "KOR", "MYS", "NLD", "POL", "ROU", "SGP", "TWN", "USA"]
+ *                 },
+ *                 "Tdge30S7idW8cJHRaTABtg": {
+ *                     id: "Tdge30S7idW8cJHRaTABtg",
+ *                     type: "company",
+ *                     label: "TIEN YEOU TRADING CO LTD",
+ *                     riskFactors: [],
+ *                     countries: ["ITA", "TWN"]
+ *                 },
+ *                 "aGhVqFtVmSjbXqH6oBX6IA": {
+ *                     id: "aGhVqFtVmSjbXqH6oBX6IA",
+ *                     type: "company",
+ *                     label: "C\u00F4ng ty TNHH KRICO",
+ *                     riskFactors: [],
+ *                     countries: ["VNM"]
+ *                 }
+ *             }
+ *         },
+ *         exploredCount: 98,
+ *         partialResults: false
  *     }
  */
 export interface UpstreamTradeTraversalResponse {
     status?: number;
     success?: boolean;
     message?: string;
-    data: Sayari.TradeTraversalPath[];
+    filters: Sayari.TradeTraversalFilters;
+    data: Sayari.TradeTraversalData;
+    /** Number of hops explored in the traversal */
+    exploredCount: number;
+    /** True if the traversal returned partial results */
+    partialResults: boolean;
 }

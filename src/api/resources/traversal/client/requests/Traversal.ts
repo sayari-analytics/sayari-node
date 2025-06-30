@@ -68,9 +68,9 @@ export interface Traversal {
      */
     excludeClosedEntities?: boolean;
     /**
-     * Filter paths to only those that relate with an entity that we have flagged with any risk factor of these categories
+     * Filter paths to only those that include an entity associated with any risk factor belonging to one of the specified categories.
      */
-    riskCategories?: Sayari.TraversalRiskCategory;
+    riskCategories?: Sayari.RiskCategory[];
     /**
      * Filter paths to only those that relate with an entity that we have flagged with this risk factor
      */

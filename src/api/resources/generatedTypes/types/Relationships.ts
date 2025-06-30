@@ -16,6 +16,12 @@ export type Relationships =
      * Auditors of this company */
     | "has_auditor"
     /**
+     * Contracts this entity has issued */
+    | "awarder_of"
+    /**
+     * Entitites that issued this contract */
+    | "awarded_by"
+    /**
      * Entities reported to be beneficially or indirectly owned by this entity */
     | "beneficial_owner_of"
     /**
@@ -175,11 +181,23 @@ export type Relationships =
      * Litigants in this Legal Matter */
     | "has_party"
     /**
+     * Suppliers of this entity */
+    | "procures_from"
+    /**
+     * Buyers of this entity's goods and/or services */
+    | "contracted_by"
+    /**
      * Shipments this entity received */
     | "receiver_of"
     /**
      * The entity that received this shipment */
     | "received_by"
+    /**
+     * Contracts this entity has received */
+    | "recipient_of"
+    /**
+     * Entities that received this contract */
+    | "awarded_to"
     /**
      * Entities of which this entity is reported to be a Registered Agent, corporate secretary, or similar */
     | "registered_agent_of"
@@ -240,6 +258,8 @@ export const Relationships = {
     HasAssociate: "has_associate",
     AuditorOf: "auditor_of",
     HasAuditor: "has_auditor",
+    AwarderOf: "awarder_of",
+    AwardedBy: "awarded_by",
     BeneficialOwnerOf: "beneficial_owner_of",
     HasBeneficialOwner: "has_beneficial_owner",
     BranchOf: "branch_of",
@@ -293,8 +313,12 @@ export const Relationships = {
     HasPartner: "has_partner",
     PartyTo: "party_to",
     HasParty: "has_party",
+    ProcuresFrom: "procures_from",
+    ContractedBy: "contracted_by",
     ReceiverOf: "receiver_of",
     ReceivedBy: "received_by",
+    RecipientOf: "recipient_of",
+    AwardedTo: "awarded_to",
     RegisteredAgentOf: "registered_agent_of",
     HasRegisteredAgent: "has_registered_agent",
     SecretaryOf: "secretary_of",

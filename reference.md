@@ -715,7 +715,7 @@ await client.negativeNews.negativeNews({
 <dl>
 <dd>
 
-The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
+<Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
 
 </dd>
 </dl>
@@ -788,7 +788,7 @@ await client.notifications.projectNotifications("0oZnoG", {
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> The Resource Notifications endpoint returns a list of notifications for a saved entity.
+<Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> The Resource Notifications endpoint returns a list of notifications for a saved entity.
 
 </dd>
 </dl>
@@ -861,7 +861,7 @@ await client.notifications.resourceNotifications("03ePyj", {
 <dl>
 <dd>
 
-Deletes all notifications from a project.
+<Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> Deletes all notifications from a project.
 
 </dd>
 </dl>
@@ -924,7 +924,7 @@ await client.notifications.deleteProjectNotifications("YWmNKV");
 <dl>
 <dd>
 
-Deletes notifications for saved resources of an entity.
+<Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> Deletes notifications for saved resources of an entity.
 
 </dd>
 </dl>
@@ -987,7 +987,7 @@ await client.notifications.deleteEntityNotifications("N0xLDy4wcud-M1ZtwdsvRA");
 <dl>
 <dd>
 
-Deletes notifications for a saved resource.
+<Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> Deletes notifications for a saved resource.
 
 </dd>
 </dl>
@@ -1038,6 +1038,1618 @@ await client.notifications.deleteResourceNotifications("oGxxqG");
 </dl>
 </details>
 
+## Ontology
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getOntology</a>() -> Sayari.GetOntologyResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get ontology data for all resource types.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getOntology();
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getAttributes</a>({ ...params }) -> Sayari.GetOntologyAttributesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get attributes from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getAttributes({
+    id: ["additional_information"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyAttributesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getCountries</a>({ ...params }) -> Sayari.GetOntologyCountriesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get countries from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getCountries({
+    id: ["USA"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyCountriesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getCurrencies</a>({ ...params }) -> Sayari.GetOntologyCurrenciesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get currencies from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getCurrencies({
+    id: ["USD"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyCurrenciesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getEntityTypes</a>({ ...params }) -> Sayari.GetOntologyEntityTypesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get entity types from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getEntityTypes({
+    id: ["aircraft"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyEntityTypesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getEnums</a>({ ...params }) -> Sayari.GetOntologyEnumsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get enums from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getEnums({
+    id: ["address_type"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyEnumsRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getHsCodes</a>({ ...params }) -> Sayari.GetOntologyHsCodesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get HS codes from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getHsCodes({
+    code: ["1503"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyHsCodesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getIdentifiers</a>({ ...params }) -> Sayari.GetOntologyIdentifiersResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get identifiers from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getIdentifiers({
+    id: ["aer_free_zone_license"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyIdentifiersRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getLanguages</a>({ ...params }) -> Sayari.GetOntologyLanguagesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get languages from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getLanguages({
+    id: ["en"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyLanguagesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getRegions</a>({ ...params }) -> Sayari.GetOntologyRegionsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get regions from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getRegions({
+    id: ["usa_&_canada"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyRegionsRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getRelationships</a>({ ...params }) -> Sayari.GetOntologyRelationshipsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get relationships from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getRelationships({
+    id: ["auditor_of"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyRelationshipsRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getRiskFactors</a>({ ...params }) -> Sayari.GetOntologyRiskFactorsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get risk factors from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getRiskFactors({
+    id: ["psa_owner_of_ofac_fto_sanctioned"],
+    riskCategory: ["sanctions"],
+    level: ["high"],
+    riskType: ["network"],
+    enabled: true,
+    visible: true,
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologyRiskFactorsRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getSources</a>({ ...params }) -> Sayari.GetOntologySourcesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get sources from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getSources({
+    id: ["e85d865943ee6d8369307569d2ad9de0"],
+    country: ["XXX"],
+    sourceType: ["adverse_media_/_negative_news_data"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologySourcesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.ontology.<a href="/src/api/resources/ontology/client/Client.ts">getSourceTypes</a>({ ...params }) -> Sayari.GetOntologySourceTypesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Get source types from ontology data.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.ontology.getSourceTypes({
+    id: ["adverse_media_/_negative_news_data"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetOntologySourceTypesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Ontology.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+## ProjectEntity
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">createProjectEntity</a>(projectId, { ...params }) -> Sayari.SingleProjectEntityResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+The resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the search endpoint, except it's tuned to only return the best match so the client doesn't need to do as much or any post-processing work to filter down results.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.createProjectEntity("YVB88Y", {
+    name: ["VTB Bank"],
+    country: ["RUS"],
+    address: ["Moscow"],
+    identifier: ["253400V1H6ART1UQ0N98"],
+    profile: "corporate",
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.CreateResolvedProjectEntityRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">getProjectEntities</a>(projectId, { ...params }) -> Sayari.ProjectEntitiesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves a list of entities for a specific project with pagination support.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.getProjectEntities("YVB88Y");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetProjectEntitiesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">getProjectEntity</a>(projectId, projectEntityId, { ...params }) -> Sayari.SingleProjectEntityResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves a specific entity in a project.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.getProjectEntity("project_id", "project_entity_id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetProjectEntityRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">deleteProjectEntity</a>(projectId, projectEntityId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Deletes a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.deleteProjectEntity("project_id", "project_entity_id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">deleteProjectEntityMatch</a>(projectId, projectEntityId, matchId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Deletes a specific project entity match.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.deleteProjectEntityMatch("project_id", "project_entity_id", "match_id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**matchId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">projectEntityExists</a>(projectId, { ...params }) -> Sayari.ProjectEntityIdResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Checks if a project entity with the given attributes already exists.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.projectEntityExists("YVB88Y", {
+    name: ["Example Company"],
+    country: ["USA"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.ResolutionAttributes`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">saveProjectEntity</a>(projectId, { ...params }) -> Sayari.ProjectEntityIdResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Stores a project entity given entity IDs and a list of attributes.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.saveProjectEntity("YVB88Y", {
+    entityIds: ["entity_id_1", "entity_id_2"],
+    attributes: {
+        name: ["Example Company"],
+        country: ["USA"],
+    },
+    profile: "corporate",
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.SaveProjectEntityBody`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">projectEntitySupplyChain</a>(projectId, projectEntityId, { ...params }) -> Sayari.UpstreamTradeTraversalResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Execute a traversal of the upstream trade network (supply chain) for all matched entities of a project entity, returning a set of entities and edges between them.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.projectEntitySupplyChain("Gam5qG", "GOeOE8", {
+    minDate: "2023-03-15",
+    product: ["3204"],
+    risk: ["forced_labor_xinjiang_origin_subtier"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string` — The project Identifier
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string` — The project entity Identifier
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.ProjectEntitySupplyChainRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">projectEntitySupplyChainSummary</a>(projectId, projectEntityId, { ...params }) -> Sayari.ProjectEntitySupplyChainSummaryResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Execute a traversal of the upstream trade network (supply chain) for all matched entities of a project entity, returning a summary of countries, risks, and components.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.projectEntitySupplyChainSummary("Gam5qG", "GOeOE8", {
+    minDate: "2023-03-15",
+    product: ["8536", "8544", "4016"],
+    riskFactors: [
+        "forced_labor_xinjiang_name",
+        "forced_labor_xinjiang_uflpa",
+        "forced_labor_uflpa_origin_direct",
+        "exports_russian_gold",
+        "export_to_sanctioned",
+    ],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string` — The project Identifier
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string` — The project entity Identifier
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.ProjectEntitySupplyChainSummaryRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## Project
 
 <details><summary><code>client.project.<a href="/src/api/resources/project/client/Client.ts">createProject</a>({ ...params }) -> Sayari.CreateProjectResponse</code></summary>
@@ -1052,7 +2664,7 @@ await client.notifications.deleteResourceNotifications("oGxxqG");
 <dl>
 <dd>
 
-Create a new project
+Create a new project.
 
 </dd>
 </dl>
@@ -1183,7 +2795,7 @@ await client.project.getProjects({
 <dl>
 <dd>
 
-Retrieve a list of entities in a project.
+<Warning>This endpoint is deprecated.</Warning> Retrieve a list of entities in a project.
 
 </dd>
 </dl>
@@ -1531,7 +3143,7 @@ await client.resolution.resolutionPost({
 <dl>
 <dd>
 
-The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
+<Warning>This endpoint is deprecated.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
 
 </dd>
 </dl>
@@ -1607,7 +3219,7 @@ await client.resolution.resolutionPersisted("V03eYM", {
 <dl>
 <dd>
 
-<Warning>This endpoint is in beta and subject to change</Warning> This endpoint allows you to upload entities in bulk.
+<Warning>This endpoint is deprecated.</Warning> This endpoint allows you to upload entities in bulk.
 
 </dd>
 </dl>
@@ -2099,7 +3711,7 @@ await client.search.searchRecordGet({
 <dl>
 <dd>
 
-Returns metadata for all sources that Sayari collects data from
+<Warning>This endpoint is deprecated. Use /v1/ontology/sources instead.</Warning> Returns metadata for all sources that Sayari collects data from
 
 </dd>
 </dl>
@@ -2164,7 +3776,7 @@ await client.source.listSources({
 <dl>
 <dd>
 
-Returns metadata for a source that Sayari collects data from
+<Warning>This endpoint is deprecated. Use /v1/ontology/sources instead.</Warning> Returns metadata for a source that Sayari collects data from
 
 </dd>
 </dl>
@@ -2229,7 +3841,7 @@ await client.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
 <dl>
 <dd>
 
-Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them
+Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
 
 </dd>
 </dl>

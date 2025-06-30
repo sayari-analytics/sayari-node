@@ -49,15 +49,18 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "aus_credit_rep_number",
         "aus_passport",
         "aut_firmenbuch_no",
+        "aut_uid",
         "aze_tin_number",
         "bd_bin",
         "bel_enterprise_number",
         "bel_establishment_number",
         "bel_fsma_name_hash",
         "bel_national_register_no",
+        "bel_vat_number",
         "bfa_entity_id",
         "bfa_rccm_number",
         "bgd_passport",
+        "bgd_tin",
         "bgr_egn_hashed",
         "bgr_uic",
         "bh_cr_number",
@@ -103,9 +106,11 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "can_nrd_individual_id",
         "can_ns_corporate_registry",
         "can_pe_registration_number",
+        "can_qc_mbs_num",
         "can_qc_sap_registry_ref_num",
         "can_techsalerator_id",
         "can_tm_registration_no",
+        "ccamlr_rfmo_id",
         "ccs_registration",
         "che_ch_id_number",
         "che_seco_sanction_number",
@@ -126,11 +131,13 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "chn_shanghai_stock_exchange_company_code",
         "chn_shenzen_sec_code",
         "cm_nui_tax_reg_num",
+        "cma_id",
         "cn_hk_br_number",
         "cn_hk_cr_number",
         "cn_hk_filing_number",
         "cn_hurd_internal_company_id",
         "cn_importexport_code",
+        "cn_invest_code",
         "cn_organization_code",
         "cn_qichacha_internal_id",
         "cn_registration_number",
@@ -170,6 +177,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "dash_address",
         "deu_bafin_id",
         "deu_registernummer",
+        "deu_vat_number",
         "dji_rcs_number",
         "dma_business_registry_internal_id",
         "dnk_cvr",
@@ -189,6 +197,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "egy_passport",
         "esp_be_code",
         "esp_borme_reg_id",
+        "esp_cif",
         "esp_internal_employee_number",
         "esp_nif",
         "esp_tr_number",
@@ -198,7 +207,11 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "eu_fsd_id",
         "eu_sanction_rn",
         "euid",
+        "fdic_num",
+        "fed_fin_id",
+        "ffa_rfmo_id",
         "fin_business_id",
+        "fin_vat_number",
         "fl_prop_folio",
         "fl_prop_folio_dade",
         "fra_asset_freeze_id",
@@ -209,11 +222,14 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "fro_reg_num",
         "gbr_charity_no",
         "gbr_company_number",
+        "gbr_contract_id",
         "gbr_disqualification_case_num",
         "gbr_enforcement_action_num",
         "gbr_go_no",
+        "gbr_grant_id",
         "gbr_hm_treasury_sanction_group_id",
         "gbr_ipo_trademark_reg_no",
+        "gbr_trade_internal_shipment_id",
         "gbr_trustee_id",
         "gbr_uk_sanctions_id",
         "gbr_vat_no",
@@ -221,6 +237,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "geo_legal_code",
         "geo_personal_number",
         "geo_state_registration_number",
+        "gfcm_rfmo_id",
         "ggy_corporate_reg_number",
         "ggy_trademark_no",
         "ggy_trademark_submission_ref",
@@ -232,6 +249,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "gtm_cui_number",
         "gtm_nit_number",
         "hkg_stock_code",
+        "hkg_tender_ref_code",
         "hnd_coc_company_registration_number",
         "hnd_tegucigalpa_matricula",
         "hong_kong_case_number",
@@ -241,10 +259,12 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "hun_krs_number",
         "hun_person_tax_id",
         "hun_tax_number",
+        "iattc_rfmo_id",
         "iban",
         "icij_offshore_internal_id",
         "icij_offshore_node_id",
         "idn_nik_id",
+        "idn_no_sk",
         "idn_passport",
         "idn_tax_id",
         "idn_trade_internal_shipment_id",
@@ -260,6 +280,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "ind_darpan_uid",
         "ind_director_id_number",
         "ind_fcrn",
+        "ind_gstin",
         "ind_ifsc",
         "ind_llpin",
         "ind_nse_ticker_code",
@@ -269,7 +290,10 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "ind_tin",
         "ind_trademark_submission_ref",
         "int_maritime_org_id",
+        "internal_curated_merge_id",
+        "internal_curated_split_id",
         "internal_md5",
+        "iotc_rfmo_id",
         "iraqi_stock_exchange_symbol",
         "irl_rcn",
         "irl_registration_no",
@@ -301,6 +325,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "jordan_company_no",
         "jpn_corporate_no",
         "jpn_edinet_code",
+        "jpn_trade_internal_shipment_id",
         "kaz_bin",
         "kaz_identifier",
         "kaz_okpo_num",
@@ -311,6 +336,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "khm_tin_number",
         "kor_business_tin",
         "kor_corporate_registration_number",
+        "kor_trade_internal_shipment_id",
         "krx_ticker_code",
         "kwt_passport",
         "lao_enterprise_number",
@@ -353,6 +379,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "mkd_archive_number",
         "mkd_embs_branch_number",
         "mkd_embs_number",
+        "mmm_id",
         "mmr_corp_id",
         "mmr_officer_id",
         "mmr_personal_id_no",
@@ -381,6 +408,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "mys_id_card_no",
         "mys_moha_list_number",
         "mys_passport",
+        "ncua_num",
         "ng_check_internal_id",
         "nga_crp_reg_internal_id",
         "nga_drivers",
@@ -395,6 +423,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "nld_kvk_branch_number",
         "nld_kvk_number",
         "nor_org_no",
+        "npfc_rfmo_id",
         "npl_co_reg_no",
         "nyc_bbl",
         "nyc_crfn",
@@ -433,6 +462,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "prk_passport",
         "prk_registration_id",
         "prk_shipment_id",
+        "prt_nipc",
         "prt_trust_number",
         "prt_vat_number",
         "pry_cedula_number",
@@ -450,15 +480,19 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "rks_business_number",
         "rks_fiscal_number",
         "rks_registration_number",
+        "rou_commercial_register_id",
         "rou_company_registration_code",
         "rou_company_tin",
         "rou_identity_card",
         "rou_personal_id_number",
         "ru_inn",
         "ru_ogrn",
+        "ru_registration_number",
         "ru_ship_register_id",
+        "ru_tin",
         "ru_trade_internal_shipment_id",
         "rus_bik_code",
+        "rus_contract_number",
         "rus_declaration_number",
         "rus_micex_code",
         "rus_passport",
@@ -469,6 +503,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "sau_id",
         "sau_passport",
         "sayari_internal_identifier",
+        "sesamm_company_id",
         "sgp_passport",
         "sgp_unqiue_entity_number",
         "siger_internal_id",
@@ -477,9 +512,12 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "slv_numero_identificacion_tributaria",
         "slv_uid_number",
         "smr_economic_operator_code",
+        "snl_internal_id",
         "som_ubi",
         "south_africa_enterprise_number",
         "south_africa_passport_number",
+        "sp_company_id",
+        "sp_key",
         "srb_beneficial_owner_id",
         "srb_branch_id",
         "srb_mb_number",
@@ -487,6 +525,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "ssd_passport",
         "stock_ticker",
         "svk_ico_number",
+        "svk_vat_num",
         "svn_ajpes_zapst_number",
         "svn_co_reg_no",
         "svn_vat_number",
@@ -497,6 +536,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "swift_bic_code",
         "syr_passport",
         "syria_commercial_register_number",
+        "tcu_id",
         "tha_registration_no",
         "tjk_ein_number",
         "tjk_tin_number",
@@ -522,6 +562,8 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "tx_prop_id",
         "tx_tax_id",
         "tza_brela_reg_num",
+        "tza_tansad_number",
+        "tza_tin",
         "uk_company_number",
         "uk_firm_reference_number",
         "uk_passport",
@@ -605,6 +647,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "usa_or_regno",
         "usa_oti_id",
         "usa_pa_corporate_registry_id",
+        "usa_piid",
         "usa_puerto_rico_register_number",
         "usa_ri_fei_no",
         "usa_sam_exclusions_number",
@@ -636,6 +679,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "usa_wy_party_id",
         "utah_corporate_registry_internal_entity_number",
         "uzb_tin_number",
+        "uzb_vat_number",
         "validatis_number",
         "vat",
         "ven_cedula_number",
@@ -707,15 +751,18 @@ export declare namespace IdentifierType {
         | "aus_credit_rep_number"
         | "aus_passport"
         | "aut_firmenbuch_no"
+        | "aut_uid"
         | "aze_tin_number"
         | "bd_bin"
         | "bel_enterprise_number"
         | "bel_establishment_number"
         | "bel_fsma_name_hash"
         | "bel_national_register_no"
+        | "bel_vat_number"
         | "bfa_entity_id"
         | "bfa_rccm_number"
         | "bgd_passport"
+        | "bgd_tin"
         | "bgr_egn_hashed"
         | "bgr_uic"
         | "bh_cr_number"
@@ -761,9 +808,11 @@ export declare namespace IdentifierType {
         | "can_nrd_individual_id"
         | "can_ns_corporate_registry"
         | "can_pe_registration_number"
+        | "can_qc_mbs_num"
         | "can_qc_sap_registry_ref_num"
         | "can_techsalerator_id"
         | "can_tm_registration_no"
+        | "ccamlr_rfmo_id"
         | "ccs_registration"
         | "che_ch_id_number"
         | "che_seco_sanction_number"
@@ -784,11 +833,13 @@ export declare namespace IdentifierType {
         | "chn_shanghai_stock_exchange_company_code"
         | "chn_shenzen_sec_code"
         | "cm_nui_tax_reg_num"
+        | "cma_id"
         | "cn_hk_br_number"
         | "cn_hk_cr_number"
         | "cn_hk_filing_number"
         | "cn_hurd_internal_company_id"
         | "cn_importexport_code"
+        | "cn_invest_code"
         | "cn_organization_code"
         | "cn_qichacha_internal_id"
         | "cn_registration_number"
@@ -828,6 +879,7 @@ export declare namespace IdentifierType {
         | "dash_address"
         | "deu_bafin_id"
         | "deu_registernummer"
+        | "deu_vat_number"
         | "dji_rcs_number"
         | "dma_business_registry_internal_id"
         | "dnk_cvr"
@@ -847,6 +899,7 @@ export declare namespace IdentifierType {
         | "egy_passport"
         | "esp_be_code"
         | "esp_borme_reg_id"
+        | "esp_cif"
         | "esp_internal_employee_number"
         | "esp_nif"
         | "esp_tr_number"
@@ -856,7 +909,11 @@ export declare namespace IdentifierType {
         | "eu_fsd_id"
         | "eu_sanction_rn"
         | "euid"
+        | "fdic_num"
+        | "fed_fin_id"
+        | "ffa_rfmo_id"
         | "fin_business_id"
+        | "fin_vat_number"
         | "fl_prop_folio"
         | "fl_prop_folio_dade"
         | "fra_asset_freeze_id"
@@ -867,11 +924,14 @@ export declare namespace IdentifierType {
         | "fro_reg_num"
         | "gbr_charity_no"
         | "gbr_company_number"
+        | "gbr_contract_id"
         | "gbr_disqualification_case_num"
         | "gbr_enforcement_action_num"
         | "gbr_go_no"
+        | "gbr_grant_id"
         | "gbr_hm_treasury_sanction_group_id"
         | "gbr_ipo_trademark_reg_no"
+        | "gbr_trade_internal_shipment_id"
         | "gbr_trustee_id"
         | "gbr_uk_sanctions_id"
         | "gbr_vat_no"
@@ -879,6 +939,7 @@ export declare namespace IdentifierType {
         | "geo_legal_code"
         | "geo_personal_number"
         | "geo_state_registration_number"
+        | "gfcm_rfmo_id"
         | "ggy_corporate_reg_number"
         | "ggy_trademark_no"
         | "ggy_trademark_submission_ref"
@@ -890,6 +951,7 @@ export declare namespace IdentifierType {
         | "gtm_cui_number"
         | "gtm_nit_number"
         | "hkg_stock_code"
+        | "hkg_tender_ref_code"
         | "hnd_coc_company_registration_number"
         | "hnd_tegucigalpa_matricula"
         | "hong_kong_case_number"
@@ -899,10 +961,12 @@ export declare namespace IdentifierType {
         | "hun_krs_number"
         | "hun_person_tax_id"
         | "hun_tax_number"
+        | "iattc_rfmo_id"
         | "iban"
         | "icij_offshore_internal_id"
         | "icij_offshore_node_id"
         | "idn_nik_id"
+        | "idn_no_sk"
         | "idn_passport"
         | "idn_tax_id"
         | "idn_trade_internal_shipment_id"
@@ -918,6 +982,7 @@ export declare namespace IdentifierType {
         | "ind_darpan_uid"
         | "ind_director_id_number"
         | "ind_fcrn"
+        | "ind_gstin"
         | "ind_ifsc"
         | "ind_llpin"
         | "ind_nse_ticker_code"
@@ -927,7 +992,10 @@ export declare namespace IdentifierType {
         | "ind_tin"
         | "ind_trademark_submission_ref"
         | "int_maritime_org_id"
+        | "internal_curated_merge_id"
+        | "internal_curated_split_id"
         | "internal_md5"
+        | "iotc_rfmo_id"
         | "iraqi_stock_exchange_symbol"
         | "irl_rcn"
         | "irl_registration_no"
@@ -959,6 +1027,7 @@ export declare namespace IdentifierType {
         | "jordan_company_no"
         | "jpn_corporate_no"
         | "jpn_edinet_code"
+        | "jpn_trade_internal_shipment_id"
         | "kaz_bin"
         | "kaz_identifier"
         | "kaz_okpo_num"
@@ -969,6 +1038,7 @@ export declare namespace IdentifierType {
         | "khm_tin_number"
         | "kor_business_tin"
         | "kor_corporate_registration_number"
+        | "kor_trade_internal_shipment_id"
         | "krx_ticker_code"
         | "kwt_passport"
         | "lao_enterprise_number"
@@ -1011,6 +1081,7 @@ export declare namespace IdentifierType {
         | "mkd_archive_number"
         | "mkd_embs_branch_number"
         | "mkd_embs_number"
+        | "mmm_id"
         | "mmr_corp_id"
         | "mmr_officer_id"
         | "mmr_personal_id_no"
@@ -1039,6 +1110,7 @@ export declare namespace IdentifierType {
         | "mys_id_card_no"
         | "mys_moha_list_number"
         | "mys_passport"
+        | "ncua_num"
         | "ng_check_internal_id"
         | "nga_crp_reg_internal_id"
         | "nga_drivers"
@@ -1053,6 +1125,7 @@ export declare namespace IdentifierType {
         | "nld_kvk_branch_number"
         | "nld_kvk_number"
         | "nor_org_no"
+        | "npfc_rfmo_id"
         | "npl_co_reg_no"
         | "nyc_bbl"
         | "nyc_crfn"
@@ -1091,6 +1164,7 @@ export declare namespace IdentifierType {
         | "prk_passport"
         | "prk_registration_id"
         | "prk_shipment_id"
+        | "prt_nipc"
         | "prt_trust_number"
         | "prt_vat_number"
         | "pry_cedula_number"
@@ -1108,15 +1182,19 @@ export declare namespace IdentifierType {
         | "rks_business_number"
         | "rks_fiscal_number"
         | "rks_registration_number"
+        | "rou_commercial_register_id"
         | "rou_company_registration_code"
         | "rou_company_tin"
         | "rou_identity_card"
         | "rou_personal_id_number"
         | "ru_inn"
         | "ru_ogrn"
+        | "ru_registration_number"
         | "ru_ship_register_id"
+        | "ru_tin"
         | "ru_trade_internal_shipment_id"
         | "rus_bik_code"
+        | "rus_contract_number"
         | "rus_declaration_number"
         | "rus_micex_code"
         | "rus_passport"
@@ -1127,6 +1205,7 @@ export declare namespace IdentifierType {
         | "sau_id"
         | "sau_passport"
         | "sayari_internal_identifier"
+        | "sesamm_company_id"
         | "sgp_passport"
         | "sgp_unqiue_entity_number"
         | "siger_internal_id"
@@ -1135,9 +1214,12 @@ export declare namespace IdentifierType {
         | "slv_numero_identificacion_tributaria"
         | "slv_uid_number"
         | "smr_economic_operator_code"
+        | "snl_internal_id"
         | "som_ubi"
         | "south_africa_enterprise_number"
         | "south_africa_passport_number"
+        | "sp_company_id"
+        | "sp_key"
         | "srb_beneficial_owner_id"
         | "srb_branch_id"
         | "srb_mb_number"
@@ -1145,6 +1227,7 @@ export declare namespace IdentifierType {
         | "ssd_passport"
         | "stock_ticker"
         | "svk_ico_number"
+        | "svk_vat_num"
         | "svn_ajpes_zapst_number"
         | "svn_co_reg_no"
         | "svn_vat_number"
@@ -1155,6 +1238,7 @@ export declare namespace IdentifierType {
         | "swift_bic_code"
         | "syr_passport"
         | "syria_commercial_register_number"
+        | "tcu_id"
         | "tha_registration_no"
         | "tjk_ein_number"
         | "tjk_tin_number"
@@ -1180,6 +1264,8 @@ export declare namespace IdentifierType {
         | "tx_prop_id"
         | "tx_tax_id"
         | "tza_brela_reg_num"
+        | "tza_tansad_number"
+        | "tza_tin"
         | "uk_company_number"
         | "uk_firm_reference_number"
         | "uk_passport"
@@ -1263,6 +1349,7 @@ export declare namespace IdentifierType {
         | "usa_or_regno"
         | "usa_oti_id"
         | "usa_pa_corporate_registry_id"
+        | "usa_piid"
         | "usa_puerto_rico_register_number"
         | "usa_ri_fei_no"
         | "usa_sam_exclusions_number"
@@ -1294,6 +1381,7 @@ export declare namespace IdentifierType {
         | "usa_wy_party_id"
         | "utah_corporate_registry_internal_entity_number"
         | "uzb_tin_number"
+        | "uzb_vat_number"
         | "validatis_number"
         | "vat"
         | "ven_cedula_number"

@@ -1,0 +1,13 @@
+export { type GetOntologyAttributesRequest } from "./GetOntologyAttributesRequest";
+export { type GetOntologyCountriesRequest } from "./GetOntologyCountriesRequest";
+export { type GetOntologyCurrenciesRequest } from "./GetOntologyCurrenciesRequest";
+export { type GetOntologyEntityTypesRequest } from "./GetOntologyEntityTypesRequest";
+export { type GetOntologyEnumsRequest } from "./GetOntologyEnumsRequest";
+export { type GetOntologyHsCodesRequest } from "./GetOntologyHsCodesRequest";
+export { type GetOntologyIdentifiersRequest } from "./GetOntologyIdentifiersRequest";
+export { type GetOntologyLanguagesRequest } from "./GetOntologyLanguagesRequest";
+export { type GetOntologyRegionsRequest } from "./GetOntologyRegionsRequest";
+export { type GetOntologyRelationshipsRequest } from "./GetOntologyRelationshipsRequest";
+export { type GetOntologyRiskFactorsRequest } from "./GetOntologyRiskFactorsRequest";
+export { type GetOntologySourcesRequest } from "./GetOntologySourcesRequest";
+export { type GetOntologySourceTypesRequest } from "./GetOntologySourceTypesRequest";
