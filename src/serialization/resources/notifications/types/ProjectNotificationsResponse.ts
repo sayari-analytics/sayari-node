@@ -12,8 +12,6 @@ export const ProjectNotificationsResponse: core.serialization.ObjectSchema<
     serializers.ProjectNotificationsResponse.Raw,
     Sayari.ProjectNotificationsResponse
 > = core.serialization.object({
-    offset: core.serialization.number(),
-    limit: core.serialization.number(),
     next: core.serialization.boolean(),
     data: core.serialization.list(ProjectNotificationData),
     size: QualifiedCount,
@@ -21,8 +19,6 @@ export const ProjectNotificationsResponse: core.serialization.ObjectSchema<
 
 export declare namespace ProjectNotificationsResponse {
     export interface Raw {
-        offset: number;
-        limit: number;
         next: boolean;
         data: ProjectNotificationData.Raw[];
         size: QualifiedCount.Raw;

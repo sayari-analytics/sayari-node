@@ -9,94 +9,109 @@ import * as Sayari from "../../../index";
  *
  * @example
  *     {
- *         offset: 0,
- *         limit: 20,
  *         next: false,
  *         size: {
- *             count: 3,
+ *             count: 73,
  *             qualifier: Sayari.CountQualifier.Eq
  *         },
  *         data: [{
- *                 id: "dlOL1cZzEkIEZcRUcrBZCQ",
- *                 entityId: "dlOL1cZzEkIEZcRUcrBZCQ",
- *                 resourceId: "0eZQ43",
+ *                 resourceId: "olxQPZ",
+ *                 entityId: "IoKwj2-82wwzZRlFA1htGQ",
  *                 notifications: [{
+ *                         type: Sayari.NotificationType.Risk,
+ *                         field: Sayari.Risk.ExportsIlabChildLabor,
+ *                         values: ["false"],
+ *                         date: "2025-06-04T00:00:00.000Z"
+ *                     }, {
+ *                         type: Sayari.NotificationType.Risk,
+ *                         field: Sayari.Risk.ExportsIlabForcedLabor,
+ *                         values: ["false"],
+ *                         date: "2025-06-04T00:00:00.000Z"
+ *                     }, {
  *                         type: Sayari.NotificationType.Risk,
  *                         field: Sayari.Risk.ForcedLaborXinjiangOriginSubtier,
+ *                         values: ["3"],
+ *                         date: "2025-06-04T00:00:00.000Z"
+ *                     }, {
+ *                         type: Sayari.NotificationType.Risk,
+ *                         field: Sayari.Risk.PsaExportsIlabChildLabor,
  *                         values: ["false"],
- *                         date: "2024-02-06T00:00:00.000Z"
+ *                         date: "2025-06-04T00:00:00.000Z"
+ *                     }, {
+ *                         type: Sayari.NotificationType.Risk,
+ *                         field: Sayari.Risk.PsaExportsIlabForcedLabor,
+ *                         values: ["false"],
+ *                         date: "2025-06-04T00:00:00.000Z"
  *                     }],
- *                 customFields: {
- *                     "properties": {
- *                         "custom_name": "Victoria Beckham"
- *                     }
- *                 },
+ *                 customFields: {},
  *                 riskNotifications: {
- *                     added: ["forced_labor_xinjiang_origin_subtier"],
- *                     removed: [],
- *                     date: "2024-02-06T00:00:00.000Z"
+ *                     added: ["exports_ilab_child_labor", "exports_ilab_forced_labor", "psa_exports_ilab_child_labor", "psa_exports_ilab_forced_labor"],
+ *                     removed: ["forced_labor_xinjiang_origin_subtier"],
+ *                     date: "2025-06-04T00:00:00.000Z"
  *                 }
  *             }, {
- *                 id: "wxwqZshCF4trlrmOa2eu9w",
- *                 entityId: "wxwqZshCF4trlrmOa2eu9w",
- *                 resourceId: "03ePyj",
+ *                 resourceId: "Kx1w34",
+ *                 entityId: "3oKp0fp1UE-W8BG5crAFIw",
  *                 notifications: [{
  *                         type: Sayari.NotificationType.Risk,
- *                         field: Sayari.Risk.ForcedLaborSheffieldHallamUniversityReportsOriginSubtier,
- *                         values: ["3"],
- *                         date: "2024-02-15T00:00:00.000Z"
+ *                         field: Sayari.Risk.ExportsIlabChildLabor,
+ *                         values: ["true"],
+ *                         date: "2025-06-04T00:00:00.000Z"
+ *                     }, {
+ *                         type: Sayari.NotificationType.Risk,
+ *                         field: Sayari.Risk.ExportsIlabForcedLabor,
+ *                         values: ["true"],
+ *                         date: "2025-06-04T00:00:00.000Z"
+ *                     }, {
+ *                         type: Sayari.NotificationType.Risk,
+ *                         field: Sayari.Risk.PsaExportsIlabChildLabor,
+ *                         values: ["true"],
+ *                         date: "2025-06-04T00:00:00.000Z"
+ *                     }, {
+ *                         type: Sayari.NotificationType.Risk,
+ *                         field: Sayari.Risk.PsaExportsIlabForcedLabor,
+ *                         values: ["true"],
+ *                         date: "2025-06-04T00:00:00.000Z"
  *                     }],
+ *                 customFields: {},
  *                 riskNotifications: {
  *                     added: [],
- *                     removed: ["forced_labor_sheffield_hallam_university_reports_origin_subtier"],
- *                     date: "2024-02-15T00:00:00.000Z"
+ *                     removed: ["exports_ilab_child_labor", "exports_ilab_forced_labor", "psa_exports_ilab_child_labor", "psa_exports_ilab_forced_labor"],
+ *                     date: "2025-06-04T00:00:00.000Z"
  *                 }
  *             }, {
- *                 id: "dX9cfM3FPefIp8VAuBKgIQ",
- *                 entityId: "dX9cfM3FPefIp8VAuBKgIQ",
- *                 resourceId: "0XEQaX",
+ *                 resourceId: "BOMrB9",
+ *                 entityId: "PF0ehzmptuJ2VJr2J5u0nw",
  *                 notifications: [{
  *                         type: Sayari.NotificationType.Risk,
- *                         field: Sayari.Risk.OwnerOfRegulatoryActionEntity,
- *                         values: ["1"],
- *                         date: "2024-02-06T00:00:00.000Z"
+ *                         field: Sayari.Risk.ExportControlsAdjacent,
+ *                         values: ["true"],
+ *                         date: "2025-06-14T00:00:00.000Z"
  *                     }, {
  *                         type: Sayari.NotificationType.Risk,
- *                         field: Sayari.Risk.ForcedLaborSheffieldHallamUniversityReportsOriginDirect,
- *                         values: ["1"],
- *                         date: "2024-02-15T00:00:00.000Z"
- *                     }, {
- *                         type: Sayari.NotificationType.Risk,
- *                         field: Sayari.Risk.ForcedLaborSheffieldHallamUniversityReportsOriginSubtier,
- *                         values: ["false"],
- *                         date: "2024-02-15T00:00:00.000Z"
+ *                         field: Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponentsIndirect,
+ *                         values: ["3"],
+ *                         date: "2025-06-14T00:00:00.000Z"
  *                     }],
- *                 customFields: {
- *                     "properties": {
- *                         "custom_identifier": "abc123"
- *                     }
- *                 },
+ *                 customFields: {},
  *                 riskNotifications: {
- *                     added: ["forced_labor_sheffield_hallam_university_reports_origin_subtier"],
- *                     removed: ["owner_of_regulatory_action_entity", "forced_labor_sheffield_hallam_university_reports_origin_direct"],
- *                     date: "2024-02-15T00:00:00.000Z"
+ *                     added: ["exports_ilab_child_labor", "exports_ilab_forced_labor", "psa_exports_ilab_child_labor", "psa_exports_ilab_forced_labor"],
+ *                     removed: ["export_controls_adjacent", "exports_bis_high_priority_items_critical_components_indirect", "psa_exports_bis_high_priority_items_critical_components_indirect", "psa_forced_labor_uflpa_origin_subtier", "psa_regulatory_action"],
+ *                     date: "2025-06-04T00:00:00.000Z"
  *                 }
  *             }]
  *     }
  *
  * @example
  *     {
- *         offset: 0,
- *         limit: 20,
  *         next: false,
  *         size: {
  *             count: 3,
  *             qualifier: Sayari.CountQualifier.Eq
  *         },
  *         data: [{
- *                 id: "dlOL1cZzEkIEZcRUcrBZCQ",
- *                 entityId: "dlOL1cZzEkIEZcRUcrBZCQ",
  *                 resourceId: "0eZQ43",
+ *                 entityId: "dlOL1cZzEkIEZcRUcrBZCQ",
  *                 notifications: [{
  *                         type: Sayari.NotificationType.Risk,
  *                         field: Sayari.Risk.ForcedLaborXinjiangOriginSubtier,
@@ -104,9 +119,7 @@ import * as Sayari from "../../../index";
  *                         date: "2024-02-06T00:00:00.000Z"
  *                     }],
  *                 customFields: {
- *                     "properties": {
- *                         "custom_name": "Victoria Beckham"
- *                     }
+ *                     "custom_name": "Victoria Beckham"
  *                 },
  *                 riskNotifications: {
  *                     added: ["forced_labor_xinjiang_origin_subtier"],
@@ -114,9 +127,8 @@ import * as Sayari from "../../../index";
  *                     date: "2024-02-06T00:00:00.000Z"
  *                 }
  *             }, {
- *                 id: "wxwqZshCF4trlrmOa2eu9w",
- *                 entityId: "wxwqZshCF4trlrmOa2eu9w",
  *                 resourceId: "03ePyj",
+ *                 entityId: "wxwqZshCF4trlrmOa2eu9w",
  *                 notifications: [{
  *                         type: Sayari.NotificationType.Risk,
  *                         field: Sayari.Risk.ForcedLaborSheffieldHallamUniversityReportsOriginSubtier,
@@ -129,9 +141,8 @@ import * as Sayari from "../../../index";
  *                     date: "2024-02-15T00:00:00.000Z"
  *                 }
  *             }, {
- *                 id: "dX9cfM3FPefIp8VAuBKgIQ",
- *                 entityId: "dX9cfM3FPefIp8VAuBKgIQ",
  *                 resourceId: "0XEQaX",
+ *                 entityId: "dX9cfM3FPefIp8VAuBKgIQ",
  *                 notifications: [{
  *                         type: Sayari.NotificationType.Risk,
  *                         field: Sayari.Risk.ForcedLaborSheffieldHallamUniversityReportsOriginDirect,
@@ -149,9 +160,7 @@ import * as Sayari from "../../../index";
  *                         date: "2024-02-06T00:00:00.000Z"
  *                     }],
  *                 customFields: {
- *                     "properties": {
- *                         "custom_identifier": "abc123"
- *                     }
+ *                     "custom_identifier": "abc123"
  *                 },
  *                 riskNotifications: {
  *                     added: ["forced_labor_sheffield_hallam_university_reports_origin_subtier"],
@@ -162,8 +171,6 @@ import * as Sayari from "../../../index";
  *     }
  */
 export interface ProjectNotificationsResponse {
-    offset: number;
-    limit: number;
     next: boolean;
     data: Sayari.ProjectNotificationData[];
     size: Sayari.QualifiedCount;
