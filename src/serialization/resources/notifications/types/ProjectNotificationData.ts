@@ -12,21 +12,22 @@ export const ProjectNotificationData: core.serialization.ObjectSchema<
     serializers.ProjectNotificationData.Raw,
     Sayari.ProjectNotificationData
 > = core.serialization.object({
-    id: core.serialization.string(),
     resourceId: core.serialization.property("resource_id", core.serialization.string()),
     entityId: core.serialization.property("entity_id", core.serialization.string()),
     notifications: core.serialization.list(Notification),
-    customFields: core.serialization.property("custom_fields", core.serialization.unknown().optional()),
+    customFields: core.serialization.property(
+        "custom_fields",
+        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
+    ),
     riskNotifications: core.serialization.property("risk_notifications", ProjectNotificationRiskData),
 });
 
 export declare namespace ProjectNotificationData {
     export interface Raw {
-        id: string;
         resource_id: string;
         entity_id: string;
         notifications: Notification.Raw[];
-        custom_fields?: unknown | null;
+        custom_fields?: Record<string, unknown> | null;
         risk_notifications: ProjectNotificationRiskData.Raw;
     }
 }
