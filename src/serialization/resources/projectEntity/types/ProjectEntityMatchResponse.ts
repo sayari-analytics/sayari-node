@@ -11,6 +11,7 @@ import { BusinessPurpose } from "./BusinessPurpose";
 import { UpstreamInfo } from "./UpstreamInfo";
 import { SourceField } from "./SourceField";
 import { Address } from "./Address";
+import { MatchProfileEnum } from "./MatchProfileEnum";
 
 export const ProjectEntityMatchResponse: core.serialization.ObjectSchema<
     serializers.ProjectEntityMatchResponse.Raw,
@@ -30,7 +31,7 @@ export const ProjectEntityMatchResponse: core.serialization.ObjectSchema<
     hsCodes: core.serialization.property("hs_codes", core.serialization.list(core.serialization.string())),
     createdAt: core.serialization.property("created_at", core.serialization.string()),
     updatedAt: core.serialization.property("updated_at", core.serialization.string().optional()),
-    resolutionProfile: core.serialization.property("resolution_profile", core.serialization.string().optional()),
+    matchProfile: core.serialization.property("match_profile", MatchProfileEnum.optional()),
     deletedAt: core.serialization.property("deleted_at", core.serialization.string().optional()),
 });
 
@@ -50,7 +51,7 @@ export declare namespace ProjectEntityMatchResponse {
         hs_codes: string[];
         created_at: string;
         updated_at?: string | null;
-        resolution_profile?: string | null;
+        match_profile?: MatchProfileEnum.Raw | null;
         deleted_at?: string | null;
     }
 }
