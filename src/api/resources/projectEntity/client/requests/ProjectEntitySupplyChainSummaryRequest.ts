@@ -14,6 +14,14 @@ import * as Sayari from "../../../../index";
  */
 export interface ProjectEntitySupplyChainSummaryRequest {
     /**
+     * Product root edge filter. Filters results to include only trade relationships where the associated component is part of the specified product's blueprint or is a sub-component of that product.
+     */
+    product?: string[];
+    /**
+     * Product root edge filter. Filters results to exclude any trade relationships where the associated component is part of the specified product's blueprint or is a sub-component of that product.
+     */
+    notProduct?: string[];
+    /**
      * Risk leaf node filter. Only return supply chains that end with a supplier that has 1+ of the specified risk factors.
      */
     riskFactors?: Sayari.Risk[];
@@ -29,14 +37,6 @@ export interface ProjectEntitySupplyChainSummaryRequest {
      * Country leaf node filter. Only return supply chains that end with a supplier in none of the specified countries.
      */
     notCountries?: Sayari.Country[];
-    /**
-     * Product root edge filter. Only return supply chains that start with an edge that has 1+ of the specified HS codes.
-     */
-    product?: string[];
-    /**
-     * Product root edge filter. Only return supply chains that start with an edge that has none of the specified HS codes.
-     */
-    notProduct?: string[];
     /**
      * Component edge filter. Only return supply chains that contain at least one edge with 1+ of the specified HS codes.
      */
@@ -54,7 +54,7 @@ export interface ProjectEntitySupplyChainSummaryRequest {
      */
     maxDate?: string;
     /**
-     * The maximum depth of the traversal, from 1 to 4 inclusive. Default is 4. Reduce if query is timing out.
+     * The maximum depth of the traversal, from 2 to 5 inclusive. Default is 5. Reduce if query is timing out.
      */
     maxDepth?: number;
     /**
