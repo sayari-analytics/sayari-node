@@ -20,11 +20,11 @@ export interface Watchlist {
      */
     offset?: number;
     /**
-     * Set minimum depth for traversal. Defaults to 1.
+     * Set minimum depth for traversal. Defaults to 2.
      */
     minDepth?: number;
     /**
-     * Set maximum depth for traversal. Defaults to 4.
+     * Set maximum depth for traversal. Defaults to 5.
      */
     maxDepth?: number;
     /**

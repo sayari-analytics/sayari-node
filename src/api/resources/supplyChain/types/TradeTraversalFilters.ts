@@ -25,7 +25,7 @@ export interface TradeTraversalFilters {
     minDate?: string;
     /** Maximum date edge filter in <YYYY-MM-DD> format. Only return supply chains with edge dates that are less than or equal to this date. */
     maxDate?: string;
-    /** The maximum depth of the traversal, from 1 to 4 inclusive. Default is 4. Reduce if query is timing out. */
+    /** The maximum depth of the traversal, from 2 to 5 inclusive. Default is 5. Reduce if query is timing out. */
     maxDepth?: number;
     /** The maximum number of results to return. Default is no limit. */
     limit?: number;

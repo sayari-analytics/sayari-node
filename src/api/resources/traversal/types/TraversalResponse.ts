@@ -9,8 +9,8 @@ import * as Sayari from "../../../index";
  *
  * @example
  *     {
- *         minDepth: 1,
- *         maxDepth: 4,
+ *         minDepth: 2,
+ *         maxDepth: 5,
  *         relationships: [],
  *         countries: [],
  *         types: [],
@@ -79,7 +79,8 @@ import * as Sayari from "../../../index";
  *                         [Sayari.Attributes.Address]: 2,
  *                         [Sayari.Attributes.Country]: 2
  *                     },
- *                     referenceId: "9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000:0ce01cbfaa586fcfb82164f0e5a010d5"
+ *                     referenceId: "9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000:0ce01cbfaa586fcfb82164f0e5a010d5",
+ *                     logisticsEntity: false
  *                 },
  *                 path: [{
  *                         field: "has_officer",
@@ -139,7 +140,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Address]: 2,
  *                                 [Sayari.Attributes.Country]: 2
  *                             },
- *                             referenceId: "9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000:0ce01cbfaa586fcfb82164f0e5a010d5"
+ *                             referenceId: "9139b58de1bdb0157a1a1e54e56df6d3/4781466/1649116800000:0ce01cbfaa586fcfb82164f0e5a010d5",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.HasOfficer]: {
@@ -181,8 +183,8 @@ import * as Sayari from "../../../index";
  *
  * @example
  *     {
- *         minDepth: 1,
- *         maxDepth: 4,
+ *         minDepth: 2,
+ *         maxDepth: 5,
  *         relationships: [Sayari.Relationships.HasShareholder, Sayari.Relationships.HasBeneficialOwner, Sayari.Relationships.HasPartner, Sayari.Relationships.SubsidiaryOf, Sayari.Relationships.BranchOf],
  *         countries: [],
  *         types: [],
@@ -236,7 +238,8 @@ import * as Sayari from "../../../index";
  *                         [Sayari.Attributes.Identifier]: 1,
  *                         [Sayari.Attributes.Country]: 1
  *                     },
- *                     referenceId: "cb8c8f412b4a4b29bbb7afd80fdd53f0/1524181-era-base/1619395200000:e8409aaf28d556c6ade6e818ec806142"
+ *                     referenceId: "cb8c8f412b4a4b29bbb7afd80fdd53f0/1524181-era-base/1619395200000:e8409aaf28d556c6ade6e818ec806142",
+ *                     logisticsEntity: false
  *                 },
  *                 path: [{
  *                         field: "has_shareholder",
@@ -322,7 +325,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Status]: 2,
  *                                 [Sayari.Attributes.Address]: 3
  *                             },
- *                             referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/11043864/1540252800000:40ec7b0310d308ebf9006148b53a2802"
+ *                             referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/11043864/1540252800000:40ec7b0310d308ebf9006148b53a2802",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.HasShareholder]: {
@@ -645,7 +649,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Status]: 2,
  *                                 [Sayari.Attributes.Address]: 4
  *                             },
- *                             referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/OC331931/1540252800000:437e8a4d8d378109d72308246f55bf39"
+ *                             referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/OC331931/1540252800000:437e8a4d8d378109d72308246f55bf39",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.HasShareholder]: {
@@ -899,7 +904,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Identifier]: 1,
  *                                 [Sayari.Attributes.Country]: 1
  *                             },
- *                             referenceId: "cb8c8f412b4a4b29bbb7afd80fdd53f0/1524181-era-base/1619395200000:e8409aaf28d556c6ade6e818ec806142"
+ *                             referenceId: "cb8c8f412b4a4b29bbb7afd80fdd53f0/1524181-era-base/1619395200000:e8409aaf28d556c6ade6e818ec806142",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.HasShareholder]: {
@@ -1117,8 +1123,8 @@ import * as Sayari from "../../../index";
  *
  * @example
  *     {
- *         minDepth: 1,
- *         maxDepth: 4,
+ *         minDepth: 2,
+ *         maxDepth: 5,
  *         relationships: [Sayari.Relationships.ShareholderOf, Sayari.Relationships.BeneficialOwnerOf, Sayari.Relationships.PartnerOf, Sayari.Relationships.HasSubsidiary, Sayari.Relationships.HasBranch],
  *         countries: [],
  *         types: [],
@@ -1192,7 +1198,8 @@ import * as Sayari from "../../../index";
  *                         [Sayari.Attributes.Status]: 2,
  *                         [Sayari.Attributes.Address]: 1
  *                     },
- *                     referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/08661308/1540252800000:6f842cf70eab52cc2178b948dea30489"
+ *                     referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/08661308/1540252800000:6f842cf70eab52cc2178b948dea30489",
+ *                     logisticsEntity: false
  *                 },
  *                 path: [{
  *                         field: "shareholder_of",
@@ -1257,7 +1264,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Status]: 2,
  *                                 [Sayari.Attributes.Address]: 1
  *                             },
- *                             referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/08661308/1540252800000:6f842cf70eab52cc2178b948dea30489"
+ *                             referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/08661308/1540252800000:6f842cf70eab52cc2178b948dea30489",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.LinkedTo]: {
@@ -1478,8 +1486,8 @@ import * as Sayari from "../../../index";
  *
  * @example
  *     {
- *         minDepth: 1,
- *         maxDepth: 4,
+ *         minDepth: 2,
+ *         maxDepth: 5,
  *         relationships: [Sayari.Relationships.BeneficialOwnerOf, Sayari.Relationships.BranchOf, Sayari.Relationships.DirectorOf, Sayari.Relationships.FamilyOf, Sayari.Relationships.HasBeneficialOwner, Sayari.Relationships.HasBranch, Sayari.Relationships.HasDirector, Sayari.Relationships.HasLegalSuccessor, Sayari.Relationships.HasManager, Sayari.Relationships.HasMemberOfTheBoard, Sayari.Relationships.HasOfficer, Sayari.Relationships.HasPartner, Sayari.Relationships.HasShareholder, Sayari.Relationships.HasSubsidiary, Sayari.Relationships.HasSupervisor, Sayari.Relationships.LegalSuccessorOf, Sayari.Relationships.LinkedTo, Sayari.Relationships.ManagerOf, Sayari.Relationships.MemberOfTheBoardOf, Sayari.Relationships.OfficerOf, Sayari.Relationships.PartnerOf, Sayari.Relationships.ReceivedBy, Sayari.Relationships.ReceiverOf, Sayari.Relationships.ReceivesFrom, Sayari.Relationships.ShareholderOf, Sayari.Relationships.ShippedBy, Sayari.Relationships.ShipperOf, Sayari.Relationships.ShipsTo, Sayari.Relationships.SubsidiaryOf, Sayari.Relationships.SupervisorOf],
  *         countries: [],
  *         types: [],
@@ -1637,7 +1645,8 @@ import * as Sayari from "../../../index";
  *                         [Sayari.Attributes.Address]: 8,
  *                         [Sayari.Attributes.Financials]: 1
  *                     },
- *                     referenceId: "56bce0e008204712e302271ddd7b4fb1/1156501003130_6501273320_AO-RPU-OSTROV-SAHALIN.html/1552661755844:da547b3dabe1f7429fdd3d044f4dbc07"
+ *                     referenceId: "56bce0e008204712e302271ddd7b4fb1/1156501003130_6501273320_AO-RPU-OSTROV-SAHALIN.html/1552661755844:da547b3dabe1f7429fdd3d044f4dbc07",
+ *                     logisticsEntity: false
  *                 },
  *                 path: [{
  *                         field: "ships_to",
@@ -1819,7 +1828,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Status]: 5,
  *                                 [Sayari.Attributes.Address]: 47
  *                             },
- *                             referenceId: "81f14b6afe1aa1f8c08f2a6aa7969cbb/id=475451&e=0005056160&egdt=0304658256-001/1584482042082:e7baafd6f42c888ea09c363b67be59fc"
+ *                             referenceId: "81f14b6afe1aa1f8c08f2a6aa7969cbb/id=475451&e=0005056160&egdt=0304658256-001/1584482042082:e7baafd6f42c888ea09c363b67be59fc",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.ShipsTo]: {
@@ -2178,7 +2188,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Status]: 2,
  *                                 [Sayari.Attributes.Address]: 55
  *                             },
- *                             referenceId: "a60b29e3078d2d2e30addfb4ce34684f/20604081573/1576189382440:48ec4286b2a7a5244e296f22f3fcad07"
+ *                             referenceId: "a60b29e3078d2d2e30addfb4ce34684f/20604081573/1576189382440:48ec4286b2a7a5244e296f22f3fcad07",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.ReceivesFrom]: {
@@ -2311,7 +2322,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Country]: 5,
  *                                 [Sayari.Attributes.Contact]: 4
  *                             },
- *                             referenceId: "16a4cc2d0f467fa993b28587d542a25d/COSU6297719050-UPSPJIX21040153/1643068800000:bfccfca31277bf589f0a7c560b99a80c"
+ *                             referenceId: "16a4cc2d0f467fa993b28587d542a25d/COSU6297719050-UPSPJIX21040153/1643068800000:bfccfca31277bf589f0a7c560b99a80c",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.ShipsTo]: {
@@ -2626,7 +2638,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Address]: 8,
  *                                 [Sayari.Attributes.Financials]: 1
  *                             },
- *                             referenceId: "56bce0e008204712e302271ddd7b4fb1/1156501003130_6501273320_AO-RPU-OSTROV-SAHALIN.html/1552661755844:da547b3dabe1f7429fdd3d044f4dbc07"
+ *                             referenceId: "56bce0e008204712e302271ddd7b4fb1/1156501003130_6501273320_AO-RPU-OSTROV-SAHALIN.html/1552661755844:da547b3dabe1f7429fdd3d044f4dbc07",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.ReceivesFrom]: {
