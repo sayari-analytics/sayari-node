@@ -53,4 +53,5 @@ export interface CoreEntity extends Sayari.EntitySummary {
     editedBy?: string;
     editable?: boolean;
     upload?: string;
+    logisticsEntity?: boolean;
 }
