@@ -145,6 +145,7 @@ import * as Sayari from "../../../index";
  *                     [Sayari.Attributes.Address]: 6
  *                 },
  *                 referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1540252800000:4a34442eccf1622995130b194a5d50e7",
+ *                 logisticsEntity: false,
  *                 coordinates: [{
  *                         lat: 51.49322001798694,
  *                         lng: -0.2220315859755715,

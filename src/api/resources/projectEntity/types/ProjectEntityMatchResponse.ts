@@ -19,6 +19,6 @@ export interface ProjectEntityMatchResponse {
     hsCodes: string[];
     createdAt: string;
     updatedAt?: string;
-    resolutionProfile?: string;
+    matchProfile?: Sayari.MatchProfileEnum;
     deletedAt?: string;
 }
