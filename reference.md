@@ -1947,6 +1947,415 @@ await client.ontology.getSourceTypes({
 </dl>
 </details>
 
+## ProjectEntityAttributes
+
+<details><summary><code>client.projectEntityAttributes.<a href="/src/api/resources/projectEntityAttributes/client/Client.ts">updateProjectEntityAttribute</a>(projectId, projectEntityId, attributeId, { ...params }) -> Sayari.UpdateProjectEntityAttributeResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Updates a specific attribute for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntityAttributes.updateProjectEntityAttribute("V03eYM", "BG72YW", "xG8wYP", {
+    field: "name",
+    value: "updated name",
+    matchResolution: true,
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**attributeId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.UpdateProjectEntityAttributeRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntityAttributes.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+## ProjectEntitySupplyChainSnapshots
+
+<details><summary><code>client.projectEntitySupplyChainSnapshots.<a href="/src/api/resources/projectEntitySupplyChainSnapshots/client/Client.ts">getProjectEntitySupplyChainSnapshots</a>(projectId, projectEntityId) -> Sayari.ProjectEntitySupplyChainSnapshotsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves all supply chain snapshots for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntitySupplyChainSnapshots.getProjectEntitySupplyChainSnapshots("V03eYM", "BG72YW");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntitySupplyChainSnapshots.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntitySupplyChainSnapshots.<a href="/src/api/resources/projectEntitySupplyChainSnapshots/client/Client.ts">getProjectEntitySupplyChainSnapshotById</a>(projectId, projectEntityId, snapshotId) -> Sayari.ProjectEntitySupplyChainSnapshotByIdResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves a specific supply chain snapshot by ID for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntitySupplyChainSnapshots.getProjectEntitySupplyChainSnapshotById("V03eYM", "BG72YW", "sN4p2K");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**snapshotId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntitySupplyChainSnapshots.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntitySupplyChainSnapshots.<a href="/src/api/resources/projectEntitySupplyChainSnapshots/client/Client.ts">createProjectEntitySupplyChainSnapshot</a>(projectId, projectEntityId, { ...params }) -> Sayari.CreateProjectEntitySupplyChainSnapshotResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new supply chain snapshot for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntitySupplyChainSnapshots.createProjectEntitySupplyChainSnapshot("V03eYM", "BG72YW", {
+    label: "Q1 2024 Supply Chain Analysis",
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.CreateProjectEntitySupplyChainSnapshotRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntitySupplyChainSnapshots.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntitySupplyChainSnapshots.<a href="/src/api/resources/projectEntitySupplyChainSnapshots/client/Client.ts">deleteProjectEntitySupplyChainSnapshotById</a>(projectId, projectEntityId, snapshotId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Deletes a specific supply chain snapshot by ID for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntitySupplyChainSnapshots.deleteProjectEntitySupplyChainSnapshotById(
+    "project_id",
+    "project_entity_id",
+    "snapshot_id",
+);
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**snapshotId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntitySupplyChainSnapshots.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## ProjectEntity
 
 <details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">createProjectEntity</a>(projectId, { ...params }) -> Sayari.SingleProjectEntityResponse</code></summary>
@@ -2765,79 +3174,6 @@ await client.project.getProjects({
 <dd>
 
 **request:** `Sayari.GetProjects`
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**requestOptions:** `Project.RequestOptions`
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.project.<a href="/src/api/resources/project/client/Client.ts">getProjectEntities</a>(id, { ...params }) -> Sayari.GetProjectEntitiesResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-<Warning>This endpoint is deprecated.</Warning> Retrieve a list of entities in a project.
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```typescript
-await client.project.getProjectEntities("gPq6EY", {
-    accept: "application/json",
-});
-```
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**id:** `string` — The project identifier.
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request:** `Sayari.GetProjectEntities`
 
 </dd>
 </dl>

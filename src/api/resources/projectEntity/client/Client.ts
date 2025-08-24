@@ -73,8 +73,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -205,8 +205,8 @@ export class ProjectEntity {
             uploads,
             caseStatus,
             tags,
-            matchResult,
-            matchStrengthV1,
+            matchCount,
+            matchStrength,
             entityTypes,
             geoFacets,
             exactMatch,
@@ -239,12 +239,14 @@ export class ProjectEntity {
             _queryParams["tags"] = toJson(tags);
         }
 
-        if (matchResult != null) {
-            _queryParams["match_result"] = toJson(matchResult);
+        if (matchCount != null) {
+            _queryParams["match_count"] = serializers.MatchCount.jsonOrThrow(matchCount, {
+                unrecognizedObjectKeys: "strip",
+            });
         }
 
-        if (matchStrengthV1 != null) {
-            _queryParams["match_strength_v1"] = toJson(matchStrengthV1);
+        if (matchStrength != null) {
+            _queryParams["match_strength"] = toJson(matchStrength);
         }
 
         if (entityTypes != null) {
@@ -315,8 +317,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -442,7 +444,7 @@ export class ProjectEntity {
         request: Sayari.GetProjectEntityRequest = {},
         requestOptions?: ProjectEntity.RequestOptions,
     ): Promise<Sayari.SingleProjectEntityResponse> {
-        const { entityId, uploads, caseStatus, tags, matchResult, matchStrengthV1, entityTypes, risk, riskCategory } =
+        const { entityId, uploads, caseStatus, tags, matchCount, matchStrength, entityTypes, risk, riskCategory } =
             request;
         const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (entityId != null) {
@@ -461,12 +463,14 @@ export class ProjectEntity {
             _queryParams["tags"] = toJson(tags);
         }
 
-        if (matchResult != null) {
-            _queryParams["match_result"] = toJson(matchResult);
+        if (matchCount != null) {
+            _queryParams["match_count"] = serializers.MatchCount.jsonOrThrow(matchCount, {
+                unrecognizedObjectKeys: "strip",
+            });
         }
 
-        if (matchStrengthV1 != null) {
-            _queryParams["match_strength_v1"] = toJson(matchStrengthV1);
+        if (matchStrength != null) {
+            _queryParams["match_strength"] = toJson(matchStrength);
         }
 
         if (entityTypes != null) {
@@ -493,8 +497,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -630,8 +634,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -763,8 +767,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -897,8 +901,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -1041,8 +1045,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -1173,6 +1177,8 @@ export class ProjectEntity {
         requestOptions?: ProjectEntity.RequestOptions,
     ): Promise<Sayari.UpstreamTradeTraversalResponse> {
         const {
+            product,
+            notProduct,
             risk,
             notRisk,
             countries,
@@ -1184,8 +1190,6 @@ export class ProjectEntity {
             tier3ShipmentCountry,
             tier4ShipmentCountry,
             tier5ShipmentCountry,
-            product,
-            notProduct,
             component,
             notComponent,
             minDate,
@@ -1194,6 +1198,14 @@ export class ProjectEntity {
             limit,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
+        if (product != null) {
+            _queryParams["product"] = toJson(product);
+        }
+
+        if (notProduct != null) {
+            _queryParams["-product"] = toJson(notProduct);
+        }
+
         if (risk != null) {
             _queryParams["risk"] = toJson(risk);
         }
@@ -1238,14 +1250,6 @@ export class ProjectEntity {
             _queryParams["tier5_shipment_country"] = toJson(tier5ShipmentCountry);
         }
 
-        if (product != null) {
-            _queryParams["product"] = toJson(product);
-        }
-
-        if (notProduct != null) {
-            _queryParams["-product"] = toJson(notProduct);
-        }
-
         if (component != null) {
             _queryParams["component"] = toJson(component);
         }
@@ -1282,8 +1286,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -1414,12 +1418,12 @@ export class ProjectEntity {
         requestOptions?: ProjectEntity.RequestOptions,
     ): Promise<Sayari.ProjectEntitySupplyChainSummaryResponse> {
         const {
+            product,
+            notProduct,
             riskFactors,
             notRisk,
             countries,
             notCountries,
-            product,
-            notProduct,
             component,
             notComponent,
             minDate,
@@ -1428,6 +1432,14 @@ export class ProjectEntity {
             limit,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
+        if (product != null) {
+            _queryParams["product"] = toJson(product);
+        }
+
+        if (notProduct != null) {
+            _queryParams["-product"] = toJson(notProduct);
+        }
+
         if (riskFactors != null) {
             _queryParams["risk_factors"] = toJson(riskFactors);
         }
@@ -1442,14 +1454,6 @@ export class ProjectEntity {
 
         if (notCountries != null) {
             _queryParams["-countries"] = toJson(notCountries);
-        }
-
-        if (product != null) {
-            _queryParams["product"] = toJson(product);
-        }
-
-        if (notProduct != null) {
-            _queryParams["-product"] = toJson(notProduct);
         }
 
         if (component != null) {
@@ -1488,8 +1492,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,

@@ -4,8 +4,6 @@
 
 import * as Sayari from "../../../index";
 
-export interface HsCodeAggBucket {
-    key: string;
-    docCount: number;
-    hsCodeSums?: Sayari.IntKeyValue;
+export interface AttributesResponse {
+    data: Sayari.GroupedAttribute[];
 }
