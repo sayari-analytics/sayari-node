@@ -12,6 +12,8 @@ import { Metadata } from "./api/resources/metadata/client/Client";
 import { NegativeNews } from "./api/resources/negativeNews/client/Client";
 import { Notifications } from "./api/resources/notifications/client/Client";
 import { Ontology } from "./api/resources/ontology/client/Client";
+import { ProjectEntityAttributes } from "./api/resources/projectEntityAttributes/client/Client";
+import { ProjectEntitySupplyChainSnapshots } from "./api/resources/projectEntitySupplyChainSnapshots/client/Client";
 import { ProjectEntity } from "./api/resources/projectEntity/client/Client";
 import { Project } from "./api/resources/project/client/Client";
 import { Record_ } from "./api/resources/record/client/Client";
@@ -54,6 +56,8 @@ export class SayariClient {
     protected _negativeNews: NegativeNews | undefined;
     protected _notifications: Notifications | undefined;
     protected _ontology: Ontology | undefined;
+    protected _projectEntityAttributes: ProjectEntityAttributes | undefined;
+    protected _projectEntitySupplyChainSnapshots: ProjectEntitySupplyChainSnapshots | undefined;
     protected _projectEntity: ProjectEntity | undefined;
     protected _project: Project | undefined;
     protected _record: Record_ | undefined;
@@ -126,6 +130,20 @@ export class SayariClient {
 
     public get ontology(): Ontology {
         return (this._ontology ??= new Ontology({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    public get projectEntityAttributes(): ProjectEntityAttributes {
+        return (this._projectEntityAttributes ??= new ProjectEntityAttributes({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    public get projectEntitySupplyChainSnapshots(): ProjectEntitySupplyChainSnapshots {
+        return (this._projectEntitySupplyChainSnapshots ??= new ProjectEntitySupplyChainSnapshots({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));

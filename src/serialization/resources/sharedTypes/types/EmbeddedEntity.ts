@@ -62,6 +62,7 @@ export const EmbeddedEntity: core.serialization.ObjectSchema<serializers.Embedde
         ),
         userRecordCount: core.serialization.property("user_record_count", core.serialization.number()),
         referenceId: core.serialization.property("reference_id", core.serialization.string().optional()),
+        logisticsEntity: core.serialization.property("logistics_entity", core.serialization.boolean().optional()),
     });
 
 export declare namespace EmbeddedEntity {
@@ -92,5 +93,6 @@ export declare namespace EmbeddedEntity {
         user_related_entities_count: number;
         user_record_count: number;
         reference_id?: string | null;
+        logistics_entity?: boolean | null;
     }
 }

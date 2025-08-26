@@ -12,6 +12,11 @@ import * as Sayari from "../../../../index";
  *
  * @example
  *     {
+ *         limit: 20
+ *     }
+ *
+ * @example
+ *     {
  *         limit: 20,
  *         sort: "-date"
  *     }

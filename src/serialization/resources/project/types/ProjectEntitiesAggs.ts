@@ -7,7 +7,6 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { BucketAgg } from "./BucketAgg";
 import { TierCountAgg } from "./TierCountAgg";
-import { HsCodeAgg } from "./HsCodeAgg";
 import { IntKeyValue } from "./IntKeyValue";
 import { TierCountKeys } from "./TierCountKeys";
 
@@ -27,9 +26,18 @@ export const ProjectEntitiesAggs: core.serialization.ObjectSchema<
     tagIds: core.serialization.property("tag_ids", core.serialization.list(BucketAgg).optional()),
     caseStatuses: core.serialization.property("case_statuses", core.serialization.list(BucketAgg).optional()),
     shipmentCounts: core.serialization.property("shipment_counts", core.serialization.list(BucketAgg).optional()),
-    shippedHsCodes: core.serialization.property("shipped_hs_codes", HsCodeAgg.optional()),
-    receivedHsCodes: core.serialization.property("received_hs_codes", HsCodeAgg.optional()),
-    combinedHsCodes: core.serialization.property("combined_hs_codes", HsCodeAgg.optional()),
+    shippedHsCodes: core.serialization.property(
+        "shipped_hs_codes",
+        core.serialization.list(core.serialization.string()).optional(),
+    ),
+    receivedHsCodes: core.serialization.property(
+        "received_hs_codes",
+        core.serialization.list(core.serialization.string()).optional(),
+    ),
+    combinedHsCodes: core.serialization.property(
+        "combined_hs_codes",
+        core.serialization.list(core.serialization.string()).optional(),
+    ),
     matchResults: core.serialization.property("match_results", core.serialization.list(BucketAgg).optional()),
     customFields: core.serialization.property("custom_fields", core.serialization.list(BucketAgg).optional()),
     customFieldsCount: core.serialization.property("custom_fields_count", IntKeyValue.optional()),
@@ -52,9 +60,9 @@ export declare namespace ProjectEntitiesAggs {
         tag_ids?: BucketAgg.Raw[] | null;
         case_statuses?: BucketAgg.Raw[] | null;
         shipment_counts?: BucketAgg.Raw[] | null;
-        shipped_hs_codes?: HsCodeAgg.Raw | null;
-        received_hs_codes?: HsCodeAgg.Raw | null;
-        combined_hs_codes?: HsCodeAgg.Raw | null;
+        shipped_hs_codes?: string[] | null;
+        received_hs_codes?: string[] | null;
+        combined_hs_codes?: string[] | null;
         match_results?: BucketAgg.Raw[] | null;
         custom_fields?: BucketAgg.Raw[] | null;
         custom_fields_count?: IntKeyValue.Raw | null;

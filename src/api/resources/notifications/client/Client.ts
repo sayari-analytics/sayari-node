@@ -49,6 +49,11 @@ export class Notifications {
      * @throws {@link Sayari.ConnectionError}
      *
      * @example
+     *     await client.notifications.projectNotifications("0dLeO0", {
+     *         limit: 20
+     *     })
+     *
+     * @example
      *     await client.notifications.projectNotifications("0oZnoG", {
      *         limit: 20
      *     })
@@ -92,8 +97,8 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -261,8 +266,8 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -414,8 +419,8 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -543,8 +548,8 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -672,8 +677,8 @@ export class Notifications {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
