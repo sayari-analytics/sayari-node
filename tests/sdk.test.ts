@@ -18,7 +18,7 @@ const client = new SayariClient({
 
 describe("SDK", () => {
     test("sources", async () => {
-        const sources = await client.source.listSources();
+        const sources = await client.ontology.getSources();
         expect(sources.data.length).toBeGreaterThanOrEqual(250)
     }, longTimeout);
 

@@ -22,12 +22,12 @@ const baseURL = process.env.BASE_URL ||  'https://api.sayari.com'
 const client = new SayariClient({ clientId: clientID, clientSecret: clientSecret, environment: baseURL })
 
 // list sources
-const sources = await client.source.listSources();
-console.log("Found", sources.data.length, "sources")
+const sources = await client.ontology.getSources()
+console.log("Found", sources.data.length, "ontology sources")
 
 // get the first source
-const firstSource = await client.source.getSource(sources.data[0].id)
-console.log("First source is:", firstSource.label)
+const firstSource = await client.ontology.getSources({ q: [{id: sources.data[0].id}] })
+console.log("First source is:", firstSource.data[0].label)
 
 // search for an entity
 const search_term = "victoria beckham limited"
