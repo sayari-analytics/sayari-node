@@ -98,6 +98,99 @@ import * as Sayari from "../../../index";
  *         exploredCount: 98,
  *         partialResults: false
  *     }
+ *
+ * @example
+ *     {
+ *         filters: {
+ *             limit: 1,
+ *             product: ["6004"]
+ *         },
+ *         data: {
+ *             paths: [{
+ *                     sourceEntityId: "e0WEtIhAvDUjWs-hg12jSA",
+ *                     path: [{
+ *                             tier: 2,
+ *                             entityId: "bWbImzpaFHN-4tj9n8JXzg",
+ *                             components: [{
+ *                                     hsCode: "6004",
+ *                                     arrivalCountries: ["KHM"],
+ *                                     departureCountries: ["VNM"],
+ *                                     minDate: "2023-01-01",
+ *                                     maxDate: "2024-12-31"
+ *                                 }]
+ *                         }, {
+ *                             tier: 3,
+ *                             entityId: "_jCU70ygP5Vx0kheGGxniw",
+ *                             components: [{
+ *                                     hsCode: "5402",
+ *                                     arrivalCountries: ["VNM"],
+ *                                     departureCountries: ["VNM"],
+ *                                     minDate: "2023-01-01",
+ *                                     maxDate: "2025-01-17"
+ *                                 }]
+ *                         }, {
+ *                             tier: 4,
+ *                             entityId: "dRvTdx1af-XrFqh9L3Y4-Q",
+ *                             components: [{
+ *                                     hsCode: "3907",
+ *                                     arrivalCountries: ["VNM"],
+ *                                     departureCountries: ["JPN"],
+ *                                     minDate: "2023-01-16",
+ *                                     maxDate: "2025-01-24"
+ *                                 }]
+ *                         }, {
+ *                             tier: 5,
+ *                             entityId: "FFXyR4N57IZuQDTH2pzYTQ",
+ *                             components: [{
+ *                                     hsCode: "2909",
+ *                                     arrivalCountries: ["JPN"],
+ *                                     departureCountries: ["USA"],
+ *                                     minDate: "2023-06-24",
+ *                                     maxDate: "2023-08-11"
+ *                                 }]
+ *                         }]
+ *                 }],
+ *             entities: {
+ *                 "FFXyR4N57IZuQDTH2pzYTQ": {
+ *                     id: "FFXyR4N57IZuQDTH2pzYTQ",
+ *                     type: "company",
+ *                     label: "Dow Chemical Co",
+ *                     riskFactors: ["law_enforcement_action", "psa_forced_labor_xinjiang_origin_subtier", "reputational_risk_other", "reputational_risk_financial_crime", "forced_labor_xinjiang_origin_subtier", "regulatory_action", "psa_forced_labor_aspi_origin_subtier"],
+ *                     countries: ["BEL", "CAN", "ECU", "USA"]
+ *                 },
+ *                 "dRvTdx1af-XrFqh9L3Y4-Q": {
+ *                     id: "dRvTdx1af-XrFqh9L3Y4-Q",
+ *                     type: "company",
+ *                     label: "NAGASE & CO LTD",
+ *                     riskFactors: ["psa_forced_labor_uflpa_origin_subtier", "exports_ilab_forced_labor", "psa_forced_labor_xinjiang_origin_subtier", "psa_export_to_soe", "forced_labor_sheffield_hallam_university_reports_origin_subtier", "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier", "psa_exports_ilab_forced_labor", "forced_labor_uflpa_origin_subtier", "forced_labor_xinjiang_origin_subtier", "psa_forced_labor_aspi_origin_subtier"],
+ *                     countries: ["BRA", "CAN", "CHN", "DEU", "ESP", "GBR", "ISR", "JPN", "KOR", "NLD", "SGP", "TCD", "THA", "TUR", "TWN", "USA", "VNM"]
+ *                 },
+ *                 "_jCU70ygP5Vx0kheGGxniw": {
+ *                     id: "_jCU70ygP5Vx0kheGGxniw",
+ *                     type: "company",
+ *                     label: "C\u00F4NG TY TR\u00E1CH NHI\u1EC7M H\u1EEFU H\u1EA1N HYOSUNG VI\u1EC7T NAM",
+ *                     riskFactors: ["psa_forced_labor_uflpa_origin_subtier", "exports_ilab_forced_labor", "psa_forced_labor_xinjiang_origin_subtier", "eu_high_risk_third", "psa_export_to_soe", "forced_labor_sheffield_hallam_university_reports_origin_subtier", "psa_exports_ilab_child_labor", "psa_exports_eudr_shipment_wood", "exports_eudr_shipment_wood", "psa_exports_eudr_shipment_rubber", "exports_ilab_child_labor", "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier", "psa_exports_ilab_forced_labor", "exports_eudr_shipment_rubber", "forced_labor_uflpa_origin_subtier", "export_to_soe", "forced_labor_xinjiang_origin_subtier", "psa_forced_labor_aspi_origin_subtier"],
+ *                     countries: ["ARE", "ARG", "AUT", "BEL", "BRA", "CHE", "CHN", "CYP", "CZE", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "GEO", "GRC", "HKG", "HUN", "IDN", "IND", "ITA", "JPN", "KHM", "KOR", "LTU", "LUX", "LVA", "MEX", "MYS", "NAM", "PHL", "POL", "PRT", "ROU", "SAU", "SEN", "SGP", "SRB", "SVN", "SWE", "THA", "TUR", "TWN", "USA", "VIR", "VNM"]
+ *                 },
+ *                 "bWbImzpaFHN-4tj9n8JXzg": {
+ *                     id: "bWbImzpaFHN-4tj9n8JXzg",
+ *                     type: "company",
+ *                     label: "C\u00F4ng ty TNHH GAIN LUCKY (Vi\u1EC7t Nam)",
+ *                     riskFactors: ["psa_forced_labor_uflpa_origin_subtier", "exports_ilab_forced_labor", "psa_forced_labor_xinjiang_origin_subtier", "eu_high_risk_third", "sheffield_hallam_university_forced_labor_reports_intermediary_entity", "forced_labor_sheffield_hallam_university_reports_origin_subtier", "psa_exports_ilab_child_labor", "psa_exports_eudr_shipment_wood", "exports_eudr_shipment_wood", "exports_ilab_child_labor", "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier", "psa_exports_ilab_forced_labor", "forced_labor_uflpa_origin_subtier", "forced_labor_xinjiang_origin_subtier", "psa_forced_labor_aspi_origin_subtier"],
+ *                     countries: ["CHE", "CHN", "DEU", "GEO", "HKG", "JPN", "KHM", "KOR", "THA", "VIR", "VNM"]
+ *                 },
+ *                 "e0WEtIhAvDUjWs-hg12jSA": {
+ *                     id: "e0WEtIhAvDUjWs-hg12jSA",
+ *                     type: "company",
+ *                     label: "MARVEL GARMENT CO LTD",
+ *                     riskFactors: ["psa_forced_labor_uflpa_origin_subtier", "exports_ilab_forced_labor", "psa_forced_labor_xinjiang_origin_subtier", "eu_high_risk_third", "forced_labor_sheffield_hallam_university_reports_origin_subtier", "psa_exports_ilab_child_labor", "psa_exports_eudr_shipment_wood", "exports_eudr_shipment_wood", "exports_ilab_child_labor", "psa_forced_labor_wro_origin_subtier", "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier", "psa_exports_ilab_forced_labor", "forced_labor_uflpa_origin_subtier", "forced_labor_xinjiang_origin_subtier", "psa_forced_labor_aspi_origin_subtier"],
+ *                     countries: ["CAN", "COL", "HKG", "KHM", "MAC", "USA"]
+ *                 }
+ *             }
+ *         },
+ *         exploredCount: 70357,
+ *         partialResults: false
+ *     }
  */
 export interface UpstreamTradeTraversalResponse {
     status?: number;

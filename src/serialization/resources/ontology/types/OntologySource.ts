@@ -18,7 +18,7 @@ export const OntologySource: core.serialization.ObjectSchema<serializers.Ontolog
         sourceType: core.serialization.property("source_type", core.serialization.string()),
         recordType: core.serialization.property("record_type", core.serialization.string()),
         structure: core.serialization.string(),
-        sourceUrl: core.serialization.property("source_url", core.serialization.string()),
+        sourceUrl: core.serialization.property("source_url", core.serialization.string().optional()),
         pep: core.serialization.boolean(),
         watchlist: core.serialization.boolean(),
     });
@@ -34,7 +34,7 @@ export declare namespace OntologySource {
         source_type: string;
         record_type: string;
         structure: string;
-        source_url: string;
+        source_url?: string | null;
         pep: boolean;
         watchlist: boolean;
     }

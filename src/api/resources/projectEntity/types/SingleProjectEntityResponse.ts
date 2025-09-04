@@ -32,10 +32,61 @@ import * as Sayari from "../../../index";
  *                     values: ["253400V1H6ART1UQ0N98"]
  *                 }
  *             },
- *             productMapping: {
- *                 state: "unmapped",
+ *             countries: ["USA", "CYP", "ITA", "CHN", "RUS", "UKR", "IND", "IRL", "KAZ", "DEU"],
+ *             riskCategories: [{
+ *                     id: "regulatory_action",
+ *                     label: "Regulatory action",
+ *                     riskFactors: ["regulatory_action"]
+ *                 }, {
+ *                     id: "export_controls",
+ *                     label: "Export controls",
+ *                     riskFactors: ["meu_list_contractors", "export_controls"]
+ *                 }, {
+ *                     id: "political_exposure",
+ *                     label: "Political exposure",
+ *                     riskFactors: ["soe_adjacent", "pep_adjacent"]
+ *                 }, {
+ *                     id: "sanctions",
+ *                     label: "Sanctions",
+ *                     riskFactors: ["sanctioned", "formerly_sanctioned"]
+ *                 }, {
+ *                     id: "adverse_media",
+ *                     label: "Adverse media",
+ *                     riskFactors: ["reputational_risk_other"]
+ *                 }],
+ *             riskFactors: [{
+ *                     id: "regulatory_action"
+ *                 }, {
+ *                     id: "sanctioned"
+ *                 }, {
+ *                     id: "meu_list_contractors"
+ *                 }, {
+ *                     id: "reputational_risk_other"
+ *                 }, {
+ *                     id: "pep_adjacent"
+ *                 }, {
+ *                     id: "state_owned"
+ *                 }, {
+ *                     id: "export_controls"
+ *                 }, {
+ *                     id: "formerly_sanctioned"
+ *                 }, {
+ *                     id: "basel_aml"
+ *                 }, {
+ *                     id: "cpi_score"
+ *                 }],
+ *             upstream: {
+ *                 riskFactors: [],
+ *                 countries: [],
+ *                 tradeCounts: {
+ *                     shipperOf: 56,
+ *                     receiverOf: 2
+ *                 },
+ *                 hasUpstream: false,
  *                 products: []
  *             },
+ *             tags: [],
+ *             case: Sayari.CaseStatus.NotAssigned,
  *             matches: [{
  *                     matchId: "52z4Wa:dy-rh2g0QtzUN_jC_e9S_A",
  *                     sayariEntityId: "dy-rh2g0QtzUN_jC_e9S_A",
@@ -48,6 +99,27 @@ import * as Sayari from "../../../index";
  *                         identifier: ["<em>253400V1H6ART1UQ0N98</em>", "<em>253400V1H6ART1UQ0N98</em>"]
  *                     },
  *                     countries: ["USA", "CYP", "ITA", "CHN", "RUS", "UKR", "IND", "IRL", "KAZ", "DEU"],
+ *                     riskCategories: [{
+ *                             id: "regulatory_action",
+ *                             label: "Regulatory action",
+ *                             riskFactors: ["regulatory_action"]
+ *                         }, {
+ *                             id: "export_controls",
+ *                             label: "Export controls",
+ *                             riskFactors: ["meu_list_contractors", "export_controls"]
+ *                         }, {
+ *                             id: "political_exposure",
+ *                             label: "Political exposure",
+ *                             riskFactors: ["soe_adjacent", "pep_adjacent"]
+ *                         }, {
+ *                             id: "sanctions",
+ *                             label: "Sanctions",
+ *                             riskFactors: ["sanctioned", "formerly_sanctioned"]
+ *                         }, {
+ *                             id: "adverse_media",
+ *                             label: "Adverse media",
+ *                             riskFactors: ["reputational_risk_other"]
+ *                         }],
  *                     riskFactors: [{
  *                             id: "regulatory_action"
  *                         }, {
@@ -237,9 +309,85 @@ import * as Sayari from "../../../index";
  *                     hsCodes: ["847150", "8471500000", "852351", "8523519101", "860610", "8606100000", "271019", "2710196601", "490700", "4907003000", "711890", "7118900000", "490700", "4907003000", "711890", "7118900000"],
  *                     createdAt: "2025-04-22 22:54:00.913586+00",
  *                     updatedAt: "2025-04-22 22:54:00.913586+00"
+ *                 }]
+ *         }
+ *     }
+ *
+ * @example
+ *     {
+ *         data: {
+ *             projectEntityId: "R3BEv8",
+ *             projectId: "0n4473",
+ *             label: "Marvel Garment",
+ *             uploadIds: [],
+ *             strength: Sayari.MatchStrengthEnum.Strong,
+ *             createdAt: "2025-08-26 00:29:10.514803+00",
+ *             attributes: {
+ *                 "name": {
+ *                     resolve: true,
+ *                     values: ["Marvel Garment"]
+ *                 },
+ *                 "country": {
+ *                     resolve: true,
+ *                     values: ["KHM"]
+ *                 },
+ *                 "address": {
+ *                     resolve: true,
+ *                     values: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+ *                 }
+ *             },
+ *             countries: ["MAC", "KHM", "USA", "COL", "HKG", "CAN"],
+ *             riskCategories: [{
+ *                     id: "forced_labor",
+ *                     label: "Forced labor",
+ *                     riskFactors: ["psa_forced_labor_uflpa_origin_subtier", "psa_forced_labor_xinjiang_origin_subtier", "forced_labor_sheffield_hallam_university_reports_origin_subtier", "psa_forced_labor_wro_origin_subtier", "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier", "forced_labor_uflpa_origin_subtier", "forced_labor_xinjiang_origin_subtier", "psa_forced_labor_aspi_origin_subtier", "exports_ilab_forced_labor", "psa_exports_ilab_child_labor", "exports_ilab_child_labor", "psa_exports_ilab_forced_labor"]
+ *                 }, {
+ *                     id: "environmental_risk",
+ *                     label: "Environmental risk",
+ *                     riskFactors: ["psa_exports_eudr_shipment_wood", "exports_eudr_shipment_wood"]
  *                 }],
+ *             riskFactors: [{
+ *                     id: "psa_forced_labor_uflpa_origin_subtier"
+ *                 }, {
+ *                     id: "psa_forced_labor_xinjiang_origin_subtier"
+ *                 }, {
+ *                     id: "forced_labor_sheffield_hallam_university_reports_origin_subtier"
+ *                 }, {
+ *                     id: "psa_exports_eudr_shipment_wood"
+ *                 }, {
+ *                     id: "exports_eudr_shipment_wood"
+ *                 }, {
+ *                     id: "psa_forced_labor_wro_origin_subtier"
+ *                 }, {
+ *                     id: "psa_forced_labor_sheffield_hallam_university_reports_origin_subtier"
+ *                 }, {
+ *                     id: "forced_labor_uflpa_origin_subtier"
+ *                 }, {
+ *                     id: "forced_labor_xinjiang_origin_subtier"
+ *                 }, {
+ *                     id: "psa_forced_labor_aspi_origin_subtier"
+ *                 }, {
+ *                     id: "exports_ilab_forced_labor"
+ *                 }, {
+ *                     id: "psa_exports_ilab_child_labor"
+ *                 }, {
+ *                     id: "exports_ilab_child_labor"
+ *                 }, {
+ *                     id: "psa_exports_ilab_forced_labor"
+ *                 }],
+ *             upstream: {
+ *                 countries: [],
+ *                 riskFactors: [],
+ *                 products: ["6006", "5808", "9607", "6117", "6004", "3506", "5806", "3215", "6001", "3926", "5407", "8451", "9406", "8308", "5607", "6205", "2905", "6105", "6109", "6110", "4202", "6203", "6104", "6114", "6101", "6111", "6204", "8537", "6103", "8452", "6112", "4908", "6202", "9506", "6307", "4015", "6102", "5515", "6108", "4911", "4820"],
+ *                 tradeCounts: {
+ *                     shipperOf: 58,
+ *                     receiverOf: 34
+ *                 },
+ *                 hasUpstream: true
+ *             },
  *             tags: [],
- *             case: Sayari.CaseStatus.NotAssigned
+ *             case: Sayari.CaseStatus.NotAssigned,
+ *             matches: []
  *         }
  *     }
  */

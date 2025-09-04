@@ -26,13 +26,13 @@ export interface GetProjectEntitiesRequest {
      */
     tags?: string[];
     /**
-     * Filter by match result
+     * Filter by match count
      */
-    matchResult?: Sayari.MatchResult[];
+    matchCount?: Sayari.MatchCount;
     /**
      * Filter by match strength
      */
-    matchStrengthV1?: Sayari.MatchStrengthEnum[];
+    matchStrength?: Sayari.MatchStrengthEnum[];
     /**
      * Filter by entity types
      */

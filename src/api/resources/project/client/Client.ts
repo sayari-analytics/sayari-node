@@ -47,7 +47,10 @@ export class Project {
      *
      * @example
      *     await client.project.createProject({
-     *         label: "Project Alpha"
+     *         label: "My First Project",
+     *         share: {
+     *             org: "admin"
+     *         }
      *     })
      */
     public async createProject(
@@ -66,8 +69,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -226,8 +229,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -328,265 +331,6 @@ export class Project {
     }
 
     /**
-     * <Warning>This endpoint is deprecated.</Warning> Retrieve a list of entities in a project.
-     *
-     * @param {string} id - The project identifier.
-     * @param {Sayari.GetProjectEntities} request
-     * @param {Project.RequestOptions} requestOptions - Request-specific configuration.
-     *
-     * @throws {@link Sayari.BadRequest}
-     * @throws {@link Sayari.Unauthorized}
-     * @throws {@link Sayari.MethodNotAllowed}
-     * @throws {@link Sayari.NotAcceptable}
-     * @throws {@link Sayari.RateLimitExceeded}
-     * @throws {@link Sayari.InternalServerError}
-     *
-     * @example
-     *     await client.project.getProjectEntities("gPq6EY", {
-     *         accept: "application/json"
-     *     })
-     */
-    public async getProjectEntities(
-        id: string,
-        request: Sayari.GetProjectEntities,
-        requestOptions?: Project.RequestOptions,
-    ): Promise<Sayari.GetProjectEntitiesResponse> {
-        const {
-            next,
-            prev,
-            limit,
-            entityTypes,
-            geoFacets,
-            hsCodes,
-            receivedHsCodes,
-            shippedHsCodes,
-            combinedHsCodes,
-            translation,
-            sort,
-            filters,
-            aggregations,
-            accept,
-        } = request;
-        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
-        if (next != null) {
-            _queryParams["next"] = next;
-        }
-
-        if (prev != null) {
-            _queryParams["prev"] = prev;
-        }
-
-        if (limit != null) {
-            _queryParams["limit"] = limit.toString();
-        }
-
-        if (entityTypes != null) {
-            if (Array.isArray(entityTypes)) {
-                _queryParams["entity_types"] = entityTypes.map((item) =>
-                    serializers.Entities.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
-                );
-            } else {
-                _queryParams["entity_types"] = serializers.Entities.jsonOrThrow(entityTypes, {
-                    unrecognizedObjectKeys: "strip",
-                });
-            }
-        }
-
-        if (geoFacets != null) {
-            _queryParams["geo_facets"] = geoFacets.toString();
-        }
-
-        if (hsCodes != null) {
-            if (Array.isArray(hsCodes)) {
-                _queryParams["hs_codes"] = hsCodes.map((item) => item);
-            } else {
-                _queryParams["hs_codes"] = hsCodes;
-            }
-        }
-
-        if (receivedHsCodes != null) {
-            if (Array.isArray(receivedHsCodes)) {
-                _queryParams["received_hs_codes"] = receivedHsCodes.map((item) => item);
-            } else {
-                _queryParams["received_hs_codes"] = receivedHsCodes;
-            }
-        }
-
-        if (shippedHsCodes != null) {
-            if (Array.isArray(shippedHsCodes)) {
-                _queryParams["shipped_hs_codes"] = shippedHsCodes.map((item) => item);
-            } else {
-                _queryParams["shipped_hs_codes"] = shippedHsCodes;
-            }
-        }
-
-        if (combinedHsCodes != null) {
-            if (Array.isArray(combinedHsCodes)) {
-                _queryParams["combined_hs_codes"] = combinedHsCodes.map((item) => item);
-            } else {
-                _queryParams["combined_hs_codes"] = combinedHsCodes;
-            }
-        }
-
-        if (translation != null) {
-            _queryParams["translation"] = translation;
-        }
-
-        if (sort != null) {
-            _queryParams["sort"] = serializers.SortField.jsonOrThrow(sort, { unrecognizedObjectKeys: "strip" });
-        }
-
-        if (filters != null) {
-            if (Array.isArray(filters)) {
-                _queryParams["filters"] = await Promise.all(
-                    filters.map(async (item) =>
-                        serializers.ProjectEntitiesFilter.jsonOrThrow(item, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["request", "filters"],
-                        }),
-                    ),
-                );
-            } else {
-                _queryParams["filters"] = serializers.ProjectEntitiesFilter.jsonOrThrow(filters, {
-                    unrecognizedObjectKeys: "passthrough",
-                    allowUnrecognizedUnionMembers: true,
-                    allowUnrecognizedEnumValues: true,
-                    breadcrumbsPrefix: ["request", "filters"],
-                });
-            }
-        }
-
-        if (aggregations != null) {
-            if (Array.isArray(aggregations)) {
-                _queryParams["aggregations"] = aggregations.map((item) =>
-                    serializers.ProjectEntitiesAggsDefinition.jsonOrThrow(item, { unrecognizedObjectKeys: "strip" }),
-                );
-            } else {
-                _queryParams["aggregations"] = aggregations;
-            }
-        }
-
-        const _response = await core.fetcher({
-            url: urlJoin(
-                (await core.Supplier.get(this._options.baseUrl)) ??
-                    (await core.Supplier.get(this._options.environment)) ??
-                    environments.SayariEnvironment.Production,
-                `/v1/projects/${encodeURIComponent(id)}/contents/entity`,
-            ),
-            method: "GET",
-            headers: {
-                Authorization: await this._getAuthorizationHeader(),
-                "X-Fern-Language": "JavaScript",
-                "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
-                "X-Fern-Runtime": core.RUNTIME.type,
-                "X-Fern-Runtime-Version": core.RUNTIME.version,
-                Accept: serializers.GetProjectEntitiesAcceptHeader.jsonOrThrow(accept, {
-                    unrecognizedObjectKeys: "strip",
-                }),
-                ...requestOptions?.headers,
-            },
-            contentType: "application/json",
-            queryParameters: _queryParams,
-            requestType: "json",
-            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
-            maxRetries: requestOptions?.maxRetries,
-            abortSignal: requestOptions?.abortSignal,
-        });
-        if (_response.ok) {
-            return serializers.GetProjectEntitiesResponse.parseOrThrow(_response.body, {
-                unrecognizedObjectKeys: "passthrough",
-                allowUnrecognizedUnionMembers: true,
-                allowUnrecognizedEnumValues: true,
-                breadcrumbsPrefix: ["response"],
-            });
-        }
-
-        if (_response.error.reason === "status-code") {
-            switch (_response.error.statusCode) {
-                case 400:
-                    throw new Sayari.BadRequest(
-                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        }),
-                    );
-                case 401:
-                    throw new Sayari.Unauthorized(
-                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        }),
-                    );
-                case 405:
-                    throw new Sayari.MethodNotAllowed(
-                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        }),
-                    );
-                case 406:
-                    throw new Sayari.NotAcceptable(
-                        serializers.NotAcceptableResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        }),
-                    );
-                case 429:
-                    throw new Sayari.RateLimitExceeded(
-                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        }),
-                    );
-                case 500:
-                    throw new Sayari.InternalServerError(
-                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        }),
-                    );
-                default:
-                    throw new errors.SayariError({
-                        statusCode: _response.error.statusCode,
-                        body: _response.error.body,
-                    });
-            }
-        }
-
-        switch (_response.error.reason) {
-            case "non-json":
-                throw new errors.SayariError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.rawBody,
-                });
-            case "timeout":
-                throw new errors.SayariTimeoutError(
-                    "Timeout exceeded when calling GET /v1/projects/{id}/contents/entity.",
-                );
-            case "unknown":
-                throw new errors.SayariError({
-                    message: _response.error.errorMessage,
-                });
-        }
-    }
-
-    /**
      * Deletes an existing project.
      *
      * @param {string} projectId
@@ -618,8 +362,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,

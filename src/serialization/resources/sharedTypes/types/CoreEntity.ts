@@ -70,6 +70,7 @@ export const CoreEntity: core.serialization.ObjectSchema<serializers.CoreEntity.
             editedBy: core.serialization.property("edited_by", core.serialization.string().optional()),
             editable: core.serialization.boolean().optional(),
             upload: core.serialization.string().optional(),
+            logisticsEntity: core.serialization.property("logistics_entity", core.serialization.boolean().optional()),
         })
         .extend(EntitySummary);
 
@@ -109,5 +110,6 @@ export declare namespace CoreEntity {
         edited_by?: string | null;
         editable?: boolean | null;
         upload?: string | null;
+        logistics_entity?: boolean | null;
     }
 }

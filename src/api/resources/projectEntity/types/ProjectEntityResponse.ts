@@ -12,9 +12,12 @@ export interface ProjectEntityResponse {
     strength: Sayari.MatchStrengthEnum;
     createdAt: string;
     attributes: Record<string, Sayari.AttributeValues>;
-    productMapping?: Sayari.ProductMapping;
-    matches: Sayari.ProjectEntityMatchResponse[];
+    countries: string[];
+    riskCategories: Sayari.ProjectRiskCategory[];
+    riskFactors: Sayari.ProjectRiskFactor[];
+    upstream: Sayari.UpstreamInfo;
     tags: Sayari.TagResponse[];
     case?: Sayari.CaseStatus;
+    matches: Sayari.ProjectEntityMatchResponse[];
     updatedAt?: string;
 }
