@@ -60,6 +60,8 @@ export class SupplyChain {
         requestOptions?: SupplyChain.RequestOptions,
     ): Promise<Sayari.UpstreamTradeTraversalResponse> {
         const {
+            product,
+            notProduct,
             risk,
             notRisk,
             countries,
@@ -71,8 +73,6 @@ export class SupplyChain {
             tier3ShipmentCountry,
             tier4ShipmentCountry,
             tier5ShipmentCountry,
-            product,
-            notProduct,
             component,
             notComponent,
             minDate,
@@ -81,6 +81,14 @@ export class SupplyChain {
             limit,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
+        if (product != null) {
+            _queryParams["product"] = toJson(product);
+        }
+
+        if (notProduct != null) {
+            _queryParams["-product"] = toJson(notProduct);
+        }
+
         if (risk != null) {
             _queryParams["risk"] = toJson(risk);
         }
@@ -125,14 +133,6 @@ export class SupplyChain {
             _queryParams["tier5_shipment_country"] = toJson(tier5ShipmentCountry);
         }
 
-        if (product != null) {
-            _queryParams["product"] = toJson(product);
-        }
-
-        if (notProduct != null) {
-            _queryParams["-product"] = toJson(notProduct);
-        }
-
         if (component != null) {
             _queryParams["component"] = toJson(component);
         }
@@ -169,8 +169,8 @@ export class SupplyChain {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.43",
-                "User-Agent": "@sayari/sdk/0.1.43",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,

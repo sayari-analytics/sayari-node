@@ -14,4 +14,5 @@ export interface Project {
     created: string;
     updated: string;
     counts: Sayari.ProjectCounts;
+    isScrm?: boolean;
 }

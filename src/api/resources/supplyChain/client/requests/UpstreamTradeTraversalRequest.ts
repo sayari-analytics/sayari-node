@@ -14,6 +14,14 @@ import * as Sayari from "../../../../index";
  */
 export interface UpstreamTradeTraversalRequest {
     /**
+     * Product root edge filter. Filters results to include only trade relationships where the associated component is part of the specified product's blueprint or is a sub-component of that product.
+     */
+    product?: string[];
+    /**
+     * Product root edge filter. Filters results to exclude any trade relationships where the associated component is part of the specified product's blueprint or is a sub-component of that product.
+     */
+    notProduct?: string[];
+    /**
      * Risk leaf node filter. Only return supply chains that end with a supplier that has 1+ of the specified risk factors.
      */
     risk?: Sayari.Risk[];
@@ -57,14 +65,6 @@ export interface UpstreamTradeTraversalRequest {
      * Filters supply chain paths where 1+ shipment country from tier 5 matches the provided values.
      */
     tier5ShipmentCountry?: Sayari.Country[];
-    /**
-     * Product root edge filter. Only return supply chains that start with an edge that has 1+ of the specified HS codes.
-     */
-    product?: string[];
-    /**
-     * Product root edge filter. Only return supply chains that start with an edge that has none of the specified HS codes.
-     */
-    notProduct?: string[];
     /**
      * Component edge filter. Only return supply chains that contain at least one edge with 1+ of the specified HS codes.
      */

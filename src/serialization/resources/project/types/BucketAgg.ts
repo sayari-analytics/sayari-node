@@ -5,7 +5,6 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { IntKeyValue } from "./IntKeyValue";
 
 export const BucketAgg: core.serialization.ObjectSchema<serializers.BucketAgg.Raw, Sayari.BucketAgg> =
     core.serialization.object({
@@ -13,7 +12,6 @@ export const BucketAgg: core.serialization.ObjectSchema<serializers.BucketAgg.Ra
         docCount: core.serialization.property("doc_count", core.serialization.number()),
         label: core.serialization.string().optional(),
         comment: core.serialization.string().optional(),
-        hsCodeSums: core.serialization.property("hs_code_sums", IntKeyValue.optional()),
     });
 
 export declare namespace BucketAgg {
@@ -22,6 +20,5 @@ export declare namespace BucketAgg {
         doc_count: number;
         label?: string | null;
         comment?: string | null;
-        hs_code_sums?: IntKeyValue.Raw | null;
     }
 }

@@ -275,26 +275,7 @@ import * as Sayari from "../../../index";
  *                     key: "CAN",
  *                     docCount: 3
  *                 }],
- *             receivedHsCodes: {
- *                 docCount: 2,
- *                 hsCodeTerms: {
- *                     docCountErrorUpperBound: 0,
- *                     sumOtherDocCount: 0,
- *                     buckets: [{
- *                             key: "271290",
- *                             docCount: 1,
- *                             hsCodeSums: {
- *                                 value: 4
- *                             }
- *                         }, {
- *                             key: "271220",
- *                             docCount: 1,
- *                             hsCodeSums: {
- *                                 value: 1
- *                             }
- *                         }]
- *                 }
- *             },
+ *             receivedHsCodes: ["271290", "271220"],
  *             customFields: [{
  *                     key: "custom_id1",
  *                     docCount: 7
@@ -332,34 +313,8 @@ import * as Sayari from "../../../index";
  *                     "totalCount": 4
  *                 }
  *             },
- *             shippedHsCodes: {
- *                 docCount: 0,
- *                 hsCodeTerms: {
- *                     docCountErrorUpperBound: 0,
- *                     sumOtherDocCount: 0,
- *                     buckets: []
- *                 }
- *             },
- *             combinedHsCodes: {
- *                 docCount: 2,
- *                 hsCodeTerms: {
- *                     docCountErrorUpperBound: 0,
- *                     sumOtherDocCount: 0,
- *                     buckets: [{
- *                             key: "271290",
- *                             docCount: 1,
- *                             hsCodeSums: {
- *                                 value: 4
- *                             }
- *                         }, {
- *                             key: "271220",
- *                             docCount: 1,
- *                             hsCodeSums: {
- *                                 value: 1
- *                             }
- *                         }]
- *                 }
- *             }
+ *             shippedHsCodes: undefined,
+ *             combinedHsCodes: ["271290", "271220"]
  *         }
  *     }
  */

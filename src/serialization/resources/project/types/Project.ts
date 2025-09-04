@@ -15,6 +15,7 @@ export const Project: core.serialization.ObjectSchema<serializers.Project.Raw, S
         created: core.serialization.string(),
         updated: core.serialization.string(),
         counts: ProjectCounts,
+        isScrm: core.serialization.property("is_scrm", core.serialization.boolean().optional()),
     });
 
 export declare namespace Project {
@@ -25,5 +26,6 @@ export declare namespace Project {
         created: string;
         updated: string;
         counts: ProjectCounts.Raw;
+        is_scrm?: boolean | null;
     }
 }

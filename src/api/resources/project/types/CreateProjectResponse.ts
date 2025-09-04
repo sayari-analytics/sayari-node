@@ -8,17 +8,18 @@ import * as Sayari from "../../../index";
  * @example
  *     {
  *         data: {
- *             id: "YVMBRg",
- *             label: "Project Alpha",
+ *             id: "0pjjaB",
+ *             label: "My First Project",
  *             archived: false,
- *             created: "2024-03-15 20:31:06.08855+00",
- *             updated: "2024-03-15 20:31:06.08855+00",
+ *             created: "2025-08-26 03:17:58.70405+00",
+ *             updated: "2025-08-26 03:17:58.70405+00",
  *             counts: {
  *                 entity: 0,
  *                 graph: 0,
  *                 record: 0,
  *                 search: 0
- *             }
+ *             },
+ *             isScrm: false
  *         }
  *     }
  */

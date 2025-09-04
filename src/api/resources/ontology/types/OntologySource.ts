@@ -15,7 +15,7 @@ export interface OntologySource {
     sourceType: string;
     recordType: string;
     structure: string;
-    sourceUrl: string;
+    sourceUrl?: string;
     pep: boolean;
     watchlist: boolean;
 }

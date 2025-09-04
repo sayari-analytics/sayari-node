@@ -137,6 +137,7 @@ import * as Sayari from "../../../index";
  *             [Sayari.Attributes.Address]: 6
  *         },
  *         referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/06517802/1540252800000:4a34442eccf1622995130b194a5d50e7",
+ *         logisticsEntity: false,
  *         attributes: {
  *             name: {
  *                 offset: 0,
@@ -523,7 +524,8 @@ import * as Sayari from "../../../index";
  *                             [Sayari.Attributes.Country]: 2,
  *                             [Sayari.Attributes.Status]: 1
  *                         },
- *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201601838935/1590327027286:74e256656669aa44a5671d4f8898917b"
+ *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201601838935/1590327027286:74e256656669aa44a5671d4f8898917b",
+ *                         logisticsEntity: false
  *                     },
  *                     matches: {}
  *                 }, {
@@ -608,7 +610,8 @@ import * as Sayari from "../../../index";
  *                             [Sayari.Attributes.Status]: 1,
  *                             [Sayari.Attributes.Address]: 4
  *                         },
- *                         referenceId: "b4d06d4b77f51fab3c77c9653aabdda4/a80e7f4c-c219-437b-9941-32d89ea5885a/1560542045043:15d813b260619393762864f22d3c5b2d"
+ *                         referenceId: "b4d06d4b77f51fab3c77c9653aabdda4/a80e7f4c-c219-437b-9941-32d89ea5885a/1560542045043:15d813b260619393762864f22d3c5b2d",
+ *                         logisticsEntity: false
  *                     },
  *                     matches: {}
  *                 }, {
@@ -693,7 +696,8 @@ import * as Sayari from "../../../index";
  *                             [Sayari.Attributes.Status]: 2,
  *                             [Sayari.Attributes.Address]: 1
  *                         },
- *                         referenceId: "b67ab545f3ddc960d272d11ec5952665/829099316/1591105044949:7d86f50bb976ee542fcfac7bd17b6cca"
+ *                         referenceId: "b67ab545f3ddc960d272d11ec5952665/829099316/1591105044949:7d86f50bb976ee542fcfac7bd17b6cca",
+ *                         logisticsEntity: false
  *                     },
  *                     matches: {}
  *                 }, {
@@ -770,7 +774,8 @@ import * as Sayari from "../../../index";
  *                             [Sayari.Attributes.Country]: 2,
  *                             [Sayari.Attributes.Status]: 1
  *                         },
- *                         referenceId: "985b4533cd1cb2db1d736dd31f8e34c9/January 2013.pdf/1643737587282:f1b8f7a9ed23af356dcd37ce6c3ea059"
+ *                         referenceId: "985b4533cd1cb2db1d736dd31f8e34c9/January 2013.pdf/1643737587282:f1b8f7a9ed23af356dcd37ce6c3ea059",
+ *                         logisticsEntity: false
  *                     },
  *                     matches: {}
  *                 }, {
@@ -837,7 +842,8 @@ import * as Sayari from "../../../index";
  *                             [Sayari.Attributes.Country]: 2,
  *                             [Sayari.Attributes.Address]: 1
  *                         },
- *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201601838933/1590326996292:e8a8042f374e3dc41f62621f66357db2"
+ *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201601838933/1590326996292:e8a8042f374e3dc41f62621f66357db2",
+ *                         logisticsEntity: false
  *                     },
  *                     matches: {}
  *                 }, {
@@ -895,7 +901,8 @@ import * as Sayari from "../../../index";
  *                             [Sayari.Attributes.Identifier]: 2,
  *                             [Sayari.Attributes.AdditionalInformation]: 3
  *                         },
- *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM200901021433/1589580993652:90376816c6039ba02628d4db100fc79f"
+ *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM200901021433/1589580993652:90376816c6039ba02628d4db100fc79f",
+ *                         logisticsEntity: false
  *                     },
  *                     matches: {}
  *                 }, {
@@ -959,7 +966,8 @@ import * as Sayari from "../../../index";
  *                             [Sayari.Attributes.Country]: 2,
  *                             [Sayari.Attributes.Status]: 1
  *                         },
- *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201601838934/1590327029874:8bbf00ad8adcb3f371a01e15dea7a1ff"
+ *                         referenceId: "b9d809b02049993ba8dc2e4c5f7cceca/RM201601838934/1590327029874:8bbf00ad8adcb3f371a01e15dea7a1ff",
+ *                         logisticsEntity: false
  *                     },
  *                     matches: {}
  *                 }, {
@@ -1006,7 +1014,8 @@ import * as Sayari from "../../../index";
  *                             [Sayari.Attributes.Name]: 1,
  *                             [Sayari.Attributes.Country]: 1
  *                         },
- *                         referenceId: "542ad2352af9ce07202a2f34d402d5bf/UK00004079756/1723420800000:b2ae9158c53ea711278ce72cccb2c8b2"
+ *                         referenceId: "542ad2352af9ce07202a2f34d402d5bf/UK00004079756/1723420800000:b2ae9158c53ea711278ce72cccb2c8b2",
+ *                         logisticsEntity: false
  *                     },
  *                     matches: {}
  *                 }]
