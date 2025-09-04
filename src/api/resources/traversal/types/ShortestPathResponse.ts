@@ -86,7 +86,8 @@ import * as Sayari from "../../../index";
  *                         [Sayari.Attributes.DateOfBirth]: 1,
  *                         [Sayari.Attributes.Address]: 5
  *                     },
- *                     referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/03389614/1540252800000:9030330caf25555c42c0bc0d84ea4aa1"
+ *                     referenceId: "ecdfb3f2ecc8c3797e77d5795a8066ef/03389614/1540252800000:9030330caf25555c42c0bc0d84ea4aa1",
+ *                     logisticsEntity: false
  *                 },
  *                 path: [{
  *                         field: "has_lawyer",
@@ -127,7 +128,8 @@ import * as Sayari from "../../../index";
  *                                 [Sayari.Attributes.Address]: 5,
  *                                 [Sayari.Attributes.Name]: 1
  *                             },
- *                             referenceId: "ac1fa195f9cd4ccf657bca3c6db0bb19/76232419/1717632000000:6d0f0edbd065319df4be58c3bc7909f5"
+ *                             referenceId: "ac1fa195f9cd4ccf657bca3c6db0bb19/76232419/1717632000000:6d0f0edbd065319df4be58c3bc7909f5",
+ *                             logisticsEntity: false
  *                         },
  *                         relationships: {
  *                             [Sayari.Relationships.HasLawyer]: {

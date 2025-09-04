@@ -13,6 +13,13 @@ import * as Sayari from "../../../index";
  *         identifier: ["253400V1H6ART1UQ0N98"],
  *         profile: Sayari.ResolutionProfile.Corporate
  *     }
+ *
+ * @example
+ *     {
+ *         name: ["Marvel Garment"],
+ *         country: [Sayari.Country.Khm],
+ *         address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+ *     }
  */
 export interface CreateResolvedProjectEntityRequest {
     identifier?: Sayari.StringOrNumber[];

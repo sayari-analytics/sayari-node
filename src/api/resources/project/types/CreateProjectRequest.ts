@@ -7,14 +7,9 @@ import * as Sayari from "../../../index";
 /**
  * @example
  *     {
- *         label: "Project Alpha"
- *     }
- *
- * @example
- *     {
- *         label: "Project Alpha",
+ *         label: "My First Project",
  *         share: {
- *             org: Sayari.Role.Viewer
+ *             org: Sayari.Role.Admin
  *         }
  *     }
  */

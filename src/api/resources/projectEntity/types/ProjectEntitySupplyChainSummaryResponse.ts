@@ -30,6 +30,50 @@ import * as Sayari from "../../../index";
  *             }
  *         }
  *     }
+ *
+ * @example
+ *     {
+ *         filters: {
+ *             maxDepth: 4
+ *         },
+ *         data: {
+ *             projectId: "0n4473",
+ *             projectEntityId: "yebNPJ",
+ *             upstream: {
+ *                 components: ["2710", "5806", "7320", "5205", "5206", "5401", "8507", "5402", "5807", "9607", "6004", "3809", "6006", "9606", "5509", "5208", "5202", "2933", "3215", "3204", "3506", "3905", "5201", "3907"],
+ *                 countries: [Sayari.Country.Jpn, Sayari.Country.Vnm, Sayari.Country.Ind, Sayari.Country.Chn, Sayari.Country.Hkg, Sayari.Country.Idn, Sayari.Country.Twn, Sayari.Country.Tur, Sayari.Country.Deu, Sayari.Country.Bgd, Sayari.Country.Kor, Sayari.Country.Nld, Sayari.Country.Tha, Sayari.Country.Bra, Sayari.Country.Lka, Sayari.Country.Mex, Sayari.Country.Tza, Sayari.Country.Pak, Sayari.Country.Esp, Sayari.Country.Usa, Sayari.Country.Civ, Sayari.Country.Sgp, Sayari.Country.Bel, Sayari.Country.Phl, Sayari.Country.Khm, Sayari.Country.Ita, Sayari.Country.Che, Sayari.Country.Isr, Sayari.Country.Aus, Sayari.Country.Zaf, Sayari.Country.Cmr, Sayari.Country.Mys, Sayari.Country.Swz, Sayari.Country.Lie, Sayari.Country.Fra, Sayari.Country.Gbr, Sayari.Country.Rou, Sayari.Country.Prt, Sayari.Country.Tkl, Sayari.Country.Aut, Sayari.Country.Hun, Sayari.Country.Nor, Sayari.Country.Per, Sayari.Country.Cze, Sayari.Country.Arg, Sayari.Country.Nzl, Sayari.Country.Ben, Sayari.Country.Bfa, Sayari.Country.Png, Sayari.Country.Lux, Sayari.Country.Rus, Sayari.Country.Fin],
+ *                 riskCategories: [{
+ *                         id: "forced_labor",
+ *                         label: "Forced labor",
+ *                         riskFactors: [Sayari.Risk.PsaForcedLaborUflpaOriginSubtier, Sayari.Risk.ExportsIlabForcedLabor, Sayari.Risk.PsaForcedLaborXinjiangOriginSubtier, Sayari.Risk.ForcedLaborSheffieldHallamUniversityReportsOriginSubtier, Sayari.Risk.PsaForcedLaborSheffieldHallamUniversityReportsOriginSubtier, Sayari.Risk.PsaExportsIlabForcedLabor, Sayari.Risk.ForcedLaborUflpaOriginSubtier, Sayari.Risk.PsaExportsIlabChildLabor, Sayari.Risk.ExportsIlabChildLabor, Sayari.Risk.PsaOwnerOfForcedLaborXinjiangEntity, Sayari.Risk.OwnerOfForcedLaborXinjiangEntity, Sayari.Risk.SheffieldHallamUniversityForcedLaborEntity, Sayari.Risk.ForcedLaborXinjiangOriginSubtier, Sayari.Risk.PsaForcedLaborAspiOriginSubtier, Sayari.Risk.ForcedLaborAspiOriginSubtier, Sayari.Risk.PsaForcedLaborWroOriginSubtier, Sayari.Risk.PsaOwnedByXinjiangEntity, Sayari.Risk.OwnedByXinjiangEntity, Sayari.Risk.PsaOwnerOfSheffieldHallamUniversityReportsForcedLaborEntity, Sayari.Risk.SheffieldHallamUniversityForcedLaborReportsIntermediaryEntity, Sayari.Risk.ForcedLaborWroOriginSubtier, Sayari.Risk.OwnedBySheffieldHallamUniversityReportsForcedLaborEntity, Sayari.Risk.PsaOwnedBySheffieldHallamUniversityReportsForcedLaborEntity]
+ *                     }, {
+ *                         id: "environmental_risk",
+ *                         label: "Environmental risk",
+ *                         riskFactors: [Sayari.Risk.PsaExportsEudrShipmentWood, Sayari.Risk.ExportsEudrShipmentWood, Sayari.Risk.PsaExportsEudrShipmentRubber, Sayari.Risk.ExportsEudrShipmentRubber, Sayari.Risk.ExportsEudrShipmentSoya, Sayari.Risk.PsaExportsEudrShipmentSoya, Sayari.Risk.ExportsEudrShipmentPalmOil, Sayari.Risk.PsaExportsEudrShipmentPalmOil, Sayari.Risk.ExportsEudrShipmentCoffee, Sayari.Risk.PsaExportsEudrShipmentCoffee]
+ *                     }, {
+ *                         id: "export_controls",
+ *                         label: "Export controls",
+ *                         riskFactors: [Sayari.Risk.ExportsBisHighPriorityItemsIndirect, Sayari.Risk.PsaExportsBisHighPriorityItemsIndirect, Sayari.Risk.ExportsToUsaBisEntity, Sayari.Risk.PsaExportsToUsaBisEntity, Sayari.Risk.PsaExportsBisHighPriorityItemsDirect, Sayari.Risk.ExportsBisHighPriorityItemsDirect, Sayari.Risk.MilitaryEndUseChinaKeywords, Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponentsDirect, Sayari.Risk.PsaExportsBisHighPriorityItemsCriticalComponentsDirect, Sayari.Risk.OwnerOfExportControlsEntity, Sayari.Risk.OwnerOfUsaBisEntity, Sayari.Risk.PsaOwnerOfUsaBisEntity, Sayari.Risk.PsaOwnerOfExportControlsEntity, Sayari.Risk.PsaOwnedByUsaSection1260HEntity, Sayari.Risk.OwnedByUsaSection1260HEntity, Sayari.Risk.MeuListContractors, Sayari.Risk.BisBoycottRequesterList, Sayari.Risk.ExportsBisHighPriorityItemsCriticalComponentsIndirect, Sayari.Risk.PsaExportsBisHighPriorityItemsCriticalComponentsIndirect]
+ *                     }, {
+ *                         id: "sanctions",
+ *                         label: "Sanctions",
+ *                         riskFactors: [Sayari.Risk.PsaExportsToSanctionedIsrModNbctfEntity, Sayari.Risk.PsaExportsToSanctionedFraDgtMefidsEntity, Sayari.Risk.PsaExportsToSanctionedUsaOfacSdnEntity, Sayari.Risk.PsaExportsToSanctionedEuDgFismaEcEntity, Sayari.Risk.PsaExportsToSanctionedAusDfatEntity, Sayari.Risk.PsaExportsToSanctionedGbrFcdoEntity, Sayari.Risk.PsaExportsToSanctionedUnScEntity, Sayari.Risk.PsaExportsToSanctionedEuEcSanctionsMapEntity, Sayari.Risk.PsaExportsToSanctionedUkrSfmsEntity, Sayari.Risk.PsaExportToSanctioned, Sayari.Risk.PsaExportsToSanctionedEuEcRegulation8332014Entity, Sayari.Risk.ExportsToSanctionedCheSecoEntity, Sayari.Risk.ExportsToSanctionedUsaOfacSdnEntity, Sayari.Risk.ExportToSanctioned, Sayari.Risk.ExportsToSanctionedUkrNsdcEntity, Sayari.Risk.ExportsToSanctionedEuEcRegulation8332014Entity, Sayari.Risk.PsaExportsToSanctionedUkrNsdcEntity, Sayari.Risk.PsaExportsToSanctionedCheSecoEntity, Sayari.Risk.OwnerOfSanctionedEntity, Sayari.Risk.PsaOwnerOfSanctionedEntity, Sayari.Risk.OwnerOfSanctionedUkrNsdcEntity, Sayari.Risk.OwnerOfSanctionedUsaOfacNonSdnEntity, Sayari.Risk.PsaOwnerOfSanctionedUkrNsdcEntity, Sayari.Risk.PsaExportsToSanctionedMysMohaEntity, Sayari.Risk.PsaOwnerOfSanctionedUsaOfacNonSdnEntity, Sayari.Risk.ExportsToSanctionedXxxEbrdEntity, Sayari.Risk.PsaExportsToSanctionedXxxEbrdEntity, Sayari.Risk.PsaExportsToSanctionedJpnMofEntity, Sayari.Risk.ExportsToSanctionedEuDgFismaEcEntity, Sayari.Risk.ExportsToSanctionedCanGacEntity, Sayari.Risk.PsaExportsToSanctionedCanGacEntity, Sayari.Risk.ExportsToSanctionedGbrFcdoEntity, Sayari.Risk.ExportsToSanctionedFraDgtMefidsEntity, Sayari.Risk.ExportsToSanctionedJpnMofEntity, Sayari.Risk.ExportsToSanctionedEuEcSanctionsMapEntity]
+ *                     }, {
+ *                         id: "political_exposure",
+ *                         label: "Political exposure",
+ *                         riskFactors: [Sayari.Risk.PsaExportToSoe, Sayari.Risk.ExportToSoe, Sayari.Risk.OwnedByChineseSoe, Sayari.Risk.PsaOwnedBySoe, Sayari.Risk.PsaOwnedByChineseSoe, Sayari.Risk.OwnedBySoe, Sayari.Risk.PsaOwnerOfSoe, Sayari.Risk.PsaExportToChineseSoe, Sayari.Risk.OwnerOfSoe, Sayari.Risk.ExportToChineseSoe, Sayari.Risk.OwnerOfChineseSoe, Sayari.Risk.PsaOwnerOfChineseSoe]
+ *                     }, {
+ *                         id: "adverse_media",
+ *                         label: "Adverse media",
+ *                         riskFactors: [Sayari.Risk.ReputationalRiskOther, Sayari.Risk.LawEnforcementAction, Sayari.Risk.ReputationalRiskFinancialCrime]
+ *                     }, {
+ *                         id: "regulatory_action",
+ *                         label: "Regulatory action",
+ *                         riskFactors: [Sayari.Risk.LawEnforcementAction, Sayari.Risk.RegulatoryAction, Sayari.Risk.PsaOwnerOfRegulatoryActionEntity, Sayari.Risk.OwnerOfRegulatoryActionEntity]
+ *                     }]
+ *             }
+ *         }
+ *     }
  */
 export interface ProjectEntitySupplyChainSummaryResponse {
     filters: Sayari.TradeTraversalFilters;

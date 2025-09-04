@@ -51,4 +51,5 @@ export interface EmbeddedEntity {
     userRelatedEntitiesCount: number;
     userRecordCount: number;
     referenceId?: string;
+    logisticsEntity?: boolean;
 }

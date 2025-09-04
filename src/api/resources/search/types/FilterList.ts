@@ -10,6 +10,8 @@ import * as Sayari from "../../../index";
 export interface FilterList {
     /** List of source IDs to filter by. */
     source?: Sayari.SourceId[];
+    /** List of source countries to filter by. Must be specified as trigrams, e.g. ATF. */
+    sourceCountry?: Sayari.Country[];
     /** List of countries to filter by. */
     country?: Sayari.Country[];
     /** List of states or provinces to filter by. */
