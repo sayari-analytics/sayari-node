@@ -7,10 +7,12 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { MatchStrengthEnum } from "./MatchStrengthEnum";
 import { AttributeValues } from "./AttributeValues";
-import { ProductMapping } from "./ProductMapping";
-import { ProjectEntityMatchResponse } from "./ProjectEntityMatchResponse";
+import { ProjectRiskCategory } from "./ProjectRiskCategory";
+import { ProjectRiskFactor } from "./ProjectRiskFactor";
+import { UpstreamInfo } from "./UpstreamInfo";
 import { TagResponse } from "./TagResponse";
 import { CaseStatus } from "./CaseStatus";
+import { ProjectEntityMatchResponse } from "./ProjectEntityMatchResponse";
 
 export const ProjectEntityResponse: core.serialization.ObjectSchema<
     serializers.ProjectEntityResponse.Raw,
@@ -23,10 +25,13 @@ export const ProjectEntityResponse: core.serialization.ObjectSchema<
     strength: MatchStrengthEnum,
     createdAt: core.serialization.property("created_at", core.serialization.string()),
     attributes: core.serialization.record(core.serialization.string(), AttributeValues),
-    productMapping: core.serialization.property("product_mapping", ProductMapping.optional()),
-    matches: core.serialization.list(ProjectEntityMatchResponse),
+    countries: core.serialization.list(core.serialization.string()),
+    riskCategories: core.serialization.property("risk_categories", core.serialization.list(ProjectRiskCategory)),
+    riskFactors: core.serialization.property("risk_factors", core.serialization.list(ProjectRiskFactor)),
+    upstream: UpstreamInfo,
     tags: core.serialization.list(TagResponse),
     case: CaseStatus.optional(),
+    matches: core.serialization.list(ProjectEntityMatchResponse),
     updatedAt: core.serialization.property("updated_at", core.serialization.string().optional()),
 });
 
@@ -39,10 +44,13 @@ export declare namespace ProjectEntityResponse {
         strength: MatchStrengthEnum.Raw;
         created_at: string;
         attributes: Record<string, AttributeValues.Raw>;
-        product_mapping?: ProductMapping.Raw | null;
-        matches: ProjectEntityMatchResponse.Raw[];
+        countries: string[];
+        risk_categories: ProjectRiskCategory.Raw[];
+        risk_factors: ProjectRiskFactor.Raw[];
+        upstream: UpstreamInfo.Raw;
         tags: TagResponse.Raw[];
         case?: CaseStatus.Raw | null;
+        matches: ProjectEntityMatchResponse.Raw[];
         updated_at?: string | null;
     }
 }

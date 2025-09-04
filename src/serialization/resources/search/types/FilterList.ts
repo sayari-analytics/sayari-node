@@ -14,6 +14,7 @@ import { RiskCategory } from "../../generatedTypes/types/RiskCategory";
 export const FilterList: core.serialization.ObjectSchema<serializers.FilterList.Raw, Sayari.FilterList> =
     core.serialization.object({
         source: core.serialization.list(SourceId).optional(),
+        sourceCountry: core.serialization.property("source_country", core.serialization.list(Country).optional()),
         country: core.serialization.list(Country).optional(),
         state: core.serialization.list(core.serialization.string()).optional(),
         city: core.serialization.list(core.serialization.string()).optional(),
@@ -26,6 +27,7 @@ export const FilterList: core.serialization.ObjectSchema<serializers.FilterList.
 export declare namespace FilterList {
     export interface Raw {
         source?: SourceId.Raw[] | null;
+        source_country?: Country.Raw[] | null;
         country?: Country.Raw[] | null;
         state?: string[] | null;
         city?: string[] | null;
