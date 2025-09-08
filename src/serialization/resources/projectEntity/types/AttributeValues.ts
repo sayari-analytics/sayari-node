@@ -8,13 +8,13 @@ import * as core from "../../../../core";
 
 export const AttributeValues: core.serialization.ObjectSchema<serializers.AttributeValues.Raw, Sayari.AttributeValues> =
     core.serialization.object({
-        resolve: core.serialization.boolean(),
+        matchResolution: core.serialization.property("match_resolution", core.serialization.boolean()),
         values: core.serialization.list(core.serialization.string()),
     });
 
 export declare namespace AttributeValues {
     export interface Raw {
-        resolve: boolean;
+        match_resolution: boolean;
         values: string[];
     }
 }

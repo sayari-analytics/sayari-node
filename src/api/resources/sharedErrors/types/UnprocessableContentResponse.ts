@@ -3,9 +3,9 @@
  */
 
 /**
- * Request made in an unacceptable state due to an invalid Accept header.
+ * Request made with an invalid body. This is most commonly due to parameter validation errors.
  */
-export interface NotAcceptableResponse {
+export interface UnprocessableContentResponse {
     status: number;
     message: string[];
     success: boolean;

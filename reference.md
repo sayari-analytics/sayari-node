@@ -664,7 +664,7 @@ Provides detailed article metadata with risk assessments and direct source refer
 ```typescript
 await client.negativeNews.negativeNews({
     name: "Gazprom",
-    topic: "sanctions",
+    topic: "sanctions_and_regulatory",
     until: "2024-10-01",
 });
 ```
@@ -1949,6 +1949,160 @@ await client.ontology.getSourceTypes({
 
 ## ProjectEntityAttributes
 
+<details><summary><code>client.projectEntityAttributes.<a href="/src/api/resources/projectEntityAttributes/client/Client.ts">getProjectEntityAttributes</a>(projectId, projectEntityId) -> Sayari.ProjectEntityAttributesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves all attributes for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntityAttributes.getProjectEntityAttributes("V03eYM", "BG72YW");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntityAttributes.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntityAttributes.<a href="/src/api/resources/projectEntityAttributes/client/Client.ts">createProjectEntityAttribute</a>(projectId, projectEntityId, { ...params }) -> Sayari.CreateProjectEntityAttributeResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new attribute for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntityAttributes.createProjectEntityAttribute("V03eYM", "BG72YW", {
+    field: "custom_phone",
+    value: "+1-555-123-4567",
+    matchResolution: false,
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.CreateProjectEntityAttributeRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntityAttributes.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.projectEntityAttributes.<a href="/src/api/resources/projectEntityAttributes/client/Client.ts">updateProjectEntityAttribute</a>(projectId, projectEntityId, attributeId, { ...params }) -> Sayari.UpdateProjectEntityAttributeResponse</code></summary>
 <dl>
 <dd>
@@ -2022,6 +2176,85 @@ await client.projectEntityAttributes.updateProjectEntityAttribute("V03eYM", "BG7
 <dd>
 
 **request:** `Sayari.UpdateProjectEntityAttributeRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntityAttributes.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntityAttributes.<a href="/src/api/resources/projectEntityAttributes/client/Client.ts">deleteProjectEntityAttribute</a>(projectId, projectEntityId, attributeId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Deletes a specific attribute for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntityAttributes.deleteProjectEntityAttribute("project_id", "project_entity_id", "attribute_id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**attributeId:** `string`
 
 </dd>
 </dl>
@@ -4027,136 +4260,6 @@ await client.search.searchRecordGet({
 </dl>
 </details>
 
-## Source
-
-<details><summary><code>client.source.<a href="/src/api/resources/source/client/Client.ts">listSources</a>({ ...params }) -> Sayari.ListSourcesResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-<Warning>This endpoint is deprecated. Use /v1/ontology/sources instead.</Warning> Returns metadata for all sources that Sayari collects data from
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```typescript
-await client.source.listSources({
-    limit: 2,
-});
-```
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request:** `Sayari.ListSources`
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**requestOptions:** `Source.RequestOptions`
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.source.<a href="/src/api/resources/source/client/Client.ts">getSource</a>(id) -> Sayari.GetSourceResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-<Warning>This endpoint is deprecated. Use /v1/ontology/sources instead.</Warning> Returns metadata for a source that Sayari collects data from
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```typescript
-await client.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
-```
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**id:** `string` — The unique identifier for a source in the database
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**requestOptions:** `Source.RequestOptions`
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-</dd>
-</dl>
-</details>
-
 ## SupplyChain
 
 <details><summary><code>client.supplyChain.<a href="/src/api/resources/supplyChain/client/Client.ts">upstreamTradeTraversal</a>(id, { ...params }) -> Sayari.UpstreamTradeTraversalResponse</code></summary>
@@ -4270,7 +4373,7 @@ await client.trade.searchShipments({
         departureCountry: ["DEU"],
         arrivalCountry: ["RUS"],
         hsCode: ["854231"],
-        arrivalDate: ["2024-01 TO 2024-10"],
+        arrivalDate: "2024-01|2024-10",
     },
 });
 ```
@@ -4341,7 +4444,7 @@ await client.trade.searchSuppliers({
         departureCountry: ["DEU"],
         arrivalCountry: ["RUS"],
         hsCode: ["854231"],
-        arrivalDate: ["2024-01 TO 2024-10"],
+        arrivalDate: "2024-01|2024-10",
     },
 });
 ```
@@ -4412,7 +4515,7 @@ await client.trade.searchBuyers({
         departureCountry: ["DEU"],
         arrivalCountry: ["RUS"],
         hsCode: ["854231"],
-        arrivalDate: ["2024-01 TO 2024-10"],
+        arrivalDate: "2024-01|2024-10",
     },
 });
 ```
