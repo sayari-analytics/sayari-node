@@ -51,7 +51,7 @@ export class Trade {
      *             departureCountry: ["DEU"],
      *             arrivalCountry: ["RUS"],
      *             hsCode: ["854231"],
-     *             arrivalDate: ["2024-01 TO 2024-10"]
+     *             arrivalDate: "2024-01|2024-10"
      *         }
      *     })
      */
@@ -193,7 +193,7 @@ export class Trade {
      *             departureCountry: ["DEU"],
      *             arrivalCountry: ["RUS"],
      *             hsCode: ["854231"],
-     *             arrivalDate: ["2024-01 TO 2024-10"]
+     *             arrivalDate: "2024-01|2024-10"
      *         }
      *     })
      */
@@ -335,7 +335,7 @@ export class Trade {
      *             departureCountry: ["DEU"],
      *             arrivalCountry: ["RUS"],
      *             hsCode: ["854231"],
-     *             arrivalDate: ["2024-01 TO 2024-10"]
+     *             arrivalDate: "2024-01|2024-10"
      *         }
      *     })
      */

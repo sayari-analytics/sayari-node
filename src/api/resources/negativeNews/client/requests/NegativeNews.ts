@@ -8,14 +8,14 @@ import * as Sayari from "../../../../index";
  * @example
  *     {
  *         name: "Gazprom",
- *         topic: "sanctions",
+ *         topic: "sanctions_and_regulatory",
  *         until: "2024-10-01"
  *     }
  *
  * @example
  *     {
  *         name: "JBS",
- *         topic: "environmental"
+ *         topic: "environmental_and_social"
  *     }
  *
  * @example
@@ -34,7 +34,7 @@ export interface NegativeNews {
      */
     topic?: Sayari.Topics;
     /**
-     * Date cutoff for article inclusion in `YYYY-MM-DD` format. If provided, only articles published before this date will be included in results.
+     * Date cutoff for article inclusion in `YYYY-MM-DD` format. If provided, only articles published after this date will be included in results.
      */
     until?: string;
 }

@@ -3,6 +3,6 @@
  */
 
 export interface AttributeValues {
-    resolve: boolean;
+    matchResolution: boolean;
     values: string[];
 }

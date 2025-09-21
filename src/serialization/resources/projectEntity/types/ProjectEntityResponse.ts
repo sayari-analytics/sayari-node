@@ -5,13 +5,13 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { MatchStrengthEnum } from "./MatchStrengthEnum";
+import { MatchStrengthEnum } from "../../sharedTypes/types/MatchStrengthEnum";
 import { AttributeValues } from "./AttributeValues";
 import { ProjectRiskCategory } from "./ProjectRiskCategory";
 import { ProjectRiskFactor } from "./ProjectRiskFactor";
 import { UpstreamInfo } from "./UpstreamInfo";
 import { TagResponse } from "./TagResponse";
-import { CaseStatus } from "./CaseStatus";
+import { CaseStatus } from "../../sharedTypes/types/CaseStatus";
 import { ProjectEntityMatchResponse } from "./ProjectEntityMatchResponse";
 
 export const ProjectEntityResponse: core.serialization.ObjectSchema<

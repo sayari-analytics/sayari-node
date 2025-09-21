@@ -5,7 +5,6 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { MatchedAttributes } from "./MatchedAttributes";
 import { ProjectRiskCategory } from "./ProjectRiskCategory";
 import { ProjectRiskFactor } from "./ProjectRiskFactor";
 import { BusinessPurpose } from "./BusinessPurpose";
@@ -13,6 +12,7 @@ import { UpstreamInfo } from "./UpstreamInfo";
 import { SourceField } from "./SourceField";
 import { Address } from "./Address";
 import { MatchProfileEnum } from "./MatchProfileEnum";
+import { ProjectEntityMatchExplanation } from "./ProjectEntityMatchExplanation";
 
 export const ProjectEntityMatchResponse: core.serialization.ObjectSchema<
     serializers.ProjectEntityMatchResponse.Raw,
@@ -22,7 +22,6 @@ export const ProjectEntityMatchResponse: core.serialization.ObjectSchema<
     sayariEntityId: core.serialization.property("sayari_entity_id", core.serialization.string()),
     type: core.serialization.string(),
     label: core.serialization.string(),
-    matchedAttributes: core.serialization.property("matched_attributes", MatchedAttributes),
     countries: core.serialization.list(core.serialization.string()),
     riskCategories: core.serialization.property("risk_categories", core.serialization.list(ProjectRiskCategory)),
     riskFactors: core.serialization.property("risk_factors", core.serialization.list(ProjectRiskFactor)),
@@ -35,6 +34,10 @@ export const ProjectEntityMatchResponse: core.serialization.ObjectSchema<
     updatedAt: core.serialization.property("updated_at", core.serialization.string().optional()),
     matchProfile: core.serialization.property("match_profile", MatchProfileEnum.optional()),
     deletedAt: core.serialization.property("deleted_at", core.serialization.string().optional()),
+    matchExplanation: core.serialization.property(
+        "match_explanation",
+        core.serialization.list(ProjectEntityMatchExplanation).optional(),
+    ),
 });
 
 export declare namespace ProjectEntityMatchResponse {
@@ -43,7 +46,6 @@ export declare namespace ProjectEntityMatchResponse {
         sayari_entity_id: string;
         type: string;
         label: string;
-        matched_attributes: MatchedAttributes.Raw;
         countries: string[];
         risk_categories: ProjectRiskCategory.Raw[];
         risk_factors: ProjectRiskFactor.Raw[];
@@ -56,5 +58,6 @@ export declare namespace ProjectEntityMatchResponse {
         updated_at?: string | null;
         match_profile?: MatchProfileEnum.Raw | null;
         deleted_at?: string | null;
+        match_explanation?: ProjectEntityMatchExplanation.Raw[] | null;
     }
 }

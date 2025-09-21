@@ -83,6 +83,7 @@ export class Resolution {
             cutoffThreshold,
             candidatePoolSize,
             skipPostProcess,
+            enableLlmClean,
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
@@ -211,6 +212,10 @@ export class Resolution {
 
         if (skipPostProcess != null) {
             _queryParams["skip_post_process"] = skipPostProcess.toString();
+        }
+
+        if (enableLlmClean != null) {
+            _queryParams["enable_llm_clean"] = enableLlmClean.toString();
         }
 
         const _response = await core.fetcher({
@@ -357,12 +362,24 @@ export class Resolution {
      *             country: ["RUS"]
      *         }
      *     })
+     *
+     * @example
+     *     await client.resolution.resolutionPost({
+     *         limit: 1,
+     *         enableLlmClean: false,
+     *         body: {
+     *             name: ["Chongqing Jingyou Zhicai New Materials Co."],
+     *             address: ["4-2, Building B2, No. 5, Middle Mount Huangshan Avenue, Gaoxinyuan, Dazhulin Street, Liangjiang New District, Chongqing,Chongqing,continuation,CN"],
+     *             country: ["CHN"],
+     *             enableLlmClean: false
+     *         }
+     *     })
      */
     public async resolutionPost(
         request: Sayari.ResolutionPost,
         requestOptions?: Resolution.RequestOptions,
     ): Promise<Sayari.ResolutionResponse> {
-        const { limit, offset, body: _body } = request;
+        const { limit, offset, enableLlmClean, body: _body } = request;
         const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
@@ -370,6 +387,10 @@ export class Resolution {
 
         if (offset != null) {
             _queryParams["offset"] = offset.toString();
+        }
+
+        if (enableLlmClean != null) {
+            _queryParams["enable_llm_clean"] = enableLlmClean.toString();
         }
 
         const _response = await core.fetcher({
@@ -668,6 +689,17 @@ export class Resolution {
      *         data: [{
      *                 name: ["victoria beckham limited"],
      *                 tags: ["spice girls"]
+     *             }]
+     *     })
+     *
+     * @example
+     *     await client.resolution.resolutionUpload("V03eYM", {
+     *         filename: "testblah.csv",
+     *         enableLlmClean: false,
+     *         data: [{
+     *                 name: ["Chongqing Jingyou Zhicai New Materials Co. ABC XYZ Blah Blah Nonsense 1 489 929 49492 1839 1848"],
+     *                 address: ["4-2, Building B2, No. 5, Middle Mount Huangshan Avenue, Gaoxinyuan, Dazhulin Street, Liangjiang New District, Chongqing,Chongqing,continuation,CN"],
+     *                 country: ["CHN"]
      *             }]
      *     })
      */

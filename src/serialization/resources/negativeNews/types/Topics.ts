@@ -7,36 +7,30 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const Topics: core.serialization.Schema<serializers.Topics.Raw, Sayari.Topics> = core.serialization.enum_([
-    "basic",
-    "environmental",
-    "social",
+    "overview",
+    "environmental_and_social",
     "cybersecurity",
     "disruption",
     "criminal",
     "reputational",
     "financial",
-    "regulatory",
+    "sanctions_and_regulatory",
     "legal",
-    "misconduct",
+    "political",
     "terrorism",
-    "sanctions",
-    "all",
 ]);
 
 export declare namespace Topics {
     export type Raw =
-        | "basic"
-        | "environmental"
-        | "social"
+        | "overview"
+        | "environmental_and_social"
         | "cybersecurity"
         | "disruption"
         | "criminal"
         | "reputational"
         | "financial"
-        | "regulatory"
+        | "sanctions_and_regulatory"
         | "legal"
-        | "misconduct"
-        | "terrorism"
-        | "sanctions"
-        | "all";
+        | "political"
+        | "terrorism";
 }

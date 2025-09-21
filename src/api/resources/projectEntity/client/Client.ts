@@ -37,7 +37,7 @@ export class ProjectEntity {
      * The resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the search endpoint, except it's tuned to only return the best match so the client doesn't need to do as much or any post-processing work to filter down results.
      *
      * @param {string} projectId
-     * @param {Sayari.CreateResolvedProjectEntityRequest} request
+     * @param {Sayari.CreateResolvedProjectEntityRequestWrapper} request
      * @param {ProjectEntity.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Sayari.BadRequest}
@@ -49,25 +49,35 @@ export class ProjectEntity {
      *
      * @example
      *     await client.projectEntity.createProjectEntity("YVB88Y", {
-     *         name: ["VTB Bank"],
-     *         country: ["RUS"],
-     *         address: ["Moscow"],
-     *         identifier: ["253400V1H6ART1UQ0N98"],
-     *         profile: "corporate"
+     *         body: {
+     *             name: ["VTB Bank"],
+     *             country: ["RUS"],
+     *             address: ["Moscow"],
+     *             identifier: ["253400V1H6ART1UQ0N98"],
+     *             profile: "corporate"
+     *         }
      *     })
      *
      * @example
      *     await client.projectEntity.createProjectEntity("0n4473", {
-     *         name: ["Marvel Garment"],
-     *         country: ["KHM"],
-     *         address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+     *         body: {
+     *             name: ["Marvel Garment"],
+     *             country: ["KHM"],
+     *             address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+     *         }
      *     })
      */
     public async createProjectEntity(
         projectId: string,
-        request: Sayari.CreateResolvedProjectEntityRequest,
+        request: Sayari.CreateResolvedProjectEntityRequestWrapper,
         requestOptions?: ProjectEntity.RequestOptions,
     ): Promise<Sayari.SingleProjectEntityResponse> {
+        const { enableLlmClean, body: _body } = request;
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
+        if (enableLlmClean != null) {
+            _queryParams["enable_llm_clean"] = enableLlmClean.toString();
+        }
+
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -87,8 +97,9 @@ export class ProjectEntity {
                 ...requestOptions?.headers,
             },
             contentType: "application/json",
+            queryParameters: _queryParams,
             requestType: "json",
-            body: serializers.CreateResolvedProjectEntityRequest.jsonOrThrow(request, {
+            body: serializers.CreateResolvedProjectEntityRequest.jsonOrThrow(_body, {
                 unrecognizedObjectKeys: "strip",
             }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
@@ -188,6 +199,18 @@ export class ProjectEntity {
     /**
      * Retrieves a list of entities for a specific project with pagination support.
      *
+     * **Response Formats:**
+     * - **JSON** (default): Returns structured data with nested objects
+     * - **CSV**: Returns tabular data with dynamic columns for attributes and risk categories
+     *
+     * **CSV Format:**
+     * The CSV response includes dynamic columns based on the data:
+     * - `attribute_{field_name}`: Dynamic columns for each attribute field found in the data
+     * - `risk_category_{category_id}`: Dynamic columns for each risk category found in the data
+     * - Standard columns: project_id, project_entity_id, label, project_entity_url, upload_ids, strength, countries, tags, case_status, created_at, match_count, upstream_products, upstream_risk_factors, upstream_countries
+     *
+     * Use the `Accept: text/csv` header to request CSV format.
+     *
      * @param {string} projectId
      * @param {Sayari.GetProjectEntitiesRequest} request
      * @param {ProjectEntity.RequestOptions} requestOptions - Request-specific configuration.
@@ -201,115 +224,75 @@ export class ProjectEntity {
      *
      * @example
      *     await client.projectEntity.getProjectEntities("YVB88Y")
+     *
+     * @example
+     *     await client.projectEntity.getProjectEntities("YVB88Y", {
+     *         limit: 10,
+     *         filter: {
+     *             riskFactor: ["sanctioned", "regulatory_action"],
+     *             country: ["RUS", "CHN"],
+     *             matchStrength: ["strong", "partial"],
+     *             caseStatus: ["not_assigned"],
+     *             label: {
+     *                 fuzzy: ["bank", "financial"]
+     *             },
+     *             businessPurpose: ["6419", "banking"],
+     *             tag: ["high-risk", "sanctions-review"]
+     *         }
+     *     })
+     *
+     * @example
+     *     await client.projectEntity.getProjectEntities("YVB88Y", {
+     *         limit: 25,
+     *         filter: {
+     *             riskCategory: ["sanctions", "export_controls"],
+     *             upstreamProduct: ["8536", "8544"],
+     *             shipmentCountry: ["CHN", "VNM"],
+     *             tier1ShipmentCountry: ["CHN"],
+     *             city: {
+     *                 fuzzy: ["moscow", "beijing"]
+     *             },
+     *             identifier: {
+     *                 fuzzy: ["253400V1H6ART1UQ0N98"]
+     *             },
+     *             source: {
+     *                 exact: ["92edb8fe6615498f6e3e7b0e220f74e6", "c10d482320f207d92aa814519c3bd686"]
+     *             },
+     *             status: ["active"],
+     *             bounds: "55.680357237879136|-71.53607290158526|41.10876347746233|-40.963927098414736",
+     *             matchEntityId: ["dy-rh2g0QtzUN_jC_e9S_A"],
+     *             entityType: ["company"],
+     *             upload: ["upload_123"],
+     *             matchCount: "one"
+     *         }
+     *     })
      */
     public async getProjectEntities(
         projectId: string,
         request: Sayari.GetProjectEntitiesRequest = {},
         requestOptions?: ProjectEntity.RequestOptions,
     ): Promise<Sayari.ProjectEntitiesResponse> {
-        const {
-            entityId,
-            uploads,
-            caseStatus,
-            tags,
-            matchCount,
-            matchStrength,
-            entityTypes,
-            geoFacets,
-            exactMatch,
-            hsCodes,
-            receivedHsCodes,
-            shippedHsCodes,
-            upstreamProduct,
-            limit,
-            token,
-            sort,
-            aggregations,
-            numAggregationBuckets,
-            risk,
-            riskCategory,
-        } = request;
+        const { next, prev, limit, filter } = request;
         const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
-        if (entityId != null) {
-            _queryParams["entity_id"] = toJson(entityId);
+        if (next != null) {
+            _queryParams["next"] = next;
         }
 
-        if (uploads != null) {
-            _queryParams["uploads"] = toJson(uploads);
-        }
-
-        if (caseStatus != null) {
-            _queryParams["case_status"] = toJson(caseStatus);
-        }
-
-        if (tags != null) {
-            _queryParams["tags"] = toJson(tags);
-        }
-
-        if (matchCount != null) {
-            _queryParams["match_count"] = serializers.MatchCount.jsonOrThrow(matchCount, {
-                unrecognizedObjectKeys: "strip",
-            });
-        }
-
-        if (matchStrength != null) {
-            _queryParams["match_strength"] = toJson(matchStrength);
-        }
-
-        if (entityTypes != null) {
-            _queryParams["entity_types"] = toJson(entityTypes);
-        }
-
-        if (geoFacets != null) {
-            _queryParams["geo_facets"] = geoFacets.toString();
-        }
-
-        if (exactMatch != null) {
-            _queryParams["exact_match"] = exactMatch.toString();
-        }
-
-        if (hsCodes != null) {
-            _queryParams["hs_codes"] = toJson(hsCodes);
-        }
-
-        if (receivedHsCodes != null) {
-            _queryParams["received_hs_codes"] = toJson(receivedHsCodes);
-        }
-
-        if (shippedHsCodes != null) {
-            _queryParams["shipped_hs_codes"] = toJson(shippedHsCodes);
-        }
-
-        if (upstreamProduct != null) {
-            _queryParams["upstream_product"] = toJson(upstreamProduct);
+        if (prev != null) {
+            _queryParams["prev"] = prev;
         }
 
         if (limit != null) {
             _queryParams["limit"] = limit.toString();
         }
 
-        if (token != null) {
-            _queryParams["token"] = token;
-        }
-
-        if (sort != null) {
-            _queryParams["sort"] = toJson(sort);
-        }
-
-        if (aggregations != null) {
-            _queryParams["aggregations"] = toJson(aggregations);
-        }
-
-        if (numAggregationBuckets != null) {
-            _queryParams["num_aggregation_buckets"] = numAggregationBuckets.toString();
-        }
-
-        if (risk != null) {
-            _queryParams["risk"] = toJson(risk);
-        }
-
-        if (riskCategory != null) {
-            _queryParams["risk_category"] = toJson(riskCategory);
+        if (filter != null) {
+            _queryParams["filter"] = serializers.ProjectEntitiesFilter.jsonOrThrow(filter, {
+                unrecognizedObjectKeys: "passthrough",
+                allowUnrecognizedUnionMembers: true,
+                allowUnrecognizedEnumValues: true,
+                breadcrumbsPrefix: ["request", "filter"],
+            });
         }
 
         const _response = await core.fetcher({
@@ -432,7 +415,6 @@ export class ProjectEntity {
      *
      * @param {string} projectId
      * @param {string} projectEntityId
-     * @param {Sayari.GetProjectEntityRequest} request
      * @param {ProjectEntity.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Sayari.BadRequest}
@@ -448,50 +430,8 @@ export class ProjectEntity {
     public async getProjectEntity(
         projectId: string,
         projectEntityId: string,
-        request: Sayari.GetProjectEntityRequest = {},
         requestOptions?: ProjectEntity.RequestOptions,
     ): Promise<Sayari.SingleProjectEntityResponse> {
-        const { entityId, uploads, caseStatus, tags, matchCount, matchStrength, entityTypes, risk, riskCategory } =
-            request;
-        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
-        if (entityId != null) {
-            _queryParams["entity_id"] = toJson(entityId);
-        }
-
-        if (uploads != null) {
-            _queryParams["uploads"] = toJson(uploads);
-        }
-
-        if (caseStatus != null) {
-            _queryParams["case_status"] = toJson(caseStatus);
-        }
-
-        if (tags != null) {
-            _queryParams["tags"] = toJson(tags);
-        }
-
-        if (matchCount != null) {
-            _queryParams["match_count"] = serializers.MatchCount.jsonOrThrow(matchCount, {
-                unrecognizedObjectKeys: "strip",
-            });
-        }
-
-        if (matchStrength != null) {
-            _queryParams["match_strength"] = toJson(matchStrength);
-        }
-
-        if (entityTypes != null) {
-            _queryParams["entity_types"] = toJson(entityTypes);
-        }
-
-        if (risk != null) {
-            _queryParams["risk"] = toJson(risk);
-        }
-
-        if (riskCategory != null) {
-            _queryParams["risk_category"] = toJson(riskCategory);
-        }
-
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -511,7 +451,6 @@ export class ProjectEntity {
                 ...requestOptions?.headers,
             },
             contentType: "application/json",
-            queryParameters: _queryParams,
             requestType: "json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
@@ -1394,6 +1333,164 @@ export class ProjectEntity {
             case "timeout":
                 throw new errors.SayariTimeoutError(
                     "Timeout exceeded when calling GET /v1/projects/{project_id}/entities/{project_entity_id}/supply_chain/upstream.",
+                );
+            case "unknown":
+                throw new errors.SayariError({
+                    message: _response.error.errorMessage,
+                });
+        }
+    }
+
+    /**
+     * Retrieves a risk summary for a specific project entity, including risk factors with network paths and risk intelligence data.
+     *
+     * **Response includes:**
+     * - Risk factors with their levels (elevated, high, critical)
+     * - Network paths showing relationships between entities
+     * - Risk intelligence scores and metadata
+     * - Risk categories and source entity information
+     *
+     * @param {string} projectId
+     * @param {string} projectEntityId
+     * @param {Sayari.GetProjectEntityRiskSummaryRequest} request
+     * @param {ProjectEntity.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
+     *
+     * @example
+     *     await client.projectEntity.getProjectEntityRiskSummary("YVB88Y", "52z4Wa", {
+     *         filter: {
+     *             riskFactor: ["sanctioned", "regulatory_action"],
+     *             riskCategory: ["sanctions", "export_controls"]
+     *         }
+     *     })
+     */
+    public async getProjectEntityRiskSummary(
+        projectId: string,
+        projectEntityId: string,
+        request: Sayari.GetProjectEntityRiskSummaryRequest,
+        requestOptions?: ProjectEntity.RequestOptions,
+    ): Promise<Sayari.ProjectEntityRiskSummaryResponse> {
+        const { filter } = request;
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
+        _queryParams["filter"] = serializers.ProjectEntityRiskSummaryFilters.jsonOrThrow(filter, {
+            unrecognizedObjectKeys: "passthrough",
+            allowUnrecognizedUnionMembers: true,
+            allowUnrecognizedEnumValues: true,
+            breadcrumbsPrefix: ["request", "filter"],
+        });
+        const _response = await core.fetcher({
+            url: urlJoin(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
+                `/v1/projects/${encodeURIComponent(projectId)}/entities/${encodeURIComponent(projectEntityId)}/risk_summary`,
+            ),
+            method: "GET",
+            headers: {
+                Authorization: await this._getAuthorizationHeader(),
+                "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "@sayari/sdk",
+                "X-Fern-SDK-Version": "0.1.44",
+                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
+            },
+            contentType: "application/json",
+            queryParameters: _queryParams,
+            requestType: "json",
+            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+            maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+        });
+        if (_response.ok) {
+            return serializers.ProjectEntityRiskSummaryResponse.parseOrThrow(_response.body, {
+                unrecognizedObjectKeys: "passthrough",
+                allowUnrecognizedUnionMembers: true,
+                allowUnrecognizedEnumValues: true,
+                breadcrumbsPrefix: ["response"],
+            });
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 400:
+                    throw new Sayari.BadRequest(
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 401:
+                    throw new Sayari.Unauthorized(
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 404:
+                    throw new Sayari.NotFound(
+                        serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 405:
+                    throw new Sayari.MethodNotAllowed(
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 429:
+                    throw new Sayari.RateLimitExceeded(
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 500:
+                    throw new Sayari.InternalServerError(
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                default:
+                    throw new errors.SayariError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                    });
+            }
+        }
+
+        switch (_response.error.reason) {
+            case "non-json":
+                throw new errors.SayariError({
+                    statusCode: _response.error.statusCode,
+                    body: _response.error.rawBody,
+                });
+            case "timeout":
+                throw new errors.SayariTimeoutError(
+                    "Timeout exceeded when calling GET /v1/projects/{project_id}/entities/{project_entity_id}/risk_summary.",
                 );
             case "unknown":
                 throw new errors.SayariError({

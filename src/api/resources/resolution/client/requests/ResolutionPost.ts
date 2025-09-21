@@ -23,6 +23,18 @@ import * as Sayari from "../../../../index";
  *             country: ["RUS"]
  *         }
  *     }
+ *
+ * @example
+ *     {
+ *         limit: 1,
+ *         enableLlmClean: false,
+ *         body: {
+ *             name: ["Chongqing Jingyou Zhicai New Materials Co."],
+ *             address: ["4-2, Building B2, No. 5, Middle Mount Huangshan Avenue, Gaoxinyuan, Dazhulin Street, Liangjiang New District, Chongqing,Chongqing,continuation,CN"],
+ *             country: ["CHN"],
+ *             enableLlmClean: false
+ *         }
+ *     }
  */
 export interface ResolutionPost {
     /**
@@ -33,5 +45,9 @@ export interface ResolutionPost {
      * Number of results to skip before returning response. Defaults to 0.
      */
     offset?: number;
+    /**
+     * Whether to enable LLM-based data cleaning to remove noise and standardize entity attributes. Defaults to true if not supplied. Set to false to disable LLM cleaning.
+     */
+    enableLlmClean?: boolean;
     body: Sayari.ResolutionBody;
 }
