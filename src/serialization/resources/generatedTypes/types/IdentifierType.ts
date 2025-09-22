@@ -71,6 +71,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "bih_mbs_number",
         "bill_of_lading",
         "bitcoin_address",
+        "blr_passport",
         "blr_registration_number",
         "blz_bccar_reg_no",
         "bmu_registrar_of_companies_number",
@@ -112,6 +113,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "can_tm_registration_no",
         "ccamlr_rfmo_id",
         "ccs_registration",
+        "ccsbt_rfmo_id",
         "che_ch_id_number",
         "che_seco_sanction_number",
         "che_uid_number",
@@ -215,6 +217,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "fl_prop_folio",
         "fl_prop_folio_dade",
         "fra_asset_freeze_id",
+        "fra_passport",
         "fra_rna",
         "fra_siren",
         "fra_siret",
@@ -261,6 +264,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "hun_tax_number",
         "iattc_rfmo_id",
         "iban",
+        "iccat_rfmo_id",
         "icij_offshore_internal_id",
         "icij_offshore_node_id",
         "idn_nik_id",
@@ -310,6 +314,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "isr_association_number",
         "isr_company_number",
         "isr_national_id",
+        "isr_passport",
         "isr_pbc_number",
         "ita_fiscal_code",
         "ita_rea_number",
@@ -376,6 +381,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "mex_shipment_number",
         "mex_tm_no",
         "mex_yucatan_folio",
+        "mh_reg_id",
         "mkd_archive_number",
         "mkd_embs_branch_number",
         "mkd_embs_number",
@@ -433,6 +439,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "omn_passport",
         "on_business_id_number",
         "ontario_corporation_number",
+        "open_sanctions_internal_id",
         "pak_co_ntn",
         "pak_egm_id",
         "pak_ind_ntn",
@@ -507,6 +514,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "sgp_passport",
         "sgp_unqiue_entity_number",
         "siger_internal_id",
+        "slb_reg_id",
         "slv_commercial_reg_number",
         "slv_mcas",
         "slv_numero_identificacion_tributaria",
@@ -564,6 +572,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "tza_brela_reg_num",
         "tza_tansad_number",
         "tza_tin",
+        "uga_tin",
         "uk_company_number",
         "uk_firm_reference_number",
         "uk_passport",
@@ -571,6 +580,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "uk_title_number",
         "ukr_fiu_list_number",
         "ukr_moj_id",
+        "ukr_passport",
         "ukr_reg_num",
         "ukr_sanctions_nazk_company_internal_id",
         "ukr_sanctions_nazk_person_internal_id",
@@ -692,6 +702,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "vnm_enterprise_code",
         "vnm_person_id_no",
         "vut_corp_reg_number",
+        "wcpfc_rfmo_id",
         "wipo_intl_ref_no",
         "wipo_intl_reg_no",
         "xxx_acuris_id",
@@ -773,6 +784,7 @@ export declare namespace IdentifierType {
         | "bih_mbs_number"
         | "bill_of_lading"
         | "bitcoin_address"
+        | "blr_passport"
         | "blr_registration_number"
         | "blz_bccar_reg_no"
         | "bmu_registrar_of_companies_number"
@@ -814,6 +826,7 @@ export declare namespace IdentifierType {
         | "can_tm_registration_no"
         | "ccamlr_rfmo_id"
         | "ccs_registration"
+        | "ccsbt_rfmo_id"
         | "che_ch_id_number"
         | "che_seco_sanction_number"
         | "che_uid_number"
@@ -917,6 +930,7 @@ export declare namespace IdentifierType {
         | "fl_prop_folio"
         | "fl_prop_folio_dade"
         | "fra_asset_freeze_id"
+        | "fra_passport"
         | "fra_rna"
         | "fra_siren"
         | "fra_siret"
@@ -963,6 +977,7 @@ export declare namespace IdentifierType {
         | "hun_tax_number"
         | "iattc_rfmo_id"
         | "iban"
+        | "iccat_rfmo_id"
         | "icij_offshore_internal_id"
         | "icij_offshore_node_id"
         | "idn_nik_id"
@@ -1012,6 +1027,7 @@ export declare namespace IdentifierType {
         | "isr_association_number"
         | "isr_company_number"
         | "isr_national_id"
+        | "isr_passport"
         | "isr_pbc_number"
         | "ita_fiscal_code"
         | "ita_rea_number"
@@ -1078,6 +1094,7 @@ export declare namespace IdentifierType {
         | "mex_shipment_number"
         | "mex_tm_no"
         | "mex_yucatan_folio"
+        | "mh_reg_id"
         | "mkd_archive_number"
         | "mkd_embs_branch_number"
         | "mkd_embs_number"
@@ -1135,6 +1152,7 @@ export declare namespace IdentifierType {
         | "omn_passport"
         | "on_business_id_number"
         | "ontario_corporation_number"
+        | "open_sanctions_internal_id"
         | "pak_co_ntn"
         | "pak_egm_id"
         | "pak_ind_ntn"
@@ -1209,6 +1227,7 @@ export declare namespace IdentifierType {
         | "sgp_passport"
         | "sgp_unqiue_entity_number"
         | "siger_internal_id"
+        | "slb_reg_id"
         | "slv_commercial_reg_number"
         | "slv_mcas"
         | "slv_numero_identificacion_tributaria"
@@ -1266,6 +1285,7 @@ export declare namespace IdentifierType {
         | "tza_brela_reg_num"
         | "tza_tansad_number"
         | "tza_tin"
+        | "uga_tin"
         | "uk_company_number"
         | "uk_firm_reference_number"
         | "uk_passport"
@@ -1273,6 +1293,7 @@ export declare namespace IdentifierType {
         | "uk_title_number"
         | "ukr_fiu_list_number"
         | "ukr_moj_id"
+        | "ukr_passport"
         | "ukr_reg_num"
         | "ukr_sanctions_nazk_company_internal_id"
         | "ukr_sanctions_nazk_person_internal_id"
@@ -1394,6 +1415,7 @@ export declare namespace IdentifierType {
         | "vnm_enterprise_code"
         | "vnm_person_id_no"
         | "vut_corp_reg_number"
+        | "wcpfc_rfmo_id"
         | "wipo_intl_ref_no"
         | "wipo_intl_reg_no"
         | "xxx_acuris_id"

@@ -12,12 +12,14 @@ export const ResolutionUploadBody: core.serialization.ObjectSchema<
     Sayari.ResolutionUploadBody
 > = core.serialization.object({
     filename: core.serialization.string(),
+    enableLlmClean: core.serialization.property("enable_llm_clean", core.serialization.boolean().optional()),
     data: core.serialization.list(ResolutionBody),
 });
 
 export declare namespace ResolutionUploadBody {
     export interface Raw {
         filename: string;
+        enable_llm_clean?: boolean | null;
         data: ResolutionBody.Raw[];
     }
 }

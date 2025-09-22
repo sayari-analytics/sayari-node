@@ -13,10 +13,14 @@ export type Unit =
      * Indicates meters (m) */
     | "metre"
     /**
+     * Indicates meters squared (m^2) */
+    | "metres_squared"
+    /**
      * Used to show the number of units of a product */
     | "unit";
 export const Unit = {
     Kilogram: "kilogram",
     Metre: "metre",
+    MetresSquared: "metres_squared",
     Unit: "unit",
 } as const;

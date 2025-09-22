@@ -19,7 +19,6 @@ export * from "./IntKeyValue";
 export * from "./Project";
 export * from "./ProjectEntitiesAggsDefinition";
 export * from "./UpstreamTiers";
-export * from "./ProjectEntitiesFilter";
 export * from "./ProjectCounts";
 export * from "./ProjectWithMembers";
 export * from "./Role";

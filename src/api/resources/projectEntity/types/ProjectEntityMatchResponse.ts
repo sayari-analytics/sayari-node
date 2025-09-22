@@ -9,7 +9,6 @@ export interface ProjectEntityMatchResponse {
     sayariEntityId: string;
     type: string;
     label: string;
-    matchedAttributes: Sayari.MatchedAttributes;
     countries: string[];
     riskCategories: Sayari.ProjectRiskCategory[];
     riskFactors: Sayari.ProjectRiskFactor[];
@@ -22,4 +21,5 @@ export interface ProjectEntityMatchResponse {
     updatedAt?: string;
     matchProfile?: Sayari.MatchProfileEnum;
     deletedAt?: string;
+    matchExplanation?: Sayari.ProjectEntityMatchExplanation[];
 }

@@ -79,6 +79,12 @@ export type WeakIdentifierType =
      * China Project Number */
     | "chn_project_number"
     /**
+     * Ivory Coast Authorized Economic Operator (AEO) Number. AEO ID signifies that an entity is recognized by the customs administration for meeting supply chain security standards. It is assigned to parties involved in the international movement of goods. */
+    | "civ_aeo_code"
+    /**
+     * Cameroon Shipment Declaration Number */
+    | "cmr_shipment_declaration_number"
+    /**
      * Part of a Qichacha URL, used to uniquely identify people within the site */
     | "cn_qcc_internal_id"
     /**
@@ -115,6 +121,9 @@ export type WeakIdentifierType =
      * UK Bankruptcy and Insolvency Court Case Number linked to an individual subject to bankruptcies and insolvencies in England and Wales. */
     | "gbr_bankruptcy_case_num"
     /**
+     * Unique UK charity ID number. Assigned to every charity registered with the Charity Commission for England and Wales. */
+    | "gbr_charity_no"
+    /**
      * Declaration number for import and export shipments in the United Kingdom */
     | "gbr_declaration_number"
     /**
@@ -123,6 +132,9 @@ export type WeakIdentifierType =
     /**
      * Georgian state registration number */
     | "geo_state_registration_number"
+    /**
+     * Ghana Shipment Declaration Number */
+    | "gha_shipment_declaration_number"
     /**
      * House Air Waybill is a document used in the transportation of goods by airplane - issued and signed by a freight forwarder. This document can be used to track individual shipments under a master air waybill. Normally used for tracking shipments within a consolidated air cargo. */
     | "habw_id"
@@ -175,6 +187,9 @@ export type WeakIdentifierType =
      * Kazakhstan Shipment Declaration Number */
     | "kaz_shipment_declaration_number"
     /**
+     * Kenya Shipment Declaration Number */
+    | "ken_shipment_declaration_number"
+    /**
      * Kyrgyzstan INN */
     | "kgz_inn"
     /**
@@ -191,8 +206,14 @@ export type WeakIdentifierType =
     | "lbn_family_number"
     | "lbn_registration_number"
     /**
+     * Tax Identification Number (TIN) - assigned the Liberian Revenue Authority (LRA). */
+    | "lbr_tin"
+    /**
      * St. Lucia Business Registry Entity Number */
     | "lca_corporate_registry_entity_num"
+    /**
+     * Lesotho Import Shipment Entry Number */
+    | "lso_import_entry_number"
     /**
      * Latvian Court Case ID Number */
     | "lva_court_case_id"
@@ -239,6 +260,9 @@ export type WeakIdentifierType =
      * Internal registration number for entities that have registered with HM Revenue & Customs under respective regulations for money laundering supervision and guidance. */
     | "mlr_reg_num"
     /**
+     * Malawi Shipment Registration Number */
+    | "mwi_shipment_reg_no"
+    /**
      * Mexican FME */
     | "mx_fme"
     /**
@@ -247,6 +271,12 @@ export type WeakIdentifierType =
     /**
      * Malaysia National Registration Identity Card (NRIC) number is a unique identifier for citizens and permanent residents. Weak ID as it is partial. */
     | "mys_partial_national_identity_number"
+    /**
+     * Namibia Shipment Assessment Number */
+    | "nam_shipment_assessment_no"
+    /**
+     * Namibia Shipment Registration Number */
+    | "nam_shipment_reg_no"
     /**
      * Nigerian Driver's License No. */
     | "nga_drivers"
@@ -280,6 +310,9 @@ export type WeakIdentifierType =
     /**
      * An identification card or passport document for people in Venezuela */
     | "partial_ven_cedula"
+    /**
+     * Peru Shipment Control Number */
+    | "per_shipment_control_id"
     /**
      * Tax identification number from Poland */
     | "pol_nip_number"
@@ -335,6 +368,9 @@ export type WeakIdentifierType =
      * Singapore National Registration Identity Card (NRIC) number is a unique identifier for citizens and permanent residents. Weak ID as it is partial. */
     | "sgp_partial_national_identity_number"
     /**
+     * Unique foreign investor number. Assigned to every non-Solomon Islander or foreign-registered company wishing to conduct business in the country. */
+    | "slb_foreign_investor_id"
+    /**
      * Partial South African ID number for individuals */
     | "south_africa_partial_id_number"
     /**
@@ -343,6 +379,9 @@ export type WeakIdentifierType =
     /**
      * Tokyo Shoko Research Business Identifier. Identification code, assigned by credit reporting company, Tokyo Shoko Research, for businesses in Japan. */
     | "tokyo_shoko_id"
+    /**
+     * Declaration number for import and export shipments in Turkey */
+    | "tur_declaration_number"
     /**
      * Turkey municipal trade registry ID number. Assigned by municipal chambers of commerce in Turkey. */
     | "tur_office_registration_number"
@@ -359,8 +398,14 @@ export type WeakIdentifierType =
      * Tanzania Cargo Reference Number. Identifier assigned to a shipment when it is first lodged in the customs system, often through the manifest or pre-clearance process. */
     | "tza_crn_no"
     /**
+     * Tanzania Single Administrative Document (TANSAD). Official customs declaration. This document is used to declare goods being imported or exported. */
+    | "tza_tansad_number"
+    /**
      * Learn more [here](https://www.wikidata.org/wiki/Property:P3125) */
     | "ukr_edrpou"
+    /**
+     * Ukrainian Registration Document Number */
+    | "ukr_registration_document_number"
     /**
      * Ukraine Shipment Declaration Number */
     | "ukr_shipment_declaration_number"
@@ -488,6 +533,9 @@ export type WeakIdentifierType =
      * A certificate number for the National Registry of Contractors in Venezuela */
     | "ven_rnc_number"
     /**
+     * Vietnam Shipment Declaration Number */
+    | "vnm_shipment_declaration_number"
+    /**
      * A temporary malformed type */
     | "malformed mmr_prior_reg_no";
 export const WeakIdentifierType = {
@@ -515,6 +563,8 @@ export const WeakIdentifierType = {
     ChnContractNumber: "chn_contract_number",
     ChnCustomsRegistrationCode: "chn_customs_registration_code",
     ChnProjectNumber: "chn_project_number",
+    CivAeoCode: "civ_aeo_code",
+    CmrShipmentDeclarationNumber: "cmr_shipment_declaration_number",
     CnQccInternalId: "cn_qcc_internal_id",
     CofiCode: "cofi_code",
     ColBillOfLading: "col_bill_of_lading",
@@ -527,9 +577,11 @@ export const WeakIdentifierType = {
     DeuRegisternummer: "deu_registernummer",
     DmaCorporateRegistryEntityNum: "dma_corporate_registry_entity_num",
     GbrBankruptcyCaseNum: "gbr_bankruptcy_case_num",
+    GbrCharityNo: "gbr_charity_no",
     GbrDeclarationNumber: "gbr_declaration_number",
     GbrGrantInfoNumber: "gbr_grant_info_number",
     GeoStateRegistrationNumber: "geo_state_registration_number",
+    GhaShipmentDeclarationNumber: "gha_shipment_declaration_number",
     HabwId: "habw_id",
     HndTegucigalpaNotary: "hnd_tegucigalpa_notary",
     HunOptenId: "hun_opten_id",
@@ -547,13 +599,16 @@ export const WeakIdentifierType = {
     JpnDeclarationNumber: "jpn_declaration_number",
     JpnPermitNo: "jpn_permit_no",
     KazShipmentDeclarationNumber: "kaz_shipment_declaration_number",
+    KenShipmentDeclarationNumber: "ken_shipment_declaration_number",
     KgzInn: "kgz_inn",
     KgzOkpo: "kgz_okpo",
     KhmTinNumber: "khm_tin_number",
     KorDeclarationNumber: "kor_declaration_number",
     LbnFamilyNumber: "lbn_family_number",
     LbnRegistrationNumber: "lbn_registration_number",
+    LbrTin: "lbr_tin",
     LcaCorporateRegistryEntityNum: "lca_corporate_registry_entity_num",
+    LsoImportEntryNumber: "lso_import_entry_number",
     LvaCourtCaseId: "lva_court_case_id",
     LvaPersonIdMasked: "lva_person_id_masked",
     MacRaemCaseNumber: "mac_raem_case_number",
@@ -569,9 +624,12 @@ export const WeakIdentifierType = {
     MexTmAppNo: "mex_tm_app_no",
     MexTmRegNo: "mex_tm_reg_no",
     MlrRegNum: "mlr_reg_num",
+    MwiShipmentRegNo: "mwi_shipment_reg_no",
     MxFme: "mx_fme",
     MxPartialRfcPerson: "mx_partial_rfc_person",
     MysPartialNationalIdentityNumber: "mys_partial_national_identity_number",
+    NamShipmentAssessmentNo: "nam_shipment_assessment_no",
+    NamShipmentRegNo: "nam_shipment_reg_no",
     NgaDrivers: "nga_drivers",
     NgaNin: "nga_nin",
     NgaRegistrationNumber: "nga_registration_number",
@@ -583,6 +641,7 @@ export const WeakIdentifierType = {
     PanFolio: "pan_folio",
     PanIbcRuc: "pan_ibc_ruc",
     PartialVenCedula: "partial_ven_cedula",
+    PerShipmentControlId: "per_shipment_control_id",
     PolNipNumber: "pol_nip_number",
     PolRegonNumber: "pol_regon_number",
     PrkInternalTradeId: "prk_internal_trade_id",
@@ -601,15 +660,19 @@ export const WeakIdentifierType = {
     RusContractInternalId: "rus_contract_internal_id",
     RusProcurementNoticeNumber: "rus_procurement_notice_number",
     SgpPartialNationalIdentityNumber: "sgp_partial_national_identity_number",
+    SlbForeignInvestorId: "slb_foreign_investor_id",
     SouthAfricaPartialIdNumber: "south_africa_partial_id_number",
     SvkFilingNumber: "svk_filing_number",
     TokyoShokoId: "tokyo_shoko_id",
+    TurDeclarationNumber: "tur_declaration_number",
     TurOfficeRegistrationNumber: "tur_office_registration_number",
     TurPartialMersisNumber: "tur_partial_mersis_number",
     TxBexarPropertyGeoId: "tx_bexar_property_geo_id",
     TzaBillOfLading: "tza_bill_of_lading",
     TzaCrnNo: "tza_crn_no",
+    TzaTansadNumber: "tza_tansad_number",
     UkrEdrpou: "ukr_edrpou",
+    UkrRegistrationDocumentNumber: "ukr_registration_document_number",
     UkrShipmentDeclarationNumber: "ukr_shipment_declaration_number",
     Unknown: "unknown",
     UnknownBraCaseNumber: "unknown_bra_case_number",
@@ -652,5 +715,6 @@ export const WeakIdentifierType = {
     VenColegiadoNumber: "ven_colegiado_number",
     VenManifiestoNumber: "ven_manifiesto_number",
     VenRncNumber: "ven_rnc_number",
+    VnmShipmentDeclarationNumber: "vnm_shipment_declaration_number",
     MalformedMmrPriorRegNo: "malformed mmr_prior_reg_no",
 } as const;

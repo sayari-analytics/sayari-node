@@ -16,6 +16,14 @@ import * as Sayari from "../../../index";
  *
  * @example
  *     {
+ *         name: ["Chongqing Jingyou Zhicai New Materials Co."],
+ *         country: [Sayari.Country.Chn],
+ *         address: ["4-2, Building B2, No. 5, Middle Mount Huangshan Avenue, Gaoxinyuan, Dazhulin Street, Liangjiang New District, Chongqing,Chongqing,continuation,CN"],
+ *         enableLlmClean: false
+ *     }
+ *
+ * @example
+ *     {
  *         name: ["Marvel Garment"],
  *         country: [Sayari.Country.Khm],
  *         address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
@@ -32,4 +40,6 @@ export interface CreateResolvedProjectEntityRequest {
     city?: string[];
     state?: string[];
     profile?: Sayari.ResolutionProfile;
+    /** Whether to enable LLM-based data cleaning to remove noise and standardize entity attributes. Defaults to true if not supplied. Set to false to disable LLM cleaning. */
+    enableLlmClean?: boolean;
 }

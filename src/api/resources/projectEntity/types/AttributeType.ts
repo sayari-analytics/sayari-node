@@ -3,6 +3,6 @@
  */
 
 export interface AttributeType {
-    type: string;
-    resolution: boolean;
+    field: string;
+    matchResolution: boolean;
 }

@@ -3,33 +3,27 @@
  */
 
 export type Topics =
-    | "basic"
-    | "environmental"
-    | "social"
+    | "overview"
+    | "environmental_and_social"
     | "cybersecurity"
     | "disruption"
     | "criminal"
     | "reputational"
     | "financial"
-    | "regulatory"
+    | "sanctions_and_regulatory"
     | "legal"
-    | "misconduct"
-    | "terrorism"
-    | "sanctions"
-    | "all";
+    | "political"
+    | "terrorism";
 export const Topics = {
-    Basic: "basic",
-    Environmental: "environmental",
-    Social: "social",
+    Overview: "overview",
+    EnvironmentalAndSocial: "environmental_and_social",
     Cybersecurity: "cybersecurity",
     Disruption: "disruption",
     Criminal: "criminal",
     Reputational: "reputational",
     Financial: "financial",
-    Regulatory: "regulatory",
+    SanctionsAndRegulatory: "sanctions_and_regulatory",
     Legal: "legal",
-    Misconduct: "misconduct",
+    Political: "political",
     Terrorism: "terrorism",
-    Sanctions: "sanctions",
-    All: "all",
 } as const;

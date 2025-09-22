@@ -12,13 +12,13 @@ import * as Sayari from "../../../../index";
  *             departureCountry: ["DEU"],
  *             arrivalCountry: ["RUS"],
  *             hsCode: ["854231"],
- *             arrivalDate: ["2024-01 TO 2024-10"]
+ *             arrivalDate: "2024-01|2024-10"
  *         }
  *     }
  */
 export interface SearchShipments {
     /**
-     * A limit on the number of objects to be returned with a range between 1 and 10000. Defaults to 100.
+     * A limit on the number of objects to be returned with a range between 1 and 3000. Defaults to 100.
      */
     limit?: number;
     /**

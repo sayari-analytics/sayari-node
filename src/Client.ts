@@ -20,7 +20,6 @@ import { Record_ } from "./api/resources/record/client/Client";
 import { Resolution } from "./api/resources/resolution/client/Client";
 import { Resource } from "./api/resources/resource/client/Client";
 import { Search } from "./api/resources/search/client/Client";
-import { Source } from "./api/resources/source/client/Client";
 import { SupplyChain } from "./api/resources/supplyChain/client/Client";
 import { Trade } from "./api/resources/trade/client/Client";
 import { Traversal } from "./api/resources/traversal/client/Client";
@@ -64,7 +63,6 @@ export class SayariClient {
     protected _resolution: Resolution | undefined;
     protected _resource: Resource | undefined;
     protected _search: Search | undefined;
-    protected _source: Source | undefined;
     protected _supplyChain: SupplyChain | undefined;
     protected _trade: Trade | undefined;
     protected _traversal: Traversal | undefined;
@@ -186,13 +184,6 @@ export class SayariClient {
 
     public get search(): Search {
         return (this._search ??= new Search({
-            ...this._options,
-            token: async () => await this._oauthTokenProvider.getToken(),
-        }));
-    }
-
-    public get source(): Source {
-        return (this._source ??= new Source({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));

@@ -11,6 +11,13 @@ export const SayariEnvironment = {
      * Sayari development - utilized for internal testing before promotion to production
      */
     Dev: "https://api.internal.sayari.com",
+    /**
+     * Sayari production - UK environment
+     */
+    ProductionUk: "https://api.uk.sayari.com",
 } as const;
 
-export type SayariEnvironment = typeof SayariEnvironment.Production | typeof SayariEnvironment.Dev;
+export type SayariEnvironment =
+    | typeof SayariEnvironment.Production
+    | typeof SayariEnvironment.Dev
+    | typeof SayariEnvironment.ProductionUk;

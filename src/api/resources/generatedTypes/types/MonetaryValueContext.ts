@@ -10,17 +10,57 @@ export type MonetaryValueContext =
      * Indicates value determined by customs authorities */
     | "assessed_value"
     /**
+     * Indicates official property valuation. Primarily used for property tax purposes and typically lower than market value. */
+    | "cadastral_value"
+    /**
+     * Indicates carriage and insurance paid to (CIP) arrangement */
+    | "carriage_and_insurance_paid_to"
+    /**
+     * Indicates carriage paid to (CPT) arrangement */
+    | "carriage_paid_to"
+    /**
      * Indicates value of a contract */
     | "contract_value"
     /**
+     * Indicates cost and freight (CFR) arrangement */
+    | "cost_and_freight"
+    /**
      * Indicates cost, insurance, and freight (CIF) arrangement */
     | "cost_insurance_and_freight"
+    /**
+     * Indicates delivered at place (DAP) arrangement */
+    | "delivered_at_place"
+    /**
+     * Indicates delivered at place unloaded (DPU) arrangement */
+    | "delivered_at_place_unloaded"
+    /**
+     * Indicates delivered duty paid (DDP) arrangement */
+    | "delivered_duty_paid"
+    /**
+     * Indicates ex works (EXW) arrangement */
+    | "ex_works"
+    /**
+     * Indicates free alongside ship (FAS) arrangement */
+    | "free_alongside_ship"
+    /**
+     * Indicates free carrier (FCA) arrangement */
+    | "free_carrier"
     /**
      * Indicates free on board (FOB) arrangement */
     | "free_on_board";
 export const MonetaryValueContext = {
     AssessedValue: "assessed_value",
+    CadastralValue: "cadastral_value",
+    CarriageAndInsurancePaidTo: "carriage_and_insurance_paid_to",
+    CarriagePaidTo: "carriage_paid_to",
     ContractValue: "contract_value",
+    CostAndFreight: "cost_and_freight",
     CostInsuranceAndFreight: "cost_insurance_and_freight",
+    DeliveredAtPlace: "delivered_at_place",
+    DeliveredAtPlaceUnloaded: "delivered_at_place_unloaded",
+    DeliveredDutyPaid: "delivered_duty_paid",
+    ExWorks: "ex_works",
+    FreeAlongsideShip: "free_alongside_ship",
+    FreeCarrier: "free_carrier",
     FreeOnBoard: "free_on_board",
 } as const;
