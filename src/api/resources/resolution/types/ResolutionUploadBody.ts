@@ -6,5 +6,7 @@ import * as Sayari from "../../../index";
 
 export interface ResolutionUploadBody {
     filename: string;
+    /** Whether to enable LLM-based data cleaning to remove noise and standardize entity attributes. Defaults to true if not supplied. Set to false to disable LLM cleaning. */
+    enableLlmClean?: boolean;
     data: Sayari.ResolutionBody[];
 }

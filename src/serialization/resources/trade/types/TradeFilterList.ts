@@ -78,14 +78,8 @@ export const TradeFilterList: core.serialization.ObjectSchema<serializers.TradeF
             "buyer_purpose",
             core.serialization.list(core.serialization.string()).optional(),
         ),
-        arrivalDate: core.serialization.property(
-            "arrival_date",
-            core.serialization.list(core.serialization.string()).optional(),
-        ),
-        departureDate: core.serialization.property(
-            "departure_date",
-            core.serialization.list(core.serialization.string()).optional(),
-        ),
+        arrivalDate: core.serialization.property("arrival_date", core.serialization.string().optional()),
+        departureDate: core.serialization.property("departure_date", core.serialization.string().optional()),
         shipmentIdentifier: core.serialization.property(
             "shipment_identifier",
             core.serialization.list(core.serialization.string()).optional(),
@@ -120,8 +114,8 @@ export declare namespace TradeFilterList {
         product_origin?: Country.Raw[] | null;
         supplier_purpose?: string[] | null;
         buyer_purpose?: string[] | null;
-        arrival_date?: string[] | null;
-        departure_date?: string[] | null;
+        arrival_date?: string | null;
+        departure_date?: string | null;
         shipment_identifier?: string[] | null;
         transit_country?: Country.Raw[] | null;
         weight?: string[] | null;

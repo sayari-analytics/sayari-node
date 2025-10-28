@@ -11,6 +11,7 @@ export type Tag =
     | "esg_score"
     | "export_controls"
     | "export_controls_bis_entity"
+    | "financial_risk_score"
     | "forced_labor_xinjiang_contractors"
     | "former_soe"
     | "formerly_sanctioned"
@@ -35,6 +36,7 @@ export const Tag = {
     EsgScore: "esg_score",
     ExportControls: "export_controls",
     ExportControlsBisEntity: "export_controls_bis_entity",
+    FinancialRiskScore: "financial_risk_score",
     ForcedLaborXinjiangContractors: "forced_labor_xinjiang_contractors",
     FormerSoe: "former_soe",
     FormerlySanctioned: "formerly_sanctioned",

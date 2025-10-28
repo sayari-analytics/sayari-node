@@ -664,7 +664,7 @@ Provides detailed article metadata with risk assessments and direct source refer
 ```typescript
 await client.negativeNews.negativeNews({
     name: "Gazprom",
-    topic: "sanctions",
+    topic: "sanctions_and_regulatory",
     until: "2024-10-01",
 });
 ```
@@ -1949,6 +1949,160 @@ await client.ontology.getSourceTypes({
 
 ## ProjectEntityAttributes
 
+<details><summary><code>client.projectEntityAttributes.<a href="/src/api/resources/projectEntityAttributes/client/Client.ts">getProjectEntityAttributes</a>(projectId, projectEntityId) -> Sayari.ProjectEntityAttributesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves all attributes for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntityAttributes.getProjectEntityAttributes("V03eYM", "BG72YW");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntityAttributes.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntityAttributes.<a href="/src/api/resources/projectEntityAttributes/client/Client.ts">createProjectEntityAttribute</a>(projectId, projectEntityId, { ...params }) -> Sayari.CreateProjectEntityAttributeResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new attribute for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntityAttributes.createProjectEntityAttribute("V03eYM", "BG72YW", {
+    field: "custom_phone",
+    value: "+1-555-123-4567",
+    matchResolution: false,
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.CreateProjectEntityAttributeRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntityAttributes.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.projectEntityAttributes.<a href="/src/api/resources/projectEntityAttributes/client/Client.ts">updateProjectEntityAttribute</a>(projectId, projectEntityId, attributeId, { ...params }) -> Sayari.UpdateProjectEntityAttributeResponse</code></summary>
 <dl>
 <dd>
@@ -2022,6 +2176,85 @@ await client.projectEntityAttributes.updateProjectEntityAttribute("V03eYM", "BG7
 <dd>
 
 **request:** `Sayari.UpdateProjectEntityAttributeRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntityAttributes.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntityAttributes.<a href="/src/api/resources/projectEntityAttributes/client/Client.ts">deleteProjectEntityAttribute</a>(projectId, projectEntityId, attributeId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Deletes a specific attribute for a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntityAttributes.deleteProjectEntityAttribute("project_id", "project_entity_id", "attribute_id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**attributeId:** `string`
 
 </dd>
 </dl>
@@ -2387,11 +2620,13 @@ The resolution endpoints allow users to search for matching entities against a p
 
 ```typescript
 await client.projectEntity.createProjectEntity("YVB88Y", {
-    name: ["VTB Bank"],
-    country: ["RUS"],
-    address: ["Moscow"],
-    identifier: ["253400V1H6ART1UQ0N98"],
-    profile: "corporate",
+    body: {
+        name: ["VTB Bank"],
+        country: ["RUS"],
+        address: ["Moscow"],
+        identifier: ["253400V1H6ART1UQ0N98"],
+        profile: "corporate",
+    },
 });
 ```
 
@@ -2416,7 +2651,7 @@ await client.projectEntity.createProjectEntity("YVB88Y", {
 <dl>
 <dd>
 
-**request:** `Sayari.CreateResolvedProjectEntityRequest`
+**request:** `Sayari.CreateResolvedProjectEntityRequestWrapper`
 
 </dd>
 </dl>
@@ -2448,6 +2683,20 @@ await client.projectEntity.createProjectEntity("YVB88Y", {
 <dd>
 
 Retrieves a list of entities for a specific project with pagination support.
+
+**Response Formats:**
+
+- **JSON** (default): Returns structured data with nested objects
+- **CSV**: Returns tabular data with dynamic columns for attributes and risk categories
+
+**CSV Format:**
+The CSV response includes dynamic columns based on the data:
+
+- `attribute_{field_name}`: Dynamic columns for each attribute field found in the data
+- `risk_category_{category_id}`: Dynamic columns for each risk category found in the data
+- Standard columns: project_id, project_entity_id, label, project_entity_url, upload_ids, strength, countries, tags, case_status, created_at, match_count, upstream_products, upstream_risk_factors, upstream_countries
+
+Use the `Accept: text/csv` header to request CSV format.
 
 </dd>
 </dl>
@@ -2506,7 +2755,7 @@ await client.projectEntity.getProjectEntities("YVB88Y");
 </dl>
 </details>
 
-<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">getProjectEntity</a>(projectId, projectEntityId, { ...params }) -> Sayari.SingleProjectEntityResponse</code></summary>
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">getProjectEntity</a>(projectId, projectEntityId) -> Sayari.SingleProjectEntityResponse</code></summary>
 <dl>
 <dd>
 
@@ -2559,14 +2808,6 @@ await client.projectEntity.getProjectEntity("project_id", "project_entity_id");
 <dd>
 
 **projectEntityId:** `string`
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**request:** `Sayari.GetProjectEntityRequest`
 
 </dd>
 </dl>
@@ -2887,6 +3128,290 @@ await client.projectEntity.saveProjectEntity("YVB88Y", {
 </dl>
 </details>
 
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">getProjectRiskChanges</a>(projectId, { ...params }) -> Sayari.ProjectRiskChangesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves the risk changes for all project entities in a project.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.getProjectRiskChanges("YVB88Y");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetProjectRiskChangesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">getProjectEntityRiskChanges</a>(projectId, projectEntityId, { ...params }) -> Sayari.ProjectEntityRiskChangesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves the risk changes for a single project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.getProjectEntityRiskChanges("YVB88Y", "52z4Wa");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetProjectEntityRiskChangesRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">deleteProjectRiskChanges</a>(projectId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Dismiss risk changes for all project entities in a project.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.deleteProjectRiskChanges("project_id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">deleteProjectEntityRiskChanges</a>(projectId, projectEntityId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Dismiss risk changes for a single project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.deleteProjectEntityRiskChanges("project_id", "project_entity_id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">projectEntitySupplyChain</a>(projectId, projectEntityId, { ...params }) -> Sayari.UpstreamTradeTraversalResponse</code></summary>
 <dl>
 <dd>
@@ -2951,6 +3476,96 @@ await client.projectEntity.projectEntitySupplyChain("0n4473", "yebNPJ", {
 <dd>
 
 **request:** `Sayari.ProjectEntitySupplyChainRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">getProjectEntityRiskSummary</a>(projectId, projectEntityId, { ...params }) -> Sayari.ProjectEntityRiskSummaryResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves a risk summary for a specific project entity, including risk factors with network paths and risk intelligence data.
+
+**Response includes:**
+
+- Risk factors with their levels (elevated, high, critical)
+- Network paths showing relationships between entities
+- Risk intelligence scores and metadata
+- Risk categories and source entity information
+  </dd>
+  </dl>
+  </dd>
+  </dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.getProjectEntityRiskSummary("YVB88Y", "52z4Wa", {
+    filter: {
+        riskFactor: ["sanctioned", "regulatory_action"],
+        riskCategory: ["sanctions", "export_controls"],
+    },
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.GetProjectEntityRiskSummaryRequest`
 
 </dd>
 </dl>
@@ -4027,136 +4642,6 @@ await client.search.searchRecordGet({
 </dl>
 </details>
 
-## Source
-
-<details><summary><code>client.source.<a href="/src/api/resources/source/client/Client.ts">listSources</a>({ ...params }) -> Sayari.ListSourcesResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-<Warning>This endpoint is deprecated. Use /v1/ontology/sources instead.</Warning> Returns metadata for all sources that Sayari collects data from
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```typescript
-await client.source.listSources({
-    limit: 2,
-});
-```
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request:** `Sayari.ListSources`
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**requestOptions:** `Source.RequestOptions`
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-</dd>
-</dl>
-</details>
-
-<details><summary><code>client.source.<a href="/src/api/resources/source/client/Client.ts">getSource</a>(id) -> Sayari.GetSourceResponse</code></summary>
-<dl>
-<dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-<Warning>This endpoint is deprecated. Use /v1/ontology/sources instead.</Warning> Returns metadata for a source that Sayari collects data from
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### 🔌 Usage
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-```typescript
-await client.source.getSource("f4396e4b8a41d1fd9f09ea94d2ebedb9");
-```
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**id:** `string` — The unique identifier for a source in the database
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**requestOptions:** `Source.RequestOptions`
-
-</dd>
-</dl>
-</dd>
-</dl>
-
-</dd>
-</dl>
-</details>
-
 ## SupplyChain
 
 <details><summary><code>client.supplyChain.<a href="/src/api/resources/supplyChain/client/Client.ts">upstreamTradeTraversal</a>(id, { ...params }) -> Sayari.UpstreamTradeTraversalResponse</code></summary>
@@ -4270,7 +4755,7 @@ await client.trade.searchShipments({
         departureCountry: ["DEU"],
         arrivalCountry: ["RUS"],
         hsCode: ["854231"],
-        arrivalDate: ["2024-01 TO 2024-10"],
+        arrivalDate: "2024-01|2024-10",
     },
 });
 ```
@@ -4341,7 +4826,7 @@ await client.trade.searchSuppliers({
         departureCountry: ["DEU"],
         arrivalCountry: ["RUS"],
         hsCode: ["854231"],
-        arrivalDate: ["2024-01 TO 2024-10"],
+        arrivalDate: "2024-01|2024-10",
     },
 });
 ```
@@ -4412,7 +4897,7 @@ await client.trade.searchBuyers({
         departureCountry: ["DEU"],
         arrivalCountry: ["RUS"],
         hsCode: ["854231"],
-        arrivalDate: ["2024-01 TO 2024-10"],
+        arrivalDate: "2024-01|2024-10",
     },
 });
 ```

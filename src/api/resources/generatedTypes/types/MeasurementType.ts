@@ -7,8 +7,14 @@
  */
 export type MeasurementType =
     /**
+     * Indicates the total built-area of all structures on a plot of land. */
+    | "built_area"
+    /**
      * Total weight including the weight of goods, packaging, and any additional accessories used for shipping */
     | "gross_weight"
+    /**
+     * Indicates the total area of a plot of land. */
+    | "land_area"
     /**
      * Weight of raw goods only */
     | "net_weight"
@@ -16,7 +22,9 @@ export type MeasurementType =
      * Describes the number of units of product */
     | "quantity";
 export const MeasurementType = {
+    BuiltArea: "built_area",
     GrossWeight: "gross_weight",
+    LandArea: "land_area",
     NetWeight: "net_weight",
     Quantity: "quantity",
 } as const;

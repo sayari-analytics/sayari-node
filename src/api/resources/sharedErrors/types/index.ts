@@ -3,6 +3,7 @@ export * from "./UnauthorizedResponse";
 export * from "./MethodNotAllowedResponse";
 export * from "./NotFoundResponse";
 export * from "./NotAcceptableResponse";
+export * from "./UnprocessableContentResponse";
 export * from "./RateLimitResponse";
 export * from "./InternalServerErrorResponse";
 export * from "./BadGatewayResponse";

@@ -30,6 +30,9 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "controlled_by_un_sanctioned",
     "cpi_score",
     "entity_licensed_with_fsb_rf",
+    "esg_score_high",
+    "esg_score_medium",
+    "esg_score_very_high",
     "eu_50_percent_rule",
     "eu_high_risk_third",
     "eu_minority_ownership",
@@ -78,6 +81,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "exports_to_sanctioned_eu_dg_fisma_ec_entity",
     "exports_to_sanctioned_eu_ec_regulation_833_2014_entity",
     "exports_to_sanctioned_eu_ec_sanctions_map_entity",
+    "exports_to_sanctioned_eu_sanctions_entity",
     "exports_to_sanctioned_fra_dgt_mefids_entity",
     "exports_to_sanctioned_gbr_fcdo_entity",
     "exports_to_sanctioned_gbr_hmt_ofsi_entity",
@@ -140,6 +144,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "formerly_sanctioned_eu_dg_fisma_ec",
     "formerly_sanctioned_eu_ec_regulation_833_2014",
     "formerly_sanctioned_eu_ec_sanctions_map",
+    "formerly_sanctioned_eu_sanctions",
     "formerly_sanctioned_fra_dgt_mefids",
     "formerly_sanctioned_gbr_fcdo",
     "formerly_sanctioned_gbr_hmt_ofsi",
@@ -220,6 +225,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owned_by_sanctioned_eu_dg_fisma_ec_entity",
     "owned_by_sanctioned_eu_ec_regulation_833_2014_entity",
     "owned_by_sanctioned_eu_ec_sanctions_map_entity",
+    "owned_by_sanctioned_eu_sanctions_entity",
     "owned_by_sanctioned_fra_dgt_mefids_entity",
     "owned_by_sanctioned_gbr_fcdo_entity",
     "owned_by_sanctioned_gbr_hmt_ofsi_entity",
@@ -275,6 +281,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owner_of_sanctioned_eu_dg_fisma_ec_entity",
     "owner_of_sanctioned_eu_ec_regulation_833_2014_entity",
     "owner_of_sanctioned_eu_ec_sanctions_map_entity",
+    "owner_of_sanctioned_eu_sanctions_entity",
     "owner_of_sanctioned_fra_dgt_mefids_entity",
     "owner_of_sanctioned_gbr_fcdo_entity",
     "owner_of_sanctioned_gbr_hmt_ofsi_entity",
@@ -351,6 +358,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_exports_to_sanctioned_eu_dg_fisma_ec_entity",
     "psa_exports_to_sanctioned_eu_ec_regulation_833_2014_entity",
     "psa_exports_to_sanctioned_eu_ec_sanctions_map_entity",
+    "psa_exports_to_sanctioned_eu_sanctions_entity",
     "psa_exports_to_sanctioned_fra_dgt_mefids_entity",
     "psa_exports_to_sanctioned_gbr_fcdo_entity",
     "psa_exports_to_sanctioned_gbr_hmt_ofsi_entity",
@@ -444,6 +452,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owned_by_sanctioned_eu_dg_fisma_ec_entity",
     "psa_owned_by_sanctioned_eu_ec_regulation_833_2014_entity",
     "psa_owned_by_sanctioned_eu_ec_sanctions_map_entity",
+    "psa_owned_by_sanctioned_eu_sanctions_entity",
     "psa_owned_by_sanctioned_fra_dgt_mefids_entity",
     "psa_owned_by_sanctioned_gbr_fcdo_entity",
     "psa_owned_by_sanctioned_gbr_hmt_ofsi_entity",
@@ -499,6 +508,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owner_of_sanctioned_eu_dg_fisma_ec_entity",
     "psa_owner_of_sanctioned_eu_ec_regulation_833_2014_entity",
     "psa_owner_of_sanctioned_eu_ec_sanctions_map_entity",
+    "psa_owner_of_sanctioned_eu_sanctions_entity",
     "psa_owner_of_sanctioned_fra_dgt_mefids_entity",
     "psa_owner_of_sanctioned_gbr_fcdo_entity",
     "psa_owner_of_sanctioned_gbr_hmt_ofsi_entity",
@@ -540,6 +550,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_sanctioned_eu_dg_fisma_ec",
     "psa_sanctioned_eu_ec_regulation_833_2014",
     "psa_sanctioned_eu_ec_sanctions_map",
+    "psa_sanctioned_eu_sanctions",
     "psa_sanctioned_fra_dgt_mefids",
     "psa_sanctioned_gbr_fcdo",
     "psa_sanctioned_gbr_hmt_ofsi",
@@ -571,6 +582,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_usa_bis_50_percent_rule",
     "psa_usa_bis_denied_persons",
     "psa_usa_bis_meu",
+    "psa_usa_bis_meu_50_percent_rule",
     "psa_usa_bis_unverified",
     "psa_usa_isn",
     "psa_usa_section_1260h",
@@ -593,8 +605,10 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "sanctioned_che_seco",
     "sanctioned_cze_mof",
     "sanctioned_eu_dg_fisma_ec",
+    "sanctioned_eu_ec_regulation_269_2014",
     "sanctioned_eu_ec_regulation_833_2014",
     "sanctioned_eu_ec_sanctions_map",
+    "sanctioned_eu_sanctions",
     "sanctioned_fra_dgt_mefids",
     "sanctioned_gbr_fcdo",
     "sanctioned_gbr_hmt_ofsi",
@@ -630,6 +644,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "usa_bis_50_percent_rule",
     "usa_bis_denied_persons",
     "usa_bis_meu",
+    "usa_bis_meu_50_percent_rule",
     "usa_bis_unverified",
     "usa_isn",
     "usa_section_1260h",
@@ -663,6 +678,9 @@ export declare namespace Risk {
         | "controlled_by_un_sanctioned"
         | "cpi_score"
         | "entity_licensed_with_fsb_rf"
+        | "esg_score_high"
+        | "esg_score_medium"
+        | "esg_score_very_high"
         | "eu_50_percent_rule"
         | "eu_high_risk_third"
         | "eu_minority_ownership"
@@ -711,6 +729,7 @@ export declare namespace Risk {
         | "exports_to_sanctioned_eu_dg_fisma_ec_entity"
         | "exports_to_sanctioned_eu_ec_regulation_833_2014_entity"
         | "exports_to_sanctioned_eu_ec_sanctions_map_entity"
+        | "exports_to_sanctioned_eu_sanctions_entity"
         | "exports_to_sanctioned_fra_dgt_mefids_entity"
         | "exports_to_sanctioned_gbr_fcdo_entity"
         | "exports_to_sanctioned_gbr_hmt_ofsi_entity"
@@ -773,6 +792,7 @@ export declare namespace Risk {
         | "formerly_sanctioned_eu_dg_fisma_ec"
         | "formerly_sanctioned_eu_ec_regulation_833_2014"
         | "formerly_sanctioned_eu_ec_sanctions_map"
+        | "formerly_sanctioned_eu_sanctions"
         | "formerly_sanctioned_fra_dgt_mefids"
         | "formerly_sanctioned_gbr_fcdo"
         | "formerly_sanctioned_gbr_hmt_ofsi"
@@ -853,6 +873,7 @@ export declare namespace Risk {
         | "owned_by_sanctioned_eu_dg_fisma_ec_entity"
         | "owned_by_sanctioned_eu_ec_regulation_833_2014_entity"
         | "owned_by_sanctioned_eu_ec_sanctions_map_entity"
+        | "owned_by_sanctioned_eu_sanctions_entity"
         | "owned_by_sanctioned_fra_dgt_mefids_entity"
         | "owned_by_sanctioned_gbr_fcdo_entity"
         | "owned_by_sanctioned_gbr_hmt_ofsi_entity"
@@ -908,6 +929,7 @@ export declare namespace Risk {
         | "owner_of_sanctioned_eu_dg_fisma_ec_entity"
         | "owner_of_sanctioned_eu_ec_regulation_833_2014_entity"
         | "owner_of_sanctioned_eu_ec_sanctions_map_entity"
+        | "owner_of_sanctioned_eu_sanctions_entity"
         | "owner_of_sanctioned_fra_dgt_mefids_entity"
         | "owner_of_sanctioned_gbr_fcdo_entity"
         | "owner_of_sanctioned_gbr_hmt_ofsi_entity"
@@ -984,6 +1006,7 @@ export declare namespace Risk {
         | "psa_exports_to_sanctioned_eu_dg_fisma_ec_entity"
         | "psa_exports_to_sanctioned_eu_ec_regulation_833_2014_entity"
         | "psa_exports_to_sanctioned_eu_ec_sanctions_map_entity"
+        | "psa_exports_to_sanctioned_eu_sanctions_entity"
         | "psa_exports_to_sanctioned_fra_dgt_mefids_entity"
         | "psa_exports_to_sanctioned_gbr_fcdo_entity"
         | "psa_exports_to_sanctioned_gbr_hmt_ofsi_entity"
@@ -1077,6 +1100,7 @@ export declare namespace Risk {
         | "psa_owned_by_sanctioned_eu_dg_fisma_ec_entity"
         | "psa_owned_by_sanctioned_eu_ec_regulation_833_2014_entity"
         | "psa_owned_by_sanctioned_eu_ec_sanctions_map_entity"
+        | "psa_owned_by_sanctioned_eu_sanctions_entity"
         | "psa_owned_by_sanctioned_fra_dgt_mefids_entity"
         | "psa_owned_by_sanctioned_gbr_fcdo_entity"
         | "psa_owned_by_sanctioned_gbr_hmt_ofsi_entity"
@@ -1132,6 +1156,7 @@ export declare namespace Risk {
         | "psa_owner_of_sanctioned_eu_dg_fisma_ec_entity"
         | "psa_owner_of_sanctioned_eu_ec_regulation_833_2014_entity"
         | "psa_owner_of_sanctioned_eu_ec_sanctions_map_entity"
+        | "psa_owner_of_sanctioned_eu_sanctions_entity"
         | "psa_owner_of_sanctioned_fra_dgt_mefids_entity"
         | "psa_owner_of_sanctioned_gbr_fcdo_entity"
         | "psa_owner_of_sanctioned_gbr_hmt_ofsi_entity"
@@ -1173,6 +1198,7 @@ export declare namespace Risk {
         | "psa_sanctioned_eu_dg_fisma_ec"
         | "psa_sanctioned_eu_ec_regulation_833_2014"
         | "psa_sanctioned_eu_ec_sanctions_map"
+        | "psa_sanctioned_eu_sanctions"
         | "psa_sanctioned_fra_dgt_mefids"
         | "psa_sanctioned_gbr_fcdo"
         | "psa_sanctioned_gbr_hmt_ofsi"
@@ -1204,6 +1230,7 @@ export declare namespace Risk {
         | "psa_usa_bis_50_percent_rule"
         | "psa_usa_bis_denied_persons"
         | "psa_usa_bis_meu"
+        | "psa_usa_bis_meu_50_percent_rule"
         | "psa_usa_bis_unverified"
         | "psa_usa_isn"
         | "psa_usa_section_1260h"
@@ -1226,8 +1253,10 @@ export declare namespace Risk {
         | "sanctioned_che_seco"
         | "sanctioned_cze_mof"
         | "sanctioned_eu_dg_fisma_ec"
+        | "sanctioned_eu_ec_regulation_269_2014"
         | "sanctioned_eu_ec_regulation_833_2014"
         | "sanctioned_eu_ec_sanctions_map"
+        | "sanctioned_eu_sanctions"
         | "sanctioned_fra_dgt_mefids"
         | "sanctioned_gbr_fcdo"
         | "sanctioned_gbr_hmt_ofsi"
@@ -1263,6 +1292,7 @@ export declare namespace Risk {
         | "usa_bis_50_percent_rule"
         | "usa_bis_denied_persons"
         | "usa_bis_meu"
+        | "usa_bis_meu_50_percent_rule"
         | "usa_bis_unverified"
         | "usa_isn"
         | "usa_section_1260h"

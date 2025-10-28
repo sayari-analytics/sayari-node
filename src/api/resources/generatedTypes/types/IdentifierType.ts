@@ -192,6 +192,9 @@ export type IdentifierType =
      * Unique digital currency address */
     | "bitcoin_address"
     /**
+     * Belarus Passport No. */
+    | "blr_passport"
+    /**
      * Belarus Registration Number */
     | "blr_registration_number"
     /**
@@ -314,6 +317,9 @@ export type IdentifierType =
     /**
      * CCS Vessel Registration Number */
     | "ccs_registration"
+    /**
+     * Unique identifier assigned to entities registered with the CCSBT. */
+    | "ccsbt_rfmo_id"
     | "che_ch_id_number"
     /**
      * Swiss SECO Sanction Number */
@@ -614,6 +620,9 @@ export type IdentifierType =
      * Unique reference number assigned to every entity in the France National Asset Freeze Register. */
     | "fra_asset_freeze_id"
     /**
+     * France passport number */
+    | "fra_passport"
+    /**
      * Unique France ID number. Assigned to every legal entity registered with National Registry of Associations. */
     | "fra_rna"
     /**
@@ -751,6 +760,9 @@ export type IdentifierType =
     /**
      * Unique ID number. Assigned to individual bank accounts for use in cross-border financial transactions. */
     | "iban"
+    /**
+     * Unique identifier assigned to entities registered with the ICCAT. */
+    | "iccat_rfmo_id"
     /**
      * ICIJ Offshore Database Internal ID */
     | "icij_offshore_internal_id"
@@ -896,6 +908,9 @@ export type IdentifierType =
     /**
      * Israel National ID Number. Assigned to all residents over 16 years old who have legal permanent residence status. */
     | "isr_national_id"
+    /**
+     * Israeli passport number */
+    | "isr_passport"
     /**
      * Unique Israel public benefit company registration number. Assigned to every public benefit company in the Israel Ministry of Justice Association and Public Benefit Company Registry. */
     | "isr_pbc_number"
@@ -1087,6 +1102,9 @@ export type IdentifierType =
      * Mexico Yucatan parcel ID number. Assigned to every parcel and property registered by the Government of the State of Yucatan. */
     | "mex_yucatan_folio"
     /**
+     * Unique business identification number. Assigned to every registered business in the Marshall Islands. */
+    | "mh_reg_id"
+    /**
      * North Macedonia unique identifier. Assigned to every North Macedonia Corporate Registry Announcement. */
     | "mkd_archive_number"
     /**
@@ -1254,6 +1272,9 @@ export type IdentifierType =
      * Unique Canada province ID number. Assigned to every legal entity in the Ontario Business Registry. */
     | "ontario_corporation_number"
     /**
+     * Internal identifier used by Open Sanctions to identify entities across multiple datasets. */
+    | "open_sanctions_internal_id"
+    /**
      * Unique Pakistan National Taxpayer Number for Companies and Associations of Persons */
     | "pak_co_ntn"
     /**
@@ -1410,13 +1431,13 @@ export type IdentifierType =
      * A Russian company registration number with 12 digits */
     | "ru_ogrn"
     /**
-     * Russian registration number that is not specified specifically as an OGRN in source data */
+     * Russian registration number that is not explicitly designated  as an OGRN in source data */
     | "ru_registration_number"
     /**
      * Russia vessel registry ID number */
     | "ru_ship_register_id"
     /**
-     * Russian tax identification number that is not specified specifically as an INN in source data */
+     * Russian tax identification number that is not explicitly designated as an INN in source data */
     | "ru_tin"
     /**
      * Russia Trade Internal Shipment ID */
@@ -1469,6 +1490,9 @@ export type IdentifierType =
     /**
      * Mexico corporate registry internal ID number */
     | "siger_internal_id"
+    /**
+     * Unique business identification number. Assigned to every registered business in the Solomon Islands. */
+    | "slb_reg_id"
     /**
      * El Salvador commercial registry ID number */
     | "slv_commercial_reg_number"
@@ -1641,6 +1665,9 @@ export type IdentifierType =
      * Taxpayer Identification Number (TIN) is a unique identification number assigned to individuals and entities in Tanzania, largely for tax purposes. A TIN is issued by the Tanzania Revenue Authority (TRA) - the governing body responsible for tax administration in the country. */
     | "tza_tin"
     /**
+     * Taxpayer Identification Number in Uganda is a unique identifying number assigned to every taxpayer by Uganda Revenue Authority (URA) for tax administration purposes. */
+    | "uga_tin"
+    /**
      * A UK company registration number. The pattern was sourced from the snapshot file documentation provided to us. When the first two characters are not digits, they have a special meaning. */
     | "uk_company_number"
     /**
@@ -1659,6 +1686,9 @@ export type IdentifierType =
      * Ukraine SFMS List Identifier. Reference number assigned to all entities listed under Ukraine SFMS List for Terrorism. */
     | "ukr_fiu_list_number"
     | "ukr_moj_id"
+    /**
+     * Ukraine passport number */
+    | "ukr_passport"
     /**
      * Ukrainian Registration Number */
     | "ukr_reg_num"
@@ -2015,6 +2045,9 @@ export type IdentifierType =
      * Vanuatu Corporate Registry Number */
     | "vut_corp_reg_number"
     /**
+     * Unique identifier assigned to entities registered with the WCPFC. */
+    | "wcpfc_rfmo_id"
+    /**
      * Unique USA ID number. Assigned to every foreign trademark application. */
     | "wipo_intl_ref_no"
     /**
@@ -2120,6 +2153,7 @@ export const IdentifierType = {
     BihMbsNumber: "bih_mbs_number",
     BillOfLading: "bill_of_lading",
     BitcoinAddress: "bitcoin_address",
+    BlrPassport: "blr_passport",
     BlrRegistrationNumber: "blr_registration_number",
     BlzBccarRegNo: "blz_bccar_reg_no",
     BmuRegistrarOfCompaniesNumber: "bmu_registrar_of_companies_number",
@@ -2161,6 +2195,7 @@ export const IdentifierType = {
     CanTmRegistrationNo: "can_tm_registration_no",
     CcamlrRfmoId: "ccamlr_rfmo_id",
     CcsRegistration: "ccs_registration",
+    CcsbtRfmoId: "ccsbt_rfmo_id",
     CheChIdNumber: "che_ch_id_number",
     CheSecoSanctionNumber: "che_seco_sanction_number",
     CheUidNumber: "che_uid_number",
@@ -2264,6 +2299,7 @@ export const IdentifierType = {
     FlPropFolio: "fl_prop_folio",
     FlPropFolioDade: "fl_prop_folio_dade",
     FraAssetFreezeId: "fra_asset_freeze_id",
+    FraPassport: "fra_passport",
     FraRna: "fra_rna",
     FraSiren: "fra_siren",
     FraSiret: "fra_siret",
@@ -2310,6 +2346,7 @@ export const IdentifierType = {
     HunTaxNumber: "hun_tax_number",
     IattcRfmoId: "iattc_rfmo_id",
     Iban: "iban",
+    IccatRfmoId: "iccat_rfmo_id",
     IcijOffshoreInternalId: "icij_offshore_internal_id",
     IcijOffshoreNodeId: "icij_offshore_node_id",
     IdnNikId: "idn_nik_id",
@@ -2359,6 +2396,7 @@ export const IdentifierType = {
     IsrAssociationNumber: "isr_association_number",
     IsrCompanyNumber: "isr_company_number",
     IsrNationalId: "isr_national_id",
+    IsrPassport: "isr_passport",
     IsrPbcNumber: "isr_pbc_number",
     ItaFiscalCode: "ita_fiscal_code",
     ItaReaNumber: "ita_rea_number",
@@ -2425,6 +2463,7 @@ export const IdentifierType = {
     MexShipmentNumber: "mex_shipment_number",
     MexTmNo: "mex_tm_no",
     MexYucatanFolio: "mex_yucatan_folio",
+    MhRegId: "mh_reg_id",
     MkdArchiveNumber: "mkd_archive_number",
     MkdEmbsBranchNumber: "mkd_embs_branch_number",
     MkdEmbsNumber: "mkd_embs_number",
@@ -2482,6 +2521,7 @@ export const IdentifierType = {
     OmnPassport: "omn_passport",
     OnBusinessIdNumber: "on_business_id_number",
     OntarioCorporationNumber: "ontario_corporation_number",
+    OpenSanctionsInternalId: "open_sanctions_internal_id",
     PakCoNtn: "pak_co_ntn",
     PakEgmId: "pak_egm_id",
     PakIndNtn: "pak_ind_ntn",
@@ -2556,6 +2596,7 @@ export const IdentifierType = {
     SgpPassport: "sgp_passport",
     SgpUnqiueEntityNumber: "sgp_unqiue_entity_number",
     SigerInternalId: "siger_internal_id",
+    SlbRegId: "slb_reg_id",
     SlvCommercialRegNumber: "slv_commercial_reg_number",
     SlvMcas: "slv_mcas",
     SlvNumeroIdentificacionTributaria: "slv_numero_identificacion_tributaria",
@@ -2613,6 +2654,7 @@ export const IdentifierType = {
     TzaBrelaRegNum: "tza_brela_reg_num",
     TzaTansadNumber: "tza_tansad_number",
     TzaTin: "tza_tin",
+    UgaTin: "uga_tin",
     UkCompanyNumber: "uk_company_number",
     UkFirmReferenceNumber: "uk_firm_reference_number",
     UkPassport: "uk_passport",
@@ -2620,6 +2662,7 @@ export const IdentifierType = {
     UkTitleNumber: "uk_title_number",
     UkrFiuListNumber: "ukr_fiu_list_number",
     UkrMojId: "ukr_moj_id",
+    UkrPassport: "ukr_passport",
     UkrRegNum: "ukr_reg_num",
     UkrSanctionsNazkCompanyInternalId: "ukr_sanctions_nazk_company_internal_id",
     UkrSanctionsNazkPersonInternalId: "ukr_sanctions_nazk_person_internal_id",
@@ -2741,6 +2784,7 @@ export const IdentifierType = {
     VnmEnterpriseCode: "vnm_enterprise_code",
     VnmPersonIdNo: "vnm_person_id_no",
     VutCorpRegNumber: "vut_corp_reg_number",
+    WcpfcRfmoId: "wcpfc_rfmo_id",
     WipoIntlRefNo: "wipo_intl_ref_no",
     WipoIntlRegNo: "wipo_intl_reg_no",
     XxxAcurisId: "xxx_acuris_id",
