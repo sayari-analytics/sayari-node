@@ -12,6 +12,7 @@ export const Tag: core.serialization.Schema<serializers.Tag.Raw, Sayari.Tag> = c
     "esg_score",
     "export_controls",
     "export_controls_bis_entity",
+    "financial_risk_score",
     "forced_labor_xinjiang_contractors",
     "former_soe",
     "formerly_sanctioned",
@@ -39,6 +40,7 @@ export declare namespace Tag {
         | "esg_score"
         | "export_controls"
         | "export_controls_bis_entity"
+        | "financial_risk_score"
         | "forced_labor_xinjiang_contractors"
         | "former_soe"
         | "formerly_sanctioned"

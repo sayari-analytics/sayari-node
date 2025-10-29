@@ -7,86 +7,64 @@ import * as Sayari from "../../../../index";
 /**
  * @example
  *     {}
+ *
+ * @example
+ *     {
+ *         limit: 10,
+ *         filter: {
+ *             riskFactor: ["sanctioned", "regulatory_action"],
+ *             country: ["RUS", "CHN"],
+ *             matchStrength: ["strong", "partial"],
+ *             caseStatus: ["not_assigned"],
+ *             label: {
+ *                 fuzzy: ["bank", "financial"]
+ *             },
+ *             businessPurpose: ["6419", "banking"],
+ *             tag: ["high-risk", "sanctions-review"]
+ *         }
+ *     }
+ *
+ * @example
+ *     {
+ *         limit: 25,
+ *         filter: {
+ *             riskCategory: ["sanctions", "export_controls"],
+ *             upstreamProduct: ["8536", "8544"],
+ *             shipmentCountry: ["CHN", "VNM"],
+ *             tier1ShipmentCountry: ["CHN"],
+ *             city: {
+ *                 fuzzy: ["moscow", "beijing"]
+ *             },
+ *             identifier: {
+ *                 fuzzy: ["253400V1H6ART1UQ0N98"]
+ *             },
+ *             source: {
+ *                 exact: ["92edb8fe6615498f6e3e7b0e220f74e6", "c10d482320f207d92aa814519c3bd686"]
+ *             },
+ *             status: ["active"],
+ *             bounds: "55.680357237879136|-71.53607290158526|41.10876347746233|-40.963927098414736",
+ *             matchEntityId: ["dy-rh2g0QtzUN_jC_e9S_A"],
+ *             entityType: ["company"],
+ *             upload: ["upload_123"],
+ *             matchCount: "one"
+ *         }
+ *     }
  */
 export interface GetProjectEntitiesRequest {
     /**
-     * Filter by entity IDs
+     * The pagination token for the next page of projects.
      */
-    entityId?: string[];
+    next?: string;
     /**
-     * Filter by upload IDs
+     * The pagination token for the previous page of projects.
      */
-    uploads?: string[];
+    prev?: string;
     /**
-     * Filter by case status
-     */
-    caseStatus?: Sayari.CaseStatus[];
-    /**
-     * Filter by tag IDs
-     */
-    tags?: string[];
-    /**
-     * Filter by match count
-     */
-    matchCount?: Sayari.MatchCount;
-    /**
-     * Filter by match strength
-     */
-    matchStrength?: Sayari.MatchStrengthEnum[];
-    /**
-     * Filter by entity types
-     */
-    entityTypes?: string[];
-    /**
-     * Include geo facets
-     */
-    geoFacets?: boolean;
-    /**
-     * Use exact matching
-     */
-    exactMatch?: boolean;
-    /**
-     * Filter by HS codes
-     */
-    hsCodes?: string[];
-    /**
-     * Filter by received HS codes
-     */
-    receivedHsCodes?: string[];
-    /**
-     * Filter by shipped HS codes
-     */
-    shippedHsCodes?: string[];
-    /**
-     * Filter by upstream product
-     */
-    upstreamProduct?: string[];
-    /**
-     * Maximum number of results to return
+     * Limit total values returned for projects. Defaults to 100. Max 100.
      */
     limit?: number;
     /**
-     * Pagination token
+     * Filter the project entities. Supports both dot notation (e.g., 'filter.attribute.name') and bracket notation (e.g., 'filter[attribute][name]') for nested field filtering.
      */
-    token?: string;
-    /**
-     * Sort fields
-     */
-    sort?: string[];
-    /**
-     * Fields to aggregate
-     */
-    aggregations?: string[];
-    /**
-     * Number of aggregation buckets
-     */
-    numAggregationBuckets?: number;
-    /**
-     * List of risk factors to filter by
-     */
-    risk?: Sayari.Risk[];
-    /**
-     * List of risk categories to filter by. An entity matches if it has any risk factor belonging to one of the specified categories
-     */
-    riskCategory?: Sayari.RiskCategory[];
+    filter?: Sayari.ProjectEntitiesFilter;
 }

@@ -34,6 +34,8 @@ export const WeakIdentifierType: core.serialization.Schema<
     "chn_contract_number",
     "chn_customs_registration_code",
     "chn_project_number",
+    "civ_aeo_code",
+    "cmr_shipment_declaration_number",
     "cn_qcc_internal_id",
     "cofi_code",
     "col_bill_of_lading",
@@ -46,9 +48,11 @@ export const WeakIdentifierType: core.serialization.Schema<
     "deu_registernummer",
     "dma_corporate_registry_entity_num",
     "gbr_bankruptcy_case_num",
+    "gbr_charity_no",
     "gbr_declaration_number",
     "gbr_grant_info_number",
     "geo_state_registration_number",
+    "gha_shipment_declaration_number",
     "habw_id",
     "hnd_tegucigalpa_notary",
     "hun_opten_id",
@@ -66,13 +70,16 @@ export const WeakIdentifierType: core.serialization.Schema<
     "jpn_declaration_number",
     "jpn_permit_no",
     "kaz_shipment_declaration_number",
+    "ken_shipment_declaration_number",
     "kgz_inn",
     "kgz_okpo",
     "khm_tin_number",
     "kor_declaration_number",
     "lbn_family_number",
     "lbn_registration_number",
+    "lbr_tin",
     "lca_corporate_registry_entity_num",
+    "lso_import_entry_number",
     "lva_court_case_id",
     "lva_person_id_masked",
     "mac_raem_case_number",
@@ -88,9 +95,12 @@ export const WeakIdentifierType: core.serialization.Schema<
     "mex_tm_app_no",
     "mex_tm_reg_no",
     "mlr_reg_num",
+    "mwi_shipment_reg_no",
     "mx_fme",
     "mx_partial_rfc_person",
     "mys_partial_national_identity_number",
+    "nam_shipment_assessment_no",
+    "nam_shipment_reg_no",
     "nga_drivers",
     "nga_nin",
     "nga_registration_number",
@@ -102,6 +112,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "pan_folio",
     "pan_ibc_ruc",
     "partial_ven_cedula",
+    "per_shipment_control_id",
     "pol_nip_number",
     "pol_regon_number",
     "prk_internal_trade_id",
@@ -120,15 +131,19 @@ export const WeakIdentifierType: core.serialization.Schema<
     "rus_contract_internal_id",
     "rus_procurement_notice_number",
     "sgp_partial_national_identity_number",
+    "slb_foreign_investor_id",
     "south_africa_partial_id_number",
     "svk_filing_number",
     "tokyo_shoko_id",
+    "tur_declaration_number",
     "tur_office_registration_number",
     "tur_partial_mersis_number",
     "tx_bexar_property_geo_id",
     "tza_bill_of_lading",
     "tza_crn_no",
+    "tza_tansad_number",
     "ukr_edrpou",
+    "ukr_registration_document_number",
     "ukr_shipment_declaration_number",
     "unknown",
     "unknown_bra_case_number",
@@ -171,6 +186,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "ven_colegiado_number",
     "ven_manifiesto_number",
     "ven_rnc_number",
+    "vnm_shipment_declaration_number",
     "malformed mmr_prior_reg_no",
 ]);
 
@@ -200,6 +216,8 @@ export declare namespace WeakIdentifierType {
         | "chn_contract_number"
         | "chn_customs_registration_code"
         | "chn_project_number"
+        | "civ_aeo_code"
+        | "cmr_shipment_declaration_number"
         | "cn_qcc_internal_id"
         | "cofi_code"
         | "col_bill_of_lading"
@@ -212,9 +230,11 @@ export declare namespace WeakIdentifierType {
         | "deu_registernummer"
         | "dma_corporate_registry_entity_num"
         | "gbr_bankruptcy_case_num"
+        | "gbr_charity_no"
         | "gbr_declaration_number"
         | "gbr_grant_info_number"
         | "geo_state_registration_number"
+        | "gha_shipment_declaration_number"
         | "habw_id"
         | "hnd_tegucigalpa_notary"
         | "hun_opten_id"
@@ -232,13 +252,16 @@ export declare namespace WeakIdentifierType {
         | "jpn_declaration_number"
         | "jpn_permit_no"
         | "kaz_shipment_declaration_number"
+        | "ken_shipment_declaration_number"
         | "kgz_inn"
         | "kgz_okpo"
         | "khm_tin_number"
         | "kor_declaration_number"
         | "lbn_family_number"
         | "lbn_registration_number"
+        | "lbr_tin"
         | "lca_corporate_registry_entity_num"
+        | "lso_import_entry_number"
         | "lva_court_case_id"
         | "lva_person_id_masked"
         | "mac_raem_case_number"
@@ -254,9 +277,12 @@ export declare namespace WeakIdentifierType {
         | "mex_tm_app_no"
         | "mex_tm_reg_no"
         | "mlr_reg_num"
+        | "mwi_shipment_reg_no"
         | "mx_fme"
         | "mx_partial_rfc_person"
         | "mys_partial_national_identity_number"
+        | "nam_shipment_assessment_no"
+        | "nam_shipment_reg_no"
         | "nga_drivers"
         | "nga_nin"
         | "nga_registration_number"
@@ -268,6 +294,7 @@ export declare namespace WeakIdentifierType {
         | "pan_folio"
         | "pan_ibc_ruc"
         | "partial_ven_cedula"
+        | "per_shipment_control_id"
         | "pol_nip_number"
         | "pol_regon_number"
         | "prk_internal_trade_id"
@@ -286,15 +313,19 @@ export declare namespace WeakIdentifierType {
         | "rus_contract_internal_id"
         | "rus_procurement_notice_number"
         | "sgp_partial_national_identity_number"
+        | "slb_foreign_investor_id"
         | "south_africa_partial_id_number"
         | "svk_filing_number"
         | "tokyo_shoko_id"
+        | "tur_declaration_number"
         | "tur_office_registration_number"
         | "tur_partial_mersis_number"
         | "tx_bexar_property_geo_id"
         | "tza_bill_of_lading"
         | "tza_crn_no"
+        | "tza_tansad_number"
         | "ukr_edrpou"
+        | "ukr_registration_document_number"
         | "ukr_shipment_declaration_number"
         | "unknown"
         | "unknown_bra_case_number"
@@ -337,5 +368,6 @@ export declare namespace WeakIdentifierType {
         | "ven_colegiado_number"
         | "ven_manifiesto_number"
         | "ven_rnc_number"
+        | "vnm_shipment_declaration_number"
         | "malformed mmr_prior_reg_no";
 }

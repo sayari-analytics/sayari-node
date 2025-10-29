@@ -3,7 +3,7 @@
  */
 
 /**
- * Request made in an unacceptable state. This is most commonly due to parameter validation errors.
+ * Request made in an unacceptable state due to an invalid Accept header.
  */
 export interface NotAcceptableResponse {
     status: number;

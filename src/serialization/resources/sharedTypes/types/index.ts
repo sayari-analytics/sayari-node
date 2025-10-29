@@ -33,3 +33,6 @@ export * from "./RiskValue";
 export * from "./RiskData";
 export * from "./RiskLevel";
 export * from "./ClientName";
+export * from "./CaseStatus";
+export * from "./MatchStrengthEnum";
+export * from "./MatchCount";

@@ -27,6 +27,7 @@ export const CreateResolvedProjectEntityRequest: core.serialization.ObjectSchema
     city: core.serialization.list(core.serialization.string()).optional(),
     state: core.serialization.list(core.serialization.string()).optional(),
     profile: ResolutionProfile.optional(),
+    enableLlmClean: core.serialization.property("enable_llm_clean", core.serialization.boolean().optional()),
 });
 
 export declare namespace CreateResolvedProjectEntityRequest {
@@ -41,5 +42,6 @@ export declare namespace CreateResolvedProjectEntityRequest {
         city?: string[] | null;
         state?: string[] | null;
         profile?: ResolutionProfile.Raw | null;
+        enable_llm_clean?: boolean | null;
     }
 }

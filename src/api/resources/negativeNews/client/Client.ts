@@ -50,14 +50,14 @@ export class NegativeNews {
      * @example
      *     await client.negativeNews.negativeNews({
      *         name: "Gazprom",
-     *         topic: "sanctions",
+     *         topic: "sanctions_and_regulatory",
      *         until: "2024-10-01"
      *     })
      *
      * @example
      *     await client.negativeNews.negativeNews({
      *         name: "JBS",
-     *         topic: "environmental"
+     *         topic: "environmental_and_social"
      *     })
      *
      * @example

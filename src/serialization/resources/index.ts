@@ -38,8 +38,6 @@ export * as sharedErrors from "./sharedErrors";
 export * from "./sharedErrors/types";
 export * as sharedTypes from "./sharedTypes";
 export * from "./sharedTypes/types";
-export * as source from "./source";
-export * from "./source/types";
 export * as supplyChain from "./supplyChain";
 export * from "./supplyChain/types";
 export * as trade from "./trade";

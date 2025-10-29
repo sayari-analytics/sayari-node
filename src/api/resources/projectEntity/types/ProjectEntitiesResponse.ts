@@ -17,19 +17,19 @@ import * as Sayari from "../../../index";
  *                 createdAt: "2025-04-22 22:54:00.913586+00",
  *                 attributes: {
  *                     "name": {
- *                         resolve: true,
+ *                         matchResolution: true,
  *                         values: ["VTB Bank"]
  *                     },
  *                     "country": {
- *                         resolve: true,
+ *                         matchResolution: true,
  *                         values: ["RUS"]
  *                     },
  *                     "address": {
- *                         resolve: true,
+ *                         matchResolution: true,
  *                         values: ["Moscow"]
  *                     },
  *                     "identifier": {
- *                         resolve: true,
+ *                         matchResolution: true,
  *                         values: ["253400V1H6ART1UQ0N98"]
  *                     }
  *                 },
@@ -93,12 +93,23 @@ import * as Sayari from "../../../index";
  *                         sayariEntityId: "dy-rh2g0QtzUN_jC_e9S_A",
  *                         type: "company",
  *                         label: "\u041E\u0422\u041A\u0420\u042B\u0422\u041E\u0415 \u0410\u041A\u0426\u0418\u041E\u041D\u0415\u0420\u041D\u041E\u0415 \u041E\u0411\u0429\u0415\u0421\u0422\u0412\u041E \"\u0420\u041E\u0421\u0421\u0418\u0419\u0421\u041A\u0418\u0415 \u0416\u0415\u041B\u0415\u0417\u041D\u042B\u0415 \u0414\u041E\u0420\u041E\u0413\u0418\"",
- *                         matchedAttributes: {
- *                             name: ["<em>\u0411\u0410\u041D\u041A</em> <em>\u0412\u0422\u0411</em> (\u041F\u0410\u041E)", "<em>VTB</em> <em>BANK</em> (PJSC)", "<em>\u0411\u0410\u041D\u041A</em> <em>\u0412\u0422\u0411</em> (\u041F\u0423\u0411\u041B\u0418\u0427\u041D\u041E\u0415 \u0410\u041A\u0426\u0418\u041E\u041D\u0415\u0420\u041D\u041E\u0415 \u041E\u0411\u0429\u0415\u0421\u0422\u0412\u041E)", "<em>VTB</em> <em>BANK</em> (PUBLIC JOINT STOCK COMPANY)", "<em>VTB</em> <em>Bank</em>"],
- *                             address: ["109147 <em>Moscow</em>, st. Vorontsovskaya, 43 building 1", "119121 <em>Moscow</em>, st. Plyushchikha, 37.", "Vorontsovskaya Str., 43 <em>Moscow</em> 109044 RUSSIAN FEDERATION", "37 Plyushchikha ul., <em>Moscow</em>, 119121, Russia", "Bashnya Zapad, Kompleks Federatsiya, 12, nab. Presnenskaya, <em>Moscow</em>, 123317, Russia"],
- *                             country: ["<em>RUS</em>"],
- *                             identifier: ["<em>253400V1H6ART1UQ0N98</em>", "<em>253400V1H6ART1UQ0N98</em>"]
- *                         },
+ *                         matchExplanation: [{
+ *                                 field: "name",
+ *                                 quality: Sayari.FieldMatchQuality.High,
+ *                                 matches: ["<em>\u0411\u0410\u041D\u041A</em> <em>\u0412\u0422\u0411</em> (\u041F\u0410\u041E)", "<em>VTB</em> <em>BANK</em> (PJSC)", "<em>\u0411\u0410\u041D\u041A</em> <em>\u0412\u0422\u0411</em> (\u041F\u0423\u0411\u041B\u0418\u0427\u041D\u041E\u0415 \u0410\u041A\u0426\u0418\u041E\u041D\u0415\u0420\u041D\u041E\u0415 \u041E\u0411\u0429\u0415\u0421\u0422\u0412\u041E)", "<em>VTB</em> <em>BANK</em> (PUBLIC JOINT STOCK COMPANY)", "<em>VTB</em> <em>Bank</em>"]
+ *                             }, {
+ *                                 field: "address",
+ *                                 quality: Sayari.FieldMatchQuality.Medium,
+ *                                 matches: ["109147 <em>Moscow</em>, st. Vorontsovskaya, 43 building 1", "119121 <em>Moscow</em>, st. Plyushchikha, 37.", "Vorontsovskaya Str., 43 <em>Moscow</em> 109044 RUSSIAN FEDERATION", "37 Plyushchikha ul., <em>Moscow</em>, 119121, Russia", "Bashnya Zapad, Kompleks Federatsiya, 12, nab. Presnenskaya, <em>Moscow</em>, 123317, Russia"]
+ *                             }, {
+ *                                 field: "country",
+ *                                 quality: Sayari.FieldMatchQuality.High,
+ *                                 matches: ["<em>RUS</em>"]
+ *                             }, {
+ *                                 field: "identifier",
+ *                                 quality: Sayari.FieldMatchQuality.High,
+ *                                 matches: ["<em>253400V1H6ART1UQ0N98</em>"]
+ *                             }],
  *                         countries: ["USA", "CYP", "ITA", "CHN", "RUS", "UKR", "IND", "IRL", "KAZ", "DEU"],
  *                         riskCategories: [{
  *                                 id: "regulatory_action",
