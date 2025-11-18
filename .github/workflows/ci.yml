@@ -14,8 +14,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Set up node
         uses: actions/setup-node@v4
+        with:
+          node-version: "18.18.0"
+      - name: Setup yarn
+        run: npm install -g yarn
+      - name: Install dependencies
+        run: yarn install
       - name: Compile
-        run: yarn && yarn build
+        run: yarn build
 
   test:
     runs-on: ubuntu-latest
@@ -24,8 +30,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Set up node
         uses: actions/setup-node@v4
-      - name: Compile & Test
-        run: yarn && yarn test    
+        with:
+          node-version: "18.18.0"
+      - name: Setup yarn
+        run: npm install -g yarn
+      - name: Install dependencies
+        run: yarn install
+      - name: Run tests
+        run: yarn test
 
   run-examples:
     name: Run examples (to look for regressions)
@@ -36,9 +48,13 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v4
         with:
-          node-version: 21
+          node-version: "21"
+      - name: Setup yarn
+        run: npm install -g yarn
+      - name: Install dependencies
+        run: yarn install
       - name: Build
-        run: yarn && yarn build
+        run: yarn build
       - name: test examples
         run: |
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -52,21 +68,27 @@ jobs:
           node examples/trade-search.mjs
 
   publish:
-    needs: [ compile, test, run-examples ]
+    needs: [compile, test, run-examples]
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
       - name: Set up node
         uses: actions/setup-node@v4
+        with:
+          node-version: "18.18.0"
+      - name: Setup yarn
+        run: npm install -g yarn
       - name: Install dependencies
         run: yarn install
       - name: Build
         run: yarn build
       - name: Publish to npm
         run: |
-          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-          npm publish --access public
-        env:
-          NPM_TOKEN: ${{ secrets.SDK_NPM_TOKEN }}
+          publish() {
+            npx -y npm@latest publish "$@"
+          }
+          publish --access public
