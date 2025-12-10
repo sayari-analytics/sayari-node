@@ -157,6 +157,9 @@ export type WeakIdentifierType =
      * Global Trade Internal Shipment ID */
     | "int_trade_internal_shipment_id"
     /**
+     * International Trademark Number registered via the Madrid System administered by the World Intellectual Property Organization (WIPO). Madrid System is a solution for registering and managing trademarks worldwide. */
+    | "international_trademark_no"
+    /**
      * Unique Ireland ID number. Assigned to every legal entity registered with Ireland Companies Registration Office. */
     | "irl_registration_no"
     /**
@@ -380,6 +383,9 @@ export type WeakIdentifierType =
      * Tokyo Shoko Research Business Identifier. Identification code, assigned by credit reporting company, Tokyo Shoko Research, for businesses in Japan. */
     | "tokyo_shoko_id"
     /**
+     * Unique foreign investor number. Assigned to every non-Tongan or foreign-registered company wishing to conduct business in the country. */
+    | "ton_foreign_investor_id"
+    /**
      * Declaration number for import and export shipments in Turkey */
     | "tur_declaration_number"
     /**
@@ -589,6 +595,7 @@ export const WeakIdentifierType = {
     IndSebi: "ind_sebi",
     IndShipmentBillId: "ind_shipment_bill_id",
     IntTradeInternalShipmentId: "int_trade_internal_shipment_id",
+    InternationalTrademarkNo: "international_trademark_no",
     IrlRegistrationNo: "irl_registration_no",
     IrnRegNumber: "irn_reg_number",
     IrqProvisionCard: "irq_provision_card",
@@ -664,6 +671,7 @@ export const WeakIdentifierType = {
     SouthAfricaPartialIdNumber: "south_africa_partial_id_number",
     SvkFilingNumber: "svk_filing_number",
     TokyoShokoId: "tokyo_shoko_id",
+    TonForeignInvestorId: "ton_foreign_investor_id",
     TurDeclarationNumber: "tur_declaration_number",
     TurOfficeRegistrationNumber: "tur_office_registration_number",
     TurPartialMersisNumber: "tur_partial_mersis_number",

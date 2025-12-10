@@ -6,4 +6,6 @@ import * as Sayari from "../../../index";
 
 export interface ProjectWithMembers extends Sayari.Project {
     members: Sayari.RoleMember[];
+    /** Number of uploads associated with the project. */
+    uploadCount: number;
 }
