@@ -7,12 +7,17 @@ export type Risk =
     | "aspi_uyghur_forced_labor_report_entity_adjacent"
     | "basel_aml"
     | "bis_addresses_high_diversion_risk"
+    | "bis_affiliates_50_percent_rule"
     | "bis_boycott_requester_list"
+    | "bis_entity_minority_ownership"
+    | "bis_meu_minority_ownership"
     | "chinese_soe_adjacent"
     | "chinese_state_owned"
     | "cmic_entity"
     | "cmic_entity_50_percent_rule"
     | "controlled_by_aus_sanctioned"
+    | "controlled_by_bis_entity"
+    | "controlled_by_bis_meu"
     | "controlled_by_eu_sanctioned"
     | "controlled_by_jpn_sanctioned"
     | "controlled_by_ofac_fto_sanctioned"
@@ -39,12 +44,15 @@ export type Risk =
     | "export_controls_bis_entity_50_percent_rule"
     | "export_controls_bis_meu"
     | "export_controls_bis_meu_50_percent_rule"
+    | "export_controls_other"
+    | "export_controls_other_adjacent"
     | "export_controls_section_1260h"
     | "export_controls_section_1260h_50_percent_rule"
     | "export_controls_unverified_list"
     | "export_controls_unverified_list_50_percent_rule"
     | "export_to_chinese_soe"
     | "export_to_sanctioned"
+    | "export_to_sanctioned_other"
     | "export_to_soe"
     | "exports_bis_high_priority_items_critical_components_direct"
     | "exports_bis_high_priority_items_critical_components_indirect"
@@ -201,6 +209,7 @@ export type Risk =
     | "owned_by_chinese_soe"
     | "owned_by_cmic_entity"
     | "owned_by_entity_in_export_controls"
+    | "owned_by_entity_in_export_controls_other"
     | "owned_by_forced_labor_xinjiang_uflpa"
     | "owned_by_jpn_meti_end_user_entity"
     | "owned_by_jpn_mofa_export_ban_entity"
@@ -232,6 +241,7 @@ export type Risk =
     | "owned_by_sanctioned_mys_moha_entity"
     | "owned_by_sanctioned_nld_mofa_entity"
     | "owned_by_sanctioned_nzl_mfat_rus_entity"
+    | "owned_by_sanctioned_other_entity"
     | "owned_by_sanctioned_pol_mia_entity"
     | "owned_by_sanctioned_sgp_agc_entity"
     | "owned_by_sanctioned_ukr_nsdc_entity"
@@ -256,6 +266,7 @@ export type Risk =
     | "owner_of_aspi_forced_labor_entity"
     | "owner_of_chinese_soe"
     | "owner_of_export_controls_entity"
+    | "owner_of_export_controls_other_entity"
     | "owner_of_forced_labor_xinjiang_entity"
     | "owner_of_forced_labor_xinjiang_uflpa"
     | "owner_of_jpn_meti_end_user_entity"
@@ -288,6 +299,7 @@ export type Risk =
     | "owner_of_sanctioned_mys_moha_entity"
     | "owner_of_sanctioned_nld_mofa_entity"
     | "owner_of_sanctioned_nzl_mfat_rus_entity"
+    | "owner_of_sanctioned_other_entity"
     | "owner_of_sanctioned_pol_mia_entity"
     | "owner_of_sanctioned_sgp_agc_entity"
     | "owner_of_sanctioned_ukr_nsdc_entity"
@@ -310,6 +322,8 @@ export type Risk =
     | "pep"
     | "pep_adjacent"
     | "psa_bis_boycott_requester_list"
+    | "psa_bis_entity_minority_ownership"
+    | "psa_bis_meu_minority_ownership"
     | "psa_chinese_state_owned"
     | "psa_cmic_entity_50_percent_rule"
     | "psa_entity_licensed_with_fsb_rf"
@@ -318,10 +332,12 @@ export type Risk =
     | "psa_export_controls"
     | "psa_export_controls_bis_entity_50_percent_rule"
     | "psa_export_controls_bis_meu_50_percent_rule"
+    | "psa_export_controls_other"
     | "psa_export_controls_section_1260h_50_percent_rule"
     | "psa_export_controls_unverified_list_50_percent_rule"
     | "psa_export_to_chinese_soe"
     | "psa_export_to_sanctioned"
+    | "psa_export_to_sanctioned_other"
     | "psa_export_to_soe"
     | "psa_exports_bis_high_priority_items_critical_components_direct"
     | "psa_exports_bis_high_priority_items_critical_components_indirect"
@@ -428,6 +444,7 @@ export type Risk =
     | "psa_owned_by_chinese_soe"
     | "psa_owned_by_cmic_entity"
     | "psa_owned_by_entity_in_export_controls"
+    | "psa_owned_by_entity_in_export_controls_other"
     | "psa_owned_by_forced_labor_xinjiang_uflpa"
     | "psa_owned_by_jpn_meti_end_user_entity"
     | "psa_owned_by_jpn_mofa_export_ban_entity"
@@ -459,6 +476,7 @@ export type Risk =
     | "psa_owned_by_sanctioned_mys_moha_entity"
     | "psa_owned_by_sanctioned_nld_mofa_entity"
     | "psa_owned_by_sanctioned_nzl_mfat_rus_entity"
+    | "psa_owned_by_sanctioned_other_entity"
     | "psa_owned_by_sanctioned_pol_mia_entity"
     | "psa_owned_by_sanctioned_sgp_agc_entity"
     | "psa_owned_by_sanctioned_ukr_nsdc_entity"
@@ -483,6 +501,7 @@ export type Risk =
     | "psa_owner_of_aspi_forced_labor_entity"
     | "psa_owner_of_chinese_soe"
     | "psa_owner_of_export_controls_entity"
+    | "psa_owner_of_export_controls_other_entity"
     | "psa_owner_of_forced_labor_xinjiang_entity"
     | "psa_owner_of_forced_labor_xinjiang_uflpa"
     | "psa_owner_of_jpn_meti_end_user_entity"
@@ -515,6 +534,7 @@ export type Risk =
     | "psa_owner_of_sanctioned_mys_moha_entity"
     | "psa_owner_of_sanctioned_nld_mofa_entity"
     | "psa_owner_of_sanctioned_nzl_mfat_rus_entity"
+    | "psa_owner_of_sanctioned_other_entity"
     | "psa_owner_of_sanctioned_pol_mia_entity"
     | "psa_owner_of_sanctioned_sgp_agc_entity"
     | "psa_owner_of_sanctioned_ukr_nsdc_entity"
@@ -557,6 +577,7 @@ export type Risk =
     | "psa_sanctioned_mys_moha"
     | "psa_sanctioned_nld_mofa"
     | "psa_sanctioned_nzl_mfat_rus"
+    | "psa_sanctioned_other"
     | "psa_sanctioned_pol_mia"
     | "psa_sanctioned_sgp_agc"
     | "psa_sanctioned_ukr_nsdc"
@@ -615,6 +636,8 @@ export type Risk =
     | "sanctioned_mys_moha"
     | "sanctioned_nld_mofa"
     | "sanctioned_nzl_mfat_rus"
+    | "sanctioned_other"
+    | "sanctioned_other_adjacent"
     | "sanctioned_pol_mia"
     | "sanctioned_sgp_agc"
     | "sanctioned_ukr_nsdc"
@@ -652,12 +675,17 @@ export const Risk = {
     AspiUyghurForcedLaborReportEntityAdjacent: "aspi_uyghur_forced_labor_report_entity_adjacent",
     BaselAml: "basel_aml",
     BisAddressesHighDiversionRisk: "bis_addresses_high_diversion_risk",
+    BisAffiliates50PercentRule: "bis_affiliates_50_percent_rule",
     BisBoycottRequesterList: "bis_boycott_requester_list",
+    BisEntityMinorityOwnership: "bis_entity_minority_ownership",
+    BisMeuMinorityOwnership: "bis_meu_minority_ownership",
     ChineseSoeAdjacent: "chinese_soe_adjacent",
     ChineseStateOwned: "chinese_state_owned",
     CmicEntity: "cmic_entity",
     CmicEntity50PercentRule: "cmic_entity_50_percent_rule",
     ControlledByAusSanctioned: "controlled_by_aus_sanctioned",
+    ControlledByBisEntity: "controlled_by_bis_entity",
+    ControlledByBisMeu: "controlled_by_bis_meu",
     ControlledByEuSanctioned: "controlled_by_eu_sanctioned",
     ControlledByJpnSanctioned: "controlled_by_jpn_sanctioned",
     ControlledByOfacFtoSanctioned: "controlled_by_ofac_fto_sanctioned",
@@ -684,12 +712,15 @@ export const Risk = {
     ExportControlsBisEntity50PercentRule: "export_controls_bis_entity_50_percent_rule",
     ExportControlsBisMeu: "export_controls_bis_meu",
     ExportControlsBisMeu50PercentRule: "export_controls_bis_meu_50_percent_rule",
+    ExportControlsOther: "export_controls_other",
+    ExportControlsOtherAdjacent: "export_controls_other_adjacent",
     ExportControlsSection1260H: "export_controls_section_1260h",
     ExportControlsSection1260H50PercentRule: "export_controls_section_1260h_50_percent_rule",
     ExportControlsUnverifiedList: "export_controls_unverified_list",
     ExportControlsUnverifiedList50PercentRule: "export_controls_unverified_list_50_percent_rule",
     ExportToChineseSoe: "export_to_chinese_soe",
     ExportToSanctioned: "export_to_sanctioned",
+    ExportToSanctionedOther: "export_to_sanctioned_other",
     ExportToSoe: "export_to_soe",
     ExportsBisHighPriorityItemsCriticalComponentsDirect: "exports_bis_high_priority_items_critical_components_direct",
     ExportsBisHighPriorityItemsCriticalComponentsIndirect:
@@ -850,6 +881,7 @@ export const Risk = {
     OwnedByChineseSoe: "owned_by_chinese_soe",
     OwnedByCmicEntity: "owned_by_cmic_entity",
     OwnedByEntityInExportControls: "owned_by_entity_in_export_controls",
+    OwnedByEntityInExportControlsOther: "owned_by_entity_in_export_controls_other",
     OwnedByForcedLaborXinjiangUflpa: "owned_by_forced_labor_xinjiang_uflpa",
     OwnedByJpnMetiEndUserEntity: "owned_by_jpn_meti_end_user_entity",
     OwnedByJpnMofaExportBanEntity: "owned_by_jpn_mofa_export_ban_entity",
@@ -881,6 +913,7 @@ export const Risk = {
     OwnedBySanctionedMysMohaEntity: "owned_by_sanctioned_mys_moha_entity",
     OwnedBySanctionedNldMofaEntity: "owned_by_sanctioned_nld_mofa_entity",
     OwnedBySanctionedNzlMfatRusEntity: "owned_by_sanctioned_nzl_mfat_rus_entity",
+    OwnedBySanctionedOtherEntity: "owned_by_sanctioned_other_entity",
     OwnedBySanctionedPolMiaEntity: "owned_by_sanctioned_pol_mia_entity",
     OwnedBySanctionedSgpAgcEntity: "owned_by_sanctioned_sgp_agc_entity",
     OwnedBySanctionedUkrNsdcEntity: "owned_by_sanctioned_ukr_nsdc_entity",
@@ -906,6 +939,7 @@ export const Risk = {
     OwnerOfAspiForcedLaborEntity: "owner_of_aspi_forced_labor_entity",
     OwnerOfChineseSoe: "owner_of_chinese_soe",
     OwnerOfExportControlsEntity: "owner_of_export_controls_entity",
+    OwnerOfExportControlsOtherEntity: "owner_of_export_controls_other_entity",
     OwnerOfForcedLaborXinjiangEntity: "owner_of_forced_labor_xinjiang_entity",
     OwnerOfForcedLaborXinjiangUflpa: "owner_of_forced_labor_xinjiang_uflpa",
     OwnerOfJpnMetiEndUserEntity: "owner_of_jpn_meti_end_user_entity",
@@ -938,6 +972,7 @@ export const Risk = {
     OwnerOfSanctionedMysMohaEntity: "owner_of_sanctioned_mys_moha_entity",
     OwnerOfSanctionedNldMofaEntity: "owner_of_sanctioned_nld_mofa_entity",
     OwnerOfSanctionedNzlMfatRusEntity: "owner_of_sanctioned_nzl_mfat_rus_entity",
+    OwnerOfSanctionedOtherEntity: "owner_of_sanctioned_other_entity",
     OwnerOfSanctionedPolMiaEntity: "owner_of_sanctioned_pol_mia_entity",
     OwnerOfSanctionedSgpAgcEntity: "owner_of_sanctioned_sgp_agc_entity",
     OwnerOfSanctionedUkrNsdcEntity: "owner_of_sanctioned_ukr_nsdc_entity",
@@ -961,6 +996,8 @@ export const Risk = {
     Pep: "pep",
     PepAdjacent: "pep_adjacent",
     PsaBisBoycottRequesterList: "psa_bis_boycott_requester_list",
+    PsaBisEntityMinorityOwnership: "psa_bis_entity_minority_ownership",
+    PsaBisMeuMinorityOwnership: "psa_bis_meu_minority_ownership",
     PsaChineseStateOwned: "psa_chinese_state_owned",
     PsaCmicEntity50PercentRule: "psa_cmic_entity_50_percent_rule",
     PsaEntityLicensedWithFsbRf: "psa_entity_licensed_with_fsb_rf",
@@ -969,10 +1006,12 @@ export const Risk = {
     PsaExportControls: "psa_export_controls",
     PsaExportControlsBisEntity50PercentRule: "psa_export_controls_bis_entity_50_percent_rule",
     PsaExportControlsBisMeu50PercentRule: "psa_export_controls_bis_meu_50_percent_rule",
+    PsaExportControlsOther: "psa_export_controls_other",
     PsaExportControlsSection1260H50PercentRule: "psa_export_controls_section_1260h_50_percent_rule",
     PsaExportControlsUnverifiedList50PercentRule: "psa_export_controls_unverified_list_50_percent_rule",
     PsaExportToChineseSoe: "psa_export_to_chinese_soe",
     PsaExportToSanctioned: "psa_export_to_sanctioned",
+    PsaExportToSanctionedOther: "psa_export_to_sanctioned_other",
     PsaExportToSoe: "psa_export_to_soe",
     PsaExportsBisHighPriorityItemsCriticalComponentsDirect:
         "psa_exports_bis_high_priority_items_critical_components_direct",
@@ -1083,6 +1122,7 @@ export const Risk = {
     PsaOwnedByChineseSoe: "psa_owned_by_chinese_soe",
     PsaOwnedByCmicEntity: "psa_owned_by_cmic_entity",
     PsaOwnedByEntityInExportControls: "psa_owned_by_entity_in_export_controls",
+    PsaOwnedByEntityInExportControlsOther: "psa_owned_by_entity_in_export_controls_other",
     PsaOwnedByForcedLaborXinjiangUflpa: "psa_owned_by_forced_labor_xinjiang_uflpa",
     PsaOwnedByJpnMetiEndUserEntity: "psa_owned_by_jpn_meti_end_user_entity",
     PsaOwnedByJpnMofaExportBanEntity: "psa_owned_by_jpn_mofa_export_ban_entity",
@@ -1114,6 +1154,7 @@ export const Risk = {
     PsaOwnedBySanctionedMysMohaEntity: "psa_owned_by_sanctioned_mys_moha_entity",
     PsaOwnedBySanctionedNldMofaEntity: "psa_owned_by_sanctioned_nld_mofa_entity",
     PsaOwnedBySanctionedNzlMfatRusEntity: "psa_owned_by_sanctioned_nzl_mfat_rus_entity",
+    PsaOwnedBySanctionedOtherEntity: "psa_owned_by_sanctioned_other_entity",
     PsaOwnedBySanctionedPolMiaEntity: "psa_owned_by_sanctioned_pol_mia_entity",
     PsaOwnedBySanctionedSgpAgcEntity: "psa_owned_by_sanctioned_sgp_agc_entity",
     PsaOwnedBySanctionedUkrNsdcEntity: "psa_owned_by_sanctioned_ukr_nsdc_entity",
@@ -1139,6 +1180,7 @@ export const Risk = {
     PsaOwnerOfAspiForcedLaborEntity: "psa_owner_of_aspi_forced_labor_entity",
     PsaOwnerOfChineseSoe: "psa_owner_of_chinese_soe",
     PsaOwnerOfExportControlsEntity: "psa_owner_of_export_controls_entity",
+    PsaOwnerOfExportControlsOtherEntity: "psa_owner_of_export_controls_other_entity",
     PsaOwnerOfForcedLaborXinjiangEntity: "psa_owner_of_forced_labor_xinjiang_entity",
     PsaOwnerOfForcedLaborXinjiangUflpa: "psa_owner_of_forced_labor_xinjiang_uflpa",
     PsaOwnerOfJpnMetiEndUserEntity: "psa_owner_of_jpn_meti_end_user_entity",
@@ -1171,6 +1213,7 @@ export const Risk = {
     PsaOwnerOfSanctionedMysMohaEntity: "psa_owner_of_sanctioned_mys_moha_entity",
     PsaOwnerOfSanctionedNldMofaEntity: "psa_owner_of_sanctioned_nld_mofa_entity",
     PsaOwnerOfSanctionedNzlMfatRusEntity: "psa_owner_of_sanctioned_nzl_mfat_rus_entity",
+    PsaOwnerOfSanctionedOtherEntity: "psa_owner_of_sanctioned_other_entity",
     PsaOwnerOfSanctionedPolMiaEntity: "psa_owner_of_sanctioned_pol_mia_entity",
     PsaOwnerOfSanctionedSgpAgcEntity: "psa_owner_of_sanctioned_sgp_agc_entity",
     PsaOwnerOfSanctionedUkrNsdcEntity: "psa_owner_of_sanctioned_ukr_nsdc_entity",
@@ -1214,6 +1257,7 @@ export const Risk = {
     PsaSanctionedMysMoha: "psa_sanctioned_mys_moha",
     PsaSanctionedNldMofa: "psa_sanctioned_nld_mofa",
     PsaSanctionedNzlMfatRus: "psa_sanctioned_nzl_mfat_rus",
+    PsaSanctionedOther: "psa_sanctioned_other",
     PsaSanctionedPolMia: "psa_sanctioned_pol_mia",
     PsaSanctionedSgpAgc: "psa_sanctioned_sgp_agc",
     PsaSanctionedUkrNsdc: "psa_sanctioned_ukr_nsdc",
@@ -1272,6 +1316,8 @@ export const Risk = {
     SanctionedMysMoha: "sanctioned_mys_moha",
     SanctionedNldMofa: "sanctioned_nld_mofa",
     SanctionedNzlMfatRus: "sanctioned_nzl_mfat_rus",
+    SanctionedOther: "sanctioned_other",
+    SanctionedOtherAdjacent: "sanctioned_other_adjacent",
     SanctionedPolMia: "sanctioned_pol_mia",
     SanctionedSgpAgc: "sanctioned_sgp_agc",
     SanctionedUkrNsdc: "sanctioned_ukr_nsdc",
