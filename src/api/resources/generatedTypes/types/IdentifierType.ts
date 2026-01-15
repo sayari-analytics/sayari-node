@@ -125,6 +125,9 @@ export type IdentifierType =
      * Australia Passport Number */
     | "aus_passport"
     /**
+     * Unique Australia ID number. Assigned to every registered trademark. */
+    | "aus_trademark_reg_no"
+    /**
      * Austrian Company Register Number */
     | "aut_firmenbuch_no"
     /**
@@ -842,11 +845,17 @@ export type IdentifierType =
      * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Societies. */
     | "ind_society_registration_number"
     /**
+     * Internal Identifier used by Techsalerator to identify published companies */
+    | "ind_techsalerator_id"
+    /**
      * India tax identification number. Unique ID number assigned to every taxpayer by the Commercial Tax Department of each state. */
     | "ind_tin"
     /**
      * Unique India intellectual property ID number. Assigned to every trademark application submitted to the Controller General of Patents, Designs and Trademarks of the Ministry of Commerce and Industry, Government of India. */
     | "ind_trademark_submission_ref"
+    /**
+     * Unique identification number issued to Micro, Small and Medium Enterprises (MSMEs) in India. */
+    | "ind_udyam"
     /**
      * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
     | "int_maritime_org_id"
@@ -962,6 +971,9 @@ export type IdentifierType =
     /**
      * A 12-digit Kazakh business identification number */
     | "kaz_bin"
+    /**
+     * Kazakhstan business and company identification number that is not explicitly designated as a BIN in source data. */
+    | "kaz_business_identification_number"
     /**
      * A nine-digit Kazakh identifier */
     | "kaz_identifier"
@@ -1596,6 +1608,12 @@ export type IdentifierType =
      * Unique identifier for Tokyo Stock Exchange companies */
     | "tokyo_stock_exchange_no"
     /**
+     * Unique business registration number. Assigned to every registered business in Tonga. */
+    | "ton_reg_id"
+    /**
+     * Unique tax ID. Assigned to every registered business in Tonga or Tonga residents. */
+    | "ton_tax_id"
+    /**
      * Trinbagonian Business Number */
     | "tto_biz_number"
     /**
@@ -2054,6 +2072,9 @@ export type IdentifierType =
      * Unique USA ID number. Assigned to every registered foreign trademark. */
     | "wipo_intl_reg_no"
     /**
+     * Unique business identification number. Assigned to every registered business in Samoa. */
+    | "wsm_reg_id"
+    /**
      * Acuris Unique ID */
     | "xxx_acuris_id"
     /**
@@ -2130,6 +2151,7 @@ export const IdentifierType = {
     AusCreditLicenceNumber: "aus_credit_licence_number",
     AusCreditRepNumber: "aus_credit_rep_number",
     AusPassport: "aus_passport",
+    AusTrademarkRegNo: "aus_trademark_reg_no",
     AutFirmenbuchNo: "aut_firmenbuch_no",
     AutUid: "aut_uid",
     AzeTinNumber: "aze_tin_number",
@@ -2373,8 +2395,10 @@ export const IdentifierType = {
     IndPassport: "ind_passport",
     IndPermanentAccountNumber: "ind_permanent_account_number",
     IndSocietyRegistrationNumber: "ind_society_registration_number",
+    IndTechsaleratorId: "ind_techsalerator_id",
     IndTin: "ind_tin",
     IndTrademarkSubmissionRef: "ind_trademark_submission_ref",
+    IndUdyam: "ind_udyam",
     IntMaritimeOrgId: "int_maritime_org_id",
     InternalCuratedMergeId: "internal_curated_merge_id",
     InternalCuratedSplitId: "internal_curated_split_id",
@@ -2414,6 +2438,7 @@ export const IdentifierType = {
     JpnEdinetCode: "jpn_edinet_code",
     JpnTradeInternalShipmentId: "jpn_trade_internal_shipment_id",
     KazBin: "kaz_bin",
+    KazBusinessIdentificationNumber: "kaz_business_identification_number",
     KazIdentifier: "kaz_identifier",
     KazOkpoNum: "kaz_okpo_num",
     KazStateRegNum: "kaz_state_reg_num",
@@ -2631,6 +2656,8 @@ export const IdentifierType = {
     TjkEinNumber: "tjk_ein_number",
     TjkTinNumber: "tjk_tin_number",
     TokyoStockExchangeNo: "tokyo_stock_exchange_no",
+    TonRegId: "ton_reg_id",
+    TonTaxId: "ton_tax_id",
     TtoBizNumber: "tto_biz_number",
     TunPassport: "tun_passport",
     TurId: "tur_id",
@@ -2787,6 +2814,7 @@ export const IdentifierType = {
     WcpfcRfmoId: "wcpfc_rfmo_id",
     WipoIntlRefNo: "wipo_intl_ref_no",
     WipoIntlRegNo: "wipo_intl_reg_no",
+    WsmRegId: "wsm_reg_id",
     XxxAcurisId: "xxx_acuris_id",
     XxxCedarRoseUid: "xxx_cedar_rose_uid",
     XxxCrbMonitorEntityId: "xxx_crb_monitor_entity_id",
