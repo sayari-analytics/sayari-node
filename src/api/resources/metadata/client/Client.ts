@@ -33,7 +33,7 @@ export class Metadata {
     constructor(protected readonly _options: Metadata.Options = {}) {}
 
     /**
-     * Get metadta about the api, both its versions, which releases are present, and the identity of the authenticated user.
+     * Get metadata about the api, both its versions, which releases are present, and the identity of the authenticated user.
      *
      * @param {Metadata.RequestOptions} requestOptions - Request-specific configuration.
      *
@@ -58,8 +58,7 @@ export class Metadata {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.0.8",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
