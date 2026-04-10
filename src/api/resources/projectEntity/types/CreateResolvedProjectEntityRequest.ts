@@ -7,38 +7,41 @@ import * as Sayari from "../../../index";
 /**
  * @example
  *     {
- *         name: ["VTB Bank"],
- *         country: [Sayari.Country.Rus],
- *         address: ["Moscow"],
- *         identifier: ["253400V1H6ART1UQ0N98"],
- *         profile: Sayari.ResolutionProfile.Corporate
+ *         limit: 10,
+ *         profile: Sayari.ResolutionProfile.Corporate,
+ *         attributes: {
+ *             name: ["VTB Bank"],
+ *             country: ["RUS"],
+ *             address: ["Moscow"],
+ *             identifier: ["253400V1H6ART1UQ0N98"]
+ *         }
  *     }
  *
  * @example
  *     {
- *         name: ["Chongqing Jingyou Zhicai New Materials Co."],
- *         country: [Sayari.Country.Chn],
- *         address: ["4-2, Building B2, No. 5, Middle Mount Huangshan Avenue, Gaoxinyuan, Dazhulin Street, Liangjiang New District, Chongqing,Chongqing,continuation,CN"],
- *         enableLlmClean: false
+ *         profile: Sayari.ResolutionProfile.Corporate,
+ *         enableLlmClean: false,
+ *         attributes: {
+ *             name: ["Chongqing Jingyou Zhicai New Materials Co."],
+ *             country: ["CHN"],
+ *             address: ["4-2, Building B2, No. 5, Middle Mount Huangshan Avenue, Gaoxinyuan, Dazhulin Street, Liangjiang New District, Chongqing,Chongqing,continuation,CN"]
+ *         }
  *     }
  *
  * @example
  *     {
- *         name: ["Marvel Garment"],
- *         country: [Sayari.Country.Khm],
- *         address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+ *         limit: 25,
+ *         profile: Sayari.ResolutionProfile.Suppliers,
+ *         attributes: {
+ *             name: ["Marvel Garment"],
+ *             country: ["KHM"],
+ *             address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+ *         }
  *     }
  */
 export interface CreateResolvedProjectEntityRequest {
-    identifier?: Sayari.StringOrNumber[];
-    name?: string[];
-    country?: Sayari.Country[];
-    address?: string[];
-    dateOfBirth?: string[];
-    contact?: Sayari.StringOrNumber[];
-    type?: Sayari.Entities[];
-    city?: string[];
-    state?: string[];
+    attributes: Sayari.ResolutionAttrSchema;
+    limit?: number;
     profile?: Sayari.ResolutionProfile;
     /** Whether to enable LLM-based data cleaning to remove noise and standardize entity attributes. Defaults to true if not supplied. Set to false to disable LLM cleaning. */
     enableLlmClean?: boolean;
