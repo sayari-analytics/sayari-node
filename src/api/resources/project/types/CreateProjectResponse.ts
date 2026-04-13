@@ -19,7 +19,8 @@ import * as Sayari from "../../../index";
  *                 record: 0,
  *                 search: 0
  *             },
- *             isScrm: false
+ *             isScrm: false,
+ *             type: Sayari.ProjectType.Network
  *         }
  *     }
  */
