@@ -16,6 +16,7 @@ import * as Sayari from "../../../index";
  *                 archived: false,
  *                 created: "2023-10-25 14:44:06.322117+00",
  *                 updated: "2023-10-25 14:44:06.322117+00",
+ *                 type: Sayari.ProjectType.Network,
  *                 counts: {},
  *                 members: [{
  *                         type: Sayari.RoleMemberType.User,
@@ -30,6 +31,7 @@ import * as Sayari from "../../../index";
  *                 archived: false,
  *                 created: "2023-10-24 20:41:21.235451+00",
  *                 updated: "2023-10-24 20:41:21.235451+00",
+ *                 type: Sayari.ProjectType.Network,
  *                 counts: {
  *                     graph: 1,
  *                     entity: 2530
@@ -59,6 +61,7 @@ import * as Sayari from "../../../index";
  *                 archived: true,
  *                 created: "2023-06-18 04:28:05.136302+00",
  *                 updated: "2023-06-20 18:44:03.624841+00",
+ *                 type: Sayari.ProjectType.Network,
  *                 counts: {
  *                     entity: 10
  *                 },
