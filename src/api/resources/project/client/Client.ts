@@ -48,6 +48,7 @@ export class Project {
      * @example
      *     await client.project.createProject({
      *         label: "My First Project",
+     *         type: "network",
      *         share: {
      *             org: "admin"
      *         }
@@ -69,8 +70,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -199,7 +200,7 @@ export class Project {
         request: Sayari.GetProjects = {},
         requestOptions?: Project.RequestOptions,
     ): Promise<Sayari.GetProjectsResponse> {
-        const { next, prev, limit, archived } = request;
+        const { next, prev, limit, archived, type: type_ } = request;
         const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (next != null) {
             _queryParams["next"] = next;
@@ -217,6 +218,10 @@ export class Project {
             _queryParams["archived"] = archived.toString();
         }
 
+        if (type_ != null) {
+            _queryParams["type"] = serializers.ProjectType.jsonOrThrow(type_, { unrecognizedObjectKeys: "strip" });
+        }
+
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -229,8 +234,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -362,8 +367,8 @@ export class Project {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
