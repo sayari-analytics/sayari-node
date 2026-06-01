@@ -13,6 +13,7 @@ import * as Sayari from "../../../index";
  *             archived: false,
  *             created: "2024-04-24 13:43:56.546705+00",
  *             updated: "2024-04-24 13:43:56.546705+00",
+ *             type: Sayari.ProjectType.Network,
  *             counts: {
  *                 entity: 2,
  *                 graph: 0,
