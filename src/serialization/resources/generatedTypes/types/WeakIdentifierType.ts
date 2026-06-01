@@ -60,6 +60,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "ind_sebi",
     "ind_shipment_bill_id",
     "int_trade_internal_shipment_id",
+    "international_trademark_no",
     "irl_registration_no",
     "irn_reg_number",
     "irq_provision_card",
@@ -135,6 +136,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "south_africa_partial_id_number",
     "svk_filing_number",
     "tokyo_shoko_id",
+    "ton_foreign_investor_id",
     "tur_declaration_number",
     "tur_office_registration_number",
     "tur_partial_mersis_number",
@@ -242,6 +244,7 @@ export declare namespace WeakIdentifierType {
         | "ind_sebi"
         | "ind_shipment_bill_id"
         | "int_trade_internal_shipment_id"
+        | "international_trademark_no"
         | "irl_registration_no"
         | "irn_reg_number"
         | "irq_provision_card"
@@ -317,6 +320,7 @@ export declare namespace WeakIdentifierType {
         | "south_africa_partial_id_number"
         | "svk_filing_number"
         | "tokyo_shoko_id"
+        | "ton_foreign_investor_id"
         | "tur_declaration_number"
         | "tur_office_registration_number"
         | "tur_partial_mersis_number"
