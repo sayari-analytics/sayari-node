@@ -46,6 +46,8 @@ export * from "./UpstreamCount";
 export * from "./SourceField";
 export * from "./Address";
 export * from "./Location";
+export * from "./UpdateProjectEntityMatchesBody";
+export * from "./UpdateProjectEntityMatchesResponse";
 export * from "./TagResponse";
 export * from "./UpdateProjectEntityTagsBody";
 export * from "./UpdateEntityTagsResponse";
