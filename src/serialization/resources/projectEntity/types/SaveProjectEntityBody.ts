@@ -5,7 +5,7 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { ResolutionAttributes } from "./ResolutionAttributes";
+import { ResolutionAttrSchema } from "./ResolutionAttrSchema";
 import { ResolutionProfile } from "./ResolutionProfile";
 
 export const SaveProjectEntityBody: core.serialization.ObjectSchema<
@@ -13,14 +13,14 @@ export const SaveProjectEntityBody: core.serialization.ObjectSchema<
     Sayari.SaveProjectEntityBody
 > = core.serialization.object({
     entityIds: core.serialization.property("entity_ids", core.serialization.list(core.serialization.string())),
-    attributes: ResolutionAttributes,
+    attributes: ResolutionAttrSchema,
     profile: ResolutionProfile,
 });
 
 export declare namespace SaveProjectEntityBody {
     export interface Raw {
         entity_ids: string[];
-        attributes: ResolutionAttributes.Raw;
+        attributes: ResolutionAttrSchema.Raw;
         profile: ResolutionProfile.Raw;
     }
 }
