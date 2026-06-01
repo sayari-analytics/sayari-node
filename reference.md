@@ -586,7 +586,7 @@ await client.info.getHistory();
 <dl>
 <dd>
 
-Get metadta about the api, both its versions, which releases are present, and the identity of the authenticated user.
+Get metadata about the api, both its versions, which releases are present, and the identity of the authenticated user.
 
 </dd>
 </dl>
@@ -2621,11 +2621,14 @@ The resolution endpoints allow users to search for matching entities against a p
 ```typescript
 await client.projectEntity.createProjectEntity("YVB88Y", {
     body: {
-        name: ["VTB Bank"],
-        country: ["RUS"],
-        address: ["Moscow"],
-        identifier: ["253400V1H6ART1UQ0N98"],
+        limit: 10,
         profile: "corporate",
+        attributes: {
+            name: ["VTB Bank"],
+            country: ["RUS"],
+            address: ["Moscow"],
+            identifier: ["253400V1H6ART1UQ0N98"],
+        },
     },
 });
 ```
@@ -2826,6 +2829,172 @@ await client.projectEntity.getProjectEntity("project_id", "project_entity_id");
 </dl>
 </details>
 
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">addProjectEntityMatches</a>(projectId, projectEntityId, { ...params }) -> Sayari.UpdateProjectEntityMatchesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Adds matches to a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.addProjectEntityMatches("project_id", "project_entity_id", {
+    entityIds: ["entity_ids", "entity_ids"],
+    overrideDeleted: undefined,
+    limit: undefined,
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.UpdateProjectEntityMatchesBody`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">replaceProjectEntityMatches</a>(projectId, projectEntityId, { ...params }) -> Sayari.UpdateProjectEntityMatchesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Replace matches in a project entity.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.replaceProjectEntityMatches("project_id", "project_entity_id", {
+    entityIds: ["entity_ids", "entity_ids"],
+    overrideDeleted: undefined,
+    limit: undefined,
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.UpdateProjectEntityMatchesBody`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">deleteProjectEntity</a>(projectId, projectEntityId) -> void</code></summary>
 <dl>
 <dd>
@@ -3005,8 +3174,10 @@ Checks if a project entity with the given attributes already exists.
 
 ```typescript
 await client.projectEntity.projectEntityExists("YVB88Y", {
-    name: ["Example Company"],
-    country: ["USA"],
+    attributes: {
+        name: ["Example Company"],
+        country: ["USA"],
+    },
 });
 ```
 
@@ -3050,7 +3221,7 @@ await client.projectEntity.projectEntityExists("YVB88Y", {
 </dl>
 </details>
 
-<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">saveProjectEntity</a>(projectId, { ...params }) -> Sayari.ProjectEntityIdResponse</code></summary>
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">saveProjectEntity</a>(projectId, { ...params }) -> Sayari.SingleProjectEntityResponse</code></summary>
 <dl>
 <dd>
 
@@ -3697,6 +3868,7 @@ Create a new project.
 ```typescript
 await client.project.createProject({
     label: "My First Project",
+    type: "network",
     share: {
         org: "admin",
     },

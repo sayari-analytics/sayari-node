@@ -48,6 +48,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "aus_credit_licence_number",
         "aus_credit_rep_number",
         "aus_passport",
+        "aus_trademark_reg_no",
         "aut_firmenbuch_no",
         "aut_uid",
         "aze_tin_number",
@@ -291,8 +292,10 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "ind_passport",
         "ind_permanent_account_number",
         "ind_society_registration_number",
+        "ind_techsalerator_id",
         "ind_tin",
         "ind_trademark_submission_ref",
+        "ind_udyam",
         "int_maritime_org_id",
         "internal_curated_merge_id",
         "internal_curated_split_id",
@@ -332,6 +335,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "jpn_edinet_code",
         "jpn_trade_internal_shipment_id",
         "kaz_bin",
+        "kaz_business_identification_number",
         "kaz_identifier",
         "kaz_okpo_num",
         "kaz_state_reg_num",
@@ -549,6 +553,8 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "tjk_ein_number",
         "tjk_tin_number",
         "tokyo_stock_exchange_no",
+        "ton_reg_id",
+        "ton_tax_id",
         "tto_biz_number",
         "tun_passport",
         "tur_id",
@@ -705,6 +711,7 @@ export const IdentifierType: core.serialization.Schema<serializers.IdentifierTyp
         "wcpfc_rfmo_id",
         "wipo_intl_ref_no",
         "wipo_intl_reg_no",
+        "wsm_reg_id",
         "xxx_acuris_id",
         "xxx_cedar_rose_uid",
         "xxx_crb_monitor_entity_id",
@@ -761,6 +768,7 @@ export declare namespace IdentifierType {
         | "aus_credit_licence_number"
         | "aus_credit_rep_number"
         | "aus_passport"
+        | "aus_trademark_reg_no"
         | "aut_firmenbuch_no"
         | "aut_uid"
         | "aze_tin_number"
@@ -1004,8 +1012,10 @@ export declare namespace IdentifierType {
         | "ind_passport"
         | "ind_permanent_account_number"
         | "ind_society_registration_number"
+        | "ind_techsalerator_id"
         | "ind_tin"
         | "ind_trademark_submission_ref"
+        | "ind_udyam"
         | "int_maritime_org_id"
         | "internal_curated_merge_id"
         | "internal_curated_split_id"
@@ -1045,6 +1055,7 @@ export declare namespace IdentifierType {
         | "jpn_edinet_code"
         | "jpn_trade_internal_shipment_id"
         | "kaz_bin"
+        | "kaz_business_identification_number"
         | "kaz_identifier"
         | "kaz_okpo_num"
         | "kaz_state_reg_num"
@@ -1262,6 +1273,8 @@ export declare namespace IdentifierType {
         | "tjk_ein_number"
         | "tjk_tin_number"
         | "tokyo_stock_exchange_no"
+        | "ton_reg_id"
+        | "ton_tax_id"
         | "tto_biz_number"
         | "tun_passport"
         | "tur_id"
@@ -1418,6 +1431,7 @@ export declare namespace IdentifierType {
         | "wcpfc_rfmo_id"
         | "wipo_intl_ref_no"
         | "wipo_intl_reg_no"
+        | "wsm_reg_id"
         | "xxx_acuris_id"
         | "xxx_cedar_rose_uid"
         | "xxx_crb_monitor_entity_id"
