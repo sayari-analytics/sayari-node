@@ -17,7 +17,7 @@ export interface ProjectEntityResponse {
     riskFactors: Sayari.ProjectRiskFactor[];
     upstream: Sayari.UpstreamInfo;
     tags: Sayari.TagResponse[];
-    case?: Sayari.CaseStatus;
+    case?: Sayari.CaseInfo;
     matches: Sayari.ProjectEntityMatchResponse[];
     updatedAt?: string;
 }

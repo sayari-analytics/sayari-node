@@ -87,7 +87,11 @@ import * as Sayari from "../../../index";
  *                     products: []
  *                 },
  *                 tags: [],
- *                 case: Sayari.CaseStatus.NotAssigned,
+ *                 case: {
+ *                     id: "YZB88Y",
+ *                     status: Sayari.CaseStatus.NotAssigned,
+ *                     createdAt: "2025-10-02"
+ *                 },
  *                 matches: [{
  *                         matchId: "52z4Wa:dy-rh2g0QtzUN_jC_e9S_A",
  *                         sayariEntityId: "dy-rh2g0QtzUN_jC_e9S_A",
