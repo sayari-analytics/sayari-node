@@ -11,6 +11,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "aspi_uyghur_forced_labor_report_entity_adjacent",
     "basel_aml",
     "bis_addresses_high_diversion_risk",
+    "bis_affiliates_50_percent_rule",
     "bis_boycott_requester_list",
     "chinese_soe_adjacent",
     "chinese_state_owned",
@@ -43,12 +44,15 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "export_controls_bis_entity_50_percent_rule",
     "export_controls_bis_meu",
     "export_controls_bis_meu_50_percent_rule",
+    "export_controls_other",
+    "export_controls_other_adjacent",
     "export_controls_section_1260h",
     "export_controls_section_1260h_50_percent_rule",
     "export_controls_unverified_list",
     "export_controls_unverified_list_50_percent_rule",
     "export_to_chinese_soe",
     "export_to_sanctioned",
+    "export_to_sanctioned_other",
     "export_to_soe",
     "exports_bis_high_priority_items_critical_components_direct",
     "exports_bis_high_priority_items_critical_components_indirect",
@@ -205,6 +209,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owned_by_chinese_soe",
     "owned_by_cmic_entity",
     "owned_by_entity_in_export_controls",
+    "owned_by_entity_in_export_controls_other",
     "owned_by_forced_labor_xinjiang_uflpa",
     "owned_by_jpn_meti_end_user_entity",
     "owned_by_jpn_mofa_export_ban_entity",
@@ -236,6 +241,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owned_by_sanctioned_mys_moha_entity",
     "owned_by_sanctioned_nld_mofa_entity",
     "owned_by_sanctioned_nzl_mfat_rus_entity",
+    "owned_by_sanctioned_other_entity",
     "owned_by_sanctioned_pol_mia_entity",
     "owned_by_sanctioned_sgp_agc_entity",
     "owned_by_sanctioned_ukr_nsdc_entity",
@@ -260,6 +266,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owner_of_aspi_forced_labor_entity",
     "owner_of_chinese_soe",
     "owner_of_export_controls_entity",
+    "owner_of_export_controls_other_entity",
     "owner_of_forced_labor_xinjiang_entity",
     "owner_of_forced_labor_xinjiang_uflpa",
     "owner_of_jpn_meti_end_user_entity",
@@ -292,6 +299,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owner_of_sanctioned_mys_moha_entity",
     "owner_of_sanctioned_nld_mofa_entity",
     "owner_of_sanctioned_nzl_mfat_rus_entity",
+    "owner_of_sanctioned_other_entity",
     "owner_of_sanctioned_pol_mia_entity",
     "owner_of_sanctioned_sgp_agc_entity",
     "owner_of_sanctioned_ukr_nsdc_entity",
@@ -322,10 +330,12 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_export_controls",
     "psa_export_controls_bis_entity_50_percent_rule",
     "psa_export_controls_bis_meu_50_percent_rule",
+    "psa_export_controls_other",
     "psa_export_controls_section_1260h_50_percent_rule",
     "psa_export_controls_unverified_list_50_percent_rule",
     "psa_export_to_chinese_soe",
     "psa_export_to_sanctioned",
+    "psa_export_to_sanctioned_other",
     "psa_export_to_soe",
     "psa_exports_bis_high_priority_items_critical_components_direct",
     "psa_exports_bis_high_priority_items_critical_components_indirect",
@@ -432,6 +442,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owned_by_chinese_soe",
     "psa_owned_by_cmic_entity",
     "psa_owned_by_entity_in_export_controls",
+    "psa_owned_by_entity_in_export_controls_other",
     "psa_owned_by_forced_labor_xinjiang_uflpa",
     "psa_owned_by_jpn_meti_end_user_entity",
     "psa_owned_by_jpn_mofa_export_ban_entity",
@@ -463,6 +474,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owned_by_sanctioned_mys_moha_entity",
     "psa_owned_by_sanctioned_nld_mofa_entity",
     "psa_owned_by_sanctioned_nzl_mfat_rus_entity",
+    "psa_owned_by_sanctioned_other_entity",
     "psa_owned_by_sanctioned_pol_mia_entity",
     "psa_owned_by_sanctioned_sgp_agc_entity",
     "psa_owned_by_sanctioned_ukr_nsdc_entity",
@@ -487,6 +499,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owner_of_aspi_forced_labor_entity",
     "psa_owner_of_chinese_soe",
     "psa_owner_of_export_controls_entity",
+    "psa_owner_of_export_controls_other_entity",
     "psa_owner_of_forced_labor_xinjiang_entity",
     "psa_owner_of_forced_labor_xinjiang_uflpa",
     "psa_owner_of_jpn_meti_end_user_entity",
@@ -519,6 +532,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owner_of_sanctioned_mys_moha_entity",
     "psa_owner_of_sanctioned_nld_mofa_entity",
     "psa_owner_of_sanctioned_nzl_mfat_rus_entity",
+    "psa_owner_of_sanctioned_other_entity",
     "psa_owner_of_sanctioned_pol_mia_entity",
     "psa_owner_of_sanctioned_sgp_agc_entity",
     "psa_owner_of_sanctioned_ukr_nsdc_entity",
@@ -561,6 +575,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_sanctioned_mys_moha",
     "psa_sanctioned_nld_mofa",
     "psa_sanctioned_nzl_mfat_rus",
+    "psa_sanctioned_other",
     "psa_sanctioned_pol_mia",
     "psa_sanctioned_sgp_agc",
     "psa_sanctioned_ukr_nsdc",
@@ -619,6 +634,8 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "sanctioned_mys_moha",
     "sanctioned_nld_mofa",
     "sanctioned_nzl_mfat_rus",
+    "sanctioned_other",
+    "sanctioned_other_adjacent",
     "sanctioned_pol_mia",
     "sanctioned_sgp_agc",
     "sanctioned_ukr_nsdc",
@@ -659,6 +676,7 @@ export declare namespace Risk {
         | "aspi_uyghur_forced_labor_report_entity_adjacent"
         | "basel_aml"
         | "bis_addresses_high_diversion_risk"
+        | "bis_affiliates_50_percent_rule"
         | "bis_boycott_requester_list"
         | "chinese_soe_adjacent"
         | "chinese_state_owned"
@@ -691,12 +709,15 @@ export declare namespace Risk {
         | "export_controls_bis_entity_50_percent_rule"
         | "export_controls_bis_meu"
         | "export_controls_bis_meu_50_percent_rule"
+        | "export_controls_other"
+        | "export_controls_other_adjacent"
         | "export_controls_section_1260h"
         | "export_controls_section_1260h_50_percent_rule"
         | "export_controls_unverified_list"
         | "export_controls_unverified_list_50_percent_rule"
         | "export_to_chinese_soe"
         | "export_to_sanctioned"
+        | "export_to_sanctioned_other"
         | "export_to_soe"
         | "exports_bis_high_priority_items_critical_components_direct"
         | "exports_bis_high_priority_items_critical_components_indirect"
@@ -853,6 +874,7 @@ export declare namespace Risk {
         | "owned_by_chinese_soe"
         | "owned_by_cmic_entity"
         | "owned_by_entity_in_export_controls"
+        | "owned_by_entity_in_export_controls_other"
         | "owned_by_forced_labor_xinjiang_uflpa"
         | "owned_by_jpn_meti_end_user_entity"
         | "owned_by_jpn_mofa_export_ban_entity"
@@ -884,6 +906,7 @@ export declare namespace Risk {
         | "owned_by_sanctioned_mys_moha_entity"
         | "owned_by_sanctioned_nld_mofa_entity"
         | "owned_by_sanctioned_nzl_mfat_rus_entity"
+        | "owned_by_sanctioned_other_entity"
         | "owned_by_sanctioned_pol_mia_entity"
         | "owned_by_sanctioned_sgp_agc_entity"
         | "owned_by_sanctioned_ukr_nsdc_entity"
@@ -908,6 +931,7 @@ export declare namespace Risk {
         | "owner_of_aspi_forced_labor_entity"
         | "owner_of_chinese_soe"
         | "owner_of_export_controls_entity"
+        | "owner_of_export_controls_other_entity"
         | "owner_of_forced_labor_xinjiang_entity"
         | "owner_of_forced_labor_xinjiang_uflpa"
         | "owner_of_jpn_meti_end_user_entity"
@@ -940,6 +964,7 @@ export declare namespace Risk {
         | "owner_of_sanctioned_mys_moha_entity"
         | "owner_of_sanctioned_nld_mofa_entity"
         | "owner_of_sanctioned_nzl_mfat_rus_entity"
+        | "owner_of_sanctioned_other_entity"
         | "owner_of_sanctioned_pol_mia_entity"
         | "owner_of_sanctioned_sgp_agc_entity"
         | "owner_of_sanctioned_ukr_nsdc_entity"
@@ -970,10 +995,12 @@ export declare namespace Risk {
         | "psa_export_controls"
         | "psa_export_controls_bis_entity_50_percent_rule"
         | "psa_export_controls_bis_meu_50_percent_rule"
+        | "psa_export_controls_other"
         | "psa_export_controls_section_1260h_50_percent_rule"
         | "psa_export_controls_unverified_list_50_percent_rule"
         | "psa_export_to_chinese_soe"
         | "psa_export_to_sanctioned"
+        | "psa_export_to_sanctioned_other"
         | "psa_export_to_soe"
         | "psa_exports_bis_high_priority_items_critical_components_direct"
         | "psa_exports_bis_high_priority_items_critical_components_indirect"
@@ -1080,6 +1107,7 @@ export declare namespace Risk {
         | "psa_owned_by_chinese_soe"
         | "psa_owned_by_cmic_entity"
         | "psa_owned_by_entity_in_export_controls"
+        | "psa_owned_by_entity_in_export_controls_other"
         | "psa_owned_by_forced_labor_xinjiang_uflpa"
         | "psa_owned_by_jpn_meti_end_user_entity"
         | "psa_owned_by_jpn_mofa_export_ban_entity"
@@ -1111,6 +1139,7 @@ export declare namespace Risk {
         | "psa_owned_by_sanctioned_mys_moha_entity"
         | "psa_owned_by_sanctioned_nld_mofa_entity"
         | "psa_owned_by_sanctioned_nzl_mfat_rus_entity"
+        | "psa_owned_by_sanctioned_other_entity"
         | "psa_owned_by_sanctioned_pol_mia_entity"
         | "psa_owned_by_sanctioned_sgp_agc_entity"
         | "psa_owned_by_sanctioned_ukr_nsdc_entity"
@@ -1135,6 +1164,7 @@ export declare namespace Risk {
         | "psa_owner_of_aspi_forced_labor_entity"
         | "psa_owner_of_chinese_soe"
         | "psa_owner_of_export_controls_entity"
+        | "psa_owner_of_export_controls_other_entity"
         | "psa_owner_of_forced_labor_xinjiang_entity"
         | "psa_owner_of_forced_labor_xinjiang_uflpa"
         | "psa_owner_of_jpn_meti_end_user_entity"
@@ -1167,6 +1197,7 @@ export declare namespace Risk {
         | "psa_owner_of_sanctioned_mys_moha_entity"
         | "psa_owner_of_sanctioned_nld_mofa_entity"
         | "psa_owner_of_sanctioned_nzl_mfat_rus_entity"
+        | "psa_owner_of_sanctioned_other_entity"
         | "psa_owner_of_sanctioned_pol_mia_entity"
         | "psa_owner_of_sanctioned_sgp_agc_entity"
         | "psa_owner_of_sanctioned_ukr_nsdc_entity"
@@ -1209,6 +1240,7 @@ export declare namespace Risk {
         | "psa_sanctioned_mys_moha"
         | "psa_sanctioned_nld_mofa"
         | "psa_sanctioned_nzl_mfat_rus"
+        | "psa_sanctioned_other"
         | "psa_sanctioned_pol_mia"
         | "psa_sanctioned_sgp_agc"
         | "psa_sanctioned_ukr_nsdc"
@@ -1267,6 +1299,8 @@ export declare namespace Risk {
         | "sanctioned_mys_moha"
         | "sanctioned_nld_mofa"
         | "sanctioned_nzl_mfat_rus"
+        | "sanctioned_other"
+        | "sanctioned_other_adjacent"
         | "sanctioned_pol_mia"
         | "sanctioned_sgp_agc"
         | "sanctioned_ukr_nsdc"
