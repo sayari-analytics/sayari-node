@@ -10,10 +10,15 @@ export const Tag: core.serialization.Schema<serializers.Tag.Raw, Sayari.Tag> = c
     "aspi_uyghur_forced_labor_report_entity",
     "bis_boycott_requester_list",
     "esg_score",
+    "esg_score_high",
+    "esg_score_low",
+    "esg_score_medium",
+    "esg_score_very_high",
     "export_controls",
     "export_controls_bis_entity",
     "financial_risk_score",
     "forced_labor_xinjiang_contractors",
+    "forced_labor_xinjiang_uflpa",
     "former_soe",
     "formerly_sanctioned",
     "law_enforcement_action",
@@ -22,6 +27,7 @@ export const Tag: core.serialization.Schema<serializers.Tag.Raw, Sayari.Tag> = c
     "reputational_risk_bribery_and_corruption",
     "reputational_risk_cybercrime",
     "reputational_risk_financial_crime",
+    "reputational_risk_forced_labor",
     "reputational_risk_modern_slavery",
     "reputational_risk_organized_crime",
     "reputational_risk_other",
@@ -30,6 +36,7 @@ export const Tag: core.serialization.Schema<serializers.Tag.Raw, Sayari.Tag> = c
     "sheffield_hallam_university_forced_labor_entity",
     "state_owned",
     "uflpa_entity",
+    "usa_bis",
     "wro_entity",
 ]);
 
@@ -38,10 +45,15 @@ export declare namespace Tag {
         | "aspi_uyghur_forced_labor_report_entity"
         | "bis_boycott_requester_list"
         | "esg_score"
+        | "esg_score_high"
+        | "esg_score_low"
+        | "esg_score_medium"
+        | "esg_score_very_high"
         | "export_controls"
         | "export_controls_bis_entity"
         | "financial_risk_score"
         | "forced_labor_xinjiang_contractors"
+        | "forced_labor_xinjiang_uflpa"
         | "former_soe"
         | "formerly_sanctioned"
         | "law_enforcement_action"
@@ -50,6 +62,7 @@ export declare namespace Tag {
         | "reputational_risk_bribery_and_corruption"
         | "reputational_risk_cybercrime"
         | "reputational_risk_financial_crime"
+        | "reputational_risk_forced_labor"
         | "reputational_risk_modern_slavery"
         | "reputational_risk_organized_crime"
         | "reputational_risk_other"
@@ -58,5 +71,6 @@ export declare namespace Tag {
         | "sheffield_hallam_university_forced_labor_entity"
         | "state_owned"
         | "uflpa_entity"
+        | "usa_bis"
         | "wro_entity";
 }
