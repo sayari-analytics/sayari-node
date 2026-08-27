@@ -19,9 +19,5 @@ export const ReportingPeriodType: core.serialization.Schema<
 
 export declare namespace ReportingPeriodType {
     export type Raw =
-        | "annual_fiscal"
-        | "last_twelve_months"
-        | "quarterly_fiscal"
-        | "semi_annual_fiscal"
-        | "year_to_date_fiscal";
+        "annual_fiscal" | "last_twelve_months" | "quarterly_fiscal" | "semi_annual_fiscal" | "year_to_date_fiscal";
 }

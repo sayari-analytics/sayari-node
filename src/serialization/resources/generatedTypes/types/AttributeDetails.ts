@@ -22,6 +22,7 @@ import { MonetaryValueInfo } from "./MonetaryValueInfo";
 import { NameInfo } from "./NameInfo";
 import { PersonStatusInfo } from "./PersonStatusInfo";
 import { PositionInfo } from "./PositionInfo";
+import { RiskEventInfo } from "./RiskEventInfo";
 import { RiskIntelligenceInfo } from "./RiskIntelligenceInfo";
 import { SharesInfo } from "./SharesInfo";
 import { StatusInfo } from "./StatusInfo";
@@ -49,6 +50,7 @@ export const AttributeDetails: core.serialization.ObjectSchema<
     name: NameInfo.optional(),
     personStatus: core.serialization.property("person_status", PersonStatusInfo.optional()),
     position: PositionInfo.optional(),
+    riskEvent: core.serialization.property("risk_event", RiskEventInfo.optional()),
     riskIntelligence: core.serialization.property("risk_intelligence", RiskIntelligenceInfo.optional()),
     shares: SharesInfo.optional(),
     status: StatusInfo.optional(),
@@ -75,6 +77,7 @@ export declare namespace AttributeDetails {
         name?: NameInfo.Raw | null;
         person_status?: PersonStatusInfo.Raw | null;
         position?: PositionInfo.Raw | null;
+        risk_event?: RiskEventInfo.Raw | null;
         risk_intelligence?: RiskIntelligenceInfo.Raw | null;
         shares?: SharesInfo.Raw | null;
         status?: StatusInfo.Raw | null;

@@ -7,6 +7,9 @@
  */
 export type IdentifierType =
     /**
+     * Unique identifier for participants in the European wholesale energy market, used for regulatory reporting, ensuring transparency, and monitoring market integrity under rules like REMIT (Regulation on Energy Market Integrity and Transparency). It's an alphanumeric code assigned during registration for trading and reporting energy transactions across the EU. */
+    | "acer_code"
+    /**
      * Primary license number of free zone establishment in Dubai */
     | "aer_free_zone_license"
     /**
@@ -88,6 +91,7 @@ export type IdentifierType =
     /**
      * Armenian regsitration number */
     | "arm_registration_no"
+    | "arm_statement_identifier"
     /**
      * Armenian VAT ID number */
     | "arm_vat_no"
@@ -124,6 +128,9 @@ export type IdentifierType =
     /**
      * Australia Passport Number */
     | "aus_passport"
+    /**
+     * Unique Australia ID number. Assigned to every registered trademark. */
+    | "aus_trademark_reg_no"
     /**
      * Austrian Company Register Number */
     | "aut_firmenbuch_no"
@@ -175,6 +182,9 @@ export type IdentifierType =
     /**
      * A Bahraini CR Number combined with a Bahraini branch number */
     | "bh_cr_number_and_branch"
+    /**
+     * Passport Number issued by Bahrain */
+    | "bhr_passport"
     /**
      * Bahamas Tax Identification Number */
     | "bhs_tin"
@@ -306,6 +316,9 @@ export type IdentifierType =
      * Penalty number assigned by the  Quebec Ministry of the Environment, the Fight against Climate Change, Wildlife and Parks to each entity listed as offender in the Register of Administrative Monetary Penalties for non-compliance with environmental laws and regulations. */
     | "can_qc_sap_registry_ref_num"
     /**
+     * Unique identifier assigned to filers on the System for Electronic Document Analysis and Retrieval (SEDAR), Canada's electronic filing system for securities regulatory documents administered by the Canadian Securities Administrators (CSA). */
+    | "can_sedar_profile_number"
+    /**
      * Internal Identifier used by Techsalerator to identify published companies */
     | "can_techsalerator_id"
     /**
@@ -345,6 +358,9 @@ export type IdentifierType =
     /**
      * Unique identifier for Chilean importers and exporters */
     | "chl_importer_exporter_id"
+    /**
+     * Unique China ID number. Assigned to every algorithm filed with the Cyberspace Administration of China (CAC). */
+    | "chn_algorithm_filing_no"
     /**
      * Internal identifier for shareholders from CHN cninfo data */
     | "chn_cninfo_internal_shareholder_id"
@@ -562,6 +578,9 @@ export type IdentifierType =
      * Egypt passport number */
     | "egy_passport"
     /**
+     * 16-character identifier used in Europe to uniquely identify market participants and energy resources (entities and objects) related to the electricity and gas sector. Used by ENTSO-E Transparency Platform for electricity and ENTSO-G Transparency Platform for gas. */
+    | "eic_code"
+    /**
      * Unique identification number assigned to every entity registered with the Bank of Spain. */
     | "esp_be_code"
     /**
@@ -704,6 +723,9 @@ export type IdentifierType =
      * Gibraltar Corporate Registration Number */
     | "gib_corp_reg_number"
     /**
+     * unique 13-digit code that identifies physical, legal, or functional locations (like offices, warehouses, departments) for accurate supply chain tracking, enabling efficient data exchange and automation in business processes and electronic messages. Managed by the international organization GS1. */
+    | "gln_code"
+    /**
      * Global Trade Internal Shipment ID */
     | "global_trade_internal_shipment_id"
     /**
@@ -713,6 +735,9 @@ export type IdentifierType =
      * General Electronic Commercial Registry (G.E.MI.) number for all legal forms of businesses in Greece */
     | "grc_gemi_number"
     /**
+     * Passport Number issued by Greece */
+    | "grc_passport"
+    /**
      * Greece tax ID number */
     | "grc_vat_number"
     /**
@@ -721,6 +746,9 @@ export type IdentifierType =
     /**
      * Guatemala tax ID number */
     | "gtm_nit_number"
+    /**
+     * A Hong Kong Identity Card (HKID) number */
+    | "hkg_identity_card"
     /**
      * Hong Kong Stock Exchange Code */
     | "hkg_stock_code"
@@ -800,6 +828,9 @@ export type IdentifierType =
      * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
     | "imo_no"
     /**
+     * 6-digit unique numerical identifier assigned by the Bombay Stock Exchange (BSE) to uniquely identify listed companies. */
+    | "ind_bse_ticker_code"
+    /**
      * Unique India registration number. Assigned to every legal entity registered with the India Charity Commissioner. */
     | "ind_charity_registration_number"
     /**
@@ -842,11 +873,17 @@ export type IdentifierType =
      * Unique India registration number. Assigned to every legal entity registered with the India Registrar of Societies. */
     | "ind_society_registration_number"
     /**
+     * Internal Identifier used by Techsalerator to identify published companies */
+    | "ind_techsalerator_id"
+    /**
      * India tax identification number. Unique ID number assigned to every taxpayer by the Commercial Tax Department of each state. */
     | "ind_tin"
     /**
      * Unique India intellectual property ID number. Assigned to every trademark application submitted to the Controller General of Patents, Designs and Trademarks of the Ministry of Commerce and Industry, Government of India. */
     | "ind_trademark_submission_ref"
+    /**
+     * Unique identification number issued to Micro, Small and Medium Enterprises (MSMEs) in India. */
+    | "ind_udyam"
     /**
      * Unique global ID number. Assigned to ships, registered ship owners, and management companies. */
     | "int_maritime_org_id"
@@ -945,6 +982,9 @@ export type IdentifierType =
      * Deprecated; use jo_national_institution_number */
     | "jor_id_no"
     /**
+     * Passport Number issued by Jordan */
+    | "jor_passport"
+    /**
      * Jordan voter ID number */
     | "jor_voter_card_no"
     /**
@@ -962,6 +1002,9 @@ export type IdentifierType =
     /**
      * A 12-digit Kazakh business identification number */
     | "kaz_bin"
+    /**
+     * Kazakhstan business and company identification number that is not explicitly designated as a BIN in source data. */
+    | "kaz_business_identification_number"
     /**
      * A nine-digit Kazakh identifier */
     | "kaz_identifier"
@@ -1000,6 +1043,9 @@ export type IdentifierType =
     /**
      * Lebanon natural person ID number */
     | "lbn_national_id"
+    /**
+     * Passport Number issued by Lebanon */
+    | "lbn_passport"
     /**
      * Libya passport number */
     | "lby_passport"
@@ -1211,6 +1257,9 @@ export type IdentifierType =
     /**
      * Nigerian National Identification Number */
     | "nga_nin"
+    /**
+     * Passport Number issued by Nigeria */
+    | "nga_passport"
     /**
      * Nigeria corporate registry ID code */
     | "nga_registration_number"
@@ -1512,6 +1561,9 @@ export type IdentifierType =
      * A unique identifier implemented by SNL to identify companies in the SNL universe - SNL Financial Institutions Regulatory datase. */
     | "snl_internal_id"
     /**
+     * Passport Number issued by Somalia */
+    | "som_passport"
+    /**
      * Somalian UBI Number */
     | "som_ubi"
     /**
@@ -1596,6 +1648,12 @@ export type IdentifierType =
      * Unique identifier for Tokyo Stock Exchange companies */
     | "tokyo_stock_exchange_no"
     /**
+     * Unique business registration number. Assigned to every registered business in Tonga. */
+    | "ton_reg_id"
+    /**
+     * Unique tax ID. Assigned to every registered business in Tonga or Tonga residents. */
+    | "ton_tax_id"
+    /**
      * Trinbagonian Business Number */
     | "tto_biz_number"
     /**
@@ -1664,6 +1722,9 @@ export type IdentifierType =
     /**
      * Taxpayer Identification Number (TIN) is a unique identification number assigned to individuals and entities in Tanzania, largely for tax purposes. A TIN is issued by the Tanzania Revenue Authority (TRA) - the governing body responsible for tax administration in the country. */
     | "tza_tin"
+    /**
+     * Passport Number issued by Uganda */
+    | "uga_passport"
     /**
      * Taxpayer Identification Number in Uganda is a unique identifying number assigned to every taxpayer by Uganda Revenue Authority (URA) for tax administration purposes. */
     | "uga_tin"
@@ -1744,6 +1805,9 @@ export type IdentifierType =
     /**
      * USA Washington, D.C. corporate registry file number */
     | "usa_dc_file_no"
+    /**
+     * USA City of Washington, DC parcel ID number */
+    | "usa_dc_ssl"
     /**
      * USA Delaware File Number */
     | "usa_de_file_number"
@@ -1924,7 +1988,7 @@ export type IdentifierType =
     | "usa_ri_fei_no"
     | "usa_sam_exclusions_number"
     /**
-     * Unique Entity Identifier (SAM) */
+     * Deprecated; use weak identifier usa_sam_uei_number */
     | "usa_sam_uei_number"
     /**
      * USA South Carolina Secretary of State Corporation ID */
@@ -2054,8 +2118,14 @@ export type IdentifierType =
      * Unique USA ID number. Assigned to every registered foreign trademark. */
     | "wipo_intl_reg_no"
     /**
+     * Unique business identification number. Assigned to every registered business in Samoa. */
+    | "wsm_reg_id"
+    /**
      * Acuris Unique ID */
     | "xxx_acuris_id"
+    /**
+     * Cedar Rose internal ID for person-type entities. */
+    | "xxx_cedar_rose_person_uid"
     /**
      * Cedar Rose entity internal ID number */
     | "xxx_cedar_rose_uid"
@@ -2090,6 +2160,7 @@ export type IdentifierType =
      * Zcash address */
     | "zcash_address";
 export const IdentifierType = {
+    AcerCode: "acer_code",
     AerFreeZoneLicense: "aer_free_zone_license",
     AerFreeZoneRegNo: "aer_free_zone_reg_no",
     AerNerNumber: "aer_ner_number",
@@ -2118,6 +2189,7 @@ export const IdentifierType = {
     ArmEnterpriseCode: "arm_enterprise_code",
     ArmPassportNumber: "arm_passport_number",
     ArmRegistrationNo: "arm_registration_no",
+    ArmStatementIdentifier: "arm_statement_identifier",
     ArmVatNo: "arm_vat_no",
     ArubaChamberOfCommerceId: "aruba_chamber_of_commerce_id",
     AtgBusinessRegistryInternalId: "atg_business_registry_internal_id",
@@ -2130,6 +2202,7 @@ export const IdentifierType = {
     AusCreditLicenceNumber: "aus_credit_licence_number",
     AusCreditRepNumber: "aus_credit_rep_number",
     AusPassport: "aus_passport",
+    AusTrademarkRegNo: "aus_trademark_reg_no",
     AutFirmenbuchNo: "aut_firmenbuch_no",
     AutUid: "aut_uid",
     AzeTinNumber: "aze_tin_number",
@@ -2147,6 +2220,7 @@ export const IdentifierType = {
     BgrUic: "bgr_uic",
     BhCrNumber: "bh_cr_number",
     BhCrNumberAndBranch: "bh_cr_number_and_branch",
+    BhrPassport: "bhr_passport",
     BhsTin: "bhs_tin",
     BihCustomsNumber: "bih_customs_number",
     BihJibNumber: "bih_jib_number",
@@ -2191,6 +2265,7 @@ export const IdentifierType = {
     CanPeRegistrationNumber: "can_pe_registration_number",
     CanQcMbsNum: "can_qc_mbs_num",
     CanQcSapRegistryRefNum: "can_qc_sap_registry_ref_num",
+    CanSedarProfileNumber: "can_sedar_profile_number",
     CanTechsaleratorId: "can_techsalerator_id",
     CanTmRegistrationNo: "can_tm_registration_no",
     CcamlrRfmoId: "ccamlr_rfmo_id",
@@ -2205,6 +2280,7 @@ export const IdentifierType = {
     ChlImportExportControlId: "chl_import_export_control_id",
     ChlImportManifestNumber: "chl_import_manifest_number",
     ChlImporterExporterId: "chl_importer_exporter_id",
+    ChnAlgorithmFilingNo: "chn_algorithm_filing_no",
     ChnCninfoInternalShareholderId: "chn_cninfo_internal_shareholder_id",
     ChnCnipaTm: "chn_cnipa_tm",
     ChnCsrcNo: "chn_csrc_no",
@@ -2279,6 +2355,7 @@ export const IdentifierType = {
     EcuShipmentRefNo: "ecu_shipment_ref_no",
     EgyId: "egy_id",
     EgyPassport: "egy_passport",
+    EicCode: "eic_code",
     EspBeCode: "esp_be_code",
     EspBormeRegId: "esp_borme_reg_id",
     EspCif: "esp_cif",
@@ -2327,12 +2404,15 @@ export const IdentifierType = {
     GgyTrademarkNo: "ggy_trademark_no",
     GgyTrademarkSubmissionRef: "ggy_trademark_submission_ref",
     GibCorpRegNumber: "gib_corp_reg_number",
+    GlnCode: "gln_code",
     GlobalTradeInternalShipmentId: "global_trade_internal_shipment_id",
     GrcAfmNumber: "grc_afm_number",
     GrcGemiNumber: "grc_gemi_number",
+    GrcPassport: "grc_passport",
     GrcVatNumber: "grc_vat_number",
     GtmCuiNumber: "gtm_cui_number",
     GtmNitNumber: "gtm_nit_number",
+    HkgIdentityCard: "hkg_identity_card",
     HkgStockCode: "hkg_stock_code",
     HkgTenderRefCode: "hkg_tender_ref_code",
     HndCocCompanyRegistrationNumber: "hnd_coc_company_registration_number",
@@ -2359,6 +2439,7 @@ export const IdentifierType = {
     IhsOwnerCode: "ihs_owner_code",
     ImnCompanyNumber: "imn_company_number",
     ImoNo: "imo_no",
+    IndBseTickerCode: "ind_bse_ticker_code",
     IndCharityRegistrationNumber: "ind_charity_registration_number",
     IndCompanyRegistrationNumber: "ind_company_registration_number",
     IndCoopsocRegistrationNumber: "ind_coopsoc_registration_number",
@@ -2373,8 +2454,10 @@ export const IdentifierType = {
     IndPassport: "ind_passport",
     IndPermanentAccountNumber: "ind_permanent_account_number",
     IndSocietyRegistrationNumber: "ind_society_registration_number",
+    IndTechsaleratorId: "ind_techsalerator_id",
     IndTin: "ind_tin",
     IndTrademarkSubmissionRef: "ind_trademark_submission_ref",
+    IndUdyam: "ind_udyam",
     IntMaritimeOrgId: "int_maritime_org_id",
     InternalCuratedMergeId: "internal_curated_merge_id",
     InternalCuratedSplitId: "internal_curated_split_id",
@@ -2408,12 +2491,14 @@ export const IdentifierType = {
     JoInternalId: "jo_internal_id",
     JoNationalInstitutionNumber: "jo_national_institution_number",
     JorIdNo: "jor_id_no",
+    JorPassport: "jor_passport",
     JorVoterCardNo: "jor_voter_card_no",
     JordanCompanyNo: "jordan_company_no",
     JpnCorporateNo: "jpn_corporate_no",
     JpnEdinetCode: "jpn_edinet_code",
     JpnTradeInternalShipmentId: "jpn_trade_internal_shipment_id",
     KazBin: "kaz_bin",
+    KazBusinessIdentificationNumber: "kaz_business_identification_number",
     KazIdentifier: "kaz_identifier",
     KazOkpoNum: "kaz_okpo_num",
     KazStateRegNum: "kaz_state_reg_num",
@@ -2428,6 +2513,7 @@ export const IdentifierType = {
     KwtPassport: "kwt_passport",
     LaoEnterpriseNumber: "lao_enterprise_number",
     LbnNationalId: "lbn_national_id",
+    LbnPassport: "lbn_passport",
     LbyPassport: "lby_passport",
     LcaBusinessRegistryInternalId: "lca_business_registry_internal_id",
     Lei: "lei",
@@ -2501,6 +2587,7 @@ export const IdentifierType = {
     NgaCrpRegInternalId: "nga_crp_reg_internal_id",
     NgaDrivers: "nga_drivers",
     NgaNin: "nga_nin",
+    NgaPassport: "nga_passport",
     NgaRegistrationNumber: "nga_registration_number",
     NgaRegistrationSn: "nga_registration_sn",
     NgaTaxId: "nga_tax_id",
@@ -2603,6 +2690,7 @@ export const IdentifierType = {
     SlvUidNumber: "slv_uid_number",
     SmrEconomicOperatorCode: "smr_economic_operator_code",
     SnlInternalId: "snl_internal_id",
+    SomPassport: "som_passport",
     SomUbi: "som_ubi",
     SouthAfricaEnterpriseNumber: "south_africa_enterprise_number",
     SouthAfricaPassportNumber: "south_africa_passport_number",
@@ -2631,6 +2719,8 @@ export const IdentifierType = {
     TjkEinNumber: "tjk_ein_number",
     TjkTinNumber: "tjk_tin_number",
     TokyoStockExchangeNo: "tokyo_stock_exchange_no",
+    TonRegId: "ton_reg_id",
+    TonTaxId: "ton_tax_id",
     TtoBizNumber: "tto_biz_number",
     TunPassport: "tun_passport",
     TurId: "tur_id",
@@ -2654,6 +2744,7 @@ export const IdentifierType = {
     TzaBrelaRegNum: "tza_brela_reg_num",
     TzaTansadNumber: "tza_tansad_number",
     TzaTin: "tza_tin",
+    UgaPassport: "uga_passport",
     UgaTin: "uga_tin",
     UkCompanyNumber: "uk_company_number",
     UkFirmReferenceNumber: "uk_firm_reference_number",
@@ -2682,6 +2773,7 @@ export const IdentifierType = {
     UsaCusipNumber: "usa_cusip_number",
     UsaDcEntityNo: "usa_dc_entity_no",
     UsaDcFileNo: "usa_dc_file_no",
+    UsaDcSsl: "usa_dc_ssl",
     UsaDeFileNumber: "usa_de_file_number",
     UsaDeRegisteredAgentId: "usa_de_registered_agent_id",
     UsaFeiNumber: "usa_fei_number",
@@ -2787,7 +2879,9 @@ export const IdentifierType = {
     WcpfcRfmoId: "wcpfc_rfmo_id",
     WipoIntlRefNo: "wipo_intl_ref_no",
     WipoIntlRegNo: "wipo_intl_reg_no",
+    WsmRegId: "wsm_reg_id",
     XxxAcurisId: "xxx_acuris_id",
+    XxxCedarRosePersonUid: "xxx_cedar_rose_person_uid",
     XxxCedarRoseUid: "xxx_cedar_rose_uid",
     XxxCrbMonitorEntityId: "xxx_crb_monitor_entity_id",
     XxxEdiGlobalIssuerId: "xxx_edi_global_issuer_id",

@@ -47,7 +47,10 @@ export type MonetaryValueContext =
     | "free_carrier"
     /**
      * Indicates free on board (FOB) arrangement */
-    | "free_on_board";
+    | "free_on_board"
+    /**
+     * Indicates the registered sale price of a property. */
+    | "sale_value";
 export const MonetaryValueContext = {
     AssessedValue: "assessed_value",
     CadastralValue: "cadastral_value",
@@ -63,4 +66,5 @@ export const MonetaryValueContext = {
     FreeAlongsideShip: "free_alongside_ship",
     FreeCarrier: "free_carrier",
     FreeOnBoard: "free_on_board",
+    SaleValue: "sale_value",
 } as const;

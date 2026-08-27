@@ -96,7 +96,7 @@ export interface Resolution {
      */
     skipPostProcess?: boolean;
     /**
-     * Whether to enable LLM-based data cleaning to remove noise and standardize entity attributes. Defaults to true if not supplied. Set to false to disable LLM cleaning.
+     * Whether to enable LLM-based data cleaning to remove noise and standardize entity attributes. Defaults to false if not supplied. Set to true to enable LLM cleaning.
      */
     enableLlmClean?: boolean;
 }

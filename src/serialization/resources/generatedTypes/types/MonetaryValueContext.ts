@@ -24,6 +24,7 @@ export const MonetaryValueContext: core.serialization.Schema<
     "free_alongside_ship",
     "free_carrier",
     "free_on_board",
+    "sale_value",
 ]);
 
 export declare namespace MonetaryValueContext {
@@ -41,5 +42,6 @@ export declare namespace MonetaryValueContext {
         | "ex_works"
         | "free_alongside_ship"
         | "free_carrier"
-        | "free_on_board";
+        | "free_on_board"
+        | "sale_value";
 }

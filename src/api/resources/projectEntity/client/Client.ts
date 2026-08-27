@@ -50,20 +50,27 @@ export class ProjectEntity {
      * @example
      *     await client.projectEntity.createProjectEntity("YVB88Y", {
      *         body: {
-     *             name: ["VTB Bank"],
-     *             country: ["RUS"],
-     *             address: ["Moscow"],
-     *             identifier: ["253400V1H6ART1UQ0N98"],
-     *             profile: "corporate"
+     *             limit: 10,
+     *             profile: "corporate",
+     *             attributes: {
+     *                 name: ["VTB Bank"],
+     *                 country: ["RUS"],
+     *                 address: ["Moscow"],
+     *                 identifier: ["253400V1H6ART1UQ0N98"]
+     *             }
      *         }
      *     })
      *
      * @example
      *     await client.projectEntity.createProjectEntity("0n4473", {
      *         body: {
-     *             name: ["Marvel Garment"],
-     *             country: ["KHM"],
-     *             address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+     *             limit: 25,
+     *             profile: "suppliers",
+     *             attributes: {
+     *                 name: ["Marvel Garment"],
+     *                 country: ["KHM"],
+     *                 address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+     *             }
      *         }
      *     })
      */
@@ -90,8 +97,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -307,8 +314,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -444,8 +451,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -547,6 +554,292 @@ export class ProjectEntity {
     }
 
     /**
+     * Adds matches to a project entity.
+     *
+     * @param {string} projectId
+     * @param {string} projectEntityId
+     * @param {Sayari.UpdateProjectEntityMatchesBody} request
+     * @param {ProjectEntity.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
+     *
+     * @example
+     *     await client.projectEntity.addProjectEntityMatches("project_id", "project_entity_id", {
+     *         entityIds: ["entity_ids", "entity_ids"],
+     *         overrideDeleted: undefined,
+     *         limit: undefined
+     *     })
+     */
+    public async addProjectEntityMatches(
+        projectId: string,
+        projectEntityId: string,
+        request: Sayari.UpdateProjectEntityMatchesBody,
+        requestOptions?: ProjectEntity.RequestOptions,
+    ): Promise<Sayari.UpdateProjectEntityMatchesResponse> {
+        const _response = await core.fetcher({
+            url: urlJoin(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
+                `/v1/projects/${encodeURIComponent(projectId)}/entities/${encodeURIComponent(projectEntityId)}/matches`,
+            ),
+            method: "POST",
+            headers: {
+                Authorization: await this._getAuthorizationHeader(),
+                "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "@sayari/sdk",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
+            },
+            contentType: "application/json",
+            requestType: "json",
+            body: serializers.UpdateProjectEntityMatchesBody.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+            maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+        });
+        if (_response.ok) {
+            return serializers.UpdateProjectEntityMatchesResponse.parseOrThrow(_response.body, {
+                unrecognizedObjectKeys: "passthrough",
+                allowUnrecognizedUnionMembers: true,
+                allowUnrecognizedEnumValues: true,
+                breadcrumbsPrefix: ["response"],
+            });
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 400:
+                    throw new Sayari.BadRequest(
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 401:
+                    throw new Sayari.Unauthorized(
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 404:
+                    throw new Sayari.NotFound(
+                        serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 405:
+                    throw new Sayari.MethodNotAllowed(
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 429:
+                    throw new Sayari.RateLimitExceeded(
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 500:
+                    throw new Sayari.InternalServerError(
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                default:
+                    throw new errors.SayariError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                    });
+            }
+        }
+
+        switch (_response.error.reason) {
+            case "non-json":
+                throw new errors.SayariError({
+                    statusCode: _response.error.statusCode,
+                    body: _response.error.rawBody,
+                });
+            case "timeout":
+                throw new errors.SayariTimeoutError(
+                    "Timeout exceeded when calling POST /v1/projects/{project_id}/entities/{project_entity_id}/matches.",
+                );
+            case "unknown":
+                throw new errors.SayariError({
+                    message: _response.error.errorMessage,
+                });
+        }
+    }
+
+    /**
+     * Replace matches in a project entity.
+     *
+     * @param {string} projectId
+     * @param {string} projectEntityId
+     * @param {Sayari.UpdateProjectEntityMatchesBody} request
+     * @param {ProjectEntity.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link Sayari.BadRequest}
+     * @throws {@link Sayari.Unauthorized}
+     * @throws {@link Sayari.NotFound}
+     * @throws {@link Sayari.MethodNotAllowed}
+     * @throws {@link Sayari.RateLimitExceeded}
+     * @throws {@link Sayari.InternalServerError}
+     *
+     * @example
+     *     await client.projectEntity.replaceProjectEntityMatches("project_id", "project_entity_id", {
+     *         entityIds: ["entity_ids", "entity_ids"],
+     *         overrideDeleted: undefined,
+     *         limit: undefined
+     *     })
+     */
+    public async replaceProjectEntityMatches(
+        projectId: string,
+        projectEntityId: string,
+        request: Sayari.UpdateProjectEntityMatchesBody,
+        requestOptions?: ProjectEntity.RequestOptions,
+    ): Promise<Sayari.UpdateProjectEntityMatchesResponse> {
+        const _response = await core.fetcher({
+            url: urlJoin(
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    (await core.Supplier.get(this._options.environment)) ??
+                    environments.SayariEnvironment.Production,
+                `/v1/projects/${encodeURIComponent(projectId)}/entities/${encodeURIComponent(projectEntityId)}/matches`,
+            ),
+            method: "PATCH",
+            headers: {
+                Authorization: await this._getAuthorizationHeader(),
+                "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "@sayari/sdk",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...requestOptions?.headers,
+            },
+            contentType: "application/json",
+            requestType: "json",
+            body: serializers.UpdateProjectEntityMatchesBody.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+            maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+        });
+        if (_response.ok) {
+            return serializers.UpdateProjectEntityMatchesResponse.parseOrThrow(_response.body, {
+                unrecognizedObjectKeys: "passthrough",
+                allowUnrecognizedUnionMembers: true,
+                allowUnrecognizedEnumValues: true,
+                breadcrumbsPrefix: ["response"],
+            });
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 400:
+                    throw new Sayari.BadRequest(
+                        serializers.BadRequestResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 401:
+                    throw new Sayari.Unauthorized(
+                        serializers.UnauthorizedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 404:
+                    throw new Sayari.NotFound(
+                        serializers.NotFoundResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 405:
+                    throw new Sayari.MethodNotAllowed(
+                        serializers.MethodNotAllowedResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 429:
+                    throw new Sayari.RateLimitExceeded(
+                        serializers.RateLimitResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                case 500:
+                    throw new Sayari.InternalServerError(
+                        serializers.InternalServerErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }),
+                    );
+                default:
+                    throw new errors.SayariError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                    });
+            }
+        }
+
+        switch (_response.error.reason) {
+            case "non-json":
+                throw new errors.SayariError({
+                    statusCode: _response.error.statusCode,
+                    body: _response.error.rawBody,
+                });
+            case "timeout":
+                throw new errors.SayariTimeoutError(
+                    "Timeout exceeded when calling PATCH /v1/projects/{project_id}/entities/{project_entity_id}/matches.",
+                );
+            case "unknown":
+                throw new errors.SayariError({
+                    message: _response.error.errorMessage,
+                });
+        }
+    }
+
+    /**
      * Deletes a project entity.
      *
      * @param {string} projectId
@@ -580,8 +873,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -713,8 +1006,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -826,8 +1119,10 @@ export class ProjectEntity {
      *
      * @example
      *     await client.projectEntity.projectEntityExists("YVB88Y", {
-     *         name: ["Example Company"],
-     *         country: ["USA"]
+     *         attributes: {
+     *             name: ["Example Company"],
+     *             country: ["USA"]
+     *         }
      *     })
      */
     public async projectEntityExists(
@@ -847,8 +1142,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -978,7 +1273,7 @@ export class ProjectEntity {
         projectId: string,
         request: Sayari.SaveProjectEntityBody,
         requestOptions?: ProjectEntity.RequestOptions,
-    ): Promise<Sayari.ProjectEntityIdResponse> {
+    ): Promise<Sayari.SingleProjectEntityResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -991,8 +1286,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -1005,7 +1300,7 @@ export class ProjectEntity {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return serializers.ProjectEntityIdResponse.parseOrThrow(_response.body, {
+            return serializers.SingleProjectEntityResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -1165,8 +1460,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -1350,8 +1645,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -1494,8 +1789,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -1625,8 +1920,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -1866,8 +2161,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -2024,8 +2319,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,
@@ -2235,8 +2530,8 @@ export class ProjectEntity {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@sayari/sdk",
-                "X-Fern-SDK-Version": "0.1.44",
-                "User-Agent": "@sayari/sdk/0.1.44",
+                "X-Fern-SDK-Version": "0.1.45",
+                "User-Agent": "@sayari/sdk/0.1.45",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...requestOptions?.headers,

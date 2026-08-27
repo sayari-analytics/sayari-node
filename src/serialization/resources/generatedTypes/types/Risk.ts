@@ -11,20 +11,30 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "aspi_uyghur_forced_labor_report_entity_adjacent",
     "basel_aml",
     "bis_addresses_high_diversion_risk",
+    "bis_affiliates_50_percent_rule",
     "bis_boycott_requester_list",
+    "bis_entity_minority_ownership",
+    "bis_meu_minority_ownership",
+    "china_state_asset_controller",
+    "chinese_core_soe",
     "chinese_soe_adjacent",
     "chinese_state_owned",
     "cmic_entity",
     "cmic_entity_50_percent_rule",
     "controlled_by_aus_sanctioned",
+    "controlled_by_bis_entity",
+    "controlled_by_bis_meu",
     "controlled_by_eu_sanctioned",
+    "controlled_by_implausible_date_of_birth",
     "controlled_by_jpn_sanctioned",
+    "controlled_by_mass_business_registration",
     "controlled_by_ofac_fto_sanctioned",
     "controlled_by_ofac_illicit_drugs_eo14059_sanctioned",
     "controlled_by_ofac_sdgt_sanctioned",
     "controlled_by_ofac_sdn",
     "controlled_by_ofac_sdnt_sanctioned",
     "controlled_by_ofac_sdntk_sanctioned",
+    "controlled_by_tcsp_keyword_risk",
     "controlled_by_uk_sanctioned",
     "controlled_by_ukr_sanctioned",
     "controlled_by_un_sanctioned",
@@ -43,12 +53,17 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "export_controls_bis_entity_50_percent_rule",
     "export_controls_bis_meu",
     "export_controls_bis_meu_50_percent_rule",
+    "export_controls_other",
+    "export_controls_other_adjacent",
     "export_controls_section_1260h",
     "export_controls_section_1260h_50_percent_rule",
     "export_controls_unverified_list",
     "export_controls_unverified_list_50_percent_rule",
+    "export_to_blr_soe",
     "export_to_chinese_soe",
+    "export_to_rus_soe",
     "export_to_sanctioned",
+    "export_to_sanctioned_other",
     "export_to_soe",
     "exports_bis_high_priority_items_critical_components_direct",
     "exports_bis_high_priority_items_critical_components_indirect",
@@ -164,6 +179,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "formerly_sanctioned_usa_ofac_sdn",
     "formerly_sanctioned_xxx_ebrd",
     "formerly_sanctioned_xxx_iabd",
+    "implausible_date_of_birth",
     "imports_bis_high_priority_items",
     "imports_bis_high_priority_items_critical_components",
     "imports_conflict_minerals",
@@ -185,6 +201,11 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "jpn_meti_end_user",
     "jpn_mofa_export_ban",
     "law_enforcement_action",
+    "law_enforcement_action_breaking",
+    "law_enforcement_action_historic",
+    "law_enforcement_action_recent",
+    "mass_address_usage",
+    "mass_business_registration",
     "meu_list_contractors",
     "military_civil_fusion",
     "military_civil_fusion_50_percent_rule",
@@ -202,9 +223,11 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "ofac_sdntk_sanctioned",
     "owned_by_aspi_forced_labor_entity",
     "owned_by_bis_meu_entity",
+    "owned_by_blr_soe",
     "owned_by_chinese_soe",
     "owned_by_cmic_entity",
     "owned_by_entity_in_export_controls",
+    "owned_by_entity_in_export_controls_other",
     "owned_by_forced_labor_xinjiang_uflpa",
     "owned_by_jpn_meti_end_user_entity",
     "owned_by_jpn_mofa_export_ban_entity",
@@ -215,6 +238,8 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owned_by_ofac_sdn_mex_dto_sanctioned",
     "owned_by_ofac_sdnt_sanctioned",
     "owned_by_ofac_sdntk_sanctioned",
+    "owned_by_regulatory_action_entity",
+    "owned_by_rus_soe",
     "owned_by_sanctioned_arg_repet_jus_entity",
     "owned_by_sanctioned_aus_dfat_entity",
     "owned_by_sanctioned_bel_fpsf_entity",
@@ -236,6 +261,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owned_by_sanctioned_mys_moha_entity",
     "owned_by_sanctioned_nld_mofa_entity",
     "owned_by_sanctioned_nzl_mfat_rus_entity",
+    "owned_by_sanctioned_other_entity",
     "owned_by_sanctioned_pol_mia_entity",
     "owned_by_sanctioned_sgp_agc_entity",
     "owned_by_sanctioned_ukr_nsdc_entity",
@@ -248,6 +274,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owned_by_section_1260h_entity",
     "owned_by_sheffield_hallam_university_reports_forced_labor_entity",
     "owned_by_soe",
+    "owned_by_tcsp_keyword_risk",
     "owned_by_usa_aeca_debarred_entity",
     "owned_by_usa_bis_denied_persons_entity",
     "owned_by_usa_bis_entity",
@@ -258,8 +285,10 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owned_by_wro_entity",
     "owned_by_xinjiang_entity",
     "owner_of_aspi_forced_labor_entity",
+    "owner_of_blr_soe",
     "owner_of_chinese_soe",
     "owner_of_export_controls_entity",
+    "owner_of_export_controls_other_entity",
     "owner_of_forced_labor_xinjiang_entity",
     "owner_of_forced_labor_xinjiang_uflpa",
     "owner_of_jpn_meti_end_user_entity",
@@ -271,6 +300,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owner_of_ofac_sdnt_sanctioned",
     "owner_of_ofac_sdntk_sanctioned",
     "owner_of_regulatory_action_entity",
+    "owner_of_rus_soe",
     "owner_of_sanctioned_arg_repet_jus_entity",
     "owner_of_sanctioned_aus_dfat_entity",
     "owner_of_sanctioned_bel_fpsf_entity",
@@ -292,6 +322,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "owner_of_sanctioned_mys_moha_entity",
     "owner_of_sanctioned_nld_mofa_entity",
     "owner_of_sanctioned_nzl_mfat_rus_entity",
+    "owner_of_sanctioned_other_entity",
     "owner_of_sanctioned_pol_mia_entity",
     "owner_of_sanctioned_sgp_agc_entity",
     "owner_of_sanctioned_ukr_nsdc_entity",
@@ -314,6 +345,8 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "pep",
     "pep_adjacent",
     "psa_bis_boycott_requester_list",
+    "psa_bis_entity_minority_ownership",
+    "psa_bis_meu_minority_ownership",
     "psa_chinese_state_owned",
     "psa_cmic_entity_50_percent_rule",
     "psa_entity_licensed_with_fsb_rf",
@@ -322,10 +355,14 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_export_controls",
     "psa_export_controls_bis_entity_50_percent_rule",
     "psa_export_controls_bis_meu_50_percent_rule",
+    "psa_export_controls_other",
     "psa_export_controls_section_1260h_50_percent_rule",
     "psa_export_controls_unverified_list_50_percent_rule",
+    "psa_export_to_blr_soe",
     "psa_export_to_chinese_soe",
+    "psa_export_to_rus_soe",
     "psa_export_to_sanctioned",
+    "psa_export_to_sanctioned_other",
     "psa_export_to_soe",
     "psa_exports_bis_high_priority_items_critical_components_direct",
     "psa_exports_bis_high_priority_items_critical_components_indirect",
@@ -429,9 +466,11 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_ofac_sdn_mex_dto_sanctioned_adjacent",
     "psa_owned_by_aspi_forced_labor_entity",
     "psa_owned_by_bis_meu_entity",
+    "psa_owned_by_blr_soe",
     "psa_owned_by_chinese_soe",
     "psa_owned_by_cmic_entity",
     "psa_owned_by_entity_in_export_controls",
+    "psa_owned_by_entity_in_export_controls_other",
     "psa_owned_by_forced_labor_xinjiang_uflpa",
     "psa_owned_by_jpn_meti_end_user_entity",
     "psa_owned_by_jpn_mofa_export_ban_entity",
@@ -442,6 +481,8 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owned_by_ofac_sdn_mex_dto_sanctioned",
     "psa_owned_by_ofac_sdnt_sanctioned",
     "psa_owned_by_ofac_sdntk_sanctioned",
+    "psa_owned_by_regulatory_action_entity",
+    "psa_owned_by_rus_soe",
     "psa_owned_by_sanctioned_arg_repet_jus_entity",
     "psa_owned_by_sanctioned_aus_dfat_entity",
     "psa_owned_by_sanctioned_bel_fpsf_entity",
@@ -463,6 +504,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owned_by_sanctioned_mys_moha_entity",
     "psa_owned_by_sanctioned_nld_mofa_entity",
     "psa_owned_by_sanctioned_nzl_mfat_rus_entity",
+    "psa_owned_by_sanctioned_other_entity",
     "psa_owned_by_sanctioned_pol_mia_entity",
     "psa_owned_by_sanctioned_sgp_agc_entity",
     "psa_owned_by_sanctioned_ukr_nsdc_entity",
@@ -485,8 +527,10 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owned_by_wro_entity",
     "psa_owned_by_xinjiang_entity",
     "psa_owner_of_aspi_forced_labor_entity",
+    "psa_owner_of_blr_soe",
     "psa_owner_of_chinese_soe",
     "psa_owner_of_export_controls_entity",
+    "psa_owner_of_export_controls_other_entity",
     "psa_owner_of_forced_labor_xinjiang_entity",
     "psa_owner_of_forced_labor_xinjiang_uflpa",
     "psa_owner_of_jpn_meti_end_user_entity",
@@ -498,6 +542,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owner_of_ofac_sdnt_sanctioned",
     "psa_owner_of_ofac_sdntk_sanctioned",
     "psa_owner_of_regulatory_action_entity",
+    "psa_owner_of_rus_soe",
     "psa_owner_of_sanctioned_arg_repet_jus_entity",
     "psa_owner_of_sanctioned_aus_dfat_entity",
     "psa_owner_of_sanctioned_bel_fpsf_entity",
@@ -519,6 +564,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_owner_of_sanctioned_mys_moha_entity",
     "psa_owner_of_sanctioned_nld_mofa_entity",
     "psa_owner_of_sanctioned_nzl_mfat_rus_entity",
+    "psa_owner_of_sanctioned_other_entity",
     "psa_owner_of_sanctioned_pol_mia_entity",
     "psa_owner_of_sanctioned_sgp_agc_entity",
     "psa_owner_of_sanctioned_ukr_nsdc_entity",
@@ -561,6 +607,7 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_sanctioned_mys_moha",
     "psa_sanctioned_nld_mofa",
     "psa_sanctioned_nzl_mfat_rus",
+    "psa_sanctioned_other",
     "psa_sanctioned_pol_mia",
     "psa_sanctioned_sgp_agc",
     "psa_sanctioned_ukr_nsdc",
@@ -574,6 +621,8 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_sheffield_hallam_university_intermediary_entity",
     "psa_sheffield_hallam_university_useful_resources",
     "psa_state_owned",
+    "psa_state_owned_blr",
+    "psa_state_owned_rus",
     "psa_state_owned_ven",
     "psa_uk_50_percent_rule",
     "psa_uk_minority_ownership",
@@ -590,12 +639,33 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "psa_wro_entity",
     "regulatory_action",
     "reputational_risk_bribery_and_corruption",
+    "reputational_risk_bribery_and_corruption_breaking",
+    "reputational_risk_bribery_and_corruption_historic",
+    "reputational_risk_bribery_and_corruption_recent",
     "reputational_risk_cybercrime",
+    "reputational_risk_cybercrime_breaking",
+    "reputational_risk_cybercrime_historic",
+    "reputational_risk_cybercrime_recent",
     "reputational_risk_financial_crime",
+    "reputational_risk_financial_crime_breaking",
+    "reputational_risk_financial_crime_historic",
+    "reputational_risk_financial_crime_recent",
     "reputational_risk_forced_labor",
+    "reputational_risk_forced_labor_breaking",
+    "reputational_risk_forced_labor_historic",
+    "reputational_risk_forced_labor_recent",
     "reputational_risk_organized_crime",
+    "reputational_risk_organized_crime_breaking",
+    "reputational_risk_organized_crime_historic",
+    "reputational_risk_organized_crime_recent",
     "reputational_risk_other",
+    "reputational_risk_other_breaking",
+    "reputational_risk_other_historic",
+    "reputational_risk_other_recent",
     "reputational_risk_terrorism",
+    "reputational_risk_terrorism_breaking",
+    "reputational_risk_terrorism_historic",
+    "reputational_risk_terrorism_recent",
     "sanctioned",
     "sanctioned_adjacent",
     "sanctioned_arg_repet_jus",
@@ -619,6 +689,8 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "sanctioned_mys_moha",
     "sanctioned_nld_mofa",
     "sanctioned_nzl_mfat_rus",
+    "sanctioned_other",
+    "sanctioned_other_adjacent",
     "sanctioned_pol_mia",
     "sanctioned_sgp_agc",
     "sanctioned_ukr_nsdc",
@@ -634,8 +706,11 @@ export const Risk: core.serialization.Schema<serializers.Risk.Raw, Sayari.Risk> 
     "sheffield_hallam_university_useful_resources",
     "soe_adjacent",
     "state_owned",
+    "state_owned_blr",
+    "state_owned_rus",
     "state_owned_ven",
     "subsidiary_of_ndaa_889_covered_entities",
+    "tcsp_keyword_risk",
     "uk_50_percent_rule",
     "uk_minority_ownership",
     "uk_sanctioned",
@@ -659,20 +734,30 @@ export declare namespace Risk {
         | "aspi_uyghur_forced_labor_report_entity_adjacent"
         | "basel_aml"
         | "bis_addresses_high_diversion_risk"
+        | "bis_affiliates_50_percent_rule"
         | "bis_boycott_requester_list"
+        | "bis_entity_minority_ownership"
+        | "bis_meu_minority_ownership"
+        | "china_state_asset_controller"
+        | "chinese_core_soe"
         | "chinese_soe_adjacent"
         | "chinese_state_owned"
         | "cmic_entity"
         | "cmic_entity_50_percent_rule"
         | "controlled_by_aus_sanctioned"
+        | "controlled_by_bis_entity"
+        | "controlled_by_bis_meu"
         | "controlled_by_eu_sanctioned"
+        | "controlled_by_implausible_date_of_birth"
         | "controlled_by_jpn_sanctioned"
+        | "controlled_by_mass_business_registration"
         | "controlled_by_ofac_fto_sanctioned"
         | "controlled_by_ofac_illicit_drugs_eo14059_sanctioned"
         | "controlled_by_ofac_sdgt_sanctioned"
         | "controlled_by_ofac_sdn"
         | "controlled_by_ofac_sdnt_sanctioned"
         | "controlled_by_ofac_sdntk_sanctioned"
+        | "controlled_by_tcsp_keyword_risk"
         | "controlled_by_uk_sanctioned"
         | "controlled_by_ukr_sanctioned"
         | "controlled_by_un_sanctioned"
@@ -691,12 +776,17 @@ export declare namespace Risk {
         | "export_controls_bis_entity_50_percent_rule"
         | "export_controls_bis_meu"
         | "export_controls_bis_meu_50_percent_rule"
+        | "export_controls_other"
+        | "export_controls_other_adjacent"
         | "export_controls_section_1260h"
         | "export_controls_section_1260h_50_percent_rule"
         | "export_controls_unverified_list"
         | "export_controls_unverified_list_50_percent_rule"
+        | "export_to_blr_soe"
         | "export_to_chinese_soe"
+        | "export_to_rus_soe"
         | "export_to_sanctioned"
+        | "export_to_sanctioned_other"
         | "export_to_soe"
         | "exports_bis_high_priority_items_critical_components_direct"
         | "exports_bis_high_priority_items_critical_components_indirect"
@@ -812,6 +902,7 @@ export declare namespace Risk {
         | "formerly_sanctioned_usa_ofac_sdn"
         | "formerly_sanctioned_xxx_ebrd"
         | "formerly_sanctioned_xxx_iabd"
+        | "implausible_date_of_birth"
         | "imports_bis_high_priority_items"
         | "imports_bis_high_priority_items_critical_components"
         | "imports_conflict_minerals"
@@ -833,6 +924,11 @@ export declare namespace Risk {
         | "jpn_meti_end_user"
         | "jpn_mofa_export_ban"
         | "law_enforcement_action"
+        | "law_enforcement_action_breaking"
+        | "law_enforcement_action_historic"
+        | "law_enforcement_action_recent"
+        | "mass_address_usage"
+        | "mass_business_registration"
         | "meu_list_contractors"
         | "military_civil_fusion"
         | "military_civil_fusion_50_percent_rule"
@@ -850,9 +946,11 @@ export declare namespace Risk {
         | "ofac_sdntk_sanctioned"
         | "owned_by_aspi_forced_labor_entity"
         | "owned_by_bis_meu_entity"
+        | "owned_by_blr_soe"
         | "owned_by_chinese_soe"
         | "owned_by_cmic_entity"
         | "owned_by_entity_in_export_controls"
+        | "owned_by_entity_in_export_controls_other"
         | "owned_by_forced_labor_xinjiang_uflpa"
         | "owned_by_jpn_meti_end_user_entity"
         | "owned_by_jpn_mofa_export_ban_entity"
@@ -863,6 +961,8 @@ export declare namespace Risk {
         | "owned_by_ofac_sdn_mex_dto_sanctioned"
         | "owned_by_ofac_sdnt_sanctioned"
         | "owned_by_ofac_sdntk_sanctioned"
+        | "owned_by_regulatory_action_entity"
+        | "owned_by_rus_soe"
         | "owned_by_sanctioned_arg_repet_jus_entity"
         | "owned_by_sanctioned_aus_dfat_entity"
         | "owned_by_sanctioned_bel_fpsf_entity"
@@ -884,6 +984,7 @@ export declare namespace Risk {
         | "owned_by_sanctioned_mys_moha_entity"
         | "owned_by_sanctioned_nld_mofa_entity"
         | "owned_by_sanctioned_nzl_mfat_rus_entity"
+        | "owned_by_sanctioned_other_entity"
         | "owned_by_sanctioned_pol_mia_entity"
         | "owned_by_sanctioned_sgp_agc_entity"
         | "owned_by_sanctioned_ukr_nsdc_entity"
@@ -896,6 +997,7 @@ export declare namespace Risk {
         | "owned_by_section_1260h_entity"
         | "owned_by_sheffield_hallam_university_reports_forced_labor_entity"
         | "owned_by_soe"
+        | "owned_by_tcsp_keyword_risk"
         | "owned_by_usa_aeca_debarred_entity"
         | "owned_by_usa_bis_denied_persons_entity"
         | "owned_by_usa_bis_entity"
@@ -906,8 +1008,10 @@ export declare namespace Risk {
         | "owned_by_wro_entity"
         | "owned_by_xinjiang_entity"
         | "owner_of_aspi_forced_labor_entity"
+        | "owner_of_blr_soe"
         | "owner_of_chinese_soe"
         | "owner_of_export_controls_entity"
+        | "owner_of_export_controls_other_entity"
         | "owner_of_forced_labor_xinjiang_entity"
         | "owner_of_forced_labor_xinjiang_uflpa"
         | "owner_of_jpn_meti_end_user_entity"
@@ -919,6 +1023,7 @@ export declare namespace Risk {
         | "owner_of_ofac_sdnt_sanctioned"
         | "owner_of_ofac_sdntk_sanctioned"
         | "owner_of_regulatory_action_entity"
+        | "owner_of_rus_soe"
         | "owner_of_sanctioned_arg_repet_jus_entity"
         | "owner_of_sanctioned_aus_dfat_entity"
         | "owner_of_sanctioned_bel_fpsf_entity"
@@ -940,6 +1045,7 @@ export declare namespace Risk {
         | "owner_of_sanctioned_mys_moha_entity"
         | "owner_of_sanctioned_nld_mofa_entity"
         | "owner_of_sanctioned_nzl_mfat_rus_entity"
+        | "owner_of_sanctioned_other_entity"
         | "owner_of_sanctioned_pol_mia_entity"
         | "owner_of_sanctioned_sgp_agc_entity"
         | "owner_of_sanctioned_ukr_nsdc_entity"
@@ -962,6 +1068,8 @@ export declare namespace Risk {
         | "pep"
         | "pep_adjacent"
         | "psa_bis_boycott_requester_list"
+        | "psa_bis_entity_minority_ownership"
+        | "psa_bis_meu_minority_ownership"
         | "psa_chinese_state_owned"
         | "psa_cmic_entity_50_percent_rule"
         | "psa_entity_licensed_with_fsb_rf"
@@ -970,10 +1078,14 @@ export declare namespace Risk {
         | "psa_export_controls"
         | "psa_export_controls_bis_entity_50_percent_rule"
         | "psa_export_controls_bis_meu_50_percent_rule"
+        | "psa_export_controls_other"
         | "psa_export_controls_section_1260h_50_percent_rule"
         | "psa_export_controls_unverified_list_50_percent_rule"
+        | "psa_export_to_blr_soe"
         | "psa_export_to_chinese_soe"
+        | "psa_export_to_rus_soe"
         | "psa_export_to_sanctioned"
+        | "psa_export_to_sanctioned_other"
         | "psa_export_to_soe"
         | "psa_exports_bis_high_priority_items_critical_components_direct"
         | "psa_exports_bis_high_priority_items_critical_components_indirect"
@@ -1077,9 +1189,11 @@ export declare namespace Risk {
         | "psa_ofac_sdn_mex_dto_sanctioned_adjacent"
         | "psa_owned_by_aspi_forced_labor_entity"
         | "psa_owned_by_bis_meu_entity"
+        | "psa_owned_by_blr_soe"
         | "psa_owned_by_chinese_soe"
         | "psa_owned_by_cmic_entity"
         | "psa_owned_by_entity_in_export_controls"
+        | "psa_owned_by_entity_in_export_controls_other"
         | "psa_owned_by_forced_labor_xinjiang_uflpa"
         | "psa_owned_by_jpn_meti_end_user_entity"
         | "psa_owned_by_jpn_mofa_export_ban_entity"
@@ -1090,6 +1204,8 @@ export declare namespace Risk {
         | "psa_owned_by_ofac_sdn_mex_dto_sanctioned"
         | "psa_owned_by_ofac_sdnt_sanctioned"
         | "psa_owned_by_ofac_sdntk_sanctioned"
+        | "psa_owned_by_regulatory_action_entity"
+        | "psa_owned_by_rus_soe"
         | "psa_owned_by_sanctioned_arg_repet_jus_entity"
         | "psa_owned_by_sanctioned_aus_dfat_entity"
         | "psa_owned_by_sanctioned_bel_fpsf_entity"
@@ -1111,6 +1227,7 @@ export declare namespace Risk {
         | "psa_owned_by_sanctioned_mys_moha_entity"
         | "psa_owned_by_sanctioned_nld_mofa_entity"
         | "psa_owned_by_sanctioned_nzl_mfat_rus_entity"
+        | "psa_owned_by_sanctioned_other_entity"
         | "psa_owned_by_sanctioned_pol_mia_entity"
         | "psa_owned_by_sanctioned_sgp_agc_entity"
         | "psa_owned_by_sanctioned_ukr_nsdc_entity"
@@ -1133,8 +1250,10 @@ export declare namespace Risk {
         | "psa_owned_by_wro_entity"
         | "psa_owned_by_xinjiang_entity"
         | "psa_owner_of_aspi_forced_labor_entity"
+        | "psa_owner_of_blr_soe"
         | "psa_owner_of_chinese_soe"
         | "psa_owner_of_export_controls_entity"
+        | "psa_owner_of_export_controls_other_entity"
         | "psa_owner_of_forced_labor_xinjiang_entity"
         | "psa_owner_of_forced_labor_xinjiang_uflpa"
         | "psa_owner_of_jpn_meti_end_user_entity"
@@ -1146,6 +1265,7 @@ export declare namespace Risk {
         | "psa_owner_of_ofac_sdnt_sanctioned"
         | "psa_owner_of_ofac_sdntk_sanctioned"
         | "psa_owner_of_regulatory_action_entity"
+        | "psa_owner_of_rus_soe"
         | "psa_owner_of_sanctioned_arg_repet_jus_entity"
         | "psa_owner_of_sanctioned_aus_dfat_entity"
         | "psa_owner_of_sanctioned_bel_fpsf_entity"
@@ -1167,6 +1287,7 @@ export declare namespace Risk {
         | "psa_owner_of_sanctioned_mys_moha_entity"
         | "psa_owner_of_sanctioned_nld_mofa_entity"
         | "psa_owner_of_sanctioned_nzl_mfat_rus_entity"
+        | "psa_owner_of_sanctioned_other_entity"
         | "psa_owner_of_sanctioned_pol_mia_entity"
         | "psa_owner_of_sanctioned_sgp_agc_entity"
         | "psa_owner_of_sanctioned_ukr_nsdc_entity"
@@ -1209,6 +1330,7 @@ export declare namespace Risk {
         | "psa_sanctioned_mys_moha"
         | "psa_sanctioned_nld_mofa"
         | "psa_sanctioned_nzl_mfat_rus"
+        | "psa_sanctioned_other"
         | "psa_sanctioned_pol_mia"
         | "psa_sanctioned_sgp_agc"
         | "psa_sanctioned_ukr_nsdc"
@@ -1222,6 +1344,8 @@ export declare namespace Risk {
         | "psa_sheffield_hallam_university_intermediary_entity"
         | "psa_sheffield_hallam_university_useful_resources"
         | "psa_state_owned"
+        | "psa_state_owned_blr"
+        | "psa_state_owned_rus"
         | "psa_state_owned_ven"
         | "psa_uk_50_percent_rule"
         | "psa_uk_minority_ownership"
@@ -1238,12 +1362,33 @@ export declare namespace Risk {
         | "psa_wro_entity"
         | "regulatory_action"
         | "reputational_risk_bribery_and_corruption"
+        | "reputational_risk_bribery_and_corruption_breaking"
+        | "reputational_risk_bribery_and_corruption_historic"
+        | "reputational_risk_bribery_and_corruption_recent"
         | "reputational_risk_cybercrime"
+        | "reputational_risk_cybercrime_breaking"
+        | "reputational_risk_cybercrime_historic"
+        | "reputational_risk_cybercrime_recent"
         | "reputational_risk_financial_crime"
+        | "reputational_risk_financial_crime_breaking"
+        | "reputational_risk_financial_crime_historic"
+        | "reputational_risk_financial_crime_recent"
         | "reputational_risk_forced_labor"
+        | "reputational_risk_forced_labor_breaking"
+        | "reputational_risk_forced_labor_historic"
+        | "reputational_risk_forced_labor_recent"
         | "reputational_risk_organized_crime"
+        | "reputational_risk_organized_crime_breaking"
+        | "reputational_risk_organized_crime_historic"
+        | "reputational_risk_organized_crime_recent"
         | "reputational_risk_other"
+        | "reputational_risk_other_breaking"
+        | "reputational_risk_other_historic"
+        | "reputational_risk_other_recent"
         | "reputational_risk_terrorism"
+        | "reputational_risk_terrorism_breaking"
+        | "reputational_risk_terrorism_historic"
+        | "reputational_risk_terrorism_recent"
         | "sanctioned"
         | "sanctioned_adjacent"
         | "sanctioned_arg_repet_jus"
@@ -1267,6 +1412,8 @@ export declare namespace Risk {
         | "sanctioned_mys_moha"
         | "sanctioned_nld_mofa"
         | "sanctioned_nzl_mfat_rus"
+        | "sanctioned_other"
+        | "sanctioned_other_adjacent"
         | "sanctioned_pol_mia"
         | "sanctioned_sgp_agc"
         | "sanctioned_ukr_nsdc"
@@ -1282,8 +1429,11 @@ export declare namespace Risk {
         | "sheffield_hallam_university_useful_resources"
         | "soe_adjacent"
         | "state_owned"
+        | "state_owned_blr"
+        | "state_owned_rus"
         | "state_owned_ven"
         | "subsidiary_of_ndaa_889_covered_entities"
+        | "tcsp_keyword_risk"
         | "uk_50_percent_rule"
         | "uk_minority_ownership"
         | "uk_sanctioned"

@@ -18,6 +18,4 @@ export const SayariEnvironment = {
 } as const;
 
 export type SayariEnvironment =
-    | typeof SayariEnvironment.Production
-    | typeof SayariEnvironment.Dev
-    | typeof SayariEnvironment.ProductionUk;
+    typeof SayariEnvironment.Production | typeof SayariEnvironment.Dev | typeof SayariEnvironment.ProductionUk;
