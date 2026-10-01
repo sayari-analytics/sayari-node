@@ -19,6 +19,8 @@ import { Project } from "./api/resources/project/client/Client";
 import { Record_ } from "./api/resources/record/client/Client";
 import { Resolution } from "./api/resources/resolution/client/Client";
 import { Resource } from "./api/resources/resource/client/Client";
+import { ScreenByName } from "./api/resources/screenByName/client/Client";
+import { Screen } from "./api/resources/screen/client/Client";
 import { Search } from "./api/resources/search/client/Client";
 import { SupplyChain } from "./api/resources/supplyChain/client/Client";
 import { Trade } from "./api/resources/trade/client/Client";
@@ -62,6 +64,8 @@ export class SayariClient {
     protected _record: Record_ | undefined;
     protected _resolution: Resolution | undefined;
     protected _resource: Resource | undefined;
+    protected _screenByName: ScreenByName | undefined;
+    protected _screen: Screen | undefined;
     protected _search: Search | undefined;
     protected _supplyChain: SupplyChain | undefined;
     protected _trade: Trade | undefined;
@@ -177,6 +181,20 @@ export class SayariClient {
 
     public get resource(): Resource {
         return (this._resource ??= new Resource({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    public get screenByName(): ScreenByName {
+        return (this._screenByName ??= new ScreenByName({
+            ...this._options,
+            token: async () => await this._oauthTokenProvider.getToken(),
+        }));
+    }
+
+    public get screen(): Screen {
+        return (this._screen ??= new Screen({
             ...this._options,
             token: async () => await this._oauthTokenProvider.getToken(),
         }));

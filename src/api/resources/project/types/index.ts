@@ -16,6 +16,7 @@ export * from "./TierCountAgg";
 export * from "./TierCount";
 export * from "./TierCountKeys";
 export * from "./IntKeyValue";
+export * from "./ProjectType";
 export * from "./Project";
 export * from "./ProjectEntitiesAggsDefinition";
 export * from "./UpstreamTiers";

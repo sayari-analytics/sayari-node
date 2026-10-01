@@ -1,5 +1,6 @@
 export * from "./BadRequest";
 export * from "./Unauthorized";
+export * from "./Forbidden";
 export * from "./NotFound";
 export * from "./MethodNotAllowed";
 export * from "./NotAcceptable";

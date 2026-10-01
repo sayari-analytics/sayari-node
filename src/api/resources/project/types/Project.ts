@@ -14,5 +14,7 @@ export interface Project {
     created: string;
     updated: string;
     counts: Sayari.ProjectCounts;
+    /** **Deprecated.** Use `type == 'supply_chain'` instead. */
     isScrm?: boolean;
+    type: Sayari.ProjectType;
 }

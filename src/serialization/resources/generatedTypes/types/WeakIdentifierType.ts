@@ -23,8 +23,11 @@ export const WeakIdentifierType: core.serialization.Schema<
     "bih_mbs_number",
     "bill_of_lading",
     "bmu_registration_number",
+    "bol_shipment_declaration_number",
     "bra_partial_cpf",
     "brazilian_oab",
+    "bwa_shipment_number",
+    "cage",
     "can_procurement_id",
     "can_reference_number",
     "ccs_ship_class_number",
@@ -33,6 +36,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "chn_cninfo_legal_person_id",
     "chn_contract_number",
     "chn_customs_registration_code",
+    "chn_partial_resident_id_number",
     "chn_project_number",
     "civ_aeo_code",
     "cmr_shipment_declaration_number",
@@ -47,6 +51,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "cze_file_number",
     "deu_registernummer",
     "dma_corporate_registry_entity_num",
+    "esp_internal_employee_number",
     "gbr_bankruptcy_case_num",
     "gbr_charity_no",
     "gbr_declaration_number",
@@ -54,12 +59,15 @@ export const WeakIdentifierType: core.serialization.Schema<
     "geo_state_registration_number",
     "gha_shipment_declaration_number",
     "habw_id",
+    "hkg_partial_identity_card",
+    "hkg_stock_code",
     "hnd_tegucigalpa_notary",
     "hun_opten_id",
     "igm_number",
     "ind_sebi",
     "ind_shipment_bill_id",
     "int_trade_internal_shipment_id",
+    "international_trademark_no",
     "irl_registration_no",
     "irn_reg_number",
     "irq_provision_card",
@@ -98,7 +106,9 @@ export const WeakIdentifierType: core.serialization.Schema<
     "mwi_shipment_reg_no",
     "mx_fme",
     "mx_partial_rfc_person",
+    "mys_declaration_number",
     "mys_partial_national_identity_number",
+    "mys_trade_shipment_id",
     "nam_shipment_assessment_no",
     "nam_shipment_reg_no",
     "nga_drivers",
@@ -135,6 +145,7 @@ export const WeakIdentifierType: core.serialization.Schema<
     "south_africa_partial_id_number",
     "svk_filing_number",
     "tokyo_shoko_id",
+    "ton_foreign_investor_id",
     "tur_declaration_number",
     "tur_office_registration_number",
     "tur_partial_mersis_number",
@@ -175,10 +186,14 @@ export const WeakIdentifierType: core.serialization.Schema<
     "usa_mo_entity_id",
     "usa_nc_corp_no",
     "usa_nm_license_id",
+    "usa_prime_award_fain",
+    "usa_prime_award_piid",
     "usa_rcra_info_id",
     "usa_rmp_id",
+    "usa_sam_uei_number",
     "usa_sdwis_id",
     "usa_sems_id",
+    "usa_subaward_number",
     "usa_tri_id",
     "usa_tsca_id",
     "uzb_customs_registration_number",
@@ -205,8 +220,11 @@ export declare namespace WeakIdentifierType {
         | "bih_mbs_number"
         | "bill_of_lading"
         | "bmu_registration_number"
+        | "bol_shipment_declaration_number"
         | "bra_partial_cpf"
         | "brazilian_oab"
+        | "bwa_shipment_number"
+        | "cage"
         | "can_procurement_id"
         | "can_reference_number"
         | "ccs_ship_class_number"
@@ -215,6 +233,7 @@ export declare namespace WeakIdentifierType {
         | "chn_cninfo_legal_person_id"
         | "chn_contract_number"
         | "chn_customs_registration_code"
+        | "chn_partial_resident_id_number"
         | "chn_project_number"
         | "civ_aeo_code"
         | "cmr_shipment_declaration_number"
@@ -229,6 +248,7 @@ export declare namespace WeakIdentifierType {
         | "cze_file_number"
         | "deu_registernummer"
         | "dma_corporate_registry_entity_num"
+        | "esp_internal_employee_number"
         | "gbr_bankruptcy_case_num"
         | "gbr_charity_no"
         | "gbr_declaration_number"
@@ -236,12 +256,15 @@ export declare namespace WeakIdentifierType {
         | "geo_state_registration_number"
         | "gha_shipment_declaration_number"
         | "habw_id"
+        | "hkg_partial_identity_card"
+        | "hkg_stock_code"
         | "hnd_tegucigalpa_notary"
         | "hun_opten_id"
         | "igm_number"
         | "ind_sebi"
         | "ind_shipment_bill_id"
         | "int_trade_internal_shipment_id"
+        | "international_trademark_no"
         | "irl_registration_no"
         | "irn_reg_number"
         | "irq_provision_card"
@@ -280,7 +303,9 @@ export declare namespace WeakIdentifierType {
         | "mwi_shipment_reg_no"
         | "mx_fme"
         | "mx_partial_rfc_person"
+        | "mys_declaration_number"
         | "mys_partial_national_identity_number"
+        | "mys_trade_shipment_id"
         | "nam_shipment_assessment_no"
         | "nam_shipment_reg_no"
         | "nga_drivers"
@@ -317,6 +342,7 @@ export declare namespace WeakIdentifierType {
         | "south_africa_partial_id_number"
         | "svk_filing_number"
         | "tokyo_shoko_id"
+        | "ton_foreign_investor_id"
         | "tur_declaration_number"
         | "tur_office_registration_number"
         | "tur_partial_mersis_number"
@@ -357,10 +383,14 @@ export declare namespace WeakIdentifierType {
         | "usa_mo_entity_id"
         | "usa_nc_corp_no"
         | "usa_nm_license_id"
+        | "usa_prime_award_fain"
+        | "usa_prime_award_piid"
         | "usa_rcra_info_id"
         | "usa_rmp_id"
+        | "usa_sam_uei_number"
         | "usa_sdwis_id"
         | "usa_sems_id"
+        | "usa_subaward_number"
         | "usa_tri_id"
         | "usa_tsca_id"
         | "uzb_customs_registration_number"

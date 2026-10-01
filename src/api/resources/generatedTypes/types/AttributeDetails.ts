@@ -22,6 +22,7 @@ export interface AttributeDetails {
     name?: Sayari.NameInfo;
     personStatus?: Sayari.PersonStatusInfo;
     position?: Sayari.PositionInfo;
+    riskEvent?: Sayari.RiskEventInfo;
     riskIntelligence?: Sayari.RiskIntelligenceInfo;
     shares?: Sayari.SharesInfo;
     status?: Sayari.StatusInfo;

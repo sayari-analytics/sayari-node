@@ -10,7 +10,8 @@ export type RiskCategory =
     | "political_exposure"
     | "regulatory_action"
     | "sanctions"
-    | "sanctions_and_export_control_lists";
+    | "sanctions_and_export_control_lists"
+    | "shell_company_risk";
 export const RiskCategory = {
     AdverseMedia: "adverse_media",
     EnvironmentalRisk: "environmental_risk",
@@ -20,4 +21,5 @@ export const RiskCategory = {
     RegulatoryAction: "regulatory_action",
     Sanctions: "sanctions",
     SanctionsAndExportControlLists: "sanctions_and_export_control_lists",
+    ShellCompanyRisk: "shell_company_risk",
 } as const;
