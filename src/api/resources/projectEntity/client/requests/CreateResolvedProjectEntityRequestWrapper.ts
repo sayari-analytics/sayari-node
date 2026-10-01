@@ -8,20 +8,27 @@ import * as Sayari from "../../../../index";
  * @example
  *     {
  *         body: {
- *             name: ["VTB Bank"],
- *             country: ["RUS"],
- *             address: ["Moscow"],
- *             identifier: ["253400V1H6ART1UQ0N98"],
- *             profile: "corporate"
+ *             limit: 10,
+ *             profile: "corporate",
+ *             attributes: {
+ *                 name: ["VTB Bank"],
+ *                 country: ["RUS"],
+ *                 address: ["Moscow"],
+ *                 identifier: ["253400V1H6ART1UQ0N98"]
+ *             }
  *         }
  *     }
  *
  * @example
  *     {
  *         body: {
- *             name: ["Marvel Garment"],
- *             country: ["KHM"],
- *             address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+ *             limit: 25,
+ *             profile: "suppliers",
+ *             attributes: {
+ *                 name: ["Marvel Garment"],
+ *                 country: ["KHM"],
+ *                 address: ["Beung Thom 3 Village, Sangkat Beung Thom, Posenchey, Phnom Penh"]
+ *             }
  *         }
  *     }
  */

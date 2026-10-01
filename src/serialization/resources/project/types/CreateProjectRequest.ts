@@ -5,6 +5,7 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
+import { ProjectType } from "./ProjectType";
 import { ProjectShareOnCreate } from "./ProjectShareOnCreate";
 
 export const CreateProjectRequest: core.serialization.ObjectSchema<
@@ -12,12 +13,14 @@ export const CreateProjectRequest: core.serialization.ObjectSchema<
     Sayari.CreateProjectRequest
 > = core.serialization.object({
     label: core.serialization.string(),
+    type: ProjectType.optional(),
     share: ProjectShareOnCreate.optional(),
 });
 
 export declare namespace CreateProjectRequest {
     export interface Raw {
         label: string;
+        type?: ProjectType.Raw | null;
         share?: ProjectShareOnCreate.Raw | null;
     }
 }

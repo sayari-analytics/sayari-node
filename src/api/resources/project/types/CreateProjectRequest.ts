@@ -8,6 +8,7 @@ import * as Sayari from "../../../index";
  * @example
  *     {
  *         label: "My First Project",
+ *         type: Sayari.ProjectType.Network,
  *         share: {
  *             org: Sayari.Role.Admin
  *         }
@@ -15,6 +16,8 @@ import * as Sayari from "../../../index";
  */
 export interface CreateProjectRequest {
     label: string;
+    /** Specifies which type of project to create. Defaults to 'network' */
+    type?: Sayari.ProjectType;
     /** Specifies access levels available to users in a project within an organization. For comprehensive access, the admin role is recommended. */
     share?: Sayari.ProjectShareOnCreate;
 }

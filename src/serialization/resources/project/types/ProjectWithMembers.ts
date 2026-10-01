@@ -14,11 +14,13 @@ export const ProjectWithMembers: core.serialization.ObjectSchema<
 > = core.serialization
     .object({
         members: core.serialization.list(RoleMember),
+        uploadCount: core.serialization.property("upload_count", core.serialization.number()),
     })
     .extend(Project);
 
 export declare namespace ProjectWithMembers {
     export interface Raw extends Project.Raw {
         members: RoleMember.Raw[];
+        upload_count: number;
     }
 }

@@ -9,10 +9,15 @@ export type Tag =
     | "aspi_uyghur_forced_labor_report_entity"
     | "bis_boycott_requester_list"
     | "esg_score"
+    | "esg_score_high"
+    | "esg_score_low"
+    | "esg_score_medium"
+    | "esg_score_very_high"
     | "export_controls"
     | "export_controls_bis_entity"
     | "financial_risk_score"
     | "forced_labor_xinjiang_contractors"
+    | "forced_labor_xinjiang_uflpa"
     | "former_soe"
     | "formerly_sanctioned"
     | "law_enforcement_action"
@@ -21,6 +26,7 @@ export type Tag =
     | "reputational_risk_bribery_and_corruption"
     | "reputational_risk_cybercrime"
     | "reputational_risk_financial_crime"
+    | "reputational_risk_forced_labor"
     | "reputational_risk_modern_slavery"
     | "reputational_risk_organized_crime"
     | "reputational_risk_other"
@@ -29,15 +35,21 @@ export type Tag =
     | "sheffield_hallam_university_forced_labor_entity"
     | "state_owned"
     | "uflpa_entity"
+    | "usa_bis"
     | "wro_entity";
 export const Tag = {
     AspiUyghurForcedLaborReportEntity: "aspi_uyghur_forced_labor_report_entity",
     BisBoycottRequesterList: "bis_boycott_requester_list",
     EsgScore: "esg_score",
+    EsgScoreHigh: "esg_score_high",
+    EsgScoreLow: "esg_score_low",
+    EsgScoreMedium: "esg_score_medium",
+    EsgScoreVeryHigh: "esg_score_very_high",
     ExportControls: "export_controls",
     ExportControlsBisEntity: "export_controls_bis_entity",
     FinancialRiskScore: "financial_risk_score",
     ForcedLaborXinjiangContractors: "forced_labor_xinjiang_contractors",
+    ForcedLaborXinjiangUflpa: "forced_labor_xinjiang_uflpa",
     FormerSoe: "former_soe",
     FormerlySanctioned: "formerly_sanctioned",
     LawEnforcementAction: "law_enforcement_action",
@@ -46,6 +58,7 @@ export const Tag = {
     ReputationalRiskBriberyAndCorruption: "reputational_risk_bribery_and_corruption",
     ReputationalRiskCybercrime: "reputational_risk_cybercrime",
     ReputationalRiskFinancialCrime: "reputational_risk_financial_crime",
+    ReputationalRiskForcedLabor: "reputational_risk_forced_labor",
     ReputationalRiskModernSlavery: "reputational_risk_modern_slavery",
     ReputationalRiskOrganizedCrime: "reputational_risk_organized_crime",
     ReputationalRiskOther: "reputational_risk_other",
@@ -54,5 +67,6 @@ export const Tag = {
     SheffieldHallamUniversityForcedLaborEntity: "sheffield_hallam_university_forced_labor_entity",
     StateOwned: "state_owned",
     UflpaEntity: "uflpa_entity",
+    UsaBis: "usa_bis",
     WroEntity: "wro_entity",
 } as const;

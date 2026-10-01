@@ -46,11 +46,20 @@ export type WeakIdentifierType =
      * Bermuda registration number */
     | "bmu_registration_number"
     /**
+     * Bolivia Shipment Declaration Number */
+    | "bol_shipment_declaration_number"
+    /**
      * Individual taxpayer registry identification in Brazil. Learn more [here](https://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas) */
     | "bra_partial_cpf"
     /**
      * Brazilian Lawyer Identification number */
     | "brazilian_oab"
+    /**
+     * Botswana Shipment Number */
+    | "bwa_shipment_number"
+    /**
+     * The Commercial and Government Entity (CAGE) code is a five-character ID assigned by the US Department of Defense's Defense Logistics Agency (DLA) to refer to a facility at a specific location (includes government suppliers, agencies, and other organizations). CAGE codes for entities outside the USA are called NATO Commercial and Government Entity (NCAGE) codes and are part of the NATO Codification System (NCS). Learn more [here](https://fawiki.fws.gov/display/SAM/Commercial+And+Government+Entity+%28CAGE%29+Code+Information). */
+    | "cage"
     /**
      * Canada Procurement ID Number */
     | "can_procurement_id"
@@ -75,6 +84,9 @@ export type WeakIdentifierType =
     /**
      * Chinese customs registration code. Downgraded to weak identifier. */
     | "chn_customs_registration_code"
+    /**
+     * A partial/masked China Resident Identity Number. Weak ID as it is partial. */
+    | "chn_partial_resident_id_number"
     /**
      * China Project Number */
     | "chn_project_number"
@@ -118,6 +130,9 @@ export type WeakIdentifierType =
      * Dominica Business Registry Entity Number */
     | "dma_corporate_registry_entity_num"
     /**
+     * Spain Internal Employee Number */
+    | "esp_internal_employee_number"
+    /**
      * UK Bankruptcy and Insolvency Court Case Number linked to an individual subject to bankruptcies and insolvencies in England and Wales. */
     | "gbr_bankruptcy_case_num"
     /**
@@ -139,6 +154,12 @@ export type WeakIdentifierType =
      * House Air Waybill is a document used in the transportation of goods by airplane - issued and signed by a freight forwarder. This document can be used to track individual shipments under a master air waybill. Normally used for tracking shipments within a consolidated air cargo. */
     | "habw_id"
     /**
+     * A partial/masked Hong Kong Identity Card (HKID) number. Weak ID as it is partial. */
+    | "hkg_partial_identity_card"
+    /**
+     * Hong Kong Stock Exchange Code */
+    | "hkg_stock_code"
+    /**
      * Notary office number for notaries in Honduras Tegucigalpa source */
     | "hnd_tegucigalpa_notary"
     /**
@@ -156,6 +177,9 @@ export type WeakIdentifierType =
     /**
      * Global Trade Internal Shipment ID */
     | "int_trade_internal_shipment_id"
+    /**
+     * International Trademark Number registered via the Madrid System administered by the World Intellectual Property Organization (WIPO). Madrid System is a solution for registering and managing trademarks worldwide. */
+    | "international_trademark_no"
     /**
      * Unique Ireland ID number. Assigned to every legal entity registered with Ireland Companies Registration Office. */
     | "irl_registration_no"
@@ -269,8 +293,14 @@ export type WeakIdentifierType =
      * Partial Mexican RFC */
     | "mx_partial_rfc_person"
     /**
+     * The Royal Malaysian Customs (JKDM) import/export declaration (K1/K2) reference number. Encodes station code, year, declaration type, month, and sequence (e.g. J10-2025-2-04-000075) */
+    | "mys_declaration_number"
+    /**
      * Malaysia National Registration Identity Card (NRIC) number is a unique identifier for citizens and permanent residents. Weak ID as it is partial. */
     | "mys_partial_national_identity_number"
+    /**
+     * Source-assigned key for a Malaysia shipment. */
+    | "mys_trade_shipment_id"
     /**
      * Namibia Shipment Assessment Number */
     | "nam_shipment_assessment_no"
@@ -379,6 +409,9 @@ export type WeakIdentifierType =
     /**
      * Tokyo Shoko Research Business Identifier. Identification code, assigned by credit reporting company, Tokyo Shoko Research, for businesses in Japan. */
     | "tokyo_shoko_id"
+    /**
+     * Unique foreign investor number. Assigned to every non-Tongan or foreign-registered company wishing to conduct business in the country. */
+    | "ton_foreign_investor_id"
     /**
      * Declaration number for import and export shipments in Turkey */
     | "tur_declaration_number"
@@ -500,17 +533,29 @@ export type WeakIdentifierType =
      * USA New Mexico Secretary of State License ID */
     | "usa_nm_license_id"
     /**
+     * The unique identifying Award ID of the prime award. FAIN (Federal Award Identification Number) tracks federal financial assistance like grants and cooperative agreements. */
+    | "usa_prime_award_fain"
+    /**
+     * The unique identifying Award ID of the prime award. PIID (Procurement Instrument Identifier) tracks federal contracts and purchases. */
+    | "usa_prime_award_piid"
+    /**
      * Resource Conservation and Recovery Act (RCRA) permit identifier */
     | "usa_rcra_info_id"
     /**
      * Risk Management Program (RMP) permit identifier */
     | "usa_rmp_id"
     /**
+     * Unique Entity Identifier (SAM) */
+    | "usa_sam_uei_number"
+    /**
      * Safe Drinking Water Information System (SDWIS) permit identifier */
     | "usa_sdwis_id"
     /**
      * Superfund Enterprise Management System (SEMS) permit identifier */
     | "usa_sems_id"
+    /**
+     * An identifying number assigned by the prime awardee organization to facilitate the tracking of its sub-awards. Note - the SubAwardNumber assigned by the prime awardee may not be unique, and should not be considered a unique key (or even a component of a unique key) for the subaward record. */
+    | "usa_subaward_number"
     /**
      * Toxic Release Inventory (TRI) permit identifier */
     | "usa_tri_id"
@@ -552,8 +597,11 @@ export const WeakIdentifierType = {
     BihMbsNumber: "bih_mbs_number",
     BillOfLading: "bill_of_lading",
     BmuRegistrationNumber: "bmu_registration_number",
+    BolShipmentDeclarationNumber: "bol_shipment_declaration_number",
     BraPartialCpf: "bra_partial_cpf",
     BrazilianOab: "brazilian_oab",
+    BwaShipmentNumber: "bwa_shipment_number",
+    Cage: "cage",
     CanProcurementId: "can_procurement_id",
     CanReferenceNumber: "can_reference_number",
     CcsShipClassNumber: "ccs_ship_class_number",
@@ -562,6 +610,7 @@ export const WeakIdentifierType = {
     ChnCninfoLegalPersonId: "chn_cninfo_legal_person_id",
     ChnContractNumber: "chn_contract_number",
     ChnCustomsRegistrationCode: "chn_customs_registration_code",
+    ChnPartialResidentIdNumber: "chn_partial_resident_id_number",
     ChnProjectNumber: "chn_project_number",
     CivAeoCode: "civ_aeo_code",
     CmrShipmentDeclarationNumber: "cmr_shipment_declaration_number",
@@ -576,6 +625,7 @@ export const WeakIdentifierType = {
     CzeFileNumber: "cze_file_number",
     DeuRegisternummer: "deu_registernummer",
     DmaCorporateRegistryEntityNum: "dma_corporate_registry_entity_num",
+    EspInternalEmployeeNumber: "esp_internal_employee_number",
     GbrBankruptcyCaseNum: "gbr_bankruptcy_case_num",
     GbrCharityNo: "gbr_charity_no",
     GbrDeclarationNumber: "gbr_declaration_number",
@@ -583,12 +633,15 @@ export const WeakIdentifierType = {
     GeoStateRegistrationNumber: "geo_state_registration_number",
     GhaShipmentDeclarationNumber: "gha_shipment_declaration_number",
     HabwId: "habw_id",
+    HkgPartialIdentityCard: "hkg_partial_identity_card",
+    HkgStockCode: "hkg_stock_code",
     HndTegucigalpaNotary: "hnd_tegucigalpa_notary",
     HunOptenId: "hun_opten_id",
     IgmNumber: "igm_number",
     IndSebi: "ind_sebi",
     IndShipmentBillId: "ind_shipment_bill_id",
     IntTradeInternalShipmentId: "int_trade_internal_shipment_id",
+    InternationalTrademarkNo: "international_trademark_no",
     IrlRegistrationNo: "irl_registration_no",
     IrnRegNumber: "irn_reg_number",
     IrqProvisionCard: "irq_provision_card",
@@ -627,7 +680,9 @@ export const WeakIdentifierType = {
     MwiShipmentRegNo: "mwi_shipment_reg_no",
     MxFme: "mx_fme",
     MxPartialRfcPerson: "mx_partial_rfc_person",
+    MysDeclarationNumber: "mys_declaration_number",
     MysPartialNationalIdentityNumber: "mys_partial_national_identity_number",
+    MysTradeShipmentId: "mys_trade_shipment_id",
     NamShipmentAssessmentNo: "nam_shipment_assessment_no",
     NamShipmentRegNo: "nam_shipment_reg_no",
     NgaDrivers: "nga_drivers",
@@ -664,6 +719,7 @@ export const WeakIdentifierType = {
     SouthAfricaPartialIdNumber: "south_africa_partial_id_number",
     SvkFilingNumber: "svk_filing_number",
     TokyoShokoId: "tokyo_shoko_id",
+    TonForeignInvestorId: "ton_foreign_investor_id",
     TurDeclarationNumber: "tur_declaration_number",
     TurOfficeRegistrationNumber: "tur_office_registration_number",
     TurPartialMersisNumber: "tur_partial_mersis_number",
@@ -704,10 +760,14 @@ export const WeakIdentifierType = {
     UsaMoEntityId: "usa_mo_entity_id",
     UsaNcCorpNo: "usa_nc_corp_no",
     UsaNmLicenseId: "usa_nm_license_id",
+    UsaPrimeAwardFain: "usa_prime_award_fain",
+    UsaPrimeAwardPiid: "usa_prime_award_piid",
     UsaRcraInfoId: "usa_rcra_info_id",
     UsaRmpId: "usa_rmp_id",
+    UsaSamUeiNumber: "usa_sam_uei_number",
     UsaSdwisId: "usa_sdwis_id",
     UsaSemsId: "usa_sems_id",
+    UsaSubawardNumber: "usa_subaward_number",
     UsaTriId: "usa_tri_id",
     UsaTscaId: "usa_tsca_id",
     UzbCustomsRegistrationNumber: "uzb_customs_registration_number",

@@ -32,6 +32,8 @@ export * as resolution from "./resolution";
 export * from "./resolution/types";
 export * as resource from "./resource";
 export * from "./resource/types";
+export * as screen from "./screen";
+export * from "./screen/types";
 export * as search from "./search";
 export * from "./search/types";
 export * as sharedErrors from "./sharedErrors";

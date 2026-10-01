@@ -44,8 +44,8 @@ import * as Sayari from "../../../index";
  *                     departureCountries: ["AFG"],
  *                     arrivalCountries: ["AFG", "AGO"],
  *                     hsCode: "0303",
- *                     minDate: "51969-08-29T00:00:00+00:00",
- *                     maxDate: "52971-09-25T00:00:00+00:00"
+ *                     minDate: "2024-05-03T00:00:00+00:00",
+ *                     maxDate: "2024-05-06T00:00:00+00:00"
  *                 }, {
  *                     id: "6GaxYn",
  *                     srcId: "6GaxYn",
@@ -53,8 +53,8 @@ import * as Sayari from "../../../index";
  *                     departureCountries: ["AFG"],
  *                     arrivalCountries: ["AFG", "AGO"],
  *                     hsCode: "0304",
- *                     minDate: "51969-08-29T00:00:00+00:00",
- *                     maxDate: "52971-09-25T00:00:00+00:00"
+ *                     minDate: "2024-05-03T00:00:00+00:00",
+ *                     maxDate: "2024-05-06T00:00:00+00:00"
  *                 }, {
  *                     id: "V03eYM",
  *                     srcId: "xG8wYP",
@@ -62,8 +62,8 @@ import * as Sayari from "../../../index";
  *                     departureCountries: ["USA", "CHN"],
  *                     arrivalCountries: ["GBR", "NLD"],
  *                     hsCode: "0303",
- *                     minDate: "51969-08-29T00:00:00+00:00",
- *                     maxDate: "52971-09-25T00:00:00+00:00"
+ *                     minDate: "2024-05-03T00:00:00+00:00",
+ *                     maxDate: "2024-05-06T00:00:00+00:00"
  *                 }]
  *         }
  *     }
