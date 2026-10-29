@@ -6,6 +6,7 @@ import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 import { ProjectCounts } from "./ProjectCounts";
+import { ProjectType } from "./ProjectType";
 
 export const Project: core.serialization.ObjectSchema<serializers.Project.Raw, Sayari.Project> =
     core.serialization.object({
@@ -16,6 +17,7 @@ export const Project: core.serialization.ObjectSchema<serializers.Project.Raw, S
         updated: core.serialization.string(),
         counts: ProjectCounts,
         isScrm: core.serialization.property("is_scrm", core.serialization.boolean().optional()),
+        type: ProjectType,
     });
 
 export declare namespace Project {
@@ -27,5 +29,6 @@ export declare namespace Project {
         updated: string;
         counts: ProjectCounts.Raw;
         is_scrm?: boolean | null;
+        type: ProjectType.Raw;
     }
 }

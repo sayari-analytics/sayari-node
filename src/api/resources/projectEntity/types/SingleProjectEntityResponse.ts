@@ -14,6 +14,8 @@ import * as Sayari from "../../../index";
  *             uploadIds: [],
  *             strength: Sayari.MatchStrengthEnum.Strong,
  *             createdAt: "2025-04-22 22:54:00.913586+00",
+ *             updatedAt: "2025-04-23 13:37:00.215522+00",
+ *             updatedBy: "auth0|5e45bd8caccd890e68147513",
  *             attributes: {
  *                 "name": {
  *                     matchResolution: true,
@@ -86,7 +88,11 @@ import * as Sayari from "../../../index";
  *                 products: []
  *             },
  *             tags: [],
- *             case: Sayari.CaseStatus.NotAssigned,
+ *             case: {
+ *                 id: "YVB88Y",
+ *                 status: Sayari.CaseStatus.NotAssigned,
+ *                 createdAt: "2025-10-02"
+ *             },
  *             matches: [{
  *                     matchId: "52z4Wa:dy-rh2g0QtzUN_jC_e9S_A",
  *                     sayariEntityId: "dy-rh2g0QtzUN_jC_e9S_A",
@@ -397,7 +403,11 @@ import * as Sayari from "../../../index";
  *                 hasUpstream: true
  *             },
  *             tags: [],
- *             case: Sayari.CaseStatus.NotAssigned,
+ *             case: {
+ *                 id: "YZB88Y",
+ *                 status: Sayari.CaseStatus.NotAssigned,
+ *                 createdAt: "2025-10-02"
+ *             },
  *             matches: []
  *         }
  *     }

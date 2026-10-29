@@ -15,7 +15,6 @@
 <dd>
 
 Adds a new attribute to an entity in the project
-
 </dd>
 </dl>
 </dd>
@@ -91,7 +90,6 @@ await client.attributes.postAttribute({
 <dd>
 
 <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Updates an existing Attribute
-
 </dd>
 </dl>
 </dd>
@@ -176,7 +174,6 @@ await client.attributes.patchAttribute(
 <dd>
 
 <Warning>This endpoint is in beta and is subject to change. It is provided for early access and testing purposes only.</Warning> Delete an existing Attribute
-
 </dd>
 </dl>
 </dd>
@@ -243,7 +240,6 @@ await client.attributes.deleteAttribute(
 <dd>
 
 Hit the auth endpoint to get a bearer token
-
 </dd>
 </dl>
 </dd>
@@ -311,7 +307,6 @@ await client.auth.getToken({
 <dd>
 
 <Note>To retrieve a L1 Due Dilligence PDF Report. Include 'Accept: application/pdf' in request headers.</Note> Retrieve an entity profile from the database based on the entity ID. This endpoint returns the full profile, entity_summary returns the same payload minus relationships.
-
 </dd>
 </dl>
 </dd>
@@ -394,7 +389,6 @@ await client.entity.getEntity("mGq1lpuqKssNWTjIokuPeA", {
 <dd>
 
 The Entity Summary endpoint returns a similar payload, minus relationships.
-
 </dd>
 </dl>
 </dd>
@@ -459,7 +453,6 @@ await client.entity.entitySummary("mGq1lpuqKssNWTjIokuPeA");
 <dd>
 
 The usage endpoint provides a simple interface to retrieve information on usage made by your API account. This includes both views per API path and credits consumed. The time period for the usage query is also specified in the response and whether or not this includes total usage.
-
 </dd>
 </dl>
 </dd>
@@ -522,7 +515,6 @@ await client.info.getUsage();
 <dd>
 
 The history endpoint return a user's event history.
-
 </dd>
 </dl>
 </dd>
@@ -586,8 +578,7 @@ await client.info.getHistory();
 <dl>
 <dd>
 
-Get metadta about the api, both its versions, which releases are present, and the identity of the authenticated user.
-
+Get metadata about the api, both its versions, which releases are present, and the identity of the authenticated user.
 </dd>
 </dl>
 </dd>
@@ -647,7 +638,6 @@ await client.metadata.metadata();
 Screens entities against news articles and public records to identify risk-relevant content.
 Leverages machine learning to detect and classify risks across various domains.
 Provides detailed article metadata with risk assessments and direct source references.
-
 </dd>
 </dl>
 </dd>
@@ -716,7 +706,6 @@ await client.negativeNews.negativeNews({
 <dd>
 
 <Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> The Project Notifications endpoint returns a list of notifications on all entities saved to a project.
-
 </dd>
 </dl>
 </dd>
@@ -789,7 +778,6 @@ await client.notifications.projectNotifications("0dLeO0", {
 <dd>
 
 <Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> The Resource Notifications endpoint returns a list of notifications for a saved entity.
-
 </dd>
 </dl>
 </dd>
@@ -862,7 +850,6 @@ await client.notifications.resourceNotifications("03ePyj", {
 <dd>
 
 <Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> Deletes all notifications from a project.
-
 </dd>
 </dl>
 </dd>
@@ -925,7 +912,6 @@ await client.notifications.deleteProjectNotifications("YWmNKV");
 <dd>
 
 <Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> Deletes notifications for saved resources of an entity.
-
 </dd>
 </dl>
 </dd>
@@ -988,7 +974,6 @@ await client.notifications.deleteEntityNotifications("N0xLDy4wcud-M1ZtwdsvRA");
 <dd>
 
 <Warning>Legacy endpoint. New integrations should contact Sayari for best practices.</Warning> Deletes notifications for a saved resource.
-
 </dd>
 </dl>
 </dd>
@@ -1053,7 +1038,6 @@ await client.notifications.deleteResourceNotifications("oGxxqG");
 <dd>
 
 Get ontology data for all resource types.
-
 </dd>
 </dl>
 </dd>
@@ -1108,7 +1092,6 @@ await client.ontology.getOntology();
 <dd>
 
 Get attributes from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1173,7 +1156,6 @@ await client.ontology.getAttributes({
 <dd>
 
 Get countries from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1238,7 +1220,6 @@ await client.ontology.getCountries({
 <dd>
 
 Get currencies from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1303,7 +1284,6 @@ await client.ontology.getCurrencies({
 <dd>
 
 Get entity types from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1368,7 +1348,6 @@ await client.ontology.getEntityTypes({
 <dd>
 
 Get enums from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1433,7 +1412,6 @@ await client.ontology.getEnums({
 <dd>
 
 Get HS codes from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1498,7 +1476,6 @@ await client.ontology.getHsCodes({
 <dd>
 
 Get identifiers from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1563,7 +1540,6 @@ await client.ontology.getIdentifiers({
 <dd>
 
 Get languages from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1628,7 +1604,6 @@ await client.ontology.getLanguages({
 <dd>
 
 Get regions from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1693,7 +1668,6 @@ await client.ontology.getRegions({
 <dd>
 
 Get relationships from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1758,7 +1732,6 @@ await client.ontology.getRelationships({
 <dd>
 
 Get risk factors from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1828,7 +1801,6 @@ await client.ontology.getRiskFactors({
 <dd>
 
 Get sources from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1895,7 +1867,6 @@ await client.ontology.getSources({
 <dd>
 
 Get source types from ontology data.
-
 </dd>
 </dl>
 </dd>
@@ -1962,7 +1933,6 @@ await client.ontology.getSourceTypes({
 <dd>
 
 Retrieves all attributes for a project entity.
-
 </dd>
 </dl>
 </dd>
@@ -2033,7 +2003,6 @@ await client.projectEntityAttributes.getProjectEntityAttributes("V03eYM", "BG72Y
 <dd>
 
 Creates a new attribute for a project entity.
-
 </dd>
 </dl>
 </dd>
@@ -2116,7 +2085,6 @@ await client.projectEntityAttributes.createProjectEntityAttribute("V03eYM", "BG7
 <dd>
 
 Updates a specific attribute for a project entity.
-
 </dd>
 </dl>
 </dd>
@@ -2207,7 +2175,6 @@ await client.projectEntityAttributes.updateProjectEntityAttribute("V03eYM", "BG7
 <dd>
 
 Deletes a specific attribute for a project entity.
-
 </dd>
 </dl>
 </dd>
@@ -2288,7 +2255,6 @@ await client.projectEntityAttributes.deleteProjectEntityAttribute("project_id", 
 <dd>
 
 Retrieves all supply chain snapshots for a project entity.
-
 </dd>
 </dl>
 </dd>
@@ -2359,7 +2325,6 @@ await client.projectEntitySupplyChainSnapshots.getProjectEntitySupplyChainSnapsh
 <dd>
 
 Retrieves a specific supply chain snapshot by ID for a project entity.
-
 </dd>
 </dl>
 </dd>
@@ -2438,7 +2403,6 @@ await client.projectEntitySupplyChainSnapshots.getProjectEntitySupplyChainSnapsh
 <dd>
 
 Creates a new supply chain snapshot for a project entity.
-
 </dd>
 </dl>
 </dd>
@@ -2519,7 +2483,6 @@ await client.projectEntitySupplyChainSnapshots.createProjectEntitySupplyChainSna
 <dd>
 
 Deletes a specific supply chain snapshot by ID for a project entity.
-
 </dd>
 </dl>
 </dd>
@@ -2604,7 +2567,6 @@ await client.projectEntitySupplyChainSnapshots.deleteProjectEntitySupplyChainSna
 <dd>
 
 The resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the search endpoint, except it's tuned to only return the best match so the client doesn't need to do as much or any post-processing work to filter down results.
-
 </dd>
 </dl>
 </dd>
@@ -2621,11 +2583,14 @@ The resolution endpoints allow users to search for matching entities against a p
 ```typescript
 await client.projectEntity.createProjectEntity("YVB88Y", {
     body: {
-        name: ["VTB Bank"],
-        country: ["RUS"],
-        address: ["Moscow"],
-        identifier: ["253400V1H6ART1UQ0N98"],
+        limit: 10,
         profile: "corporate",
+        attributes: {
+            name: ["VTB Bank"],
+            country: ["RUS"],
+            address: ["Moscow"],
+            identifier: ["253400V1H6ART1UQ0N98"],
+        },
     },
 });
 ```
@@ -2697,7 +2662,6 @@ The CSV response includes dynamic columns based on the data:
 - Standard columns: project_id, project_entity_id, label, project_entity_url, upload_ids, strength, countries, tags, case_status, created_at, match_count, upstream_products, upstream_risk_factors, upstream_countries
 
 Use the `Accept: text/csv` header to request CSV format.
-
 </dd>
 </dl>
 </dd>
@@ -2768,7 +2732,6 @@ await client.projectEntity.getProjectEntities("YVB88Y");
 <dd>
 
 Retrieves a specific entity in a project.
-
 </dd>
 </dl>
 </dd>
@@ -2826,6 +2789,170 @@ await client.projectEntity.getProjectEntity("project_id", "project_entity_id");
 </dl>
 </details>
 
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">addProjectEntityMatches</a>(projectId, projectEntityId, { ...params }) -> Sayari.UpdateProjectEntityMatchesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Adds matches to a project entity.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.addProjectEntityMatches("project_id", "project_entity_id", {
+    entityIds: ["entity_ids", "entity_ids"],
+    overrideDeleted: undefined,
+    limit: undefined,
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.UpdateProjectEntityMatchesBody`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">replaceProjectEntityMatches</a>(projectId, projectEntityId, { ...params }) -> Sayari.UpdateProjectEntityMatchesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Replace matches in a project entity.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.projectEntity.replaceProjectEntityMatches("project_id", "project_entity_id", {
+    entityIds: ["entity_ids", "entity_ids"],
+    overrideDeleted: undefined,
+    limit: undefined,
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.UpdateProjectEntityMatchesBody`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ProjectEntity.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">deleteProjectEntity</a>(projectId, projectEntityId) -> void</code></summary>
 <dl>
 <dd>
@@ -2839,7 +2966,6 @@ await client.projectEntity.getProjectEntity("project_id", "project_entity_id");
 <dd>
 
 Deletes a project entity.
-
 </dd>
 </dl>
 </dd>
@@ -2910,7 +3036,6 @@ await client.projectEntity.deleteProjectEntity("project_id", "project_entity_id"
 <dd>
 
 Deletes a specific project entity match.
-
 </dd>
 </dl>
 </dd>
@@ -2989,7 +3114,6 @@ await client.projectEntity.deleteProjectEntityMatch("project_id", "project_entit
 <dd>
 
 Checks if a project entity with the given attributes already exists.
-
 </dd>
 </dl>
 </dd>
@@ -3005,8 +3129,10 @@ Checks if a project entity with the given attributes already exists.
 
 ```typescript
 await client.projectEntity.projectEntityExists("YVB88Y", {
-    name: ["Example Company"],
-    country: ["USA"],
+    attributes: {
+        name: ["Example Company"],
+        country: ["USA"],
+    },
 });
 ```
 
@@ -3050,7 +3176,7 @@ await client.projectEntity.projectEntityExists("YVB88Y", {
 </dl>
 </details>
 
-<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">saveProjectEntity</a>(projectId, { ...params }) -> Sayari.ProjectEntityIdResponse</code></summary>
+<details><summary><code>client.projectEntity.<a href="/src/api/resources/projectEntity/client/Client.ts">saveProjectEntity</a>(projectId, { ...params }) -> Sayari.SingleProjectEntityResponse</code></summary>
 <dl>
 <dd>
 
@@ -3063,7 +3189,6 @@ await client.projectEntity.projectEntityExists("YVB88Y", {
 <dd>
 
 Stores a project entity given entity IDs and a list of attributes.
-
 </dd>
 </dl>
 </dd>
@@ -3141,7 +3266,6 @@ await client.projectEntity.saveProjectEntity("YVB88Y", {
 <dd>
 
 Retrieves the risk changes for all project entities in a project.
-
 </dd>
 </dl>
 </dd>
@@ -3212,7 +3336,6 @@ await client.projectEntity.getProjectRiskChanges("YVB88Y");
 <dd>
 
 Retrieves the risk changes for a single project entity.
-
 </dd>
 </dl>
 </dd>
@@ -3291,7 +3414,6 @@ await client.projectEntity.getProjectEntityRiskChanges("YVB88Y", "52z4Wa");
 <dd>
 
 Dismiss risk changes for all project entities in a project.
-
 </dd>
 </dl>
 </dd>
@@ -3354,7 +3476,6 @@ await client.projectEntity.deleteProjectRiskChanges("project_id");
 <dd>
 
 Dismiss risk changes for a single project entity.
-
 </dd>
 </dl>
 </dd>
@@ -3425,7 +3546,6 @@ await client.projectEntity.deleteProjectEntityRiskChanges("project_id", "project
 <dd>
 
 Execute a traversal of the upstream trade network (supply chain) for all matched entities of a project entity, returning a set of entities and edges between them.
-
 </dd>
 </dl>
 </dd>
@@ -3514,10 +3634,11 @@ Retrieves a risk summary for a specific project entity, including risk factors w
 - Network paths showing relationships between entities
 - Risk intelligence scores and metadata
 - Risk categories and source entity information
-  </dd>
-  </dl>
-  </dd>
-  </dl>
+
+</dd>
+</dl>
+</dd>
+</dl>
 
 #### 🔌 Usage
 
@@ -3597,7 +3718,6 @@ await client.projectEntity.getProjectEntityRiskSummary("YVB88Y", "52z4Wa", {
 <dd>
 
 Execute a traversal of the upstream trade network (supply chain) for all matched entities of a project entity, returning a summary of countries, risks, and components.
-
 </dd>
 </dl>
 </dd>
@@ -3680,7 +3800,6 @@ await client.projectEntity.projectEntitySupplyChainSummary("0n4473", "yebNPJ", {
 <dd>
 
 Create a new project.
-
 </dd>
 </dl>
 </dd>
@@ -3697,6 +3816,7 @@ Create a new project.
 ```typescript
 await client.project.createProject({
     label: "My First Project",
+    type: "network",
     share: {
         org: "admin",
     },
@@ -3748,7 +3868,6 @@ await client.project.createProject({
 <dd>
 
 Retrieve a list of projects including upload progress info.
-
 </dd>
 </dl>
 </dd>
@@ -3814,7 +3933,6 @@ await client.project.getProjects({
 <dd>
 
 Deletes an existing project.
-
 </dd>
 </dl>
 </dd>
@@ -3879,7 +3997,6 @@ await client.project.deleteProject("Gam5qG");
 <dd>
 
 Retrieve a record from the database based on the ID
-
 </dd>
 </dl>
 </dd>
@@ -3952,7 +4069,6 @@ await client.record.getRecord("74cf0fc2a62f9c8f4e88f8a0b3ffcca4%2FF0000110%2F168
 <dd>
 
 The resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the search endpoint, except it's tuned to only return the best match so the client doesn't need to do as much or any post-processing work to filter down results.
-
 </dd>
 </dl>
 </dd>
@@ -4019,7 +4135,6 @@ await client.resolution.resolution({
 <dd>
 
 The resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the search endpoint, except it's tuned to only return the best match so the client doesn't need to do as much or any post-processing work to filter down results.
-
 </dd>
 </dl>
 </dd>
@@ -4089,7 +4204,6 @@ await client.resolution.resolutionPost({
 <dd>
 
 <Warning>This endpoint is deprecated.</Warning> The persisted resolution endpoints allow users to search for matching entities against a provided list of attributes. The endpoint is similar to the resolution endpoint, except it also stores matched entities into user's project.
-
 </dd>
 </dl>
 </dd>
@@ -4165,7 +4279,6 @@ await client.resolution.resolutionPersisted("V03eYM", {
 <dd>
 
 <Warning>This endpoint is deprecated.</Warning> This endpoint allows you to upload entities in bulk.
-
 </dd>
 </dl>
 </dd>
@@ -4246,7 +4359,6 @@ await client.resolution.resolutionUpload("V03eYM", {
 <dd>
 
 Save an entity to a project.
-
 </dd>
 </dl>
 </dd>
@@ -4318,7 +4430,6 @@ await client.resource.saveEntity({
 <dd>
 
 Deletes an existing saved resource from a project.
-
 </dd>
 </dl>
 </dd>
@@ -4376,6 +4487,155 @@ await client.resource.deleteResource("entity", "YWmNKV");
 </dl>
 </details>
 
+## ScreenByName
+
+<details><summary><code>client.screenByName.<a href="/src/api/resources/screenByName/client/Client.ts">screenByName</a>({ ...params }) -> Sayari.ScreenResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Screen a name against watchlist records to identify potential matches. Requires the `screened_risk` role.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.screenByName.screenByName({
+    name: "AEROCARIBBEAN AIRLINES",
+    type: "company",
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Sayari.ScreenByNameRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ScreenByName.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+## Screen
+
+<details><summary><code>client.screen.<a href="/src/api/resources/screen/client/Client.ts">screen</a>(projectId, projectEntityId, { ...params }) -> Sayari.ScreenResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Screen a project entity against watchlist records to identify potential matches. Requires the `screened_risk` role.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.screen.screen("YVB88Y", "YVodz6", {
+    type: "company",
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**projectId:** `string` — Project identifier.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**projectEntityId:** `string` — Project entity identifier.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Sayari.ScreenRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Screen.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## Search
 
 <details><summary><code>client.search.<a href="/src/api/resources/search/client/Client.ts">searchEntity</a>({ ...params }) -> Sayari.EntitySearchResponse</code></summary>
@@ -4391,7 +4651,6 @@ await client.resource.deleteResource("entity", "YWmNKV");
 <dd>
 
 Search for an entity. Please note, searches are limited to a maximum of 10,000 results.
-
 </dd>
 </dl>
 </dd>
@@ -4457,7 +4716,6 @@ await client.search.searchEntity({
 <dd>
 
 Search for an entity. Please note, searches are limited to a maximum of 10,000 results.
-
 </dd>
 </dl>
 </dd>
@@ -4523,7 +4781,6 @@ await client.search.searchEntityGet({
 <dd>
 
 Search for a record. Please note, searches are limited to a maximum of 10,000 results.
-
 </dd>
 </dl>
 </dd>
@@ -4589,7 +4846,6 @@ await client.search.searchRecord({
 <dd>
 
 Search for a record. Please note, searches are limited to a maximum of 10,000 results.
-
 </dd>
 </dl>
 </dd>
@@ -4657,7 +4913,6 @@ await client.search.searchRecordGet({
 <dd>
 
 Execute a traversal of the upstream trade network (supply chain) of an entity, returning a set of entities and edges between them.
-
 </dd>
 </dl>
 </dd>
@@ -4734,7 +4989,6 @@ await client.supplyChain.upstreamTradeTraversal("ESkH7J-UCRfY5t0_JXIH3w", {
 <dd>
 
 Search for a shipment. Please note, searches are limited to a maximum of 10,000 results.
-
 </dd>
 </dl>
 </dd>
@@ -4805,7 +5059,6 @@ await client.trade.searchShipments({
 <dd>
 
 Search for a supplier. Please note, searches are limited to a maximum of 10,000 results.
-
 </dd>
 </dl>
 </dd>
@@ -4876,7 +5129,6 @@ await client.trade.searchSuppliers({
 <dd>
 
 Search for a buyer. Please note, searches are limited to a maximum of 10,000 results.
-
 </dd>
 </dl>
 </dd>
@@ -4949,7 +5201,6 @@ await client.trade.searchBuyers({
 <dd>
 
 The Traversal endpoint returns paths from a single target entity to up to 50 directly or indirectly-related entities. Each path includes information on the 0 to 10 intermediary entities, as well as their connecting relationships. The response's explored_count field indicates the size of the graph subset the application searched. Running a traversal on a highly connected entity with a restrictive set of argument filters and a high max depth will require the application to explore a higher number of traversal paths, which may affect performance. In cases where a traversal searches over a very large, highly-connected subgraph, a partial result set may be returned containing only the most relevant results. This will be indicated in the response by the partial_results field.
-
 </dd>
 </dl>
 </dd>
@@ -5022,7 +5273,6 @@ await client.traversal.traversal("mGq1lpuqKssNWTjIokuPeA", {
 <dd>
 
 The UBO endpoint returns paths from a single target entity to up to 50 beneficial owners. The endpoint is a shorthand for the equivalent traversal query.
-
 </dd>
 </dl>
 </dd>
@@ -5095,7 +5345,6 @@ await client.traversal.ubo("mGq1lpuqKssNWTjIokuPeA", {
 <dd>
 
 The Ownership endpoint returns paths from a single target entity to up to 50 entities directly or indirectly owned by that entity. The endpoint is a shorthand for the equivalent traversal query.
-
 </dd>
 </dl>
 </dd>
@@ -5168,7 +5417,6 @@ await client.traversal.ownership("mGq1lpuqKssNWTjIokuPeA", {
 <dd>
 
 The Watchlist endpoint returns paths from a single target entity to up to 50 other entities that appear on a watchlist. The endpoint is a shorthand for the equivalent traversal query.
-
 </dd>
 </dl>
 </dd>
@@ -5241,7 +5489,6 @@ await client.traversal.watchlist("mGq1lpuqKssNWTjIokuPeA", {
 <dd>
 
 The Shortest Path endpoint returns a response identifying the shortest traversal path connecting each pair of entities.
-
 </dd>
 </dl>
 </dd>

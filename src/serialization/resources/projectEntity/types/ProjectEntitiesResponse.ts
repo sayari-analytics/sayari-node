@@ -15,8 +15,8 @@ export const ProjectEntitiesResponse: core.serialization.ObjectSchema<
     limit: core.serialization.number(),
     data: core.serialization.list(ProjectEntityResponse),
     size: QualifiedCount,
-    nextToken: core.serialization.property("next_token", core.serialization.string().optional()),
-    prevToken: core.serialization.property("prev_token", core.serialization.string().optional()),
+    next: core.serialization.string().optional(),
+    prev: core.serialization.string().optional(),
 });
 
 export declare namespace ProjectEntitiesResponse {
@@ -24,7 +24,7 @@ export declare namespace ProjectEntitiesResponse {
         limit: number;
         data: ProjectEntityResponse.Raw[];
         size: QualifiedCount.Raw;
-        next_token?: string | null;
-        prev_token?: string | null;
+        next?: string | null;
+        prev?: string | null;
     }
 }

@@ -5,14 +5,5 @@
 import * as Sayari from "../../../index";
 
 export interface ResolutionAttributes {
-    identifier?: Sayari.StringOrNumber[];
-    name?: string[];
-    country?: string[];
-    address?: string[];
-    dateOfBirth?: string[];
-    contact?: Sayari.StringOrNumber[];
-    type?: string[];
-    city?: string[];
-    state?: string[];
-    customFieldName?: Sayari.CustomFieldValue | undefined;
+    attributes: Sayari.ResolutionAttrSchema;
 }

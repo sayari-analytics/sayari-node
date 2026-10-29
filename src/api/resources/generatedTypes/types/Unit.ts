@@ -7,8 +7,17 @@
  */
 export type Unit =
     /**
+     * Indicates grams (g) */
+    | "gram"
+    /**
      * Indicates kilograms (kg) */
     | "kilogram"
+    /**
+     * Indicates long tons (lt) */
+    | "long_ton"
+    /**
+     * Indicates measurement tons (mt) */
+    | "measurement_ton"
     /**
      * Indicates meters (m) */
     | "metre"
@@ -16,11 +25,30 @@ export type Unit =
      * Indicates meters squared (m^2) */
     | "metres_squared"
     /**
+     * Indicates metric tons (et) */
+    | "metric_ton"
+    /**
+     * Indicates ounces (oz) */
+    | "ounce"
+    /**
+     * Indicates pounds (lb) */
+    | "pound"
+    /**
+     * Indicates short tons (st) */
+    | "short_ton"
+    /**
      * Used to show the number of units of a product */
     | "unit";
 export const Unit = {
+    Gram: "gram",
     Kilogram: "kilogram",
+    LongTon: "long_ton",
+    MeasurementTon: "measurement_ton",
     Metre: "metre",
     MetresSquared: "metres_squared",
+    MetricTon: "metric_ton",
+    Ounce: "ounce",
+    Pound: "pound",
+    ShortTon: "short_ton",
     Unit: "unit",
 } as const;

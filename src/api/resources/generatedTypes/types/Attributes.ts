@@ -20,6 +20,7 @@ export type Attributes =
     | "name"
     | "person_status"
     | "position"
+    | "risk_event"
     | "risk_intelligence"
     | "shares"
     | "status"
@@ -43,6 +44,7 @@ export const Attributes = {
     Name: "name",
     PersonStatus: "person_status",
     Position: "position",
+    RiskEvent: "risk_event",
     RiskIntelligence: "risk_intelligence",
     Shares: "shares",
     Status: "status",

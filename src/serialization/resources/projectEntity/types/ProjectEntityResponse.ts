@@ -11,7 +11,7 @@ import { ProjectRiskCategory } from "./ProjectRiskCategory";
 import { ProjectRiskFactor } from "./ProjectRiskFactor";
 import { UpstreamInfo } from "./UpstreamInfo";
 import { TagResponse } from "./TagResponse";
-import { CaseStatus } from "../../sharedTypes/types/CaseStatus";
+import { CaseInfo } from "../../sharedTypes/types/CaseInfo";
 import { ProjectEntityMatchResponse } from "./ProjectEntityMatchResponse";
 
 export const ProjectEntityResponse: core.serialization.ObjectSchema<
@@ -30,9 +30,10 @@ export const ProjectEntityResponse: core.serialization.ObjectSchema<
     riskFactors: core.serialization.property("risk_factors", core.serialization.list(ProjectRiskFactor)),
     upstream: UpstreamInfo,
     tags: core.serialization.list(TagResponse),
-    case: CaseStatus.optional(),
+    case: CaseInfo.optional(),
     matches: core.serialization.list(ProjectEntityMatchResponse),
     updatedAt: core.serialization.property("updated_at", core.serialization.string().optional()),
+    updatedBy: core.serialization.property("updated_by", core.serialization.string().optional()),
 });
 
 export declare namespace ProjectEntityResponse {
@@ -49,8 +50,9 @@ export declare namespace ProjectEntityResponse {
         risk_factors: ProjectRiskFactor.Raw[];
         upstream: UpstreamInfo.Raw;
         tags: TagResponse.Raw[];
-        case?: CaseStatus.Raw | null;
+        case?: CaseInfo.Raw | null;
         matches: ProjectEntityMatchResponse.Raw[];
         updated_at?: string | null;
+        updated_by?: string | null;
     }
 }

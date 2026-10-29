@@ -16,6 +16,7 @@ export const RiskCategory: core.serialization.Schema<serializers.RiskCategory.Ra
         "regulatory_action",
         "sanctions",
         "sanctions_and_export_control_lists",
+        "shell_company_risk",
     ]);
 
 export declare namespace RiskCategory {
@@ -27,5 +28,6 @@ export declare namespace RiskCategory {
         | "political_exposure"
         | "regulatory_action"
         | "sanctions"
-        | "sanctions_and_export_control_lists";
+        | "sanctions_and_export_control_lists"
+        | "shell_company_risk";
 }
