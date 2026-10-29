@@ -5,42 +5,23 @@
 import * as serializers from "../../../index";
 import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
-import { StringOrNumber } from "./StringOrNumber";
-import { Country } from "../../generatedTypes/types/Country";
-import { Entities } from "../../generatedTypes/types/Entities";
+import { ResolutionAttrSchema } from "./ResolutionAttrSchema";
 import { ResolutionProfile } from "./ResolutionProfile";
 
 export const CreateResolvedProjectEntityRequest: core.serialization.ObjectSchema<
     serializers.CreateResolvedProjectEntityRequest.Raw,
     Sayari.CreateResolvedProjectEntityRequest
 > = core.serialization.object({
-    identifier: core.serialization.list(StringOrNumber).optional(),
-    name: core.serialization.list(core.serialization.string()).optional(),
-    country: core.serialization.list(Country).optional(),
-    address: core.serialization.list(core.serialization.string()).optional(),
-    dateOfBirth: core.serialization.property(
-        "date_of_birth",
-        core.serialization.list(core.serialization.string()).optional(),
-    ),
-    contact: core.serialization.list(StringOrNumber).optional(),
-    type: core.serialization.list(Entities).optional(),
-    city: core.serialization.list(core.serialization.string()).optional(),
-    state: core.serialization.list(core.serialization.string()).optional(),
+    attributes: ResolutionAttrSchema,
+    limit: core.serialization.number().optional(),
     profile: ResolutionProfile.optional(),
     enableLlmClean: core.serialization.property("enable_llm_clean", core.serialization.boolean().optional()),
 });
 
 export declare namespace CreateResolvedProjectEntityRequest {
     export interface Raw {
-        identifier?: StringOrNumber.Raw[] | null;
-        name?: string[] | null;
-        country?: Country.Raw[] | null;
-        address?: string[] | null;
-        date_of_birth?: string[] | null;
-        contact?: StringOrNumber.Raw[] | null;
-        type?: Entities.Raw[] | null;
-        city?: string[] | null;
-        state?: string[] | null;
+        attributes: ResolutionAttrSchema.Raw;
+        limit?: number | null;
         profile?: ResolutionProfile.Raw | null;
         enable_llm_clean?: boolean | null;
     }

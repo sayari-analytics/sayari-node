@@ -25,6 +25,7 @@ export const Attributes: core.serialization.Schema<serializers.Attributes.Raw, S
         "name",
         "person_status",
         "position",
+        "risk_event",
         "risk_intelligence",
         "shares",
         "status",
@@ -51,6 +52,7 @@ export declare namespace Attributes {
         | "name"
         | "person_status"
         | "position"
+        | "risk_event"
         | "risk_intelligence"
         | "shares"
         | "status"

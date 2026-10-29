@@ -7,12 +7,30 @@ import * as Sayari from "../../../../api/index";
 import * as core from "../../../../core";
 
 export const Unit: core.serialization.Schema<serializers.Unit.Raw, Sayari.Unit> = core.serialization.enum_([
+    "gram",
     "kilogram",
+    "long_ton",
+    "measurement_ton",
     "metre",
     "metres_squared",
+    "metric_ton",
+    "ounce",
+    "pound",
+    "short_ton",
     "unit",
 ]);
 
 export declare namespace Unit {
-    export type Raw = "kilogram" | "metre" | "metres_squared" | "unit";
+    export type Raw =
+        | "gram"
+        | "kilogram"
+        | "long_ton"
+        | "measurement_ton"
+        | "metre"
+        | "metres_squared"
+        | "metric_ton"
+        | "ounce"
+        | "pound"
+        | "short_ton"
+        | "unit";
 }

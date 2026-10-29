@@ -7,3 +7,6 @@ examples/
 tests/
 Makefile
 README.md
+.fern/replay.lock
+.fern/replay.yml
+.gitattributes

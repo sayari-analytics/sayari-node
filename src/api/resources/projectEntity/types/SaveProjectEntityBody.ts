@@ -6,6 +6,6 @@ import * as Sayari from "../../../index";
 
 export interface SaveProjectEntityBody {
     entityIds: string[];
-    attributes: Sayari.ResolutionAttributes;
+    attributes: Sayari.ResolutionAttrSchema;
     profile: Sayari.ResolutionProfile;
 }

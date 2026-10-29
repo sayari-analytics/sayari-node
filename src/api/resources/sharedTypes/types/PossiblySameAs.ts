@@ -5,7 +5,7 @@
 import * as Sayari from "../../../index";
 
 /**
- * List of entities that are Possibly the Same As (PSA) the entity.
+ * <Warning>This property is deprecated.</Warning> List of entities that are Possibly the Same As (PSA) the entity.
  */
 export interface PossiblySameAs extends Sayari.PaginatedResponse {
     offset?: number;
